@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 
-@interface KRListViewController : ViewController
+@interface KRListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+
+@property(nonatomic,strong) IBOutlet UITableView *tableView;
+@property(nonatomic,strong) NSArray *tableData;
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "KRViewController.h"
+#import "KRStep.h"
 
 @interface KRViewController ()
 
@@ -14,11 +15,11 @@
 
 @implementation KRViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle{
+    self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
         // Custom initialization
+        self.kronicle = kronicle;
     }
     return self;
 }
@@ -27,7 +28,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    NSLog(@"self.kronicle : %@", self.kronicle.uuid);
+    for (KRStep *s in self.kronicle.steps) {
+        NSLog(@"ste.title : %@", s.title);
+    }
 }
+
+- (IBAction)gotToKronicleListView:(id)sender {}
+- (IBAction)togglePlayPause:(id)sender {}
+
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -22,12 +22,17 @@
 		D2A5741F175A3B77002AC1B9 /* KRNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57408175A3B77002AC1B9 /* KRNetworkConnection.m */; };
 		D2A57420175A3B77002AC1B9 /* KRKronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5740B175A3B77002AC1B9 /* KRKronicle.m */; };
 		D2A57421175A3B77002AC1B9 /* KRStep.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5740E175A3B77002AC1B9 /* KRStep.m */; };
-		D2A57422175A3B77002AC1B9 /* KRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57412175A3B77002AC1B9 /* KRCategoriesViewController.m */; };
-		D2A57423175A3B77002AC1B9 /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A57413175A3B77002AC1B9 /* KRCategoriesViewController.xib */; };
 		D2A57424175A3B77002AC1B9 /* KRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57416175A3B77002AC1B9 /* KRListViewController.m */; };
 		D2A57425175A3B77002AC1B9 /* KRListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A57417175A3B77002AC1B9 /* KRListViewController.xib */; };
 		D2A57426175A3B77002AC1B9 /* KRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5741A175A3B77002AC1B9 /* KRViewController.m */; };
 		D2A57427175A3B77002AC1B9 /* KRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A5741B175A3B77002AC1B9 /* KRViewController.xib */; };
+		D2A5742A175A3BE3002AC1B9 /* KRClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57429175A3BE3002AC1B9 /* KRClock.m */; };
+		D2A5742D175A3BFE002AC1B9 /* MediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5742C175A3BFE002AC1B9 /* MediaView.m */; };
+		D2A57430175A3C0B002AC1B9 /* KRDiagramView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5742F175A3C0B002AC1B9 /* KRDiagramView.m */; };
+		D2A57433175A3C27002AC1B9 /* KRSwipeUpScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */; };
+		D2A57436175A4A8D002AC1B9 /* KRList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57435175A4A8D002AC1B9 /* KRList.m */; };
+		D2A5743A175A4FF4002AC1B9 /* KRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57438175A4FF4002AC1B9 /* KRCategoriesViewController.m */; };
+		D2A5743B175A4FF4002AC1B9 /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A57439175A4FF4002AC1B9 /* KRCategoriesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,15 +61,25 @@
 		D2A5740C175A3B77002AC1B9 /* KRSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSerializable.h; sourceTree = "<group>"; };
 		D2A5740D175A3B77002AC1B9 /* KRStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStep.h; sourceTree = "<group>"; };
 		D2A5740E175A3B77002AC1B9 /* KRStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStep.m; sourceTree = "<group>"; };
-		D2A57411175A3B77002AC1B9 /* KRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewController.h; sourceTree = "<group>"; };
-		D2A57412175A3B77002AC1B9 /* KRCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesViewController.m; sourceTree = "<group>"; };
-		D2A57413175A3B77002AC1B9 /* KRCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCategoriesViewController.xib; sourceTree = "<group>"; };
 		D2A57415175A3B77002AC1B9 /* KRListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRListViewController.h; sourceTree = "<group>"; };
 		D2A57416175A3B77002AC1B9 /* KRListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRListViewController.m; sourceTree = "<group>"; };
 		D2A57417175A3B77002AC1B9 /* KRListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRListViewController.xib; sourceTree = "<group>"; };
 		D2A57419175A3B77002AC1B9 /* KRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRViewController.h; sourceTree = "<group>"; };
 		D2A5741A175A3B77002AC1B9 /* KRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRViewController.m; sourceTree = "<group>"; };
 		D2A5741B175A3B77002AC1B9 /* KRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRViewController.xib; sourceTree = "<group>"; };
+		D2A57428175A3BE3002AC1B9 /* KRClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClock.h; sourceTree = "<group>"; };
+		D2A57429175A3BE3002AC1B9 /* KRClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClock.m; sourceTree = "<group>"; };
+		D2A5742B175A3BFE002AC1B9 /* MediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaView.h; sourceTree = "<group>"; };
+		D2A5742C175A3BFE002AC1B9 /* MediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaView.m; sourceTree = "<group>"; };
+		D2A5742E175A3C0B002AC1B9 /* KRDiagramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRDiagramView.h; sourceTree = "<group>"; };
+		D2A5742F175A3C0B002AC1B9 /* KRDiagramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRDiagramView.m; sourceTree = "<group>"; };
+		D2A57431175A3C27002AC1B9 /* KRSwipeUpScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSwipeUpScrollView.h; sourceTree = "<group>"; };
+		D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSwipeUpScrollView.m; sourceTree = "<group>"; };
+		D2A57434175A4A8D002AC1B9 /* KRList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRList.h; sourceTree = "<group>"; };
+		D2A57435175A4A8D002AC1B9 /* KRList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRList.m; sourceTree = "<group>"; };
+		D2A57437175A4FF4002AC1B9 /* KRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewController.h; sourceTree = "<group>"; };
+		D2A57438175A4FF4002AC1B9 /* KRCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesViewController.m; sourceTree = "<group>"; };
+		D2A57439175A4FF4002AC1B9 /* KRCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCategoriesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,11 +167,13 @@
 		D2A57409175A3B77002AC1B9 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				D2A5740C175A3B77002AC1B9 /* KRSerializable.h */,
 				D2A5740A175A3B77002AC1B9 /* KRKronicle.h */,
 				D2A5740B175A3B77002AC1B9 /* KRKronicle.m */,
-				D2A5740C175A3B77002AC1B9 /* KRSerializable.h */,
 				D2A5740D175A3B77002AC1B9 /* KRStep.h */,
 				D2A5740E175A3B77002AC1B9 /* KRStep.m */,
+				D2A57434175A4A8D002AC1B9 /* KRList.h */,
+				D2A57435175A4A8D002AC1B9 /* KRList.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -174,9 +191,9 @@
 		D2A57410175A3B77002AC1B9 /* krcategoriesviewcontroller */ = {
 			isa = PBXGroup;
 			children = (
-				D2A57411175A3B77002AC1B9 /* KRCategoriesViewController.h */,
-				D2A57412175A3B77002AC1B9 /* KRCategoriesViewController.m */,
-				D2A57413175A3B77002AC1B9 /* KRCategoriesViewController.xib */,
+				D2A57437175A4FF4002AC1B9 /* KRCategoriesViewController.h */,
+				D2A57438175A4FF4002AC1B9 /* KRCategoriesViewController.m */,
+				D2A57439175A4FF4002AC1B9 /* KRCategoriesViewController.xib */,
 			);
 			path = krcategoriesviewcontroller;
 			sourceTree = "<group>";
@@ -206,6 +223,8 @@
 		D2A5741C175A3B77002AC1B9 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				D2A57428175A3BE3002AC1B9 /* KRClock.h */,
+				D2A57429175A3BE3002AC1B9 /* KRClock.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -213,6 +232,12 @@
 		D2A5741D175A3B77002AC1B9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				D2A5742B175A3BFE002AC1B9 /* MediaView.h */,
+				D2A5742C175A3BFE002AC1B9 /* MediaView.m */,
+				D2A5742E175A3C0B002AC1B9 /* KRDiagramView.h */,
+				D2A5742F175A3C0B002AC1B9 /* KRDiagramView.m */,
+				D2A57431175A3C27002AC1B9 /* KRSwipeUpScrollView.h */,
+				D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -273,9 +298,9 @@
 				D2A573F6175A3B4E002AC1B9 /* Default@2x.png in Resources */,
 				D2A573F8175A3B4E002AC1B9 /* Default-568h@2x.png in Resources */,
 				D2A573FE175A3B4E002AC1B9 /* ViewController.xib in Resources */,
-				D2A57423175A3B77002AC1B9 /* KRCategoriesViewController.xib in Resources */,
 				D2A57425175A3B77002AC1B9 /* KRListViewController.xib in Resources */,
 				D2A57427175A3B77002AC1B9 /* KRViewController.xib in Resources */,
+				D2A5743B175A4FF4002AC1B9 /* KRCategoriesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +318,14 @@
 				D2A5741F175A3B77002AC1B9 /* KRNetworkConnection.m in Sources */,
 				D2A57420175A3B77002AC1B9 /* KRKronicle.m in Sources */,
 				D2A57421175A3B77002AC1B9 /* KRStep.m in Sources */,
-				D2A57422175A3B77002AC1B9 /* KRCategoriesViewController.m in Sources */,
 				D2A57424175A3B77002AC1B9 /* KRListViewController.m in Sources */,
 				D2A57426175A3B77002AC1B9 /* KRViewController.m in Sources */,
+				D2A5742A175A3BE3002AC1B9 /* KRClock.m in Sources */,
+				D2A5742D175A3BFE002AC1B9 /* MediaView.m in Sources */,
+				D2A57430175A3C0B002AC1B9 /* KRDiagramView.m in Sources */,
+				D2A57433175A3C27002AC1B9 /* KRSwipeUpScrollView.m in Sources */,
+				D2A57436175A4A8D002AC1B9 /* KRList.m in Sources */,
+				D2A5743A175A4FF4002AC1B9 /* KRCategoriesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +363,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -348,6 +379,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "EDD648C3-8B4F-4D6E-8B17-9540D73592AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -364,7 +397,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -372,6 +406,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "EDD648C3-8B4F-4D6E-8B17-9540D73592AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -380,10 +416,14 @@
 		D2A57402175A3B4E002AC1B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,10 +431,14 @@
 		D2A57403175A3B4E002AC1B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
