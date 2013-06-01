@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KRDiagramView : UIView
+@interface KRDiagramView : UIView {
+    @private
+    UIImageView *_imageView;
+}
+
+@property (nonatomic, strong) NSString *imagePath;
 
 @end

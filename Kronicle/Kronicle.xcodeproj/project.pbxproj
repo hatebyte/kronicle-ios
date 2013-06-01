@@ -33,6 +33,27 @@
 		D2A57436175A4A8D002AC1B9 /* KRList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57435175A4A8D002AC1B9 /* KRList.m */; };
 		D2A5743A175A4FF4002AC1B9 /* KRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57438175A4FF4002AC1B9 /* KRCategoriesViewController.m */; };
 		D2A5743B175A4FF4002AC1B9 /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A57439175A4FF4002AC1B9 /* KRCategoriesViewController.xib */; };
+		D2A5743E175A6071002AC1B9 /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5743D175A6070002AC1B9 /* DescriptionView.m */; };
+		D2A57447175A678F002AC1B9 /* KRFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57446175A678F002AC1B9 /* KRFontHelper.m */; };
+		D2A5744A175A679B002AC1B9 /* KRColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57449175A679B002AC1B9 /* KRColorHelper.m */; };
+		D2A5746E175A6D76002AC1B9 /* Bree-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57469175A6D76002AC1B9 /* Bree-Bold.otf */; };
+		D2A5746F175A6D76002AC1B9 /* Bree-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746A175A6D76002AC1B9 /* Bree-ExtraBold.otf */; };
+		D2A57470175A6D76002AC1B9 /* Bree-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746B175A6D76002AC1B9 /* Bree-Light.otf */; };
+		D2A57471175A6D76002AC1B9 /* Bree-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746C175A6D76002AC1B9 /* Bree-Regular.otf */; };
+		D2A57472175A6D76002AC1B9 /* Bree-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746D175A6D76002AC1B9 /* Bree-Thin.otf */; };
+		D2A5747D175A760D002AC1B9 /* BrandonGrotesque-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747A175A760D002AC1B9 /* BrandonGrotesque-Black.otf */; };
+		D2A5747E175A760D002AC1B9 /* BrandonGrotesque-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747B175A760D002AC1B9 /* BrandonGrotesque-Light.otf */; };
+		D2A5747F175A760D002AC1B9 /* BrandonGrotesque-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747C175A760D002AC1B9 /* BrandonGrotesque-Medium.otf */; };
+		D2A57481175A76A7002AC1B9 /* BrandonGrotesque-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57480175A76A6002AC1B9 /* BrandonGrotesque-Thin.otf */; };
+		D2A57483175A7852002AC1B9 /* BrandonGrotesque-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57482175A7851002AC1B9 /* BrandonGrotesque-Bold.otf */; };
+		D2A57485175A78AB002AC1B9 /* BrandonGrotesque-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57484175A78A9002AC1B9 /* BrandonGrotesque-Regular.otf */; };
+		D2A57487175A7F75002AC1B9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A57486175A7F73002AC1B9 /* MediaPlayer.framework */; };
+		D2A5748E175A80DC002AC1B9 /* ydstep1.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A57489175A80DC002AC1B9 /* ydstep1.png */; };
+		D2A5748F175A80DC002AC1B9 /* ydstep2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A5748A175A80DC002AC1B9 /* ydstep2.png */; };
+		D2A57490175A80DC002AC1B9 /* ydstep3.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A5748B175A80DC002AC1B9 /* ydstep3.png */; };
+		D2A57491175A80DC002AC1B9 /* ydstep4.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A5748C175A80DC002AC1B9 /* ydstep4.png */; };
+		D2A57492175A80DC002AC1B9 /* ydstep5.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A5748D175A80DC002AC1B9 /* ydstep5.png */; };
+		D2A57494175A91AF002AC1B9 /* circle-test.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A57493175A91AE002AC1B9 /* circle-test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +101,31 @@
 		D2A57437175A4FF4002AC1B9 /* KRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewController.h; sourceTree = "<group>"; };
 		D2A57438175A4FF4002AC1B9 /* KRCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesViewController.m; sourceTree = "<group>"; };
 		D2A57439175A4FF4002AC1B9 /* KRCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCategoriesViewController.xib; sourceTree = "<group>"; };
+		D2A5743C175A6070002AC1B9 /* DescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionView.h; sourceTree = "<group>"; };
+		D2A5743D175A6070002AC1B9 /* DescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionView.m; sourceTree = "<group>"; };
+		D2A57445175A678F002AC1B9 /* KRFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRFontHelper.h; sourceTree = "<group>"; };
+		D2A57446175A678F002AC1B9 /* KRFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRFontHelper.m; sourceTree = "<group>"; };
+		D2A57448175A679B002AC1B9 /* KRColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRColorHelper.h; sourceTree = "<group>"; };
+		D2A57449175A679B002AC1B9 /* KRColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRColorHelper.m; sourceTree = "<group>"; };
+		D2A5744B175A67AA002AC1B9 /* KRGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRGlobals.h; sourceTree = "<group>"; };
+		D2A57469175A6D76002AC1B9 /* Bree-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Bold.otf"; sourceTree = "<group>"; };
+		D2A5746A175A6D76002AC1B9 /* Bree-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-ExtraBold.otf"; sourceTree = "<group>"; };
+		D2A5746B175A6D76002AC1B9 /* Bree-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Light.otf"; sourceTree = "<group>"; };
+		D2A5746C175A6D76002AC1B9 /* Bree-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Regular.otf"; sourceTree = "<group>"; };
+		D2A5746D175A6D76002AC1B9 /* Bree-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Thin.otf"; sourceTree = "<group>"; };
+		D2A5747A175A760D002AC1B9 /* BrandonGrotesque-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Black.otf"; sourceTree = "<group>"; };
+		D2A5747B175A760D002AC1B9 /* BrandonGrotesque-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Light.otf"; sourceTree = "<group>"; };
+		D2A5747C175A760D002AC1B9 /* BrandonGrotesque-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Medium.otf"; sourceTree = "<group>"; };
+		D2A57480175A76A6002AC1B9 /* BrandonGrotesque-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Thin.otf"; sourceTree = "<group>"; };
+		D2A57482175A7851002AC1B9 /* BrandonGrotesque-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Bold.otf"; sourceTree = "<group>"; };
+		D2A57484175A78A9002AC1B9 /* BrandonGrotesque-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Regular.otf"; sourceTree = "<group>"; };
+		D2A57486175A7F73002AC1B9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D2A57489175A80DC002AC1B9 /* ydstep1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydstep1.png; sourceTree = "<group>"; };
+		D2A5748A175A80DC002AC1B9 /* ydstep2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydstep2.png; sourceTree = "<group>"; };
+		D2A5748B175A80DC002AC1B9 /* ydstep3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydstep3.png; sourceTree = "<group>"; };
+		D2A5748C175A80DC002AC1B9 /* ydstep4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydstep4.png; sourceTree = "<group>"; };
+		D2A5748D175A80DC002AC1B9 /* ydstep5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydstep5.png; sourceTree = "<group>"; };
+		D2A57493175A91AE002AC1B9 /* circle-test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-test.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A57487175A7F75002AC1B9 /* MediaPlayer.framework in Frameworks */,
 				D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */,
 				D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */,
 				D2A573E6175A3B4E002AC1B9 /* CoreGraphics.framework in Frameworks */,
@@ -116,6 +163,7 @@
 		D2A573E0175A3B4E002AC1B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2A57486175A7F73002AC1B9 /* MediaPlayer.framework */,
 				D2A573E1175A3B4E002AC1B9 /* UIKit.framework */,
 				D2A573E3175A3B4E002AC1B9 /* Foundation.framework */,
 				D2A573E5175A3B4E002AC1B9 /* CoreGraphics.framework */,
@@ -126,6 +174,7 @@
 		D2A573E7175A3B4E002AC1B9 /* Kronicle */ = {
 			isa = PBXGroup;
 			children = (
+				D2A57444175A6782002AC1B9 /* globals */,
 				D2A57404175A3B77002AC1B9 /* network */,
 				D2A57409175A3B77002AC1B9 /* model */,
 				D2A5740F175A3B77002AC1B9 /* controllers */,
@@ -142,6 +191,7 @@
 		D2A573E8175A3B4E002AC1B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2A5743F175A66F5002AC1B9 /* assets */,
 				D2A573E9175A3B4E002AC1B9 /* Kronicle-Info.plist */,
 				D2A573EA175A3B4E002AC1B9 /* InfoPlist.strings */,
 				D2A573ED175A3B4E002AC1B9 /* main.m */,
@@ -238,8 +288,78 @@
 				D2A5742F175A3C0B002AC1B9 /* KRDiagramView.m */,
 				D2A57431175A3C27002AC1B9 /* KRSwipeUpScrollView.h */,
 				D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */,
+				D2A5743C175A6070002AC1B9 /* DescriptionView.h */,
+				D2A5743D175A6070002AC1B9 /* DescriptionView.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		D2A5743F175A66F5002AC1B9 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				D2A57488175A80DB002AC1B9 /* images */,
+				D2A5744E175A68FF002AC1B9 /* fonts */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		D2A57444175A6782002AC1B9 /* globals */ = {
+			isa = PBXGroup;
+			children = (
+				D2A57445175A678F002AC1B9 /* KRFontHelper.h */,
+				D2A57446175A678F002AC1B9 /* KRFontHelper.m */,
+				D2A57448175A679B002AC1B9 /* KRColorHelper.h */,
+				D2A57449175A679B002AC1B9 /* KRColorHelper.m */,
+				D2A5744B175A67AA002AC1B9 /* KRGlobals.h */,
+			);
+			path = globals;
+			sourceTree = "<group>";
+		};
+		D2A5744E175A68FF002AC1B9 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D2A57479175A760C002AC1B9 /* brandon */,
+				D2A57468175A6D75002AC1B9 /* Bree */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		D2A57468175A6D75002AC1B9 /* Bree */ = {
+			isa = PBXGroup;
+			children = (
+				D2A57469175A6D76002AC1B9 /* Bree-Bold.otf */,
+				D2A5746A175A6D76002AC1B9 /* Bree-ExtraBold.otf */,
+				D2A5746B175A6D76002AC1B9 /* Bree-Light.otf */,
+				D2A5746C175A6D76002AC1B9 /* Bree-Regular.otf */,
+				D2A5746D175A6D76002AC1B9 /* Bree-Thin.otf */,
+			);
+			path = Bree;
+			sourceTree = "<group>";
+		};
+		D2A57479175A760C002AC1B9 /* brandon */ = {
+			isa = PBXGroup;
+			children = (
+				D2A57484175A78A9002AC1B9 /* BrandonGrotesque-Regular.otf */,
+				D2A57482175A7851002AC1B9 /* BrandonGrotesque-Bold.otf */,
+				D2A57480175A76A6002AC1B9 /* BrandonGrotesque-Thin.otf */,
+				D2A5747A175A760D002AC1B9 /* BrandonGrotesque-Black.otf */,
+				D2A5747B175A760D002AC1B9 /* BrandonGrotesque-Light.otf */,
+				D2A5747C175A760D002AC1B9 /* BrandonGrotesque-Medium.otf */,
+			);
+			path = brandon;
+			sourceTree = "<group>";
+		};
+		D2A57488175A80DB002AC1B9 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D2A57493175A91AE002AC1B9 /* circle-test.png */,
+				D2A57489175A80DC002AC1B9 /* ydstep1.png */,
+				D2A5748A175A80DC002AC1B9 /* ydstep2.png */,
+				D2A5748B175A80DC002AC1B9 /* ydstep3.png */,
+				D2A5748C175A80DC002AC1B9 /* ydstep4.png */,
+				D2A5748D175A80DC002AC1B9 /* ydstep5.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +421,23 @@
 				D2A57425175A3B77002AC1B9 /* KRListViewController.xib in Resources */,
 				D2A57427175A3B77002AC1B9 /* KRViewController.xib in Resources */,
 				D2A5743B175A4FF4002AC1B9 /* KRCategoriesViewController.xib in Resources */,
+				D2A5746E175A6D76002AC1B9 /* Bree-Bold.otf in Resources */,
+				D2A5746F175A6D76002AC1B9 /* Bree-ExtraBold.otf in Resources */,
+				D2A57470175A6D76002AC1B9 /* Bree-Light.otf in Resources */,
+				D2A57471175A6D76002AC1B9 /* Bree-Regular.otf in Resources */,
+				D2A57472175A6D76002AC1B9 /* Bree-Thin.otf in Resources */,
+				D2A5747D175A760D002AC1B9 /* BrandonGrotesque-Black.otf in Resources */,
+				D2A5747E175A760D002AC1B9 /* BrandonGrotesque-Light.otf in Resources */,
+				D2A5747F175A760D002AC1B9 /* BrandonGrotesque-Medium.otf in Resources */,
+				D2A57481175A76A7002AC1B9 /* BrandonGrotesque-Thin.otf in Resources */,
+				D2A57483175A7852002AC1B9 /* BrandonGrotesque-Bold.otf in Resources */,
+				D2A57485175A78AB002AC1B9 /* BrandonGrotesque-Regular.otf in Resources */,
+				D2A5748E175A80DC002AC1B9 /* ydstep1.png in Resources */,
+				D2A5748F175A80DC002AC1B9 /* ydstep2.png in Resources */,
+				D2A57490175A80DC002AC1B9 /* ydstep3.png in Resources */,
+				D2A57491175A80DC002AC1B9 /* ydstep4.png in Resources */,
+				D2A57492175A80DC002AC1B9 /* ydstep5.png in Resources */,
+				D2A57494175A91AF002AC1B9 /* circle-test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +463,9 @@
 				D2A57433175A3C27002AC1B9 /* KRSwipeUpScrollView.m in Sources */,
 				D2A57436175A4A8D002AC1B9 /* KRList.m in Sources */,
 				D2A5743A175A4FF4002AC1B9 /* KRCategoriesViewController.m in Sources */,
+				D2A5743E175A6071002AC1B9 /* DescriptionView.m in Sources */,
+				D2A57447175A678F002AC1B9 /* KRFontHelper.m in Sources */,
+				D2A5744A175A679B002AC1B9 /* KRColorHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

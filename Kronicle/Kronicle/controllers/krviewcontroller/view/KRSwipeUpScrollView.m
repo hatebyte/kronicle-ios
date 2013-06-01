@@ -10,28 +10,39 @@
 
 @implementation KRSwipeUpScrollView
 
++ (CGFloat)maxHeight {
+    return 380.f;
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        UISwipeGestureRecognizer *swipeLR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
-        swipeLR.delegate = self;
-        swipeLR.direction = UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp;
+        UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+        [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+        [self addGestureRecognizer:recognizer];
         
-        [self addGestureRecognizer:swipeLR];
+        recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+        [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+        [self addGestureRecognizer:recognizer];
     }
     return self;
 }
 
 -(void)swipeDetected:(UISwipeGestureRecognizer *)swipeRecognizer {
     
-    if (swipeRecognizer.direction & UISwipeGestureRecognizerDirectionDown) {
+    if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionDown) {
         //left detected
+        if ([self.delegate respondsToSelector:@selector(scrollView:swipedDownWithDistance:)]) {
+            [self.delegate scrollView:self swipedDownWithDistance:0];
+        }
     }
-    if (swipeRecognizer.direction & UISwipeGestureRecognizerDirectionUp) {
+    if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionUp) {
         //right detected
+        if ([self.delegate respondsToSelector:@selector(scrollView:swipedUpWithDistance:)]) {
+            [self.delegate scrollView:self swipedUpWithDistance:0];
+        }
     }
-    
 }
 /*
 // Only override drawRect: if you perform custom drawing.

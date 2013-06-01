@@ -27,4 +27,6 @@
 @property(nonatomic, assign) BOOL isUp;
 @property(nonatomic, weak) id <KRSwipeUpScrollViewDelegate> delegate;
 
++ (CGFloat)maxHeight;
+
 @end

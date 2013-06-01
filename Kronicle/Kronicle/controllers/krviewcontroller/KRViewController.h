@@ -8,15 +8,20 @@
 
 #import "ViewController.h"
 #import "KRKronicle.h"
+#import "KRSwipeUpScrollView.h"
+#import "MediaView.h"
+#import "KRDiagramView.h"
 
-@interface KRViewController : UIViewController {
+@interface KRViewController : UIViewController <KRSwipeUpScrollViewDelegate> {
     @private
-    IBOutlet UIScrollView *scrollView;
-    IBOutlet UIView *circleDiagram; // extended custom
-    IBOutlet UIView *mediaViewA; // extend custom
-    IBOutlet UIView *mediaViewB; // extend custom
-    IBOutlet UIImageView *playpauseButton; // extend custom
-    IBOutlet UIImageView *listViewButton;
+    CGRect _bounds;
+    KRSwipeUpScrollView *_scrollView;
+    KRDiagramView *_circleDiagram; // extended custom
+    MediaView *_mediaViewA; // extend custom
+    MediaView *_mediaViewB; // extend custom
+    MediaView *_activeMedia; // extend custom
+    IBOutlet UIImageView *_playpauseButton; // extend custom
+    IBOutlet UIImageView *_listViewButton;
     
     id activePlayer;
 }

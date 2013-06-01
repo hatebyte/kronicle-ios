@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface MediaView : UIView
+typedef enum  {
+    MediaViewImage,
+    MediaViewVideo
+} MediaViewType;
 
+@interface MediaView : UIView {
+    @private
+    MPMoviePlayerController *_moviePlayer;
+    UIImageView *_imageView;
+    
+}
+
+@property (nonatomic, strong) NSString *mediaPath;
+
+
+- (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type;
+- (void)stop;
+- (UIImage *)image;
 @end

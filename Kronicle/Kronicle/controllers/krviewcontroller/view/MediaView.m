@@ -15,8 +15,23 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        [self addSubview:_imageView];
     }
     return self;
+}
+
+- (UIImage *)image {
+    return _imageView.image;
+}
+
+- (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type {
+    _mediaPath = mediaPath;
+    _imageView.image = [UIImage imageNamed:mediaPath];
+}
+
+- (void)stop {
+
 }
 
 /*
