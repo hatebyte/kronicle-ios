@@ -10,7 +10,7 @@
 #import "KRStep.h"
 #import "DescriptionView.h"
 
-#define kScrollViewNormal 300.f
+#define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
 
 @interface KRViewController ()
@@ -48,6 +48,10 @@
                                                                      285,
                                                                      285)];
     _circleDiagram.imagePath = @"circle-test";
+    _circleDiagram.delegate = self;
+    _circleDiagram.transform = CGAffineTransformMakeRotation(-M_PI_2);
+    
+    
     [self.view addSubview:_circleDiagram];
     
     
@@ -76,6 +80,7 @@
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          _mediaViewB.alpha = 1.f;
+                         _circleDiagram.alpha = 1.f;
                      }
                      completion:nil];
 
@@ -109,7 +114,15 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    int index = scrollView.contentOffset.x / _bounds.size.width;
+    [self updateScrollView];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    [self updateScrollView];
+}
+
+- (void)updateScrollView {
+    int index = _scrollView.contentOffset.x / _bounds.size.width;
     [self setActiveMedia:(KRStep*)[self.kronicle.steps objectAtIndex:index]];
 }
 
@@ -117,6 +130,39 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma CircleDiagramView 
+- (void)diagramView:(KRDiagramView*)diagramView withDegree:(CGFloat)percent {
+    int index = [self returnIndexForPercent:percent andIndex:0];
+    CGRect frame = CGRectMake(_scrollView.frame.size.width * index,
+                              _scrollView.frame.origin.y,
+                              _scrollView.frame.size.width,
+                              _scrollView.frame.size.height);
+    [UIView animateWithDuration:.2
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _circleDiagram.alpha = 0.f;
+                     }
+                     completion:^(BOOL fin){
+                         [_scrollView scrollRectToVisible:frame animated:YES];
+                     }];
+
+}
+
+- (int)returnIndexForPercent:(CGFloat)percent andIndex:(int)index{
+    CGFloat time = 0;
+    for (int i=0;i<index; i++) {
+        KRStep *s = [self.kronicle.steps objectAtIndex:i];
+        time += s.time;
+    }
+    float timePercent = (time / self.kronicle.totalTime);
+    if (timePercent < percent) {
+        return [self returnIndexForPercent:percent andIndex:index+1];
+    } else {
+        return index-1;
+    }
 }
 
 @end

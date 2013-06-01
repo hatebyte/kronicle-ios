@@ -17,9 +17,9 @@
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSArray *steps;
-@property (nonatomic, assign) NSUInteger totalTime;
-@property (nonatomic, assign) int timesCompleted;
-@property (nonatomic, assign) int rating;
+@property (nonatomic, assign) CGFloat totalTime;
+@property (nonatomic, assign) CGFloat timesCompleted;
+@property (nonatomic, assign) CGFloat rating;
 
 - (void)kronicleShortFromJSONDictionary:(NSDictionary *)dict;
 

@@ -32,13 +32,11 @@
 -(void)swipeDetected:(UISwipeGestureRecognizer *)swipeRecognizer {
     
     if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionDown) {
-        //left detected
         if ([self.delegate respondsToSelector:@selector(scrollView:swipedDownWithDistance:)]) {
             [self.delegate scrollView:self swipedDownWithDistance:0];
         }
     }
     if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionUp) {
-        //right detected
         if ([self.delegate respondsToSelector:@selector(scrollView:swipedUpWithDistance:)]) {
             [self.delegate scrollView:self swipedUpWithDistance:0];
         }

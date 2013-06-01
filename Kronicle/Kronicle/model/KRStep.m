@@ -15,9 +15,10 @@
     self.title             = [dict objectForKey:@"title"];
     self.description       = [dict objectForKey:@"description"];
     self.imageUrl          = [dict objectForKey:@"imageUrl"];
+    self.circleUrl         = [dict objectForKey:@"circleUrl"];
     self.parentKronicleId  = [dict objectForKey:@"parentKronicleId"];
-    self.time              = (int)[dict objectForKey:@"time"];
-    self.indexInKronicle   = (int)[dict objectForKey:@"indexInKronicle"];
+    self.time              = [[dict objectForKey:@"time"] floatValue];
+    self.indexInKronicle   = [[dict objectForKey:@"indexInKronicle"]floatValue];
 }
 
 @end

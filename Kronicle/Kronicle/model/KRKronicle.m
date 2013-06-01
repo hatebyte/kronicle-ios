@@ -16,11 +16,14 @@
     
     NSMutableArray *steps = [[NSMutableArray alloc] init];
     NSArray *stepsDict = [d objectForKey:@"steps"];
+    int tt = 0;
     for (NSDictionary *step in stepsDict) {
         KRStep *s = [[KRStep alloc] init];
         [s readFromJSONDictionary:step];
         [steps addObject:s];
+        tt += s.time;
     }
+    self.totalTime         = tt;
     self.steps = steps;
 }
 
@@ -30,8 +33,7 @@
     self.description       = [dict objectForKey:@"description"];
     self.category          = [dict objectForKey:@"category"];
     self.imageUrl          = [dict objectForKey:@"imageUrl"];
-    self.totalTime         = (int)[dict objectForKey:@"totalTime"];
-    self.timesCompleted    = (int)[dict objectForKey:@"timesCompleted"];
+    self.timesCompleted    = [[dict objectForKey:@"timesCompleted"] floatValue];
 }
 
 @end

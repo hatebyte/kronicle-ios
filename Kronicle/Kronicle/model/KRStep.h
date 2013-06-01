@@ -16,7 +16,8 @@
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSString *parentKronicleId;
 @property (nonatomic, copy) NSString *imageUrl;
-@property (nonatomic, assign) NSUInteger time;
-@property (nonatomic, assign) NSUInteger indexInKronicle;
+@property (nonatomic, copy) NSString *circleUrl;
+@property (nonatomic, assign) CGFloat time;
+@property (nonatomic, assign) CGFloat indexInKronicle;
 
 @end

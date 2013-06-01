@@ -37,7 +37,9 @@
         degrees = 180 + (180 - ABS(degrees));
     }
     
-    NSLog(@"%f", degrees);
+    if ([self.delegate respondsToSelector:@selector(diagramView:withDegree:)]) {
+        [self.delegate diagramView:self withDegree:degrees/360];
+    }
 }
 
 /*
