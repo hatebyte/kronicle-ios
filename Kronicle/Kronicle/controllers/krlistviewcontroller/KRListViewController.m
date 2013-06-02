@@ -72,6 +72,11 @@
         cell = [[StepsTableCellViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StepsTableCellViewCell"];
     }
     KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
+    
+    
+//    CGSize lLabelSIze = [yourText sizeWithFont: factLabel.font forWidth:factLabel.frame.size.width lineBreakMode:factLabel.lineBreakMode];
+//    factLabel.frame = CGRectMake(factLabel.frame.origin.x, factLabel.frame.origin.y, factLabel.frame.size.width, lLabelSIze.height);
+
     cell.titleLabel.text = k.title;
     cell.subLabel.text = [k stringTime];
     cell.kImage.image = [UIImage imageNamed:k.imageUrl];

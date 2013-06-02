@@ -20,7 +20,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.clipsToBounds = YES;
 
-        self.frameimage = [[UIImageView alloc] initWithFrame:CGRectMake(0, -2, KCellHeight, KCellHeight)];
+        self.frameimage = [[UIImageView alloc] initWithFrame:CGRectMake(-5, -2, KCellHeight, KCellHeight)];
         
         self.kImage = [[UIImageView alloc] initWithFrame:self.frameimage.frame];
         
@@ -30,12 +30,12 @@
 //        self.hightlight = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, KCellHeight)];
 //        [self.contentView addSubview:self.hightlight];
 
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frameimage.frame.size.width-14,
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frameimage.frame.size.width-16,
                                                                     23,
-                                                                    200,
+                                                                    240,
                                                                     40)];
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
-        self.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:28];
+        self.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:26];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.titleLabel];
 

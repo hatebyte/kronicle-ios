@@ -15,7 +15,6 @@
 //#define kdomain @"http://10.10.21.49:4711/"  //colin
 #define kdomain @"http://10.10.21.86:4711/"  //andrew
 
-
 @implementation KRAPIStore
 
 + (KRAPIStore *)sharedStore {
