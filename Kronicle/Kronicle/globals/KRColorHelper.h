@@ -10,4 +10,9 @@
 
 @interface KRColorHelper : NSObject
 
++ (UIColor*)lightBlue;
++ (UIColor*)darkBlue;
++ (UIColor*)darkGrey;
++ (UIColor*)lightGrey;
+
 @end

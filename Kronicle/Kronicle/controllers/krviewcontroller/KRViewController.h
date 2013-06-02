@@ -11,8 +11,9 @@
 #import "KRSwipeUpScrollView.h"
 #import "MediaView.h"
 #import "KRDiagramView.h"
+#import "KRKronicleNavView.h"
 
-@interface KRViewController : UIViewController <KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate> {
+@interface KRViewController : UIViewController <KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate, KRClockDelegate, KRKronicleNavViewDelegate> {
     @private
     CGRect _bounds;
     KRSwipeUpScrollView *_scrollView;
@@ -22,16 +23,17 @@
     MediaView *_mediaViewB;  
     MediaView *_activeMedia;  
     IBOutlet UIImageView *_playpauseButton;  
-    IBOutlet UIImageView *_listViewButton;
-    
+    UIButton *_listViewButton;
+    int _currentStep;
+    KRKronicleNavView *_navView;
+    KRClock *_clock;
     id activePlayer;
 }
 
 @property (nonatomic, strong) KRKronicle *kronicle;
 
-- (IBAction)gotToKronicleListView:(id)sender;
+- (IBAction)goToKronicleListView:(id)sender;
 - (IBAction)togglePlayPause:(id)sender;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
 
 @end

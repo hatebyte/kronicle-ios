@@ -54,6 +54,14 @@
 		D2A57491175A80DC002AC1B9 /* ydstep4.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A5748C175A80DC002AC1B9 /* ydstep4.png */; };
 		D2A57492175A80DC002AC1B9 /* ydstep5.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A5748D175A80DC002AC1B9 /* ydstep5.png */; };
 		D2A57494175A91AF002AC1B9 /* circle-test.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A57493175A91AE002AC1B9 /* circle-test.png */; };
+		D2A57498175AA464002AC1B9 /* KRViewListTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57496175AA460002AC1B9 /* KRViewListTypeViewController.m */; };
+		D2A57499175AA464002AC1B9 /* KRViewListTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A57497175AA463002AC1B9 /* KRViewListTypeViewController.xib */; };
+		D2A5749C175ABB2E002AC1B9 /* KRKronicleNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5749B175ABB2C002AC1B9 /* KRKronicleNavView.m */; };
+		D2A574A4175AC5B9002AC1B9 /* black-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A5749F175AC5B9002AC1B9 /* black-bar.png */; };
+		D2A574A5175AC5B9002AC1B9 /* green-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A0175AC5B9002AC1B9 /* green-bar.png */; };
+		D2A574A6175AC5B9002AC1B9 /* info-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A1175AC5B9002AC1B9 /* info-button.png */; };
+		D2A574A7175AC5B9002AC1B9 /* pause-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A2175AC5B9002AC1B9 /* pause-button.png */; };
+		D2A574A8175AC5B9002AC1B9 /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A3175AC5B9002AC1B9 /* x-button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +134,16 @@
 		D2A5748C175A80DC002AC1B9 /* ydstep4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydstep4.png; sourceTree = "<group>"; };
 		D2A5748D175A80DC002AC1B9 /* ydstep5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydstep5.png; sourceTree = "<group>"; };
 		D2A57493175A91AE002AC1B9 /* circle-test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-test.png"; sourceTree = "<group>"; };
+		D2A57495175AA45D002AC1B9 /* KRViewListTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRViewListTypeViewController.h; sourceTree = "<group>"; };
+		D2A57496175AA460002AC1B9 /* KRViewListTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRViewListTypeViewController.m; sourceTree = "<group>"; };
+		D2A57497175AA463002AC1B9 /* KRViewListTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRViewListTypeViewController.xib; sourceTree = "<group>"; };
+		D2A5749A175ABB2A002AC1B9 /* KRKronicleNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleNavView.h; sourceTree = "<group>"; };
+		D2A5749B175ABB2C002AC1B9 /* KRKronicleNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleNavView.m; sourceTree = "<group>"; };
+		D2A5749F175AC5B9002AC1B9 /* black-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-bar.png"; sourceTree = "<group>"; };
+		D2A574A0175AC5B9002AC1B9 /* green-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-bar.png"; sourceTree = "<group>"; };
+		D2A574A1175AC5B9002AC1B9 /* info-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button.png"; sourceTree = "<group>"; };
+		D2A574A2175AC5B9002AC1B9 /* pause-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-button.png"; sourceTree = "<group>"; };
+		D2A574A3175AC5B9002AC1B9 /* x-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +284,9 @@
 				D2A5741B175A3B77002AC1B9 /* KRViewController.xib */,
 				D2A5741C175A3B77002AC1B9 /* model */,
 				D2A5741D175A3B77002AC1B9 /* view */,
+				D2A57495175AA45D002AC1B9 /* KRViewListTypeViewController.h */,
+				D2A57496175AA460002AC1B9 /* KRViewListTypeViewController.m */,
+				D2A57497175AA463002AC1B9 /* KRViewListTypeViewController.xib */,
 			);
 			path = krviewcontroller;
 			sourceTree = "<group>";
@@ -290,6 +311,8 @@
 				D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */,
 				D2A5743C175A6070002AC1B9 /* DescriptionView.h */,
 				D2A5743D175A6070002AC1B9 /* DescriptionView.m */,
+				D2A5749A175ABB2A002AC1B9 /* KRKronicleNavView.h */,
+				D2A5749B175ABB2C002AC1B9 /* KRKronicleNavView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -352,6 +375,8 @@
 		D2A57488175A80DB002AC1B9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D2A5749D175AC5B6002AC1B9 /* kronicles */,
+				D2A5749E175AC5B8002AC1B9 /* app */,
 				D2A57493175A91AE002AC1B9 /* circle-test.png */,
 				D2A57489175A80DC002AC1B9 /* ydstep1.png */,
 				D2A5748A175A80DC002AC1B9 /* ydstep2.png */,
@@ -360,6 +385,25 @@
 				D2A5748D175A80DC002AC1B9 /* ydstep5.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		D2A5749D175AC5B6002AC1B9 /* kronicles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = kronicles;
+			sourceTree = "<group>";
+		};
+		D2A5749E175AC5B8002AC1B9 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				D2A5749F175AC5B9002AC1B9 /* black-bar.png */,
+				D2A574A0175AC5B9002AC1B9 /* green-bar.png */,
+				D2A574A1175AC5B9002AC1B9 /* info-button.png */,
+				D2A574A2175AC5B9002AC1B9 /* pause-button.png */,
+				D2A574A3175AC5B9002AC1B9 /* x-button.png */,
+			);
+			path = app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +482,12 @@
 				D2A57491175A80DC002AC1B9 /* ydstep4.png in Resources */,
 				D2A57492175A80DC002AC1B9 /* ydstep5.png in Resources */,
 				D2A57494175A91AF002AC1B9 /* circle-test.png in Resources */,
+				D2A57499175AA464002AC1B9 /* KRViewListTypeViewController.xib in Resources */,
+				D2A574A4175AC5B9002AC1B9 /* black-bar.png in Resources */,
+				D2A574A5175AC5B9002AC1B9 /* green-bar.png in Resources */,
+				D2A574A6175AC5B9002AC1B9 /* info-button.png in Resources */,
+				D2A574A7175AC5B9002AC1B9 /* pause-button.png in Resources */,
+				D2A574A8175AC5B9002AC1B9 /* x-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +516,8 @@
 				D2A5743E175A6071002AC1B9 /* DescriptionView.m in Sources */,
 				D2A57447175A678F002AC1B9 /* KRFontHelper.m in Sources */,
 				D2A5744A175A679B002AC1B9 /* KRColorHelper.m in Sources */,
+				D2A57498175AA464002AC1B9 /* KRViewListTypeViewController.m in Sources */,
+				D2A5749C175ABB2E002AC1B9 /* KRKronicleNavView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

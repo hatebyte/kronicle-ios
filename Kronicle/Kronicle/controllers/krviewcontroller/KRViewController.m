@@ -9,6 +9,7 @@
 #import "KRViewController.h"
 #import "KRStep.h"
 #import "DescriptionView.h"
+#import "KRViewListTypeViewController.h"
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
@@ -33,29 +34,33 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     _bounds = [UIScreen mainScreen].bounds;
+    _clock = [KRClock sharedClock];
+    _clock.delegate = self;
+
+    _navView = [[KRKronicleNavView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, 47)];
+    _navView.delegate = self;
+    [self.view addSubview:_navView];
     
-    _mediaViewA = [[MediaView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.width)];
+    _mediaViewA = [[MediaView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height, _bounds.size.width, _bounds.size.width)];
     [self.view addSubview:_mediaViewA];
     _mediaViewB = [[MediaView alloc] initWithFrame:_mediaViewA.frame];
     [self.view addSubview:_mediaViewB];
     [_mediaViewB setMediaPath:[(KRStep*)[self.kronicle.steps objectAtIndex:0] imageUrl] andType:MediaViewImage];
     
     _circleDiagram = [[KRDiagramView alloc] initWithFrame:CGRectMake((_bounds.size.width - 285) * .5,
-                                                                     (_bounds.size.width - 285) * .5,
+                                                                     (_bounds.size.width - 285) * .5 + 47,
                                                                      285,
                                                                      285)];
     _circleDiagram.imagePath = @"circle-test";
     _circleDiagram.delegate = self;
     _circleDiagram.transform = CGAffineTransformMakeRotation(-M_PI_2);
-    
-    
     [self.view addSubview:_circleDiagram];
     
     
-    _scrollView = [[KRSwipeUpScrollView alloc] initWithFrame:CGRectMake(0, kScrollViewNormal, _bounds.size.width, [KRSwipeUpScrollView maxHeight])];
+    _scrollView = [[KRSwipeUpScrollView alloc] initWithFrame:CGRectMake(0, _mediaViewB.frame.origin.y + _mediaViewB.frame.size.height, _bounds.size.width, [KRSwipeUpScrollView maxHeight])];
     _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.pagingEnabled = YES;
     _scrollView.contentSize = CGSizeMake(320 * [self.kronicle.steps count], [KRSwipeUpScrollView maxHeight]);
@@ -69,8 +74,23 @@
         [_scrollView addSubview:d];
     }
     [self.view addSubview:_scrollView];
+    
+    _listViewButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    _listViewButton.frame = CGRectMake(_circleDiagram.frame.size.width + _circleDiagram.frame.origin.x - _listViewButton.frame.size.width,
+                                       _circleDiagram.frame.size.height + _circleDiagram.frame.origin.y - _listViewButton.frame.size.height,
+                                       _listViewButton.frame.size.width,
+                                       _listViewButton.frame.size.height);
+    [_listViewButton addTarget:self action:@selector(goToKronicleListView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_listViewButton];
+    
+    _currentStep = 0;
+    [_clock calibrateForKronicle:[self.kronicle.steps count]];
+    [_clock resetWithTime:7];
+    [_clock play];
+    
 }
 
+// sets the right picture/video
 - (void)setActiveMedia:(KRStep*)step {
     [_mediaViewA setMediaPath:_mediaViewB.mediaPath andType:MediaViewImage];
     _mediaViewB.alpha = 0.f;
@@ -82,16 +102,28 @@
                          _mediaViewB.alpha = 1.f;
                          _circleDiagram.alpha = 1.f;
                      }
-                     completion:nil];
+                     completion:^(BOOL fin){
+                         NSLog(@"%d : %d", _currentStep, _clock.index);
+                         [_navView isCurrentStep:(_currentStep == _clock.index)];
+                     }];
 
 }
 
-- (IBAction)gotToKronicleListView:(id)sender {}
+- (IBAction)goToKronicleListView:(id)sender {
+    KRViewListTypeViewController *listTypeViewController = [[KRViewListTypeViewController alloc] initWithNibName:@"KRViewListTypeViewController" andKronicle:self.kronicle completion:^(int step){
+        [self jumpToStep:step andPlay:NO];
+        [self dismissViewControllerAnimated:YES completion:^{}];
+    }];
+    listTypeViewController.currentStep = _currentStep;
+    
+    [listTypeViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:listTypeViewController animated:YES completion:^{}];
+}
+
 - (IBAction)togglePlayPause:(id)sender {}
 
 
 #pragma SwipeScrollView 
-
 
 - (void)scrollView:(KRSwipeUpScrollView*)scrollView swipedUpWithDistance:(int)distance {
     [UIView animateWithDuration:.2
@@ -108,9 +140,12 @@
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         _scrollView.frame = CGRectMake(0, kScrollViewNormal, _bounds.size.width, [KRSwipeUpScrollView maxHeight]);
+                         _scrollView.frame = CGRectMake(0,
+                                                        _mediaViewB.frame.origin.y + _mediaViewB.frame.size.height,
+                                                        _bounds.size.width, [KRSwipeUpScrollView maxHeight]);
                      }
-                     completion:nil];
+                     completion:^(BOOL fin){
+                     }];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -121,20 +156,28 @@
     [self updateScrollView];
 }
 
+// updates from pan position
 - (void)updateScrollView {
     int index = _scrollView.contentOffset.x / _bounds.size.width;
-    [self setActiveMedia:(KRStep*)[self.kronicle.steps objectAtIndex:index]];
+    _currentStep = index;
+    [UIView animateWithDuration:.2
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _circleDiagram.alpha = 0.f;
+                     }
+                     completion:^(BOOL fin){
+                         [self setActiveMedia:(KRStep*)[self.kronicle.steps objectAtIndex:_currentStep]];
+                     }];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma CircleDiagramView 
-- (void)diagramView:(KRDiagramView*)diagramView withDegree:(CGFloat)percent {
-    int index = [self returnIndexForPercent:percent andIndex:0];
+// updates from suggested index
+- (void)jumpToStep:(int)index andPlay:(BOOL)play{
+    if(play) {
+        [_navView isCurrentStep:YES];
+    }
+    if (_currentStep == index) return;
+    
     CGRect frame = CGRectMake(_scrollView.frame.size.width * index,
                               _scrollView.frame.origin.y,
                               _scrollView.frame.size.width,
@@ -148,7 +191,14 @@
                      completion:^(BOOL fin){
                          [_scrollView scrollRectToVisible:frame animated:YES];
                      }];
+    
+}
 
+
+#pragma CircleDiagramView
+- (void)diagramView:(KRDiagramView*)diagramView withDegree:(CGFloat)percent {
+    int index = [self returnIndexForPercent:percent andIndex:0];
+    [self jumpToStep:index andPlay:NO];
 }
 
 - (int)returnIndexForPercent:(CGFloat)percent andIndex:(int)index{
@@ -163,6 +213,40 @@
     } else {
         return index-1;
     }
+}
+
+
+#pragma clock
+- (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string {
+    [_navView setTitleText:string];
+}
+
+- (void)clockTimeOver:(KRClock*)clock {
+    [_clock resetWithTime:7];
+    [self jumpToStep:_clock.index andPlay:YES];
+}
+
+- (void)kronicleTimeOver:(KRClock*)clock {
+    [_navView setTitleText:@"Finished!"];
+}
+
+
+#pragma navView
+
+- (void)navViewBack:(KRKronicleNavView*)navView {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)navViewPlayPause:(KRKronicleNavView*)navView {
+
+}
+
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end
