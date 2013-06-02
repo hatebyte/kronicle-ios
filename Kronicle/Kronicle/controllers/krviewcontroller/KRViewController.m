@@ -138,10 +138,13 @@
             [_clock play];
             _navView.pauseButton.selected = NO;
         }
-        _clock.index = step;
-        KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
-        [_clock resetWithTime:s.time];
-        [self jumpToStep:step andPlay:NO];
+        NSLog(@"%d : %d", step, _clock.index);
+        if (step != _clock.index) {
+            _clock.index = step;
+            KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
+            [_clock resetWithTime:s.time];
+            [self jumpToStep:step andPlay:NO];
+        }
         [self dismissViewControllerAnimated:YES completion:^{}];
     }];
     listTypeViewController.currentStep = _currentStep;
