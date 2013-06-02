@@ -11,7 +11,8 @@
 
 //#define kdomain @"http://localhost:4711/"
 //#define kdomain @"http://172.20.10.3:4711/"
-#define kdomain @"http://10.10.21.110:4711/"
+//#define kdomain @"http://10.10.21.110:4711/"
+#define kdomain @"http://10.10.21.86:4711/"
 
 @implementation KRAPIStore
 

@@ -44,7 +44,7 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<object class="NSColor" key="IBUIBackgroundColor" id="1008897973">
+						<object class="NSColor" key="IBUIBackgroundColor" id="652990264">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -58,7 +58,7 @@
 						<float key="IBUISectionHeaderHeight">22</float>
 						<float key="IBUISectionFooterHeight">22</float>
 					</object>
-					<object class="IBUIImageView" id="812379808">
+					<object class="IBUIImageView" id="1052177213">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{320, 56}</string>
@@ -73,7 +73,7 @@
 							<string key="NSResourceName">my-kronicles.png</string>
 						</object>
 					</object>
-					<object class="IBUIButton" id="902430807">
+					<object class="IBUIButton" id="784427862">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{23, 21}, {35, 35}}</string>
@@ -85,7 +85,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">Button</string>
-						<reference key="IBUIHighlightedTitleColor" ref="1008897973"/>
+						<reference key="IBUIHighlightedTitleColor" ref="652990264"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
@@ -112,7 +112,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="812379808"/>
+				<reference key="NSNextKeyView" ref="1052177213"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -162,7 +162,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">backHit:</string>
-						<reference key="source" ref="902430807"/>
+						<reference key="source" ref="784427862"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -182,8 +182,8 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="422619095"/>
-							<reference ref="812379808"/>
-							<reference ref="902430807"/>
+							<reference ref="1052177213"/>
+							<reference ref="784427862"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -206,12 +206,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
-						<reference key="object" ref="812379808"/>
+						<reference key="object" ref="1052177213"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="902430807"/>
+						<reference key="object" ref="784427862"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
