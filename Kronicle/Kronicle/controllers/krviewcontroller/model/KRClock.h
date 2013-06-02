@@ -37,5 +37,6 @@
 - (void)calibrateForKronicle:(int)numSteps;
 - (void)pause;
 - (void)play;
+- (NSString*)stringForTime;
 
 @end

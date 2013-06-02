@@ -60,6 +60,8 @@
 		D2A574AB175AFD91002AC1B9 /* MinionPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */; };
 		D2A574AE175B0891002AC1B9 /* play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AC175B088E002AC1B9 /* play-button.png */; };
 		D2A574AF175B0891002AC1B9 /* bottom-shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AD175B0890002AC1B9 /* bottom-shadow.png */; };
+		D2A574B3175B0FDC002AC1B9 /* KRKronicleStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A574B1175B0FD0002AC1B9 /* KRKronicleStartViewController.m */; };
+		D2A574B4175B0FDC002AC1B9 /* KRKronicleStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A574B2175B0FD5002AC1B9 /* KRKronicleStartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +142,9 @@
 		D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MinionPro-Regular.otf"; sourceTree = "<group>"; };
 		D2A574AC175B088E002AC1B9 /* play-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button.png"; sourceTree = "<group>"; };
 		D2A574AD175B0890002AC1B9 /* bottom-shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-shadow.png"; sourceTree = "<group>"; };
+		D2A574B0175B0FCC002AC1B9 /* KRKronicleStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleStartViewController.h; sourceTree = "<group>"; };
+		D2A574B1175B0FD0002AC1B9 /* KRKronicleStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleStartViewController.m; sourceTree = "<group>"; };
+		D2A574B2175B0FD5002AC1B9 /* KRKronicleStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRKronicleStartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +288,9 @@
 				D2A57495175AA45D002AC1B9 /* KRViewListTypeViewController.h */,
 				D2A57496175AA460002AC1B9 /* KRViewListTypeViewController.m */,
 				D2A57497175AA463002AC1B9 /* KRViewListTypeViewController.xib */,
+				D2A574B0175B0FCC002AC1B9 /* KRKronicleStartViewController.h */,
+				D2A574B1175B0FD0002AC1B9 /* KRKronicleStartViewController.m */,
+				D2A574B2175B0FD5002AC1B9 /* KRKronicleStartViewController.xib */,
 			);
 			path = krviewcontroller;
 			sourceTree = "<group>";
@@ -480,6 +488,7 @@
 				D2A574AB175AFD91002AC1B9 /* MinionPro-Regular.otf in Resources */,
 				D2A574AE175B0891002AC1B9 /* play-button.png in Resources */,
 				D2A574AF175B0891002AC1B9 /* bottom-shadow.png in Resources */,
+				D2A574B4175B0FDC002AC1B9 /* KRKronicleStartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +519,7 @@
 				D2A5744A175A679B002AC1B9 /* KRColorHelper.m in Sources */,
 				D2A57498175AA464002AC1B9 /* KRViewListTypeViewController.m in Sources */,
 				D2A5749C175ABB2E002AC1B9 /* KRKronicleNavView.m in Sources */,
+				D2A574B3175B0FDC002AC1B9 /* KRKronicleStartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

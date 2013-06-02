@@ -104,8 +104,8 @@
 
 }
 
-- (void)play{
-
+- (void)hidePausePlay {
+    _pauseButton.hidden = YES;
 }
 
 

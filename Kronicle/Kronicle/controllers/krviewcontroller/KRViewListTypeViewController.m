@@ -22,8 +22,6 @@
         _completion = completion;
         _kronicle = kronicle;
         
-        _clock = [KRClock sharedClock];
-        _clock.delegate = self;
     }
     return self;
 }
@@ -39,7 +37,11 @@
     _navView = [[KRKronicleNavView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, 47)];
     _navView.delegate = self;
     [self.view addSubview:_navView];
-
+    
+    _clock = [KRClock sharedClock];
+    [_navView setTitleText:[_clock stringForTime]];
+    [_navView setSubText:@"until next step"];
+    [_navView hidePausePlay];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,11 +74,6 @@
     _completion(indexPath.row);
 }
 
-#pragma clock
-- (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string andPercent:(CGFloat)percent {
-    [_navView setTitleText:string];
-    [_navView setSubText:@"until next step"];
-}
 
 
 #pragma navView

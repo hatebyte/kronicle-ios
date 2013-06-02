@@ -125,8 +125,8 @@
 - (IBAction)goToKronicleListView:(id)sender {
     KRViewListTypeViewController *listTypeViewController = [[KRViewListTypeViewController alloc] initWithNibName:@"KRViewListTypeViewController" andKronicle:self.kronicle completion:^(int step){
         if ([_clock isPaused]) [_clock play];
+        _clock.index = step;
         [self jumpToStep:step andPlay:NO];
-        _clock.delegate = self;
         [self dismissViewControllerAnimated:YES completion:^{}];
     }];
     listTypeViewController.currentStep = _currentStep;

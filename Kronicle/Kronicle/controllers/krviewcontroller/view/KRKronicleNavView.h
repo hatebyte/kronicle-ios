@@ -35,5 +35,6 @@
 - (void)setTitleText:(NSString*)text;
 - (void)setSubText:(NSString*)text;
 - (void)isCurrentStep:(BOOL)isCurrentStep;
+- (void)hidePausePlay;
 
 @end
