@@ -18,7 +18,6 @@
 @interface KRClock : NSObject {
     @private
     int _total;
-    int _maxIndex;
     NSString *_minutes;
     NSString *_hours;
     NSString *_seconds;
@@ -28,6 +27,7 @@
 @property(nonatomic, weak) id <KRClockDelegate> delegate;
 @property(nonatomic, assign) BOOL isPaused;
 @property(nonatomic, assign) int index;
+@property(nonatomic, assign) int maxIndex;
 
 + (KRClock *)sharedClock;
 

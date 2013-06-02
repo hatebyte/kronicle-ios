@@ -83,11 +83,11 @@
     [_listViewButton addTarget:self action:@selector(goToKronicleListView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_listViewButton];
     
+    KRStep *s = [self.kronicle.steps objectAtIndex:0];
     _currentStep = 0;
     [_clock calibrateForKronicle:[self.kronicle.steps count]];
-    [_clock resetWithTime:7];
+    [_clock resetWithTime:s.time];
     [_clock play];
-    
 }
 
 // sets the right picture/video
@@ -131,6 +131,10 @@
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          _scrollView.frame = CGRectMake(0, kScrollViewUp, _bounds.size.width, [KRSwipeUpScrollView maxHeight]);
+                         _listViewButton.frame = CGRectMake(_circleDiagram.frame.size.width + _circleDiagram.frame.origin.x - _listViewButton.frame.size.width,
+                                                            _scrollView.frame.origin.y - (_listViewButton.frame.size.height + 10),
+                                                            _listViewButton.frame.size.width,
+                                                            _listViewButton.frame.size.height);
                      }
                      completion:nil];
 }
@@ -143,6 +147,11 @@
                          _scrollView.frame = CGRectMake(0,
                                                         _mediaViewB.frame.origin.y + _mediaViewB.frame.size.height,
                                                         _bounds.size.width, [KRSwipeUpScrollView maxHeight]);
+                         _listViewButton.frame = CGRectMake(_circleDiagram.frame.size.width + _circleDiagram.frame.origin.x - _listViewButton.frame.size.width,
+                                                            _scrollView.frame.origin.y - (_listViewButton.frame.size.height + 10),
+                                                            _listViewButton.frame.size.width,
+                                                            _listViewButton.frame.size.height);
+
                      }
                      completion:^(BOOL fin){
                      }];
@@ -160,15 +169,15 @@
 - (void)updateScrollView {
     int index = _scrollView.contentOffset.x / _bounds.size.width;
     _currentStep = index;
-    [UIView animateWithDuration:.2
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _circleDiagram.alpha = 0.f;
-                     }
-                     completion:^(BOOL fin){
+//    [UIView animateWithDuration:.2
+//                          delay:0.0
+//                        options:UIViewAnimationOptionCurveEaseInOut
+//                     animations:^{
+//                         _circleDiagram.alpha = 0.f;
+//                     }
+//                     completion:^(BOOL fin){
                          [self setActiveMedia:(KRStep*)[self.kronicle.steps objectAtIndex:_currentStep]];
-                     }];
+//                     }];
 }
 
 // updates from suggested index
@@ -177,28 +186,31 @@
         [_navView isCurrentStep:YES];
     }
     if (_currentStep == index) return;
-    
     CGRect frame = CGRectMake(_scrollView.frame.size.width * index,
                               _scrollView.frame.origin.y,
                               _scrollView.frame.size.width,
                               _scrollView.frame.size.height);
-    [UIView animateWithDuration:.2
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _circleDiagram.alpha = 0.f;
-                     }
-                     completion:^(BOOL fin){
+//    [UIView animateWithDuration:.2
+//                          delay:0.0
+//                        options:UIViewAnimationOptionCurveEaseInOut
+//                     animations:^{
+//                         _circleDiagram.alpha = 0.f;
+//                     }
+//                     completion:^(BOOL fin){
                          [_scrollView scrollRectToVisible:frame animated:YES];
-                     }];
-    
+//                     }];
 }
 
 
 #pragma CircleDiagramView
 - (void)diagramView:(KRDiagramView*)diagramView withDegree:(CGFloat)percent {
     int index = [self returnIndexForPercent:percent andIndex:0];
-    [self jumpToStep:index andPlay:NO];
+    
+    _clock.index = index;
+    KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
+    [_clock resetWithTime:s.time];
+    if ([_clock isPaused]) [_clock play];
+    [self jumpToStep:_clock.index andPlay:YES];
 }
 
 - (int)returnIndexForPercent:(CGFloat)percent andIndex:(int)index{
@@ -219,26 +231,37 @@
 #pragma clock
 - (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string {
     [_navView setTitleText:string];
+    [_navView setSubText:@"until next step"];
 }
 
 - (void)clockTimeOver:(KRClock*)clock {
-    [_clock resetWithTime:7];
+    _clock.index += 1;
+    KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
+    [_clock resetWithTime:s.time];
     [self jumpToStep:_clock.index andPlay:YES];
 }
 
 - (void)kronicleTimeOver:(KRClock*)clock {
     [_navView setTitleText:@"Finished!"];
+    [_navView setSubText:@""];
+    _currentStep = _clock.maxIndex;
 }
 
 
 #pragma navView
 
 - (void)navViewBack:(KRKronicleNavView*)navView {
+    [_clock pause];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)navViewPlayPause:(KRKronicleNavView*)navView {
-
+//    NSLog(@"[_clock isPaused] : %d", [_clock isPaused]);
+    if ([_clock isPaused]) {
+        [_clock play];
+    } else {
+        [_clock pause];
+    }
 }
 
 

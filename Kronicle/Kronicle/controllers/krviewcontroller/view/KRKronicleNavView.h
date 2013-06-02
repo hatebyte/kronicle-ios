@@ -33,6 +33,7 @@
 @property (nonatomic, strong) id <KRKronicleNavViewDelegate> delegate;
 
 - (void)setTitleText:(NSString*)text;
+- (void)setSubText:(NSString*)text;
 - (void)isCurrentStep:(BOOL)isCurrentStep;
 
 @end

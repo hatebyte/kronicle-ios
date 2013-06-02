@@ -57,6 +57,7 @@
                                         25,
                                         25);
         [_pauseButton setImage:[UIImage imageNamed:@"pause-button"] forState:UIControlStateNormal];
+        [_pauseButton setImage:[UIImage imageNamed:@"info-button.png"] forState:UIControlStateHighlighted];
         [_pauseButton addTarget:self action:@selector(pauseButtonHit:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_pauseButton];
         
@@ -69,12 +70,18 @@
 }
 
 - (void)pauseButtonHit:(id)sender {
+    _pauseButton.highlighted = !_backButton.highlighted;
     [self.delegate navViewPlayPause:self];
 }
 
 - (void)setTitleText:(NSString*)text {
     _timeLabel.text = text;
 }
+
+- (void)setSubText:(NSString*)text {
+    _smallLabel.text = text;
+}
+
 
 - (void)isCurrentStep:(BOOL)isCurrentStep {
     CGFloat alpha;

@@ -28,7 +28,7 @@
         [self.navigationController pushViewController:kronicleViewController animated:YES];
     };
     
-    [[KRAPIStore sharedStore] fetchKronicle:@"51aa5298631eb50000000002" withCompletion:completionBlock];
+    [[KRAPIStore sharedStore] fetchKronicle:@"51aab816631eb50000000008" withCompletion:completionBlock];
 }
 
 - (void)didReceiveMemoryWarning

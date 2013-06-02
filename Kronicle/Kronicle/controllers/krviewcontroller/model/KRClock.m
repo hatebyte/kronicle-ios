@@ -12,26 +12,25 @@
 
 + (KRClock *)sharedClock {
     static KRClock *krClock = nil;
-    if (!krClock) 
+    if (!krClock) {
         krClock = [[KRClock alloc] init];
+    }
     return krClock;
 }
 
 - (void)resetWithTime:(CGFloat)total {
-    _index+=1;
-    if (_index == _maxIndex) {
-        [self pause];
-        if ([self.delegate respondsToSelector:@selector(kronicleTimeOver:)]) {
-            [self.delegate kronicleTimeOver:self];
-        }
-    } else {
+//    if (_index == _maxIndex-1) {
+//        [self pause];
+//        if ([self.delegate respondsToSelector:@selector(kronicleTimeOver:)]) {
+//            [self.delegate kronicleTimeOver:self];
+//        }
+//    } else {
         _total = total;
-        _isPaused = YES;
-    }
+//    }
 }
 
 - (void)calibrateForKronicle:(int)numSteps {
-    _index = -1;
+    _index = 0;
     _maxIndex = numSteps;
 }
 
@@ -71,9 +70,18 @@
     _total -= 1;
     [self setValues];
     if ([_seconds isEqualToString:@"0-1"] && [_minutes isEqualToString:@"00"]) {
-        if ([self.delegate respondsToSelector:@selector(clockTimeOver:)]) {
-            [self.delegate clockTimeOver:self];
+        if (_index == _maxIndex-1) {
+            [self pause];
+            if ([self.delegate respondsToSelector:@selector(kronicleTimeOver:)]) {
+                [self.delegate kronicleTimeOver:self];
+            }
+            return;
+        } else {
+            if ([self.delegate respondsToSelector:@selector(clockTimeOver:)]) {
+                [self.delegate clockTimeOver:self];
+            }
         }
+
         return;
     }
     
