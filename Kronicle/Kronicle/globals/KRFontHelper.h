@@ -15,6 +15,7 @@ enum {
     KRBrandonMedium                 = 3,
     KRBrandonBold                   = 4,
     KRBrandonBlack                  = 5,
+    KRMinionProRegular              = 6,
 };
 typedef NSInteger KRFont;
 

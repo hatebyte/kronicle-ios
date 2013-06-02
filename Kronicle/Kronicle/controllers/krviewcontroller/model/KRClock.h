@@ -10,13 +10,15 @@
 
 @class KRClock;
 @protocol KRClockDelegate <NSObject>
-- (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string;
-- (void)clockTimeOver:(KRClock*)clock;
-- (void)kronicleTimeOver:(KRClock*)clock;
+    @optional
+    - (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string andPercent:(CGFloat)percent;
+    - (void)clockTimeOver:(KRClock*)clock;
+    - (void)kronicleTimeOver:(KRClock*)clock;
 @end
 
 @interface KRClock : NSObject {
     @private
+    int _startTotal;
     int _total;
     NSString *_minutes;
     NSString *_hours;

@@ -18,25 +18,33 @@
         self.step = step;
         // Initialization code
         self.backgroundColor = [UIColor whiteColor];
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        self.titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeMedium];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(14, 5, 292, 50)];
+        self.titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:32];
         self.titleLabel.textColor = [UIColor blackColor];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.text = self.step.title;
         [self addSubview:self.titleLabel];
         
         int titleHeight = self.titleLabel.frame.size.height + self.titleLabel.frame.origin.y;
-        self.description = [[UITextView alloc] initWithFrame:CGRectMake(0,
-                                                                        titleHeight,
-                                                                        320,
+        self.description = [[UITextView alloc] initWithFrame:CGRectMake(7,
+                                                                        titleHeight-5,
+                                                                        306,
                                                                         frame.size.height - titleHeight)];
-        self.description.font = [KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeMedium];
+        self.description.font = [KRFontHelper getFont:KRMinionProRegular withSize:16];
         self.description.text = self.step.description;
+//        self.description.text = @"self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description";
+        self.description.scrollEnabled = NO;
         self.description.textColor = [UIColor blackColor];
         //self.description.contentInset = UIEdgeInsetsMake(3,-8,3,0);
         self.description.editable = NO;
         self.description.backgroundColor = [UIColor clearColor];
         [self addSubview:self.description];
+        
+//        for (NSString *familyName in [UIFont familyNames]) {
+//            for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+//                NSLog(@"%@", fontName);
+//            }
+//        }
 
     }
     return self;

@@ -57,7 +57,7 @@
                                         25,
                                         25);
         [_pauseButton setImage:[UIImage imageNamed:@"pause-button"] forState:UIControlStateNormal];
-        [_pauseButton setImage:[UIImage imageNamed:@"info-button.png"] forState:UIControlStateHighlighted];
+        [_pauseButton setImage:[UIImage imageNamed:@"play-button.png"] forState:UIControlStateHighlighted];
         [_pauseButton addTarget:self action:@selector(pauseButtonHit:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_pauseButton];
         
@@ -76,6 +76,7 @@
 
 - (void)setTitleText:(NSString*)text {
     _timeLabel.text = text;
+    
 }
 
 - (void)setSubText:(NSString*)text {

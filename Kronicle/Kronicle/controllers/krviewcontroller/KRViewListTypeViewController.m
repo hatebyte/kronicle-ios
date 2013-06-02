@@ -21,6 +21,9 @@
         // Custom initialization
         _completion = completion;
         _kronicle = kronicle;
+        
+        _clock = [KRClock sharedClock];
+        _clock.delegate = self;
     }
     return self;
 }
@@ -31,6 +34,12 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    _bounds = [UIScreen mainScreen].bounds;
+
+    _navView = [[KRKronicleNavView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, 47)];
+    _navView.delegate = self;
+    [self.view addSubview:_navView];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +70,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     _completion(indexPath.row);
+}
+
+#pragma clock
+- (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string andPercent:(CGFloat)percent {
+    [_navView setTitleText:string];
+    [_navView setSubText:@"until next step"];
+}
+
+
+#pragma navView
+
+- (void)navViewBack:(KRKronicleNavView*)navView {
+    _completion(self.currentStep);
+}
+
+- (void)navViewPlayPause:(KRKronicleNavView*)navView {
+    //    NSLog(@"[_clock isPaused] : %d", [_clock isPaused]);
+    if ([_clock isPaused]) {
+        [_clock play];
+    } else {
+        [_clock pause];
+    }
 }
 
 @end

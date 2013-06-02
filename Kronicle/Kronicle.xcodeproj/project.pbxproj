@@ -36,11 +36,6 @@
 		D2A5743E175A6071002AC1B9 /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5743D175A6070002AC1B9 /* DescriptionView.m */; };
 		D2A57447175A678F002AC1B9 /* KRFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57446175A678F002AC1B9 /* KRFontHelper.m */; };
 		D2A5744A175A679B002AC1B9 /* KRColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57449175A679B002AC1B9 /* KRColorHelper.m */; };
-		D2A5746E175A6D76002AC1B9 /* Bree-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57469175A6D76002AC1B9 /* Bree-Bold.otf */; };
-		D2A5746F175A6D76002AC1B9 /* Bree-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746A175A6D76002AC1B9 /* Bree-ExtraBold.otf */; };
-		D2A57470175A6D76002AC1B9 /* Bree-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746B175A6D76002AC1B9 /* Bree-Light.otf */; };
-		D2A57471175A6D76002AC1B9 /* Bree-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746C175A6D76002AC1B9 /* Bree-Regular.otf */; };
-		D2A57472175A6D76002AC1B9 /* Bree-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5746D175A6D76002AC1B9 /* Bree-Thin.otf */; };
 		D2A5747D175A760D002AC1B9 /* BrandonGrotesque-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747A175A760D002AC1B9 /* BrandonGrotesque-Black.otf */; };
 		D2A5747E175A760D002AC1B9 /* BrandonGrotesque-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747B175A760D002AC1B9 /* BrandonGrotesque-Light.otf */; };
 		D2A5747F175A760D002AC1B9 /* BrandonGrotesque-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747C175A760D002AC1B9 /* BrandonGrotesque-Medium.otf */; };
@@ -62,6 +57,9 @@
 		D2A574A6175AC5B9002AC1B9 /* info-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A1175AC5B9002AC1B9 /* info-button.png */; };
 		D2A574A7175AC5B9002AC1B9 /* pause-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A2175AC5B9002AC1B9 /* pause-button.png */; };
 		D2A574A8175AC5B9002AC1B9 /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A3175AC5B9002AC1B9 /* x-button.png */; };
+		D2A574AB175AFD91002AC1B9 /* MinionPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */; };
+		D2A574AE175B0891002AC1B9 /* play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AC175B088E002AC1B9 /* play-button.png */; };
+		D2A574AF175B0891002AC1B9 /* bottom-shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AD175B0890002AC1B9 /* bottom-shadow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,11 +114,6 @@
 		D2A57448175A679B002AC1B9 /* KRColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRColorHelper.h; sourceTree = "<group>"; };
 		D2A57449175A679B002AC1B9 /* KRColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRColorHelper.m; sourceTree = "<group>"; };
 		D2A5744B175A67AA002AC1B9 /* KRGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRGlobals.h; sourceTree = "<group>"; };
-		D2A57469175A6D76002AC1B9 /* Bree-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Bold.otf"; sourceTree = "<group>"; };
-		D2A5746A175A6D76002AC1B9 /* Bree-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-ExtraBold.otf"; sourceTree = "<group>"; };
-		D2A5746B175A6D76002AC1B9 /* Bree-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Light.otf"; sourceTree = "<group>"; };
-		D2A5746C175A6D76002AC1B9 /* Bree-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Regular.otf"; sourceTree = "<group>"; };
-		D2A5746D175A6D76002AC1B9 /* Bree-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bree-Thin.otf"; sourceTree = "<group>"; };
 		D2A5747A175A760D002AC1B9 /* BrandonGrotesque-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Black.otf"; sourceTree = "<group>"; };
 		D2A5747B175A760D002AC1B9 /* BrandonGrotesque-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Light.otf"; sourceTree = "<group>"; };
 		D2A5747C175A760D002AC1B9 /* BrandonGrotesque-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Medium.otf"; sourceTree = "<group>"; };
@@ -144,6 +137,9 @@
 		D2A574A1175AC5B9002AC1B9 /* info-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button.png"; sourceTree = "<group>"; };
 		D2A574A2175AC5B9002AC1B9 /* pause-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-button.png"; sourceTree = "<group>"; };
 		D2A574A3175AC5B9002AC1B9 /* x-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-button.png"; sourceTree = "<group>"; };
+		D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MinionPro-Regular.otf"; sourceTree = "<group>"; };
+		D2A574AC175B088E002AC1B9 /* play-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button.png"; sourceTree = "<group>"; };
+		D2A574AD175B0890002AC1B9 /* bottom-shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-shadow.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,22 +337,10 @@
 		D2A5744E175A68FF002AC1B9 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D2A574A9175AFD90002AC1B9 /* minion */,
 				D2A57479175A760C002AC1B9 /* brandon */,
-				D2A57468175A6D75002AC1B9 /* Bree */,
 			);
 			path = fonts;
-			sourceTree = "<group>";
-		};
-		D2A57468175A6D75002AC1B9 /* Bree */ = {
-			isa = PBXGroup;
-			children = (
-				D2A57469175A6D76002AC1B9 /* Bree-Bold.otf */,
-				D2A5746A175A6D76002AC1B9 /* Bree-ExtraBold.otf */,
-				D2A5746B175A6D76002AC1B9 /* Bree-Light.otf */,
-				D2A5746C175A6D76002AC1B9 /* Bree-Regular.otf */,
-				D2A5746D175A6D76002AC1B9 /* Bree-Thin.otf */,
-			);
-			path = Bree;
 			sourceTree = "<group>";
 		};
 		D2A57479175A760C002AC1B9 /* brandon */ = {
@@ -397,6 +381,8 @@
 		D2A5749E175AC5B8002AC1B9 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2A574AC175B088E002AC1B9 /* play-button.png */,
+				D2A574AD175B0890002AC1B9 /* bottom-shadow.png */,
 				D2A5749F175AC5B9002AC1B9 /* black-bar.png */,
 				D2A574A0175AC5B9002AC1B9 /* green-bar.png */,
 				D2A574A1175AC5B9002AC1B9 /* info-button.png */,
@@ -404,6 +390,14 @@
 				D2A574A3175AC5B9002AC1B9 /* x-button.png */,
 			);
 			path = app;
+			sourceTree = "<group>";
+		};
+		D2A574A9175AFD90002AC1B9 /* minion */ = {
+			isa = PBXGroup;
+			children = (
+				D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */,
+			);
+			path = minion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,11 +459,6 @@
 				D2A57425175A3B77002AC1B9 /* KRListViewController.xib in Resources */,
 				D2A57427175A3B77002AC1B9 /* KRViewController.xib in Resources */,
 				D2A5743B175A4FF4002AC1B9 /* KRCategoriesViewController.xib in Resources */,
-				D2A5746E175A6D76002AC1B9 /* Bree-Bold.otf in Resources */,
-				D2A5746F175A6D76002AC1B9 /* Bree-ExtraBold.otf in Resources */,
-				D2A57470175A6D76002AC1B9 /* Bree-Light.otf in Resources */,
-				D2A57471175A6D76002AC1B9 /* Bree-Regular.otf in Resources */,
-				D2A57472175A6D76002AC1B9 /* Bree-Thin.otf in Resources */,
 				D2A5747D175A760D002AC1B9 /* BrandonGrotesque-Black.otf in Resources */,
 				D2A5747E175A760D002AC1B9 /* BrandonGrotesque-Light.otf in Resources */,
 				D2A5747F175A760D002AC1B9 /* BrandonGrotesque-Medium.otf in Resources */,
@@ -488,6 +477,9 @@
 				D2A574A6175AC5B9002AC1B9 /* info-button.png in Resources */,
 				D2A574A7175AC5B9002AC1B9 /* pause-button.png in Resources */,
 				D2A574A8175AC5B9002AC1B9 /* x-button.png in Resources */,
+				D2A574AB175AFD91002AC1B9 /* MinionPro-Regular.otf in Resources */,
+				D2A574AE175B0891002AC1B9 /* play-button.png in Resources */,
+				D2A574AF175B0891002AC1B9 /* bottom-shadow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

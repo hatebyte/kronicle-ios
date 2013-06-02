@@ -13,9 +13,9 @@
 
 @class KRKronicleNavView;
 @protocol KRKronicleNavViewDelegate <NSObject>
-
-- (void)navViewBack:(KRKronicleNavView*)navView;
-- (void)navViewPlayPause:(KRKronicleNavView*)navView;
+    @optional
+    - (void)navViewBack:(KRKronicleNavView*)navView;
+    - (void)navViewPlayPause:(KRKronicleNavView*)navView;
 
 @end
 

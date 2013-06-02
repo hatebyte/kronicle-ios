@@ -10,6 +10,7 @@
 #import "KRStep.h"
 #import "DescriptionView.h"
 #import "KRViewListTypeViewController.h"
+#import "KRColorHelper.h"
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
@@ -59,7 +60,15 @@
     _circleDiagram.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self.view addSubview:_circleDiagram];
     
+    _totalbar = [[UIView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height, 320, 5)];
+    _totalbar.backgroundColor = [UIColor whiteColor];
+    _totalbar.alpha = .3f;
+    [self.view addSubview:_totalbar];
     
+    _progressbar = [[UIView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height, 0, 5)];
+    _progressbar.backgroundColor = [KRColorHelper darkBlue];
+    [self.view addSubview:_progressbar];
+
     _scrollView = [[KRSwipeUpScrollView alloc] initWithFrame:CGRectMake(0, _mediaViewB.frame.origin.y + _mediaViewB.frame.size.height, _bounds.size.width, [KRSwipeUpScrollView maxHeight])];
     _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.pagingEnabled = YES;
@@ -82,6 +91,10 @@
                                        _listViewButton.frame.size.height);
     [_listViewButton addTarget:self action:@selector(goToKronicleListView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_listViewButton];
+    
+    UIImageView *gradient = [[UIImageView alloc] initWithFrame:CGRectMake(0, _bounds.size.height-60, _bounds.size.width, 60)];
+    gradient.image = [UIImage imageNamed:@"bottom-shadow"];
+    [self.view addSubview:gradient];
     
     KRStep *s = [self.kronicle.steps objectAtIndex:0];
     _currentStep = 0;
@@ -111,11 +124,13 @@
 
 - (IBAction)goToKronicleListView:(id)sender {
     KRViewListTypeViewController *listTypeViewController = [[KRViewListTypeViewController alloc] initWithNibName:@"KRViewListTypeViewController" andKronicle:self.kronicle completion:^(int step){
+        if ([_clock isPaused]) [_clock play];
         [self jumpToStep:step andPlay:NO];
+        _clock.delegate = self;
         [self dismissViewControllerAnimated:YES completion:^{}];
     }];
     listTypeViewController.currentStep = _currentStep;
-    
+    [_clock pause];
     [listTypeViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [self presentViewController:listTypeViewController animated:YES completion:^{}];
 }
@@ -136,7 +151,8 @@
                                                             _listViewButton.frame.size.width,
                                                             _listViewButton.frame.size.height);
                      }
-                     completion:nil];
+                     completion:^(BOOL fin){
+                     }];
 }
 
 - (void)scrollView:(KRSwipeUpScrollView*)scrollView swipedDownWithDistance:(int)distance {
@@ -229,9 +245,10 @@
 
 
 #pragma clock
-- (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string {
+- (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string andPercent:(CGFloat)percent {
     [_navView setTitleText:string];
     [_navView setSubText:@"until next step"];
+    _progressbar.frame = CGRectMake(0, _navView.frame.size.height, 320 * percent, 5);
 }
 
 - (void)clockTimeOver:(KRClock*)clock {

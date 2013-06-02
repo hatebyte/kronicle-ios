@@ -35,6 +35,9 @@
         case KRBrandonBlack:
             fontName = @"BrandonGrotesque-Black";
             break;
+        case KRMinionProRegular:
+            fontName = @"MinionPro-Regular";
+            break;
     }
     return fontName;
 }

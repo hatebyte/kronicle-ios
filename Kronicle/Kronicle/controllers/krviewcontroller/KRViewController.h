@@ -28,6 +28,8 @@
     KRKronicleNavView *_navView;
     KRClock *_clock;
     id activePlayer;
+    UIView *_progressbar;
+    UIView *_totalbar;
 }
 
 @property (nonatomic, strong) KRKronicle *kronicle;

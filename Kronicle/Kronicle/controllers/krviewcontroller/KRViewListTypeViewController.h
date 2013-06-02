@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "KRKronicle.h"
 #import "KRStep.h"
+#import "KRKronicleNavView.h"
 
-@interface KRViewListTypeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate> {
+@interface KRViewListTypeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, KRClockDelegate, KRKronicleNavViewDelegate> {
     void (^_completion)(int step);
+    CGRect _bounds;
     KRKronicle *_kronicle;
+    KRKronicleNavView *_navView;
+    KRClock *_clock;
+
 }
 
 @property(nonatomic,weak) IBOutlet UITableView *tableView;

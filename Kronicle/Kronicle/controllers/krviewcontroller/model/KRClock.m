@@ -19,14 +19,8 @@
 }
 
 - (void)resetWithTime:(CGFloat)total {
-//    if (_index == _maxIndex-1) {
-//        [self pause];
-//        if ([self.delegate respondsToSelector:@selector(kronicleTimeOver:)]) {
-//            [self.delegate kronicleTimeOver:self];
-//        }
-//    } else {
-        _total = total;
-//    }
+    _startTotal = total;
+    _total = total;
 }
 
 - (void)calibrateForKronicle:(int)numSteps {
@@ -75,18 +69,16 @@
             if ([self.delegate respondsToSelector:@selector(kronicleTimeOver:)]) {
                 [self.delegate kronicleTimeOver:self];
             }
-            return;
         } else {
             if ([self.delegate respondsToSelector:@selector(clockTimeOver:)]) {
                 [self.delegate clockTimeOver:self];
             }
         }
-
         return;
     }
-    
-    if ([self.delegate respondsToSelector:@selector(clock:updateWithTimeString:)]) {
-        [self.delegate clock:self updateWithTimeString:[self stringForTime]];
+    CGFloat p = 1 - ([[NSNumber numberWithInt: _total] floatValue] /[[NSNumber numberWithInt: _startTotal] floatValue] );
+    if ([self.delegate respondsToSelector:@selector(clock:updateWithTimeString:andPercent:)]) {
+        [self.delegate clock:self updateWithTimeString:[self stringForTime] andPercent:p];
     }
 }
 
