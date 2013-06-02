@@ -10,7 +10,10 @@
 
 @interface KRCategoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
-@property(nonatomic,strong) IBOutlet UITableView *tableView;
-@property(nonatomic,strong) NSArray *tableData;
+@property(nonatomic, strong) IBOutlet UITableView *tableView;
+@property(nonatomic, strong) NSArray *tableData;
+
+- (IBAction)gotoCategory:(id)sender;
+- (IBAction)backHit:(id)sender;
 
 @end

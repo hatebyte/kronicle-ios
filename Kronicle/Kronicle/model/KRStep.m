@@ -15,7 +15,7 @@
     self.title             = [dict objectForKey:@"title"];
     self.description       = [dict objectForKey:@"description"];
     self.imageUrl          = [dict objectForKey:@"imageUrl"];
-    self.circleUrl         = [dict objectForKey:@"circleUrl"];
+    self.circleUrl         = [dict objectForKey:@"dialImageUrl"];
     self.parentKronicleId  = [dict objectForKey:@"parentKronicleId"];
     self.time              = [[dict objectForKey:@"time"] floatValue];
     self.indexInKronicle   = [[dict objectForKey:@"indexInKronicle"]floatValue];

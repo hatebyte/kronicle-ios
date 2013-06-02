@@ -31,8 +31,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //self.kImage.image = [UIImage imageNamed:self.kronicle.imageUrl];
-    self.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
+    self.kImage.image = [UIImage imageNamed:self.kronicle.imageUrl];
+    //self.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
 
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 162, 300, 50)];
     self.titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:32];

@@ -39,6 +39,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)gotoCategory:(id)sender {
+    KRListViewController *kronicleListViewController = [[KRListViewController alloc] initWithNibName:@"KRListViewController" bundle:nil];
+    [self.navigationController pushViewController:kronicleListViewController animated:YES];
+}
+
+- (IBAction)backHit:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 //
 //#pragma tableview
 //

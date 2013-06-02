@@ -56,7 +56,6 @@
                                                                      (_bounds.size.width - 285) * .5 + 47,
                                                                      285,
                                                                      285)];
-    _circleDiagram.imagePath = @"circle-test";
     _circleDiagram.delegate = self;
     _circleDiagram.transform = CGAffineTransformMakeRotation(-M_PI_2);
     [self.view addSubview:_circleDiagram];
@@ -99,6 +98,8 @@
     
     KRStep *s = [self.kronicle.steps objectAtIndex:0];
     _currentStep = 0;
+    _circleDiagram.imagePath =s.circleUrl;
+
     [_clock calibrateForKronicle:[self.kronicle.steps count]];
     [_clock resetWithTime:s.time];
     [_clock play];
@@ -109,6 +110,7 @@
     [_mediaViewA setMediaPath:_mediaViewB.mediaPath andType:MediaViewImage];
     _mediaViewB.alpha = 0.f;
     [_mediaViewB setMediaPath:step.imageUrl andType:MediaViewImage];
+    _circleDiagram.imagePath = step.circleUrl;
     [UIView animateWithDuration:.2
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut

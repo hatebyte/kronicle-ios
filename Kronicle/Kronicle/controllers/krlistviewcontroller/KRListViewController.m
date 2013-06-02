@@ -74,8 +74,8 @@
     KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
     cell.titleLabel.text = k.title;
     cell.subLabel.text = [k stringTime];
-    //cell.kImage.image = [UIImage imageNamed:_kronicle.imageUrl];
-    cell.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
+    cell.kImage.image = [UIImage imageNamed:k.imageUrl];
+    //cell.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
     cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row];
     
     cell.titleLabel.textColor = [KRColorHelper darkGrey];
