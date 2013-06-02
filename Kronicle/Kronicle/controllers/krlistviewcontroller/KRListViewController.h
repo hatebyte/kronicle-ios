@@ -13,5 +13,6 @@
 @property(nonatomic,strong) IBOutlet UITableView *tableView;
 @property(nonatomic,strong) NSArray *tableData;
 
+- (IBAction)backHit:(id)sender;
 
 @end

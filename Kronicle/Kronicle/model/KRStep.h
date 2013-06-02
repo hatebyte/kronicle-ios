@@ -20,4 +20,6 @@
 @property (nonatomic, assign) CGFloat time;
 @property (nonatomic, assign) CGFloat indexInKronicle;
 
+- (NSString *)stringTime;
+
 @end

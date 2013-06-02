@@ -16,7 +16,7 @@
     NSArray *list = (NSArray*)d;
     for (NSDictionary *kronicle in list) {
         KRKronicle *k = [[KRKronicle alloc] init];
-        [k kronicleShortFromJSONDictionary:kronicle];
+        [k readFromJSONDictionary:kronicle];
         [self.kronicles addObject:k];
     }
 }

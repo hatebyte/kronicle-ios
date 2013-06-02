@@ -17,29 +17,33 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
-        
-        self.frameimage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-        self.frameimage.image = [UIImage imageNamed:@""];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.clipsToBounds = YES;
+
+        self.frameimage = [[UIImageView alloc] initWithFrame:CGRectMake(0, -2, KCellHeight, KCellHeight)];
         
         self.kImage = [[UIImageView alloc] initWithFrame:self.frameimage.frame];
-        self.kImage.image = [UIImage imageNamed:@""];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frameimage.frame.size.width - 20,
-                                                                    0,
+        [self.contentView addSubview:self.kImage];
+        [self.contentView addSubview:self.frameimage];
+        
+//        self.hightlight = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, KCellHeight)];
+//        [self.contentView addSubview:self.hightlight];
+
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frameimage.frame.size.width-14,
+                                                                    23,
                                                                     200,
-                                                                    30)];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeLarge];
-        self.titleLabel.textColor = [UIColor grayColor];
+                                                                    40)];
+        self.titleLabel.textAlignment = NSTextAlignmentLeft;
+        self.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:28];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.titleLabel];
 
         self.subLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.titleLabel.frame.origin.x,
-                                                                  self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height,
+                                                                  self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height-12,
                                                                   200,
                                                                   30)];
-        self.subLabel.textAlignment = NSTextAlignmentCenter;
+        self.subLabel.textAlignment = NSTextAlignmentLeft;
         self.subLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeRegular];
         self.subLabel.textColor = [UIColor grayColor];
         self.subLabel.backgroundColor = [UIColor clearColor];
@@ -47,17 +51,21 @@
         
         self.number = [[UILabel alloc] initWithFrame:self.frameimage.frame];
         self.number.textAlignment = NSTextAlignmentCenter;
-        self.number.font = [KRFontHelper getFont:KRBrandonMedium withSize:32];
+        self.number.font = [KRFontHelper getFont:KRBrandonMedium withSize:34];
         self.number.textColor = [UIColor whiteColor];
         self.number.backgroundColor = [UIColor clearColor];
+        self.number.shadowColor = [KRColorHelper darkGrey];
+        self.number.shadowOffset = CGSizeMake(1,1);
 
+        [self.contentView addSubview:self.number];
+        
         CALayer *bottomOfUnderMediaBorder = [CALayer layer];
-        bottomOfUnderMediaBorder.frame = CGRectMake(0, self.contentView.frame.size.height-4, 320, 2);
-        bottomOfUnderMediaBorder.backgroundColor = [KRColorHelper darkGrey].CGColor;
+        bottomOfUnderMediaBorder.frame = CGRectMake(0, KCellHeight-2, 320, 1);
+        bottomOfUnderMediaBorder.backgroundColor = [UIColor colorWithRed:.6 green:.6 blue:.6 alpha:1].CGColor;
         [self.contentView.layer addSublayer:bottomOfUnderMediaBorder];
         
         CALayer *barf = [CALayer layer];
-        barf.frame = CGRectMake(0, self.contentView.frame.size.height-2, 320, 2);
+        barf.frame = CGRectMake(0, KCellHeight-1, 320, 1);
         barf.backgroundColor = [KRColorHelper lightGrey].CGColor;
         [self.contentView.layer addSublayer:barf];
         
@@ -65,13 +73,14 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
+- (void)prepareForReuse {
 
-    // Configure the view for the selected state
 }
 
+- (void)hit {
+//    self.subLabel.textColor = [UIColor blackColor];
+//    self.titleLabel.textColor = [UIColor blackColor];
+}
 
 
 @end

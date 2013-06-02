@@ -10,6 +10,9 @@
 #import "KRViewController.h"
 #import "KRAPIStore.h"
 #import "KRKronicle.h"
+#import "StepsTableCellViewCell.h"
+#import "KRColorHelper.h"
+#import "KRKronicleStartViewController.h"
 
 @interface KRListViewController ()
 
@@ -48,7 +51,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backHit:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma tableview
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return KCellHeight;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.tableData count];
@@ -56,21 +67,35 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"defaultcell"];
+    StepsTableCellViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"StepsTableCellViewCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"defaultcell"];
+        cell = [[StepsTableCellViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StepsTableCellViewCell"];
     }
     KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
-    cell.textLabel.text = k.title;
+    cell.titleLabel.text = k.title;
+    cell.subLabel.text = [k stringTime];
+    //cell.kImage.image = [UIImage imageNamed:_kronicle.imageUrl];
+    cell.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
+    cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    
+    cell.titleLabel.textColor = [KRColorHelper darkGrey];
+    cell.frameimage.image = [UIImage imageNamed:@"hole"];
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    StepsTableCellViewCell *c = (StepsTableCellViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [c hit];
     KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
     
     void(^completionBlock)(KRKronicle *kronicle, NSError *err) = ^(KRKronicle *kronicle, NSError *err) {
-        KRViewController *kronicleViewController = [[KRViewController alloc] initWithNibName:@"KRViewController" andKronicle:kronicle];
-        [self.navigationController pushViewController:kronicleViewController animated:YES];
+//        KRViewController *kronicleViewController = [[KRViewController alloc] initWithNibName:@"KRViewController" andKronicle:kronicle];
+//        [self.navigationController pushViewController:kronicleViewController animated:YES];
+        
+        KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
+        [self.navigationController pushViewController:kronicleStartViewController animated:YES];
+        
     };
     
     [[KRAPIStore sharedStore] fetchKronicle:k.uuid withCompletion:completionBlock];

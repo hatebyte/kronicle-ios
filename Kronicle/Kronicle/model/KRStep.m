@@ -21,4 +21,17 @@
     self.indexInKronicle   = [[dict objectForKey:@"indexInKronicle"]floatValue];
 }
 
+- (NSString *)stringTime {
+    int minutes = floor(self.time / 60);
+    int seconds = floor(self.time - (minutes*60));
+    NSString *s;
+    NSString *m = [NSString stringWithFormat:@"%d", minutes];
+    if (seconds < 10) {
+        s = [NSString stringWithFormat:@"0%d", seconds];
+    } else {
+        s = [NSString stringWithFormat:@"%d", seconds];
+    }
+    return [NSString stringWithFormat:@"%@:%@", m, s];
+}
+
 @end

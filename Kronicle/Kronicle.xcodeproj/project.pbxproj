@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D26A614A175B217700B50A39 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6148175B217700B50A39 /* hole.png */; };
+		D26A614B175B217700B50A39 /* hole-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6149175B217700B50A39 /* hole-highlight.png */; };
+		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
+		D26A6150175B2AF900B50A39 /* my-kronicles.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A614E175B2AF900B50A39 /* my-kronicles.png */; };
+		D26A6151175B2AF900B50A39 /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A614F175B2AF900B50A39 /* back-button.png */; };
+		D26A6154175B30CC00B50A39 /* start-shell.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6152175B30CC00B50A39 /* start-shell.png */; };
+		D26A6155175B30CC00B50A39 /* back-bttn.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6153175B30CC00B50A39 /* back-bttn.png */; };
 		D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
 		D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
 		D2A573E6175A3B4E002AC1B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E5175A3B4E002AC1B9 /* CoreGraphics.framework */; };
@@ -79,6 +86,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D26A6148175B217700B50A39 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
+		D26A6149175B217700B50A39 /* hole-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hole-highlight.png"; sourceTree = "<group>"; };
+		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D26A614E175B2AF900B50A39 /* my-kronicles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-kronicles.png"; sourceTree = "<group>"; };
+		D26A614F175B2AF900B50A39 /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button.png"; sourceTree = "<group>"; };
+		D26A6152175B30CC00B50A39 /* start-shell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-shell.png"; sourceTree = "<group>"; };
+		D26A6153175B30CC00B50A39 /* back-bttn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-bttn.png"; sourceTree = "<group>"; };
 		D2A573DE175A3B4E002AC1B9 /* Kronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A573E1175A3B4E002AC1B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2A573E3175A3B4E002AC1B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */,
 				D2A57487175A7F75002AC1B9 /* MediaPlayer.framework in Frameworks */,
 				D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */,
 				D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */,
@@ -211,6 +226,7 @@
 		D2A573E0175A3B4E002AC1B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D26A614C175B228900B50A39 /* QuartzCore.framework */,
 				D2A57486175A7F73002AC1B9 /* MediaPlayer.framework */,
 				D2A573E1175A3B4E002AC1B9 /* UIKit.framework */,
 				D2A573E3175A3B4E002AC1B9 /* Foundation.framework */,
@@ -419,6 +435,12 @@
 		D2A5749E175AC5B8002AC1B9 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D26A6152175B30CC00B50A39 /* start-shell.png */,
+				D26A6153175B30CC00B50A39 /* back-bttn.png */,
+				D26A614E175B2AF900B50A39 /* my-kronicles.png */,
+				D26A614F175B2AF900B50A39 /* back-button.png */,
+				D26A6148175B217700B50A39 /* hole.png */,
+				D26A6149175B217700B50A39 /* hole-highlight.png */,
 				D2A574C5175B20EB002AC1B9 /* top-right.png */,
 				D2A574C6175B20ED002AC1B9 /* top-left.png */,
 				D2A574C7175B20EF002AC1B9 /* top-bar.png */,
@@ -554,6 +576,12 @@
 				D2A574D0175B20FA002AC1B9 /* middle-left.png in Resources */,
 				D2A574D1175B20FA002AC1B9 /* bottom-right.png in Resources */,
 				D2A574D2175B20FA002AC1B9 /* bottom-left.png in Resources */,
+				D26A614A175B217700B50A39 /* hole.png in Resources */,
+				D26A614B175B217700B50A39 /* hole-highlight.png in Resources */,
+				D26A6150175B2AF900B50A39 /* my-kronicles.png in Resources */,
+				D26A6151175B2AF900B50A39 /* back-button.png in Resources */,
+				D26A6154175B30CC00B50A39 /* start-shell.png in Resources */,
+				D26A6155175B30CC00B50A39 /* back-bttn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +750,7 @@
 				D2A57403175A3B4E002AC1B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

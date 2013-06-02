@@ -20,7 +20,9 @@
 @property (nonatomic, assign) CGFloat totalTime;
 @property (nonatomic, assign) CGFloat timesCompleted;
 @property (nonatomic, assign) CGFloat rating;
+@property (nonatomic, assign) int stepCount;
 
 - (void)kronicleShortFromJSONDictionary:(NSDictionary *)dict;
+- (NSString *)stringTime;
 
 @end

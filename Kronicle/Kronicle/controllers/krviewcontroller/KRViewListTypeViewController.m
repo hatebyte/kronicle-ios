@@ -8,6 +8,7 @@
 
 #import "KRViewListTypeViewController.h"
 #import "StepsTableCellViewCell.h"
+#import "KRColorHelper.h"
 
 @interface KRViewListTypeViewController ()
 
@@ -53,7 +54,7 @@
 
 #pragma tableview
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.f;
+    return KCellHeight;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -62,23 +63,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"defaultcell"];
+    StepsTableCellViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"StepsTableCellViewCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"defaultcell"];
+        cell = [[StepsTableCellViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StepsTableCellViewCell"];
     }
     KRStep *k = (KRStep*)[_kronicle.steps objectAtIndex:indexPath.row];
-    cell.textLabel.text = k.title;
+    cell.titleLabel.text = k.title;
+    cell.subLabel.text = [k stringTime];
+    //cell.kImage.image = [UIImage imageNamed:_kronicle.imageUrl];
+    cell.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
+    cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row];
     
     if (self.currentStep == indexPath.row) {
-        //cell.highlighted = YES;
+        cell.frameimage.image = [UIImage imageNamed:@"hole-highlight"];
+        cell.titleLabel.textColor = [KRColorHelper darkGrey];
+    } else {
+        cell.frameimage.image = [UIImage imageNamed:@"hole"];
+        cell.titleLabel.textColor = [KRColorHelper lightGrey];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    StepsTableCellViewCell *c = (StepsTableCellViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [c hit];
     _completion(indexPath.row);
 }
-
 
 
 #pragma navView
