@@ -43,6 +43,7 @@
 
     _navView = [[KRKronicleNavView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, 47)];
     _navView.delegate = self;
+    [_navView setTitleText:@"00:00"];
     [self.view addSubview:_navView];
     
     _mediaViewA = [[MediaView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height, _bounds.size.width, _bounds.size.width)];
@@ -116,7 +117,6 @@
                          _circleDiagram.alpha = 1.f;
                      }
                      completion:^(BOOL fin){
-                         NSLog(@"%d : %d", _currentStep, _clock.index);
                          [_navView isCurrentStep:(_currentStep == _clock.index)];
                      }];
 
@@ -124,7 +124,10 @@
 
 - (IBAction)goToKronicleListView:(id)sender {
     KRViewListTypeViewController *listTypeViewController = [[KRViewListTypeViewController alloc] initWithNibName:@"KRViewListTypeViewController" andKronicle:self.kronicle completion:^(int step){
-        if ([_clock isPaused]) [_clock play];
+        if ([_clock isPaused]) {
+            [_clock play];
+            _navView.pauseButton.selected = NO;
+        }
         _clock.index = step;
         [self jumpToStep:step andPlay:NO];
         [self dismissViewControllerAnimated:YES completion:^{}];

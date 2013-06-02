@@ -47,7 +47,7 @@
                                         10,
                                         25,
                                         25);
-        [_backButton setImage:[UIImage imageNamed:@"x-button.png"] forState:UIControlStateNormal];
+        [_backButton setImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
         [_backButton addTarget:self action:@selector(backButtonHit:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backButton];
         
@@ -57,7 +57,7 @@
                                         25,
                                         25);
         [_pauseButton setImage:[UIImage imageNamed:@"pause-button"] forState:UIControlStateNormal];
-        [_pauseButton setImage:[UIImage imageNamed:@"play-button.png"] forState:UIControlStateHighlighted];
+        [_pauseButton setImage:[UIImage imageNamed:@"play-button"] forState:UIControlStateSelected];
         [_pauseButton addTarget:self action:@selector(pauseButtonHit:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_pauseButton];
         
@@ -70,7 +70,7 @@
 }
 
 - (void)pauseButtonHit:(id)sender {
-    _pauseButton.highlighted = !_backButton.highlighted;
+    _pauseButton.selected = !_pauseButton.selected;
     [self.delegate navViewPlayPause:self];
 }
 

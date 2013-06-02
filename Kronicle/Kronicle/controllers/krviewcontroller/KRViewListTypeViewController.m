@@ -7,6 +7,7 @@
 //
 
 #import "KRViewListTypeViewController.h"
+#import "StepsTableCellViewCell.h"
 
 @interface KRViewListTypeViewController ()
 
@@ -51,6 +52,9 @@
 }
 
 #pragma tableview
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60.f;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_kronicle.steps count];
@@ -64,6 +68,7 @@
     }
     KRStep *k = (KRStep*)[_kronicle.steps objectAtIndex:indexPath.row];
     cell.textLabel.text = k.title;
+    
     if (self.currentStep == indexPath.row) {
         //cell.highlighted = YES;
     }

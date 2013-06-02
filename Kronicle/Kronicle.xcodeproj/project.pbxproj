@@ -68,6 +68,14 @@
 		D2A574BE175B1681002AC1B9 /* home-top.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574B9175B167E002AC1B9 /* home-top.png */; };
 		D2A574BF175B1681002AC1B9 /* home-make-kronicle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574BA175B167F002AC1B9 /* home-make-kronicle.png */; };
 		D2A574C0175B1681002AC1B9 /* home-find-kronicle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574BB175B1680002AC1B9 /* home-find-kronicle.png */; };
+		D2A574C4175B1B6C002AC1B9 /* StepsTableCellViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A574C3175B1B6C002AC1B9 /* StepsTableCellViewCell.m */; };
+		D2A574CC175B20FA002AC1B9 /* top-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C5175B20EB002AC1B9 /* top-right.png */; };
+		D2A574CD175B20FA002AC1B9 /* top-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C6175B20ED002AC1B9 /* top-left.png */; };
+		D2A574CE175B20FA002AC1B9 /* top-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C7175B20EF002AC1B9 /* top-bar.png */; };
+		D2A574CF175B20FA002AC1B9 /* middle-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C8175B20F1002AC1B9 /* middle-right.png */; };
+		D2A574D0175B20FA002AC1B9 /* middle-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C9175B20F3002AC1B9 /* middle-left.png */; };
+		D2A574D1175B20FA002AC1B9 /* bottom-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574CA175B20F5002AC1B9 /* bottom-right.png */; };
+		D2A574D2175B20FA002AC1B9 /* bottom-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574CB175B20F8002AC1B9 /* bottom-left.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +165,15 @@
 		D2A574B9175B167E002AC1B9 /* home-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-top.png"; sourceTree = "<group>"; };
 		D2A574BA175B167F002AC1B9 /* home-make-kronicle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-make-kronicle.png"; sourceTree = "<group>"; };
 		D2A574BB175B1680002AC1B9 /* home-find-kronicle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-find-kronicle.png"; sourceTree = "<group>"; };
+		D2A574C2175B1B6C002AC1B9 /* StepsTableCellViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepsTableCellViewCell.h; path = tabelcell/StepsTableCellViewCell.h; sourceTree = "<group>"; };
+		D2A574C3175B1B6C002AC1B9 /* StepsTableCellViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StepsTableCellViewCell.m; path = tabelcell/StepsTableCellViewCell.m; sourceTree = "<group>"; };
+		D2A574C5175B20EB002AC1B9 /* top-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-right.png"; sourceTree = "<group>"; };
+		D2A574C6175B20ED002AC1B9 /* top-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-left.png"; sourceTree = "<group>"; };
+		D2A574C7175B20EF002AC1B9 /* top-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-bar.png"; sourceTree = "<group>"; };
+		D2A574C8175B20F1002AC1B9 /* middle-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle-right.png"; sourceTree = "<group>"; };
+		D2A574C9175B20F3002AC1B9 /* middle-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle-left.png"; sourceTree = "<group>"; };
+		D2A574CA175B20F5002AC1B9 /* bottom-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-right.png"; sourceTree = "<group>"; };
+		D2A574CB175B20F8002AC1B9 /* bottom-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-left.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +320,7 @@
 				D2A57495175AA45D002AC1B9 /* KRViewListTypeViewController.h */,
 				D2A57496175AA460002AC1B9 /* KRViewListTypeViewController.m */,
 				D2A57497175AA463002AC1B9 /* KRViewListTypeViewController.xib */,
+				D2A574C1175B1B0B002AC1B9 /* tablecell */,
 			);
 			path = krviewcontroller;
 			sourceTree = "<group>";
@@ -401,6 +419,13 @@
 		D2A5749E175AC5B8002AC1B9 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2A574C5175B20EB002AC1B9 /* top-right.png */,
+				D2A574C6175B20ED002AC1B9 /* top-left.png */,
+				D2A574C7175B20EF002AC1B9 /* top-bar.png */,
+				D2A574C8175B20F1002AC1B9 /* middle-right.png */,
+				D2A574C9175B20F3002AC1B9 /* middle-left.png */,
+				D2A574CA175B20F5002AC1B9 /* bottom-right.png */,
+				D2A574CB175B20F8002AC1B9 /* bottom-left.png */,
 				D2A574B7175B167C002AC1B9 /* text-make-a-kronicle.png */,
 				D2A574B8175B167D002AC1B9 /* text-find-a-kronicle.png */,
 				D2A574B9175B167E002AC1B9 /* home-top.png */,
@@ -424,6 +449,15 @@
 				D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */,
 			);
 			path = minion;
+			sourceTree = "<group>";
+		};
+		D2A574C1175B1B0B002AC1B9 /* tablecell */ = {
+			isa = PBXGroup;
+			children = (
+				D2A574C2175B1B6C002AC1B9 /* StepsTableCellViewCell.h */,
+				D2A574C3175B1B6C002AC1B9 /* StepsTableCellViewCell.m */,
+			);
+			name = tablecell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +547,13 @@
 				D2A574BE175B1681002AC1B9 /* home-top.png in Resources */,
 				D2A574BF175B1681002AC1B9 /* home-make-kronicle.png in Resources */,
 				D2A574C0175B1681002AC1B9 /* home-find-kronicle.png in Resources */,
+				D2A574CC175B20FA002AC1B9 /* top-right.png in Resources */,
+				D2A574CD175B20FA002AC1B9 /* top-left.png in Resources */,
+				D2A574CE175B20FA002AC1B9 /* top-bar.png in Resources */,
+				D2A574CF175B20FA002AC1B9 /* middle-right.png in Resources */,
+				D2A574D0175B20FA002AC1B9 /* middle-left.png in Resources */,
+				D2A574D1175B20FA002AC1B9 /* bottom-right.png in Resources */,
+				D2A574D2175B20FA002AC1B9 /* bottom-left.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +585,7 @@
 				D2A57498175AA464002AC1B9 /* KRViewListTypeViewController.m in Sources */,
 				D2A5749C175ABB2E002AC1B9 /* KRKronicleNavView.m in Sources */,
 				D2A574B3175B0FDC002AC1B9 /* KRKronicleStartViewController.m in Sources */,
+				D2A574C4175B1B6C002AC1B9 /* StepsTableCellViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,7 @@
 }
 
 @property (nonatomic, strong) id <KRKronicleNavViewDelegate> delegate;
+@property (nonatomic, strong) UIButton *pauseButton;
 
 - (void)setTitleText:(NSString*)text;
 - (void)setSubText:(NSString*)text;
