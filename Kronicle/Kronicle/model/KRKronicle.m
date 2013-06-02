@@ -33,7 +33,7 @@
     self.description       = [dict objectForKey:@"description"];
     self.category          = [dict objectForKey:@"category"];
     self.imageUrl          = [dict objectForKey:@"imageUrl"];
-    self.timesCompleted    = [[dict objectForKey:@"timesCompleted"] floatValue];
+    //self.timesCompleted    = [[dict objectForKey:@"timesCompleted"] floatValue];
     NSArray *stepsDict     = [dict objectForKey:@"steps"];
     int tt = 0;
     for (NSDictionary *step in stepsDict) {

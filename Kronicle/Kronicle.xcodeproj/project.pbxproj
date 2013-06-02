@@ -95,6 +95,19 @@
 		D2A574D0175B20FA002AC1B9 /* middle-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C9175B20F3002AC1B9 /* middle-left.png */; };
 		D2A574D1175B20FA002AC1B9 /* bottom-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574CA175B20F5002AC1B9 /* bottom-right.png */; };
 		D2A574D2175B20FA002AC1B9 /* bottom-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574CB175B20F8002AC1B9 /* bottom-left.png */; };
+		F96ADD2C175B70770003FEF5 /* yoga-media-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD1F175B70710003FEF5 /* yoga-media-7.png */; };
+		F96ADD2D175B70770003FEF5 /* yoga-circle-6.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD20175B70720003FEF5 /* yoga-circle-6.png */; };
+		F96ADD2E175B70770003FEF5 /* yoga-circle-5.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD21175B70720003FEF5 /* yoga-circle-5.png */; };
+		F96ADD2F175B70770003FEF5 /* yoga-circle-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD22175B70730003FEF5 /* yoga-circle-4.png */; };
+		F96ADD30175B70770003FEF5 /* yoga-circle-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD23175B70730003FEF5 /* yoga-circle-3.png */; };
+		F96ADD31175B70770003FEF5 /* yoga-circle-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD24175B70740003FEF5 /* yoga-circle-2.png */; };
+		F96ADD32175B70770003FEF5 /* yoga-circle-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD25175B70740003FEF5 /* yoga-circle-1.png */; };
+		F96ADD33175B70770003FEF5 /* yoga-media-6.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD26175B70750003FEF5 /* yoga-media-6.png */; };
+		F96ADD34175B70770003FEF5 /* yoga-media-5.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD27175B70750003FEF5 /* yoga-media-5.png */; };
+		F96ADD35175B70770003FEF5 /* yoga-media-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD28175B70750003FEF5 /* yoga-media-4.png */; };
+		F96ADD36175B70770003FEF5 /* yoga-media-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD29175B70760003FEF5 /* yoga-media-3.png */; };
+		F96ADD37175B70770003FEF5 /* yoga-media-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD2A175B70760003FEF5 /* yoga-media-2.png */; };
+		F96ADD38175B70770003FEF5 /* yoga-media-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD2B175B70760003FEF5 /* yoga-media-1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +225,19 @@
 		D2A574C9175B20F3002AC1B9 /* middle-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle-left.png"; sourceTree = "<group>"; };
 		D2A574CA175B20F5002AC1B9 /* bottom-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-right.png"; sourceTree = "<group>"; };
 		D2A574CB175B20F8002AC1B9 /* bottom-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-left.png"; sourceTree = "<group>"; };
+		F96ADD1F175B70710003FEF5 /* yoga-media-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-7.png"; sourceTree = "<group>"; };
+		F96ADD20175B70720003FEF5 /* yoga-circle-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-6.png"; sourceTree = "<group>"; };
+		F96ADD21175B70720003FEF5 /* yoga-circle-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-5.png"; sourceTree = "<group>"; };
+		F96ADD22175B70730003FEF5 /* yoga-circle-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-4.png"; sourceTree = "<group>"; };
+		F96ADD23175B70730003FEF5 /* yoga-circle-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-3.png"; sourceTree = "<group>"; };
+		F96ADD24175B70740003FEF5 /* yoga-circle-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-2.png"; sourceTree = "<group>"; };
+		F96ADD25175B70740003FEF5 /* yoga-circle-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-1.png"; sourceTree = "<group>"; };
+		F96ADD26175B70750003FEF5 /* yoga-media-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-6.png"; sourceTree = "<group>"; };
+		F96ADD27175B70750003FEF5 /* yoga-media-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-5.png"; sourceTree = "<group>"; };
+		F96ADD28175B70750003FEF5 /* yoga-media-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-4.png"; sourceTree = "<group>"; };
+		F96ADD29175B70760003FEF5 /* yoga-media-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-3.png"; sourceTree = "<group>"; };
+		F96ADD2A175B70760003FEF5 /* yoga-media-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-2.png"; sourceTree = "<group>"; };
+		F96ADD2B175B70760003FEF5 /* yoga-media-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +478,19 @@
 		D2A5749D175AC5B6002AC1B9 /* kronicles */ = {
 			isa = PBXGroup;
 			children = (
+				F96ADD1F175B70710003FEF5 /* yoga-media-7.png */,
+				F96ADD20175B70720003FEF5 /* yoga-circle-6.png */,
+				F96ADD21175B70720003FEF5 /* yoga-circle-5.png */,
+				F96ADD22175B70730003FEF5 /* yoga-circle-4.png */,
+				F96ADD23175B70730003FEF5 /* yoga-circle-3.png */,
+				F96ADD24175B70740003FEF5 /* yoga-circle-2.png */,
+				F96ADD25175B70740003FEF5 /* yoga-circle-1.png */,
+				F96ADD26175B70750003FEF5 /* yoga-media-6.png */,
+				F96ADD27175B70750003FEF5 /* yoga-media-5.png */,
+				F96ADD28175B70750003FEF5 /* yoga-media-4.png */,
+				F96ADD29175B70760003FEF5 /* yoga-media-3.png */,
+				F96ADD2A175B70760003FEF5 /* yoga-media-2.png */,
+				F96ADD2B175B70760003FEF5 /* yoga-media-1.png */,
 				D26A6156175B498600B50A39 /* burger-media-6.png */,
 				D26A6157175B498600B50A39 /* burger-media-5.png */,
 				D26A6158175B498600B50A39 /* burger-media-4.png */,
@@ -630,6 +669,19 @@
 				D26A616B175B498600B50A39 /* burger-circle-3.png in Resources */,
 				D26A616C175B498600B50A39 /* burger-circle-2.png in Resources */,
 				D26A616D175B498600B50A39 /* burger-circle-1.png in Resources */,
+				F96ADD2C175B70770003FEF5 /* yoga-media-7.png in Resources */,
+				F96ADD2D175B70770003FEF5 /* yoga-circle-6.png in Resources */,
+				F96ADD2E175B70770003FEF5 /* yoga-circle-5.png in Resources */,
+				F96ADD2F175B70770003FEF5 /* yoga-circle-4.png in Resources */,
+				F96ADD30175B70770003FEF5 /* yoga-circle-3.png in Resources */,
+				F96ADD31175B70770003FEF5 /* yoga-circle-2.png in Resources */,
+				F96ADD32175B70770003FEF5 /* yoga-circle-1.png in Resources */,
+				F96ADD33175B70770003FEF5 /* yoga-media-6.png in Resources */,
+				F96ADD34175B70770003FEF5 /* yoga-media-5.png in Resources */,
+				F96ADD35175B70770003FEF5 /* yoga-media-4.png in Resources */,
+				F96ADD36175B70770003FEF5 /* yoga-media-3.png in Resources */,
+				F96ADD37175B70770003FEF5 /* yoga-media-2.png in Resources */,
+				F96ADD38175B70770003FEF5 /* yoga-media-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,8 +751,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -715,8 +767,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "EDD648C3-8B4F-4D6E-8B17-9540D73592AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -733,8 +785,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -742,8 +794,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "EDD648C3-8B4F-4D6E-8B17-9540D73592AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -752,14 +804,14 @@
 		D2A57402175A3B4E002AC1B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -767,14 +819,14 @@
 		D2A57403175A3B4E002AC1B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Jones (R48MZ78KF8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Jones (R48MZ78KF8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7AA0E033-2BFF-46F4-A721-A780527FF14C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

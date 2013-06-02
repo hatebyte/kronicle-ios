@@ -72,7 +72,7 @@
     cell.subLabel.text = [k stringTime];
     cell.kImage.image = [UIImage imageNamed:_kronicle.imageUrl];
     //cell.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
-    cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row+1];
     
     if (self.currentStep == indexPath.row) {
         cell.frameimage.image = [UIImage imageNamed:@"hole-highlight"];

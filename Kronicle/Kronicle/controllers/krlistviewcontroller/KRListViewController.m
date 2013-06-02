@@ -76,7 +76,7 @@
     cell.subLabel.text = [k stringTime];
     cell.kImage.image = [UIImage imageNamed:k.imageUrl];
     //cell.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
-    cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    //cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row];
     
     cell.titleLabel.textColor = [KRColorHelper darkGrey];
     cell.frameimage.image = [UIImage imageNamed:@"hole"];
