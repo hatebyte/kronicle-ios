@@ -138,7 +138,6 @@
             [_clock play];
             _navView.pauseButton.selected = NO;
         }
-        NSLog(@"%d : %d", step, _clock.index);
         if (step != _clock.index) {
             _clock.index = step;
             KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];

@@ -42,7 +42,7 @@
 
 - (void)loadVideo {
     self.isVideo = YES;
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/crazy_train_1.mov", [[NSBundle mainBundle] resourcePath]]];
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], _mediaPath]];
     if (_moviePlayer != nil) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
