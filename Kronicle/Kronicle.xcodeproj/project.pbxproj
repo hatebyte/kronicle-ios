@@ -725,18 +725,15 @@
 				F96ADD36175B70770003FEF5 /* yoga-media-3.png in Resources */,
 				F96ADD37175B70770003FEF5 /* yoga-media-2.png in Resources */,
 				F96ADD38175B70770003FEF5 /* yoga-media-1.png in Resources */,
-<<<<<<< HEAD
 				F96ADD3E175B89F70003FEF5 /* crazytrain-circle-4.png in Resources */,
 				F96ADD3F175B89F70003FEF5 /* crazytrain-circle-3.png in Resources */,
 				F96ADD40175B89F70003FEF5 /* crazytrain-circle-2.png in Resources */,
 				F96ADD41175B89F70003FEF5 /* crazytrain-circle-1.png in Resources */,
 				F96ADD42175B89F70003FEF5 /* crazytrain-media-2.png in Resources */,
-=======
 				D26A6172175B7A0A00B50A39 /* crazy_train_1.mov in Resources */,
 				D26A6176175B7CFB00B50A39 /* OrganicAlertNotifications_04.mp3 in Resources */,
 				D26A617B175B872900B50A39 /* crazy_train_3.mov in Resources */,
 				D26A617C175B872900B50A39 /* crazy_train_2.mov in Resources */,
->>>>>>> 5bed925592ff748c1146e4121ffc749092dcd89e
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
