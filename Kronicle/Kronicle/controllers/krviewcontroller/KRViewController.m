@@ -51,6 +51,7 @@
     _mediaViewB = [[MediaView alloc] initWithFrame:_mediaViewA.frame];
     [self.view addSubview:_mediaViewB];
     [_mediaViewB setMediaPath:[(KRStep*)[self.kronicle.steps objectAtIndex:0] imageUrl] andType:MediaViewImage];
+    //[_mediaViewB setMediaPath:@"crazy_train_1.mov" andType:MediaViewImage];
     
     _circleDiagram = [[KRDiagramView alloc] initWithFrame:CGRectMake((_bounds.size.width - 285) * .5,
                                                                      (_bounds.size.width - 285) * .5 + 47,
@@ -98,7 +99,7 @@
     
     KRStep *s = [self.kronicle.steps objectAtIndex:0];
     _currentStep = 0;
-    _circleDiagram.imagePath =s.circleUrl;
+    _circleDiagram.imagePath = s.circleUrl;
 
     [_clock calibrateForKronicle:[self.kronicle.steps count]];
     [_clock resetWithTime:s.time];
@@ -107,21 +108,28 @@
 
 // sets the right picture/video
 - (void)setActiveMedia:(KRStep*)step {
-    [_mediaViewA setMediaPath:_mediaViewB.mediaPath andType:MediaViewImage];
-    _mediaViewB.alpha = 0.f;
-    [_mediaViewB setMediaPath:step.imageUrl andType:MediaViewImage];
-    _circleDiagram.imagePath = step.circleUrl;
-    [UIView animateWithDuration:.2
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _mediaViewB.alpha = 1.f;
-                         _circleDiagram.alpha = 1.f;
-                     }
-                     completion:^(BOOL fin){
-                         [_navView isCurrentStep:(_currentStep == _clock.index)];
-                     }];
+    if ([_mediaViewB isVideo] || [_mediaViewA isVideo]) {
+        [_mediaViewB setMediaPath:step.imageUrl andType:MediaViewImage];
+        _circleDiagram.imagePath = step.circleUrl;
+        [_navView isCurrentStep:(_currentStep == _clock.index)];
+    } else {
+        [_mediaViewA setMediaPath:_mediaViewB.mediaPath andType:MediaViewImage];
+        //[_mediaViewB setMediaPath:@"crazy_train_1.mov" andType:MediaViewImage];
 
+        _mediaViewB.alpha = 0.f;
+        [_mediaViewB setMediaPath:step.imageUrl andType:MediaViewImage];
+        _circleDiagram.imagePath = step.circleUrl;
+        [UIView animateWithDuration:.2
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _mediaViewB.alpha = 1.f;
+                             _circleDiagram.alpha = 1.f;
+                         }
+                         completion:^(BOOL fin){
+                             [_navView isCurrentStep:(_currentStep == _clock.index)];
+                         }];
+    }
 }
 
 - (IBAction)goToKronicleListView:(id)sender {
@@ -276,6 +284,8 @@
 
 - (void)navViewBack:(KRKronicleNavView*)navView {
     [_clock pause];
+    [_mediaViewA stop];
+    [_mediaViewB stop];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -283,8 +293,12 @@
 //    NSLog(@"[_clock isPaused] : %d", [_clock isPaused]);
     if ([_clock isPaused]) {
         [_clock play];
+        [_mediaViewA play];
+        [_mediaViewB play];
     } else {
         [_clock pause];
+        [_mediaViewA pause];
+        [_mediaViewB pause];
     }
 }
 

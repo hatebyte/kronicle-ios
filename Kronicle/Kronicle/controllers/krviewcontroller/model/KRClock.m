@@ -7,6 +7,8 @@
 //
 
 #import "KRClock.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation KRClock
 
@@ -74,12 +76,20 @@
                 [self.delegate clockTimeOver:self];
             }
         }
+        [self playSound];
         return;
     }
     CGFloat p = 1 - ([[NSNumber numberWithInt: _total] floatValue] /[[NSNumber numberWithInt: _startTotal] floatValue] );
     if ([self.delegate respondsToSelector:@selector(clock:updateWithTimeString:andPercent:)]) {
         [self.delegate clock:self updateWithTimeString:[self stringForTime] andPercent:p];
     }
+}
+
+- (void)playSound {
+    SystemSoundID soundID;
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/OrganicAlertNotifications_04.mp3", [[NSBundle mainBundle] resourcePath]]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
+    AudioServicesPlaySystemSound (soundID);
 }
 
 - (NSString*)stringForTime {

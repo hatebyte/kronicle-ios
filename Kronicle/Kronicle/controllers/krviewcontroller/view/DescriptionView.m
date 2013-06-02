@@ -37,7 +37,7 @@
                                                                         frame.size.height - titleHeight)];
         self.description.font = [KRFontHelper getFont:KRMinionProRegular withSize:16];
         self.description.text = self.step.description;
-//        self.description.text = @"self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description self.description";
+//        self.description.text = @"\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------\n\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------";
         self.description.scrollEnabled = NO;
         self.description.textColor = [UIColor blackColor];
         //self.description.contentInset = UIEdgeInsetsMake(3,-8,3,0);
