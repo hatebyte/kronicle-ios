@@ -26,6 +26,12 @@
 		D26A616B175B498600B50A39 /* burger-circle-3.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A615F175B498600B50A39 /* burger-circle-3.png */; };
 		D26A616C175B498600B50A39 /* burger-circle-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6160175B498600B50A39 /* burger-circle-2.png */; };
 		D26A616D175B498600B50A39 /* burger-circle-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6161175B498600B50A39 /* burger-circle-1.png */; };
+		D26A6172175B7A0A00B50A39 /* crazy_train_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */; };
+		D26A6174175B7CA200B50A39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6173175B7CA200B50A39 /* AVFoundation.framework */; };
+		D26A6176175B7CFB00B50A39 /* OrganicAlertNotifications_04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D26A6175175B7CFB00B50A39 /* OrganicAlertNotifications_04.mp3 */; };
+		D26A6178175B7E2600B50A39 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6177175B7E2600B50A39 /* AudioToolbox.framework */; };
+		D26A617B175B872900B50A39 /* crazy_train_3.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A6179175B872900B50A39 /* crazy_train_3.mov */; };
+		D26A617C175B872900B50A39 /* crazy_train_2.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A617A175B872900B50A39 /* crazy_train_2.mov */; };
 		D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
 		D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
 		D2A573E6175A3B4E002AC1B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E5175A3B4E002AC1B9 /* CoreGraphics.framework */; };
@@ -135,6 +141,12 @@
 		D26A615F175B498600B50A39 /* burger-circle-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger-circle-3.png"; sourceTree = "<group>"; };
 		D26A6160175B498600B50A39 /* burger-circle-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger-circle-2.png"; sourceTree = "<group>"; };
 		D26A6161175B498600B50A39 /* burger-circle-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger-circle-1.png"; sourceTree = "<group>"; };
+		D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crazy_train_1.mov; sourceTree = "<group>"; };
+		D26A6173175B7CA200B50A39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D26A6175175B7CFB00B50A39 /* OrganicAlertNotifications_04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OrganicAlertNotifications_04.mp3; sourceTree = "<group>"; };
+		D26A6177175B7E2600B50A39 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D26A6179175B872900B50A39 /* crazy_train_3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crazy_train_3.mov; sourceTree = "<group>"; };
+		D26A617A175B872900B50A39 /* crazy_train_2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crazy_train_2.mov; sourceTree = "<group>"; };
 		D2A573DE175A3B4E002AC1B9 /* Kronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A573E1175A3B4E002AC1B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2A573E3175A3B4E002AC1B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -255,6 +267,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26A6178175B7E2600B50A39 /* AudioToolbox.framework in Frameworks */,
+				D26A6174175B7CA200B50A39 /* AVFoundation.framework in Frameworks */,
 				D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */,
 				D2A57487175A7F75002AC1B9 /* MediaPlayer.framework in Frameworks */,
 				D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */,
@@ -266,6 +280,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D26A616E175B791F00B50A39 /* movies */ = {
+			isa = PBXGroup;
+			children = (
+				D26A6179175B872900B50A39 /* crazy_train_3.mov */,
+				D26A617A175B872900B50A39 /* crazy_train_2.mov */,
+				D26A6175175B7CFB00B50A39 /* OrganicAlertNotifications_04.mp3 */,
+				D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */,
+			);
+			path = movies;
+			sourceTree = "<group>";
+		};
 		D2A573D5175A3B4E002AC1B9 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +311,8 @@
 		D2A573E0175A3B4E002AC1B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D26A6177175B7E2600B50A39 /* AudioToolbox.framework */,
+				D26A6173175B7CA200B50A39 /* AVFoundation.framework */,
 				D26A614C175B228900B50A39 /* QuartzCore.framework */,
 				D2A57486175A7F73002AC1B9 /* MediaPlayer.framework */,
 				D2A573E1175A3B4E002AC1B9 /* UIKit.framework */,
@@ -430,6 +457,7 @@
 		D2A5743F175A66F5002AC1B9 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				D26A616E175B791F00B50A39 /* movies */,
 				D2A57488175A80DB002AC1B9 /* images */,
 				D2A5744E175A68FF002AC1B9 /* fonts */,
 			);
@@ -697,11 +725,18 @@
 				F96ADD36175B70770003FEF5 /* yoga-media-3.png in Resources */,
 				F96ADD37175B70770003FEF5 /* yoga-media-2.png in Resources */,
 				F96ADD38175B70770003FEF5 /* yoga-media-1.png in Resources */,
+<<<<<<< HEAD
 				F96ADD3E175B89F70003FEF5 /* crazytrain-circle-4.png in Resources */,
 				F96ADD3F175B89F70003FEF5 /* crazytrain-circle-3.png in Resources */,
 				F96ADD40175B89F70003FEF5 /* crazytrain-circle-2.png in Resources */,
 				F96ADD41175B89F70003FEF5 /* crazytrain-circle-1.png in Resources */,
 				F96ADD42175B89F70003FEF5 /* crazytrain-media-2.png in Resources */,
+=======
+				D26A6172175B7A0A00B50A39 /* crazy_train_1.mov in Resources */,
+				D26A6176175B7CFB00B50A39 /* OrganicAlertNotifications_04.mp3 in Resources */,
+				D26A617B175B872900B50A39 /* crazy_train_3.mov in Resources */,
+				D26A617C175B872900B50A39 /* crazy_train_2.mov in Resources */,
+>>>>>>> 5bed925592ff748c1146e4121ffc749092dcd89e
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

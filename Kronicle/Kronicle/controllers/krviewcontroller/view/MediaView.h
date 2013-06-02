@@ -21,10 +21,14 @@ typedef enum  {
     
 }
 
-@property (nonatomic, strong) NSString *mediaPath;
+@property (nonatomic, copy) NSString *mediaPath;
+@property (nonatomic, assign) BOOL isVideo;
 
 
 - (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type;
 - (void)stop;
+- (void)pause;
+- (void)play;
 - (UIImage *)image;
+
 @end
