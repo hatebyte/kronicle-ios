@@ -14,11 +14,12 @@
 
 @implementation KRKronicleStartViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
         // Custom initialization
+        self.kronicle = kronicle;
     }
     return self;
 }
@@ -27,6 +28,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+}
+
+
+- (IBAction)back:(id)sender {
+
+}
+
+- (IBAction)gotoToKronicle:(id)sender {
+
 }
 
 - (void)didReceiveMemoryWarning

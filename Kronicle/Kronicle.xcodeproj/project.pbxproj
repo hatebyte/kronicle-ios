@@ -62,6 +62,12 @@
 		D2A574AF175B0891002AC1B9 /* bottom-shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AD175B0890002AC1B9 /* bottom-shadow.png */; };
 		D2A574B3175B0FDC002AC1B9 /* KRKronicleStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A574B1175B0FD0002AC1B9 /* KRKronicleStartViewController.m */; };
 		D2A574B4175B0FDC002AC1B9 /* KRKronicleStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A574B2175B0FD5002AC1B9 /* KRKronicleStartViewController.xib */; };
+		D2A574B6175B1478002AC1B9 /* start-kronicle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574B5175B1477002AC1B9 /* start-kronicle.png */; };
+		D2A574BC175B1681002AC1B9 /* text-make-a-kronicle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574B7175B167C002AC1B9 /* text-make-a-kronicle.png */; };
+		D2A574BD175B1681002AC1B9 /* text-find-a-kronicle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574B8175B167D002AC1B9 /* text-find-a-kronicle.png */; };
+		D2A574BE175B1681002AC1B9 /* home-top.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574B9175B167E002AC1B9 /* home-top.png */; };
+		D2A574BF175B1681002AC1B9 /* home-make-kronicle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574BA175B167F002AC1B9 /* home-make-kronicle.png */; };
+		D2A574C0175B1681002AC1B9 /* home-find-kronicle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574BB175B1680002AC1B9 /* home-find-kronicle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +151,12 @@
 		D2A574B0175B0FCC002AC1B9 /* KRKronicleStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleStartViewController.h; sourceTree = "<group>"; };
 		D2A574B1175B0FD0002AC1B9 /* KRKronicleStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleStartViewController.m; sourceTree = "<group>"; };
 		D2A574B2175B0FD5002AC1B9 /* KRKronicleStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRKronicleStartViewController.xib; sourceTree = "<group>"; };
+		D2A574B5175B1477002AC1B9 /* start-kronicle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-kronicle.png"; sourceTree = "<group>"; };
+		D2A574B7175B167C002AC1B9 /* text-make-a-kronicle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-make-a-kronicle.png"; sourceTree = "<group>"; };
+		D2A574B8175B167D002AC1B9 /* text-find-a-kronicle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-find-a-kronicle.png"; sourceTree = "<group>"; };
+		D2A574B9175B167E002AC1B9 /* home-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-top.png"; sourceTree = "<group>"; };
+		D2A574BA175B167F002AC1B9 /* home-make-kronicle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-make-kronicle.png"; sourceTree = "<group>"; };
+		D2A574BB175B1680002AC1B9 /* home-find-kronicle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-find-kronicle.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,14 +295,14 @@
 				D2A57419175A3B77002AC1B9 /* KRViewController.h */,
 				D2A5741A175A3B77002AC1B9 /* KRViewController.m */,
 				D2A5741B175A3B77002AC1B9 /* KRViewController.xib */,
+				D2A574B0175B0FCC002AC1B9 /* KRKronicleStartViewController.h */,
+				D2A574B1175B0FD0002AC1B9 /* KRKronicleStartViewController.m */,
+				D2A574B2175B0FD5002AC1B9 /* KRKronicleStartViewController.xib */,
 				D2A5741C175A3B77002AC1B9 /* model */,
 				D2A5741D175A3B77002AC1B9 /* view */,
 				D2A57495175AA45D002AC1B9 /* KRViewListTypeViewController.h */,
 				D2A57496175AA460002AC1B9 /* KRViewListTypeViewController.m */,
 				D2A57497175AA463002AC1B9 /* KRViewListTypeViewController.xib */,
-				D2A574B0175B0FCC002AC1B9 /* KRKronicleStartViewController.h */,
-				D2A574B1175B0FD0002AC1B9 /* KRKronicleStartViewController.m */,
-				D2A574B2175B0FD5002AC1B9 /* KRKronicleStartViewController.xib */,
 			);
 			path = krviewcontroller;
 			sourceTree = "<group>";
@@ -389,6 +401,12 @@
 		D2A5749E175AC5B8002AC1B9 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2A574B7175B167C002AC1B9 /* text-make-a-kronicle.png */,
+				D2A574B8175B167D002AC1B9 /* text-find-a-kronicle.png */,
+				D2A574B9175B167E002AC1B9 /* home-top.png */,
+				D2A574BA175B167F002AC1B9 /* home-make-kronicle.png */,
+				D2A574BB175B1680002AC1B9 /* home-find-kronicle.png */,
+				D2A574B5175B1477002AC1B9 /* start-kronicle.png */,
 				D2A574AC175B088E002AC1B9 /* play-button.png */,
 				D2A574AD175B0890002AC1B9 /* bottom-shadow.png */,
 				D2A5749F175AC5B9002AC1B9 /* black-bar.png */,
@@ -489,6 +507,12 @@
 				D2A574AE175B0891002AC1B9 /* play-button.png in Resources */,
 				D2A574AF175B0891002AC1B9 /* bottom-shadow.png in Resources */,
 				D2A574B4175B0FDC002AC1B9 /* KRKronicleStartViewController.xib in Resources */,
+				D2A574B6175B1478002AC1B9 /* start-kronicle.png in Resources */,
+				D2A574BC175B1681002AC1B9 /* text-make-a-kronicle.png in Resources */,
+				D2A574BD175B1681002AC1B9 /* text-find-a-kronicle.png in Resources */,
+				D2A574BE175B1681002AC1B9 /* home-top.png in Resources */,
+				D2A574BF175B1681002AC1B9 /* home-make-kronicle.png in Resources */,
+				D2A574C0175B1681002AC1B9 /* home-find-kronicle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

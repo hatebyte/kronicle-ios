@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KRKronicle.h"
 
 @interface KRKronicleStartViewController : UIViewController
+
+@property(nonatomic,strong) KRKronicle *kronicle;
+
+- (IBAction)back:(id)sender;
+- (IBAction)gotoToKronicle:(id)sender;
+- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
 
 @end
