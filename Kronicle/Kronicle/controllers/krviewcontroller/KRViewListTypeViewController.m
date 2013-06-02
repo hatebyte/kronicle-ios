@@ -74,7 +74,6 @@
     //cell.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
     cell.number.text = [NSString stringWithFormat:@"%d", indexPath.row+1];
     
-    
     if (self.currentStep == indexPath.row) {
         cell.frameimage.image = [UIImage imageNamed:@"hole-highlight"];
         cell.titleLabel.textColor = [KRColorHelper darkGrey];

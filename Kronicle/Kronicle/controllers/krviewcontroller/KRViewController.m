@@ -131,6 +131,8 @@
             _navView.pauseButton.selected = NO;
         }
         _clock.index = step;
+        KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
+        [_clock resetWithTime:s.time];
         [self jumpToStep:step andPlay:NO];
         [self dismissViewControllerAnimated:YES completion:^{}];
     }];
