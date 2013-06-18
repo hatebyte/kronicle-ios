@@ -10,6 +10,7 @@
 #import "KRCategoriesViewController.h"
 
 #import "KRViewController.h"
+#import "KRCreateViewController.h"
 #import "KRAPIStore.h"
 
 @interface ViewController ()
@@ -44,7 +45,8 @@
 }
 
 - (IBAction)create:(id)sender {
-    
+    KRCreateViewController *createViewController = [[KRCreateViewController alloc] initWithNibName:@"KRCreateViewController" bundle:nil];
+    [self.navigationController pushViewController:createViewController animated:YES];
 }
 
 @end

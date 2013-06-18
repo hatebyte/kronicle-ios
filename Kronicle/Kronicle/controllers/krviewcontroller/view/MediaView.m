@@ -51,13 +51,15 @@
         _moviePlayer.repeatMode = MPMovieRepeatModeOne;
         _moviePlayer.scalingMode = MPMovieScalingModeAspectFill;
         _moviePlayer.useApplicationAudioSession = NO;
-        //_moviePlayer.view.layer.masksToBounds = YES;
+        _moviePlayer.view.layer.masksToBounds = YES;
         _moviePlayer.controlStyle = MPMovieControlStyleNone;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
+        
         __block id loadStateObs = [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerLoadStateDidChangeNotification object:_moviePlayer queue:nil usingBlock:^(NSNotification *notification){
             [self playbackLoadStateChanged:notification];
         }];
+        NSLog(@"loadStateObs : %@",loadStateObs);
     }
     _moviePlayer.view.frame = CGRectMake(0,0,self.frame.size.width, self.frame.size.height);
     _moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;

@@ -36,6 +36,7 @@ static NSMutableArray *sharedConnectionList = nil;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     id rootObject = nil;
+    NSLog(@"argaga");
     NSDictionary *d = [NSJSONSerialization JSONObjectWithData:_container
                                                       options:0
                                                         error:nil];

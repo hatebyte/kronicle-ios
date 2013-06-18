@@ -101,6 +101,12 @@
 		D2A574D0175B20FA002AC1B9 /* middle-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C9175B20F3002AC1B9 /* middle-left.png */; };
 		D2A574D1175B20FA002AC1B9 /* bottom-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574CA175B20F5002AC1B9 /* bottom-right.png */; };
 		D2A574D2175B20FA002AC1B9 /* bottom-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574CB175B20F8002AC1B9 /* bottom-left.png */; };
+		D2FC5FB517689F6500A46835 /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB317689F6500A46835 /* KRCreateViewController.m */; };
+		D2FC5FB617689F6500A46835 /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */; };
+		D2FC5FBA17689F7900A46835 /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB817689F7900A46835 /* KRCreateStepViewController.m */; };
+		D2FC5FBB17689F7900A46835 /* KRCreateStepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FC5FB917689F7900A46835 /* KRCreateStepViewController.xib */; };
+		D2FC5FBD1768A20000A46835 /* KRKronicleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2797A981767F24A007836A2 /* KRKronicleCell.m */; };
+		D2FC5FD7176A9A8300A46835 /* DurationCreatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FD6176A9A8300A46835 /* DurationCreatorView.m */; };
 		F96ADD2C175B70770003FEF5 /* yoga-media-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD1F175B70710003FEF5 /* yoga-media-7.png */; };
 		F96ADD2D175B70770003FEF5 /* yoga-circle-6.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD20175B70720003FEF5 /* yoga-circle-6.png */; };
 		F96ADD2E175B70770003FEF5 /* yoga-circle-5.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD21175B70720003FEF5 /* yoga-circle-5.png */; };
@@ -149,6 +155,10 @@
 		D26A6177175B7E2600B50A39 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D26A6179175B872900B50A39 /* crazy_train_3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crazy_train_3.mov; sourceTree = "<group>"; };
 		D26A617A175B872900B50A39 /* crazy_train_2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crazy_train_2.mov; sourceTree = "<group>"; };
+		D2797A971767F24A007836A2 /* KRKronicleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRKronicleCell.h; sourceTree = "<group>"; };
+		D2797A981767F24A007836A2 /* KRKronicleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRKronicleCell.m; sourceTree = "<group>"; };
+		D2797A9B1767F27B007836A2 /* KREndAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KREndAddCell.h; sourceTree = "<group>"; };
+		D2797A9C1767F27B007836A2 /* KREndAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KREndAddCell.m; sourceTree = "<group>"; };
 		D2A573DE175A3B4E002AC1B9 /* Kronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A573E1175A3B4E002AC1B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2A573E3175A3B4E002AC1B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -244,6 +254,14 @@
 		D2A574C9175B20F3002AC1B9 /* middle-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "middle-left.png"; sourceTree = "<group>"; };
 		D2A574CA175B20F5002AC1B9 /* bottom-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-right.png"; sourceTree = "<group>"; };
 		D2A574CB175B20F8002AC1B9 /* bottom-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom-left.png"; sourceTree = "<group>"; };
+		D2FC5FB217689F6500A46835 /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
+		D2FC5FB317689F6500A46835 /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
+		D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
+		D2FC5FB717689F7900A46835 /* KRCreateStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateStepViewController.h; sourceTree = "<group>"; };
+		D2FC5FB817689F7900A46835 /* KRCreateStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateStepViewController.m; sourceTree = "<group>"; };
+		D2FC5FB917689F7900A46835 /* KRCreateStepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateStepViewController.xib; sourceTree = "<group>"; };
+		D2FC5FD5176A9A8300A46835 /* DurationCreatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurationCreatorView.h; sourceTree = "<group>"; };
+		D2FC5FD6176A9A8300A46835 /* DurationCreatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationCreatorView.m; sourceTree = "<group>"; };
 		F96ADD1F175B70710003FEF5 /* yoga-media-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-media-7.png"; sourceTree = "<group>"; };
 		F96ADD20175B70720003FEF5 /* yoga-circle-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-6.png"; sourceTree = "<group>"; };
 		F96ADD21175B70720003FEF5 /* yoga-circle-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-circle-5.png"; sourceTree = "<group>"; };
@@ -263,7 +281,7 @@
 		F96ADD3C175B89F60003FEF5 /* crazytrain-circle-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crazytrain-circle-1.png"; sourceTree = "<group>"; };
 		F96ADD3D175B89F70003FEF5 /* crazytrain-media-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crazytrain-media-2.png"; sourceTree = "<group>"; };
 		F96ADD43175B9A840003FEF5 /* crazytrain-media-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crazytrain-media-1.png"; sourceTree = "<group>"; };
-		F96ADD45175B9BA30003FEF5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		F96ADD45175B9BA30003FEF5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,10 +313,35 @@
 			path = movies;
 			sourceTree = "<group>";
 		};
+		D2797A8C1767EF9A007836A2 /* krkroniclecreateviewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC5FD4176A9A8300A46835 /* timecreatorview */,
+				D2797A8D1767EF9A007836A2 /* cells */,
+				D2FC5FB217689F6500A46835 /* KRCreateViewController.h */,
+				D2FC5FB317689F6500A46835 /* KRCreateViewController.m */,
+				D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */,
+				D2FC5FB717689F7900A46835 /* KRCreateStepViewController.h */,
+				D2FC5FB817689F7900A46835 /* KRCreateStepViewController.m */,
+				D2FC5FB917689F7900A46835 /* KRCreateStepViewController.xib */,
+			);
+			path = krkroniclecreateviewcontroller;
+			sourceTree = "<group>";
+		};
+		D2797A8D1767EF9A007836A2 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2797A971767F24A007836A2 /* KRKronicleCell.h */,
+				D2797A981767F24A007836A2 /* KRKronicleCell.m */,
+				D2797A9B1767F27B007836A2 /* KREndAddCell.h */,
+				D2797A9C1767F27B007836A2 /* KREndAddCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		D2A573D5175A3B4E002AC1B9 = {
 			isa = PBXGroup;
 			children = (
-				F96ADD45175B9BA30003FEF5 /* icon@2x.png */,
 				D2A573E7175A3B4E002AC1B9 /* Kronicle */,
 				D2A573E0175A3B4E002AC1B9 /* Frameworks */,
 				D2A573DF175A3B4E002AC1B9 /* Products */,
@@ -347,6 +390,7 @@
 		D2A573E8175A3B4E002AC1B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F96ADD45175B9BA30003FEF5 /* icon@2x.png */,
 				D2A5743F175A66F5002AC1B9 /* assets */,
 				D2A573E9175A3B4E002AC1B9 /* Kronicle-Info.plist */,
 				D2A573EA175A3B4E002AC1B9 /* InfoPlist.strings */,
@@ -387,6 +431,7 @@
 		D2A5740F175A3B77002AC1B9 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2797A8C1767EF9A007836A2 /* krkroniclecreateviewcontroller */,
 				D2A57410175A3B77002AC1B9 /* krcategoriesviewcontroller */,
 				D2A57414175A3B77002AC1B9 /* krlistviewcontroller */,
 				D2A57418175A3B77002AC1B9 /* krviewcontroller */,
@@ -606,6 +651,15 @@
 			name = tablecell;
 			sourceTree = "<group>";
 		};
+		D2FC5FD4176A9A8300A46835 /* timecreatorview */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC5FD5176A9A8300A46835 /* DurationCreatorView.h */,
+				D2FC5FD6176A9A8300A46835 /* DurationCreatorView.m */,
+			);
+			path = timecreatorview;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -742,6 +796,8 @@
 				D26A617C175B872900B50A39 /* crazy_train_2.mov in Resources */,
 				F96ADD44175B9A840003FEF5 /* crazytrain-media-1.png in Resources */,
 				F96ADD46175B9BA30003FEF5 /* icon@2x.png in Resources */,
+				D2FC5FB617689F6500A46835 /* KRCreateViewController.xib in Resources */,
+				D2FC5FBB17689F7900A46835 /* KRCreateStepViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +808,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FC5FBD1768A20000A46835 /* KRKronicleCell.m in Sources */,
 				D2A573EE175A3B4E002AC1B9 /* main.m in Sources */,
 				D2A573F2175A3B4E002AC1B9 /* AppDelegate.m in Sources */,
 				D2A573FB175A3B4E002AC1B9 /* ViewController.m in Sources */,
@@ -774,6 +831,9 @@
 				D2A5749C175ABB2E002AC1B9 /* KRKronicleNavView.m in Sources */,
 				D2A574B3175B0FDC002AC1B9 /* KRKronicleStartViewController.m in Sources */,
 				D2A574C4175B1B6C002AC1B9 /* StepsTableCellViewCell.m in Sources */,
+				D2FC5FB517689F6500A46835 /* KRCreateViewController.m in Sources */,
+				D2FC5FBA17689F7900A46835 /* KRCreateStepViewController.m in Sources */,
+				D2FC5FD7176A9A8300A46835 /* DurationCreatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,6 +929,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -884,6 +945,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
