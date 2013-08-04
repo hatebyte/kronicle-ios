@@ -13,6 +13,7 @@
 #import "StepsTableCellViewCell.h"
 #import "KRColorHelper.h"
 #import "KRKronicleStartViewController.h"
+#import "KronicleEngine.h"
 
 @interface KRListViewController ()
 
@@ -37,12 +38,27 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    void(^completionBlock)(KRList *k, NSError *err) = ^(KRList *k, NSError *err) {
-        self.tableData = [k.kronicles copy];
-        [self.tableView reloadData];
-    };
+//    void(^completionBlock)(KRList *k, NSError *err) = ^(KRList *k, NSError *err) {
+//        self.tableData = [k.kronicles copy];
+//        [self.tableView reloadData];
+//    };
+//    
+//    [[KRAPIStore sharedStore] fetchAllKroniclesWithCompletion:completionBlock];
+
     
-    [[KRAPIStore sharedStore] fetchAllKroniclesWithCompletion:completionBlock];
+    [[KronicleEngine current] allKroniclesWithCompletion:^(KRList *k) {
+        
+                                                    self.tableData = [k.kronicles copy];
+                                                    [self.tableView reloadData];
+        
+                                                }
+                                                onFailure:^(NSError *error) {
+                                                   
+                                                   NSLog(@"error : %@", error);
+                                                   
+                                                }];
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,12 +104,25 @@
     [c hit];
     KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
     
-    void(^completionBlock)(KRKronicle *kronicle, NSError *err) = ^(KRKronicle *kronicle, NSError *err) {
+//    void(^completionBlock)(KRKronicle *kronicle, NSError *err) = ^(KRKronicle *kronicle, NSError *err) {
+//        KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
+//        [self.navigationController pushViewController:kronicleStartViewController animated:YES];
+//    };
+//    [[KRAPIStore sharedStore] fetchKronicle:k.uuid withCompletion:completionBlock];
+    
+    [[KronicleEngine current] fetchKronicle:k.uuid withCompletion:^(KRKronicle *kronicle) {
+        
         KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
         [self.navigationController pushViewController:kronicleStartViewController animated:YES];
-    };
+        
+    }
+                                               onFailure:^(NSError *error) {
+                                                   
+                                                   NSLog(@"error : %@", error);
+                                                   
+                                               }];
     
-    [[KRAPIStore sharedStore] fetchKronicle:k.uuid withCompletion:completionBlock];
+    
 }
 
 

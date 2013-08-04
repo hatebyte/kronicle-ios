@@ -11,6 +11,7 @@
 @protocol KRSerializable <NSObject>
 
 - (void)readFromJSONDictionary:(NSDictionary *)d;
+//- (NSData *)writeToJSONData;
 
 @end
 

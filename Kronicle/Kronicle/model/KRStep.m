@@ -21,6 +21,15 @@
     self.indexInKronicle   = [[dict objectForKey:@"indexInKronicle"]floatValue];
 }
 
+- (NSData *)writeToJSONData {
+    NSDictionary *stepDict = [NSMutableDictionary dictionaryWithCapacity:4];
+    [stepDict setValue:self.title forKey:@"title"];
+    [stepDict setValue:self.description forKey:@"description"];
+    [stepDict setValue:[NSNumber numberWithFloat:self.time] forKey:@"time"];
+    [stepDict setValue:[NSNumber numberWithFloat:self.indexInKronicle] forKey:@"indexInKronicle"];
+    return [NSJSONSerialization dataWithJSONObject:stepDict options:NSJSONWritingPrettyPrinted error:nil];
+}
+
 - (NSString *)stringTime {
     int minutes = floor(self.time / 60);
     int seconds = floor(self.time - (minutes*60));

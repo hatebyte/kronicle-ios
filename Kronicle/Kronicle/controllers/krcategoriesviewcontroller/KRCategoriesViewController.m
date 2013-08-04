@@ -8,6 +8,7 @@
 
 #import "KRCategoriesViewController.h"
 #import "KRListViewController.h"
+#import "KronicleEngine.h"
 
 @interface KRCategoriesViewController ()
 

@@ -13,6 +13,7 @@
 #import "KRCreateViewController.h"
 #import "KRAPIStore.h"
 
+
 @interface ViewController ()
 
 @end
@@ -31,6 +32,7 @@
     
     [[KRAPIStore sharedStore] fetchKronicle:@"51aab816631eb50000000008" withCompletion:completionBlock];
      */
+
 }
 
 - (void)didReceiveMemoryWarning

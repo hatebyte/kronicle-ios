@@ -8,6 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KRGlobals : NSObject
-
-@end
+#define kdomain @"http://166.78.151.97:4711/"

@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import <CocoaLumberjack/DDTTYLogger.h>
+
+static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @implementation AppDelegate
 
@@ -21,6 +24,18 @@
     navigationController.navigationBarHidden = YES;
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
+                                     backgroundColor:[UIColor redColor]
+                                             forFlag:LOG_FLAG_ERROR];
+    
+    DDLogError(@"Paper jam");                              // Red
+    DDLogWarn(@"Toner is low");                            // Orange
+    DDLogInfo(@"Warming up printer (pre-customization)");  // Default (black)
+    DDLogVerbose(@"Intializing protcol x26");              // Default (black)
+    
     return YES;
 }
 

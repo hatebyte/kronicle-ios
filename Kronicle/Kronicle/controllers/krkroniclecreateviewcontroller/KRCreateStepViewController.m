@@ -66,7 +66,7 @@
 //    [[NSNotificationCenter defaultCenter] postNotificationName: @"DurationCreation" object:self userInfo:userInfo];
     
     _currentButton = sender;
-    CGFloat lastTime =(![_currentButton.titleLabel.text isEqualToString:@""]) ? [_currentButton.titleLabel.text intValue] : 1.f;
+//    CGFloat lastTime =(![_currentButton.titleLabel.text isEqualToString:@""]) ? [_currentButton.titleLabel.text intValue] : 1.f;
     
     _durationCreator = [[DurationCreatorView alloc] initWithFrame:CGRectMake(10, 50, 300, 300)];
     _durationCreator.transform = CGAffineTransformMakeRotation(M_PI_2);
