@@ -14,5 +14,7 @@
 + (UIColor*)darkBlue;
 + (UIColor*)darkGrey;
 + (UIColor*)lightGrey;
++ (UIColor*)orange;
++ (UIColor*)turquoise;
 
 @end

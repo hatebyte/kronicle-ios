@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CCE9E0917B0A68700C90B49 /* KRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCE9E0817B0A68700C90B49 /* KRGraphView.m */; };
 		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
 		D26A614A175B217700B50A39 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6148175B217700B50A39 /* hole.png */; };
 		D26A614B175B217700B50A39 /* hole-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6149175B217700B50A39 /* hole-highlight.png */; };
@@ -146,6 +147,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CCE9E0717B0A68600C90B49 /* KRGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRGraphView.h; path = views/KRGraphView.h; sourceTree = "<group>"; };
+		0CCE9E0817B0A68700C90B49 /* KRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRGraphView.m; path = views/KRGraphView.m; sourceTree = "<group>"; };
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26A6148175B217700B50A39 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
@@ -353,6 +356,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CCE9E0A17B0A81D00C90B49 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0CCE9E0717B0A68600C90B49 /* KRGraphView.h */,
+				0CCE9E0817B0A68700C90B49 /* KRGraphView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		D26A616E175B791F00B50A39 /* movies */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +446,7 @@
 				D2A57444175A6782002AC1B9 /* globals */,
 				D2A57404175A3B77002AC1B9 /* network */,
 				D2A57409175A3B77002AC1B9 /* model */,
+				0CCE9E0A17B0A81D00C90B49 /* views */,
 				D2A5740F175A3B77002AC1B9 /* controllers */,
 				D2A573F0175A3B4E002AC1B9 /* AppDelegate.h */,
 				D2A573F1175A3B4E002AC1B9 /* AppDelegate.m */,
@@ -1001,6 +1014,7 @@
 				D2F1E7411789ED850085C707 /* Reachability.m in Sources */,
 				D2F1E74E178A0B620085C707 /* KronicleEngine.m in Sources */,
 				D29D270E178B93340085E943 /* APIRouter.m in Sources */,
+				0CCE9E0917B0A68700C90B49 /* KRGraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
