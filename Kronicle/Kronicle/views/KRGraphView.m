@@ -24,9 +24,9 @@
     _progressBarView.frame = newProgressFrame;
 }
 
-- (void)showPreviousDisplay
+- (void)showPreviewDisplay
 {
-   //not sure what we're supposed to do here
+    [self showDisplayForRatio:0.0f];
 }
 
 #pragma mark - Init Stuff

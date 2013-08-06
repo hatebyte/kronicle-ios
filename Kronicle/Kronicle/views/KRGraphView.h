@@ -11,6 +11,6 @@
 @interface KRGraphView : UIView
 
 - (void)showDisplayForRatio:(CGFloat)ratio;
-- (void)showPreviousDisplay;
+- (void)showPreviewDisplay;
 
 @end
