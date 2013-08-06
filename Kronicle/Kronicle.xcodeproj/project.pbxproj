@@ -119,6 +119,7 @@
 		D2F1E74E178A0B620085C707 /* KronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E74D178A0B620085C707 /* KronicleEngine.m */; };
 		D2F76D3D17B06E24002A9BBA /* KRKronicleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D3C17B06E24002A9BBA /* KRKronicleManager.m */; };
 		D2F76D4017B06E2F002A9BBA /* KRClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D3F17B06E2F002A9BBA /* KRClockManager.m */; };
+		D2F76D4317B1223C002A9BBA /* KRStepNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */; };
 		D2FC5FB517689F6500A46835 /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB317689F6500A46835 /* KRCreateViewController.m */; };
 		D2FC5FB617689F6500A46835 /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */; };
 		D2FC5FBA17689F7900A46835 /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB817689F7900A46835 /* KRCreateStepViewController.m */; };
@@ -306,6 +307,8 @@
 		D2F76D3C17B06E24002A9BBA /* KRKronicleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleManager.m; sourceTree = "<group>"; };
 		D2F76D3E17B06E2F002A9BBA /* KRClockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClockManager.h; sourceTree = "<group>"; };
 		D2F76D3F17B06E2F002A9BBA /* KRClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClockManager.m; sourceTree = "<group>"; };
+		D2F76D4117B1223C002A9BBA /* KRStepNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepNavigation.h; sourceTree = "<group>"; };
+		D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepNavigation.m; sourceTree = "<group>"; };
 		D2FC5FB217689F6500A46835 /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
 		D2FC5FB317689F6500A46835 /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
 		D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
@@ -564,6 +567,8 @@
 				D2A5743D175A6070002AC1B9 /* DescriptionView.m */,
 				D2A5749A175ABB2A002AC1B9 /* KRKronicleNavView.h */,
 				D2A5749B175ABB2C002AC1B9 /* KRKronicleNavView.m */,
+				D2F76D4117B1223C002A9BBA /* KRStepNavigation.h */,
+				D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1021,6 +1026,7 @@
 				D29D270E178B93340085E943 /* APIRouter.m in Sources */,
 				D2F76D3D17B06E24002A9BBA /* KRKronicleManager.m in Sources */,
 				D2F76D4017B06E2F002A9BBA /* KRClockManager.m in Sources */,
+				D2F76D4317B1223C002A9BBA /* KRStepNavigation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,8 @@
 @interface KRKronicleManager : NSObject
 
 @property (nonatomic, weak) id <KRKronicleManagerDelegate> delegate;
+@property (nonatomic, assign) int currentStepIndex;
+@property (nonatomic, assign) int previewStepIndex;
 
 - (id)initWithKronicle:(KRKronicle *)kronicle;
 - (void)setStep:(int)step;

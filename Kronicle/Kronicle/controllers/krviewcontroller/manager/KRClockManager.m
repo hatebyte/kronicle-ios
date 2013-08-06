@@ -46,12 +46,18 @@
     _currentTime = _stepTotal;
 
     [_timer invalidate];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
 }
 
 - (void)update {
     _currentTime -= 1;
-    [self setValues];
+    
+    // create time string
+    NSString *timeString = [KRClockManager stringTimeForInt:_currentTime];
+    NSArray *splitTimeArr = [timeString  componentsSeparatedByString:@":"];
+    
+    _minutes = [splitTimeArr objectAtIndex:0];
+    _seconds = [splitTimeArr objectAtIndex:1];
     
     // fires when over
     if ([_seconds isEqualToString:@"0-1"] && [_minutes isEqualToString:@"00"]) {
@@ -72,25 +78,26 @@
     }
     _globalRatio = ([[NSNumber numberWithInt: totalSecondsPassed] floatValue] /[[NSNumber numberWithInt: _kronicleTotal] floatValue] );
     
-    // craete time string
-    NSString *timeString = [NSString stringWithFormat:@"%@:%@", _minutes, _seconds];
     [self.delegate manager:self updateTimeWithString:timeString andStepRatio:_stepRatio andGlobalRatio:_globalRatio];
 }
 
-- (void)setValues{
-    int minutes = floor(_currentTime / 60);
-    int seconds = floor(_currentTime - (minutes*60));
++ (NSString *)stringTimeForInt:(int)time {
+    int minutes = floor(time / 60);
+    int seconds = floor(time - (minutes*60));
+    NSString *sMinutes;
+    NSString *sSeconds;
     
     if (minutes < 10) {
-        _minutes = [NSString stringWithFormat:@"0%d", minutes];
+        sMinutes = [NSString stringWithFormat:@"0%d", minutes];
     } else {
-        _minutes = [NSString stringWithFormat:@"%d", minutes];
+        sMinutes = [NSString stringWithFormat:@"%d", minutes];
     }
     if (seconds < 10) {
-        _seconds = [NSString stringWithFormat:@"0%d", seconds];
+        sSeconds = [NSString stringWithFormat:@"0%d", seconds];
     } else {
-        _seconds = [NSString stringWithFormat:@"%d", seconds];
+        sSeconds = [NSString stringWithFormat:@"%d", seconds];
     }
+    return [NSString stringWithFormat:@"%@:%@", sMinutes, sSeconds];
 }
 
 @end

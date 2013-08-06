@@ -18,13 +18,16 @@
 {
     @private
     CGRect _bounds;
+    IBOutlet UILabel *_timeLabel;
+    IBOutlet UILabel *_previewTimeLabel;
+
 //    KRSwipeUpScrollView *_scrollView;
 //    KRDiagramView *_circleDiagram; 
 ////    UIImageView *_circleDiagramBackup; 
 //    MediaView *_mediaViewA; 
 //    MediaView *_mediaViewB;  
 //    MediaView *_activeMedia;  
-    IBOutlet UIImageView *_playpauseButton;
+//    IBOutlet UIImageView *_playpauseButton;
 //    UIButton *_listViewButton;
 //    int _currentStep;
 //    KRKronicleNavView *_navView;
@@ -38,6 +41,7 @@
 
 - (IBAction)goToKronicleListView:(id)sender;
 - (IBAction)togglePlayPause:(id)sender;
+- (IBAction)back:(id)sender;
 - (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
 
 @end

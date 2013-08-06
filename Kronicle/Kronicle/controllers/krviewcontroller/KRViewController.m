@@ -16,6 +16,7 @@
 #import "KRGlobals.h"
 #import "KRClockManager.h"
 #import "KRKronicleManager.h"
+#import "KRStepNavigation.h"
 
 
 #define kScrollViewNormal 320.f
@@ -25,6 +26,7 @@
     @private
     KRKronicleManager *_kronicleManager;
     KRClockManager *_clockManager;
+    KRStepNavigation *_stepNavigation;
 }
 
 @end
@@ -53,35 +55,60 @@
     _clockManager = [[KRClockManager alloc] initWithKronicle:self.kronicle];
     _clockManager.delegate = self;
     
+    _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, 200, 320, 100)];
+    [self.view addSubview:_stepNavigation];
+    
     [_kronicleManager setStep:0];
     [_clockManager setTimeForStep:0];
 }
+
+- (IBAction)leftButton:(id)sender {
+    [_kronicleManager setPreviewStep:_kronicleManager.previewStepIndex - 1];
+}
+
+- (IBAction)rightButton:(id)sender {
+    [_kronicleManager setPreviewStep:_kronicleManager.previewStepIndex + 1];
+}
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 #pragma KRClockManager 
 - (void)manager:(KRClockManager *)manager updateTimeWithString:(NSString *)timeString
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
-    DDLogWarn(@"stepRatio   -----: %f", stepRatio);
-    DDLogWarn(@"globalRatio -----: %f", globalRatio);                           
-    DDLogInfo(@"timeString  -----: %@\n\n", timeString);
+//    DDLogWarn(@"STEP   -----: %d", _kronicleManager.currentStepIndex);
+//    DDLogWarn(@"stepRatio   -----: %f", stepRatio);
+//    DDLogWarn(@"globalRatio -----: %f", globalRatio);
+//    DDLogInfo(@"timeString  -----: %@\n\n", timeString);
+    
+    _timeLabel.text = timeString;
 
 }
 
 - (void)manager:(KRClockManager *)manager stepComplete:(int)stepIndex {
     DDLogError(@"stepComplete : %d", stepIndex);
-    
     [_kronicleManager setStep:stepIndex + 1];
 }
 
 
 #pragma KRKronicleManager
 - (void)manager:(KRKronicleManager *)manager updateUIForStep:(KRStep*)step {
-    DDLogWarn(@"\n UPDATE UI --------------------------------- %f \n", step.indexInKronicle);
+//    DDLogWarn(@"\n UPDATE UI --------------------------------- %f \n", step.indexInKronicle);
     [_clockManager setTimeForStep:step.indexInKronicle];
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step {
-    
+//    DDLogWarn(@"stepRatio   -----: %d, %d", _kronicleManager.currentStepIndex, _kronicleManager.previewStepIndex);
+    if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
+        [_stepNavigation animateNavbarOut];
+        _previewTimeLabel.text = @"00:00";
+    } else {
+        [_stepNavigation animateNavbarIn];
+        _previewTimeLabel.text = [KRClockManager stringTimeForInt:step.time];
+    }
 }
 
 
