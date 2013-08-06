@@ -21,7 +21,7 @@
 {
     BOOL isHorizontal = self.frame.size.width > self.frame.size.height;
     CGRect newProgressFrame = isHorizontal ? CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width * ratio, self.frame.size.height) : CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height * ratio);
-    self.frame = newProgressFrame;
+    _progressBarView.frame = newProgressFrame;
 }
 
 - (void)showPreviousDisplay
