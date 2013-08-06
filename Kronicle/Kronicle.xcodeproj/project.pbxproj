@@ -117,6 +117,8 @@
 		D2F1E7471789EDB60085C707 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7461789EDB60085C707 /* Security.framework */; };
 		D2F1E7491789EDBD0085C707 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7481789EDBD0085C707 /* ImageIO.framework */; };
 		D2F1E74E178A0B620085C707 /* KronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E74D178A0B620085C707 /* KronicleEngine.m */; };
+		D2F76D3D17B06E24002A9BBA /* KRKronicleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D3C17B06E24002A9BBA /* KRKronicleManager.m */; };
+		D2F76D4017B06E2F002A9BBA /* KRClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D3F17B06E2F002A9BBA /* KRClockManager.m */; };
 		D2FC5FB517689F6500A46835 /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB317689F6500A46835 /* KRCreateViewController.m */; };
 		D2FC5FB617689F6500A46835 /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */; };
 		D2FC5FBA17689F7900A46835 /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB817689F7900A46835 /* KRCreateStepViewController.m */; };
@@ -300,6 +302,10 @@
 		D2F1E7481789EDBD0085C707 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		D2F1E74C178A0B620085C707 /* KronicleEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KronicleEngine.h; path = kroniclenetwork/KronicleEngine.h; sourceTree = "<group>"; };
 		D2F1E74D178A0B620085C707 /* KronicleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KronicleEngine.m; path = kroniclenetwork/KronicleEngine.m; sourceTree = "<group>"; };
+		D2F76D3B17B06E24002A9BBA /* KRKronicleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleManager.h; sourceTree = "<group>"; };
+		D2F76D3C17B06E24002A9BBA /* KRKronicleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleManager.m; sourceTree = "<group>"; };
+		D2F76D3E17B06E2F002A9BBA /* KRClockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClockManager.h; sourceTree = "<group>"; };
+		D2F76D3F17B06E2F002A9BBA /* KRClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClockManager.m; sourceTree = "<group>"; };
 		D2FC5FB217689F6500A46835 /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
 		D2FC5FB317689F6500A46835 /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
 		D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
@@ -519,6 +525,7 @@
 		D2A57418175A3B77002AC1B9 /* krviewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				D2F76D3A17B06E0E002A9BBA /* manager */,
 				D2A57419175A3B77002AC1B9 /* KRViewController.h */,
 				D2A5741A175A3B77002AC1B9 /* KRViewController.m */,
 				D2A5741B175A3B77002AC1B9 /* KRViewController.xib */,
@@ -772,6 +779,17 @@
 			name = kroniclenetwork;
 			sourceTree = "<group>";
 		};
+		D2F76D3A17B06E0E002A9BBA /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2F76D3B17B06E24002A9BBA /* KRKronicleManager.h */,
+				D2F76D3C17B06E24002A9BBA /* KRKronicleManager.m */,
+				D2F76D3E17B06E2F002A9BBA /* KRClockManager.h */,
+				D2F76D3F17B06E2F002A9BBA /* KRClockManager.m */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
 		D2FC5FD4176A9A8300A46835 /* timecreatorview */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,6 +1019,8 @@
 				D2F1E7411789ED850085C707 /* Reachability.m in Sources */,
 				D2F1E74E178A0B620085C707 /* KronicleEngine.m in Sources */,
 				D29D270E178B93340085E943 /* APIRouter.m in Sources */,
+				D2F76D3D17B06E24002A9BBA /* KRKronicleManager.m in Sources */,
+				D2F76D4017B06E2F002A9BBA /* KRClockManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1038,8 +1058,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1054,8 +1074,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1072,8 +1092,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1081,8 +1101,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1092,15 +1112,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1109,15 +1129,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

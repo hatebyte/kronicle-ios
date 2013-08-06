@@ -13,23 +13,25 @@
 #import "KRDiagramView.h"
 #import "KRKronicleNavView.h"
 
-@interface KRViewController : UIViewController <KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate, KRClockDelegate, KRKronicleNavViewDelegate> {
+@interface KRViewController : UIViewController
+//<KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate, KRClockDelegate, KRKronicleNavViewDelegate>
+{
     @private
     CGRect _bounds;
-    KRSwipeUpScrollView *_scrollView;
-    KRDiagramView *_circleDiagram; 
-//    UIImageView *_circleDiagramBackup; 
-    MediaView *_mediaViewA; 
-    MediaView *_mediaViewB;  
-    MediaView *_activeMedia;  
-    IBOutlet UIImageView *_playpauseButton;  
-    UIButton *_listViewButton;
-    int _currentStep;
-    KRKronicleNavView *_navView;
-    KRClock *_clock;
-    id activePlayer;
-    UIView *_progressbar;
-    UIView *_totalbar;
+//    KRSwipeUpScrollView *_scrollView;
+//    KRDiagramView *_circleDiagram; 
+////    UIImageView *_circleDiagramBackup; 
+//    MediaView *_mediaViewA; 
+//    MediaView *_mediaViewB;  
+//    MediaView *_activeMedia;  
+    IBOutlet UIImageView *_playpauseButton;
+//    UIButton *_listViewButton;
+//    int _currentStep;
+//    KRKronicleNavView *_navView;
+//    KRClock *_clock;
+//    id activePlayer;
+//    UIView *_progressbar;
+//    UIView *_totalbar;
 }
 
 @property (nonatomic, strong) KRKronicle *kronicle;

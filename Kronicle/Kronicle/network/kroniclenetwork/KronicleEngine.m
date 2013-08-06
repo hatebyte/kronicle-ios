@@ -53,7 +53,7 @@
 }
 
 - (void)postKronicle:(KRKronicle *)kronicle withCompletion:(void (^)(KRKronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock {
-    NSString *requestString = [APIRouter current].kronicles;
+    //NSString *requestString = [APIRouter current].kronicles;
     
     // kronicle turn to JSON;
     //MKNetworkOperation *op = [self operationWithURLString:requestString params:@{@"kronicle":} httpMethod:@"POST"];

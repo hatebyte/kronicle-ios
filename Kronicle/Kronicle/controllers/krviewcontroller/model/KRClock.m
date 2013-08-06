@@ -41,15 +41,9 @@
 }
 
 - (void)setValues{
-    //int hours = floor(_total / 3600);
     int minutes = floor(_total / 60);
     int seconds = floor(_total - (minutes*60));
     
-//    if (hours < 10) {
-//        _hours = [NSString stringWithFormat:@"0%d", hours];
-//    } else {
-//        _hours = [NSString stringWithFormat:@"%d", hours];
-//    }
     if (minutes < 10) {
         _minutes = [NSString stringWithFormat:@"0%d", minutes];
     } else {
