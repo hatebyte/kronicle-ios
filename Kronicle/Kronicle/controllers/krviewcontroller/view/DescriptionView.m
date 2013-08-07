@@ -23,11 +23,12 @@
         self.titleLabel.textColor = [UIColor blackColor];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.text = self.step.title;
+        NSLog(@"self.step.title : %@", self.step.title);
+        NSLog(@"self.step.description : %@", self.step.description);
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.titleLabel.numberOfLines = 0;
         [self.titleLabel setFont:[KRFontHelper getFont:KRBrandonLight withSize:28]];
         [self.titleLabel sizeToFit];
-
         [self addSubview:self.titleLabel];
         
         int titleHeight = self.titleLabel.frame.size.height + self.titleLabel.frame.origin.y;

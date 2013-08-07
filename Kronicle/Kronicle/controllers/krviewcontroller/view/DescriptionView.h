@@ -13,7 +13,7 @@
 
 @property(nonatomic, strong) UILabel *titleLabel;
 @property(nonatomic, strong) UITextView *description;
-@property(nonatomic, strong) KRStep *step;
+@property(nonatomic, weak) KRStep *step;
 
 - (id)initWithFrame:(CGRect)frame andStep:(KRStep*)step;
 

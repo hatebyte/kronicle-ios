@@ -41,6 +41,7 @@
         _resume.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeRegular];
         [_resume setBackgroundColor:[KRColorHelper lightBlue]];
         _resume.frame = CGRectMake(0, 40, 90, 40);
+        [_resume addTarget:self action:@selector(resume:) forControlEvents:UIControlEventTouchUpInside];
         [_clippingView addSubview:_resume];
 
         _skipThisStep   = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -49,6 +50,7 @@
         _skipThisStep.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeRegular];
         [_skipThisStep setBackgroundColor:[UIColor blackColor]];
         _skipThisStep.frame = CGRectMake(_resume.frame.origin.x + _resume.frame.size.width, 40, 140, 40);
+        [_skipThisStep addTarget:self action:@selector(skipThis:) forControlEvents:UIControlEventTouchUpInside];
         [_clippingView addSubview:_skipThisStep];
 
         _startOver      = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -57,16 +59,21 @@
         _startOver.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeRegular];
         [_startOver setBackgroundColor:[UIColor blackColor]];
         _startOver.frame = CGRectMake(_skipThisStep.frame.origin.x + _skipThisStep.frame.size.width, 40, 90, 40);
+        [_startOver addTarget:self action:@selector(startOver:) forControlEvents:UIControlEventTouchUpInside];
         [_clippingView addSubview:_startOver];
 
         _forward        = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_forward setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_forward setBackgroundImage:[UIImage imageNamed:@"forward"] forState:UIControlStateNormal];
+        _forward.backgroundColor = [UIColor grayColor];
         _forward.frame = CGRectMake(320 - 60, 40, 60, 60);
+        [_forward addTarget:self action:@selector(forward:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_forward];
 
         _backward       = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backward setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_backward setBackgroundImage:[UIImage imageNamed:@"backward"] forState:UIControlStateNormal];
+        _backward.backgroundColor = [UIColor grayColor];
         _backward.frame = CGRectMake(0, 40, 60, 60);
+        [_backward addTarget:self action:@selector(backward:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backward];
         
         _carrot = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
@@ -86,7 +93,7 @@
     [self.delegate controls:self navigationRequested:KRStepNavigationRequestSkip];
 }
 
-- (void)startover:(id)sender {
+- (void)startOver:(id)sender {
     [self.delegate controls:self navigationRequested:KRStepNavigationRequestStartOver];
 }
 
@@ -99,34 +106,39 @@
 }
 
 - (void)animateNavbarIn {
-    [UIView animateWithDuration:.5
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _carrot.frame          = CGRectMake(145, 0, 30,30);
-                         _carrot.alpha          = 1;
-                         _resume.frame          = CGRectMake(_resume.frame.origin.x, 0, 90, 40);
-                         _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 0, 140, 40);
-                         _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 0, 90, 40);
-                     }
-                     completion:^(BOOL fin){
-                     }];
+    if (!self.isShowing) {
+        self.isShowing = YES;
+        [UIView animateWithDuration:.5
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _carrot.frame          = CGRectMake(145, 0, 30,30);
+                             _carrot.alpha          = 1;
+                             _resume.frame          = CGRectMake(_resume.frame.origin.x, 0, 90, 40);
+                             _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 0, 140, 40);
+                             _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 0, 90, 40);
+                         }
+                         completion:^(BOOL fin){
+                         }];
+    }
 }
 
 - (void)animateNavbarOut {
-    [UIView animateWithDuration:.5
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _carrot.frame          = CGRectMake(145, 30, 30,30);
-                         _carrot.alpha          = 0;
-                         _resume.frame          = CGRectMake(_resume.frame.origin.x, 40, 90, 40);
-                         _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 40, 140, 40);
-                         _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 40, 90, 40);
-                     }
-                     completion:^(BOOL fin){
-                     }];
-
+    if (self.isShowing) {
+        self.isShowing = NO;
+        [UIView animateWithDuration:.5
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _carrot.frame          = CGRectMake(145, 30, 30,30);
+                             _carrot.alpha          = 0;
+                             _resume.frame          = CGRectMake(_resume.frame.origin.x, 40, 90, 40);
+                             _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 40, 140, 40);
+                             _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 40, 90, 40);
+                         }
+                         completion:^(BOOL fin){
+                         }];
+    }
 }
 
 /*

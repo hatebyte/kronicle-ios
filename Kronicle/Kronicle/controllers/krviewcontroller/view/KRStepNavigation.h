@@ -26,6 +26,7 @@ typedef enum {
 @interface KRStepNavigation : UIView
 
 @property (nonatomic, weak) id <KRStepNavigationDelegate> delegate;
+@property (nonatomic, assign) BOOL isShowing;
 
 - (void)animateNavbarIn;
 - (void)animateNavbarOut;

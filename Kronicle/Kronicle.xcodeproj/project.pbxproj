@@ -56,7 +56,7 @@
 		D2A5742A175A3BE3002AC1B9 /* KRClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57429175A3BE3002AC1B9 /* KRClock.m */; };
 		D2A5742D175A3BFE002AC1B9 /* MediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5742C175A3BFE002AC1B9 /* MediaView.m */; };
 		D2A57430175A3C0B002AC1B9 /* KRDiagramView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5742F175A3C0B002AC1B9 /* KRDiagramView.m */; };
-		D2A57433175A3C27002AC1B9 /* KRSwipeUpScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */; };
+		D2A57433175A3C27002AC1B9 /* KRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57432175A3C27002AC1B9 /* KRScrollView.m */; };
 		D2A57436175A4A8D002AC1B9 /* KRList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57435175A4A8D002AC1B9 /* KRList.m */; };
 		D2A5743A175A4FF4002AC1B9 /* KRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57438175A4FF4002AC1B9 /* KRCategoriesViewController.m */; };
 		D2A5743B175A4FF4002AC1B9 /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A57439175A4FF4002AC1B9 /* KRCategoriesViewController.xib */; };
@@ -120,6 +120,8 @@
 		D2F76D3D17B06E24002A9BBA /* KRKronicleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D3C17B06E24002A9BBA /* KRKronicleManager.m */; };
 		D2F76D4017B06E2F002A9BBA /* KRClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D3F17B06E2F002A9BBA /* KRClockManager.m */; };
 		D2F76D4317B1223C002A9BBA /* KRStepNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */; };
+		D2F76D4917B1D03F002A9BBA /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F76D4717B1D03F002A9BBA /* backward.png */; };
+		D2F76D4A17B1D03F002A9BBA /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F76D4817B1D03F002A9BBA /* forward.png */; };
 		D2FC5FB517689F6500A46835 /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB317689F6500A46835 /* KRCreateViewController.m */; };
 		D2FC5FB617689F6500A46835 /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */; };
 		D2FC5FBA17689F7900A46835 /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB817689F7900A46835 /* KRCreateStepViewController.m */; };
@@ -219,8 +221,8 @@
 		D2A5742C175A3BFE002AC1B9 /* MediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaView.m; sourceTree = "<group>"; };
 		D2A5742E175A3C0B002AC1B9 /* KRDiagramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRDiagramView.h; sourceTree = "<group>"; };
 		D2A5742F175A3C0B002AC1B9 /* KRDiagramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRDiagramView.m; sourceTree = "<group>"; };
-		D2A57431175A3C27002AC1B9 /* KRSwipeUpScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSwipeUpScrollView.h; sourceTree = "<group>"; };
-		D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSwipeUpScrollView.m; sourceTree = "<group>"; };
+		D2A57431175A3C27002AC1B9 /* KRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRScrollView.h; sourceTree = "<group>"; };
+		D2A57432175A3C27002AC1B9 /* KRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRScrollView.m; sourceTree = "<group>"; };
 		D2A57434175A4A8D002AC1B9 /* KRList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRList.h; sourceTree = "<group>"; };
 		D2A57435175A4A8D002AC1B9 /* KRList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRList.m; sourceTree = "<group>"; };
 		D2A57437175A4FF4002AC1B9 /* KRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewController.h; sourceTree = "<group>"; };
@@ -309,6 +311,8 @@
 		D2F76D3F17B06E2F002A9BBA /* KRClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClockManager.m; sourceTree = "<group>"; };
 		D2F76D4117B1223C002A9BBA /* KRStepNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepNavigation.h; sourceTree = "<group>"; };
 		D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepNavigation.m; sourceTree = "<group>"; };
+		D2F76D4717B1D03F002A9BBA /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
+		D2F76D4817B1D03F002A9BBA /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		D2FC5FB217689F6500A46835 /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
 		D2FC5FB317689F6500A46835 /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
 		D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
@@ -561,8 +565,8 @@
 				D2A5742C175A3BFE002AC1B9 /* MediaView.m */,
 				D2A5742E175A3C0B002AC1B9 /* KRDiagramView.h */,
 				D2A5742F175A3C0B002AC1B9 /* KRDiagramView.m */,
-				D2A57431175A3C27002AC1B9 /* KRSwipeUpScrollView.h */,
-				D2A57432175A3C27002AC1B9 /* KRSwipeUpScrollView.m */,
+				D2A57431175A3C27002AC1B9 /* KRScrollView.h */,
+				D2A57432175A3C27002AC1B9 /* KRScrollView.m */,
 				D2A5743C175A6070002AC1B9 /* DescriptionView.h */,
 				D2A5743D175A6070002AC1B9 /* DescriptionView.m */,
 				D2A5749A175ABB2A002AC1B9 /* KRKronicleNavView.h */,
@@ -673,6 +677,8 @@
 		D2A5749E175AC5B8002AC1B9 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2F76D4717B1D03F002A9BBA /* backward.png */,
+				D2F76D4817B1D03F002A9BBA /* forward.png */,
 				D26A6152175B30CC00B50A39 /* start-shell.png */,
 				D26A6153175B30CC00B50A39 /* back-bttn.png */,
 				D26A614E175B2AF900B50A39 /* my-kronicles.png */,
@@ -944,6 +950,8 @@
 				F96ADD46175B9BA30003FEF5 /* icon@2x.png in Resources */,
 				D2FC5FB617689F6500A46835 /* KRCreateViewController.xib in Resources */,
 				D2FC5FBB17689F7900A46835 /* KRCreateStepViewController.xib in Resources */,
+				D2F76D4917B1D03F002A9BBA /* backward.png in Resources */,
+				D2F76D4A17B1D03F002A9BBA /* forward.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,7 +1008,7 @@
 				D2A5742A175A3BE3002AC1B9 /* KRClock.m in Sources */,
 				D2A5742D175A3BFE002AC1B9 /* MediaView.m in Sources */,
 				D2A57430175A3C0B002AC1B9 /* KRDiagramView.m in Sources */,
-				D2A57433175A3C27002AC1B9 /* KRSwipeUpScrollView.m in Sources */,
+				D2A57433175A3C27002AC1B9 /* KRScrollView.m in Sources */,
 				D2A57436175A4A8D002AC1B9 /* KRList.m in Sources */,
 				D2A5743A175A4FF4002AC1B9 /* KRCategoriesViewController.m in Sources */,
 				D2A5743E175A6071002AC1B9 /* DescriptionView.m in Sources */,
@@ -1064,8 +1072,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1080,8 +1088,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1098,8 +1106,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1107,8 +1115,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1118,15 +1126,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1135,15 +1143,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7D8566CD-C612-45C6-9965-72246B39C419";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D8566CD-C612-45C6-9965-72246B39C419";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

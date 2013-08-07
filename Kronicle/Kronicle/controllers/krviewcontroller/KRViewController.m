@@ -17,16 +17,19 @@
 #import "KRClockManager.h"
 #import "KRKronicleManager.h"
 #import "KRStepNavigation.h"
+#import "KRScrollView.h"
 
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
 
-@interface KRViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate> {
+@interface KRViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate, KRStepNavigationDelegate, KRScrollViewDelegate> {
     @private
     KRKronicleManager *_kronicleManager;
     KRClockManager *_clockManager;
     KRStepNavigation *_stepNavigation;
+    KRScrollView *_scrollView;
+    UIScrollView *_sview;
 }
 
 @end
@@ -36,38 +39,41 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
-        // Custom initialization
         self.kronicle = kronicle;
 
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    _bounds = [UIScreen mainScreen].bounds;
+    _sview = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    _sview.showsVerticalScrollIndicator = YES;
+    _sview.showsHorizontalScrollIndicator = NO;
+    [self.view addSubview:_sview];
+
     _kronicleManager = [[KRKronicleManager alloc] initWithKronicle:self.kronicle];
     _kronicleManager.delegate = self;
     
     _clockManager = [[KRClockManager alloc] initWithKronicle:self.kronicle];
     _clockManager.delegate = self;
     
-    _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, 200, 320, 100)];
-    [self.view addSubview:_stepNavigation];
+    _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, 270, 320, 100)];
+    _stepNavigation.delegate = self;
+    [_sview addSubview:_stepNavigation];
     
-    [_kronicleManager setStep:0];
-    [_clockManager setTimeForStep:0];
-}
+    _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _stepNavigation.frame.origin.y + _stepNavigation.frame.size.height, 320, 320) andKronicle:self.kronicle];
+    _scrollView.pagingEnabled = YES;
+    _scrollView.contentSize = CGSizeMake(320 * [self.kronicle.steps count], 320);
+    _scrollView.scrollDelegate = self;
+    [_sview addSubview:_scrollView];
 
-- (IBAction)leftButton:(id)sender {
-    [_kronicleManager setPreviewStep:_kronicleManager.previewStepIndex - 1];
-}
-
-- (IBAction)rightButton:(id)sender {
-    [_kronicleManager setPreviewStep:_kronicleManager.previewStepIndex + 1];
+    
+    _sview.contentSize = CGSizeMake(_bounds.size.width, _scrollView.frame.origin.y + _scrollView.frame.size.height);
+    [self setStep:0];
 }
 
 - (IBAction)back:(id)sender {
@@ -79,37 +85,86 @@
 - (void)manager:(KRClockManager *)manager updateTimeWithString:(NSString *)timeString
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
-//    DDLogWarn(@"STEP   -----: %d", _kronicleManager.currentStepIndex);
-//    DDLogWarn(@"stepRatio   -----: %f", stepRatio);
-//    DDLogWarn(@"globalRatio -----: %f", globalRatio);
-//    DDLogInfo(@"timeString  -----: %@\n\n", timeString);
-    
     _timeLabel.text = timeString;
-
 }
 
 - (void)manager:(KRClockManager *)manager stepComplete:(int)stepIndex {
-    DDLogError(@"stepComplete : %d", stepIndex);
-    [_kronicleManager setStep:stepIndex + 1];
+    [self setStep:stepIndex + 1];
 }
 
 
 #pragma KRKronicleManager
 - (void)manager:(KRKronicleManager *)manager updateUIForStep:(KRStep*)step {
-//    DDLogWarn(@"\n UPDATE UI --------------------------------- %f \n", step.indexInKronicle);
+    if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
+        [_stepNavigation animateNavbarOut];
+    }
+    
     [_clockManager setTimeForStep:step.indexInKronicle];
+    _currentLabel.text = step.title;
+    [_scrollView scrollToPage:step.indexInKronicle];
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step {
-//    DDLogWarn(@"stepRatio   -----: %d, %d", _kronicleManager.currentStepIndex, _kronicleManager.previewStepIndex);
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
-        _previewTimeLabel.text = @"00:00";
+        _previewTimeLabel.text =  @"CURRENT";
     } else {
         [_stepNavigation animateNavbarIn];
         _previewTimeLabel.text = [KRClockManager stringTimeForInt:step.time];
     }
+    
+    _previewLabel.text = step.title;
+    [_scrollView scrollToPage:step.indexInKronicle];
+
 }
+
+- (void)kronicleComplete:(KRKronicleManager *)manager {
+
+}
+
+
+#pragma KRStepNavigator 
+- (void)controls:(KRStepNavigation *)controls navigationRequested:(KRStepNavigationRequest)type {
+
+    switch (type) {
+        case KRStepNavigationRequestForward:
+            [self previewStep:_kronicleManager.previewStepIndex + 1];
+            break;
+        case KRStepNavigationRequestBackward:
+            [self previewStep:_kronicleManager.previewStepIndex - 1];
+            break;
+        case KRStepNavigationRequestResume:
+            [self previewStep:_kronicleManager.currentStepIndex];
+            break;
+        case KRStepNavigationRequestSkip:
+            [self setStep:_kronicleManager.previewStepIndex];
+            break;
+        case KRStepNavigationRequestStartOver:
+            [self setStep:0];
+            break;
+    }
+    
+}
+
+
+#pragma KRSwipeUpScrollView
+- (void)scrollView:(KRScrollView *)scrollView pageToIndex:(int)stepIndex {
+    [_kronicleManager setPreviewStep:stepIndex];
+}
+
+
+
+
+- (void)previewStep:(int)step {
+    [_kronicleManager setPreviewStep:step];
+}
+
+- (void)setStep:(int)step {
+    [_kronicleManager setStep:step];
+    [_kronicleManager setPreviewStep:step];
+}
+
+
 
 
 //

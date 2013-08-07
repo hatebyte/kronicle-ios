@@ -15,6 +15,7 @@
 
 - (void)manager:(KRKronicleManager *)manager updateUIForStep:(KRStep*)step;
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step;
+- (void)kronicleComplete:(KRKronicleManager *)manager;
 
 @end
 

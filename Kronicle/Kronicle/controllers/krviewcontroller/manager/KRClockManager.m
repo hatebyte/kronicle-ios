@@ -41,12 +41,15 @@
 
 - (void)setTimeForStep:(int)stepIndex {
     _stepRatio = 0;
+    _globalRatio = 0;
     _step = [_kronicle.steps objectAtIndex:stepIndex];
     _stepTotal = _step.time;
     _currentTime = _stepTotal;
 
     [_timer invalidate];
     _timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+
 }
 
 - (void)update {

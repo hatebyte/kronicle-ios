@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "KRKronicle.h"
-#import "KRSwipeUpScrollView.h"
 #import "MediaView.h"
 #import "KRDiagramView.h"
 #import "KRKronicleNavView.h"
@@ -20,6 +19,8 @@
     CGRect _bounds;
     IBOutlet UILabel *_timeLabel;
     IBOutlet UILabel *_previewTimeLabel;
+    IBOutlet UILabel *_currentLabel;
+    IBOutlet UILabel *_previewLabel;
 
 //    KRSwipeUpScrollView *_scrollView;
 //    KRDiagramView *_circleDiagram; 
