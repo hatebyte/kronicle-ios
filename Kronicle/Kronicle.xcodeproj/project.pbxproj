@@ -123,6 +123,7 @@
 		D2F76D4317B1223C002A9BBA /* KRStepNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */; };
 		D2F76D4917B1D03F002A9BBA /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F76D4717B1D03F002A9BBA /* backward.png */; };
 		D2F76D4A17B1D03F002A9BBA /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F76D4817B1D03F002A9BBA /* forward.png */; };
+		D2F76D4E17B27574002A9BBA /* KRStepListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F76D4D17B27573002A9BBA /* KRStepListView.m */; };
 		D2FC5FB517689F6500A46835 /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB317689F6500A46835 /* KRCreateViewController.m */; };
 		D2FC5FB617689F6500A46835 /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */; };
 		D2FC5FBA17689F7900A46835 /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC5FB817689F7900A46835 /* KRCreateStepViewController.m */; };
@@ -316,6 +317,8 @@
 		D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepNavigation.m; sourceTree = "<group>"; };
 		D2F76D4717B1D03F002A9BBA /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
 		D2F76D4817B1D03F002A9BBA /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		D2F76D4C17B27573002A9BBA /* KRStepListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepListView.h; sourceTree = "<group>"; };
+		D2F76D4D17B27573002A9BBA /* KRStepListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepListView.m; sourceTree = "<group>"; };
 		D2FC5FB217689F6500A46835 /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
 		D2FC5FB317689F6500A46835 /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
 		D2FC5FB417689F6500A46835 /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
@@ -586,6 +589,8 @@
 				D2A5749B175ABB2C002AC1B9 /* KRKronicleNavView.m */,
 				D2F76D4117B1223C002A9BBA /* KRStepNavigation.h */,
 				D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */,
+				D2F76D4C17B27573002A9BBA /* KRStepListView.h */,
+				D2F76D4D17B27573002A9BBA /* KRStepListView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1049,6 +1054,7 @@
 				D2F76D4017B06E2F002A9BBA /* KRClockManager.m in Sources */,
 				D2F76D4317B1223C002A9BBA /* KRStepNavigation.m in Sources */,
 				0CCE9E0917B0A68700C90B49 /* KRGraphView.m in Sources */,
+				D2F76D4E17B27574002A9BBA /* KRStepListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1100,7 +1106,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1127,7 +1133,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1145,7 +1151,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1162,7 +1168,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

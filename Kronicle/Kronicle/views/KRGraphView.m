@@ -8,8 +8,16 @@
 
 #import "KRGraphView.h"
 #import "KRColorHelper.h"
+#import "KRGlobals.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface KRGraphView()
+@interface KRGraphView() {
+    @private
+    CADisplayLink * _runloopConsilieri;
+    CGFloat _currentVal;
+    CGFloat _destVal;
+    UIView *_previewView;
+}
 @property(strong, atomic) UIView *progressBarView;
 @end
 
@@ -17,30 +25,85 @@
 
 #pragma mark - Public Methods
 
-- (void)showDisplayForRatio:(CGFloat)ratio
-{
-    BOOL isHorizontal = self.frame.size.width > self.frame.size.height;
-    CGRect newProgressFrame = isHorizontal ? CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width * ratio, self.frame.size.height) : CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height * ratio);
-    _progressBarView.frame = newProgressFrame;
-}
-
-- (void)showPreviewDisplay
-{
-    [self showDisplayForRatio:0.0f];
-}
-
 #pragma mark - Init Stuff
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.isCurrentStep = YES;
         self.backgroundColor = [KRColorHelper orange];
-        _progressBarView = [[UIView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, 0, frame.size.height)];
+        _progressBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, frame.size.height)];
         _progressBarView.backgroundColor = [KRColorHelper turquoise];
         [self addSubview:_progressBarView];
+        
+        _previewView = [[UIView alloc] initWithFrame:self.bounds];
+        _previewView.backgroundColor = [KRColorHelper orange];
+        [self addSubview:_previewView];
+        
+        _runloopConsilieri = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateFrame)];
     }
     return self;
+}
+
+- (void)showDisplayForRatio:(CGFloat)ratio {
+    _destVal = self.frame.size.width * ratio;
+}
+
+- (void)showPreview {
+    if (_previewView.alpha == 1) {
+        return;
+    }
+
+    _previewView.alpha = 0;
+    _previewView.hidden = NO;
+    [UIView animateWithDuration:.5
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _previewView.alpha = 1.f;
+                     }
+                     completion:^(BOOL fin){
+                     }];
+}
+
+- (void)showDisplayWithReset:(BOOL)shouldReset {
+    [self removeRunLoop];
+    if (shouldReset) {
+        [self reset];
+    }
+    [self addRunLoop];
+    [UIView animateWithDuration:.5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _previewView.alpha = 0;
+                     }
+                     completion:^(BOOL fin){
+                         _previewView.hidden = YES;
+                     }];
+}
+
+- (void)reset {
+    [self removeRunLoop];
+    _destVal = 0;
+    _progressBarView.frame = CGRectMake(0, 0, 0, self.frame.size.height);
+}
+
+- (void)removeRunLoop {
+    [_runloopConsilieri removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
+- (void)addRunLoop {
+    [_runloopConsilieri addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+- (void)dealloc {
+    [self removeRunLoop];
+}
+
+- (void)updateFrame {
+    _currentVal += (_destVal-_currentVal) / 4;
+    _progressBarView.frame = CGRectMake(0, 0, _currentVal, self.frame.size.height);
 }
 
 @end

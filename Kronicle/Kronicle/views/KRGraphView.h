@@ -10,7 +10,12 @@
 
 @interface KRGraphView : UIView
 
+@property(nonatomic, assign) BOOL isCurrentStep;
+
 - (void)showDisplayForRatio:(CGFloat)ratio;
-- (void)showPreviewDisplay;
+- (void)showDisplayWithReset:(BOOL)shouldReset;
+- (void)showPreview;
+- (void)reset;
+- (void)removeRunLoop;
 
 @end

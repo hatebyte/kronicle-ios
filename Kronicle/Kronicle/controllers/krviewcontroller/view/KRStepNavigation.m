@@ -9,6 +9,7 @@
 #import "KRStepNavigation.h"
 #import "KRColorHelper.h"
 #import "KRFontHelper.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface KRStepNavigation () {
     @private
@@ -39,8 +40,10 @@
         [_resume setTitle:@"Resume" forState:UIControlStateNormal];
         [_resume setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _resume.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeRegular];
-        [_resume setBackgroundColor:[KRColorHelper lightBlue]];
-        _resume.frame = CGRectMake(0, 40, 90, 40);
+        _resume.titleLabel.textAlignment = UITextAlignmentCenter;
+        [_resume setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+        [_resume setBackgroundColor:[KRColorHelper turquoise]];
+        _resume.frame = CGRectMake(0, 40, 88, 40);
         [_resume addTarget:self action:@selector(resume:) forControlEvents:UIControlEventTouchUpInside];
         [_clippingView addSubview:_resume];
 
@@ -48,30 +51,42 @@
         [_skipThisStep setTitle:@"Skip to this step" forState:UIControlStateNormal];
         [_skipThisStep setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _skipThisStep.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeRegular];
+        _skipThisStep.titleLabel.textAlignment = UITextAlignmentCenter;
+        [_skipThisStep setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
         [_skipThisStep setBackgroundColor:[UIColor blackColor]];
-        _skipThisStep.frame = CGRectMake(_resume.frame.origin.x + _resume.frame.size.width, 40, 140, 40);
+        _skipThisStep.frame = CGRectMake(_resume.frame.origin.x + _resume.frame.size.width, 40, 134, 40);
         [_skipThisStep addTarget:self action:@selector(skipThis:) forControlEvents:UIControlEventTouchUpInside];
         [_clippingView addSubview:_skipThisStep];
+        CALayer *whiteLine = [CALayer layer];
+        whiteLine.frame = CGRectMake(0, 0, 1, _skipThisStep.frame.size.height);
+        whiteLine.backgroundColor = [UIColor whiteColor].CGColor;
+        [_skipThisStep.layer addSublayer:whiteLine];
 
         _startOver      = [UIButton buttonWithType:UIButtonTypeCustom];
         [_startOver setTitle:@"Start over" forState:UIControlStateNormal];
         [_startOver setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _startOver.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:KRFontSizeRegular];
+        _startOver.titleLabel.textAlignment = UITextAlignmentCenter;
+        [_startOver setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
         [_startOver setBackgroundColor:[UIColor blackColor]];
-        _startOver.frame = CGRectMake(_skipThisStep.frame.origin.x + _skipThisStep.frame.size.width, 40, 90, 40);
+        _startOver.frame = CGRectMake(_skipThisStep.frame.origin.x + _skipThisStep.frame.size.width, 40, 102, 40);
         [_startOver addTarget:self action:@selector(startOver:) forControlEvents:UIControlEventTouchUpInside];
         [_clippingView addSubview:_startOver];
-
+        whiteLine = [CALayer layer];
+        whiteLine.frame = CGRectMake(0, 0, 1, _startOver.frame.size.height);
+        whiteLine.backgroundColor = [UIColor whiteColor].CGColor;
+        [_startOver.layer addSublayer:whiteLine];
+        
         _forward        = [UIButton buttonWithType:UIButtonTypeCustom];
         [_forward setBackgroundImage:[UIImage imageNamed:@"forward"] forState:UIControlStateNormal];
-        _forward.backgroundColor = [UIColor grayColor];
+        _forward.backgroundColor = [UIColor clearColor];
         _forward.frame = CGRectMake(320 - 60, 40, 60, 60);
         [_forward addTarget:self action:@selector(forward:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_forward];
 
         _backward       = [UIButton buttonWithType:UIButtonTypeCustom];
         [_backward setBackgroundImage:[UIImage imageNamed:@"backward"] forState:UIControlStateNormal];
-        _backward.backgroundColor = [UIColor grayColor];
+        _backward.backgroundColor = [UIColor clearColor];
         _backward.frame = CGRectMake(0, 40, 60, 60);
         [_backward addTarget:self action:@selector(backward:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backward];
@@ -114,9 +129,9 @@
                          animations:^{
                              _carrot.frame          = CGRectMake(145, 0, 30,30);
                              _carrot.alpha          = 1;
-                             _resume.frame          = CGRectMake(_resume.frame.origin.x, 0, 90, 40);
-                             _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 0, 140, 40);
-                             _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 0, 90, 40);
+                             _resume.frame          = CGRectMake(_resume.frame.origin.x, 0, _resume.frame.size.width, 40);
+                             _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 0, _skipThisStep.frame.size.width, 40);
+                             _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 0, _startOver.frame.size.width, 40);
                          }
                          completion:^(BOOL fin){
                          }];
@@ -132,9 +147,9 @@
                          animations:^{
                              _carrot.frame          = CGRectMake(145, 30, 30,30);
                              _carrot.alpha          = 0;
-                             _resume.frame          = CGRectMake(_resume.frame.origin.x, 40, 90, 40);
-                             _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 40, 140, 40);
-                             _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 40, 90, 40);
+                             _resume.frame          = CGRectMake(_resume.frame.origin.x, 40, _resume.frame.size.width, 40);
+                             _skipThisStep.frame    = CGRectMake(_skipThisStep.frame.origin.x, 40, _skipThisStep.frame.size.width, 40);
+                             _startOver.frame       = CGRectMake(_startOver.frame.origin.x, 40, _startOver.frame.size.width, 40);
                          }
                          completion:^(BOOL fin){
                          }];

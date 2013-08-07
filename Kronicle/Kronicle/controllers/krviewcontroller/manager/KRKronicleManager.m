@@ -32,7 +32,9 @@
 #pragma public methods 
 - (void)setStep:(int)stepIndex {
     if (stepIndex >= _kronicle.steps.count || stepIndex < 0) {
-        DDLogError(@"KRONICLE IS COMPLETED");                             
+        DDLogError(@"KRONICLE IS COMPLETED");
+        [self.delegate kronicleComplete:self];
+
         return;
     }
     self.currentStepIndex = stepIndex;

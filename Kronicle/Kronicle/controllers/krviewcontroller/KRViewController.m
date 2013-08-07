@@ -18,6 +18,8 @@
 #import "KRKronicleManager.h"
 #import "KRStepNavigation.h"
 #import "KRScrollView.h"
+#import "KRGraphView.h"
+#import "KRStepListView.h"
 
 
 #define kScrollViewNormal 320.f
@@ -25,11 +27,13 @@
 
 @interface KRViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate, KRStepNavigationDelegate, KRScrollViewDelegate> {
     @private
+    UIScrollView *_sview;
+    UIButton *_backButton;
     KRKronicleManager *_kronicleManager;
     KRClockManager *_clockManager;
     KRStepNavigation *_stepNavigation;
     KRScrollView *_scrollView;
-    UIScrollView *_sview;
+    KRGraphView *_graphView;
 }
 
 @end
@@ -55,24 +59,49 @@
     _sview.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:_sview];
 
+    _backButton       = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [_backButton setBackgroundImage:[UIImage imageNamed:@"backward"] forState:UIControlStateNormal];
+    _backButton.backgroundColor = [UIColor grayColor];
+    _backButton.frame = CGRectMake(5, 5, 35, 35);
+    [_backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [_sview addSubview:_backButton];
+    
     _kronicleManager = [[KRKronicleManager alloc] initWithKronicle:self.kronicle];
     _kronicleManager.delegate = self;
     
     _clockManager = [[KRClockManager alloc] initWithKronicle:self.kronicle];
     _clockManager.delegate = self;
     
-    _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, 270, 320, 100)];
+    _graphView = [[KRGraphView alloc] initWithFrame:CGRectMake(0, 320, 320, 60)];
+    [_sview addSubview:_graphView];
+
+    _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, (_graphView.frame.origin.y + _graphView.frame.size.height)-100, 320, 100)];
     _stepNavigation.delegate = self;
     [_sview addSubview:_stepNavigation];
-    
-    _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _stepNavigation.frame.origin.y + _stepNavigation.frame.size.height, 320, 320) andKronicle:self.kronicle];
+
+    _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y + _graphView.frame.size.height, 320, 320) andKronicle:self.kronicle];
     _scrollView.pagingEnabled = YES;
     _scrollView.contentSize = CGSizeMake(320 * [self.kronicle.steps count], 320);
     _scrollView.scrollDelegate = self;
     [_sview addSubview:_scrollView];
-
     
-    _sview.contentSize = CGSizeMake(_bounds.size.width, _scrollView.frame.origin.y + _scrollView.frame.size.height);
+    int i = 0;
+    int y = _scrollView.frame.origin.y + _scrollView.frame.size.height;
+    KRStepListView *stepListView;
+    for (KRStep *step in self.kronicle.steps) {
+        stepListView = [[KRStepListView alloc] initWithFrame:CGRectMake(0, y + (60 * i), 320, 70) andStep:step];
+        if (step.indexInKronicle < _kronicleManager.currentStepIndex) {
+            [stepListView setStepCompleted:YES];
+        } else if (step.indexInKronicle == _kronicleManager.currentStepIndex) {
+            [stepListView setCurrentStepWithRatio:0];
+        } else {
+            [stepListView setStepCompleted:NO];
+        }
+        [_sview addSubview:stepListView];
+        ++i;
+    }
+    
+    _sview.contentSize = CGSizeMake(_bounds.size.width, stepListView.frame.origin.y + stepListView.frame.size.height);
     [self setStep:0];
 }
 
@@ -86,6 +115,8 @@
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
     _timeLabel.text = timeString;
+    [_graphView showDisplayForRatio:stepRatio];
+    
 }
 
 - (void)manager:(KRClockManager *)manager stepComplete:(int)stepIndex {
@@ -98,8 +129,8 @@
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
     }
-    
     [_clockManager setTimeForStep:step.indexInKronicle];
+    
     _currentLabel.text = step.title;
     [_scrollView scrollToPage:step.indexInKronicle];
 }
@@ -108,18 +139,19 @@
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
         _previewTimeLabel.text =  @"CURRENT";
+        [_graphView showDisplayWithReset:NO];
     } else {
         [_stepNavigation animateNavbarIn];
         _previewTimeLabel.text = [KRClockManager stringTimeForInt:step.time];
+        [_graphView showPreview];
     }
     
     _previewLabel.text = step.title;
     [_scrollView scrollToPage:step.indexInKronicle];
-
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
-
+    [_graphView reset];
 }
 
 
@@ -143,7 +175,6 @@
             [self setStep:0];
             break;
     }
-    
 }
 
 
@@ -160,6 +191,7 @@
 }
 
 - (void)setStep:(int)step {
+    [_graphView showDisplayWithReset:YES];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
 }

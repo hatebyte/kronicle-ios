@@ -42,7 +42,6 @@
 
 - (IBAction)goToKronicleListView:(id)sender;
 - (IBAction)togglePlayPause:(id)sender;
-- (IBAction)back:(id)sender;
 - (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
 
 @end

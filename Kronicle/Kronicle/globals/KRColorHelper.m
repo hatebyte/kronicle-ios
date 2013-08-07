@@ -30,8 +30,16 @@
     return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:1.0f]; //f1a325
 }
 
++ (UIColor*)orangeTransparent {
+    return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:.3f]; //f1a325
+}
+
 + (UIColor*)turquoise {
     return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:1.0f]; //40BCB2
+}
+
++ (UIColor*)turquoiseTransparent {
+    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:.30f]; //40BCB2
 }
 
 @end
