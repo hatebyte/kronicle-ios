@@ -182,9 +182,6 @@
     [self setStep:stepIndex];
 }
 
-
-
-
 #pragma private methods
 - (void)previewStep:(int)step {
     [_kronicleManager setPreviewStep:step];
