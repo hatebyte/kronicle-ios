@@ -48,20 +48,44 @@
 
 - (void)showDisplayForRatio:(CGFloat)ratio {
     _destVal = self.frame.size.width * ratio;
+    
+    [UIView animateWithDuration:1
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _progressBarView.frame = CGRectMake(0, 0, _destVal, self.frame.size.height);
+                     }
+                     completion:^(BOOL fin){
+                     }];
+
 }
 
-- (void)showPreview {
+- (void)showPreview:(BOOL)hasPassed {
+    [self removeRunLoop];
     if (_previewView.alpha == 1) {
         return;
     }
+    
+    UIColor *tweenColor;
+//    CGRect frame;
+    if (hasPassed) {
+        tweenColor = [KRColorHelper turquoise];
+//        frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 
+    } else {
+        tweenColor = [KRColorHelper orange];
+//        frame = CGRectMake(0, 0, 0, self.frame.size.height);
+
+    }
     _previewView.alpha = 0;
     _previewView.hidden = NO;
     [UIView animateWithDuration:.5
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
+                         _previewView.backgroundColor = tweenColor;
                          _previewView.alpha = 1.f;
+//                         _previewView.frame = frame;
                      }
                      completion:^(BOOL fin){
                      }];
@@ -90,11 +114,17 @@
     _progressBarView.frame = CGRectMake(0, 0, 0, self.frame.size.height);
 }
 
+- (void)updateForLastStep {
+    [self removeRunLoop];
+    _destVal = 1;
+    _progressBarView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+}
+
 - (void)removeRunLoop {
-    [_runloopConsilieri removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//    [_runloopConsilieri removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 - (void)addRunLoop {
-    [_runloopConsilieri addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//    [_runloopConsilieri addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)dealloc {

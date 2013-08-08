@@ -8,6 +8,15 @@
 
 #import "DescriptionView.h"
 #import "KRFontHelper.h"
+#import "KRClockManager.h"
+
+@interface DescriptionView () {
+    @private
+    UILabel *_clockLabel;
+
+}
+
+@end
 
 @implementation DescriptionView
 
@@ -17,14 +26,36 @@
     if (self) {
         self.step = step;
         // Initialization code
-        self.backgroundColor = [UIColor whiteColor];
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(14, 5, 292, 50)];
+        self.backgroundColor = [UIColor clearColor];
+        
+        _clockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 8, 320, 30)];
+        _clockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:32];
+        _clockLabel.textColor = [UIColor whiteColor];
+        _clockLabel.backgroundColor = [UIColor clearColor];
+        _clockLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:_clockLabel];
+        
+        _subClockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                                   _clockLabel.frame.origin.y + _clockLabel.frame.size.height - 1,
+                                                                   320,
+                                                                   17)];
+        _subClockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:13];
+        _subClockLabel.textColor = [UIColor whiteColor];
+        _subClockLabel.backgroundColor = [UIColor clearColor];
+        _subClockLabel.textAlignment = NSTextAlignmentCenter;
+        _subClockLabel.text = @"until next step";
+        [self addSubview:_subClockLabel];
+        
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(14,
+                                                                    _subClockLabel.frame.origin.y + _subClockLabel.frame.size.height + 10,
+                                                                    292,
+                                                                    50)];
         self.titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:32];
         self.titleLabel.textColor = [UIColor blackColor];
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.text = self.step.title;
-        NSLog(@"self.step.title : %@", self.step.title);
-        NSLog(@"self.step.description : %@", self.step.description);
+//        NSLog(@"self.step.title : %@", self.step.title);
+//        NSLog(@"self.step.description : %@", self.step.description);
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.titleLabel.numberOfLines = 0;
         [self.titleLabel setFont:[KRFontHelper getFont:KRBrandonLight withSize:28]];
@@ -59,6 +90,18 @@
 
     }
     return self;
+}
+
+- (void)updateClock:(NSString *)timeString {
+    _clockLabel.text = timeString;
+}
+
+- (void)resetClock {
+    _clockLabel.text = [KRClockManager stringTimeForInt:(int)_step.time];
+}
+
+- (void)updateForLastStep {
+    _clockLabel.text = @"Finished!";
 }
 
 /*

@@ -27,5 +27,8 @@ typedef enum {
 
 - (id)initWithFrame:(CGRect)frame andKronicle:(KRKronicle *)kronicle;
 - (void)scrollToPage:(int)page;
+- (void)updateCurrentStepClock:(NSString *)timeString;
+- (void)setCurrentStep:(int)stepIndex;
+- (void)updateForLastStep;
 
 @end

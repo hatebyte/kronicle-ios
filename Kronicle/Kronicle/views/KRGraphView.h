@@ -14,8 +14,9 @@
 
 - (void)showDisplayForRatio:(CGFloat)ratio;
 - (void)showDisplayWithReset:(BOOL)shouldReset;
-- (void)showPreview;
+- (void)showPreview:(BOOL)hasPassed;
 - (void)reset;
 - (void)removeRunLoop;
+- (void)updateForLastStep;
 
 @end

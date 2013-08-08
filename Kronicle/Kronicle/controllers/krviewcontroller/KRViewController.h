@@ -15,12 +15,6 @@
 @interface KRViewController : UIViewController
 //<KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate, KRClockDelegate, KRKronicleNavViewDelegate>
 {
-    @private
-    CGRect _bounds;
-    IBOutlet UILabel *_timeLabel;
-    IBOutlet UILabel *_previewTimeLabel;
-    IBOutlet UILabel *_currentLabel;
-    IBOutlet UILabel *_previewLabel;
 
 //    KRSwipeUpScrollView *_scrollView;
 //    KRDiagramView *_circleDiagram; 
@@ -40,7 +34,6 @@
 
 @property (nonatomic, strong) KRKronicle *kronicle;
 
-- (IBAction)goToKronicleListView:(id)sender;
 - (IBAction)togglePlayPause:(id)sender;
 - (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
 

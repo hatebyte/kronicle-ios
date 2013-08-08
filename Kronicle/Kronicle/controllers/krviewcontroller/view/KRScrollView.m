@@ -13,7 +13,7 @@
 
 @interface KRScrollView () <UIScrollViewDelegate> {
     @private
-    CGFloat _velocity;
+    __weak DescriptionView *_currentStep;
 }
 @end
 
@@ -24,14 +24,16 @@
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         self.delegate = self;
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
 
-        for (int i = 0; i < [kronicle.steps count]; i++) {
+        int count = [kronicle.steps count];
+        for (int i = 0; i < count; i++) {
             KRStep *s = [kronicle.steps objectAtIndex:i];
             DescriptionView *d = [[DescriptionView alloc] initWithFrame:CGRectMake(frame.size.width * i,
                                                                                    0,
                                                                                    frame.size.width,
                                                                                    frame.size.height) andStep:s];
+            d.subClockLabel.text = [NSString stringWithFormat:@"Step %d of %d", (i +1), count];
             [self addSubview:d];
         }
     }
@@ -41,11 +43,29 @@
 //- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
 //    _velocity = velocity.x;
 //}
+- (void)setCurrentStep:(int)stepIndex {
+    _currentStep = [[self subviews] objectAtIndex:stepIndex];
+}
 
+- (void)updateForLastStep {
+    [_currentStep updateForLastStep];
+}
+
+#pragma delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     int index = self.contentOffset.x / self.frame.size.width;
     [_scrollDelegate scrollView:self pageToIndex:index];
 }
+
+- (void)updateCurrentStepClock:(NSString *)timeString {
+    NSArray *subViews = [self subviews];
+    for (int i = 0; i < subViews.count; i++) {
+        DescriptionView *d  = [[self subviews] objectAtIndex:i];
+        [d resetClock];
+    }
+    [_currentStep updateClock:timeString];
+}
+
 
 #pragma public properties
 - (void)scrollToPage:(int)page {

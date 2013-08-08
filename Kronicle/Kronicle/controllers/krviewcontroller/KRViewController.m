@@ -31,6 +31,7 @@
                                 KRScrollViewDelegate,
                                 KRStepListContainerViewDelegate> {
     @private
+    CGRect _bounds;
     UIScrollView *_sview;
     UIButton *_backButton;
     KRKronicleManager *_kronicleManager;
@@ -84,7 +85,7 @@
     _stepNavigation.delegate = self;
     [_sview addSubview:_stepNavigation];
 
-    _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y + _graphView.frame.size.height, 320, 320) andKronicle:self.kronicle];
+    _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y, 320, 320) andKronicle:self.kronicle];
     _scrollView.pagingEnabled = YES;
     _scrollView.contentSize = CGSizeMake(320 * [self.kronicle.steps count], 320);
     _scrollView.scrollDelegate = self;
@@ -107,7 +108,7 @@
 - (void)manager:(KRClockManager *)manager updateTimeWithString:(NSString *)timeString
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
-    _timeLabel.text = timeString;
+    [_scrollView updateCurrentStepClock:timeString];
     [_graphView showDisplayForRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
 }
@@ -122,30 +123,28 @@
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
     }
-    [_clockManager setTimeForStep:step.indexInKronicle];
-    _currentLabel.text = step.title;
     
+    [_clockManager setTimeForStep:step.indexInKronicle];
     [_stepListContainerView adjustStepListForCurrentStep:step.indexInKronicle];
-    [_scrollView scrollToPage:step.indexInKronicle];    
+    [_scrollView setCurrentStep:step.indexInKronicle];
+    
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step {
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
-        _previewTimeLabel.text =  @"CURRENT";
         [_graphView showDisplayWithReset:NO];
     } else {
         [_stepNavigation animateNavbarIn];
-        _previewTimeLabel.text = [KRClockManager stringTimeForInt:step.time];
-        [_graphView showPreview];
+        [_graphView showPreview:(_kronicleManager.currentStepIndex > step.indexInKronicle)];
     }
-    
-    _previewLabel.text = step.title;
     [_scrollView scrollToPage:step.indexInKronicle];
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
-    [_graphView reset];
+    [_graphView updateForLastStep];
+    [_scrollView updateForLastStep];
+    [_stepListContainerView updateForLastStep];
 }
 
 
@@ -193,77 +192,12 @@
     [_kronicleManager setPreviewStep:step];
 }
 
+- (IBAction)togglePlayPause:(id)sender {
+
+}
 
 
-//
-//    _bounds = [UIScreen mainScreen].bounds;
-//    _clock = [KRClock sharedClock];
-//    _clock.delegate = self;
-//
-//    _navView = [[KRKronicleNavView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, 47)];
-//    _navView.delegate = self;
-//    [_navView setTitleText:@"00:00"];
-//    [self.view addSubview:_navView];
-//    
-//    _mediaViewA = [[MediaView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height, _bounds.size.width, _bounds.size.width)];
-//    [self.view addSubview:_mediaViewA];
-//    _mediaViewB = [[MediaView alloc] initWithFrame:_mediaViewA.frame];
-//    [self.view addSubview:_mediaViewB];
-//    [_mediaViewB setMediaPath:[(KRStep*)[self.kronicle.steps objectAtIndex:0] imageUrl] andType:MediaViewImage];
-//    //[_mediaViewB setMediaPath:@"crazy_train_1.mov" andType:MediaViewImage];
-//    
-//    _circleDiagram = [[KRDiagramView alloc] initWithFrame:CGRectMake((_bounds.size.width - 285) * .5,
-//                                                                     (_bounds.size.width - 285) * .5 + 47,
-//                                                                     285,
-//                                                                     285)];
-//    _circleDiagram.delegate = self;
-//    _circleDiagram.transform = CGAffineTransformMakeRotation(-M_PI_2);
-//    [self.view addSubview:_circleDiagram];
-//    
-//    _totalbar = [[UIView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height, 320, 5)];
-//    _totalbar.backgroundColor = [UIColor whiteColor];
-//    _totalbar.alpha = .3f;
-//    [self.view addSubview:_totalbar];
-//    
-//    _progressbar = [[UIView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height, 0, 5)];
-//    _progressbar.backgroundColor = [KRColorHelper darkBlue];
-//    [self.view addSubview:_progressbar];
-//
-//    _scrollView = [[KRSwipeUpScrollView alloc] initWithFrame:CGRectMake(0, _mediaViewB.frame.origin.y + _mediaViewB.frame.size.height, _bounds.size.width, [KRSwipeUpScrollView maxHeight])];
-//    _scrollView.backgroundColor = [UIColor clearColor];
-//    _scrollView.pagingEnabled = YES;
-//    _scrollView.contentSize = CGSizeMake(320 * [self.kronicle.steps count], [KRSwipeUpScrollView maxHeight]);
-//    _scrollView.delegate = self;
-//    for (int i = 0; i < [self.kronicle.steps count]; i++) {
-//        KRStep *s = [self.kronicle.steps objectAtIndex:i];
-//        DescriptionView *d = [[DescriptionView alloc] initWithFrame:CGRectMake(_bounds.size.width * i,
-//                                                                               0,
-//                                                                               _bounds.size.width,
-//                                                                               [KRSwipeUpScrollView maxHeight]) andStep:s];
-//        [_scrollView addSubview:d];
-//    }
-//    [self.view addSubview:_scrollView];
-//    
-//    _listViewButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-//    _listViewButton.frame = CGRectMake(_circleDiagram.frame.size.width + _circleDiagram.frame.origin.x - _listViewButton.frame.size.width,
-//                                       _circleDiagram.frame.size.height + _circleDiagram.frame.origin.y - _listViewButton.frame.size.height,
-//                                       _listViewButton.frame.size.width,
-//                                       _listViewButton.frame.size.height);
-//    [_listViewButton addTarget:self action:@selector(goToKronicleListView:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:_listViewButton];
-//    
-//    UIImageView *gradient = [[UIImageView alloc] initWithFrame:CGRectMake(0, _bounds.size.height-60, _bounds.size.width, 60)];
-//    gradient.image = [UIImage imageNamed:@"bottom-shadow"];
-//    [self.view addSubview:gradient];
-//    
-//    KRStep *s = [self.kronicle.steps objectAtIndex:0];
-//    _currentStep = 0;
-//    _circleDiagram.imagePath = s.circleUrl;
-//
-//    [_clock calibrateForKronicle:[self.kronicle.steps count]];
-//    [_clock resetWithTime:s.time];
-//    [_clock play];
-//}
+
 
 //// sets the right picture/video
 //- (void)setActiveMedia:(KRStep*)step {
@@ -291,109 +225,6 @@
 //    }
 //}
 
-- (IBAction)goToKronicleListView:(id)sender {
-//    KRViewListTypeViewController *listTypeViewController = [[KRViewListTypeViewController alloc] initWithNibName:@"KRViewListTypeViewController" andKronicle:self.kronicle completion:^(int step){
-//        if ([_clock isPaused]) {
-//            [_clock play];
-//            _navView.pauseButton.selected = NO;
-//        }
-//        if (step != _clock.index) {
-//            _clock.index = step;
-//            KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
-//            [_clock resetWithTime:s.time];
-//            [self jumpToStep:step andPlay:NO];
-//        }
-//        [self dismissViewControllerAnimated:YES completion:^{}];
-//    }];
-//    listTypeViewController.currentStep = _currentStep;
-//    [_clock pause];
-//    [listTypeViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-//    [self presentViewController:listTypeViewController animated:YES completion:^{}];
-}
-
-- (IBAction)togglePlayPause:(id)sender {}
-
-//
-//#pragma SwipeScrollView 
-//
-//- (void)scrollView:(KRSwipeUpScrollView*)scrollView swipedUpWithDistance:(int)distance {
-//    [UIView animateWithDuration:.2
-//                          delay:0.0
-//                        options:UIViewAnimationOptionCurveEaseInOut
-//                     animations:^{
-//                         _scrollView.frame = CGRectMake(0, kScrollViewUp, _bounds.size.width, [KRSwipeUpScrollView maxHeight]);
-//                         _listViewButton.frame = CGRectMake(_circleDiagram.frame.size.width + _circleDiagram.frame.origin.x - _listViewButton.frame.size.width,
-//                                                            _scrollView.frame.origin.y - (_listViewButton.frame.size.height + 10),
-//                                                            _listViewButton.frame.size.width,
-//                                                            _listViewButton.frame.size.height);
-//                     }
-//                     completion:^(BOOL fin){
-//                     }];
-//}
-//
-//- (void)scrollView:(KRSwipeUpScrollView*)scrollView swipedDownWithDistance:(int)distance {
-//    [UIView animateWithDuration:.2
-//                          delay:0.0
-//                        options:UIViewAnimationOptionCurveEaseInOut
-//                     animations:^{
-//                         _scrollView.frame = CGRectMake(0,
-//                                                        _mediaViewB.frame.origin.y + _mediaViewB.frame.size.height,
-//                                                        _bounds.size.width, [KRSwipeUpScrollView maxHeight]);
-//                         _listViewButton.frame = CGRectMake(_circleDiagram.frame.size.width + _circleDiagram.frame.origin.x - _listViewButton.frame.size.width,
-//                                                            _scrollView.frame.origin.y - (_listViewButton.frame.size.height + 10),
-//                                                            _listViewButton.frame.size.width,
-//                                                            _listViewButton.frame.size.height);
-//
-//                     }
-//                     completion:^(BOOL fin){
-//                     }];
-//}
-//
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    [self updateScrollView];
-//}
-//
-//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-//    [self updateScrollView];
-//}
-//
-//// updates from pan position
-//- (void)updateScrollView {
-//    int index = _scrollView.contentOffset.x / _bounds.size.width;
-//    _currentStep = index;
-////    [UIView animateWithDuration:.2
-////                          delay:0.0
-////                        options:UIViewAnimationOptionCurveEaseInOut
-////                     animations:^{
-////                         _circleDiagram.alpha = 0.f;
-////                     }
-////                     completion:^(BOOL fin){
-//                         [self setActiveMedia:(KRStep*)[self.kronicle.steps objectAtIndex:_currentStep]];
-////                     }];
-//}
-//
-//// updates from suggested index
-//- (void)jumpToStep:(int)index andPlay:(BOOL)play{
-//    if(play) {
-//        [_navView isCurrentStep:YES];
-//    }
-//    if (_currentStep == index) return;
-//    CGRect frame = CGRectMake(_scrollView.frame.size.width * index,
-//                              _scrollView.frame.origin.y,
-//                              _scrollView.frame.size.width,
-//                              _scrollView.frame.size.height);
-////    [UIView animateWithDuration:.2
-////                          delay:0.0
-////                        options:UIViewAnimationOptionCurveEaseInOut
-////                     animations:^{
-////                         _circleDiagram.alpha = 0.f;
-////                     }
-////                     completion:^(BOOL fin){
-//                         [_scrollView scrollRectToVisible:frame animated:YES];
-////                     }];
-//}
-//
-//
 //#pragma CircleDiagramView
 //- (void)diagramView:(KRDiagramView*)diagramView withDegree:(CGFloat)percent {
 //    int index = [self returnIndexForPercent:percent andIndex:0];
@@ -419,49 +250,6 @@
 //    }
 //}
 //
-//
-//#pragma clock
-//- (void)clock:(KRClock*)clock updateWithTimeString:(NSString*)string andPercent:(CGFloat)percent {
-//    [_navView setTitleText:string];
-//    [_navView setSubText:@"until next step"];
-//    _progressbar.frame = CGRectMake(0, _navView.frame.size.height, 320 * percent, 5);
-//}
-//
-//- (void)clockTimeOver:(KRClock*)clock {
-//    _clock.index += 1;
-//    KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
-//    [_clock resetWithTime:s.time];
-//    [self jumpToStep:_clock.index andPlay:YES];
-//}
-//
-//- (void)kronicleTimeOver:(KRClock*)clock {
-//    [_navView setTitleText:@"Finished!"];
-//    [_navView setSubText:@""];
-//    _currentStep = _clock.maxIndex;
-//}
-//
-//
-//#pragma navView
-//
-//- (void)navViewBack:(KRKronicleNavView*)navView {
-//    [_clock pause];
-//    [_mediaViewA stop];
-//    [_mediaViewB stop];
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
-//
-//- (void)navViewPlayPause:(KRKronicleNavView*)navView {
-////    NSLog(@"[_clock isPaused] : %d", [_clock isPaused]);
-//    if ([_clock isPaused]) {
-//        [_clock play];
-//        [_mediaViewA play];
-//        [_mediaViewB play];
-//    } else {
-//        [_clock pause];
-//        [_mediaViewA pause];
-//        [_mediaViewB pause];
-//    }
-//}
 //
 
 

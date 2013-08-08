@@ -111,6 +111,8 @@
 
 - (void)updateCurrentStepWithRatio:(CGFloat)stepRatio {
     _destVal = self.frame.size.height * stepRatio;
+    
+    
 }
 
 #pragma private methods

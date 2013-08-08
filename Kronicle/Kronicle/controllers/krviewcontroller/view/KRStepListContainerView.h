@@ -23,5 +23,6 @@
 - (id)initWithFrame:(CGRect)frame andSteps:(NSArray *)steps;
 - (void)adjustStepListForCurrentStep:(int)steIndex;
 - (void)updateCurrentStepWithRatio:(CGFloat)stepRatio;
+- (void)updateForLastStep;
 
 @end

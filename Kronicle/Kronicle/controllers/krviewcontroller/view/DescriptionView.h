@@ -12,9 +12,14 @@
 @interface DescriptionView : UIView
 
 @property(nonatomic, strong) UILabel *titleLabel;
+@property(nonatomic, strong) UILabel *subClockLabel;
 @property(nonatomic, strong) UITextView *description;
 @property(nonatomic, weak) KRStep *step;
 
+
 - (id)initWithFrame:(CGRect)frame andStep:(KRStep*)step;
+- (void)updateClock:(NSString *)timeString;
+- (void)resetClock;
+- (void)updateForLastStep;
 
 @end

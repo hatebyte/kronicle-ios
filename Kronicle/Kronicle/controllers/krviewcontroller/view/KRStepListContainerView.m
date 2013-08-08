@@ -82,6 +82,11 @@
 }
 
 
+- (void)updateForLastStep {
+    KRStepListView *stepListView = [_steps lastObject];
+    [stepListView setStepCompleted:YES];
+}
+
 #pragma private methods
 - (void)slideBackgrounds {
     CGFloat topY = _currentIndex * [KRStepListView cellHeight];
