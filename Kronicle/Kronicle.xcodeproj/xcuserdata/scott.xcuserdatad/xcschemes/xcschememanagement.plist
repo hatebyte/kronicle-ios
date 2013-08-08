@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Kronicle-cal.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Kronicle.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>D2A573DD175A3B4E002AC1B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>f35ec7c9795c785cb4f6935a</key>
 		<dict>
 			<key>primary</key>
 			<true/>
