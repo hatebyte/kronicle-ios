@@ -19,13 +19,17 @@
 #import "KRStepNavigation.h"
 #import "KRScrollView.h"
 #import "KRGraphView.h"
-#import "KRStepListView.h"
+#import "KRStepListContainerView.h"
 
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
 
-@interface KRViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate, KRStepNavigationDelegate, KRScrollViewDelegate> {
+@interface KRViewController () <KRClockManagerDelegate,
+                                KRKronicleManagerDelegate,
+                                KRStepNavigationDelegate,
+                                KRScrollViewDelegate,
+                                KRStepListContainerViewDelegate> {
     @private
     UIScrollView *_sview;
     UIButton *_backButton;
@@ -34,6 +38,7 @@
     KRStepNavigation *_stepNavigation;
     KRScrollView *_scrollView;
     KRGraphView *_graphView;
+    KRStepListContainerView *_stepListContainerView;
 }
 
 @end
@@ -85,23 +90,12 @@
     _scrollView.scrollDelegate = self;
     [_sview addSubview:_scrollView];
     
-    int i = 0;
     int y = _scrollView.frame.origin.y + _scrollView.frame.size.height;
-    KRStepListView *stepListView;
-    for (KRStep *step in self.kronicle.steps) {
-        stepListView = [[KRStepListView alloc] initWithFrame:CGRectMake(0, y + (60 * i), 320, 70) andStep:step];
-        if (step.indexInKronicle < _kronicleManager.currentStepIndex) {
-            [stepListView setStepCompleted:YES];
-        } else if (step.indexInKronicle == _kronicleManager.currentStepIndex) {
-            [stepListView setCurrentStepWithRatio:0];
-        } else {
-            [stepListView setStepCompleted:NO];
-        }
-        [_sview addSubview:stepListView];
-        ++i;
-    }
+    _stepListContainerView = [[KRStepListContainerView alloc] initWithFrame:CGRectMake(0, y, 320, 0) andSteps:_kronicle.steps];
+    _stepListContainerView.delegate = self;
+    [_sview addSubview:_stepListContainerView];
     
-    _sview.contentSize = CGSizeMake(_bounds.size.width, stepListView.frame.origin.y + stepListView.frame.size.height);
+    _sview.contentSize = CGSizeMake(_bounds.size.width, _stepListContainerView.frame.origin.y + _stepListContainerView.frame.size.height);
     [self setStep:0];
 }
 
@@ -109,14 +103,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-#pragma KRClockManager 
+#pragma KRClockManager delegate
 - (void)manager:(KRClockManager *)manager updateTimeWithString:(NSString *)timeString
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
     _timeLabel.text = timeString;
     [_graphView showDisplayForRatio:stepRatio];
-    
+    [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
 }
 
 - (void)manager:(KRClockManager *)manager stepComplete:(int)stepIndex {
@@ -124,15 +117,16 @@
 }
 
 
-#pragma KRKronicleManager
+#pragma KRKronicleManager delegate
 - (void)manager:(KRKronicleManager *)manager updateUIForStep:(KRStep*)step {
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
     }
     [_clockManager setTimeForStep:step.indexInKronicle];
-    
     _currentLabel.text = step.title;
-    [_scrollView scrollToPage:step.indexInKronicle];
+    
+    [_stepListContainerView adjustStepListForCurrentStep:step.indexInKronicle];
+    [_scrollView scrollToPage:step.indexInKronicle];    
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step {
@@ -155,9 +149,8 @@
 }
 
 
-#pragma KRStepNavigator 
+#pragma KRStepNavigator delegate
 - (void)controls:(KRStepNavigation *)controls navigationRequested:(KRStepNavigationRequest)type {
-
     switch (type) {
         case KRStepNavigationRequestForward:
             [self previewStep:_kronicleManager.previewStepIndex + 1];
@@ -178,14 +171,21 @@
 }
 
 
-#pragma KRSwipeUpScrollView
+#pragma KRSwipeUpScrollView delegate
 - (void)scrollView:(KRScrollView *)scrollView pageToIndex:(int)stepIndex {
     [_kronicleManager setPreviewStep:stepIndex];
 }
 
 
+#pragma KRStepListView delegate
+- (void)stepListContainerView:(KRStepListContainerView*)stepListContainerView selectedByIndex:(int)stepIndex {
+    [self setStep:stepIndex];
+}
 
 
+
+
+#pragma private methods
 - (void)previewStep:(int)step {
     [_kronicleManager setPreviewStep:step];
 }
@@ -195,7 +195,6 @@
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
 }
-
 
 
 

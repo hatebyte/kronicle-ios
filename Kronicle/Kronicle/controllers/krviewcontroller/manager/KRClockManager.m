@@ -47,7 +47,7 @@
     _currentTime = _stepTotal;
 
     [_timer invalidate];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:.05 target:self selector:@selector(update) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0CCE9E0917B0A68700C90B49 /* KRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCE9E0817B0A68700C90B49 /* KRGraphView.m */; };
 		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
+		D216B13117B30FC000FB3C6D /* KRStepListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D216B13017B30FC000FB3C6D /* KRStepListContainerView.m */; };
 		D26A614A175B217700B50A39 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6148175B217700B50A39 /* hole.png */; };
 		D26A614B175B217700B50A39 /* hole-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6149175B217700B50A39 /* hole-highlight.png */; };
 		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
@@ -157,6 +158,8 @@
 		0CCE9E0817B0A68700C90B49 /* KRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRGraphView.m; path = views/KRGraphView.m; sourceTree = "<group>"; };
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D216B12F17B30FC000FB3C6D /* KRStepListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepListContainerView.h; sourceTree = "<group>"; };
+		D216B13017B30FC000FB3C6D /* KRStepListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepListContainerView.m; sourceTree = "<group>"; };
 		D26A6148175B217700B50A39 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
 		D26A6149175B217700B50A39 /* hole-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hole-highlight.png"; sourceTree = "<group>"; };
 		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -591,6 +594,8 @@
 				D2F76D4217B1223C002A9BBA /* KRStepNavigation.m */,
 				D2F76D4C17B27573002A9BBA /* KRStepListView.h */,
 				D2F76D4D17B27573002A9BBA /* KRStepListView.m */,
+				D216B12F17B30FC000FB3C6D /* KRStepListContainerView.h */,
+				D216B13017B30FC000FB3C6D /* KRStepListContainerView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1055,6 +1060,7 @@
 				D2F76D4317B1223C002A9BBA /* KRStepNavigation.m in Sources */,
 				0CCE9E0917B0A68700C90B49 /* KRGraphView.m in Sources */,
 				D2F76D4E17B27574002A9BBA /* KRStepListView.m in Sources */,
+				D216B13117B30FC000FB3C6D /* KRStepListContainerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

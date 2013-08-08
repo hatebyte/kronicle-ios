@@ -12,28 +12,31 @@
 #import "KRFontHelper.h"
 #import "KRClockManager.h"
 
-@interface KRStepListView () {
+@interface KRStepListView () <UIGestureRecognizerDelegate> {
     @private
-    __weak KRStep *_step;
     UILabel *_titleLabel;
     UILabel *_subLabel;
     CGFloat _destVal;
     CGFloat _currentVal;
     CALayer *_turquoiseBar;
     CADisplayLink * _runloopConsilieri;
-    
+    UITapGestureRecognizer *_cellTapper;
 }
 
 @end
 
 
 @implementation KRStepListView
++ (CGFloat)cellHeight {
+    return 70.f;
+}
+
 
 - (id)initWithFrame:(CGRect)frame andStep:(KRStep *)step
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         _step = step;
         
         CALayer *yellowBar = [CALayer layer];
@@ -46,12 +49,12 @@
         _turquoiseBar.backgroundColor = [KRColorHelper turquoise].CGColor;
         [self.layer addSublayer:_turquoiseBar];
         
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_turquoiseBar.frame.size.width + 10, 5, 290, 40)];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_turquoiseBar.frame.size.width + 10, 8, 290, 40)];
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:26];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textColor = [KRColorHelper turquoise];
-        _titleLabel.text = [NSString stringWithFormat:@"%d: %@", (int)_step.indexInKronicle, _step.title];
+        _titleLabel.text = [NSString stringWithFormat:@"%@", _step.title];
         [self addSubview:_titleLabel];
         
         _subLabel = [[UILabel alloc] initWithFrame:CGRectMake(_titleLabel.frame.origin.x+1,
@@ -69,7 +72,12 @@
         }
         _subLabel.text = time;
         [self addSubview:_subLabel];
-         
+        
+        _cellTapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellSelected:)];
+        _cellTapper.cancelsTouchesInView = NO;
+        _cellTapper.delegate = self;
+        [self addGestureRecognizer:_cellTapper];
+
         
         _runloopConsilieri = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateFrame)];
         
@@ -80,7 +88,6 @@
 #pragma public methods
 - (void)setStepCompleted:(BOOL)isCompleted {
     [self removeRunLoop];
-    
     if (isCompleted) {
         [self animateComplete];
     } else {
@@ -88,53 +95,75 @@
     }
 }
 
-- (void)setCurrentStepWithRatio:(CGFloat)stepRatio {
+- (void)setCurrentStep {
     [self addRunLoop];
+    [UIView animateWithDuration:.3
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _titleLabel.textColor = [KRColorHelper turquoise];
+                         _subLabel.textColor = [KRColorHelper turquoise];
+                     }
+                     completion:^(BOOL fin){
+                     }];
+
+}
+
+- (void)updateCurrentStepWithRatio:(CGFloat)stepRatio {
     _destVal = self.frame.size.height * stepRatio;
-    _titleLabel.textColor = [KRColorHelper turquoise];
-    _subLabel.textColor = [KRColorHelper turquoise];
-    self.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma private methods
 - (void)updateFrame {
-    _currentVal += (_destVal-_currentVal) / 4;
-    _turquoiseBar.frame = CGRectMake(0, 0, _turquoiseBar.frame.size.width, _currentVal);
+    _currentVal += (_destVal - _currentVal) / 4;
+//    _turquoiseBar.frame = CGRectMake(0, 0, _turquoiseBar.frame.size.width, _currentVal);
+    [CATransaction setDisableActions:YES];
+    _turquoiseBar.frame = CGRectMake(0, 0, _turquoiseBar.frame.size.width, _destVal);
+    [CATransaction setDisableActions:NO];
 }
 
 - (void)removeRunLoop {
     [_runloopConsilieri removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    _destVal = 0;
+    _currentVal = 0;
 }
 - (void)addRunLoop {
     [_runloopConsilieri addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)animateComplete {
-    [UIView animateWithDuration:.5
+    [CATransaction setDisableActions:YES];
+    _turquoiseBar.frame = CGRectMake(0, 0, _turquoiseBar.frame.size.width, self.frame.size.height);
+    [CATransaction setDisableActions:NO];
+    [UIView animateWithDuration:1
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         _turquoiseBar.frame = CGRectMake(0, 0, _turquoiseBar.frame.size.width, self.frame.size.height);
                          _titleLabel.textColor = [KRColorHelper turquoise];
                          _subLabel.textColor = [KRColorHelper turquoise];
-                         self.backgroundColor = [KRColorHelper turquoiseTransparent];
-                     }
+                    }
                      completion:^(BOOL fin){
                      }];
 }
 
 - (void)animateIncomplete {
-    [UIView animateWithDuration:.5
+    [CATransaction setDisableActions:YES];
+    _turquoiseBar.frame = CGRectMake(0, 0, _turquoiseBar.frame.size.width, 0);
+    [CATransaction setDisableActions:NO];
+    [UIView animateWithDuration:1
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         _turquoiseBar.frame = CGRectMake(0, 0, _turquoiseBar.frame.size.width, 0);
                          _titleLabel.textColor = [KRColorHelper orange];
                          _subLabel.textColor = [KRColorHelper orange];
-                         self.backgroundColor = [KRColorHelper orangeTransparent];
                      }
                      completion:^(BOOL fin){
                      }];
+}
+
+#pragma uigesture 
+- (IBAction)cellSelected:(id)sender {
+    [self.delegate stepListView:self selectedByIndex:_step.indexInKronicle];
 }
 
 /*
