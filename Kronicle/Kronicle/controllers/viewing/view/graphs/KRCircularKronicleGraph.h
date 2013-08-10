@@ -12,6 +12,6 @@
 @interface KRCircularKronicleGraph : UIView
 
 - (id)initWithFrame:(CGRect)frame andKronicle:(KRKronicle *)kronicle;
-- (void)updateForCurrentStep:(int)step andRatio:(CGFloat)ratio;
+- (void)updateForCurrentStep:(int)step andRatio:(CGFloat)ratio andTimeCompleted:(int)totalCompleted;
 
 @end

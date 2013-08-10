@@ -8,6 +8,8 @@
 
 #import "KRClockManager.h"
 
+CGFloat const _increment = 1.f;
+
 @interface KRClockManager () {
     @private
     __weak KRKronicle *_kronicle;
@@ -23,6 +25,7 @@
     
     int _currentTime;
     int _currentStepIndex;
+    
 }
 @end
 
@@ -47,9 +50,21 @@
     _currentTime = _stepTotal;
 
     [_timer invalidate];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:.05 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 
+}
+
+- (void)togglePlayPause {
+    if (_isPaused) {
+        _isPaused = NO;
+        _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    } else {
+        _isPaused = YES;
+        [_timer invalidate];
+        _timer = nil;
+    }
 }
 
 - (void)dealloc {

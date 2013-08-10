@@ -31,6 +31,7 @@
                                 KRKronicleManagerDelegate,
                                 KRStepNavigationDelegate,
                                 KRScrollViewDelegate,
+                                MediaViewDelegate,
                                 KRStepListContainerViewDelegate> {
     @private
     CGRect _bounds;
@@ -76,6 +77,7 @@
     _clockManager.delegate = self;
     
     _mediaView = [[MediaView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+    _mediaView.delegate = self;
     [_sview addSubview:_mediaView];
 
     _backButton       = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -103,10 +105,12 @@
     [_sview addSubview:_stepListContainerView];
 
     y = _stepListContainerView.frame.origin.y + _stepListContainerView.frame.size.height;
-    _circularGraphView = [[KRCircularKronicleGraph alloc] initWithFrame:CGRectMake(0, y, 320, 320) andKronicle:self.kronicle];
+    _circularGraphView = [[KRCircularKronicleGraph alloc] initWithFrame:CGRectMake(0, y, 320, 340) andKronicle:self.kronicle];
     [_sview addSubview:_circularGraphView];
     
     _sview.contentSize = CGSizeMake(_bounds.size.width, _circularGraphView.frame.origin.y + _circularGraphView.frame.size.height + 70);
+    
+//    _sview.contentOffset = CGPointMake(0, _sview.contentSize.height - _sview.frame.size.height);
     [self setStep:0];
 }
 
@@ -128,7 +132,7 @@
     [_graphView showDisplayForRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
     
-    [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio];
+    [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
 }
 
 - (void)manager:(KRClockManager *)manager stepComplete:(int)stepIndex {
@@ -210,6 +214,12 @@
     [self setStep:stepIndex];
 }
 
+#pragma MediaView delegate
+- (void)mediaViewScreenTapped:(MediaView *)mediaView {
+    [self togglePlayPause];
+}
+
+
 #pragma private methods
 - (void)previewStep:(int)step {
     [_kronicleManager setPreviewStep:step];
@@ -221,8 +231,9 @@
     [_kronicleManager setPreviewStep:step];
 }
 
-- (IBAction)togglePlayPause:(id)sender {
-
+- (void)togglePlayPause {
+    [_clockManager togglePlayPause];
+    [_mediaView togglePlayPause:_clockManager.isPaused];
 }
 
 

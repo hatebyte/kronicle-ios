@@ -14,18 +14,24 @@ typedef enum  {
     MediaViewRight
 } MediaViewType;
 
+
+@class MediaView;
+@protocol MediaViewDelegate <NSObject>
+- (void)mediaViewScreenTapped:(MediaView *)mediaView;
+@end
+
 @interface MediaView : UIView {
     @private
     MPMoviePlayerController *_moviePlayer;
     UIImageView *_imageView;
-    
 }
 
 @property (nonatomic, copy) NSString *mediaPath;
 @property (nonatomic, assign) BOOL isVideo;
-
+@property (nonatomic, weak) id <MediaViewDelegate> delegate;
 
 - (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type;
+- (void)togglePlayPause:(BOOL)isPaused;
 - (void)stop;
 - (void)pause;
 - (void)play;

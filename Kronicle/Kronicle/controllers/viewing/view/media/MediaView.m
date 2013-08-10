@@ -8,10 +8,14 @@
 
 #import "MediaView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "KRFontHelper.h"
 
-@interface MediaView () {
+@interface MediaView () <UIGestureRecognizerDelegate> {
     @private
     UIViewAnimationTransition _transition;
+    UILabel *_pauseLabel;
+    UIView *_pauseView;
+    UITapGestureRecognizer *_cellTapper;
 }
 @end
 
@@ -24,12 +28,76 @@
         // Initialization code
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.backgroundColor = [UIColor blackColor];
+        
+        _cellTapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+        _cellTapper.cancelsTouchesInView = NO;
+        _cellTapper.delegate = self;
+        [self addGestureRecognizer:_cellTapper];
+        
+        int width = 178;
+        int height = 62;
+        _pauseLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 0, width, height)];
+        _pauseLabel.text = @"Paused";
+        _pauseLabel.textColor = [UIColor whiteColor];
+        _pauseLabel.backgroundColor = [UIColor clearColor];
+        _pauseLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:35];
+        _pauseLabel.textAlignment = UITextAlignmentLeft;
+        
+        _pauseView = [[UIView alloc] initWithFrame:CGRectMake((self.frame.size.width - width) * .5, (self.frame.size.height - height) * .5, width, height)];
+        _pauseView.backgroundColor = [UIColor clearColor];
+        
+        CALayer *layer = [CALayer layer];
+        [layer setBackgroundColor:[[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f] CGColor]];
+        layer.frame = CGRectMake(0, 0,_pauseView.frame.size.width, _pauseView.frame.size.height);
+        layer.cornerRadius = 30;
+        [_pauseView.layer addSublayer:layer];
+        [_pauseView addSubview:_pauseLabel];
+        
+        UIImageView *pauseArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pauseTriangle"]];
+        pauseArrow.frame = CGRectMake((_pauseView.frame.size.width - 40),
+                                      (_pauseView.frame.size.height - 22) * .5, 19, 22);
+        _pauseView.hidden = YES;
+        [_pauseView addSubview:pauseArrow];
+
+        [self addSubview:_pauseView];
     }
     return self;
 }
 
 - (UIImage *)image {
     return _imageView.image;
+}
+
+- (IBAction)tapped:(id)sender {
+    [self.delegate mediaViewScreenTapped:self];
+}
+
+- (void)togglePlayPause:(BOOL)isPaused {
+    
+    if (!isPaused) {
+        [_moviePlayer pause];
+        [UIView animateWithDuration:.5
+                              delay:.7f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _pauseView.alpha = 0;
+                         }
+                         completion:^(BOOL fin){
+                             _pauseView.hidden = YES;
+                         }];
+    } else {
+        [_moviePlayer play];
+        _pauseView.hidden = NO;
+        [UIView animateWithDuration:.5
+                              delay:.7f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _pauseView.alpha = 1;
+                         }
+                         completion:^(BOOL fin){
+                         }];
+    }
+    
 }
 
 - (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type {
@@ -49,16 +117,20 @@
         _imageView.image = [UIImage imageNamed:mediaPath];
 //        [self addSubview:_imageView];
         [self transitionViewToStage:_imageView];
+
     }
 }
 
 - (void)transitionViewToStage:(UIView *)view {
-    [UIView beginAnimations:@"animation" context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration: 0.7];
-    [UIView setAnimationTransition:_transition forView:view cache:NO];
+//    [UIView beginAnimations:@"animation" context:nil];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//    [UIView setAnimationDuration: 0.7];
+//    [UIView setAnimationTransition:_transition forView:view cache:NO];
     [self addSubview:view];
-    [UIView commitAnimations];
+//    [UIView commitAnimations];
+    
+    [self addSubview:_pauseView];
+    [self addGestureRecognizer:_cellTapper];
 }
 
 - (void)loadVideo {
@@ -84,7 +156,6 @@
     }
     _moviePlayer.view.frame = CGRectMake(0,0,self.frame.size.width, self.frame.size.height);
     _moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
-    
 
     _moviePlayer.contentURL = url;
     [_moviePlayer play];
@@ -95,7 +166,6 @@
         [_moviePlayer pause];
     } else if (_moviePlayer.loadState & (MPMovieLoadStatePlayable | MPMovieLoadStatePlaythroughOK)) {
         [_moviePlayer play];
-//        [self addSubview:_moviePlayer.view];
         [self transitionViewToStage:_moviePlayer.view];
     }
 }

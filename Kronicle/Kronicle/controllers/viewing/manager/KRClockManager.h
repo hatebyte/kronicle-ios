@@ -24,10 +24,12 @@
 
 
 @property (nonatomic, weak) id <KRClockManagerDelegate> delegate;
+@property (nonatomic, assign) BOOL isPaused;
 
 + (NSString *)stringTimeForInt:(int)time;
 
 - (id)initWithKronicle:(KRKronicle *)kronicle;
 - (void)setTimeForStep:(int)step;
+- (void)togglePlayPause;
 
 @end
