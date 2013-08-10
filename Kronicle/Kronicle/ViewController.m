@@ -7,12 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "KRCategoriesViewController.h"
-
 #import "KRViewController.h"
 #import "KRCreateViewController.h"
 #import "KRAPIStore.h"
-
+#import "KRCategoriesViewController.h"
+#import "KRGlobals.h"
 
 @interface ViewController ()
 
@@ -32,6 +31,12 @@
     
     [[KRAPIStore sharedStore] fetchKronicle:@"51aab816631eb50000000008" withCompletion:completionBlock];
      */
+    
+    
+#if kDEBUG
+    KRCategoriesViewController *categoryViewController = [[KRCategoriesViewController alloc] initWithNibName:@"KRCategoriesViewController" bundle:nil];
+    [self.navigationController pushViewController:categoryViewController animated:YES];
+#endif
 
 }
 
