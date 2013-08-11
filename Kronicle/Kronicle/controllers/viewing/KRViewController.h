@@ -32,7 +32,6 @@
 
 @property (nonatomic, strong) KRKronicle *kronicle;
 
-- (IBAction)togglePlayPause:(id)sender;
 - (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
 
 @end

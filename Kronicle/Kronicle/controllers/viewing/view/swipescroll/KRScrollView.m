@@ -49,6 +49,12 @@
 }
 
 - (void)updateForLastStep {
+    NSArray *subViews = [self subviews];
+    DescriptionView *d;
+    for (int i = 0; i < subViews.count; i++) {
+        d  = [[self subviews] objectAtIndex:i];
+        [d resetClock];
+    }
     [_currentStep updateForLastStep];
 }
 

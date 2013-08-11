@@ -116,7 +116,6 @@ CGFloat const unitHeight = 20.f;
 }
 
 - (void)setUnit:(CreateStepTimeUnitType)unit withValue:(int)value {
-    
     _startVal = value;
     _value = value;
     _unit = unit;
@@ -129,7 +128,6 @@ CGFloat const unitHeight = 20.f;
             _bottomUnitLabel.text = @"12";
             _leftUnitLabel.text = @"18";
             _durationCreator.percent = (CGFloat)value / 24;
-
             break;
         case CreateStepTimeUnitMinutes:
             _sublabel.text = @"Minutes";
@@ -138,7 +136,6 @@ CGFloat const unitHeight = 20.f;
             _bottomUnitLabel.text = @"30";
             _leftUnitLabel.text = @"45";
             _durationCreator.percent = (CGFloat)value / 60;
-            
             break;
         case CreateStepTimeUnitSeconds:
             _sublabel.text = @"Seconds";
@@ -147,7 +144,6 @@ CGFloat const unitHeight = 20.f;
             _bottomUnitLabel.text = @"30";
             _leftUnitLabel.text = @"45";
             _durationCreator.percent = (CGFloat)value / 60;
-            
             break;
     }
 }

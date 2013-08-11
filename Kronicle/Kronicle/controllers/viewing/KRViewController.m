@@ -145,6 +145,9 @@
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
     }
+    if (_clockManager.isPaused) {
+        [self togglePlayPause];
+    }
     
     [_clockManager setTimeForStep:step.indexInKronicle];
     [_stepListContainerView adjustStepListForCurrentStep:step.indexInKronicle];
@@ -155,6 +158,7 @@
     } else {
         [_mediaView setMediaPath:step.imageUrl andType:MediaViewRight];
     }
+    
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step {
@@ -178,6 +182,7 @@
     [_graphView updateForLastStep];
     [_scrollView updateForLastStep];
     [_stepListContainerView updateForLastStep];
+    [_circularGraphView updateForLastStep];
 }
 
 
@@ -200,6 +205,7 @@
             [self setStep:0];
             break;
     }
+
 }
 
 

@@ -74,38 +74,47 @@
 }
 
 - (void)togglePlayPause:(BOOL)isPaused {
-    
     if (!isPaused) {
-        [_moviePlayer pause];
-        [UIView animateWithDuration:.4f
-                              delay:0
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             _pauseView.alpha = 0;
-                         }
-                         completion:^(BOOL fin){
-                             _pauseView.hidden = YES;
-                         }];
+        [self play];
     } else {
-        [_moviePlayer play];
-        _pauseView.hidden = NO;
-        [UIView animateWithDuration:.4f
-                              delay:0
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             _pauseView.alpha = 1;
-                         }
-                         completion:^(BOOL fin){
-                         }];
+        [self pause];
     }
-    
+}
+
+- (void)play {
+    if (_moviePlayer != nil) {
+        [_moviePlayer play];
+    }
+    [UIView animateWithDuration:.4f
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _pauseView.alpha = 0;
+                     }
+                     completion:^(BOOL fin){
+                         _pauseView.hidden = YES;
+                     }];
+}
+
+- (void)pause {
+    if (_moviePlayer != nil) {
+        [_moviePlayer pause];
+    }
+    _pauseView.hidden = NO;
+    [UIView animateWithDuration:.4f
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _pauseView.alpha = 1;
+                     }
+                     completion:^(BOOL fin){
+                     }];
 }
 
 - (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type {
     if ([_mediaPath isEqualToString:mediaPath]) {
         return;
     }
-    
     _transition =(type == MediaViewLeft) ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight;
     self.isVideo = NO;
 
@@ -120,15 +129,16 @@
         [self transitionViewToStage:_imageView];
 
     }
+    
 }
 
 - (void)transitionViewToStage:(UIView *)view {
-//    [UIView beginAnimations:@"animation" context:nil];
-//    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//    [UIView setAnimationDuration: 0.7];
-//    [UIView setAnimationTransition:_transition forView:view cache:NO];
+    [UIView beginAnimations:@"animation" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration: 0.7];
+    [UIView setAnimationTransition:_transition forView:view cache:NO];
     [self addSubview:view];
-//    [UIView commitAnimations];
+    [UIView commitAnimations];
     
     [self addSubview:_pauseView];
     [self addGestureRecognizer:_cellTapper];
@@ -173,15 +183,6 @@
 
 - (void)playbackFinished:(NSNotification*)note {
     _moviePlayer.currentPlaybackTime = 0;
-    [_moviePlayer play];
-}
-
-- (void)pause {
-    if (_moviePlayer == nil) return;
-    [_moviePlayer pause];
-}
-- (void)play {
-    if (_moviePlayer == nil) return;
     [_moviePlayer play];
 }
 

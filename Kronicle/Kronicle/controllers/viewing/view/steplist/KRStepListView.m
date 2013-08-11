@@ -95,6 +95,10 @@
     }
 }
 
+- (void)setTimeForLastStep {
+    _subLabel.text = @"Finished!";
+}
+
 - (void)setCurrentStep {
     [self addRunLoop];
     [UIView animateWithDuration:.3

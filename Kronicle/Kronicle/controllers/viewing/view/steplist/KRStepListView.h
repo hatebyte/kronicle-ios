@@ -25,7 +25,7 @@
 - (void)setStepCompleted:(BOOL)isCompleted;
 - (void)setCurrentStep;
 - (void)updateCurrentStepWithRatio:(CGFloat)stepRatio;
-
+- (void)setTimeForLastStep;
 + (CGFloat)cellHeight;
 
 @end

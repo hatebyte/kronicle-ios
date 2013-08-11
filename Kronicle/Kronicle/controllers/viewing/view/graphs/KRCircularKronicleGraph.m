@@ -78,6 +78,10 @@ CGFloat const _sidesBuffer = .42;
     [self setNeedsDisplay];
 }
 
+- (void)updateForLastStep {
+    [self updateForCurrentStep:_kronicle.stepCount-1 andRatio:1.f andTimeCompleted:_kronicle.totalTime];
+}
+
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -91,7 +95,7 @@ CGFloat const _sidesBuffer = .42;
     CGFloat globalStartAngle = _ratio * 360;
     
     CGContextBeginPath(context);
-    CGContextSetRGBStrokeColor(context, 241/255.0f, 163/255.0f, 37/255.0f, 1.0f);
+    CGContextSetStrokeColorWithColor(context, [KRColorHelper orange].CGColor);
     CGContextSetAllowsAntialiasing(context, YES);
     CGContextSetLineWidth(context, _smallStroke);
     CGContextSetShouldAntialias(context, YES);
@@ -109,7 +113,7 @@ CGFloat const _sidesBuffer = .42;
     CGContextStrokePath(context);
     
     CGContextBeginPath(context);
-    CGContextSetRGBStrokeColor(context, 64/255.0f, 188/255.0f, 178/255.0f, 1.0f);
+    CGContextSetStrokeColorWithColor(context, [KRColorHelper turquoise].CGColor);
     CGContextSetAllowsAntialiasing(context, YES);
     CGContextSetLineWidth(context, _largeStroke);
     CGContextSetShouldAntialias(context, YES);
@@ -130,7 +134,7 @@ CGFloat const _sidesBuffer = .42;
     // draw zero bar
     length = _largeStroke + 15;
     distFromCenter = (self.frame.size.width * _sidesBuffer)-(length);
-    [self drawLineWithLength:length atAngle:0 distFromCenter:distFromCenter colored:[UIColor colorWithRed:.6f green:.6f blue:.6f alpha:1.f].CGColor withStroke:6.f];
+    [self drawLineWithLength:length atAngle:0 distFromCenter:distFromCenter colored:[UIColor colorWithRed:.6f green:.6f blue:.6f alpha:1.f].CGColor withStroke:5.f];
 
     // draw long light moving hand
     distFromCenter = -(self.frame.size.width * 0.0625);
