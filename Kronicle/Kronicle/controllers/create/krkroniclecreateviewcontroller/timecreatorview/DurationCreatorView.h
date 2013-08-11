@@ -1,6 +1,6 @@
 //
-//  TouchView.h
-//  Krono
+//  DurationCreatorView.h
+//  Kronicle
 //
 //  Created by Scott on 6/4/13.
 //  Copyright (c) 2013 Hai Koncept. All rights reserved.
@@ -10,10 +10,7 @@
 
 @class DurationCreatorView;
 @protocol DurationCreatorViewDelegate <NSObject>
-
 - (void)touchView:(DurationCreatorView *)durationCreatorView updateWithPercent:(CGFloat)percent;
-- (void)touchUpForExit:(DurationCreatorView *)durationCreatorView withPercent:(CGFloat)percent;
-
 @end
 
 @interface DurationCreatorView : UIView {
@@ -34,10 +31,7 @@
 }
 
 @property(nonatomic, assign) CGFloat percent;
+@property(nonatomic, assign) CGFloat value;
 @property(nonatomic, strong) id <DurationCreatorViewDelegate> delegate;
-
-- (void)listen;
-- (void)remove;
-- (void)removeWithDelay:(long)delay;
 
 @end

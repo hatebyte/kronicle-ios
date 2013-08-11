@@ -185,6 +185,8 @@
 		D2CF7E4F17B53B2400E3D1F0 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E4B17B53B2400E3D1F0 /* play_button.png */; };
 		D2CF7E5017B53B2400E3D1F0 /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E4C17B53B2400E3D1F0 /* pause_button.png */; };
 		D2CF7E5117B53B2400E3D1F0 /* pauseTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E4D17B53B2400E3D1F0 /* pauseTriangle.png */; };
+		D2CF7E5617B7EA0C00E3D1F0 /* CreateStepTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E5517B7EA0C00E3D1F0 /* CreateStepTimeView.m */; };
+		D2CF7E5817B7FA2700E3D1F0 /* cancel_x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E5717B7FA2700E3D1F0 /* cancel_x.png */; };
 		D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7251789ED850085C707 /* NSData+MKBase64.m */; };
 		D2F1E73A1789ED850085C707 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
 		D2F1E73B1789ED850085C707 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7291789ED850085C707 /* NSDictionary+RequestEncoding.m */; };
@@ -419,6 +421,9 @@
 		D2CF7E4B17B53B2400E3D1F0 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
 		D2CF7E4C17B53B2400E3D1F0 /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
 		D2CF7E4D17B53B2400E3D1F0 /* pauseTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseTriangle.png; sourceTree = "<group>"; };
+		D2CF7E5417B7EA0C00E3D1F0 /* CreateStepTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStepTimeView.h; sourceTree = "<group>"; };
+		D2CF7E5517B7EA0C00E3D1F0 /* CreateStepTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStepTimeView.m; sourceTree = "<group>"; };
+		D2CF7E5717B7FA2700E3D1F0 /* cancel_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_x.png; sourceTree = "<group>"; };
 		D2F1E7241789ED850085C707 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		D2F1E7251789ED850085C707 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
 		D2F1E7261789ED850085C707 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -533,12 +538,12 @@
 			isa = PBXGroup;
 			children = (
 				D236FB2B17B464E4003DD323 /* cells */,
-				D236FB3017B464E4003DD323 /* KRCreateStepViewController.h */,
-				D236FB3117B464E4003DD323 /* KRCreateStepViewController.m */,
-				D236FB3217B464E4003DD323 /* KRCreateStepViewController.xib */,
 				D236FB3317B464E4003DD323 /* KRCreateViewController.h */,
 				D236FB3417B464E4003DD323 /* KRCreateViewController.m */,
 				D236FB3517B464E4003DD323 /* KRCreateViewController.xib */,
+				D236FB3017B464E4003DD323 /* KRCreateStepViewController.h */,
+				D236FB3117B464E4003DD323 /* KRCreateStepViewController.m */,
+				D236FB3217B464E4003DD323 /* KRCreateStepViewController.xib */,
 				D236FB3617B464E4003DD323 /* timecreatorview */,
 			);
 			path = krkroniclecreateviewcontroller;
@@ -560,6 +565,8 @@
 			children = (
 				D236FB3717B464E4003DD323 /* DurationCreatorView.h */,
 				D236FB3817B464E4003DD323 /* DurationCreatorView.m */,
+				D2CF7E5417B7EA0C00E3D1F0 /* CreateStepTimeView.h */,
+				D2CF7E5517B7EA0C00E3D1F0 /* CreateStepTimeView.m */,
 			);
 			path = timecreatorview;
 			sourceTree = "<group>";
@@ -880,6 +887,7 @@
 		D2A5749E175AC5B8002AC1B9 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2CF7E5717B7FA2700E3D1F0 /* cancel_x.png */,
 				D2CF7E4A17B53B2400E3D1F0 /* black_trans_carrot.png */,
 				D2CF7E4B17B53B2400E3D1F0 /* play_button.png */,
 				D2CF7E4C17B53B2400E3D1F0 /* pause_button.png */,
@@ -1173,6 +1181,7 @@
 				D2CF7E4F17B53B2400E3D1F0 /* play_button.png in Resources */,
 				D2CF7E5017B53B2400E3D1F0 /* pause_button.png in Resources */,
 				D2CF7E5117B53B2400E3D1F0 /* pauseTriangle.png in Resources */,
+				D2CF7E5817B7FA2700E3D1F0 /* cancel_x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,6 +1413,7 @@
 				D2CF7E3F17B46AC000E3D1F0 /* KRListViewController.m in Sources */,
 				D2CF7E4417B46B9900E3D1F0 /* StepsTableCellViewCell.m in Sources */,
 				D2CF7E4817B4723800E3D1F0 /* KRCircularKronicleGraph.m in Sources */,
+				D2CF7E5617B7EA0C00E3D1F0 /* CreateStepTimeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

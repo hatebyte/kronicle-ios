@@ -57,6 +57,7 @@
         pauseArrow.frame = CGRectMake((_pauseView.frame.size.width - 40),
                                       (_pauseView.frame.size.height - 22) * .5, 19, 22);
         _pauseView.hidden = YES;
+        _pauseView.alpha = 0;
         [_pauseView addSubview:pauseArrow];
 
         [self addSubview:_pauseView];
@@ -76,8 +77,8 @@
     
     if (!isPaused) {
         [_moviePlayer pause];
-        [UIView animateWithDuration:.5
-                              delay:.7f
+        [UIView animateWithDuration:.4f
+                              delay:0
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              _pauseView.alpha = 0;
@@ -88,8 +89,8 @@
     } else {
         [_moviePlayer play];
         _pauseView.hidden = NO;
-        [UIView animateWithDuration:.5
-                              delay:.7f
+        [UIView animateWithDuration:.4f
+                              delay:0
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              _pauseView.alpha = 1;

@@ -10,6 +10,16 @@
 #import "DurationCreatorView.h"
 
 
-@interface KRCreateStepViewController : UIViewController <UINavigationControllerDelegate,DurationCreatorViewDelegate>
+@interface KRCreateStepViewController : UIViewController <UINavigationControllerDelegate>
+
+@property(nonatomic, weak) IBOutlet UIButton *backbutton;
+@property(nonatomic, weak) IBOutlet UIButton *seconds;
+@property(nonatomic, weak) IBOutlet UIButton *minutes;
+@property(nonatomic, weak) IBOutlet UIButton *hours;
+
+- (IBAction)back:(id)sender;
+- (IBAction)hoursTapped:(id)sender;
+- (IBAction)minutesTapped:(id)sender;
+- (IBAction)secondsTapped:(id)sender;
 
 @end
