@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "KRHomeViewController.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -19,7 +20,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    KRHomeViewController *viewController = [[KRHomeViewController alloc] initWithNibName:@"KRHomeViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     navigationController.navigationBarHidden = YES;
     self.window.rootViewController = navigationController;

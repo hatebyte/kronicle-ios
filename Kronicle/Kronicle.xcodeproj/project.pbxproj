@@ -10,6 +10,8 @@
 		01a487b97a589cf025c30e9e /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7481789EDBD0085C707 /* ImageIO.framework */; };
 		0416bda5436ed874b1a00627 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A573FA175A3B4E002AC1B9 /* ViewController.m */; };
 		06c18c4ebbe4b4e0cea28d00 /* crazy_train_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */; };
+		0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */; };
+		0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */; };
 		0ada2603b62f30af1819d9a4 /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A614F175B2AF900B50A39 /* back-button.png */; };
 		11b1368a6557245c989a20f4 /* yoga-media-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD2A175B70760003FEF5 /* yoga-media-2.png */; };
 		15304655b1c6d8b242d9de8a /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A3175AC5B9002AC1B9 /* x-button.png */; };
@@ -273,6 +275,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CFC051B17B86C8500A1BB7F /* KRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRHomeViewController.h; path = home/KRHomeViewController.h; sourceTree = "<group>"; };
+		0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRHomeViewController.m; path = home/KRHomeViewController.m; sourceTree = "<group>"; };
+		0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KRHomeViewController.xib; path = home/KRHomeViewController.xib; sourceTree = "<group>"; };
 		8cc04305e90128ef892ea4d8 /* calabash.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,9 +521,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CFC051A17B86C5200A1BB7F /* home */ = {
+			isa = PBXGroup;
+			children = (
+				0CFC051B17B86C8500A1BB7F /* KRHomeViewController.h */,
+				0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */,
+				0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
 		D236FB2817B464E4003DD323 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0CFC051A17B86C5200A1BB7F /* home */,
 				D236FB2917B464E4003DD323 /* create */,
 				D236FB3917B464E4003DD323 /* discover */,
 				D236FB4217B464E4003DD323 /* viewing */,
@@ -1182,6 +1198,7 @@
 				D2CF7E5017B53B2400E3D1F0 /* pause_button.png in Resources */,
 				D2CF7E5117B53B2400E3D1F0 /* pauseTriangle.png in Resources */,
 				D2CF7E5817B7FA2700E3D1F0 /* cancel_x.png in Resources */,
+				0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1414,6 +1431,7 @@
 				D2CF7E4417B46B9900E3D1F0 /* StepsTableCellViewCell.m in Sources */,
 				D2CF7E4817B4723800E3D1F0 /* KRCircularKronicleGraph.m in Sources */,
 				D2CF7E5617B7EA0C00E3D1F0 /* CreateStepTimeView.m in Sources */,
+				0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1478,8 +1496,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1494,8 +1512,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "35025EC2-C0AB-48A2-BDC7-0DC8596A0797";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "35025EC2-C0AB-48A2-BDC7-0DC8596A0797";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1512,8 +1530,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1521,8 +1539,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "35025EC2-C0AB-48A2-BDC7-0DC8596A0797";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "35025EC2-C0AB-48A2-BDC7-0DC8596A0797";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
