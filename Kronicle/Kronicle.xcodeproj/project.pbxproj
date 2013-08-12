@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		01a487b97a589cf025c30e9e /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7481789EDBD0085C707 /* ImageIO.framework */; };
 		06c18c4ebbe4b4e0cea28d00 /* crazy_train_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */; };
+		0C280A4D17B88F6D007026DC /* magnifying-glass-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C280A4C17B88F6D007026DC /* magnifying-glass-white@2x.png */; };
+		0C63195917B88CC200729514 /* plus-sign-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C63195717B88CC200729514 /* plus-sign-white@2x.png */; };
 		0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */; };
 		0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */; };
 		0CFC052117B8723800A1BB7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC052017B8723800A1BB7F /* CoreText.framework */; };
 		0CFC052F17B8738600A1BB7F /* NMCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC052C17B8738600A1BB7F /* NMCustomLabel.m */; };
 		0CFC053017B8738600A1BB7F /* NMCustomLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC052E17B8738600A1BB7F /* NMCustomLabelStyle.m */; };
+		0CFC053417B87BAA00A1BB7F /* KRTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC053317B87BAA00A1BB7F /* KRTextButton.m */; };
 		0ada2603b62f30af1819d9a4 /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A614F175B2AF900B50A39 /* back-button.png */; };
 		11b1368a6557245c989a20f4 /* yoga-media-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD2A175B70760003FEF5 /* yoga-media-2.png */; };
 		15304655b1c6d8b242d9de8a /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A3175AC5B9002AC1B9 /* x-button.png */; };
@@ -274,6 +277,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C280A4C17B88F6D007026DC /* magnifying-glass-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "magnifying-glass-white@2x.png"; sourceTree = "<group>"; };
+		0C63195717B88CC200729514 /* plus-sign-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-sign-white@2x.png"; sourceTree = "<group>"; };
 		0CFC051B17B86C8500A1BB7F /* KRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRHomeViewController.h; path = home/KRHomeViewController.h; sourceTree = "<group>"; };
 		0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRHomeViewController.m; path = home/KRHomeViewController.m; sourceTree = "<group>"; };
 		0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KRHomeViewController.xib; path = home/KRHomeViewController.xib; sourceTree = "<group>"; };
@@ -282,6 +287,8 @@
 		0CFC052C17B8738600A1BB7F /* NMCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NMCustomLabel.m; path = helpers/text/NMCustomLabel/NMCustomLabel.m; sourceTree = "<group>"; };
 		0CFC052D17B8738600A1BB7F /* NMCustomLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NMCustomLabelStyle.h; path = helpers/text/NMCustomLabel/NMCustomLabelStyle.h; sourceTree = "<group>"; };
 		0CFC052E17B8738600A1BB7F /* NMCustomLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NMCustomLabelStyle.m; path = helpers/text/NMCustomLabel/NMCustomLabelStyle.m; sourceTree = "<group>"; };
+		0CFC053217B87BAA00A1BB7F /* KRTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRTextButton.h; path = helpers/buttons/KRTextButton.h; sourceTree = "<group>"; };
+		0CFC053317B87BAA00A1BB7F /* KRTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRTextButton.m; path = helpers/buttons/KRTextButton.m; sourceTree = "<group>"; };
 		8cc04305e90128ef892ea4d8 /* calabash.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -523,6 +530,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C63195117B88B1700729514 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				0C280A4C17B88F6D007026DC /* magnifying-glass-white@2x.png */,
+				0C63195717B88CC200729514 /* plus-sign-white@2x.png */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
 		0CFC051A17B86C5200A1BB7F /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +552,7 @@
 		0CFC052217B872CD00A1BB7F /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0CFC053117B87B7700A1BB7F /* buttons */,
 				0CFC052317B872F000A1BB7F /* text */,
 			);
 			name = helpers;
@@ -558,6 +575,15 @@
 				0CFC052E17B8738600A1BB7F /* NMCustomLabelStyle.m */,
 			);
 			name = NMCustomLabel;
+			sourceTree = "<group>";
+		};
+		0CFC053117B87B7700A1BB7F /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				0CFC053217B87BAA00A1BB7F /* KRTextButton.h */,
+				0CFC053317B87BAA00A1BB7F /* KRTextButton.m */,
+			);
+			name = buttons;
 			sourceTree = "<group>";
 		};
 		D236FB2817B464E4003DD323 /* controllers */ = {
@@ -878,6 +904,7 @@
 		D2A57488175A80DB002AC1B9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				0C63195117B88B1700729514 /* home */,
 				D2A5749D175AC5B6002AC1B9 /* kronicles */,
 				D2A5749E175AC5B8002AC1B9 /* app */,
 				D2A57493175A91AE002AC1B9 /* circle-test.png */,
@@ -1226,6 +1253,8 @@
 				D2CF7E5117B53B2400E3D1F0 /* pauseTriangle.png in Resources */,
 				D2CF7E5817B7FA2700E3D1F0 /* cancel_x.png in Resources */,
 				0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */,
+				0C63195917B88CC200729514 /* plus-sign-white@2x.png in Resources */,
+				0C280A4D17B88F6D007026DC /* magnifying-glass-white@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1458,6 +1487,7 @@
 				0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */,
 				0CFC052F17B8738600A1BB7F /* NMCustomLabel.m in Sources */,
 				0CFC053017B8738600A1BB7F /* NMCustomLabelStyle.m in Sources */,
+				0CFC053417B87BAA00A1BB7F /* KRTextButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

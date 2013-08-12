@@ -15,12 +15,13 @@
 #import "KRCreateViewController.h"
 #import "KRAPIStore.h"
 
+#import "KRTextButton.h"
 #import "NMCustomLabel.h"
 #import "NMCustomLabelStyle.h"
 
 @interface KRHomeViewController ()
 
-@property(strong, nonatomic) UIButton *createButton;
+@property(strong, nonatomic) KRTextButton *createButton;
 @property(strong, nonatomic) UIButton *findButton;
 
 @end
@@ -53,24 +54,15 @@
     [welcomeLabel setDefaultStyle:[NMCustomLabelStyle styleWithFont:[KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeHuge] color:[UIColor whiteColor]]];
     welcomeLabel.backgroundColor = [UIColor clearColor];
     [self.view addSubview:welcomeLabel];
-    
-    _createButton = [[UIButton alloc] initWithFrame:CGRectMake(buttonX - 15, welcomeLabel.frame.origin.y + welcomeLabel.frame.size.height + 50, 100.0, 50.0)];
-    [_createButton setTitle:@"Create" forState:UIControlStateNormal];
-    _createButton.titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeLarge];
-    _createButton.backgroundColor = [UIColor clearColor];
-    _createButton.accessibilityFrame = _createButton.frame;
-    _createButton.accessibilityLabel = @"createkronicle";
-    _createButton.titleLabel.textColor = [UIColor whiteColor];
+   
+    NSString *createString = NSLocalizedString(@"Create", @"");
+    _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, welcomeLabel.frame.origin.y + welcomeLabel.frame.size.height - 10, 100.0f, 50.0f) andType:KRTextButtonTypeHomeScreen andIcon:[UIImage imageNamed:@"plus-sign-white"]];
+    [_createButton setTitle:createString forState:UIControlStateNormal];
     [self.view addSubview:_createButton];
     
-    _findButton = [[UIButton alloc] initWithFrame:CGRectMake(buttonX, _createButton.frame.origin.y + _createButton.frame.size.height, 100.0, 50.0)];
-    [_findButton setTitle:@"Discover" forState:UIControlStateNormal];
-    _findButton.titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeLarge];
-    _findButton.backgroundColor = [UIColor clearColor];
-    _findButton.accessibilityFrame = _findButton.frame;
-    _findButton.isAccessibilityElement = YES;
-    _findButton.accessibilityLabel = @"findkronicle";
-    _findButton.titleLabel.textColor = [UIColor whiteColor];
+    NSString *findString = NSLocalizedString(@"Find", @"");
+    _findButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX - 12, _createButton.frame.origin.y + _createButton.frame.size.height, 100.0f, 50.0f) andType:KRTextButtonTypeHomeScreen andIcon:[UIImage imageNamed:@"magnifying-glass-white"]];
+    [_findButton setTitle:findString forState:UIControlStateNormal];
     [_findButton addTarget:self action:@selector(find) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_findButton];
 }
