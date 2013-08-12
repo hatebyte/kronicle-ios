@@ -58,6 +58,7 @@
     NSString *createString = NSLocalizedString(@"Create", @"");
     _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, welcomeLabel.frame.origin.y + welcomeLabel.frame.size.height - 10, 100.0f, 50.0f) andType:KRTextButtonTypeHomeScreen andIcon:[UIImage imageNamed:@"plus-sign-white"]];
     [_createButton setTitle:createString forState:UIControlStateNormal];
+    [_createButton addTarget:self action:@selector(create) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_createButton];
     
     NSString *findString = NSLocalizedString(@"Find", @"");
@@ -73,12 +74,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)find {
+- (void)find
+{
     KRCategoriesViewController *categoryViewController = [[KRCategoriesViewController alloc] initWithNibName:@"KRCategoriesViewController" bundle:nil];
     [self.navigationController pushViewController:categoryViewController animated:YES];
 }
 
-- (IBAction)create:(id)sender {
+- (void)create
+{
     KRCreateViewController *createViewController = [[KRCreateViewController alloc] initWithNibName:@"KRCreateViewController" bundle:nil];
     [self.navigationController pushViewController:createViewController animated:YES];
 }
