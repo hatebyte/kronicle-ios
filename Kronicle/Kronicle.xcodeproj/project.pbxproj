@@ -11,6 +11,9 @@
 		06c18c4ebbe4b4e0cea28d00 /* crazy_train_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */; };
 		0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */; };
 		0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */; };
+		0CFC052117B8723800A1BB7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC052017B8723800A1BB7F /* CoreText.framework */; };
+		0CFC052F17B8738600A1BB7F /* NMCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC052C17B8738600A1BB7F /* NMCustomLabel.m */; };
+		0CFC053017B8738600A1BB7F /* NMCustomLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC052E17B8738600A1BB7F /* NMCustomLabelStyle.m */; };
 		0ada2603b62f30af1819d9a4 /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A614F175B2AF900B50A39 /* back-button.png */; };
 		11b1368a6557245c989a20f4 /* yoga-media-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD2A175B70760003FEF5 /* yoga-media-2.png */; };
 		15304655b1c6d8b242d9de8a /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A3175AC5B9002AC1B9 /* x-button.png */; };
@@ -274,6 +277,11 @@
 		0CFC051B17B86C8500A1BB7F /* KRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRHomeViewController.h; path = home/KRHomeViewController.h; sourceTree = "<group>"; };
 		0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRHomeViewController.m; path = home/KRHomeViewController.m; sourceTree = "<group>"; };
 		0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KRHomeViewController.xib; path = home/KRHomeViewController.xib; sourceTree = "<group>"; };
+		0CFC052017B8723800A1BB7F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0CFC052B17B8738600A1BB7F /* NMCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NMCustomLabel.h; path = helpers/text/NMCustomLabel/NMCustomLabel.h; sourceTree = "<group>"; };
+		0CFC052C17B8738600A1BB7F /* NMCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NMCustomLabel.m; path = helpers/text/NMCustomLabel/NMCustomLabel.m; sourceTree = "<group>"; };
+		0CFC052D17B8738600A1BB7F /* NMCustomLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NMCustomLabelStyle.h; path = helpers/text/NMCustomLabel/NMCustomLabelStyle.h; sourceTree = "<group>"; };
+		0CFC052E17B8738600A1BB7F /* NMCustomLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NMCustomLabelStyle.m; path = helpers/text/NMCustomLabel/NMCustomLabelStyle.m; sourceTree = "<group>"; };
 		8cc04305e90128ef892ea4d8 /* calabash.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -496,6 +504,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CFC052117B8723800A1BB7F /* CoreText.framework in Frameworks */,
 				D2F1E7491789EDBD0085C707 /* ImageIO.framework in Frameworks */,
 				D2F1E7471789EDB60085C707 /* Security.framework in Frameworks */,
 				D2F1E7451789EDAE0085C707 /* SystemConfiguration.framework in Frameworks */,
@@ -522,6 +531,33 @@
 				0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */,
 			);
 			name = home;
+			sourceTree = "<group>";
+		};
+		0CFC052217B872CD00A1BB7F /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0CFC052317B872F000A1BB7F /* text */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		0CFC052317B872F000A1BB7F /* text */ = {
+			isa = PBXGroup;
+			children = (
+				0CFC052417B8730400A1BB7F /* NMCustomLabel */,
+			);
+			name = text;
+			sourceTree = "<group>";
+		};
+		0CFC052417B8730400A1BB7F /* NMCustomLabel */ = {
+			isa = PBXGroup;
+			children = (
+				0CFC052B17B8738600A1BB7F /* NMCustomLabel.h */,
+				0CFC052C17B8738600A1BB7F /* NMCustomLabel.m */,
+				0CFC052D17B8738600A1BB7F /* NMCustomLabelStyle.h */,
+				0CFC052E17B8738600A1BB7F /* NMCustomLabelStyle.m */,
+			);
+			name = NMCustomLabel;
 			sourceTree = "<group>";
 		};
 		D236FB2817B464E4003DD323 /* controllers */ = {
@@ -722,6 +758,7 @@
 		D2A573E0175A3B4E002AC1B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CFC052017B8723800A1BB7F /* CoreText.framework */,
 				D2F1E7481789EDBD0085C707 /* ImageIO.framework */,
 				D2F1E7461789EDB60085C707 /* Security.framework */,
 				D2F1E7441789EDAE0085C707 /* SystemConfiguration.framework */,
@@ -742,6 +779,7 @@
 		D2A573E7175A3B4E002AC1B9 /* Kronicle */ = {
 			isa = PBXGroup;
 			children = (
+				0CFC052217B872CD00A1BB7F /* helpers */,
 				D2A57444175A6782002AC1B9 /* globals */,
 				D2A57404175A3B77002AC1B9 /* network */,
 				D2A57409175A3B77002AC1B9 /* model */,
@@ -1418,6 +1456,8 @@
 				D2CF7E4817B4723800E3D1F0 /* KRCircularKronicleGraph.m in Sources */,
 				D2CF7E5617B7EA0C00E3D1F0 /* CreateStepTimeView.m in Sources */,
 				0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */,
+				0CFC052F17B8738600A1BB7F /* NMCustomLabel.m in Sources */,
+				0CFC053017B8738600A1BB7F /* NMCustomLabelStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

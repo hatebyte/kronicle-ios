@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
 #import "KRHomeViewController.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 

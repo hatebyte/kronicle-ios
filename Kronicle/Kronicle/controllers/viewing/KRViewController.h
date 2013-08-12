@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "KRHomeViewController.h"
 #import "KRKronicle.h"
 #import "MediaView.h"
 
