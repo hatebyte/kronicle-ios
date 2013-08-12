@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01a487b97a589cf025c30e9e /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7481789EDBD0085C707 /* ImageIO.framework */; };
-		0416bda5436ed874b1a00627 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A573FA175A3B4E002AC1B9 /* ViewController.m */; };
 		06c18c4ebbe4b4e0cea28d00 /* crazy_train_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */; };
 		0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */; };
 		0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */; };
@@ -135,8 +134,6 @@
 		D2A573F4175A3B4E002AC1B9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A573F3175A3B4E002AC1B9 /* Default.png */; };
 		D2A573F6175A3B4E002AC1B9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A573F5175A3B4E002AC1B9 /* Default@2x.png */; };
 		D2A573F8175A3B4E002AC1B9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A573F7175A3B4E002AC1B9 /* Default-568h@2x.png */; };
-		D2A573FB175A3B4E002AC1B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A573FA175A3B4E002AC1B9 /* ViewController.m */; };
-		D2A573FE175A3B4E002AC1B9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A573FC175A3B4E002AC1B9 /* ViewController.xib */; };
 		D2A5741E175A3B77002AC1B9 /* KRAPIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57406175A3B77002AC1B9 /* KRAPIStore.m */; };
 		D2A5741F175A3B77002AC1B9 /* KRNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57408175A3B77002AC1B9 /* KRNetworkConnection.m */; };
 		D2A57420175A3B77002AC1B9 /* KRKronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A5740B175A3B77002AC1B9 /* KRKronicle.m */; };
@@ -232,7 +229,6 @@
 		a83e00772676c44e15fa96e3 /* top-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C7175B20EF002AC1B9 /* top-bar.png */; };
 		aaf44b8e9e2e29a587918a39 /* burger-circle-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6161175B498600B50A39 /* burger-circle-1.png */; };
 		aba3cda69e6140906718353c /* info-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574A1175AC5B9002AC1B9 /* info-button.png */; };
-		ade31a24a413dce53c358a0b /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A573FC175A3B4E002AC1B9 /* ViewController.xib */; };
 		b461efbce4e9c35f2370697c /* KRList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57435175A4A8D002AC1B9 /* KRList.m */; };
 		b73e32ec9683294550d1fd3b /* yoga-media-6.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD26175B70750003FEF5 /* yoga-media-6.png */; };
 		b8f15f27989102dc45275c41 /* BrandonGrotesque-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747C175A760D002AC1B9 /* BrandonGrotesque-Medium.otf */; };
@@ -361,9 +357,6 @@
 		D2A573F3175A3B4E002AC1B9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D2A573F5175A3B4E002AC1B9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D2A573F7175A3B4E002AC1B9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D2A573F9175A3B4E002AC1B9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2A573FA175A3B4E002AC1B9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D2A573FD175A3B4E002AC1B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		D2A57405175A3B77002AC1B9 /* KRAPIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRAPIStore.h; sourceTree = "<group>"; };
 		D2A57406175A3B77002AC1B9 /* KRAPIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRAPIStore.m; sourceTree = "<group>"; };
 		D2A57407175A3B77002AC1B9 /* KRNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNetworkConnection.h; sourceTree = "<group>"; };
@@ -755,9 +748,6 @@
 				D236FB2817B464E4003DD323 /* controllers */,
 				D2A573F0175A3B4E002AC1B9 /* AppDelegate.h */,
 				D2A573F1175A3B4E002AC1B9 /* AppDelegate.m */,
-				D2A573F9175A3B4E002AC1B9 /* ViewController.h */,
-				D2A573FA175A3B4E002AC1B9 /* ViewController.m */,
-				D2A573FC175A3B4E002AC1B9 /* ViewController.xib */,
 				D2A573E8175A3B4E002AC1B9 /* Supporting Files */,
 			);
 			path = Kronicle;
@@ -1109,7 +1099,6 @@
 				D2A573F4175A3B4E002AC1B9 /* Default.png in Resources */,
 				D2A573F6175A3B4E002AC1B9 /* Default@2x.png in Resources */,
 				D2A573F8175A3B4E002AC1B9 /* Default-568h@2x.png in Resources */,
-				D2A573FE175A3B4E002AC1B9 /* ViewController.xib in Resources */,
 				D2A5747D175A760D002AC1B9 /* BrandonGrotesque-Black.otf in Resources */,
 				D2A5747E175A760D002AC1B9 /* BrandonGrotesque-Light.otf in Resources */,
 				D2A5747F175A760D002AC1B9 /* BrandonGrotesque-Medium.otf in Resources */,
@@ -1210,7 +1199,6 @@
 				43952345f6564d4829d9d060 /* Default.png in Resources */,
 				346266bcf4279aef5bc52937 /* Default@2x.png in Resources */,
 				c57e7b693aa1d8dc297c5e71 /* Default-568h@2x.png in Resources */,
-				ade31a24a413dce53c358a0b /* ViewController.xib in Resources */,
 				5c836821dfff3ddf299067a1 /* BrandonGrotesque-Black.otf in Resources */,
 				2dee3c9c38b6162d2a758f11 /* BrandonGrotesque-Light.otf in Resources */,
 				b8f15f27989102dc45275c41 /* BrandonGrotesque-Medium.otf in Resources */,
@@ -1363,7 +1351,6 @@
 			files = (
 				e92e0e9df142296c413080d3 /* main.m in Sources */,
 				1d62f9a895531cbb036d7eea /* AppDelegate.m in Sources */,
-				0416bda5436ed874b1a00627 /* ViewController.m in Sources */,
 				88baa8cb1cb56b7e6f665793 /* KRAPIStore.m in Sources */,
 				49d4487fe056f8b2a8762143 /* KRNetworkConnection.m in Sources */,
 				498ca3423d1dd1bd92bae799 /* KRKronicle.m in Sources */,
@@ -1392,7 +1379,6 @@
 				D2CF7E3A17B4684400E3D1F0 /* KRCategoriesViewController.m in Sources */,
 				D2A573EE175A3B4E002AC1B9 /* main.m in Sources */,
 				D2A573F2175A3B4E002AC1B9 /* AppDelegate.m in Sources */,
-				D2A573FB175A3B4E002AC1B9 /* ViewController.m in Sources */,
 				D2A5741E175A3B77002AC1B9 /* KRAPIStore.m in Sources */,
 				D2A5741F175A3B77002AC1B9 /* KRNetworkConnection.m in Sources */,
 				D2A57420175A3B77002AC1B9 /* KRKronicle.m in Sources */,
@@ -1444,14 +1430,6 @@
 				D2A573EB175A3B4E002AC1B9 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D2A573FC175A3B4E002AC1B9 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2A573FD175A3B4E002AC1B9 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
