@@ -10,6 +10,8 @@
 #import "KRListViewController.h"
 #import "KronicleEngine.h"
 #import "KRGlobals.h"
+#import "KRHomeViewController.h"
+#import "KRNavigationViewController.h"
 
 @interface KRCategoriesViewController ()
 
@@ -43,6 +45,18 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+}
+
+
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    [[KRHomeViewController current] closeNavigation];
+//
+//}
+//
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

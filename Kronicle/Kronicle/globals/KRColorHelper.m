@@ -10,20 +10,23 @@
 
 @implementation KRColorHelper
 
-+ (UIColor*)lightBlue {
++ (UIColor*)blueLight {
     return [UIColor colorWithRed:.36f green:.82f blue:.87f alpha:1];
 }
 
-+ (UIColor*)darkBlue {
++ (UIColor*)blueDark {
     return [UIColor colorWithRed:.14f green:.68f blue:.75f alpha:1];
 }
 
-+ (UIColor*)darkGrey {
-    return [UIColor colorWithRed:.32f green:.32f blue:.32f alpha:1];
++ (UIColor*)grayLight {
+    return [UIColor colorWithRed:.91f green:.91f blue:.91f alpha:1];
 }
 
-+ (UIColor*)lightGrey {
-    return [UIColor colorWithRed:.91f green:.91f blue:.91f alpha:1];
++ (UIColor*)grayMedium {
+    return [UIColor colorWithRed:.61f green:.61f blue:.61f alpha:1];
+}
++ (UIColor*)grayDark {
+    return [UIColor colorWithRed:.32f green:.32f blue:.32f alpha:1];
 }
 
 + (UIColor*)orange {

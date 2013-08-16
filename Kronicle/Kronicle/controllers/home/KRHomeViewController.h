@@ -10,4 +10,15 @@
 
 @interface KRHomeViewController : UIViewController
 
+
++ (KRHomeViewController *)current;
+
+//- (void)closeNavigation;
+
+- (void)home;
+- (void)mykronicles;
+- (void)create;
+- (void)discover;
+- (void)me;
+
 @end

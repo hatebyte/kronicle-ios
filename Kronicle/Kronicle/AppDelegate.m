@@ -10,8 +10,10 @@
 
 #import "KRHomeViewController.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
+#import "KRNavigationViewController.h"
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
+
 
 @implementation AppDelegate
 
@@ -19,22 +21,24 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    KRHomeViewController *viewController = [[KRHomeViewController alloc] initWithNibName:@"KRHomeViewController" bundle:nil];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    KRHomeViewController *viewController = [[KRHomeViewController alloc] initWithNibName:@"KRHomeViewController" bundle:nil];
+    KRHomeViewController *viewController = [KRHomeViewController current];
+    
+    KRNavigationViewController *navigationController = [[KRNavigationViewController alloc] initWithRootViewController:viewController];
     navigationController.navigationBarHidden = YES;
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
-    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
-                                     backgroundColor:[UIColor redColor]
-                                             forFlag:LOG_FLAG_ERROR];
-    
-    DDLogError(@"Paper jam");                              // Red
-    DDLogWarn(@"Toner is low");                            // Orange
-    DDLogInfo(@"Warming up printer (pre-customization)");  // Default (black)
-    DDLogVerbose(@"Intializing protcol x26");              // Default (black)
+//    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+//    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+//    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
+//                                     backgroundColor:[UIColor redColor]
+//                                             forFlag:LOG_FLAG_ERROR];
+//    
+//    DDLogError(@"Paper jam");                              // Red
+//    DDLogWarn(@"Toner is low");                            // Orange
+//    DDLogInfo(@"Warming up printer (pre-customization)");  // Default (black)
+//    DDLogVerbose(@"Intializing protcol x26");              // Default (black)
     
     return YES;
 }

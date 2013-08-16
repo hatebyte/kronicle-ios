@@ -54,7 +54,7 @@
         self.number.font = [KRFontHelper getFont:KRBrandonMedium withSize:34];
         self.number.textColor = [UIColor whiteColor];
         self.number.backgroundColor = [UIColor clearColor];
-        self.number.shadowColor = [KRColorHelper darkGrey];
+        self.number.shadowColor = [KRColorHelper grayDark];
         self.number.shadowOffset = CGSizeMake(1,1);
 
         [self.contentView addSubview:self.number];
@@ -66,7 +66,7 @@
         
         CALayer *barf = [CALayer layer];
         barf.frame = CGRectMake(0, KCellHeight-1, 320, 1);
-        barf.backgroundColor = [KRColorHelper lightGrey].CGColor;
+        barf.backgroundColor = [KRColorHelper grayLight].CGColor;
         [self.contentView.layer addSublayer:barf];
         
     }

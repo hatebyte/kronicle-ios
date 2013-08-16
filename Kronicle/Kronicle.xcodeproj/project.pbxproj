@@ -84,8 +84,6 @@
 		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
 		974c3a7f8d7187aa406473b1 /* yoga-circle-6.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD20175B70720003FEF5 /* yoga-circle-6.png */; };
 		99bbd4e4d2756bafbeccf149 /* middle-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A574C9175B20F3002AC1B9 /* middle-left.png */; };
-		D236FB6F17B464E4003DD323 /* KREndAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB2D17B464E4003DD323 /* KREndAddCell.m */; };
-		D236FB7017B464E4003DD323 /* KRKronicleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB2F17B464E4003DD323 /* KRKronicleCell.m */; };
 		D236FB7117B464E4003DD323 /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB3117B464E4003DD323 /* KRCreateStepViewController.m */; };
 		D236FB7217B464E4003DD323 /* KRCreateStepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB3217B464E4003DD323 /* KRCreateStepViewController.xib */; };
 		D236FB7317B464E4003DD323 /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB3417B464E4003DD323 /* KRCreateViewController.m */; };
@@ -94,8 +92,8 @@
 		D236FB7717B464E4003DD323 /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB3D17B464E4003DD323 /* KRCategoriesViewController.xib */; };
 		D236FB7A17B464E4003DD323 /* KRKronicleStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */; };
 		D236FB7B17B464E4003DD323 /* KRKronicleStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */; };
-		D236FB7C17B464E4003DD323 /* KRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4717B464E4003DD323 /* KRViewController.m */; };
-		D236FB7D17B464E4003DD323 /* KRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB4817B464E4003DD323 /* KRViewController.xib */; };
+		D236FB7C17B464E4003DD323 /* KRPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */; };
+		D236FB7D17B464E4003DD323 /* KRPlaybackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB4817B464E4003DD323 /* KRPlaybackViewController.xib */; };
 		D236FB8017B464E4003DD323 /* KRClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4E17B464E4003DD323 /* KRClockManager.m */; };
 		D236FB8117B464E4003DD323 /* KRKronicleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB5017B464E4003DD323 /* KRKronicleManager.m */; };
 		D236FB8417B464E4003DD323 /* KRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB5A17B464E4003DD323 /* KRGraphView.m */; };
@@ -192,6 +190,27 @@
 		D2CF7E5117B53B2400E3D1F0 /* pauseTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E4D17B53B2400E3D1F0 /* pauseTriangle.png */; };
 		D2CF7E5617B7EA0C00E3D1F0 /* CreateStepTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E5517B7EA0C00E3D1F0 /* CreateStepTimeView.m */; };
 		D2CF7E5817B7FA2700E3D1F0 /* cancel_x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E5717B7FA2700E3D1F0 /* cancel_x.png */; };
+		D2CF7E7317B9A94900E3D1F0 /* KRKronicleBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E7217B9A94900E3D1F0 /* KRKronicleBaseViewController.m */; };
+		D2CF7E7A17B9AE4300E3D1F0 /* KRNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E7917B9AE4300E3D1F0 /* KRNavigationViewController.m */; };
+		D2CF7E8517BAF1A400E3D1F0 /* KRSwipeViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E8417BAF1A400E3D1F0 /* KRSwipeViewNavigation.m */; };
+		D2CF7E8817BAF1E000E3D1F0 /* KRNavigationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E8717BAF1E000E3D1F0 /* KRNavigationTableViewCell.m */; };
+		D2CF7E8E17BB19DC00E3D1F0 /* create_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E8A17BB19DC00E3D1F0 /* create_thumbnail.png */; };
+		D2CF7E8F17BB19DC00E3D1F0 /* hamburger_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E8B17BB19DC00E3D1F0 /* hamburger_thumbnail.png */; };
+		D2CF7E9017BB19DC00E3D1F0 /* mykronicles_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E8C17BB19DC00E3D1F0 /* mykronicles_thumbnail.png */; };
+		D2CF7E9117BB19DC00E3D1F0 /* discover_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E8D17BB19DC00E3D1F0 /* discover_thumbnail.png */; };
+		D2CF7E9317BB1A3E00E3D1F0 /* me_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E9217BB1A3D00E3D1F0 /* me_thumbnail.png */; };
+		D2CF7E9517BB1C1B00E3D1F0 /* home_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E9417BB1C1A00E3D1F0 /* home_thumbnail.png */; };
+		D2CF7EA017BBB6E100E3D1F0 /* ACMagnifyingGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E9817BBB6E100E3D1F0 /* ACMagnifyingGlass.m */; };
+		D2CF7EA117BBB6E100E3D1F0 /* BBRichTextPrefixStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E9A17BBB6E100E3D1F0 /* BBRichTextPrefixStyle.m */; };
+		D2CF7EA217BBB6E100E3D1F0 /* BBRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E9C17BBB6E100E3D1F0 /* BBRichTextView.m */; };
+		D2CF7EB317BC42A800E3D1F0 /* KRIngredientsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7EB117BC42A800E3D1F0 /* KRIngredientsListViewController.m */; };
+		D2CF7EB417BC42A800E3D1F0 /* KRIngredientsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7EB217BC42A800E3D1F0 /* KRIngredientsListViewController.xib */; };
+		D2CF7EB717BC465B00E3D1F0 /* AddTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7EB617BC465B00E3D1F0 /* AddTitleTableViewCell.m */; };
+		D2CF7EBA17BD018B00E3D1F0 /* AddDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7EB917BD018A00E3D1F0 /* AddDescriptionTableViewCell.m */; };
+		D2CF7EBD17BD01A900E3D1F0 /* AddStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7EBC17BD01A800E3D1F0 /* AddStepTableViewCell.m */; };
+		D2EB138617BD965D0099808A /* close-x_40px.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EB138517BD965D0099808A /* close-x_40px.png */; };
+		D2EB138917BDB5050099808A /* StepBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB138817BDB5050099808A /* StepBlockView.m */; };
+		D2EB138D17BE588A0099808A /* hamburger_50px.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EB138C17BE588A0099808A /* hamburger_50px.png */; };
 		D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7251789ED850085C707 /* NSData+MKBase64.m */; };
 		D2F1E73A1789ED850085C707 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
 		D2F1E73B1789ED850085C707 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7291789ED850085C707 /* NSDictionary+RequestEncoding.m */; };
@@ -293,10 +312,6 @@
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D236FB0517B4631A003DD323 /* Kronicle-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kronicle-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D236FB2C17B464E4003DD323 /* KREndAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KREndAddCell.h; sourceTree = "<group>"; };
-		D236FB2D17B464E4003DD323 /* KREndAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KREndAddCell.m; sourceTree = "<group>"; };
-		D236FB2E17B464E4003DD323 /* KRKronicleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleCell.h; sourceTree = "<group>"; };
-		D236FB2F17B464E4003DD323 /* KRKronicleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleCell.m; sourceTree = "<group>"; };
 		D236FB3017B464E4003DD323 /* KRCreateStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateStepViewController.h; sourceTree = "<group>"; };
 		D236FB3117B464E4003DD323 /* KRCreateStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateStepViewController.m; sourceTree = "<group>"; };
 		D236FB3217B464E4003DD323 /* KRCreateStepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateStepViewController.xib; sourceTree = "<group>"; };
@@ -311,9 +326,9 @@
 		D236FB4317B464E4003DD323 /* KRKronicleStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleStartViewController.h; sourceTree = "<group>"; };
 		D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleStartViewController.m; sourceTree = "<group>"; };
 		D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRKronicleStartViewController.xib; sourceTree = "<group>"; };
-		D236FB4617B464E4003DD323 /* KRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRViewController.h; sourceTree = "<group>"; };
-		D236FB4717B464E4003DD323 /* KRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRViewController.m; sourceTree = "<group>"; };
-		D236FB4817B464E4003DD323 /* KRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRViewController.xib; sourceTree = "<group>"; };
+		D236FB4617B464E4003DD323 /* KRPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPlaybackViewController.h; sourceTree = "<group>"; };
+		D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPlaybackViewController.m; sourceTree = "<group>"; };
+		D236FB4817B464E4003DD323 /* KRPlaybackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRPlaybackViewController.xib; sourceTree = "<group>"; };
 		D236FB4D17B464E4003DD323 /* KRClockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClockManager.h; sourceTree = "<group>"; };
 		D236FB4E17B464E4003DD323 /* KRClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClockManager.m; sourceTree = "<group>"; };
 		D236FB4F17B464E4003DD323 /* KRKronicleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleManager.h; sourceTree = "<group>"; };
@@ -437,6 +452,39 @@
 		D2CF7E5417B7EA0C00E3D1F0 /* CreateStepTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStepTimeView.h; sourceTree = "<group>"; };
 		D2CF7E5517B7EA0C00E3D1F0 /* CreateStepTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStepTimeView.m; sourceTree = "<group>"; };
 		D2CF7E5717B7FA2700E3D1F0 /* cancel_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_x.png; sourceTree = "<group>"; };
+		D2CF7E7117B9A94900E3D1F0 /* KRKronicleBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleBaseViewController.h; sourceTree = "<group>"; };
+		D2CF7E7217B9A94900E3D1F0 /* KRKronicleBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleBaseViewController.m; sourceTree = "<group>"; };
+		D2CF7E7817B9AE4300E3D1F0 /* KRNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNavigationViewController.h; sourceTree = "<group>"; };
+		D2CF7E7917B9AE4300E3D1F0 /* KRNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNavigationViewController.m; sourceTree = "<group>"; };
+		D2CF7E8317BAF1A400E3D1F0 /* KRSwipeViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSwipeViewNavigation.h; sourceTree = "<group>"; };
+		D2CF7E8417BAF1A400E3D1F0 /* KRSwipeViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSwipeViewNavigation.m; sourceTree = "<group>"; };
+		D2CF7E8617BAF1E000E3D1F0 /* KRNavigationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNavigationTableViewCell.h; sourceTree = "<group>"; };
+		D2CF7E8717BAF1E000E3D1F0 /* KRNavigationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNavigationTableViewCell.m; sourceTree = "<group>"; };
+		D2CF7E8A17BB19DC00E3D1F0 /* create_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_thumbnail.png; sourceTree = "<group>"; };
+		D2CF7E8B17BB19DC00E3D1F0 /* hamburger_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_thumbnail.png; sourceTree = "<group>"; };
+		D2CF7E8C17BB19DC00E3D1F0 /* mykronicles_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mykronicles_thumbnail.png; sourceTree = "<group>"; };
+		D2CF7E8D17BB19DC00E3D1F0 /* discover_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover_thumbnail.png; sourceTree = "<group>"; };
+		D2CF7E9217BB1A3D00E3D1F0 /* me_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_thumbnail.png; sourceTree = "<group>"; };
+		D2CF7E9417BB1C1A00E3D1F0 /* home_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_thumbnail.png; sourceTree = "<group>"; };
+		D2CF7E9717BBB6E100E3D1F0 /* ACMagnifyingGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMagnifyingGlass.h; sourceTree = "<group>"; };
+		D2CF7E9817BBB6E100E3D1F0 /* ACMagnifyingGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACMagnifyingGlass.m; sourceTree = "<group>"; };
+		D2CF7E9917BBB6E100E3D1F0 /* BBRichTextPrefixStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRichTextPrefixStyle.h; sourceTree = "<group>"; };
+		D2CF7E9A17BBB6E100E3D1F0 /* BBRichTextPrefixStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRichTextPrefixStyle.m; sourceTree = "<group>"; };
+		D2CF7E9B17BBB6E100E3D1F0 /* BBRichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRichTextView.h; sourceTree = "<group>"; };
+		D2CF7E9C17BBB6E100E3D1F0 /* BBRichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRichTextView.m; sourceTree = "<group>"; };
+		D2CF7EB017BC42A700E3D1F0 /* KRIngredientsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRIngredientsListViewController.h; sourceTree = "<group>"; };
+		D2CF7EB117BC42A800E3D1F0 /* KRIngredientsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRIngredientsListViewController.m; sourceTree = "<group>"; };
+		D2CF7EB217BC42A800E3D1F0 /* KRIngredientsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRIngredientsListViewController.xib; sourceTree = "<group>"; };
+		D2CF7EB517BC465B00E3D1F0 /* AddTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTitleTableViewCell.h; sourceTree = "<group>"; };
+		D2CF7EB617BC465B00E3D1F0 /* AddTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTitleTableViewCell.m; sourceTree = "<group>"; };
+		D2CF7EB817BD018900E3D1F0 /* AddDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		D2CF7EB917BD018A00E3D1F0 /* AddDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		D2CF7EBB17BD01A600E3D1F0 /* AddStepTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStepTableViewCell.h; sourceTree = "<group>"; };
+		D2CF7EBC17BD01A800E3D1F0 /* AddStepTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStepTableViewCell.m; sourceTree = "<group>"; };
+		D2EB138517BD965D0099808A /* close-x_40px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-x_40px.png"; sourceTree = "<group>"; };
+		D2EB138717BDB5040099808A /* StepBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepBlockView.h; sourceTree = "<group>"; };
+		D2EB138817BDB5050099808A /* StepBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepBlockView.m; sourceTree = "<group>"; };
+		D2EB138C17BE588A0099808A /* hamburger_50px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_50px.png; sourceTree = "<group>"; };
 		D2F1E7241789ED850085C707 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		D2F1E7251789ED850085C707 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
 		D2F1E7261789ED850085C707 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -561,6 +609,7 @@
 		0CFC052317B872F000A1BB7F /* text */ = {
 			isa = PBXGroup;
 			children = (
+				D2CF7E9617BBB6E100E3D1F0 /* bbrichtextview */,
 				0CFC052417B8730400A1BB7F /* NMCustomLabel */,
 			);
 			name = text;
@@ -589,10 +638,12 @@
 		D236FB2817B464E4003DD323 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0CFC051A17B86C5200A1BB7F /* home */,
 				D236FB2917B464E4003DD323 /* create */,
 				D236FB3917B464E4003DD323 /* discover */,
-				D236FB4217B464E4003DD323 /* viewing */,
+				0CFC051A17B86C5200A1BB7F /* home */,
+				D2CF7E7717B9AE4300E3D1F0 /* navigation */,
+				D2CF7E7017B9A91400E3D1F0 /* supers */,
+				D236FB4217B464E4003DD323 /* playback */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -612,6 +663,9 @@
 				D236FB3317B464E4003DD323 /* KRCreateViewController.h */,
 				D236FB3417B464E4003DD323 /* KRCreateViewController.m */,
 				D236FB3517B464E4003DD323 /* KRCreateViewController.xib */,
+				D2CF7EB017BC42A700E3D1F0 /* KRIngredientsListViewController.h */,
+				D2CF7EB117BC42A800E3D1F0 /* KRIngredientsListViewController.m */,
+				D2CF7EB217BC42A800E3D1F0 /* KRIngredientsListViewController.xib */,
 				D236FB3017B464E4003DD323 /* KRCreateStepViewController.h */,
 				D236FB3117B464E4003DD323 /* KRCreateStepViewController.m */,
 				D236FB3217B464E4003DD323 /* KRCreateStepViewController.xib */,
@@ -623,10 +677,14 @@
 		D236FB2B17B464E4003DD323 /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				D236FB2C17B464E4003DD323 /* KREndAddCell.h */,
-				D236FB2D17B464E4003DD323 /* KREndAddCell.m */,
-				D236FB2E17B464E4003DD323 /* KRKronicleCell.h */,
-				D236FB2F17B464E4003DD323 /* KRKronicleCell.m */,
+				D2CF7EB517BC465B00E3D1F0 /* AddTitleTableViewCell.h */,
+				D2CF7EB617BC465B00E3D1F0 /* AddTitleTableViewCell.m */,
+				D2CF7EB817BD018900E3D1F0 /* AddDescriptionTableViewCell.h */,
+				D2CF7EB917BD018A00E3D1F0 /* AddDescriptionTableViewCell.m */,
+				D2CF7EBB17BD01A600E3D1F0 /* AddStepTableViewCell.h */,
+				D2CF7EBC17BD01A800E3D1F0 /* AddStepTableViewCell.m */,
+				D2EB138717BDB5040099808A /* StepBlockView.h */,
+				D2EB138817BDB5050099808A /* StepBlockView.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -661,18 +719,19 @@
 			path = krcategoriesviewcontroller;
 			sourceTree = "<group>";
 		};
-		D236FB4217B464E4003DD323 /* viewing */ = {
+		D236FB4217B464E4003DD323 /* playback */ = {
 			isa = PBXGroup;
 			children = (
 				D236FB4317B464E4003DD323 /* KRKronicleStartViewController.h */,
 				D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */,
 				D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */,
-				D236FB4617B464E4003DD323 /* KRViewController.h */,
-				D236FB4717B464E4003DD323 /* KRViewController.m */,
-				D236FB4817B464E4003DD323 /* KRViewController.xib */,
+				D236FB4617B464E4003DD323 /* KRPlaybackViewController.h */,
+				D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */,
+				D236FB4817B464E4003DD323 /* KRPlaybackViewController.xib */,
 				D236FB4C17B464E4003DD323 /* manager */,
 				D236FB5717B464E4003DD323 /* view */,
 			);
+			name = playback;
 			path = viewing;
 			sourceTree = "<group>";
 		};
@@ -958,6 +1017,8 @@
 		D2A5749E175AC5B8002AC1B9 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2EB138417BD965D0099808A /* create */,
+				D2CF7E8917BB19DC00E3D1F0 /* nav */,
 				D2CF7E5717B7FA2700E3D1F0 /* cancel_x.png */,
 				D2CF7E4A17B53B2400E3D1F0 /* black_trans_carrot.png */,
 				D2CF7E4B17B53B2400E3D1F0 /* play_button.png */,
@@ -1021,6 +1082,72 @@
 				D2CF7E4317B46B9900E3D1F0 /* StepsTableCellViewCell.m */,
 			);
 			path = tabelcell;
+			sourceTree = "<group>";
+		};
+		D2CF7E7017B9A91400E3D1F0 /* supers */ = {
+			isa = PBXGroup;
+			children = (
+				D2CF7E7117B9A94900E3D1F0 /* KRKronicleBaseViewController.h */,
+				D2CF7E7217B9A94900E3D1F0 /* KRKronicleBaseViewController.m */,
+			);
+			path = supers;
+			sourceTree = "<group>";
+		};
+		D2CF7E7717B9AE4300E3D1F0 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2CF7E7817B9AE4300E3D1F0 /* KRNavigationViewController.h */,
+				D2CF7E7917B9AE4300E3D1F0 /* KRNavigationViewController.m */,
+				D2CF7E8217BAF1A400E3D1F0 /* swipeviewnavigation */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		D2CF7E8217BAF1A400E3D1F0 /* swipeviewnavigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2CF7E8317BAF1A400E3D1F0 /* KRSwipeViewNavigation.h */,
+				D2CF7E8417BAF1A400E3D1F0 /* KRSwipeViewNavigation.m */,
+				D2CF7E8617BAF1E000E3D1F0 /* KRNavigationTableViewCell.h */,
+				D2CF7E8717BAF1E000E3D1F0 /* KRNavigationTableViewCell.m */,
+			);
+			path = swipeviewnavigation;
+			sourceTree = "<group>";
+		};
+		D2CF7E8917BB19DC00E3D1F0 /* nav */ = {
+			isa = PBXGroup;
+			children = (
+				D2CF7E9417BB1C1A00E3D1F0 /* home_thumbnail.png */,
+				D2CF7E9217BB1A3D00E3D1F0 /* me_thumbnail.png */,
+				D2CF7E8A17BB19DC00E3D1F0 /* create_thumbnail.png */,
+				D2CF7E8B17BB19DC00E3D1F0 /* hamburger_thumbnail.png */,
+				D2CF7E8C17BB19DC00E3D1F0 /* mykronicles_thumbnail.png */,
+				D2CF7E8D17BB19DC00E3D1F0 /* discover_thumbnail.png */,
+			);
+			path = nav;
+			sourceTree = "<group>";
+		};
+		D2CF7E9617BBB6E100E3D1F0 /* bbrichtextview */ = {
+			isa = PBXGroup;
+			children = (
+				D2CF7E9717BBB6E100E3D1F0 /* ACMagnifyingGlass.h */,
+				D2CF7E9817BBB6E100E3D1F0 /* ACMagnifyingGlass.m */,
+				D2CF7E9917BBB6E100E3D1F0 /* BBRichTextPrefixStyle.h */,
+				D2CF7E9A17BBB6E100E3D1F0 /* BBRichTextPrefixStyle.m */,
+				D2CF7E9B17BBB6E100E3D1F0 /* BBRichTextView.h */,
+				D2CF7E9C17BBB6E100E3D1F0 /* BBRichTextView.m */,
+			);
+			name = bbrichtextview;
+			path = helpers/text/bbrichtextview;
+			sourceTree = "<group>";
+		};
+		D2EB138417BD965D0099808A /* create */ = {
+			isa = PBXGroup;
+			children = (
+				D2EB138C17BE588A0099808A /* hamburger_50px.png */,
+				D2EB138517BD965D0099808A /* close-x_40px.png */,
+			);
+			path = create;
 			sourceTree = "<group>";
 		};
 		D2F1E7201789ED850085C707 /* MKNetworkKit */ = {
@@ -1245,7 +1372,7 @@
 				D236FB7417B464E4003DD323 /* KRCreateViewController.xib in Resources */,
 				D236FB7717B464E4003DD323 /* KRCategoriesViewController.xib in Resources */,
 				D236FB7B17B464E4003DD323 /* KRKronicleStartViewController.xib in Resources */,
-				D236FB7D17B464E4003DD323 /* KRViewController.xib in Resources */,
+				D236FB7D17B464E4003DD323 /* KRPlaybackViewController.xib in Resources */,
 				D2CF7E4017B46AC000E3D1F0 /* KRListViewController.xib in Resources */,
 				D2CF7E4E17B53B2400E3D1F0 /* black_trans_carrot.png in Resources */,
 				D2CF7E4F17B53B2400E3D1F0 /* play_button.png in Resources */,
@@ -1255,6 +1382,15 @@
 				0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */,
 				0C63195917B88CC200729514 /* plus-sign-white@2x.png in Resources */,
 				0C280A4D17B88F6D007026DC /* magnifying-glass-white@2x.png in Resources */,
+				D2CF7E8E17BB19DC00E3D1F0 /* create_thumbnail.png in Resources */,
+				D2CF7E8F17BB19DC00E3D1F0 /* hamburger_thumbnail.png in Resources */,
+				D2CF7E9017BB19DC00E3D1F0 /* mykronicles_thumbnail.png in Resources */,
+				D2CF7E9117BB19DC00E3D1F0 /* discover_thumbnail.png in Resources */,
+				D2CF7E9317BB1A3E00E3D1F0 /* me_thumbnail.png in Resources */,
+				D2CF7E9517BB1C1B00E3D1F0 /* home_thumbnail.png in Resources */,
+				D2CF7EB417BC42A800E3D1F0 /* KRIngredientsListViewController.xib in Resources */,
+				D2EB138617BD965D0099808A /* close-x_40px.png in Resources */,
+				D2EB138D17BE588A0099808A /* hamburger_50px.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1464,13 +1600,11 @@
 				D2F1E7411789ED850085C707 /* Reachability.m in Sources */,
 				D2F1E74E178A0B620085C707 /* KronicleEngine.m in Sources */,
 				D29D270E178B93340085E943 /* APIRouter.m in Sources */,
-				D236FB6F17B464E4003DD323 /* KREndAddCell.m in Sources */,
-				D236FB7017B464E4003DD323 /* KRKronicleCell.m in Sources */,
 				D236FB7117B464E4003DD323 /* KRCreateStepViewController.m in Sources */,
 				D236FB7317B464E4003DD323 /* KRCreateViewController.m in Sources */,
 				D236FB7517B464E4003DD323 /* DurationCreatorView.m in Sources */,
 				D236FB7A17B464E4003DD323 /* KRKronicleStartViewController.m in Sources */,
-				D236FB7C17B464E4003DD323 /* KRViewController.m in Sources */,
+				D236FB7C17B464E4003DD323 /* KRPlaybackViewController.m in Sources */,
 				D236FB8017B464E4003DD323 /* KRClockManager.m in Sources */,
 				D236FB8117B464E4003DD323 /* KRKronicleManager.m in Sources */,
 				D236FB8417B464E4003DD323 /* KRGraphView.m in Sources */,
@@ -1488,6 +1622,18 @@
 				0CFC052F17B8738600A1BB7F /* NMCustomLabel.m in Sources */,
 				0CFC053017B8738600A1BB7F /* NMCustomLabelStyle.m in Sources */,
 				0CFC053417B87BAA00A1BB7F /* KRTextButton.m in Sources */,
+				D2CF7E7317B9A94900E3D1F0 /* KRKronicleBaseViewController.m in Sources */,
+				D2CF7E7A17B9AE4300E3D1F0 /* KRNavigationViewController.m in Sources */,
+				D2CF7E8517BAF1A400E3D1F0 /* KRSwipeViewNavigation.m in Sources */,
+				D2CF7E8817BAF1E000E3D1F0 /* KRNavigationTableViewCell.m in Sources */,
+				D2CF7EA017BBB6E100E3D1F0 /* ACMagnifyingGlass.m in Sources */,
+				D2CF7EA117BBB6E100E3D1F0 /* BBRichTextPrefixStyle.m in Sources */,
+				D2CF7EA217BBB6E100E3D1F0 /* BBRichTextView.m in Sources */,
+				D2CF7EB317BC42A800E3D1F0 /* KRIngredientsListViewController.m in Sources */,
+				D2CF7EB717BC465B00E3D1F0 /* AddTitleTableViewCell.m in Sources */,
+				D2CF7EBA17BD018B00E3D1F0 /* AddDescriptionTableViewCell.m in Sources */,
+				D2CF7EBD17BD01A900E3D1F0 /* AddStepTableViewCell.m in Sources */,
+				D2EB138917BDB5050099808A /* StepBlockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  KRViewController.h
+//  KRPlaybackViewController.h
 //  Kroncile
 //
 //  Created by Scott on 6/1/13.
@@ -10,7 +10,12 @@
 #import "KRKronicle.h"
 #import "MediaView.h"
 
-@interface KRViewController : UIViewController
+typedef enum {
+    KRKronicleViewingStateView,
+    KRKronicleViewingStatePreview
+} KRKronicleViewingState;
+
+@interface KRPlaybackViewController : UIViewController
 //<KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate, KRClockDelegate, KRKronicleNavViewDelegate>
 {
 
@@ -32,6 +37,7 @@
 
 @property (nonatomic, strong) KRKronicle *kronicle;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
+- (id)initWithKronicle:(KRKronicle *)kronicle andViewingState:(KRKronicleViewingState)viewingState;
+- (id)initWithKronicle:(KRKronicle *)kronicle ;
 
 @end

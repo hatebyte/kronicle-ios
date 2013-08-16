@@ -25,6 +25,7 @@
     }
     self.totalTime         = tt;
     self.steps = steps;
+    self.stepCount = self.steps.count;
 }
 
 - (void)kronicleShortFromJSONDictionary:(NSDictionary *)dict {
@@ -41,6 +42,7 @@
         tt += s.time;
     }
     self.totalTime         = tt;
+    self.stepCount = stepsDict.count;
 }
 
 - (NSString *)stringTime {

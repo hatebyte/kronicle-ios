@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface KRCategoriesViewController : UIViewController <UINavigationControllerDelegate>
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;

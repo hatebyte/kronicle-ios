@@ -7,10 +7,11 @@
 //
 
 #import "KRKronicleStartViewController.h"
-#import "KRViewController.h"
+#import "KRPlaybackViewController.h"
 #import "KRFontHelper.h"
 #import "KRColorHelper.h"
 #import "KRGlobals.h"
+#import "KRNavigationViewController.h"
 
 @interface KRKronicleStartViewController ()
 
@@ -58,11 +59,17 @@
     
     
 #if kDEBUG
-    KRViewController *kronicleViewController = [[KRViewController alloc] initWithNibName:@"KRViewController" andKronicle:self.kronicle];
-    [self.navigationController pushViewController:kronicleViewController animated:YES];
+    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithNibName:@"KRViewController" andKronicle:self.kronicle];
+    [self.navigationController pushViewController:playbackViewController animated:YES];
 #endif
     
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+    
 }
 
 
@@ -71,8 +78,8 @@
 }
 
 - (IBAction)gotoToKronicle:(id)sender {
-    KRViewController *kronicleViewController = [[KRViewController alloc] initWithNibName:@"KRViewController" andKronicle:self.kronicle];
-    [self.navigationController pushViewController:kronicleViewController animated:YES];
+    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:self.kronicle];
+    [self.navigationController pushViewController:playbackViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

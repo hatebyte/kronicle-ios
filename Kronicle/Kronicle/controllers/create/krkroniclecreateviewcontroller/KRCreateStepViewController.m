@@ -10,6 +10,7 @@
 #import "KRColorHelper.h"
 #import "KRFontHelper.h"
 #import "CreateStepTimeView.h"
+#import "KRNavigationViewController.h"
 
 
 @interface KRCreateStepViewController () <CreateStepTimeViewDelegate> {
@@ -35,6 +36,13 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+}
+
+
+
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -56,6 +64,8 @@
 }
 
 - (void)animateInCreator {
+    [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
+
     _createStepTimeView.alpha = 0;
     [self.view addSubview:_createStepTimeView];
 
@@ -105,6 +115,8 @@
             break;
     }
     [self animateOutCreator];
+    [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+
 }
 
 - (void)didReceiveMemoryWarning

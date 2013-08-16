@@ -7,7 +7,7 @@
 //
 
 #import "KRListViewController.h"
-#import "KRViewController.h"
+#import "KRPlaybackViewController.h"
 #import "KRAPIStore.h"
 #import "KRKronicle.h"
 #import "StepsTableCellViewCell.h"
@@ -15,6 +15,7 @@
 #import "KRKronicleStartViewController.h"
 #import "KronicleEngine.h"
 #import "KRGlobals.h"
+#import "KRNavigationViewController.h"
 
 @interface KRListViewController ()
 
@@ -70,6 +71,11 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -97,12 +103,12 @@
         cell = [[StepsTableCellViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StepsTableCellViewCell"];
     }
     KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
-    
+    NSLog(@"k.uuid : %@", k.uuid);
     cell.titleLabel.text = k.title;
     cell.subLabel.text = [k stringTime];
     cell.kImage.image = [UIImage imageNamed:k.imageUrl];
     
-    cell.titleLabel.textColor = [KRColorHelper darkGrey];
+    cell.titleLabel.textColor = [KRColorHelper grayDark];
     cell.frameimage.image = [UIImage imageNamed:@"hole"];
     return cell;
 }

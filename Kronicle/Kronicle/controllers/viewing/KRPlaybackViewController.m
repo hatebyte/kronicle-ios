@@ -1,16 +1,17 @@
 //
-//  KRViewController.m
+//  KRPlaybackViewController.m
 //  Kroncile
 //
 //  Created by Scott on 6/1/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
-#import "KRViewController.h"
+#import "KRPlaybackViewController.h"
 #import "KRStep.h"
 #import "DescriptionView.h"
 //#import "KRViewListTypeViewController.h"
 #import "KRColorHelper.h"
+#import "KRFontHelper.h"
 
 
 #import "KRGlobals.h"
@@ -22,21 +23,19 @@
 #import "KRStepListContainerView.h"
 #import "MediaView.h"
 #import "KRCircularKronicleGraph.h"
+#import "KRNavigationViewController.h"
 
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
 
-@interface KRViewController () <KRClockManagerDelegate,
-                                KRKronicleManagerDelegate,
-                                KRStepNavigationDelegate,
-                                KRScrollViewDelegate,
-                                MediaViewDelegate,
-                                KRStepListContainerViewDelegate> {
+@interface KRPlaybackViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate, KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepListContainerViewDelegate> {
     @private
     CGRect _bounds;
     UIScrollView *_sview;
     UIButton *_backButton;
+    UIButton *_publishButton;
+    int _publishButtonHeight;
     KRKronicleManager *_kronicleManager;
     KRClockManager *_clockManager;
     KRStepNavigation *_stepNavigation;
@@ -45,14 +44,24 @@
     KRStepListContainerView *_stepListContainerView;
     MediaView *_mediaView;
     KRCircularKronicleGraph *_circularGraphView;
+    KRKronicleViewingState _viewingState;
 }
 
 @end
 
-@implementation KRViewController
+@implementation KRPlaybackViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle {
-    self = [super initWithNibName:nibNameOrNil bundle:nil];
+- (id)initWithKronicle:(KRKronicle *)kronicle andViewingState:(KRKronicleViewingState)viewingState {
+    self = [self initWithKronicle:kronicle];
+    if (self) {
+        _viewingState = viewingState;
+        
+    }
+    return self;
+}
+
+- (id)initWithKronicle:(KRKronicle *)kronicle {
+    self = [super initWithNibName:@"KRPlaybackViewController" bundle:nil];
     if (self) {
         self.kronicle = kronicle;
 
@@ -62,7 +71,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    
     self.view.backgroundColor = [UIColor whiteColor];
     _bounds = [UIScreen mainScreen].bounds;
     _sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
@@ -79,18 +89,13 @@
     _mediaView = [[MediaView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
     _mediaView.delegate = self;
     [_sview addSubview:_mediaView];
-
-    _backButton       = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
-    _backButton.frame = CGRectMake(5, 5, 26, 26);
-    [_backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    [_sview addSubview:_backButton];
     
     _graphView = [[KRGraphView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 80)];
     [_sview addSubview:_graphView];
 
     _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y, 320, 310) andKronicle:self.kronicle];
     _scrollView.pagingEnabled = YES;
+    _scrollView.bounces = NO;
     _scrollView.contentSize = CGSizeMake(320 * [self.kronicle.steps count], _scrollView.frame.size.height);
     _scrollView.scrollDelegate = self;
     [_sview addSubview:_scrollView];
@@ -110,13 +115,51 @@
     
     _sview.contentSize = CGSizeMake(_bounds.size.width, _circularGraphView.frame.origin.y + _circularGraphView.frame.size.height + 70);
     
+    _backButton       = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_backButton];
+
+    if (_viewingState == KRKronicleViewingStateView) {
+        [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
+        _backButton.backgroundColor = [KRColorHelper grayMedium];
+        _backButton.frame = CGRectMake(5, 5, 26, 26);
+    } else {
+        [_backButton setTitle:@"Edit" forState:UIControlStateNormal];
+        [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _backButton.backgroundColor = [KRColorHelper grayMedium];
+        _backButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
+        _backButton.frame = CGRectMake(5, 5, 40, 26);
+        
+        _publishButtonHeight = 42;
+        _publishButton       = [UIButton buttonWithType:UIButtonTypeCustom];
+        _publishButton.backgroundColor = [KRColorHelper turquoise];
+        [_publishButton setTitle:@"Publish" forState:UIControlStateNormal];
+        [_publishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _publishButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
+        _publishButton.frame = CGRectMake(_bounds.size.width - 82, _bounds.size.height-(_publishButtonHeight+20), 82, _publishButtonHeight);
+        [_publishButton addTarget:self action:@selector(publishKronicle:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_publishButton];
+    }
 //    _sview.contentOffset = CGPointMake(0, _sview.contentSize.height - _sview.frame.size.height);
     [self setStep:0];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
+
 }
 
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)publishKronicle:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (void)dealloc {
     [_mediaView stop];
@@ -241,63 +284,6 @@
     [_clockManager togglePlayPause];
     [_mediaView togglePlayPause:_clockManager.isPaused];
 }
-
-
-
-
-//// sets the right picture/video
-//- (void)setActiveMedia:(KRStep*)step {
-//    if ([_mediaViewB isVideo] || [_mediaViewA isVideo]) {
-//        [_mediaViewB setMediaPath:step.imageUrl andType:MediaViewImage];
-//        _circleDiagram.imagePath = step.circleUrl;
-//        [_navView isCurrentStep:(_currentStep == _clock.index)];
-//    } else {
-//        [_mediaViewA setMediaPath:_mediaViewB.mediaPath andType:MediaViewImage];
-//        //[_mediaViewB setMediaPath:@"crazy_train_1.mov" andType:MediaViewImage];
-//
-//        _mediaViewB.alpha = 0.f;
-//        [_mediaViewB setMediaPath:step.imageUrl andType:MediaViewImage];
-//        _circleDiagram.imagePath = step.circleUrl;
-//        [UIView animateWithDuration:.2
-//                              delay:0.0
-//                            options:UIViewAnimationOptionCurveEaseInOut
-//                         animations:^{
-//                             _mediaViewB.alpha = 1.f;
-//                             _circleDiagram.alpha = 1.f;
-//                         }
-//                         completion:^(BOOL fin){
-//                             [_navView isCurrentStep:(_currentStep == _clock.index)];
-//                         }];
-//    }
-//}
-
-//#pragma CircleDiagramView
-//- (void)diagramView:(KRDiagramView*)diagramView withDegree:(CGFloat)percent {
-//    int index = [self returnIndexForPercent:percent andIndex:0];
-//    
-//    _clock.index = index;
-//    KRStep *s = [self.kronicle.steps objectAtIndex:_clock.index];
-//    [_clock resetWithTime:s.time];
-//    if ([_clock isPaused]) [_clock play];
-//    [self jumpToStep:_clock.index andPlay:YES];
-//}
-//
-//- (int)returnIndexForPercent:(CGFloat)percent andIndex:(int)index{
-//    CGFloat time = 0;
-//    for (int i=0;i<index; i++) {
-//        KRStep *s = [self.kronicle.steps objectAtIndex:i];
-//        time += s.time;
-//    }
-//    float timePercent = (time / self.kronicle.totalTime);
-//    if (timePercent < percent) {
-//        return [self returnIndexForPercent:percent andIndex:index+1];
-//    } else {
-//        return index-1;
-//    }
-//}
-//
-//
-
 
 - (void)didReceiveMemoryWarning
 {
