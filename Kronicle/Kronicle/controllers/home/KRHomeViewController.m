@@ -30,6 +30,9 @@ const char *class_getName(Class cls);
     @private
     KRTextButton *_createButton;
     KRTextButton *_findButton;
+    UILabel *_topLine;
+    UILabel *_bottomLine;
+    UITextView *_description;
 }
 
 @end
@@ -63,43 +66,53 @@ const char *class_getName(Class cls);
     
     self.view.backgroundColor = [KRColorHelper turquoise];
     
-    float buttonX = 22.0f;
+    float buttonX = 10.0f;
     
-    NSString *welcomeString = NSLocalizedString(@"Welcome to Kronicle.", @"");
+    NSString *welcomeStringTop = NSLocalizedString(@"Welcome to", @"");
+    NSString *welcomeStringBottom = NSLocalizedString(@"Kronicle.", @"");
     
-    NMCustomLabel *welcomeLabel = [[NMCustomLabel alloc] initWithFrame:CGRectMake(buttonX, 55, 290, 200)];
-    welcomeLabel.text = welcomeString;
-    welcomeLabel.numberOfLines = 2;
-//    welcomeLabel.lineHeight = -40;
-    [welcomeLabel setDefaultStyle:[NMCustomLabelStyle styleWithFont:[KRFontHelper getFont:KRBrandonLight withSize:48] color:[UIColor whiteColor]]];
-//    welcomeLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:50];
-//    welcomeLabel.textColor = [UIColor whiteColor];
-    welcomeLabel.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:welcomeLabel];
-   
-//    BBRichTextView *welcomeLabel        = [[BBRichTextView alloc] initWithFrame:CGRectMake(22, 55, 298, 200)];
-//    welcomeLabel.text                   = welcomeString;
-//    welcomeLabel.literalMode            = NO;
-//    welcomeLabel.font                   = [KRFontHelper getFont:KRBrandonLight withSize:50];
-//    welcomeLabel.color                  = [UIColor whiteColor];
-//    welcomeLabel.lineheight             = -40;
-//    welcomeLabel.padding                = 0;
-//    welcomeLabel.backgroundColor        = [UIColor clearColor];
-//    [self.view addSubview:welcomeLabel];
+    _topLine = [[UILabel alloc] initWithFrame:CGRectMake(buttonX, 50, 300, 40)];
+    _topLine.font = [KRFontHelper getFont:KRBrandonLight withSize:46];
+    _topLine.textColor = [UIColor whiteColor];
+    _topLine.backgroundColor = [UIColor clearColor];
+    _topLine.text = welcomeStringTop;
+    [self.view addSubview:_topLine];
+    
+    _bottomLine = [[UILabel alloc] initWithFrame:CGRectMake(buttonX, _topLine.frame.origin.y + _topLine.frame.size.height + 4, _topLine.frame.size.width, _topLine.frame.size.height)];
+    _bottomLine.font = [KRFontHelper getFont:KRBrandonLight withSize:46];
+    _bottomLine.textColor = [UIColor whiteColor];
+    _bottomLine.backgroundColor = [UIColor clearColor];
+    _bottomLine.text = welcomeStringBottom;
+    [self.view addSubview:_bottomLine];
+    
+    _description                               = [[UITextView alloc] initWithFrame:CGRectMake(buttonX-6,
+                                                                                              _bottomLine.frame.origin.y + _bottomLine.frame.size.height+4,
+                                                                                              _topLine.frame.size.width,
+                                                                                              70)];
+    _description.font                          = [KRFontHelper getFont:KRMinionProRegular withSize:18];
+    _description.scrollEnabled                 = YES;
+    _description.textColor                     = [UIColor whiteColor];
+    _description.backgroundColor               = [UIColor clearColor];
+    _description.text                          = NSLocalizedString(@"Timeline based guides and \nskill sharing.", @"");
+    [self.view addSubview:_description];
 
     
     NSString *createString = NSLocalizedString(@"Create", @"");
-    _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, welcomeLabel.frame.origin.y + welcomeLabel.frame.size.height - 10, 100.0f, 50.0f)
-                                                andType:KRTextButtonTypeHomeScreen andIcon:[UIImage imageNamed:@"plus-sign-white"]];
+    _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _description.frame.origin.y + _description.frame.size.height, 150, 38)
+                                                andType:KRTextButtonTypeHomeScreen
+                                                andIcon:[UIImage imageNamed:@"plus-sign-white"]];
     [_createButton setTitle:createString forState:UIControlStateNormal];
     [_createButton addTarget:self action:@selector(create) forControlEvents:UIControlEventTouchUpInside];
+    _createButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0);
     [self.view addSubview:_createButton];
     
-    NSString *findString = NSLocalizedString(@"Find", @"");
-    _findButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX - 12, _createButton.frame.origin.y + _createButton.frame.size.height, 100.0f, 50.0f)
-                                              andType:KRTextButtonTypeHomeScreen andIcon:[UIImage imageNamed:@"magnifying-glass-white"]];
+    NSString *findString = NSLocalizedString(@"Discover", @"");
+    _findButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _createButton.frame.origin.y + _createButton.frame.size.height, 150, 38)
+                                              andType:KRTextButtonTypeHomeScreen
+                                              andIcon:[UIImage imageNamed:@"magnifying-glass-white"]];
     [_findButton setTitle:findString forState:UIControlStateNormal];
     [_findButton addTarget:self action:@selector(discover) forControlEvents:UIControlEventTouchUpInside];
+    _findButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0);
     [self.view addSubview:_findButton];
     
     

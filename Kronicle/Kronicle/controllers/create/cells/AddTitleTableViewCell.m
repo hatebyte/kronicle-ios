@@ -37,7 +37,10 @@
         _inputField.textColor                   = [UIColor blackColor];
         _inputField.backgroundColor             = [UIColor whiteColor];
         _inputField.clipsToBounds               = YES;
+        _inputField.adjustsFontSizeToFitWidth   = YES;
         _inputField.delegate                    = self;
+        [_inputField setValue:[UIColor blackColor] forKeyPath:@"_placeholderLabel.textColor"];
+        _inputField.placeholder                 = @"Add Title";
         [self.contentView addSubview:_inputField];
         
         KeyboardNavigationToolBar *toolbar = [[KeyboardNavigationToolBar alloc] initWithPreviousAndNext:YES :YES];
@@ -51,15 +54,8 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 - (void)prepareForUseWithTitle:(NSString *)title {
-    _inputField.text =(title.length < 1) ? @"Add Title" : title;
+    _inputField.text = title;
 }
 
 - (void)setAsFirstResponder {
