@@ -20,10 +20,11 @@
 #import "KRSwipeViewNavigation.h"
 #import "KronicleEngine.h"
 #import "KRGlobals.h"
-#import "KRPlaybackViewController.h"    
+#import "KRPlaybackViewController.h"
+#import "KRItemsViewController.h"
 
 
-@interface KRCreateViewController () {
+@interface KRCreateViewController () <KRFormFieldCellDelegate, AddStepTableViewCellDelegate, AddDescriptionTableViewCellDelegate> {
     @private
     CGRect _bounds;
     IBOutlet UITableView *_tableView;
@@ -32,12 +33,13 @@
     UIButton *_cancelXButton;
     UIButton *_previewButton;
     int _buttonHeight;
+    BOOL _tableIsExpanded;
 }
 
 @end
 
 
-@implementation KRCreateViewController
+@implementation KRCreateViewController 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,6 +63,7 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_tableView];
     
 
@@ -87,7 +90,7 @@
                                                  name:@"DurationCreation"
                                                object:nil];
 
-
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -95,7 +98,7 @@
     //                                 k.uuid : 51b0873fe3f8ae9d70000002
     //                                 k.uuid : 51b26719effe946507000002
     //                                 k.uuid : 51b26908effe946507000009
-    [[KronicleEngine current] fetchKronicle:@"51b26719effe946507000002"
+    [[KronicleEngine current] fetchKronicle:@"51b0873fe3f8ae9d70000002"
                              withCompletion:^(KRKronicle *kronicle) {
                                  _kronicle = kronicle;
                                  _kronicleSteps = [[NSMutableArray alloc] init];
@@ -161,14 +164,17 @@
     CGFloat height = 0;
 
     switch (indexPath.row) {
-        case 0:
+        case KRCreateCellTitle:
             height = [AddTitleTableViewCell cellHeight];
             break;
-            
-        case 1:
-            height = [AddDescriptionTableViewCell cellHeight];
+        case KRCreateCellDescription:
+            if (_tableIsExpanded) {
+                height = [AddDescriptionTableViewCell cellHeightExpanded];
+            } else {
+                height = [AddDescriptionTableViewCell cellHeight];
+            }
             break;
-            
+        case KRCreateCellStep:
         default:
             height = [AddStepTableViewCell cellHeight];
             break;
@@ -182,34 +188,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
-        case 0:{
+        case KRCreateCellTitle:{
             AddTitleTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"TitleCell"];
             if (cell == nil) {
                 cell = [[AddTitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TitleCell"];
             }
             [cell prepareForUseWithTitle:self.kronicle.title];
+            [(AddTitleTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
             
-        case 1:{
+        case KRCreateCellDescription:{
             AddDescriptionTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"DescriptionCell"];
             if (!cell) {
                 cell = [[AddDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DescriptionCell"];
             }
             [cell prepareForUseWithDescription:_kronicle.description];
+            [(AddDescriptionTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
-            
+        case KRCreateCellStep:
         default:{
             AddStepTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"StepCell"];
             if (!cell) {
                 cell = [[AddStepTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StepCell"];
             }
-            
-            
-            
             [cell prepareForReuseWithArray: [_kronicleSteps objectAtIndex:indexPath.row-2] ];
-
+            [(AddStepTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
     }
@@ -228,6 +233,106 @@
     viewer.backgroundColor = [UIColor clearColor];
     return viewer;
 }
+- (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType {
+    CGFloat height = 0;
+    
+    switch (cellType) {
+        case KRCreateCellTitle:
+            height = [AddTitleTableViewCell cellHeight];
+            break;
+        case KRCreateCellDescription: {
+            if (_tableIsExpanded) {
+                height = [AddDescriptionTableViewCell cellHeightExpanded];
+            } else {
+                height = [AddDescriptionTableViewCell cellHeight];
+            }
+            height -= 30;
+        }   break;
+        default:
+            height = 0;
+            break;
+    }
+    return height;
+}
+
+- (void)positionTableViewCellInLieuOfKeyboard:(KRFormFieldCell*)cell {
+    CGFloat cellBottomY = ([self returnHeightForCellType:cell.type] + cell.frame.origin.y);
+    CGFloat keyboardY = _bounds.size.height - [KeyboardNavigationToolBar height];
+    CGFloat offsetY =  cellBottomY - keyboardY;
+    offsetY =(offsetY < 0) ? 0 : offsetY;
+    CGPoint offset = CGPointMake(0, offsetY);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_tableView setContentOffset:offset animated:YES];
+    });
+}
+
+#pragma mark KRFormFieldCell delegate
+- (void)formFieldCellDidRequestPreviousResponder:(KRFormFieldCell *)formFieldCell {
+    switch (formFieldCell.type) {
+        case KRFormFieldCellTypeTitle: {
+        }   break;
+        case KRFormFieldCellTypeDescription: {
+            NSIndexPath *ip = [NSIndexPath indexPathForRow:0 inSection:0];
+            [(AddTitleTableViewCell *)[_tableView cellForRowAtIndexPath:ip] setAsFirstResponder];
+        }   break;
+    }
+}
+
+- (void)formFieldCellDidRequestNextResponder:(KRFormFieldCell *)formFieldCell {
+    _tableIsExpanded = NO;
+    switch (formFieldCell.type) {
+        case KRFormFieldCellTypeTitle: {
+            NSIndexPath *ip = [NSIndexPath indexPathForRow:1 inSection:0];
+            [(AddDescriptionTableViewCell *)[_tableView cellForRowAtIndexPath:ip] setAsFirstResponder];
+        }   break;
+        case KRFormFieldCellTypeDescription: {
+            
+        }   break;
+    }
+}
+
+- (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell {
+    _tableIsExpanded = NO;
+    [_tableView beginUpdates];
+    [_tableView endUpdates];
+    [self positionTableViewCellInLieuOfKeyboard:formFieldCell];
+}
+
+- (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell {
+    _tableIsExpanded = NO;
+    [_tableView beginUpdates];
+    [_tableView endUpdates];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_tableView setContentOffset:CGPointZero animated:YES];
+    });
+
+}
+
+#pragma mark AddDescriptionTableViewCell delegate
+- (void)formFieldCellDidBecomeFirstResponderWithExpansion:(AddDescriptionTableViewCell *)addDescriptionTableViewCell {
+    _tableIsExpanded = YES;
+    [_tableView beginUpdates];
+    [_tableView endUpdates];
+    [self positionTableViewCellInLieuOfKeyboard:addDescriptionTableViewCell];
+}
+
+#pragma mark AddStepTableViewCell delegate
+- (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step {
+    
+}
+
+- (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step {
+    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:step];
+    [self.navigationController pushViewController:createStepViewController animated:YES];
+}
+
+#pragma mark AddDescriptionTableViewCell delegate
+- (void)addListItemsRequested:(AddDescriptionTableViewCell *)addDescriptionTableViewCell {
+    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithNibName:@"KRItemsViewController" bundle:nil];
+    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self.navigationController presentModalViewController:itemsViewController animated:YES];
+}
+
 
 @end
 

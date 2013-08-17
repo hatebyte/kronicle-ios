@@ -49,12 +49,12 @@
         _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
         _tapper.cancelsTouchesInView = NO;
         _tapper.delegate = self;
-        [self addGestureRecognizer:_tapper];
+        //[self addGestureRecognizer:_tapper];
         
         _deleteButton                   = [UIButton buttonWithType:UIButtonTypeCustom];
         _deleteButton.backgroundColor   = [UIColor clearColor];
         _deleteButton.frame             = CGRectMake(self.frame.size.width-20, 0, 20, 20);
-        [_deleteButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
+        [_deleteButton setBackgroundImage:[UIImage imageNamed:@"close-x_40px"] forState:UIControlStateNormal];
         [_deleteButton addTarget:self action:@selector(deleteButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_deleteButton];
     

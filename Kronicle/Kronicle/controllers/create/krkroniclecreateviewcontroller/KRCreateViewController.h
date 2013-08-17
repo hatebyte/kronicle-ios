@@ -12,7 +12,7 @@
 typedef enum {
     KRCreateCellTitle,
     KRCreateCellDescription,
-    KRCreateCellStep
+    KRCreateCellStep,
 } KRCreateCellType;
 
 @interface KRCreateViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>

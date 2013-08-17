@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KRStep.h"
+
+@class AddStepTableViewCell;
+@protocol AddStepTableViewCellDelegate <NSObject>
+
+- (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step;
+- (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step;
+
+@end
 
 @interface AddStepTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id <AddStepTableViewCellDelegate> delegate;
 
 + (CGFloat)cellHeight;
 
