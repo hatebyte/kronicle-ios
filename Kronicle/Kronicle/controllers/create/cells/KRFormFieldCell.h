@@ -14,9 +14,15 @@
 
 typedef enum {
     KRFormFieldCellTypeTitle,
-    KRFormFieldCellTypeDescription
+    KRFormFieldCellTypeDescription,
+    KRFormFieldCellTypeAddItems,
+    KRFormFieldCellTypeStep,
 } KRFormFieldCellType;
 
+typedef enum{
+    AddTitleKronicle,
+    AddTitleStep,
+} AddTitleLocation;
 
 @class KRFormFieldCell;
 @protocol KRFormFieldCellDelegate <NSObject>
@@ -25,6 +31,7 @@ typedef enum {
 - (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell;
 - (void)formFieldCellDidRequestPreviousResponder:(KRFormFieldCell *)formFieldCell;
 - (void)formFieldCellDidRequestNextResponder:(KRFormFieldCell *)formFieldCell;
+- (void)formFieldCellDone:(KRFormFieldCell *)formFieldCell;
 
 @end
 

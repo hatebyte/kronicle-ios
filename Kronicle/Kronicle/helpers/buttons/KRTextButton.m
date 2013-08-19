@@ -15,7 +15,7 @@
 
 - (void)buildHomeTextButton {
     self.titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:28];
-    self.titleLabel.textColor = [UIColor whiteColor];
+    //self.titleLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)buildWithImage:(UIImage*)image {

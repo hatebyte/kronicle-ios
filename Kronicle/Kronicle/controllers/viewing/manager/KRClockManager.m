@@ -124,4 +124,63 @@ CGFloat const _increment = 1.f;
     return [NSString stringWithFormat:@"%@:%@", sMinutes, sSeconds];
 }
 
++ (NSDictionary *)getTimeUnits:(NSInteger)secondsTotal {
+//    int minutes = floor(secondsTotal / 60);
+//    int seconds = floor(secondsTotal - (minutes*60));
+//    NSString *sMinutes;
+//    NSString *sSeconds;
+    NSInteger seconds;
+    NSInteger minutes;
+    NSInteger hours;
+    
+    hours                           = floor(secondsTotal / (60 * 60));
+    secondsTotal                    = secondsTotal - (hours * (60 * 60));
+    minutes                         = floor(secondsTotal / 60);
+    seconds                         = secondsTotal - (minutes * 60);
+    
+//    NSLog(@"hours: mins: secs:", );
+    
+//    if (minutes < 10) {
+//        sMinutes = [NSString stringWithFormat:@"0%d", minutes];
+//    } else {
+//        sMinutes = [NSString stringWithFormat:@"%d", minutes];
+//    }
+//    if (seconds < 10) {
+//        sSeconds = [NSString stringWithFormat:@"0%d", seconds];
+//    } else {
+//        sSeconds = [NSString stringWithFormat:@"%d", seconds];
+//    }
+//    return [NSString stringWithFormat:@"%@:%@", sMinutes, sSeconds];
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithInteger:seconds],   @"seconds",
+            [NSNumber numberWithInteger:minutes],   @"minutes",
+            [NSNumber numberWithInteger:hours],     @"hours",
+            nil];
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

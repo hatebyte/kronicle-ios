@@ -16,18 +16,23 @@
     UILabel *_placeholderLabel;
     UIButton *_addItemCatcher;
     UIButton *_clearTextViewButton;
+    AddTitleLocation _screenType;
 }
 
 @end
 
 @implementation AddDescriptionTableViewCell
 
-+ (CGFloat)cellHeight {
-    return 80.f;
++ (CGFloat)cellHeightKronicle {
+    return 32.f;
+}
+
++ (CGFloat)cellHeightStep {
+    return 60.f;
 }
 
 + (CGFloat)cellHeightExpanded {
-    return 200.f;
+    return 154.f;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -37,7 +42,7 @@
         self.selectionStyle                     = UITableViewCellSelectionStyleNone;
         self.type                               = KRFormFieldCellTypeDescription;
 
-        _textArea                               = [[UITextView alloc] initWithFrame:CGRectMake(kPadding-8, 0, kPaddingWidth, 32)];
+        _textArea                               = [[UITextView alloc] init];
         _textArea.font                          = [KRFontHelper getFont:KRMinionProRegular withSize:20];
         _textArea.delegate                      = self;
         _textArea.scrollEnabled                 = YES;
@@ -54,6 +59,10 @@
                                                                                             _textArea.frame.origin.y + 7,
                                                                                             _textArea.frame.size.width,
                                                                                             30)];
+        _clearTextViewButton.frame              = CGRectMake((_textArea.frame.origin.x + _textArea.frame.size.width) - 30,
+                                                             (_textArea.frame.origin.y + _textArea.frame.size.height) - 30,
+                                                             30,
+                                                             30);
         _placeholderLabel.font                  = [KRFontHelper getFont:KRMinionProRegular withSize:20];
         _placeholderLabel.textColor             = [UIColor blackColor];
         _placeholderLabel.text                  = @"Add description";
@@ -67,53 +76,22 @@
         [self.contentView addSubview:_clearTextViewButton];
         _clearTextViewButton.hidden             = YES;
 
-        _hamburgerImageView                     = [[UIImageView alloc] init];
-        _hamburgerImageView.image               = [UIImage imageNamed:@"hamburger_50px"];
-        [self.contentView addSubview:_hamburgerImageView];
-        
-        _addItemCatcher                         = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_addItemCatcher setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
-        [_addItemCatcher setTitle:@"Add Items" forState:UIControlStateNormal];
-        _addItemCatcher.titleLabel.font         = [KRFontHelper getFont:KRBrandonRegular withSize:16];
-        _addItemCatcher.backgroundColor         = [UIColor clearColor];
-        
-        [self positionItemUnderTextView];
-
-        [_addItemCatcher addTarget:self action:@selector(addItems:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:_addItemCatcher];
-
-        self.contentView.backgroundColor        = [UIColor clearColor];
+        self.contentView.backgroundColor        = [UIColor whiteColor];
+        self.clipsToBounds                      = YES;
     }
     return self;
 }
 
-- (void)positionItemUnderTextView {
-    _clearTextViewButton.frame                  = CGRectMake((_textArea.frame.origin.x + _textArea.frame.size.width) - 30,
-                                                             (_textArea.frame.origin.y + _textArea.frame.size.height) - 30,
-                                                             30,
-                                                            30);
-    _hamburgerImageView.frame                   = CGRectMake(kPadding,
-                                                             _textArea.frame.size.height + _textArea.frame.origin.y + kPadding + 3,
-                                                             15,
-                                                             15);
-    _addItemCatcher.frame                       = CGRectMake(kPadding,
-                                                             _textArea.frame.size.height + _textArea.frame.origin.y + 3,
-                                                             120,
-                                                             45);
-
-}
-
-- (IBAction)addItems:(id)sender {
-    [((id<AddDescriptionTableViewCellDelegate>)self.delegate) addListItemsRequested:self];
-}
-
-- (void)prepareForUseWithDescription:(NSString *)description {
+- (void)prepareForUseWithDescription:(NSString *)description andType:(AddTitleLocation)type {
     if (description.length >= 1) {
         _placeholderLabel.hidden = YES;
         _textArea.text = description;
     } else {
         _placeholderLabel.hidden = NO;
     }
+    _screenType                             = type;
+    NSInteger h                             =(_screenType == AddTitleKronicle) ? 32 : 100;
+    _textArea.frame                         = CGRectMake(kPadding-8, 0, kPaddingWidth, h);
 }
 
 - (void)setAsFirstResponder {
@@ -139,15 +117,19 @@
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
     [self.delegate formFieldCellDidBecomeFirstResponderWithExpansion:self];
-    [UIView animateWithDuration:.3
+    [UIView animateWithDuration:.2
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         _textArea.frame                = CGRectMake(_textArea.frame.origin.x,
-                                                                     _textArea.frame.origin.y,
-                                                                     _textArea.frame.size.width,
-                                                                     135);
-                         [self positionItemUnderTextView];
+
+                         _textArea.frame                        = CGRectMake(_textArea.frame.origin.x,
+                                                                             _textArea.frame.origin.y,
+                                                                             _textArea.frame.size.width,
+                                                                             135);
+                         _clearTextViewButton.frame             = CGRectMake((_textArea.frame.origin.x + _textArea.frame.size.width) - 30,
+                                                                             (_textArea.frame.origin.y + _textArea.frame.size.height) - 30,
+                                                                             30,
+                                                                             30);
                      }
                      completion:^(BOOL fin){}];
 
@@ -160,15 +142,16 @@
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
     [self.delegate formFieldCellDidResignFirstResponder:self];
-    [UIView animateWithDuration:.3
+    [UIView animateWithDuration:.2
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         _textArea.frame = CGRectMake(_textArea.frame.origin.x,
-                                                      _textArea.frame.origin.y,
-                                                      _textArea.frame.size.width,
-                                                      32);
-                         [self positionItemUnderTextView];
+                         NSInteger h                             =(_screenType == AddTitleKronicle) ? 32 : 100;
+                         _textArea.frame                         = CGRectMake(kPadding-8, 0, kPaddingWidth, h);
+                         _clearTextViewButton.frame             = CGRectMake((_textArea.frame.origin.x + _textArea.frame.size.width) - 30,
+                                                                             (_textArea.frame.origin.y + _textArea.frame.size.height) - 30,
+                                                                             30,
+                                                                             30);
                      }
                      completion:^(BOOL fin){}];
 
@@ -199,9 +182,11 @@
             break;
         case KeyboardNavigationToolBarNext:
             [_textArea resignFirstResponder];
+            [self.delegate formFieldCellDone:self];
             break;
         case KeyboardNavigationToolBarDone:
             [_textArea resignFirstResponder];
+            [self.delegate formFieldCellDone:self];
             break;
     }
 }

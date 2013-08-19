@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "KRFormFieldCell.h"
 
+
 @interface AddTitleTableViewCell : KRFormFieldCell
 
 + (CGFloat)cellHeight;
 
-- (void)prepareForUseWithTitle:(NSString *)title;
+- (void)prepareForUseWithTitle:(NSString *)title andType:(AddTitleLocation)type;
++ (CGFloat)cellHeightForStep;
++ (CGFloat)cellHeightForKronicle;
 
 @end

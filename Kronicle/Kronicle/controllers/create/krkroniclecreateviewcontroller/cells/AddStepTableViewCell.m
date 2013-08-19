@@ -71,6 +71,10 @@
     [self.delegate stepEditingRequested:self forStep:[_stepArray objectAtIndex:stepBlockView.tag]];
 }
 
+- (void)stepBlockViewAddStep:(StepBlockView *)stepBlockView {
+    [self.delegate addStepRequested:self];
+}
+
 
 
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
+#import "KRFontHelper.h"
+#import "KRColorHelper.h"
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
 

@@ -41,7 +41,7 @@ CGFloat const unitHeight = 20.f;
         
         int size = 260;
         _durationCreator = [[DurationCreatorView alloc] initWithFrame:CGRectMake((self.frame.size.width - size) * .5,
-                                                                                 (self.frame.size.height - size) * .5,
+                                                                                 (frame.size.height - size) * .5,
                                                                                  size,
                                                                                  size)];
         _durationCreator.delegate = self;
@@ -115,7 +115,7 @@ CGFloat const unitHeight = 20.f;
     return self;
 }
 
-- (void)setUnit:(CreateStepTimeUnitType)unit withValue:(int)value {
+- (void)setUnit:(CreateStepTimeUnitType)unit withValue:(NSInteger)value {
     _startVal = value;
     _value = value;
     _unit = unit;

@@ -27,6 +27,7 @@
 @property (nonatomic, assign) BOOL isPaused;
 
 + (NSString *)stringTimeForInt:(int)time;
++ (NSDictionary *)getTimeUnits:(NSInteger)secondsTotal;
 
 - (id)initWithKronicle:(KRKronicle *)kronicle;
 - (void)setTimeForStep:(int)step;

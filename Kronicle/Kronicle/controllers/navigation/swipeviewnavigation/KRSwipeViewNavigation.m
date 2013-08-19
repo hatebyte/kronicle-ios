@@ -35,7 +35,7 @@
 }
 
 + (CGFloat)cellHeight {
-    return 42.f;
+    return 44.f;
 }
 
 - (id)initWithFrame:(CGRect)frame

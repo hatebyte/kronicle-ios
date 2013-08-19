@@ -64,58 +64,56 @@ const char *class_getName(Class cls);
      [[KRAPIStore sharedStore] fetchKronicle:@"51aab816631eb50000000008" withCompletion:completionBlock];
      */
     
-    self.view.backgroundColor = [KRColorHelper turquoise];
-    
-    float buttonX = 10.0f;
-    
-    NSString *welcomeStringTop = NSLocalizedString(@"Welcome to", @"");
-    NSString *welcomeStringBottom = NSLocalizedString(@"Kronicle.", @"");
-    
-    _topLine = [[UILabel alloc] initWithFrame:CGRectMake(buttonX, 50, 300, 40)];
-    _topLine.font = [KRFontHelper getFont:KRBrandonLight withSize:46];
-    _topLine.textColor = [UIColor whiteColor];
-    _topLine.backgroundColor = [UIColor clearColor];
-    _topLine.text = welcomeStringTop;
+    self.view.backgroundColor                   = [KRColorHelper turquoise];
+    float buttonX                               = 10.0f;
+
+    _topLine                                    = [[UILabel alloc] initWithFrame:CGRectMake(buttonX, 50, 300, 40)];
+    _topLine.font                               = [KRFontHelper getFont:KRBrandonLight withSize:46];
+    _topLine.textColor                          = [UIColor whiteColor];
+    _topLine.backgroundColor                    = [UIColor clearColor];
+    _topLine.text                               = NSLocalizedString(@"Welcome to", @"");
     [self.view addSubview:_topLine];
     
-    _bottomLine = [[UILabel alloc] initWithFrame:CGRectMake(buttonX, _topLine.frame.origin.y + _topLine.frame.size.height + 4, _topLine.frame.size.width, _topLine.frame.size.height)];
-    _bottomLine.font = [KRFontHelper getFont:KRBrandonLight withSize:46];
-    _bottomLine.textColor = [UIColor whiteColor];
-    _bottomLine.backgroundColor = [UIColor clearColor];
-    _bottomLine.text = welcomeStringBottom;
+    _bottomLine                                 = [[UILabel alloc] initWithFrame:CGRectMake(buttonX,
+                                                                                            _topLine.frame.origin.y + _topLine.frame.size.height + 4,
+                                                                                            _topLine.frame.size.width,
+                                                                                            _topLine.frame.size.height)];
+    _bottomLine.font                            = [KRFontHelper getFont:KRBrandonLight withSize:46];
+    _bottomLine.textColor                       = [UIColor whiteColor];
+    _bottomLine.backgroundColor                 = [UIColor clearColor];
+    _bottomLine.text                            = NSLocalizedString(@"Kronicle.", @"");
     [self.view addSubview:_bottomLine];
     
-    _description                               = [[UITextView alloc] initWithFrame:CGRectMake(buttonX-6,
-                                                                                              _bottomLine.frame.origin.y + _bottomLine.frame.size.height+4,
+    _description                                = [[UITextView alloc] initWithFrame:CGRectMake(buttonX-6,
+                                                                                              _bottomLine.frame.origin.y + _bottomLine.frame.size.height,
                                                                                               _topLine.frame.size.width,
                                                                                               70)];
-    _description.font                          = [KRFontHelper getFont:KRMinionProRegular withSize:18];
-    _description.scrollEnabled                 = YES;
-    _description.textColor                     = [UIColor whiteColor];
-    _description.backgroundColor               = [UIColor clearColor];
-    _description.text                          = NSLocalizedString(@"Timeline based guides and \nskill sharing.", @"");
+    _description.font                           = [KRFontHelper getFont:KRMinionProRegular withSize:18];
+    _description.scrollEnabled                  = YES;
+    _description.textColor                      = [UIColor whiteColor];
+    _description.backgroundColor                = [UIColor clearColor];
+    _description.editable                       = NO;
+    _description.text                           = NSLocalizedString(@"Timeline based guides and \nskill sharing.", @"");
     [self.view addSubview:_description];
-
     
-    NSString *createString = NSLocalizedString(@"Create", @"");
-    _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _description.frame.origin.y + _description.frame.size.height, 150, 38)
+    _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _description.frame.origin.y + _description.frame.size.height, 150, 34)
                                                 andType:KRTextButtonTypeHomeScreen
                                                 andIcon:[UIImage imageNamed:@"plus-sign-white"]];
-    [_createButton setTitle:createString forState:UIControlStateNormal];
+    [_createButton setTitle:NSLocalizedString(@"Create", @"") forState:UIControlStateNormal];
+    [_createButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_createButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [_createButton addTarget:self action:@selector(create) forControlEvents:UIControlEventTouchUpInside];
-    _createButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0);
+    _createButton.titleEdgeInsets               = UIEdgeInsetsMake(0, 6, 0, 0);
     [self.view addSubview:_createButton];
     
-    NSString *findString = NSLocalizedString(@"Discover", @"");
-    _findButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _createButton.frame.origin.y + _createButton.frame.size.height, 150, 38)
+    _findButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _createButton.frame.origin.y + _createButton.frame.size.height, 150, 34)
                                               andType:KRTextButtonTypeHomeScreen
                                               andIcon:[UIImage imageNamed:@"magnifying-glass-white"]];
-    [_findButton setTitle:findString forState:UIControlStateNormal];
+    [_findButton setTitle:NSLocalizedString(@"Discover", @"") forState:UIControlStateNormal];
+    [_findButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [_findButton addTarget:self action:@selector(discover) forControlEvents:UIControlEventTouchUpInside];
-    _findButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0);
+    _findButton.titleEdgeInsets                 = UIEdgeInsetsMake(0, 6, 0, 0);
     [self.view addSubview:_findButton];
-    
-    
 
 }
 
@@ -128,10 +126,8 @@ const char *class_getName(Class cls);
     [(KRNavigationViewController *)self.navigationController close];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -157,26 +153,19 @@ const char *class_getName(Class cls);
 }
 
 - (void)mykronicles {
+    [self gotoToViewController:@"KRMyKroniclesViewController"];
 }
 
 - (void)create {
-//    [self.navigationController popToRootViewControllerAnimated:NO];
-//    KRCreateViewController *createViewController = [[KRCreateViewController alloc] initWithNibName:@"KRCreateViewController" bundle:nil];
-//    [self.navigationController pushViewController:createViewController animated:YES];
-
     [self gotoToViewController:@"KRCreateViewController"];
 }
 
 - (void)discover {
-//    [self.navigationController popToRootViewControllerAnimated:NO];
-//    KRCategoriesViewController *categoryViewController = [[KRCategoriesViewController alloc] initWithNibName:@"KRCategoriesViewController" bundle:nil];
-//    [self.navigationController pushViewController:categoryViewController animated:YES];
     [self gotoToViewController:@"KRCategoriesViewController"];
-
 }
 
 - (void)me {
-
+    [self gotoToViewController:@"KRMeViewController"];
 }
 
 

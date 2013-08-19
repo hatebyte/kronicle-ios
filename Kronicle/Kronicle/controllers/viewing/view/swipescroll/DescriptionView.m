@@ -70,12 +70,12 @@
                                                                         306,
                                                                         frame.size.height - titleHeight)];
         self.description.font = [KRFontHelper getFont:KRMinionProRegular withSize:16];
-        NSRange range = [self.step.imageUrl rangeOfString:@".mov"];
-        if (range.location != NSNotFound) {
-            self.description.text = @"\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------\n\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------";
-        }else {
+//        NSRange range = [self.step.imageUrl rangeOfString:@".mov"];
+//        if (range.location != NSNotFound) {
+//            self.description.text = @"\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------\n\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------";
+//        }else {
             self.description.text = self.step.description;
-        }
+//        }
         
         self.description.scrollEnabled = NO;
         self.description.textColor = [UIColor blackColor];

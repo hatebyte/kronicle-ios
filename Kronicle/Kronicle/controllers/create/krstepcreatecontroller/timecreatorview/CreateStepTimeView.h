@@ -27,7 +27,7 @@ typedef enum {
 @property(nonatomic, assign) int value;
 @property(nonatomic, assign) CreateStepTimeUnitType unit;
 
-- (void)setUnit:(CreateStepTimeUnitType)unit withValue:(int)value;
+- (void)setUnit:(CreateStepTimeUnitType)unit withValue:(NSInteger)value;
 
 
 @end

@@ -11,17 +11,8 @@
 #import "KRStep.h"
 
 
-@interface KRCreateStepViewController : UIViewController <UINavigationControllerDelegate>
+@interface KRCreateStepViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
-@property(nonatomic, weak) IBOutlet UIButton *backbutton;
-@property(nonatomic, weak) IBOutlet UIButton *seconds;
-@property(nonatomic, weak) IBOutlet UIButton *minutes;
-@property(nonatomic, weak) IBOutlet UIButton *hours;
-
-- (IBAction)back:(id)sender;
-- (IBAction)hoursTapped:(id)sender;
-- (IBAction)minutesTapped:(id)sender;
-- (IBAction)secondsTapped:(id)sender;
 - (id)initWithStep:(KRStep *)step;
 
 @end

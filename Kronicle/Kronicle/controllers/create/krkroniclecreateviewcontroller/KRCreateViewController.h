@@ -9,11 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "KRKronicle.h"
 
-typedef enum {
-    KRCreateCellTitle,
-    KRCreateCellDescription,
-    KRCreateCellStep,
-} KRCreateCellType;
 
 @interface KRCreateViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 

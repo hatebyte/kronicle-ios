@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class NSFont;
 enum {
     KRBrandonThin                   = 0,
     KRBrandonLight                  = 1,
@@ -32,5 +33,6 @@ typedef NSInteger KRFontSize;
 
 + (UIFont*)getFont:(KRFont)font withSize:(KRFontSize)size;
 + (NSString*)getFontString:(KRFont)font;
++ (NSFont*)getNSFont:(KRFont)font withSize:(KRFontSize)size;
 
 @end

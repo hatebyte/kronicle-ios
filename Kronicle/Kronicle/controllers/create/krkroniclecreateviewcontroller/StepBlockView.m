@@ -10,11 +10,13 @@
 #import "KRColorHelper.h"
 #import "KRFontHelper.h"
 #import "KRClockManager.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface StepBlockView () <UIGestureRecognizerDelegate> {
     @private
-    UILabel *_title;
+    //UILabel *_title;
     UILabel *_time;
+    UITextView *_title;
     UIButton *_deleteButton;
     UITapGestureRecognizer *_tapper;
     __weak KRStep *_step;
@@ -30,40 +32,48 @@
         _step = step;
         int padding = 6;
         self.image                      = [UIImage imageNamed:_step.imageUrl];
-
-        int labelheight = (frame.size.height / 6);
-        _title                          = [[UILabel alloc] initWithFrame:CGRectMake(padding,
-                                                                                    frame.size.height - (labelheight * 2),
-                                                                                    frame.size.width-(padding*2),
-                                                                                    labelheight)];
+        NSString *time = [KRClockManager stringTimeForInt:(int)_step.time];
+        time =([[time substringToIndex:1] isEqualToString:@"0"]) ? [time substringFromIndex:1] : time;
+        NSString *descriptionString     = [NSString stringWithFormat:@"%@ \n%@", _step.title, time];
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineHeightMultiple = 18.0f;
+        paragraphStyle.maximumLineHeight = 18.0f;
+        paragraphStyle.minimumLineHeight = 18.0f;
+        
+        NSFont *font = [KRFontHelper getFont:KRBrandonMedium withSize:16];
+        NSString *string = descriptionString;
+        NSDictionary *attribute = @{ NSParagraphStyleAttributeName : paragraphStyle, };
+        _title                          = [[UITextView alloc] init];
+        _title.attributedText           = [[NSAttributedString alloc] initWithString:string attributes:attribute];
+        //_title.text                     = descriptionString;
         _title.font                     = [KRFontHelper getFont:KRBrandonMedium withSize:16];
         _title.textColor                = [UIColor whiteColor];
         _title.backgroundColor          = [UIColor clearColor];
-        _title.text                     = _step.title;
+        _title.editable                 = NO;
+        _title.layer.shadowColor        = [[UIColor blackColor] CGColor];
+        _title.layer.shadowOffset       = CGSizeMake(.7f, .7f);
+        _title.layer.shadowOpacity      = .7f;
+        _title.layer.shadowRadius       = .7f;
+        CGSize titleSize                = [_title sizeThatFits:CGSizeMake(frame.size.width-(padding*2), 2000)];
+        _title.frame                    = CGRectMake(padding-6,
+                                                     frame.size.height - (titleSize.height - 3),
+                                                     titleSize.width,
+                                                     titleSize.height);
         [self addSubview:_title];
-
-        _time                           = [[UILabel alloc] initWithFrame:CGRectMake(padding,
-                                                                                    _title.frame.origin.y + _title.frame.size.height - 2,
-                                                                                    frame.size.width-(padding*2),
-                                                                                    labelheight)];
-        _time.text                      = [KRClockManager stringTimeForInt:_step.time];
-        _time.font                      = [KRFontHelper getFont:KRBrandonMedium withSize:16];
-        _time.textColor                 = [UIColor whiteColor];
-        _time.backgroundColor           = [UIColor clearColor];
-        [self addSubview:_time];
         
-        _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+        _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editTapped:)];
         _tapper.cancelsTouchesInView = NO;
         _tapper.delegate = self;
         [self addGestureRecognizer:_tapper];
-        
+
         _deleteButton                   = [UIButton buttonWithType:UIButtonTypeCustom];
         _deleteButton.backgroundColor   = [UIColor clearColor];
         _deleteButton.frame             = CGRectMake(self.frame.size.width-20, 0, 20, 20);
         [_deleteButton setBackgroundImage:[UIImage imageNamed:@"close-x_20px"] forState:UIControlStateNormal];
-        [_deleteButton addTarget:self action:@selector(deleteButton:) forControlEvents:UIControlEventTouchUpInside];
+        [_deleteButton addTarget:self action:@selector(deleteTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_deleteButton];
-        
+
         self.userInteractionEnabled = YES;
     }
     return self;
@@ -72,15 +82,32 @@
 - (id)initAsAddStepWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [KRColorHelper turquoise];
-        int labelheight = (frame.size.height / 8);
-        _title                          = [[UILabel alloc] initWithFrame:CGRectMake(20, labelheight * 3.5, frame.size.width-20, labelheight)];
-        _title.font                     = [KRFontHelper getFont:KRBrandonRegular withSize:20];
-        _title.textColor                = [UIColor whiteColor];
-        _title.backgroundColor          = [UIColor clearColor];
-        _title.text                     = @"Add step";
-        [self addSubview:_title];
-
+        self.backgroundColor            = [KRColorHelper turquoise];
+        int labelheight                 = (frame.size.height / 6);
+        UILabel *title                  = [[UILabel alloc] initWithFrame:CGRectMake(28,
+                                                                                    ((frame.size.height - labelheight) * .5)-1,
+                                                                                    frame.size.width-20,
+                                                                                    labelheight)];
+        title.font                      = [KRFontHelper getFont:KRBrandonRegular withSize:17];
+        title.textColor                 = [UIColor whiteColor];
+        title.backgroundColor           = [UIColor clearColor];
+        title.text                      = @"Add step";
+        [self addSubview:title];
+        
+        UIImageView *plus               = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"plus_21px"]];
+        plus.frame                      = CGRectMake(frame.size.width-47,
+                                                     (frame.size.height - 21) * .5,
+                                                     21,
+                                                     21);
+        plus.backgroundColor            = [UIColor clearColor];
+        [self addSubview:plus];
+    
+        _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addStepTapped:)];
+        _tapper.cancelsTouchesInView = NO;
+        _tapper.delegate = self;
+        [self addGestureRecognizer:_tapper];
+        
+        self.userInteractionEnabled = YES;
     }
     return self;
 }
@@ -94,16 +121,22 @@
     return YES; // handle the touch
 }
 
-- (IBAction)deleteButton:(id)sender {
+- (IBAction)deleteTapped:(id)sender {
     NSLog(@"deleteButton");
     [self.delegate stepBlockView:self deleteStepIndex:_step.indexInKronicle];
 
 }
 
-- (IBAction)tapped:(id)sender {
+- (IBAction)editTapped:(id)sender {
     NSLog(@"tapped");
     [self.delegate stepBlockView:self requestStepIndex:_step.indexInKronicle];
+    
+}
 
+- (IBAction)addStepTapped:(id)sender {
+    NSLog(@"tapped");
+    [self.delegate stepBlockViewAddStep:self];
+    
 }
 
 @end

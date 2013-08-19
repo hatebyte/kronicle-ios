@@ -14,6 +14,7 @@
 
 - (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step;
 - (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step;
+- (void)addStepRequested:(AddStepTableViewCell *)addStepTableViewCell;
 
 @end
 

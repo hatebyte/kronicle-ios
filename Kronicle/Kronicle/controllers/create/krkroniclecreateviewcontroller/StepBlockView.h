@@ -18,6 +18,7 @@ typedef enum {
 @protocol StepBlockViewDelegate <NSObject>
 - (void)stepBlockView:(StepBlockView *)stepBlockView deleteStepIndex:(int)stepIndex;
 - (void)stepBlockView:(StepBlockView *)stepBlockView requestStepIndex:(int)stepIndex;
+- (void)stepBlockViewAddStep:(StepBlockView *)stepBlockView;
 @end
 
 @interface StepBlockView : UIImageView

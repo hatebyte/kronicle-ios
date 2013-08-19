@@ -22,6 +22,9 @@
     return 115.f;
 }
 
++ (CGFloat)cellHeightForStep { return 70.f; }
++ (CGFloat)cellHeightForKronicle { return 115.f; }
+ 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -29,9 +32,7 @@
         self.selectionStyle                     = UITableViewCellSelectionStyleNone;
         self.type                               = KRFormFieldCellTypeTitle;
         
-        int cellheight                          = [AddTitleTableViewCell cellHeight];
-        int fieldheight                         = 67.f;
-        _inputField                             = [[UITextField alloc] initWithFrame:CGRectMake(kPadding, cellheight - fieldheight, kPaddingWidth, fieldheight)];
+        _inputField                             = [[UITextField alloc] init];
         _inputField.font                        = [KRFontHelper getFont:KRBrandonLight withSize:48];
         _inputField.clearButtonMode             = UITextFieldViewModeWhileEditing;
         _inputField.textColor                   = [UIColor blackColor];
@@ -39,8 +40,8 @@
         _inputField.clipsToBounds               = YES;
         _inputField.adjustsFontSizeToFitWidth   = YES;
         _inputField.delegate                    = self;
-        [_inputField setValue:[UIColor blackColor] forKeyPath:@"_placeholderLabel.textColor"];
         _inputField.placeholder                 = @"Add Title";
+        [_inputField setValue:[UIColor blackColor] forKeyPath:@"_placeholderLabel.textColor"];
         [self.contentView addSubview:_inputField];
         
         KeyboardNavigationToolBar *toolbar = [[KeyboardNavigationToolBar alloc] initWithPreviousAndNext:YES :YES];
@@ -54,8 +55,11 @@
     return self;
 }
 
-- (void)prepareForUseWithTitle:(NSString *)title {
-    _inputField.text = title;
+- (void)prepareForUseWithTitle:(NSString *)title andType:(AddTitleLocation)type {
+    int fieldheight                         = 70.f;
+    int y                                   =(type == AddTitleKronicle) ? ([AddTitleTableViewCell cellHeight] - fieldheight) : 0;
+    _inputField.frame                       = CGRectMake(kPadding, y, kPaddingWidth, fieldheight);
+    _inputField.text                        = title;
 }
 
 - (void)setAsFirstResponder {
@@ -97,10 +101,12 @@
             [_inputField resignFirstResponder];
             break;
         case KeyboardNavigationToolBarNext:
+            //[_inputField resignFirstResponder];
             [self.delegate formFieldCellDidRequestNextResponder:self];
             break;
         case KeyboardNavigationToolBarDone:
             [_inputField resignFirstResponder];
+            [self.delegate formFieldCellDone:self];
             break;
     }
 }

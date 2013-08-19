@@ -12,7 +12,6 @@
 @class AddDescriptionTableViewCell;
 @protocol AddDescriptionTableViewCellDelegate <KRFormFieldCellDelegate>
 
-- (void)addListItemsRequested:(AddDescriptionTableViewCell *)addDescriptionTableViewCell;
 - (void)formFieldCellDidBecomeFirstResponderWithExpansion:(AddDescriptionTableViewCell *)addDescriptionTableViewCell;
 
 @end
@@ -22,9 +21,10 @@
 
 @property (nonatomic, weak) id <AddDescriptionTableViewCellDelegate> delegate;
 
-+ (CGFloat)cellHeight;
++ (CGFloat)cellHeightKronicle;
 + (CGFloat)cellHeightExpanded;
++ (CGFloat)cellHeightStep;
 
-- (void)prepareForUseWithDescription:(NSString *)description;
+- (void)prepareForUseWithDescription:(NSString *)description andType:(AddTitleLocation)type;
 
 @end
