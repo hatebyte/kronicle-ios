@@ -25,11 +25,10 @@
 #import "KRItemsViewController.h"
 
 
-@interface KRCreateViewController () <KRFormFieldCellDelegate, AddItemsCellDelegate, AddStepTableViewCellDelegate, AddDescriptionTableViewCellDelegate> {
+@interface KRCreateViewController () <AddItemsCellDelegate, AddStepTableViewCellDelegate> {
     @private
     CGRect _bounds;
-    IBOutlet UITableView *_tableView;
-    BOOL _inFirstCell;
+    UITableView *_tableView;
     NSMutableArray *_kronicleSteps;
     UIButton *_cancelXButton;
     UIButton *_previewButton;
@@ -66,13 +65,13 @@
     _tableView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_tableView];
     
-
-    _cancelXButton       = [UIButton buttonWithType:UIButtonTypeCustom];
-    _cancelXButton.backgroundColor = [KRColorHelper turquoise];
-    [_cancelXButton setBackgroundImage:[UIImage imageNamed:@"close-x_40px"] forState:UIControlStateNormal];
-    _cancelXButton.frame = CGRectMake(0, 0, 40, 40);
-    [_cancelXButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_cancelXButton];
+//    [_cancelButton setBackgroundImage:[UIImage imageNamed:@"close-x_40px"] forState:UIControlStateNormal];
+//    _cancelXButton       = [UIButton buttonWithType:UIButtonTypeCustom];
+//    _cancelXButton.backgroundColor = [KRColorHelper turquoise];
+//    [_cancelXButton setBackgroundImage:[UIImage imageNamed:@"close-x_40px"] forState:UIControlStateNormal];
+//    _cancelXButton.frame = CGRectMake(0, 0, 40, 40);
+//    [_cancelXButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:_cancelXButton];
   
     _previewButton       = [UIButton buttonWithType:UIButtonTypeCustom];
     _previewButton.backgroundColor = [KRColorHelper orange];
@@ -92,44 +91,46 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //                                 k.uuid : 51b0873fe3f8ae9d70000002
-    //                                 k.uuid : 51b26719effe946507000002
-    //                                 k.uuid : 51b26908effe946507000009
-    [[KronicleEngine current] fetchKronicle:@"51b0873fe3f8ae9d70000002"
-                             withCompletion:^(KRKronicle *kronicle) {
-                                 
-                                 _kronicle = kronicle;
-                                 _kronicleSteps = [[NSMutableArray alloc] init];
-                                 int stepsMinusFinish = kronicle.stepCount;
-                                 NSLog(@"step count %d", kronicle.stepCount);
-                                 if(stepsMinusFinish % 2 == 0) {
-                                     for (int i = 0; i < stepsMinusFinish; i++) {
-                                         int next = i + 1;
-                                         NSArray *inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], [kronicle.steps objectAtIndex:next], nil];
-                                         [_kronicleSteps addObject:inArray];
-                                         i = next;
-                                     }
-                                     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
-                                 } else {
-                                     for (int i = 0; i < stepsMinusFinish; i++) {
-                                         NSArray *inArray;
-                                         int next = i + 1;
-                                         if (next < stepsMinusFinish) {
-                                             inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], [kronicle.steps objectAtIndex:next], nil];
-                                         } else {
-                                             inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], @"addStep", nil];
-                                         }
-                                         i= next;
-                                         [_kronicleSteps addObject:inArray];
-                                     }
-                                 }
-                                 _previewButton.enabled = YES;
-                                 [_tableView reloadData];
-                             }
-                                  onFailure:^(NSError *error) {
-                                      NSLog(@"error : %@", error);
-                                  }];
+//    [[KronicleEngine current] fetchKronicle:@"5212239cb0747df172000002"
+//                             withCompletion:^(KRKronicle *kronicle) {
+//                                 
+//                                 _kronicle = kronicle;
+//                                 _kronicleSteps = [[NSMutableArray alloc] init];
+//                                 int stepsMinusFinish = kronicle.stepCount;
+//                                 NSLog(@"step count %d", kronicle.stepCount);
+//                                 if(stepsMinusFinish % 2 == 0) {
+//                                     for (int i = 0; i < stepsMinusFinish; i++) {
+//                                         int next = i + 1;
+//                                         NSArray *inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], [kronicle.steps objectAtIndex:next], nil];
+//                                         [_kronicleSteps addObject:inArray];
+//                                         i = next;
+//                                     }
+//                                     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
+//                                 } else {
+//                                     for (int i = 0; i < stepsMinusFinish; i++) {
+//                                         NSArray *inArray;
+//                                         int next = i + 1;
+//                                         if (next < stepsMinusFinish) {
+//                                             inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], [kronicle.steps objectAtIndex:next], nil];
+//                                         } else {
+//                                             inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], @"addStep", nil];
+//                                         }
+//                                         i= next;
+//                                         [_kronicleSteps addObject:inArray];
+//                                     }
+//                                 }
+//                                 _previewButton.enabled = YES;
+//                                 [_tableView reloadData];
+//                             }
+//                                  onFailure:^(NSError *error) {
+//                                      NSLog(@"error : %@", error);
+//                                  }];
 
+     _kronicle = [[KRKronicle alloc] init];
+     _kronicleSteps = [[NSMutableArray alloc] init];
+     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
+    //                                 _previewButton.enabled = YES;
+    //                                 [_tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -253,10 +254,10 @@
     CGFloat height = 0;
     
     switch (cellType) {
-        case KRFormFieldCellTypeTitle:
+        case KRFormFieldCellTypeAddTitle:
             height = [AddTitleTableViewCell cellHeight];
             break;
-        case KRFormFieldCellTypeDescription: {
+        case KRFormFieldCellTypeAddDescription: {
             if (_tableIsExpanded) {
                 height = [AddDescriptionTableViewCell cellHeightExpanded];
             } else {
@@ -274,7 +275,7 @@
 }
 
 - (void)positionTableViewCellInLieuOfKeyboard:(KRFormFieldCell*)cell {
-    CGFloat cellBottomY = [self returnHeightForCellType:cell.type] + cell.frame.origin.y + 35;
+    CGFloat cellBottomY = [self returnHeightForCellType:cell.type] + cell.frame.origin.y + 20;
     CGFloat keyboardY = _bounds.size.height - [KeyboardNavigationToolBar height];
     CGFloat offsetY =  cellBottomY - keyboardY;
     offsetY =(offsetY < 0) ? 0 : offsetY;
@@ -287,15 +288,15 @@
 #pragma mark KRFormFieldCell delegate
 - (void)formFieldCellDidRequestPreviousResponder:(KRFormFieldCell *)formFieldCell {
     switch (formFieldCell.type) {
-        case KRFormFieldCellTypeTitle: {
+        case KRFormFieldCellTypeAddTitle: {
         }   break;
-        case KRFormFieldCellTypeDescription: {
+        case KRFormFieldCellTypeAddDescription: {
             NSIndexPath *ip = [NSIndexPath indexPathForRow:0 inSection:0];
             [(AddTitleTableViewCell *)[_tableView cellForRowAtIndexPath:ip] setAsFirstResponder];
         }   break;
         case KRFormFieldCellTypeAddItems: {
         }   break;
-        case KRFormFieldCellTypeStep:{
+        case KRFormFieldCellTypeAddStep:{
         }   break;
 
     }
@@ -304,27 +305,45 @@
 - (void)formFieldCellDidRequestNextResponder:(KRFormFieldCell *)formFieldCell {
     _tableIsExpanded = NO;
     switch (formFieldCell.type) {
-        case KRFormFieldCellTypeTitle: {
+        case KRFormFieldCellTypeAddTitle: {
             NSIndexPath *ip = [NSIndexPath indexPathForRow:1 inSection:0];
             [(AddDescriptionTableViewCell *)[_tableView cellForRowAtIndexPath:ip] setAsFirstResponder];
         }   break;
-        case KRFormFieldCellTypeDescription: {
+        case KRFormFieldCellTypeAddDescription: {
         }   break;
         case KRFormFieldCellTypeAddItems: {
         }   break;
-        case KRFormFieldCellTypeStep:{
+        case KRFormFieldCellTypeAddStep:{
         }   break;
     }
 }
 
-- (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell {
-    _tableIsExpanded = NO;
+- (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell andShouldExpand:(BOOL)shouldExpand {
+    _tableIsExpanded = shouldExpand;
     [_tableView beginUpdates];
     [_tableView endUpdates];
+    
+    switch (formFieldCell.type) {
+        case KRFormFieldCellTypeAddTitle: {
+            NSIndexPath *ip = [NSIndexPath indexPathForRow:1 inSection:0];
+           [(KRFormFieldCell*)[_tableView cellForRowAtIndexPath:ip] resignAsFirstResponder];
+        }   break;
+        case KRFormFieldCellTypeAddDescription: {
+            NSIndexPath *ip = [NSIndexPath indexPathForRow:0 inSection:0];
+            [(KRFormFieldCell*)[_tableView cellForRowAtIndexPath:ip] resignAsFirstResponder];
+        }   break;
+        case KRFormFieldCellTypeAddItems: {
+        
+        }   break;
+        case KRFormFieldCellTypeAddStep:{
+        
+        }   break;
+    }
+    
     [self positionTableViewCellInLieuOfKeyboard:formFieldCell];
 }
 
-- (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell {
+- (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell andShouldContract:(BOOL)shouldContract {
 //    _tableIsExpanded = NO;
 //    [_tableView beginUpdates];
 //    [_tableView endUpdates];
@@ -340,14 +359,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [_tableView setContentOffset:CGPointZero animated:YES];
     });
-}
-
-#pragma mark AddDescriptionTableViewCell delegate
-- (void)formFieldCellDidBecomeFirstResponderWithExpansion:(AddDescriptionTableViewCell *)addDescriptionTableViewCell {
-    _tableIsExpanded = YES;
-    [_tableView beginUpdates];
-    [_tableView endUpdates];
-    [self positionTableViewCellInLieuOfKeyboard:addDescriptionTableViewCell];
 }
 
 #pragma mark AddStepTableViewCell delegate

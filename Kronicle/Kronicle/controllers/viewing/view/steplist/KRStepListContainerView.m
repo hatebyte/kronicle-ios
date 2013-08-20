@@ -57,7 +57,7 @@
             [_steps addObject:stepListView];
             [self addSubview:stepListView];
         }
-        [stepListView setTimeForLastStep];
+        //[stepListView setTimeForLastStep];
         
     }
     return self;

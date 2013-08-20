@@ -16,9 +16,9 @@
 }
 
 
-+ (NSFont*)getNSFont:(KRFont)font withSize:(KRFontSize)size {
-    return [NSFont fontWithName:@"Palatino-Roman" size:14.0];
-}
+//+ (NSFont*)getNSFont:(KRFont)font withSize:(KRFontSize)size {
+//    return [NSFont fontWithName:@"Palatino-Roman" size:14.0];
+//}
 
 
 

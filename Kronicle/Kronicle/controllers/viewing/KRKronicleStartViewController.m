@@ -59,7 +59,7 @@
     
     
 #if kDEBUG
-    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithNibName:@"KRViewController" andKronicle:self.kronicle];
+    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:self.kronicle];
     [self.navigationController pushViewController:playbackViewController animated:YES];
 #endif
     

@@ -22,6 +22,7 @@
 
 #import "KRPlaybackViewController.h"
 #import "KRCreateViewController.h"
+#import "KRGlobals.h"
 
 const char *class_getName(Class cls);
 
@@ -96,7 +97,7 @@ const char *class_getName(Class cls);
     _description.text                           = NSLocalizedString(@"Timeline based guides and \nskill sharing.", @"");
     [self.view addSubview:_description];
     
-    _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _description.frame.origin.y + _description.frame.size.height, 150, 34)
+    _createButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _description.frame.origin.y + _description.frame.size.height, 150, 36)
                                                 andType:KRTextButtonTypeHomeScreen
                                                 andIcon:[UIImage imageNamed:@"plus-sign-white"]];
     [_createButton setTitle:NSLocalizedString(@"Create", @"") forState:UIControlStateNormal];
@@ -106,7 +107,7 @@ const char *class_getName(Class cls);
     _createButton.titleEdgeInsets               = UIEdgeInsetsMake(0, 6, 0, 0);
     [self.view addSubview:_createButton];
     
-    _findButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _createButton.frame.origin.y + _createButton.frame.size.height, 150, 34)
+    _findButton = [[KRTextButton alloc] initWithFrame:CGRectMake(buttonX, _createButton.frame.origin.y + _createButton.frame.size.height, 150, 36)
                                               andType:KRTextButtonTypeHomeScreen
                                               andIcon:[UIImage imageNamed:@"magnifying-glass-white"]];
     [_findButton setTitle:NSLocalizedString(@"Discover", @"") forState:UIControlStateNormal];
@@ -114,12 +115,17 @@ const char *class_getName(Class cls);
     [_findButton addTarget:self action:@selector(discover) forControlEvents:UIControlEventTouchUpInside];
     _findButton.titleEdgeInsets                 = UIEdgeInsetsMake(0, 6, 0, 0);
     [self.view addSubview:_findButton];
-
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+
+#if kDEBUG
+    [self gotoToViewController:@"KRCategoriesViewController"];
+#endif
 }
 
 - (void)closeNavigation{

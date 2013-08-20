@@ -24,8 +24,8 @@
         tt += s.time;
     }
     self.totalTime         = tt;
-    self.steps = steps;
-    self.stepCount = self.steps.count;
+    self.steps             = steps;
+    self.stepCount         = self.steps.count;
 }
 
 - (void)kronicleShortFromJSONDictionary:(NSDictionary *)dict {
@@ -34,6 +34,8 @@
     self.description       = [dict objectForKey:@"description"];
     self.category          = [dict objectForKey:@"category"];
     self.imageUrl          = [dict objectForKey:@"imageUrl"];
+    self.items             = [dict objectForKey:@"items"];
+
     //self.timesCompleted    = [[dict objectForKey:@"timesCompleted"] floatValue];
     NSArray *stepsDict     = [dict objectForKey:@"steps"];
     int tt = 0;
@@ -41,8 +43,8 @@
         KRStep *s = [[KRStep alloc] init];
         tt += s.time;
     }
-    self.totalTime         = tt;
-    self.stepCount = stepsDict.count;
+    self.totalTime          = tt;
+    self.stepCount          = stepsDict.count;
 }
 
 - (NSString *)stringTime {

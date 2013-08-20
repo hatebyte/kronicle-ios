@@ -9,17 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "KRFormFieldCell.h"
 
-@class AddDescriptionTableViewCell;
-@protocol AddDescriptionTableViewCellDelegate <KRFormFieldCellDelegate>
-
-- (void)formFieldCellDidBecomeFirstResponderWithExpansion:(AddDescriptionTableViewCell *)addDescriptionTableViewCell;
-
-@end
-
 
 @interface AddDescriptionTableViewCell : KRFormFieldCell
-
-@property (nonatomic, weak) id <AddDescriptionTableViewCellDelegate> delegate;
 
 + (CGFloat)cellHeightKronicle;
 + (CGFloat)cellHeightExpanded;

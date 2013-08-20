@@ -19,18 +19,17 @@
 
 
 + (CGFloat)cellHeight {
-    return 115.f;
+    return 124.f;
 }
-
-+ (CGFloat)cellHeightForStep { return 70.f; }
-+ (CGFloat)cellHeightForKronicle { return 115.f; }
++ (CGFloat)cellHeightForStep { return 88.f; }
++ (CGFloat)cellHeightForKronicle { return 124.f; }
  
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle                     = UITableViewCellSelectionStyleNone;
-        self.type                               = KRFormFieldCellTypeTitle;
+        self.type                               = KRFormFieldCellTypeAddTitle;
         
         _inputField                             = [[UITextField alloc] init];
         _inputField.font                        = [KRFontHelper getFont:KRBrandonLight withSize:48];
@@ -56,10 +55,10 @@
 }
 
 - (void)prepareForUseWithTitle:(NSString *)title andType:(AddTitleLocation)type {
-    int fieldheight                         = 70.f;
-    int y                                   =(type == AddTitleKronicle) ? ([AddTitleTableViewCell cellHeight] - fieldheight) : 0;
-    _inputField.frame                       = CGRectMake(kPadding, y, kPaddingWidth, fieldheight);
-    _inputField.text                        = title;
+    int fieldheight                             = 70.f;
+    int y                                       =(type == AddTitleKronicle) ? ([AddTitleTableViewCell cellHeightForKronicle] - fieldheight) : ([AddTitleTableViewCell cellHeightForStep] - fieldheight);
+    _inputField.frame                           = CGRectMake(kPadding, y, kPaddingWidth, fieldheight);
+    _inputField.text                            = title;
 }
 
 - (void)setAsFirstResponder {
@@ -68,17 +67,39 @@
 
 - (void)resignAsFirstResponder {
     [_inputField resignFirstResponder];
+    [self animateOut];
+}
+
+- (void)animateIn {
+    [UIView animateWithDuration:.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _inputField.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:.05f];
+                     }
+                     completion:^(BOOL fin){}];
+}
+- (void)animateOut {
+    [UIView animateWithDuration:.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _inputField.backgroundColor = [UIColor whiteColor];
+                     }
+                     completion:^(BOOL fin){}];
 }
 
 #pragma textfield delegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    [self.delegate formFieldCellDidBecomeFirstResponder:self];
+    [self.delegate formFieldCellDidBecomeFirstResponder:self andShouldExpand:NO];
+    [self animateIn];
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.delegate formFieldCellDidResignFirstResponder:self];
+    [self.delegate formFieldCellDidResignFirstResponder:self andShouldContract:NO];
+    [self animateOut];
     return YES;
 }
 
@@ -99,13 +120,16 @@
     switch (selectedId) {
         case KeyboardNavigationToolBarPrevious:
             [_inputField resignFirstResponder];
+            [self animateIn];
             break;
         case KeyboardNavigationToolBarNext:
-            //[_inputField resignFirstResponder];
+            [_inputField resignFirstResponder];
+            [self animateOut];
             [self.delegate formFieldCellDidRequestNextResponder:self];
             break;
         case KeyboardNavigationToolBarDone:
             [_inputField resignFirstResponder];
+            [self animateOut];
             [self.delegate formFieldCellDone:self];
             break;
     }

@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSArray *steps;
+@property (nonatomic, copy) NSArray *items;
 @property (nonatomic, assign) CGFloat totalTime;
 @property (nonatomic, assign) CGFloat timesCompleted;
 @property (nonatomic, assign) CGFloat rating;

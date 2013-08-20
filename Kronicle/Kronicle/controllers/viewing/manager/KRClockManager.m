@@ -8,7 +8,7 @@
 
 #import "KRClockManager.h"
 
-CGFloat const _increment = 1.f;
+CGFloat const _increment = .05f;
 
 @interface KRClockManager () {
     @private

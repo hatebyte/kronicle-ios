@@ -46,10 +46,14 @@
     MKNetworkOperation *op = [self operationWithURLString:requestString params:nil httpMethod:@"GET"];
     
     [self enqueueOperation:op withResponseJSONSuccessBlock:^(NSDictionary *dict) {
+        NSLog(@"dict %@", dict);
+        
         KRKronicle *kronicle = [[KRKronicle alloc] init];
         [kronicle readFromJSONDictionary:dict];
         successBlock(kronicle);
+         
     } onFailure:failBlock];
+    
 }
 
 - (void)postKronicle:(KRKronicle *)kronicle withCompletion:(void (^)(KRKronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock {

@@ -16,7 +16,7 @@
 #import "AddDescriptionTableViewCell.h"
 #import "AddTimeCell.h"
 
-@interface KRCreateStepViewController () <CreateStepTimeViewDelegate, AddMediaTableViewCellDelegate, KRFormFieldCellDelegate, AddDescriptionTableViewCellDelegate> {
+@interface KRCreateStepViewController () <KRFormFieldCellDelegate, CreateStepTimeViewDelegate, AddMediaTableViewCellDelegate, KRFormFieldCellDelegate> {
     UIButton *_backButton;
     UIButton *_doneButton;
     UIButton *_addStepButton;
@@ -52,9 +52,11 @@
     _tableView.backgroundColor                  = [UIColor clearColor];
     [self.view addSubview:_tableView];
 
+    //    [_cancelButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
+
     _backButton                                 = [UIButton buttonWithType:UIButtonTypeCustom];
-    _backButton.backgroundColor                 = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:.7f];
-    _backButton.frame                           = CGRectMake(5, 5, 26, 26);
+    _backButton.backgroundColor                 = [UIColor clearColor];
+    _backButton.frame                           = CGRectMake(0, 0, 40, 40);
     [_backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
     [self.view addSubview:_backButton];
@@ -82,7 +84,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeCreatorRequested:) name:kRequestTimeUnitEdit object:nil];
 
-    
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
@@ -253,7 +254,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return (_tableIsExpanded) ? 240 : 54;
+    return (_tableIsExpanded) ? 300 : 64;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -267,10 +268,10 @@
     CGFloat height = 0;
     
     switch (cellType) {
-        case KRFormFieldCellTypeTitle:
+        case KRFormFieldCellTypeAddTitle:
             height = [AddTitleTableViewCell cellHeight];
             break;
-        case KRFormFieldCellTypeDescription: {
+        case KRFormFieldCellTypeAddDescription: {
             if (_tableIsExpanded) {
                 height = [AddDescriptionTableViewCell cellHeightExpanded];
             } else {
@@ -278,7 +279,7 @@
             }
         }   break;
         case KRFormFieldCellTypeAddItems:
-        case KRFormFieldCellTypeStep:
+        case KRFormFieldCellTypeAddStep:
         default:
             height = 0;
             break;
@@ -287,7 +288,7 @@
 }
 
 - (void)positionTableViewCellInLieuOfKeyboard:(KRFormFieldCell*)cell {
-    CGFloat cellBottomY = [self returnHeightForCellType:cell.type] + cell.frame.origin.y;
+    CGFloat cellBottomY = [self returnHeightForCellType:cell.type] + cell.frame.origin.y + 20;
     NSLog(@"cellY : %f", cellBottomY);
     CGFloat keyboardY = _bounds.size.height - [KeyboardNavigationToolBar height];
     CGFloat offsetY =  cellBottomY - keyboardY;
@@ -305,15 +306,15 @@
 #pragma mark KRFormFieldCell delegate
 - (void)formFieldCellDidRequestPreviousResponder:(KRFormFieldCell *)formFieldCell {
     switch (formFieldCell.type) {
-        case KRFormFieldCellTypeTitle: {
+        case KRFormFieldCellTypeAddTitle: {
         }   break;
-        case KRFormFieldCellTypeDescription: {
+        case KRFormFieldCellTypeAddDescription: {
             NSIndexPath *ip = [NSIndexPath indexPathForRow:2 inSection:0];
             [(AddTitleTableViewCell *)[_tableView cellForRowAtIndexPath:ip] setAsFirstResponder];
         }   break;
         case KRFormFieldCellTypeAddItems: {
         }   break;
-        case KRFormFieldCellTypeStep:{
+        case KRFormFieldCellTypeAddStep:{
         }   break;
             
     }
@@ -322,31 +323,30 @@
 - (void)formFieldCellDidRequestNextResponder:(KRFormFieldCell *)formFieldCell {
     _tableIsExpanded = YES;
     switch (formFieldCell.type) {
-        case KRFormFieldCellTypeTitle: {
+        case KRFormFieldCellTypeAddTitle: {
             NSIndexPath *ip = [NSIndexPath indexPathForRow:3 inSection:0];
             [(AddDescriptionTableViewCell *)[_tableView cellForRowAtIndexPath:ip] setAsFirstResponder];
         }   break;
-        case KRFormFieldCellTypeDescription: {
+        case KRFormFieldCellTypeAddDescription: {
         }   break;
         case KRFormFieldCellTypeAddItems: {
         }   break;
-        case KRFormFieldCellTypeStep:{
+        case KRFormFieldCellTypeAddStep:{
         }   break;
     }
 }
 
-- (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell {
-    _tableIsExpanded = YES;
+- (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell andShouldExpand:(BOOL)shouldExpand {
+    _tableIsExpanded = shouldExpand;
     [_tableView beginUpdates];
     [_tableView endUpdates];
     [self positionTableViewCellInLieuOfKeyboard:formFieldCell];
 }
 
-- (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell {
-    _tableIsExpanded = YES;
+- (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell andShouldContract:(BOOL)shouldContract {
+    _tableIsExpanded = NO;
     [_tableView beginUpdates];
     [_tableView endUpdates];
-    
 }
 
 - (void)formFieldCellDone:(KRFormFieldCell *)formFieldCell {
@@ -360,11 +360,5 @@
 
 
 #pragma mark AddDescriptionTableViewCell delegate
-- (void)formFieldCellDidBecomeFirstResponderWithExpansion:(AddDescriptionTableViewCell *)addDescriptionTableViewCell {
-    _tableIsExpanded = YES;
-    [_tableView beginUpdates];
-    [_tableView endUpdates];
-    [self positionTableViewCellInLieuOfKeyboard:addDescriptionTableViewCell];
-}
 
 @end

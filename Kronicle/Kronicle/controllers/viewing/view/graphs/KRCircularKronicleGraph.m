@@ -79,7 +79,9 @@ CGFloat const _sidesBuffer = .42;
 }
 
 - (void)updateForLastStep {
-    [self updateForCurrentStep:_kronicle.stepCount-1 andRatio:1.f andTimeCompleted:_kronicle.totalTime];
+    
+    // Remeber to change once data models are correct;
+    [self updateForCurrentStep:_kronicle.stepCount-2 andRatio:1.f andTimeCompleted:_kronicle.totalTime];
 }
 
 - (void)drawRect:(CGRect)rect {

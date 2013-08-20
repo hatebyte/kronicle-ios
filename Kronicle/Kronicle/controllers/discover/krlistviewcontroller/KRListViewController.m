@@ -54,11 +54,10 @@
                                                     [self.tableView reloadData];
         
         
-#if kDEBUG
-
-        NSIndexPath *myIP = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self tableView:self.tableView didSelectRowAtIndexPath:myIP];
-#endif
+//#if kDEBUG
+//        NSIndexPath *myIP = [NSIndexPath indexPathForRow:0 inSection:0];
+//        [self tableView:self.tableView didSelectRowAtIndexPath:myIP];
+//#endif
 
         
                                                 }
@@ -126,9 +125,13 @@
 //    [[KRAPIStore sharedStore] fetchKronicle:k.uuid withCompletion:completionBlock];
     
     [[KronicleEngine current] fetchKronicle:k.uuid withCompletion:^(KRKronicle *kronicle) {
+        NSLog(@"kronicle : %@", kronicle);
+        
         
         KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
         [self.navigationController pushViewController:kronicleStartViewController animated:YES];
+        
+        
         
     }
                                                onFailure:^(NSError *error) {

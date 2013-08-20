@@ -41,7 +41,7 @@
         paragraphStyle.maximumLineHeight = 18.0f;
         paragraphStyle.minimumLineHeight = 18.0f;
         
-        NSFont *font = [KRFontHelper getFont:KRBrandonMedium withSize:16];
+//        NSFont *font = [KRFontHelper getFont:KRBrandonMedium withSize:16];
         NSString *string = descriptionString;
         NSDictionary *attribute = @{ NSParagraphStyleAttributeName : paragraphStyle, };
         _title                          = [[UITextView alloc] init];

@@ -13,10 +13,12 @@
 #import "KeyboardNavigationToolBar.h"
 
 typedef enum {
-    KRFormFieldCellTypeTitle,
-    KRFormFieldCellTypeDescription,
+    KRFormFieldCellTypeAddTitle,
+    KRFormFieldCellTypeAddDescription,
     KRFormFieldCellTypeAddItems,
-    KRFormFieldCellTypeStep,
+    KRFormFieldCellTypeAddStep,
+    KRFormFieldCellTypeAddMedia,
+    KRFormFieldCellTypeAddTime,
 } KRFormFieldCellType;
 
 typedef enum{
@@ -27,11 +29,11 @@ typedef enum{
 @class KRFormFieldCell;
 @protocol KRFormFieldCellDelegate <NSObject>
 
-- (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell;
-- (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell;
 - (void)formFieldCellDidRequestPreviousResponder:(KRFormFieldCell *)formFieldCell;
 - (void)formFieldCellDidRequestNextResponder:(KRFormFieldCell *)formFieldCell;
 - (void)formFieldCellDone:(KRFormFieldCell *)formFieldCell;
+- (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell andShouldExpand:(BOOL)shouldExpand;
+- (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell andShouldContract:(BOOL)shouldContract;
 
 @end
 

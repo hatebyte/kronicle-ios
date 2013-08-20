@@ -129,6 +129,7 @@
 		D23EFCF117C1125600989E5E /* duration.png in Resources */ = {isa = PBXBuildFile; fileRef = D23EFCEC17C1125600989E5E /* duration.png */; };
 		D23EFCF217C1125600989E5E /* plusbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D23EFCED17C1125600989E5E /* plusbutton.png */; };
 		D23EFCF317C1125600989E5E /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = D23EFCEE17C1125600989E5E /* video.png */; };
+		D23EFCF717C2F78900989E5E /* KRBaseEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCF617C2F78800989E5E /* KRBaseEditTableViewController.m */; };
 		D26A614A175B217700B50A39 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6148175B217700B50A39 /* hole.png */; };
 		D26A614B175B217700B50A39 /* hole-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = D26A6149175B217700B50A39 /* hole-highlight.png */; };
 		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
@@ -406,6 +407,8 @@
 		D23EFCEC17C1125600989E5E /* duration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duration.png; sourceTree = "<group>"; };
 		D23EFCED17C1125600989E5E /* plusbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusbutton.png; sourceTree = "<group>"; };
 		D23EFCEE17C1125600989E5E /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
+		D23EFCF517C2F78800989E5E /* KRBaseEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRBaseEditTableViewController.h; sourceTree = "<group>"; };
+		D23EFCF617C2F78800989E5E /* KRBaseEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRBaseEditTableViewController.m; sourceTree = "<group>"; };
 		D26A6148175B217700B50A39 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
 		D26A6149175B217700B50A39 /* hole-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hole-highlight.png"; sourceTree = "<group>"; };
 		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1229,6 +1232,8 @@
 			children = (
 				D2CF7E7117B9A94900E3D1F0 /* KRKronicleBaseViewController.h */,
 				D2CF7E7217B9A94900E3D1F0 /* KRKronicleBaseViewController.m */,
+				D23EFCF517C2F78800989E5E /* KRBaseEditTableViewController.h */,
+				D23EFCF617C2F78800989E5E /* KRBaseEditTableViewController.m */,
 			);
 			path = supers;
 			sourceTree = "<group>";
@@ -1798,6 +1803,7 @@
 				D23EFCDB17C02A2A00989E5E /* AddMediaTableViewCell.m in Sources */,
 				D23EFCDE17C06EC200989E5E /* AddTimeCell.m in Sources */,
 				D23EFCE117C1074F00989E5E /* ContentWithLabelView.m in Sources */,
+				D23EFCF717C2F78900989E5E /* KRBaseEditTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

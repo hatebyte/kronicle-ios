@@ -72,6 +72,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSMutableArray *newSteps = [NSMutableArray arrayWithArray:self.kronicle.steps];
+    [newSteps removeLastObject];
+    self.kronicle.steps = newSteps;
     
     self.view.backgroundColor = [UIColor whiteColor];
     _bounds = [UIScreen mainScreen].bounds;
@@ -121,12 +124,13 @@
 
     if (_viewingState == KRKronicleViewingStateView) {
         [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
-        _backButton.backgroundColor = [KRColorHelper grayMedium];
-        _backButton.frame = CGRectMake(5, 5, 26, 26);
+        _backButton.backgroundColor                 = [UIColor clearColor];
+        _backButton.frame                           = CGRectMake(0, 0, 40, 40);
+
     } else {
         [_backButton setTitle:@"Edit" forState:UIControlStateNormal];
         [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _backButton.backgroundColor = [KRColorHelper grayMedium];
+        _backButton.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.3];
         _backButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
         _backButton.frame = CGRectMake(5, 5, 40, 26);
         
@@ -140,9 +144,9 @@
         [_publishButton addTarget:self action:@selector(publishKronicle:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_publishButton];
     }
+    
 //    _sview.contentOffset = CGPointMake(0, _sview.contentSize.height - _sview.frame.size.height);
     [self setStep:0];
-    
     
 }
 
@@ -160,7 +164,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
 - (void)dealloc {
     [_mediaView stop];
     _mediaView = nil;
@@ -174,7 +177,6 @@
     [_scrollView updateCurrentStepClock:timeString];
     [_graphView showDisplayForRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
-    
     [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
 }
 
@@ -223,9 +225,9 @@
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
     [_graphView updateForLastStep];
-    [_scrollView updateForLastStep];
-    [_stepListContainerView updateForLastStep];
     [_circularGraphView updateForLastStep];
+//    [_stepListContainerView updateForLastStep];
+//    [_scrollView updateForLastStep];
 }
 
 

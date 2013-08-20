@@ -72,7 +72,7 @@
         [d resetClock];
     }
     [_currentStep updateClock:timeString];
-    [d updateForLastStep];
+    //[d updateForLastStep];
 }
 
 
