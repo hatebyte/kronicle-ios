@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KRBaseEditTableViewController.h"
 #import "KRKronicle.h"
 
 
-@interface KRCreateViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+@interface KRCreateViewController : KRBaseEditTableViewController
 
 @property (nonatomic, strong) KRKronicle *kronicle;
-
-- (IBAction)popViewController:(id)sender;
 
 @end

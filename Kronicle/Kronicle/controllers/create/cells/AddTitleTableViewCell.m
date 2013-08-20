@@ -123,7 +123,7 @@
             [self animateIn];
             break;
         case KeyboardNavigationToolBarNext:
-            [_inputField resignFirstResponder];
+//            [_inputField resignFirstResponder];
             [self animateOut];
             [self.delegate formFieldCellDidRequestNextResponder:self];
             break;

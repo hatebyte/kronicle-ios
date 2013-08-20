@@ -19,7 +19,6 @@
 }
 
 
-- (void)popViewController:(id)sender;
 - (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType;
 
 @end

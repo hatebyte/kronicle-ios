@@ -33,23 +33,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _bounds = [UIScreen mainScreen].bounds;
-    _buttonHeight = 35;
+    _bounds                                                     = [UIScreen mainScreen].bounds;
+    _buttonHeight                                               = 35;
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0, _bounds.size.width, _bounds.size.height-20 )];
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView                                                  = [[UITableView alloc] initWithFrame:CGRectMake(0,0, _bounds.size.width, _bounds.size.height-20 )];
+    _tableView.dataSource                                       = self;
+    _tableView.delegate                                         = self;
+    _tableView.separatorStyle                                   = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor                                  = [UIColor clearColor];
     [self.view addSubview:_tableView];
     
-    
-    _cancelButton       = [UIButton buttonWithType:UIButtonTypeCustom];
-    _cancelButton.backgroundColor = [KRColorHelper turquoise];
-    _cancelButton.frame = CGRectMake(0, 0, 40, 40);
+    _cancelButton                                               = [UIButton buttonWithType:UIButtonTypeCustom];
+    _cancelButton.frame                                         = CGRectMake(0, 0, 40, 40);
     [_cancelButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cancelButton];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,26 +56,11 @@
 }
 
 - (void)popViewController:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 
 #pragma uitableview
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44.f;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return (_buttonHeight + 20);
-}
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView *viewer = [[UIView alloc] init];
@@ -150,32 +132,13 @@
     _tableIsExpanded = shouldExpand;
     [_tableView beginUpdates];
     [_tableView endUpdates];
-    NSIndexPath *indexPath = [_tableView indexPathForCell:formFieldCell];
-    switch (formFieldCell.type) {
-        case KRFormFieldCellTypeAddTitle: {
-            indexPath =  [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
-        }   break;
-        case KRFormFieldCellTypeAddDescription: {
-            indexPath =  [NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section];
-        }   break;
-        case KRFormFieldCellTypeAddItems: {
-            
-        }   break;
-        case KRFormFieldCellTypeAddStep:{
-            
-        }   break;
-        case KRFormFieldCellTypeAddMedia:{
-            
-        }   break;
-        case KRFormFieldCellTypeAddTime:{
-            
-        }   break;
-    }
-    [(KRFormFieldCell*)[_tableView cellForRowAtIndexPath:indexPath] resignAsFirstResponder];
     [self positionTableViewCellInLieuOfKeyboard:formFieldCell];
 }
 
 - (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell andShouldContract:(BOOL)shouldContract {
+    _tableIsExpanded = NO;
+    [_tableView beginUpdates];
+    [_tableView endUpdates];
 }
 
 - (void)formFieldCellDone:(KRFormFieldCell *)formFieldCell {
@@ -183,7 +146,7 @@
     [_tableView beginUpdates];
     [_tableView endUpdates];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_tableView setContentOffset:CGPointZero animated:YES];
+   //     [_tableView setContentOffset:CGPointZero animated:YES];
     });
 }
 

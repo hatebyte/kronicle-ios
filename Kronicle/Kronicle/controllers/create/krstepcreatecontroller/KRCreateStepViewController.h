@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KRBaseEditTableViewController.h"
 #import "DurationCreatorView.h"
 #import "KRStep.h"
 
-
-@interface KRCreateStepViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+@interface KRCreateStepViewController : KRBaseEditTableViewController
 
 - (id)initWithStep:(KRStep *)step;
 
