@@ -12,8 +12,8 @@ CGFloat const _increment = .05f;
 
 @interface KRClockManager () {
     @private
-    __weak KRKronicle *_kronicle;
-    __weak KRStep *_step;
+    __weak Kronicle *_kronicle;
+    __weak Step *_step;
     NSTimer *_timer;
     int _stepTotal;
     int _kronicleTotal;
@@ -31,20 +31,22 @@ CGFloat const _increment = .05f;
 
 @implementation KRClockManager 
 
-- (id)initWithKronicle:(KRKronicle *)kronicle {
+- (id)initWithKronicle:(Kronicle *)kronicle {
     if (self = [super init]) {
         _kronicle = kronicle;
         _kronicleTotal = 0;
-        for (KRStep *s in _kronicle.steps) {
+        for (Step *s in _kronicle.steps) {
             _kronicleTotal += s.time;
         }
     }
     return self;
 }
 
-- (void)setTimeForStep:(int)stepIndex {
+- (void)setTimeForStep:(NSInteger)stepIndex {
     _stepRatio = 0;
     _globalRatio = 0;
+    NSLog(@"k %d", stepIndex);
+    NSLog(@"k %@", [_kronicle.steps objectAtIndex:stepIndex]);
     _step = [_kronicle.steps objectAtIndex:stepIndex];
     _stepTotal = _step.time;
     _currentTime = _stepTotal;
@@ -97,7 +99,7 @@ CGFloat const _increment = .05f;
     // ratio of completed all time
     int totalSecondsPassed = _stepTotal - _currentTime;
     for (int i = 0; i < _step.indexInKronicle; i++) {
-        KRStep *s = [_kronicle.steps objectAtIndex:i];
+        Step *s = [_kronicle.steps objectAtIndex:i];
         totalSecondsPassed += s.time;
     }
     _globalRatio = ([[NSNumber numberWithInt:totalSecondsPassed] floatValue] / [[NSNumber numberWithInt: _kronicleTotal] floatValue] );
@@ -155,6 +157,7 @@ CGFloat const _increment = .05f;
             [NSNumber numberWithInteger:seconds],   @"seconds",
             [NSNumber numberWithInteger:minutes],   @"minutes",
             [NSNumber numberWithInteger:hours],     @"hours",
+            [NSNumber numberWithInteger:secondsTotal],     @"totalTime",
             nil];
 }
 

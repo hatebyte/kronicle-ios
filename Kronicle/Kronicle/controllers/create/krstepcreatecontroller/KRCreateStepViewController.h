@@ -11,8 +11,13 @@
 #import "DurationCreatorView.h"
 #import "KRStep.h"
 
-@interface KRCreateStepViewController : KRBaseEditTableViewController
+@interface KRCreateStepViewController : KRBaseEditTableViewController {
+    @private
 
-- (id)initWithStep:(KRStep *)step;
+}
+
+
+- (id)initWithStep:(KRStep *)step andSaveBlock:(void (^)(KRStep *newStep))completion;
+;
 
 @end

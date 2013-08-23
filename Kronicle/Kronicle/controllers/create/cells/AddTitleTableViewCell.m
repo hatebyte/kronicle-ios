@@ -54,6 +54,10 @@
     return self;
 }
 
+- (NSString *)value {
+    return _inputField.text;
+}
+
 - (void)prepareForUseWithTitle:(NSString *)title andType:(AddTitleLocation)type {
     int fieldheight                             = 70.f;
     int y                                       =(type == AddTitleKronicle) ? ([AddTitleTableViewCell cellHeightForKronicle] - fieldheight) : ([AddTitleTableViewCell cellHeightForStep] - fieldheight);

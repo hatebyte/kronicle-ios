@@ -17,5 +17,6 @@
 + (CGFloat)cellHeightStep;
 
 - (void)prepareForUseWithDescription:(NSString *)description andType:(AddTitleLocation)type;
+- (NSString *)value;
 
 @end

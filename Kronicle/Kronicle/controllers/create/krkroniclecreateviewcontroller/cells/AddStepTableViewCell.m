@@ -13,6 +13,7 @@
 @interface AddStepTableViewCell () <StepBlockViewDelegate> {
     @private
     __weak NSArray *_stepArray;
+    NSMutableArray *_blockArray;
 }
 
 @end
@@ -30,7 +31,6 @@
     if (self) {
         self.selectionStyle                     = UITableViewCellSelectionStyleNone;
         self.contentView.backgroundColor        = [UIColor clearColor];
-
     }
     return self;
 }
@@ -38,16 +38,19 @@
 - (void)prepareForReuseWithArray:(NSArray *)stepArray {
     _stepArray = stepArray;
     int i = 0;
-    for (int i=0; i<[self.contentView.subviews count]; i++) {
-        [[self.contentView.subviews objectAtIndex:0] removeFromSuperview];
+    StepBlockView *sb;
+    for (int i=0; i < [_blockArray count]; i++) {
+        sb = [_blockArray objectAtIndex:i];
+        [sb removeFromSuperview];
     }
+    _blockArray = [[NSMutableArray alloc] init];
+    
     i = 0;
-    int size = [AddStepTableViewCell cellHeight]-kPadding;
+    int size = [AddStepTableViewCell cellHeight] - kPadding;
     CGRect frame = CGRectMake(kPadding, 0, size, size);
     for (i = 0; i < _stepArray.count; i++) {
-        frame.origin = CGPointMake((kPadding-1) + ((size + kPadding) * i), 0);
+        frame.origin = CGPointMake((kPadding - 1) + ((size + kPadding) * i), 0);
         id s = [_stepArray objectAtIndex:i];
-        StepBlockView *sb;
         if ([s isKindOfClass:[NSString class]]) {
             sb = [[StepBlockView alloc] initAsAddStepWithFrame:frame];
         } else {
@@ -55,6 +58,7 @@
         }
         sb.tag = i;
         sb.delegate = self;
+        [_blockArray addObject:sb];
         [self.contentView addSubview:sb];
     }
     

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KRKronicle.h"
+#import "Kronicle+Helper.h"
 
 @interface KRCircularKronicleGraph : UIView
 
-- (id)initWithFrame:(CGRect)frame andKronicle:(KRKronicle *)kronicle;
+- (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle;
 - (void)updateForCurrentStep:(int)step andRatio:(CGFloat)ratio andTimeCompleted:(int)totalCompleted;
 - (void)updateForLastStep;
 

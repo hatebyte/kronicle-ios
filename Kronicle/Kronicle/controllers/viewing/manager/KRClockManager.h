@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KRKronicle.h"
-#import "KRStep.h"
+#import "Kronicle+Helper.h"
+#import "Step+Helper.h"
 
 @class KRClockManager;
 @protocol KRClockManagerDelegate <NSObject>
@@ -29,7 +29,7 @@
 + (NSString *)stringTimeForInt:(int)time;
 + (NSDictionary *)getTimeUnits:(NSInteger)secondsTotal;
 
-- (id)initWithKronicle:(KRKronicle *)kronicle;
+- (id)initWithKronicle:(Kronicle *)kronicle;
 - (void)setTimeForStep:(int)step;
 - (void)togglePlayPause;
 

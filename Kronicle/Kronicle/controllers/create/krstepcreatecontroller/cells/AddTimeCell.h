@@ -15,5 +15,6 @@ static NSString *kRequestTimeUnitEdit             = @"RequestTimeUnitEdit";
 @interface AddTimeCell : KRFormFieldCell
 
 - (void)prepareForUserWithTime:(NSInteger)time;
+- (NSInteger)value;
 
 @end

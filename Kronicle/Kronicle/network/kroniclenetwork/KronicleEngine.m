@@ -8,6 +8,8 @@
 
 #import "KronicleEngine.h"
 #import "APIRouter.h"
+#import "ManagedContextController.h"
+#import "Kronicle+JSON.h"
 
 #define kdomain @"http://166.78.151.97:4711/"  
 
@@ -30,31 +32,42 @@
     return [self current];
 }
 
-- (void)allKroniclesWithCompletion:(void (^)(KRList *))successBlock onFailure:(void (^)(NSError *))failBlock {
+- (void)allKroniclesWithCompletion:(void (^)(NSArray *))successBlock onFailure:(void (^)(NSError *))failBlock {
     NSString *requestString = [APIRouter current].kronicles;
     MKNetworkOperation *op = [self operationWithURLString:requestString params:nil httpMethod:@"GET"];
     [self enqueueOperation:op withResponseJSONSuccessBlock:^(NSDictionary *dict) {
-        KRList *klist = [[KRList alloc] init];
-        [klist readFromJSONDictionary:dict];
-        successBlock(klist);
+//        KRList *klist = [[KRList alloc] init];
+//        [klist readFromJSONDictionary:dict];
+        successBlock((NSArray *)dict);
     } onFailure:failBlock];
 }
 
-- (void)fetchKronicle:(NSString *)kronicle withCompletion:(void (^)(KRKronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock  {
+- (void)fetchKronicle:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *error))failBlock  {
     //@{@"mybrabbles":@1}
-    NSString *requestString = [NSString stringWithFormat:@"%@%@", [APIRouter current].kronicles, kronicle];
+    NSString *requestString = [NSString stringWithFormat:@"%@%@", [APIRouter current].kronicles, uuid];
     MKNetworkOperation *op = [self operationWithURLString:requestString params:nil httpMethod:@"GET"];
     
     [self enqueueOperation:op withResponseJSONSuccessBlock:^(NSDictionary *dict) {
-        NSLog(@"dict %@", dict);
         
-        KRKronicle *kronicle = [[KRKronicle alloc] init];
-        [kronicle readFromJSONDictionary:dict];
-        successBlock(kronicle);
-         
+        successBlock(dict);
+        
+        
     } onFailure:failBlock];
     
 }
+
+- (void)fetchStepsForKronicleUUID:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *))failBlock {
+    NSString *requestString = [NSString stringWithFormat:@"%@%@/steps", [APIRouter current].kronicles, uuid];
+    MKNetworkOperation *op = [self operationWithURLString:requestString params:nil httpMethod:@"GET"];
+    
+    [self enqueueOperation:op withResponseJSONSuccessBlock:^(NSDictionary *dict) {
+        
+        successBlock(dict);
+        
+        
+    } onFailure:failBlock];
+}
+
 
 - (void)postKronicle:(KRKronicle *)kronicle withCompletion:(void (^)(KRKronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock {
     //NSString *requestString = [APIRouter current].kronicles;

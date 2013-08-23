@@ -32,7 +32,7 @@
 }
 
 
-- (id)initWithFrame:(CGRect)frame andStep:(KRStep *)step
+- (id)initWithFrame:(CGRect)frame andStep:(Step *)step
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -66,7 +66,7 @@
         _subLabel.textColor = [UIColor grayColor];
         _subLabel.backgroundColor = [UIColor clearColor];
         _subLabel.textColor = [KRColorHelper turquoise];
-        NSString *time = [KRClockManager stringTimeForInt:(int)_step.time];
+        NSString *time = [KRClockManager stringTimeForInt:_step.time];
         if ([[time substringToIndex:1] isEqualToString:@"0"]) {
             time = [time substringFromIndex:1];
         }
@@ -169,7 +169,7 @@
 
 #pragma uigesture 
 - (IBAction)cellSelected:(id)sender {
-    [self.delegate stepListView:self selectedByIndex:_step.indexInKronicle];
+    [self.delegate stepListView:self selectedByIndex:(int)_step.indexInKronicle];
 }
 
 /*

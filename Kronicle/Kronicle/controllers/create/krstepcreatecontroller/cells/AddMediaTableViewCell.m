@@ -92,4 +92,9 @@
     _imageView.image = [UIImage imageNamed:imagePath];
 }
 
+- (NSString *)value {
+    return @"imagepath";
+}
+
+
 @end

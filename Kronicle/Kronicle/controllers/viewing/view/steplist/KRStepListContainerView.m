@@ -7,7 +7,7 @@
 //
 
 #import "KRStepListContainerView.h"
-#import "KRStep.h"
+#import "Step+Helper.h"
 #import "KRColorHelper.h"
 #import "KRStepListView.h"
 #import <QuartzCore/QuartzCore.h>
@@ -45,7 +45,7 @@
 
         KRStepListView *stepListView;
         for (int i = 0; i < steps.count; i++) {
-            KRStep *step = [steps objectAtIndex:i];
+            Step *step = [steps objectAtIndex:i];
             stepListView = [[KRStepListView alloc] initWithFrame:CGRectMake(0, ([KRStepListView cellHeight] * i), 320, [KRStepListView cellHeight]) andStep:step];
             stepListView.delegate = self;
             if (i == _currentIndex) {

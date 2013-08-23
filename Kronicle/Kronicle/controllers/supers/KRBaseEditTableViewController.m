@@ -133,6 +133,26 @@
     [_tableView beginUpdates];
     [_tableView endUpdates];
     [self positionTableViewCellInLieuOfKeyboard:formFieldCell];
+    
+    NSIndexPath *indexPath = [_tableView indexPathForCell:formFieldCell];
+    switch (formFieldCell.type) {
+        case KRFormFieldCellTypeAddTitle: {
+            indexPath =  [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
+        }   break;
+        case KRFormFieldCellTypeAddDescription: {
+            indexPath =  [NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section];
+        }   break;
+        case KRFormFieldCellTypeAddItems:
+            break;
+        case KRFormFieldCellTypeAddStep:
+            break;
+        case KRFormFieldCellTypeAddMedia:
+            break;
+        case KRFormFieldCellTypeAddTime:
+            break;
+    }
+    //[(KRFormFieldCell *)[_tableView cellForRowAtIndexPath:indexPath] resignAsFirstResponder];
+
 }
 
 - (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell andShouldContract:(BOOL)shouldContract {
@@ -150,5 +170,7 @@
     });
 }
 
-
+- (KRFormFieldCell *)cellForIndexPath:(NSIndexPath *)indexPath {
+    
+}
 @end

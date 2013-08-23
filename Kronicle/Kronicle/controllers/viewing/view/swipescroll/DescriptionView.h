@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KRStep.h"
+#import "Step.h"
 
 @interface DescriptionView : UIView
 
 @property(nonatomic, strong) UILabel *titleLabel;
 @property(nonatomic, strong) UILabel *subClockLabel;
 @property(nonatomic, strong) UITextView *description;
-@property(nonatomic, weak) KRStep *step;
+@property(nonatomic, weak) Step *step;
 
 
-- (id)initWithFrame:(CGRect)frame andStep:(KRStep*)step;
+- (id)initWithFrame:(CGRect)frame andStep:(Step*)step;
 - (void)updateClock:(NSString *)timeString;
 - (void)resetClock;
 - (void)updateForLastStep;

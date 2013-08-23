@@ -16,8 +16,13 @@
 #import "KronicleEngine.h"
 #import "KRGlobals.h"
 #import "KRNavigationViewController.h"
+#import "KRClockManager.h"
+#import "Step+Helper.h"
+#import "Kronicle+Helper.h"
 
 @interface KRListViewController ()
+
+// if step has no steps get steps;
 
 @end
 
@@ -39,33 +44,24 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
-//    void(^completionBlock)(KRList *k, NSError *err) = ^(KRList *k, NSError *err) {
-//        self.tableData = [k.kronicles copy];
-//        [self.tableView reloadData];
-//    };
-//    
-//    [[KRAPIStore sharedStore] fetchAllKroniclesWithCompletion:completionBlock];
-
-    
-    [[KronicleEngine current] allKroniclesWithCompletion:^(KRList *k) {
         
-                                                    self.tableData = [k.kronicles copy];
-                                                    [self.tableView reloadData];
+    [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
+                                self.tableData = kronicles;
+                                [self.tableView reloadData];
         
-        
-//#if kDEBUG
-//        NSIndexPath *myIP = [NSIndexPath indexPathForRow:0 inSection:0];
-//        [self tableView:self.tableView didSelectRowAtIndexPath:myIP];
-//#endif
-
-        
-                                                }
-                                                onFailure:^(NSError *error) {
-                                                   
-                                                   NSLog(@"error : %@", error);
-                                                   
-                                                }];
+                            }
+                              onFailure:^(NSDictionary *error) {
+                                  if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
+                                      [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
+                                          self.tableData = kronicles;
+                                          [self.tableView reloadData];
+                                          
+                                                              }
+                                                                onFailure:^(NSError *error) {
+                                                                    NSLog(@"Cant get remote kronicle : %@", error);
+                                                                }];
+                                  }
+                              }];
 
 
 }
@@ -101,11 +97,17 @@
     if (cell == nil) {
         cell = [[StepsTableCellViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StepsTableCellViewCell"];
     }
-    KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
+    Kronicle *k = (Kronicle*)[self.tableData objectAtIndex:indexPath.row];
     NSLog(@"k.uuid : %@", k.uuid);
     cell.titleLabel.text = k.title;
-    cell.subLabel.text = [k stringTime];
-    cell.kImage.image = [UIImage imageNamed:k.imageUrl];
+//    cell.subLabel.text = [k stringTime];
+    NSString *time = [KRClockManager stringTimeForInt:k.totalTime];
+    if ([[time substringToIndex:1] isEqualToString:@"0"]) {
+        time = [time substringFromIndex:1];
+    }
+    cell.subLabel.text = time;
+
+    cell.kImage.image = [UIImage imageNamed:k.coverUrl];
     
     cell.titleLabel.textColor = [KRColorHelper grayDark];
     cell.frameimage.image = [UIImage imageNamed:@"hole"];
@@ -116,33 +118,41 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     StepsTableCellViewCell *c = (StepsTableCellViewCell*)[tableView cellForRowAtIndexPath:indexPath];
     [c hit];
-    KRKronicle *k = (KRKronicle*)[self.tableData objectAtIndex:indexPath.row];
+    Kronicle *k = [self.tableData objectAtIndex:indexPath.row];
     
-//    void(^completionBlock)(KRKronicle *kronicle, NSError *err) = ^(KRKronicle *kronicle, NSError *err) {
-//        KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
-//        [self.navigationController pushViewController:kronicleStartViewController animated:YES];
-//    };
-//    [[KRAPIStore sharedStore] fetchKronicle:k.uuid withCompletion:completionBlock];
+    if (k.steps.count > 0) {
+        [self navigateToKronicle:k];
     
-    [[KronicleEngine current] fetchKronicle:k.uuid withCompletion:^(KRKronicle *kronicle) {
-        NSLog(@"kronicle : %@", kronicle);
-        
-        
-        KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
-        [self.navigationController pushViewController:kronicleStartViewController animated:YES];
-        
-        
-        
-    }
-                                               onFailure:^(NSError *error) {
-                                                   
-                                                   NSLog(@"error : %@", error);
-                                                   
-                                               }];
+    } else {
     
-    
-}
+        [Kronicle populateLocalKronicleWithRemoteSteps:k
+                                           withSuccess:^(Kronicle *kronicle) {
+                                               [self navigateToKronicle:kronicle];
 
+                                           }
+                                             onFailure:^(NSDictionary *error) {
+
+                                             }];
+    }
+
+}
+//
+//- (void)fetchRemoteKronicle:(NSString *)uuid {
+//    [Kronicle getRemoteKronicleWithUuid:uuid
+//                            withSuccess:^(Kronicle *kronicle) {
+//                                NSLog(@"kronicle made it REMOTE : %@", kronicle.steps);
+//                                [self navigateToKronicle:kronicle];
+//                                
+//                            }
+//                              onFailure:^(NSError *error) {
+//                                  NSLog(@"CAnt get remote kronicle : %@", error);
+//                              }];
+//}
+
+- (void)navigateToKronicle:(Kronicle*)kronicle {
+    KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
+    [self.navigationController pushViewController:kronicleStartViewController animated:YES];
+}
 
 
 @end

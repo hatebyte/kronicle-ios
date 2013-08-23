@@ -75,6 +75,8 @@
         [self addSubview:_deleteButton];
 
         self.userInteractionEnabled = YES;
+        
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.2];
     }
     return self;
 }

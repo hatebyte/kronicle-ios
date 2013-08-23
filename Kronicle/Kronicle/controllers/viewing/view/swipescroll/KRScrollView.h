@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KRKronicle.h"
+#import "Kronicle+Helper.h"
 
 typedef enum {
     KRSwipeUpScrollViewLeft,
@@ -17,7 +17,7 @@ typedef enum {
 
 @class KRScrollView;
 @protocol KRScrollViewDelegate <NSObject>
-- (void)scrollView:(KRScrollView *)scrollView pageToIndex:(int)stepIndex;
+- (void)scrollView:(KRScrollView *)scrollView pageToIndex:(NSInteger)stepIndex;
 @end
 
 
@@ -25,7 +25,7 @@ typedef enum {
 
 @property(nonatomic, weak) id <KRScrollViewDelegate> scrollDelegate;
 
-- (id)initWithFrame:(CGRect)frame andKronicle:(KRKronicle *)kronicle;
+- (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle;
 - (void)scrollToPage:(int)page;
 - (void)updateCurrentStepClock:(NSString *)timeString;
 - (void)setCurrentStep:(int)stepIndex;

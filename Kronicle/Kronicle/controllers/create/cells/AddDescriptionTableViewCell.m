@@ -96,6 +96,10 @@
     return self;
 }
 
+- (NSString *)value {
+    return _textArea.text;
+}
+
 - (void)prepareForUseWithDescription:(NSString *)description andType:(AddTitleLocation)type {
     if (description.length >= 1) {
 //        _placeholderLabel.hidden = YES;

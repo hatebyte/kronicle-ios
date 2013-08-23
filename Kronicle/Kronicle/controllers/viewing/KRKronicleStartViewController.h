@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KRKronicle.h"
+#import "Kronicle+Helper.h"
 
 @interface KRKronicleStartViewController : UIViewController
 
-@property(nonatomic,strong) KRKronicle *kronicle;
+@property(nonatomic,strong) Kronicle *kronicle;
 @property(nonatomic, weak) IBOutlet UIImageView *kImage;
 @property(nonatomic, strong) UILabel *titleLabel;
 @property(nonatomic, strong) UITextView *description;
 
 - (IBAction)back:(id)sender;
 - (IBAction)gotoToKronicle:(id)sender;
-- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
+- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(Kronicle *)kronicle;
 
 @end

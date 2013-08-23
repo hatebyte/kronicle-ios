@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ManagedContextController.h"
 
 #import "KRHomeViewController.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
@@ -20,6 +21,8 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
     // Override point for customization after application launch.
 //    KRHomeViewController *viewController = [[KRHomeViewController alloc] initWithNibName:@"KRHomeViewController" bundle:nil];
     KRHomeViewController *viewController = [KRHomeViewController current];
@@ -29,6 +32,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 
+    
 //    [DDLog addLogger:[DDTTYLogger sharedInstance]];
 //    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
 //    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
@@ -39,6 +43,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 //    DDLogWarn(@"Toner is low");                            // Orange
 //    DDLogInfo(@"Warming up printer (pre-customization)");  // Default (black)
 //    DDLogVerbose(@"Intializing protcol x26");              // Default (black)
+    
+    [[ManagedContextController current] saveContext];
+
     
     return YES;
 }

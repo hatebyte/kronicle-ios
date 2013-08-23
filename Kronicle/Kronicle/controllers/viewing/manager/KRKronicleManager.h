@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KRKronicle.h"
-#import "KRStep.h"
+#import "Kronicle+Helper.h"
+#import "Step+Helper.h"
 
 typedef enum {
     KronicleManagerLeft,
@@ -18,8 +18,8 @@ typedef enum {
 @class KRKronicleManager;
 @protocol KRKronicleManagerDelegate <NSObject>
 
-- (void)manager:(KRKronicleManager *)manager updateUIForStep:(KRStep*)step;
-- (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step;
+- (void)manager:(KRKronicleManager *)manager updateUIForStep:(Step*)step;
+- (void)manager:(KRKronicleManager *)manager previewUIForStep:(Step*)step;
 - (void)kronicleComplete:(KRKronicleManager *)manager;
 
 @end
@@ -32,7 +32,7 @@ typedef enum {
 @property (nonatomic, assign) int previewStepIndex;
 @property (nonatomic, assign) KronicleManagerDirection requestedDirection;
 
-- (id)initWithKronicle:(KRKronicle *)kronicle;
+- (id)initWithKronicle:(Kronicle *)kronicle;
 - (void)setStep:(int)step;
 - (void)setPreviewStep:(int)step;
 

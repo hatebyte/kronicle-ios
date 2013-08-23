@@ -7,8 +7,7 @@
 //
 
 #import "KRScrollView.h"
-#import "KRKronicle.h"
-#import "KRStep.h"
+#import "Step+Helper.h"
 #import "DescriptionView.h"
 
 @interface KRScrollView () <UIScrollViewDelegate> {
@@ -19,7 +18,7 @@
 
 @implementation KRScrollView
 
-- (id)initWithFrame:(CGRect)frame andKronicle:(KRKronicle *)kronicle {
+- (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle {
     if (self = [super initWithFrame:frame]) {
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
@@ -29,7 +28,8 @@
         int count = [kronicle.steps count];
         DescriptionView *d;
         for (int i = 0; i < count; i++) {
-            KRStep *s = [kronicle.steps objectAtIndex:i];
+            Step *s = [kronicle.steps objectAtIndex:i];
+            NSLog(@"s.k : %d", s.indexInKronicle);
             d = [[DescriptionView alloc] initWithFrame:CGRectMake(frame.size.width * i,
                                                                                    0,
                                                                                    frame.size.width,
@@ -49,18 +49,18 @@
 }
 
 - (void)updateForLastStep {
-    NSArray *subViews = [self subviews];
-    DescriptionView *d;
-    for (int i = 0; i < subViews.count; i++) {
-        d  = [[self subviews] objectAtIndex:i];
-        [d resetClock];
-    }
-    [_currentStep updateForLastStep];
+//    NSArray *subViews = [self subviews];
+//    DescriptionView *d;
+//    for (int i = 0; i < subViews.count; i++) {
+//        d  = [[self subviews] objectAtIndex:i];
+//        [d resetClock];
+//    }
+    [_currentStep resetClock];
 }
 
 #pragma delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    int index = self.contentOffset.x / self.frame.size.width;
+    NSInteger index = self.contentOffset.x / self.frame.size.width;
     [_scrollDelegate scrollView:self pageToIndex:index];
 }
 

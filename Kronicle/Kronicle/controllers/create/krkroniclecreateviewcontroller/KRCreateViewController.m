@@ -118,8 +118,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [_tableView reloadData];
-
+    //[_tableView reloadData];
+    [self parseKronicleStepsToTable];
 
 }
 
@@ -141,11 +141,39 @@
 }
 
 - (IBAction)previewKronicle:(id)sender {
-    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:self.kronicle andViewingState:KRKronicleViewingStatePreview];
-    [self.navigationController pushViewController:playbackViewController animated:YES];
+//    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:self.kronicle andViewingState:KRKronicleViewingStatePreview];
+//    [self.navigationController pushViewController:playbackViewController animated:YES];
 }
 
-
+- (void)parseKronicleStepsToTable {
+     _kronicleSteps = [[NSMutableArray alloc] init];
+     int stepsMinusFinish = [_kronicle.steps count];
+     NSLog(@"step count %d", stepsMinusFinish);
+     if(stepsMinusFinish % 2 == 0) {
+         for (int i = 0; i < stepsMinusFinish; i++) {
+             int next = i + 1;
+             NSArray *inArray = [NSArray arrayWithObjects:[_kronicle.steps objectAtIndex:i], [_kronicle.steps objectAtIndex:next], nil];
+             [_kronicleSteps addObject:inArray];
+             i = next;
+         }
+         [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
+     } else {
+         for (int i = 0; i < stepsMinusFinish; i++) {
+             NSArray *inArray;
+             int next = i + 1;
+             if (next < stepsMinusFinish) {
+                 inArray = [NSArray arrayWithObjects:[_kronicle.steps objectAtIndex:i], [_kronicle.steps objectAtIndex:next], nil];
+             } else {
+                 inArray = [NSArray arrayWithObjects:[_kronicle.steps objectAtIndex:i], @"addStep", nil];
+             }
+             i= next;
+             [_kronicleSteps addObject:inArray];
+         }
+     }
+    
+    _previewButton.enabled =([_kronicle.steps count] > 0) ? YES : NO;
+    [_tableView reloadData];
+}
 
 #pragma tableview
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -252,12 +280,23 @@
 }
 
 - (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step {
-    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:step];
+    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:step andSaveBlock:^(KRStep *stepEdited) {
+        [self parseKronicleStepsToTable];
+    }];
     [self.navigationController pushViewController:createStepViewController animated:YES];
 }
 
 - (void)addStepRequested:(AddStepTableViewCell *)addStepTableViewCell {
-    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:[[KRStep alloc] init]];
+    KRStep *stepC = [[KRStep alloc] init];
+    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:stepC andSaveBlock:^(KRStep *step) {
+        NSMutableArray *steps =([_kronicle.steps count] > 0) ? [_kronicle.steps mutableCopy] : [[NSMutableArray alloc] init];
+        step.indexInKronicle = [steps count];
+        [steps addObject:stepC];
+        _kronicle.steps = [steps copy];
+        _kronicle.stepCount = [steps count];
+        
+        [self parseKronicleStepsToTable];
+    }];
     [self.navigationController pushViewController:createStepViewController animated:YES];
 }
 

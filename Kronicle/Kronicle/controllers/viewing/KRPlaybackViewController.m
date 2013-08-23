@@ -9,11 +9,8 @@
 #import "KRPlaybackViewController.h"
 #import "KRStep.h"
 #import "DescriptionView.h"
-//#import "KRViewListTypeViewController.h"
 #import "KRColorHelper.h"
 #import "KRFontHelper.h"
-
-
 #import "KRGlobals.h"
 #import "KRClockManager.h"
 #import "KRKronicleManager.h"
@@ -51,7 +48,7 @@
 
 @implementation KRPlaybackViewController
 
-- (id)initWithKronicle:(KRKronicle *)kronicle andViewingState:(KRKronicleViewingState)viewingState {
+- (id)initWithKronicle:(Kronicle *)kronicle andViewingState:(KRKronicleViewingState)viewingState {
     self = [self initWithKronicle:kronicle];
     if (self) {
         _viewingState = viewingState;
@@ -60,7 +57,7 @@
     return self;
 }
 
-- (id)initWithKronicle:(KRKronicle *)kronicle {
+- (id)initWithKronicle:(Kronicle *)kronicle {
     self = [super initWithNibName:@"KRPlaybackViewController" bundle:nil];
     if (self) {
         self.kronicle = kronicle;
@@ -72,9 +69,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSMutableArray *newSteps = [NSMutableArray arrayWithArray:self.kronicle.steps];
-    [newSteps removeLastObject];
-    self.kronicle.steps = newSteps;
+//    NSMutableArray *newSteps = [NSMutableArray arrayWithArray:self.kronicle.steps];
+//    [newSteps removeLastObject];
+//    self.kronicle.steps = newSteps;
     
     self.view.backgroundColor = [UIColor whiteColor];
     _bounds = [UIScreen mainScreen].bounds;
@@ -186,7 +183,8 @@
 
 
 #pragma KRKronicleManager delegate
-- (void)manager:(KRKronicleManager *)manager updateUIForStep:(KRStep*)step {
+- (void)manager:(KRKronicleManager *)manager updateUIForStep:(Step*)step {
+    NSLog(@"updateUIForStep : %d", _kronicleManager.currentStepIndex);
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
     }
@@ -199,14 +197,15 @@
     [_scrollView setCurrentStep:step.indexInKronicle];
     
     if (_kronicleManager.requestedDirection == KronicleManagerLeft) {
-        [_mediaView setMediaPath:step.imageUrl andType:MediaViewLeft];
+        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewLeft];
     } else {
-        [_mediaView setMediaPath:step.imageUrl andType:MediaViewRight];
+        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
     }
     
 }
 
-- (void)manager:(KRKronicleManager *)manager previewUIForStep:(KRStep*)step {
+- (void)manager:(KRKronicleManager *)manager previewUIForStep:(Step*)step {
+    NSLog(@"previewUIForStep : %d", _kronicleManager.currentStepIndex);
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
         [_graphView showDisplayWithReset:NO];
@@ -217,9 +216,9 @@
     [_scrollView scrollToPage:step.indexInKronicle];
 
     if (_kronicleManager.requestedDirection == KronicleManagerLeft) {
-        [_mediaView setMediaPath:step.imageUrl andType:MediaViewLeft];
+        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewLeft];
     } else {
-        [_mediaView setMediaPath:step.imageUrl andType:MediaViewRight];
+        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
     }
 }
 
@@ -227,7 +226,7 @@
     [_graphView updateForLastStep];
     [_circularGraphView updateForLastStep];
 //    [_stepListContainerView updateForLastStep];
-//    [_scrollView updateForLastStep];
+    [_scrollView updateForLastStep];
 }
 
 
@@ -254,14 +253,14 @@
 }
 
 
-#pragma KRSwipeUpScrollView delegate
-- (void)scrollView:(KRScrollView *)scrollView pageToIndex:(int)stepIndex {
+#pragma KRScrollView delegate
+- (void)scrollView:(KRScrollView *)scrollView pageToIndex:(NSInteger)stepIndex {
     [_kronicleManager setPreviewStep:stepIndex];
 }
 
 
 #pragma KRStepListView delegate
-- (void)stepListContainerView:(KRStepListContainerView*)stepListContainerView selectedByIndex:(int)stepIndex {
+- (void)stepListContainerView:(KRStepListContainerView*)stepListContainerView selectedByIndex:(NSInteger)stepIndex {
     [self setStep:stepIndex];
 }
 
@@ -272,11 +271,11 @@
 
 
 #pragma private methods
-- (void)previewStep:(int)step {
+- (void)previewStep:(NSInteger)step {
     [_kronicleManager setPreviewStep:step];
 }
 
-- (void)setStep:(int)step {
+- (void)setStep:(NSInteger)step {
     [_graphView showDisplayWithReset:YES];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];

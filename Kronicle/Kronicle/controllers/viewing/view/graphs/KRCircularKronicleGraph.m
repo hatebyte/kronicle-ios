@@ -8,7 +8,7 @@
 
 #import "KRCircularKronicleGraph.h"
 #import "KRGlobals.h"
-#import "KRStep.h"
+#import "Step+Helper.h"
 #import "KRFontHelper.h"
 #import "KRColorHelper.h"
 #import "KRClockManager.h"
@@ -25,7 +25,7 @@ CGFloat const _sidesBuffer = .42;
     CGFloat _endAngle;
     CGFloat _radius;
     CGFloat _ratio;
-    __weak KRKronicle *_kronicle;
+    __weak Kronicle *_kronicle;
     int _step;
     UILabel *_clockLabel;
     UILabel *_subClockLabel;
@@ -35,7 +35,7 @@ CGFloat const _sidesBuffer = .42;
 
 @implementation KRCircularKronicleGraph
 
-- (id)initWithFrame:(CGRect)frame andKronicle:(KRKronicle *)kronicle {
+- (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -79,16 +79,15 @@ CGFloat const _sidesBuffer = .42;
 }
 
 - (void)updateForLastStep {
-    
     // Remeber to change once data models are correct;
-    [self updateForCurrentStep:_kronicle.stepCount-2 andRatio:1.f andTimeCompleted:_kronicle.totalTime];
+    [self updateForCurrentStep:_kronicle.stepCount-1 andRatio:1.f andTimeCompleted:_kronicle.totalTime];
 }
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGFloat comingStartAngle = 0;
-    KRStep *kstep;
+    Step *kstep;
     for (int i = 0; i < _step+1; i++) {
         kstep = [_kronicle.steps objectAtIndex:i];
         comingStartAngle += kstep.time;

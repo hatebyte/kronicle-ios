@@ -19,7 +19,7 @@
 
 @implementation KRKronicleStartViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(KRKronicle *)kronicle;
+- (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(Kronicle *)kronicle;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.kImage.image = [UIImage imageNamed:self.kronicle.imageUrl];
+    self.kImage.image = [UIImage imageNamed:self.kronicle.coverUrl];
     //self.kImage.image = [UIImage imageNamed:@"ydstep1.png"];
 
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 162, 300, 50)];
@@ -49,7 +49,7 @@
                                                                     306,
                                                                     self.view.frame.size.height - titleHeight)];
     self.description.font = [KRFontHelper getFont:KRMinionProRegular withSize:16];
-    self.description.text = self.kronicle.description;
+    self.description.text = self.kronicle.desc;
     self.description.scrollEnabled = NO;
     self.description.textColor = [UIColor blackColor];
     //self.description.contentInset = UIEdgeInsetsMake(3,-8,3,0);

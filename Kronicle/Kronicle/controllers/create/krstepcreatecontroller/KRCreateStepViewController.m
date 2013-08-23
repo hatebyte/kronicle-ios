@@ -21,16 +21,19 @@
     UIButton *_addStepButton;
     CreateStepTimeView *_createStepTimeView;
     __weak KRStep *_step;
+    void (^_saveBlock)(KRStep *);
+
 }
 
 @end
 
 @implementation KRCreateStepViewController
 
-- (id)initWithStep:(KRStep *)step {
+- (id)initWithStep:(KRStep *)step andSaveBlock:(void (^)(KRStep *newStep))saveBlock {
     self = [super initWithNibName:@"KRCreateStepViewController" bundle:nil];
     if (self) {
         _step = step;
+        _saveBlock = saveBlock;
         
     }
     return self;
@@ -87,8 +90,22 @@
 }
 
 - (IBAction)save:(id)sender {
+//    _step.imageUrl =
+//
+    NSLog(@"ave : %d",  [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value]);
+
+    
+    _step.imageUrl          = [(AddMediaTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] value];
+    _step.time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
+    _step.title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
+    _step.description       = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
+    _saveBlock(_step);
+    
     [self.navigationController popViewControllerAnimated:YES];
+
 }
+
+
 
 
 #pragma time creator methods

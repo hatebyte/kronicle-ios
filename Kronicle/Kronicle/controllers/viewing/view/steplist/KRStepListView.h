@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KRStep.h"
+#import "Step.h"
 
 @class KRStepListView;
 @protocol KRStepListViewDelegate <NSObject>
@@ -19,9 +19,9 @@
 @interface KRStepListView : UIView
 
 @property(nonatomic, weak) id <KRStepListViewDelegate> delegate;
-@property(nonatomic, weak) KRStep *step;
+@property(nonatomic, weak) Step *step;
 
-- (id)initWithFrame:(CGRect)frame andStep:(KRStep *)step;
+- (id)initWithFrame:(CGRect)frame andStep:(Step *)step;
 - (void)setStepCompleted:(BOOL)isCompleted;
 - (void)setCurrentStep;
 - (void)updateCurrentStepWithRatio:(CGFloat)stepRatio;

@@ -13,9 +13,10 @@
 @interface AddTitleTableViewCell : KRFormFieldCell
 
 + (CGFloat)cellHeight;
-
-- (void)prepareForUseWithTitle:(NSString *)title andType:(AddTitleLocation)type;
 + (CGFloat)cellHeightForStep;
 + (CGFloat)cellHeightForKronicle;
+
+- (void)prepareForUseWithTitle:(NSString *)title andType:(AddTitleLocation)type;
+- (NSString *)value;
 
 @end

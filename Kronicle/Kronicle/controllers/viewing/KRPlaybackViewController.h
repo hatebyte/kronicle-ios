@@ -7,7 +7,7 @@
 //
 
 #import "KRHomeViewController.h"
-#import "KRKronicle.h"
+#import "Kronicle+Helper.h"
 #import "MediaView.h"
 
 typedef enum {
@@ -35,9 +35,9 @@ typedef enum {
 //    UIView *_totalbar;
 }
 
-@property (nonatomic, strong) KRKronicle *kronicle;
+@property (nonatomic, strong) Kronicle *kronicle;
 
-- (id)initWithKronicle:(KRKronicle *)kronicle andViewingState:(KRKronicleViewingState)viewingState;
-- (id)initWithKronicle:(KRKronicle *)kronicle ;
+- (id)initWithKronicle:(Kronicle *)kronicle andViewingState:(KRKronicleViewingState)viewingState;
+- (id)initWithKronicle:(Kronicle *)kronicle ;
 
 @end

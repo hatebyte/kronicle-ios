@@ -17,6 +17,7 @@
     ContentWithLabelView *_hours;
     ContentWithLabelView *_minutes;
     ContentWithLabelView *_seconds;
+    NSInteger _totalTime;
 }
 
 @end
@@ -64,9 +65,20 @@
     return self;
 }
 
+
+- (NSInteger)value {
+    NSLog(@"_totalTime : %d", _totalTime);
+    NSInteger hours         = [_hours.textValue integerValue] * 60 * 60;
+    NSInteger minutes       =  [_minutes.textValue integerValue] * 60;
+    NSInteger seconds       =  [_seconds.textValue integerValue];
+    
+    return (hours + minutes + seconds);
+}
+
 - (void)prepareForUserWithTime:(NSInteger)time {
     NSDictionary *timeDict                                  = [KRClockManager getTimeUnits:time];
     
+    _totalTime                                              = [[timeDict objectForKey:@"totalTime"] integerValue];
     NSInteger hours                                         = [[timeDict objectForKey:@"hours"] integerValue];
     NSInteger minutes                                       = [[timeDict objectForKey:@"minutes"] integerValue];
     NSInteger seconds                                       = [[timeDict objectForKey:@"seconds"] integerValue];
@@ -88,6 +100,7 @@
 #pragma received time notification
 -(void)timeChangeNoticificatioReceived:(NSNotification *)anote {
     NSDictionary *dict                                      = [anote userInfo];
+
     NSInteger timeValue                                     = [[dict objectForKey:@"currentValue"] integerValue];
     CreateStepTimeUnitType unit                             = [[dict objectForKey:@"unit"] integerValue];
     

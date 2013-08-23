@@ -20,7 +20,7 @@
 
 @implementation DescriptionView
 
-- (id)initWithFrame:(CGRect)frame andStep:(KRStep*)step
+- (id)initWithFrame:(CGRect)frame andStep:(Step*)step
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -74,7 +74,7 @@
 //        if (range.location != NSNotFound) {
 //            self.description.text = @"\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------\n\nG  ---------------------------------------------\nD  ---------------------------------------------\nA  ---00-----------------55-----------------00\nE  22------00---22------------00---22--------";
 //        }else {
-            self.description.text = self.step.description;
+            self.description.text = self.step.desc;
 //        }
         
         self.description.scrollEnabled = NO;
@@ -99,7 +99,7 @@
 }
 
 - (void)resetClock {
-    _clockLabel.text = [KRClockManager stringTimeForInt:(int)_step.time];
+    _clockLabel.text = [KRClockManager stringTimeForInt:_step.time];
 }
 
 - (void)updateForLastStep {

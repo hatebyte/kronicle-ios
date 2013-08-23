@@ -21,6 +21,7 @@
 @property (nonatomic, weak) id <AddMediaTableViewCellDelegate> delegate;
 
 - (void)prepareForUseWithImage:(NSString *)imagePath;
+- (NSString *)value;
 
 @end
 
