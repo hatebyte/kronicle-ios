@@ -8,11 +8,12 @@
 
 #import "Step+JSON.h"
 #import "ManagedContextController.h"
+#import "Step+Life.h"
 
 @implementation Step (JSON)
 
 + (Step *)readFromJSONDictionary:(NSDictionary *)dict {
-    Step *step                              = [[ManagedContextController current] getNewStep];
+    Step *step                              = [Step newStep];
     step.uuid                               = [dict objectForKey:@"_id"];
     step.title                              = [dict objectForKey:@"title"];
     step.desc                               = [dict objectForKey:@"description"];

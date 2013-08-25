@@ -7,11 +7,15 @@
 //
 
 #import "Step.h"
+#import "Kronicle+Helper.h"
 
 @interface Step (Helper)
 
-@property(nonatomic, readonly) NSInteger indexInKronicle;
-@property(nonatomic, readonly) NSInteger mediaType;
-@property(nonatomic, readonly) NSInteger time;
+@property(nonatomic, assign) NSInteger indexInKronicle;
+@property(nonatomic, assign) NSInteger mediaType;
+@property(nonatomic, assign) NSInteger time;
+
++ (NSString *)createCoverImageName;
+- (NSString *)fullMediaURL;
 
 @end

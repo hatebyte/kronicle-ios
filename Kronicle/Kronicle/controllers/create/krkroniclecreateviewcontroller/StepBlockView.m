@@ -19,19 +19,22 @@
     UITextView *_title;
     UIButton *_deleteButton;
     UITapGestureRecognizer *_tapper;
-    __weak KRStep *_step;
+    __weak Step *_step;
 }
 
 @end
 
 @implementation StepBlockView
 
-- (id)initWithFrame:(CGRect)frame andStep:(KRStep *)step {
+- (id)initWithFrame:(CGRect)frame andStep:(Step *)step {
     self = [super initWithFrame:frame];
     if (self) {
         _step = step;
         int padding = 6;
-        self.image                      = [UIImage imageNamed:_step.imageUrl];
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *imagePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", _step.mediaUrl]];
+
+        self.image                      = [UIImage imageWithContentsOfFile:imagePath];
         NSString *time = [KRClockManager stringTimeForInt:(int)_step.time];
         time =([[time substringToIndex:1] isEqualToString:@"0"]) ? [time substringFromIndex:1] : time;
         NSString *descriptionString     = [NSString stringWithFormat:@"%@ \n%@", _step.title, time];

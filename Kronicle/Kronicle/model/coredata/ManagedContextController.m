@@ -44,52 +44,14 @@
     }
 }
 
-- (Kronicle *)getNewKronicle {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"Kronicle" inManagedObjectContext:self.managedObjectContext];
-}
 
-- (Step *)getNewStep{
-    return [NSEntityDescription insertNewObjectForEntityForName:@"Step" inManagedObjectContext:self.managedObjectContext];
-}
-
-- (Category *)getNewCategory{
-    return [NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
-}
-
-- (Item *)getNewItem{
-    return [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
-}
-
-- (Kronicle *)getKronicleWithUuid:(NSString *)uuid {
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Kronicle"];
-    request.predicate = [NSPredicate predicateWithFormat:@"uuid = %@", uuid];
-    NSArray *matches = [self.managedObjectContext executeFetchRequest:request error:nil];
-    NSLog(@"matches : %@", matches);
-    
-    if ([matches count] == 0)
-        return nil;
-    return [matches lastObject];
-
-    
-//    NSFetchRequest *brabbleRequest = [NSFetchRequest fetchRequestWithEntityName:@"Brabble"];
-//    brabbleRequest.predicate = [NSPredicate predicateWithFormat:@"uuid = %@", uuid];
-//    NSArray *matches = [context executeFetchRequest:brabbleRequest error:nil];
-//    
-//    if ([matches count] > 1) {
-//        DLog(@"Brabble+Create -- more than one brabble with uuid:%@",uuid);
-//        NSRange range = NSMakeRange(1, [matches count]-1);
-//        for (Brabble *brab in [matches subarrayWithRange:range]) {
-//            [context deleteObject:brab];
-//        }
-//        
-//        return [matches objectAtIndex:0];
-//    }
-//    if ([matches count] == 0)
-//        return nil;
-//    return [matches lastObject];
+//- (Category *)getNewCategory{
+//    return [NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
+//}
 //
-}
+//- (Item *)getNewItem{
+//    return [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
+//}
 
 //- (NSArray *)getSaveKronicles {
 //    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext:self.managedObjectContext];

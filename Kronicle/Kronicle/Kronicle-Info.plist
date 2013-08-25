@@ -48,6 +48,23 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>defaultimages</key>
+	<array>
+		<string>burger-media-1.png</string>
+		<string>burger-media-2.png</string>
+		<string>burger-media-3.png</string>
+		<string>burger-media-4.png</string>
+		<string>burger-media-5.png</string>
+        <string>burger-media-6.png</string>
+        <string>yoga-media-1.png</string>
+        <string>yoga-media-2.png</string>
+        <string>yoga-media-3.png</string>
+        <string>yoga-media-4.png</string>
+        <string>yoga-media-5.png</string>
+        <string>yoga-media-6.png</string>
+        <string>yoga-media-7.png</string>
+        <string>crazytrain-media-1.png</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

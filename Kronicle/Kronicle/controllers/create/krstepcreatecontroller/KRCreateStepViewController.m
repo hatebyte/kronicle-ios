@@ -15,13 +15,14 @@
 #import "AddTitleTableViewCell.h"
 #import "AddDescriptionTableViewCell.h"
 #import "AddTimeCell.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface KRCreateStepViewController () <CreateStepTimeViewDelegate, AddMediaTableViewCellDelegate> {
+@interface KRCreateStepViewController () <CreateStepTimeViewDelegate, AddMediaTableViewCellDelegate, UIImagePickerControllerDelegate> {
     UIButton *_doneButton;
     UIButton *_addStepButton;
     CreateStepTimeView *_createStepTimeView;
-    __weak KRStep *_step;
-    void (^_saveBlock)(KRStep *);
+    __weak Step *_step;
+    void (^_saveBlock)(Step *);
 
 }
 
@@ -29,7 +30,7 @@
 
 @implementation KRCreateStepViewController
 
-- (id)initWithStep:(KRStep *)step andSaveBlock:(void (^)(KRStep *newStep))saveBlock {
+- (id)initWithStep:(Step *)step andSaveBlock:(void (^)(Step *newStep))saveBlock {
     self = [super initWithNibName:@"KRCreateStepViewController" bundle:nil];
     if (self) {
         _step = step;
@@ -49,9 +50,9 @@
     _doneButton                                     = [UIButton buttonWithType:UIButtonTypeCustom];
     _doneButton.backgroundColor                     = [KRColorHelper turquoise];
     _doneButton.titleLabel.font                     = [KRFontHelper getFont:KRBrandonRegular withSize:17];
+    _doneButton.frame                               = CGRectMake(kPadding, _bounds.size.height-(_buttonHeight+20), 70, _buttonHeight);
     [_doneButton setTitle:@"Done" forState:UIControlStateNormal];
     [_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _doneButton.frame = CGRectMake(kPadding, _bounds.size.height-(_buttonHeight+20), 70, _buttonHeight);
     [_doneButton addTarget:self action:@selector(save:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_doneButton];
    
@@ -75,6 +76,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
+    [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,19 +92,34 @@
 }
 
 - (IBAction)save:(id)sender {
-//    _step.imageUrl =
-//
-    NSLog(@"ave : %d",  [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value]);
+    [self updateStep];
+    
+    NSLog(@"_step.time : %d", _step.time);
+    NSLog(@"_step.title.length : %d", _step.title.length);
+    NSLog(@"_step.desc.length : %d", _step.desc.length);
+    if (_step.time < 1 || _step.title.length < 1 || _step.desc.length < 1) {
+        return;
+    }
 
     
-    _step.imageUrl          = [(AddMediaTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] value];
+    _saveBlock(_step);
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)addMediaPickerWithType:(UIImagePickerControllerSourceType)type {
+    [self updateStep];
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    [imagePicker setSourceType:type];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)updateStep {
     _step.time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
     _step.title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
-    _step.description       = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
-    _saveBlock(_step);
+    _step.desc              = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
     
-    [self.navigationController popViewControllerAnimated:YES];
-
 }
 
 
@@ -150,7 +167,6 @@
 
 
 - (void)createStepTimeView:(CreateStepTimeView *)durationCreatorView finishedWithValue:(NSInteger)value {
-
     NSDictionary *aDictionary                                 = [[NSDictionary alloc] initWithObjectsAndKeys:
                                                                  [NSNumber numberWithInteger:durationCreatorView.unit], @"unit",
                                                                  [NSNumber numberWithInteger:value], @"currentValue",
@@ -168,7 +184,6 @@
 #pragma tableview
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0;
-    
     switch (indexPath.row) {
         case 0:
             height = [AddMediaTableViewCell cellHeight];
@@ -201,7 +216,7 @@
             if (cell == nil) {
                 cell = [[AddMediaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MediaCell"];
             }
-            [cell prepareForUseWithImage:_step.imageUrl];
+            [cell prepareForUseWithImage:_step.mediaUrl];
             [(AddMediaTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
@@ -229,7 +244,7 @@
             if (!cell) {
                 cell = [[AddDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DescriptionCell"];
             }
-            [cell prepareForUseWithDescription:_step.description andType:AddTitleStep];
+            [cell prepareForUseWithDescription:_step.desc andType:AddTitleStep];
             [(AddDescriptionTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
@@ -263,5 +278,48 @@
     return height;
 }
 
+#pragma mark mediaCell delegate
+- (void)addMediaRequested:(AddMediaTableViewCell *)addItemsCell forType:(KRMediaType)type {
+    switch (type) {
+        case KRMediaCameraRoll:
+            [self addMediaPicker];
+            break;
+        case KRMediaCamera:
+            [self addCamera];
+            break;
+        case KRMediaVideo:
+            [self addCamera];
+            break;
+    }
+}
+
+
+#pragma mark media picker
+- (void)addMediaPicker {
+    [self addMediaPickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    [self.navigationController dismissViewControllerAnimated:NO completion:^() {
+        UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+        NSData *imageData = UIImagePNGRepresentation(image);
+        NSString *byteName = [Step createCoverImageName];
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *imagePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", byteName]];
+        [imageData writeToFile:imagePath atomically:YES];
+        _step.mediaUrl = byteName;
+        [_tableView reloadData];
+    }];
+    
+}
+
+
+#pragma mark camera
+
+- (void)addCamera {
+    [self addMediaPickerWithType:UIImagePickerControllerSourceTypeCamera];
+}
 
 @end

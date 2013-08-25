@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KRBaseEditTableViewController.h"
 #import "DurationCreatorView.h"
-#import "KRStep.h"
+#import "Step+Helper.h"
 
 @interface KRCreateStepViewController : KRBaseEditTableViewController {
     @private
@@ -17,7 +17,6 @@
 }
 
 
-- (id)initWithStep:(KRStep *)step andSaveBlock:(void (^)(KRStep *newStep))completion;
-;
+- (id)initWithStep:(Step *)step andSaveBlock:(void (^)(Step *newStep))completion;
 
 @end

@@ -18,9 +18,7 @@
 + (ManagedContextController *)current;
 
 - (void)saveContext;
-- (Kronicle *)getKronicleWithUuid:(NSString *)uuid;
-- (Kronicle *)getNewKronicle;
-- (Step *)getNewStep;
+
 - (Category *)getNewCategory;
 - (Item *)getNewItem;
 

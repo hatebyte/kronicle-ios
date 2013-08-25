@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "KRFormFieldCell.h"
 
+typedef enum {
+    KRMediaCameraRoll,
+    KRMediaCamera,
+    KRMediaVideo
+} KRMediaType;
+
 @class AddMediaTableViewCell;
 @protocol AddMediaTableViewCellDelegate <KRFormFieldCellDelegate>
 
-- (void)addMediaRequested:(AddMediaTableViewCell *)addItemsCell;
+- (void)addMediaRequested:(AddMediaTableViewCell *)addItemsCell forType:(KRMediaType)type;
 
 @end
 

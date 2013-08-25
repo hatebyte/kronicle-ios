@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "KRBaseEditTableViewController.h"
-#import "KRKronicle.h"
+#import "Kronicle.h"
 
 
 @interface KRCreateViewController : KRBaseEditTableViewController
 
-@property (nonatomic, strong) KRKronicle *kronicle;
+@property (nonatomic, strong) Kronicle *kronicle;
 
 @end

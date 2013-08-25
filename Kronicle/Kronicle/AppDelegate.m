@@ -18,10 +18,21 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSArray *kropsArray = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"defaultimages"];
+    for (NSString *imagepath in kropsArray) {
+        NSString *imageSavePath = [documentsDirectory stringByAppendingPathComponent:imagepath];
+
+        if ([fileManager fileExistsAtPath:imageSavePath] == NO) {
+            NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:imagepath]);
+            [imageData writeToFile:imageSavePath atomically:YES];
+        }
+    }
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
 //    KRHomeViewController *viewController = [[KRHomeViewController alloc] initWithNibName:@"KRHomeViewController" bundle:nil];

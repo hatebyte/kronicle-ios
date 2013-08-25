@@ -7,12 +7,25 @@
 //
 
 #import "Kronicle+Helper.h"
+#import "Kronicle+Life.h"
 #import "Kronicle+JSON.h"
 #import "KronicleEngine.h"
 #import "Step+Helper.h"
 #import "ManagedContextController.h"
 
 @implementation Kronicle (Helper)
+
++ (NSString *)makeUUID {
+    CFUUIDRef theUUID = CFUUIDCreate(NULL);
+    CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+    CFRelease(theUUID);
+    return (__bridge NSString *)string;
+}
+
++ (NSString *)createCoverImageName {
+    return [NSString stringWithFormat:@"coverimage_%@.png", [Kronicle makeUUID]];
+}
+
 + (void)getLocaleKronicles:(void (^)(NSArray *kronicles))successBlock
                  onFailure:(void (^)(NSDictionary *dict))failBlock {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Kronicle"];
@@ -73,7 +86,7 @@
     [[KronicleEngine current] fetchKronicle:uuid
                              withCompletion:^(NSDictionary *dict) {
 
-                                 Kronicle *k = [[ManagedContextController current] getKronicleWithUuid:[dict objectForKey:@"_id"]];
+                                 Kronicle *k = [Kronicle getKronicleWithUuid:[dict objectForKey:@"_id"]];
                                  if (!k || k.steps.count < 1) {
                                      k = [Kronicle readFromJSONDictionary:dict];
                                      [[ManagedContextController current] saveContext];
@@ -117,6 +130,10 @@
 
 
 // conversion helpers
+- (NSString *)fullCoverURL {
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    return [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", self.coverUrl]];
+}
 
 - (NSArray *)items {
     return [self.itemsSet allObjects];
@@ -129,8 +146,16 @@
     return [stepsArray sortedArrayUsingDescriptors:sortDescriptors];;
 }
 
+- (void)setSteps:(NSArray *)steps {
+    [self setValue:[NSSet setWithArray:steps] forKey:@"stepsSet"];
+}
+
 - (NSInteger)stepCount {
     return [self.stepCountNumber integerValue];
+}
+
+- (void)setStepCount:(NSInteger)stepCount {
+    self.stepCountNumber = [NSNumber numberWithInteger:stepCount];
 }
 
 - (NSInteger)totalTime {
@@ -144,6 +169,11 @@
 - (NSInteger)rating {
     return [self.ratingNumber floatValue];
 }
+
+- (void)setRating:(NSInteger)rating {
+    self.ratingNumber = [NSNumber numberWithInteger:rating];
+}
+
 
 
 @end

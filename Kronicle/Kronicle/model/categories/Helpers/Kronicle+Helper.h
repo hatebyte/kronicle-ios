@@ -13,11 +13,14 @@
 
 @interface Kronicle (Helper)
 
-@property(nonatomic, readonly) NSArray *items;
-@property(nonatomic, readonly) NSArray *steps;
-@property(nonatomic, readonly) NSInteger stepCount;
+@property(nonatomic, copy) NSArray *items;
+@property(nonatomic, copy) NSArray *steps;
+@property(nonatomic, assign) NSInteger stepCount;
 @property(nonatomic, readonly) NSInteger totalTime;
-@property(nonatomic, readonly) NSInteger rating;
+@property(nonatomic, assign) NSInteger rating;
+
++ (NSString *)makeUUID;
++ (NSString *)createCoverImageName;
 
 + (void)getLocaleKronicles:(void (^)(NSArray *kronicles))successBlock
                  onFailure:(void (^)(NSDictionary *dict))failBlock;
@@ -37,5 +40,6 @@
                                  withSuccess:(void (^)(Kronicle *kronicle))successBlock
                                    onFailure:(void (^)(NSDictionary *dict))failBlock;
 
+- (NSString *)fullCoverURL;
 
 @end

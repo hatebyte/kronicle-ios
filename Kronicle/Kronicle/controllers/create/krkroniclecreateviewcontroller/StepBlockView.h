@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KRStep.h"
+#import "Step.h"
 
 typedef enum {
     StepBlockTypeDefault,
@@ -25,7 +25,7 @@ typedef enum {
 
 @property (nonatomic, weak) id <StepBlockViewDelegate> delegate;
 
-- (id)initWithFrame:(CGRect)frame andStep:(KRStep *)step;
+- (id)initWithFrame:(CGRect)frame andStep:(Step *)step;
 - (id)initAsAddStepWithFrame:(CGRect)frame;
 
 @end

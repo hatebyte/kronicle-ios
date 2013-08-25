@@ -7,11 +7,10 @@
 //
 
 #import "KRCreateViewController.h"
-#import "KRStep.h"
+#import "Step.h"
 #import "KRCreateStepViewController.h"
 #import "KRHomeViewController.h"
 #import "KRNavigationViewController.h"
-#import "KRStep.h"
 #import "AddTitleTableViewCell.h"
 #import "AddDescriptionTableViewCell.h"
 #import "AddStepTableViewCell.h"
@@ -24,6 +23,8 @@
 #import "AddItemsCell.h"
 #import "KRItemsViewController.h"
 
+#import "Kronicle+Life.h"
+#import "Step+Life.h"
 
 @interface KRCreateViewController () <AddItemsCellDelegate, AddStepTableViewCellDelegate> {
     @private
@@ -108,11 +109,9 @@
 //                                      NSLog(@"error : %@", error);
 //                                  }];
 
-     _kronicle = [[KRKronicle alloc] init];
+     _kronicle = [Kronicle newKronicle];
      _kronicleSteps = [[NSMutableArray alloc] init];
      [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
-    //                                 _previewButton.enabled = YES;
-    //                                 [_tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -141,14 +140,13 @@
 }
 
 - (IBAction)previewKronicle:(id)sender {
-//    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:self.kronicle andViewingState:KRKronicleViewingStatePreview];
-//    [self.navigationController pushViewController:playbackViewController animated:YES];
+    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:self.kronicle andViewingState:KRKronicleViewingStatePreview];
+    [self.navigationController pushViewController:playbackViewController animated:YES];
 }
 
 - (void)parseKronicleStepsToTable {
      _kronicleSteps = [[NSMutableArray alloc] init];
      int stepsMinusFinish = [_kronicle.steps count];
-     NSLog(@"step count %d", stepsMinusFinish);
      if(stepsMinusFinish % 2 == 0) {
          for (int i = 0; i < stepsMinusFinish; i++) {
              int next = i + 1;
@@ -221,7 +219,7 @@
             if (!cell) {
                 cell = [[AddDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DescriptionCell"];
             }
-            [cell prepareForUseWithDescription:_kronicle.description andType:AddTitleKronicle];
+            [cell prepareForUseWithDescription:_kronicle.desc andType:AddTitleKronicle];
             [(AddDescriptionTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
@@ -252,7 +250,6 @@
 
 - (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType {
     CGFloat height = 0;
-    
     switch (cellType) {
         case KRFormFieldCellTypeAddTitle:
             height = [AddTitleTableViewCell cellHeight];
@@ -275,20 +272,20 @@
 }
 
 #pragma mark AddStepTableViewCell delegate
-- (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step {
+- (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(Step *)step {
     NSLog(@"stepDeletionRequested");
 }
 
-- (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step {
-    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:step andSaveBlock:^(KRStep *stepEdited) {
+- (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(Step *)step {
+    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:step andSaveBlock:^(Step *stepEdited) {
         [self parseKronicleStepsToTable];
     }];
     [self.navigationController pushViewController:createStepViewController animated:YES];
 }
 
 - (void)addStepRequested:(AddStepTableViewCell *)addStepTableViewCell {
-    KRStep *stepC = [[KRStep alloc] init];
-    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:stepC andSaveBlock:^(KRStep *step) {
+    Step *stepC = [Step newStep];
+    KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:stepC andSaveBlock:^(Step *step) {
         NSMutableArray *steps =([_kronicle.steps count] > 0) ? [_kronicle.steps mutableCopy] : [[NSMutableArray alloc] init];
         step.indexInKronicle = [steps count];
         [steps addObject:stepC];

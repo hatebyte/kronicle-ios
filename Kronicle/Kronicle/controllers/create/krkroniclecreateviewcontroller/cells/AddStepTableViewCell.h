@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KRStep.h"
+#import "Step.h"
 
 @class AddStepTableViewCell;
 @protocol AddStepTableViewCellDelegate <NSObject>
 
-- (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step;
-- (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(KRStep *)step;
+- (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(Step *)step;
+- (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(Step *)step;
 - (void)addStepRequested:(AddStepTableViewCell *)addStepTableViewCell;
 
 @end

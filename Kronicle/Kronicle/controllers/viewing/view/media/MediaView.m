@@ -124,7 +124,12 @@
     if (range.location != NSNotFound) {
         [self loadVideo];
     } else {
-        _imageView.image = [UIImage imageNamed:mediaPath];
+        //_imageView.image = [UIImage imageNamed:mediaPath];
+
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *imagePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", mediaPath]];
+        NSLog(@"imagePath : %@",imagePath);
+        _imageView.image = [UIImage imageWithContentsOfFile:imagePath];
 //        [self addSubview:_imageView];
         [self transitionViewToStage:_imageView];
 
@@ -163,7 +168,6 @@
         __block id loadStateObs = [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerLoadStateDidChangeNotification object:_moviePlayer queue:nil usingBlock:^(NSNotification *notification){
             [self playbackLoadStateChanged:notification];
         }];
-        NSLog(@"loadStateObs : %@",loadStateObs);
     }
     _moviePlayer.view.frame = CGRectMake(0,0,self.frame.size.width, self.frame.size.height);
     _moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;

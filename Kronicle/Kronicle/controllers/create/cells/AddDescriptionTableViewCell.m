@@ -102,10 +102,10 @@
 
 - (void)prepareForUseWithDescription:(NSString *)description andType:(AddTitleLocation)type {
     if (description.length >= 1) {
-//        _placeholderLabel.hidden = YES;
+        _placeholderLabel.hidden = YES;
         _textArea.text = description;
     } else {
-//        _placeholderLabel.hidden = NO;
+        _placeholderLabel.hidden = NO;
     }
     _screenType                             = type;
 //    [self showContracted];

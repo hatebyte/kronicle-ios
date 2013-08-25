@@ -43,8 +43,7 @@
         _imageView.backgroundColor                          = [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.1f];
         [self.contentView addSubview:_imageView];
         
-        
-        _mediaBar                                          = [[UIImageView alloc] initWithFrame:CGRectMake(10,
+        _mediaBar                                          = [[UIView alloc] initWithFrame:CGRectMake(10,
                                                                                                            ([AddMediaTableViewCell cellHeight] - 95) * .5,
                                                                                                            300,
                                                                                                            95)];
@@ -67,29 +66,45 @@
         _camRoll = [[ContentWithLabelView alloc] initWithFrame:CGRectMake(_add.frame.origin.x + _add.frame.size.width + padding-8, _add.frame.origin.y, _add.frame.size.width, _add.frame.size.height)
                                                       andTitle:@"cam roll"
                                                       andImage:[UIImage imageNamed:@"camroll"]];
-//        [_camRoll addTarget:self withSelector:@selector(camRollTapped:)];
+        [_camRoll addTarget:self withSelector:@selector(camRollTapped)];
         [_mediaBar addSubview:_camRoll];
         
         _camera = [[ContentWithLabelView alloc] initWithFrame:CGRectMake(_camRoll.frame.origin.x + _camRoll.frame.size.width + padding+4, _add.frame.origin.y, _add.frame.size.width, _add.frame.size.height)
                                                      andTitle:@"camera"
                                                      andImage:[UIImage imageNamed:@"camera"]];
-//        [_camRoll addTarget:self withSelector:@selector(cameraTapped:)];
+        [_camera addTarget:self withSelector:@selector(cameraTapped)];
         [_mediaBar addSubview:_camera];
 
         _video = [[ContentWithLabelView alloc] initWithFrame:CGRectMake(_camera.frame.origin.x + _camera.frame.size.width + padding, _add.frame.origin.y, _add.frame.size.width, _add.frame.size.height)
                                                     andTitle:@"video"
                                                     andImage:[UIImage imageNamed:@"video"]];
-//        [_camRoll addTarget:self withSelector:@selector(videoTapped:)];
+        [_video addTarget:self withSelector:@selector(videoTapped)];
         [_mediaBar addSubview:_video];
         
         self.contentView.backgroundColor                    = [UIColor blackColor];
         self.clipsToBounds                                  = YES;
+        
     }
     return self;
 }
 
 - (void)prepareForUseWithImage:(NSString *)imagePath {
-    _imageView.image = [UIImage imageNamed:imagePath];
+    NSLog(@"imagePath : %@",imagePath);
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *imageUrl = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", imagePath]];
+    _imageView.image = [UIImage imageWithContentsOfFile:imageUrl];
+}
+
+- (void)camRollTapped {
+    [self.delegate addMediaRequested:self forType:KRMediaCameraRoll];
+}
+
+- (void)cameraTapped {
+    [self.delegate addMediaRequested:self forType:KRMediaCamera];
+}
+
+- (void)videoTapped {
+    [self.delegate addMediaRequested:self forType:KRMediaVideo];
 }
 
 - (NSString *)value {

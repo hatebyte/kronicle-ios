@@ -12,6 +12,7 @@
 #import "Item.h"
 #import "Category.h"
 #import "Step+Helper.h"
+#import "Kronicle+Life.h"
 
 @implementation Kronicle (JSON)
 
@@ -30,7 +31,7 @@
 }
 
 + (Kronicle *)kronicleShortFromJSONDictionary:(NSDictionary *)dict {
-    Kronicle *kronicle                      = [[ManagedContextController current] getNewKronicle];
+    Kronicle *kronicle                      = [Kronicle newKronicle];
     kronicle.uuid                           = [dict objectForKey:@"_id"];
     kronicle.title                          = [dict objectForKey:@"title"];
     kronicle.desc                           = [dict objectForKey:@"description"];

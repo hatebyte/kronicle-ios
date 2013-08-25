@@ -47,7 +47,7 @@
         _contentValueButton                             = [UIButton buttonWithType:UIButtonTypeCustom];
         _contentValueButton.frame                       = CGRectMake((frame.size.width-60) * .5, 10, 60, 45);
         _contentValueButton.backgroundColor             = [UIColor clearColor];
-
+        
         _contentValueLabel                              = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                                                     (_contentValueButton.frame.origin.y + _contentValueButton.frame.size.height) - 4,
                                                                                                     frame.size.width,
@@ -56,9 +56,8 @@
         _contentValueLabel.font                         = [KRFontHelper getFont:KRBrandonRegular withSize:17];
         _contentValueLabel.textColor                    = [UIColor whiteColor];
         _contentValueLabel.textAlignment                = UITextAlignmentCenter;
-        [self addSubview:_contentValueButton];
         [self addSubview:_contentValueLabel];
-        
+        [self addSubview:_contentValueButton];
         
         self.backgroundColor = [UIColor clearColor];
     }
