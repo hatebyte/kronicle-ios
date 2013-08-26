@@ -76,12 +76,15 @@
 
 - (void)update {
     self.stepCount = [self.steps count];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"indexInKronicleNumber" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *orderedArray = [self.steps sortedArrayUsingDescriptors:sortDescriptors];
+    self.steps = orderedArray;
     for (NSInteger i = 0; i < self.stepCount; i++) {
         Step *s = [self.steps objectAtIndex:i];
         s.indexInKronicle = i;
     }
     self.lastDateChanged = [NSDate date];
-
     [[ManagedContextController current] saveContext];
 }
 

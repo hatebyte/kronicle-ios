@@ -114,7 +114,7 @@
     _progressBarView.frame = CGRectMake(0, 0, 0, self.frame.size.height);
 }
 
-- (void)updateForLastStep {
+- (void)updateForFinished {
     [self removeRunLoop];
     _destVal = 1;
     _progressBarView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);

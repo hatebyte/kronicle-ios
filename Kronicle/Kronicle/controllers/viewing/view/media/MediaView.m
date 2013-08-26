@@ -8,7 +8,7 @@
 
 #import "MediaView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "KRFontHelper.h"
+#import "KRGlobals.h"
 
 @interface MediaView () <UIGestureRecognizerDelegate> {
     @private
@@ -16,6 +16,11 @@
     UILabel *_pauseLabel;
     UIView *_pauseView;
     UITapGestureRecognizer *_cellTapper;
+    
+    UIView *_finishOverlay;
+    UITextView *_description;
+    UIButton *_shareButton;
+    UIButton *_reviewButton;
 }
 @end
 
@@ -115,6 +120,8 @@
     if ([_mediaPath isEqualToString:mediaPath]) {
         return;
     }
+    //[self animateOutFinishedOverlay];
+
     _transition =(type == MediaViewLeft) ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight;
     self.isVideo = NO;
 
@@ -165,7 +172,7 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
         
-        __block id loadStateObs = [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerLoadStateDidChangeNotification object:_moviePlayer queue:nil usingBlock:^(NSNotification *notification){
+        [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerLoadStateDidChangeNotification object:_moviePlayer queue:nil usingBlock:^(NSNotification *notification){
             [self playbackLoadStateChanged:notification];
         }];
     }
@@ -201,13 +208,92 @@
     _moviePlayer = nil;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void)updateForFinishedWithImage:(NSString *)coverImageUrl andTitle:(NSString *)title {
+    [self setMediaPath:coverImageUrl andType:MediaViewRight];
+    
+    _finishOverlay                          = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    _finishOverlay.backgroundColor          = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.6f];
+    _finishOverlay.alpha                    = 0.f;
+    _finishOverlay.hidden                   = YES;
+    
+    _description                            = [[UITextView alloc] init];
+    _description.font                       = [KRFontHelper getFont:KRBrandonLight withSize:46];
+    _description.text                       = title;
+    _description.scrollEnabled              = NO;
+    _description.textColor                  = [UIColor whiteColor];
+    _description.editable                   = NO;
+    _description.backgroundColor            = [UIColor clearColor];
+    CGSize descriptionSize                  = [_description sizeThatFits:CGSizeMake(320 - (2 * kPadding), 2000)];
+    _description.frame                      = CGRectMake(kPadding, 50, descriptionSize.width, descriptionSize.height);
+    [_finishOverlay addSubview:_description];
+    
+    NSInteger buttonHeight                                     = 40;
+    _reviewButton                                              = [UIButton buttonWithType:UIButtonTypeCustom];
+    _reviewButton.backgroundColor                              = [KRColorHelper turquoise];
+    _reviewButton.titleLabel.font                              = [KRFontHelper getFont:KRBrandonRegular withSize:17];
+    _reviewButton.frame                                        = CGRectMake(kPadding, _description.frame.origin.y + _description.frame.size.height + 20, 80, buttonHeight);
+    [_reviewButton setTitle:NSLocalizedString(@"Review", @"finished screen review button") forState:UIControlStateNormal];
+    [_reviewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //    [_shareButton addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
+    [_finishOverlay addSubview:_reviewButton];
+    
+    _shareButton                                              = [UIButton buttonWithType:UIButtonTypeCustom];
+    _shareButton.backgroundColor                              = [KRColorHelper turquoise];
+    _shareButton.titleLabel.font                              = [KRFontHelper getFont:KRBrandonRegular withSize:17];
+    _shareButton.frame                                        = CGRectMake(kPadding + _reviewButton.frame.origin.x + _reviewButton.frame.size.width,
+                                                                            _reviewButton.frame.origin.y,
+                                                                            _reviewButton.frame.size.width,
+                                                                            _reviewButton.frame.size.height);
+    [_shareButton setTitle:NSLocalizedString(@"Share", @"finished screen share button") forState:UIControlStateNormal];
+    [_shareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //    [_reviewButton addTarget:self action:@selector(review) forControlEvents:UIControlEventTouchUpInside];
+    [_finishOverlay addSubview:_shareButton];
+    
+    [self addSubview:_finishOverlay];
+    [self animateInFinishedOverlay];
 }
-*/
+
+- (void)animateInFinishedOverlay {
+    _finishOverlay.hidden = NO;
+    _finishOverlay.alpha = 0.f;
+    [UIView animateWithDuration:.5
+                          delay:.7f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _finishOverlay.alpha = 1.f;
+                     }
+                     completion:^(BOOL fin){
+                     }];
+    
+}
+
+- (void)animateOutFinishedOverlay {
+    [UIView animateWithDuration:.5
+                          delay:.7f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _finishOverlay.alpha = 0.f;
+                     }
+                     completion:^(BOOL fin){
+                         _finishOverlay.hidden = YES;
+                     }];
+    
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

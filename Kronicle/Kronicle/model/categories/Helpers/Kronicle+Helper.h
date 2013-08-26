@@ -41,6 +41,9 @@
                                  withSuccess:(void (^)(Kronicle *kronicle))successBlock
                                    onFailure:(void (^)(NSDictionary *dict))failBlock;
 
++ (NSArray *)moduloKronicleList:(NSArray *)kronicles;
+
 - (NSString *)fullCoverURL;
+
 
 @end

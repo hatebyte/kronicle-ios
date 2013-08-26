@@ -18,8 +18,9 @@
 
 
 - (id)initWithFrame:(CGRect)frame andStep:(Step*)step;
+- (id)initAsFinishedWithFrame:(CGRect)frame;
 - (void)updateClock:(NSString *)timeString;
 - (void)resetClock;
-- (void)updateForLastStep;
+- (void)updateForFinished;
 
 @end

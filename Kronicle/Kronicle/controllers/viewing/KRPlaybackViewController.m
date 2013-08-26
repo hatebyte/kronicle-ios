@@ -222,10 +222,13 @@
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
-    [_graphView updateForLastStep];
-    [_circularGraphView updateForLastStep];
+    [_graphView updateForFinished];
+    [_circularGraphView updateForFinished];
 //    [_stepListContainerView updateForLastStep];
-    [_scrollView updateForLastStep];
+    [_scrollView updateForFinished];
+    
+    [_stepNavigation updateForFinished];
+    [_mediaView updateForFinishedWithImage:_kronicle.coverUrl andTitle:_kronicle.title];
 }
 
 
@@ -248,7 +251,6 @@
             [self setStep:0];
             break;
     }
-
 }
 
 
@@ -256,7 +258,6 @@
 - (void)scrollView:(KRScrollView *)scrollView pageToIndex:(NSInteger)stepIndex {
     [_kronicleManager setPreviewStep:stepIndex];
 }
-
 
 #pragma KRStepListView delegate
 - (void)stepListContainerView:(KRStepListContainerView*)stepListContainerView selectedByIndex:(NSInteger)stepIndex {
@@ -271,11 +272,13 @@
 
 #pragma private methods
 - (void)previewStep:(NSInteger)step {
+    [_stepNavigation reset];
     [_kronicleManager setPreviewStep:step];
 }
 
 - (void)setStep:(NSInteger)step {
     NSLog(@"steps : %@", _kronicle.steps);
+    [_stepNavigation reset];
     [_graphView showDisplayWithReset:YES];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];

@@ -29,6 +29,6 @@ typedef enum {
 - (void)scrollToPage:(int)page;
 - (void)updateCurrentStepClock:(NSString *)timeString;
 - (void)setCurrentStep:(int)stepIndex;
-- (void)updateForLastStep;
+- (void)updateForFinished;
 
 @end

@@ -17,6 +17,6 @@
 - (void)showPreview:(BOOL)hasPassed;
 - (void)reset;
 - (void)removeRunLoop;
-- (void)updateForLastStep;
+- (void)updateForFinished;
 
 @end

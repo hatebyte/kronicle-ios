@@ -78,7 +78,7 @@ CGFloat const _sidesBuffer = .42;
     [self setNeedsDisplay];
 }
 
-- (void)updateForLastStep {
+- (void)updateForFinished {
     // Remeber to change once data models are correct;
     [self updateForCurrentStep:_kronicle.stepCount-1 andRatio:1.f andTimeCompleted:_kronicle.totalTime];
 }

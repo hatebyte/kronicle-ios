@@ -36,5 +36,6 @@ typedef enum  {
 - (void)pause;
 - (void)play;
 - (UIImage *)image;
+- (void)updateForFinishedWithImage:(NSString *)coverImageUrl andTitle:(NSString *)title;
 
 @end
