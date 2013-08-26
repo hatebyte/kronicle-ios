@@ -2,7 +2,7 @@
 //  Kronicle.h
 //  Kronicle
 //
-//  Created by Scott on 8/22/13.
+//  Created by Scott on 8/25/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * totalTimeNumber;
 @property (nonatomic, retain) NSString * uuid;
+@property (nonatomic, retain) NSNumber * isFinishedNumber;
 @property (nonatomic, retain) Category *category;
 @property (nonatomic, retain) User *creator;
 @property (nonatomic, retain) NSSet *itemsSet;

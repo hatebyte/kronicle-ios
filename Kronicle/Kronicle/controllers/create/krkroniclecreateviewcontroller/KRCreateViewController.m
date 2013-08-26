@@ -22,8 +22,10 @@
 #import "KRPlaybackViewController.h"
 #import "AddItemsCell.h"
 #import "KRItemsViewController.h"
+#import "ManagedContextController.h"
 
 #import "Kronicle+Life.h"
+#import "Kronicle+Helper.h"
 #import "Step+Life.h"
 
 @interface KRCreateViewController () <AddItemsCellDelegate, AddStepTableViewCellDelegate> {
@@ -61,7 +63,7 @@
     _previewButton                                              = [UIButton buttonWithType:UIButtonTypeCustom];
     _previewButton.backgroundColor                              = [KRColorHelper orange];
     _previewButton.titleLabel.font                              = [KRFontHelper getFont:KRBrandonRegular withSize:17];
-    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height - (_buttonHeight + 20), 141, _buttonHeight);
+    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
     [_previewButton setTitle:@"Preview" forState:UIControlStateNormal];
     [_previewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_previewButton addTarget:self action:@selector(previewKronicle:) forControlEvents:UIControlEventTouchUpInside];
@@ -73,43 +75,7 @@
                                                  name:@"DurationCreation"
                                                object:nil];
 
-    
-//    [[KronicleEngine current] fetchKronicle:@"5212239cb0747df172000002"
-//                             withCompletion:^(KRKronicle *kronicle) {
-//                                 
-//                                 _kronicle = kronicle;
-//                                 _kronicleSteps = [[NSMutableArray alloc] init];
-//                                 int stepsMinusFinish = kronicle.stepCount;
-//                                 NSLog(@"step count %d", kronicle.stepCount);
-//                                 if(stepsMinusFinish % 2 == 0) {
-//                                     for (int i = 0; i < stepsMinusFinish; i++) {
-//                                         int next = i + 1;
-//                                         NSArray *inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], [kronicle.steps objectAtIndex:next], nil];
-//                                         [_kronicleSteps addObject:inArray];
-//                                         i = next;
-//                                     }
-//                                     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
-//                                 } else {
-//                                     for (int i = 0; i < stepsMinusFinish; i++) {
-//                                         NSArray *inArray;
-//                                         int next = i + 1;
-//                                         if (next < stepsMinusFinish) {
-//                                             inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], [kronicle.steps objectAtIndex:next], nil];
-//                                         } else {
-//                                             inArray = [NSArray arrayWithObjects:[kronicle.steps objectAtIndex:i], @"addStep", nil];
-//                                         }
-//                                         i= next;
-//                                         [_kronicleSteps addObject:inArray];
-//                                     }
-//                                 }
-//                                 _previewButton.enabled = YES;
-//                                 [_tableView reloadData];
-//                             }
-//                                  onFailure:^(NSError *error) {
-//                                      NSLog(@"error : %@", error);
-//                                  }];
-
-     _kronicle = [Kronicle newKronicle];
+    _kronicle = [Kronicle getUnfinishedKronicle];
      _kronicleSteps = [[NSMutableArray alloc] init];
      [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
 }
@@ -117,7 +83,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    //[_tableView reloadData];
     [self parseKronicleStepsToTable];
 
 }
@@ -128,11 +93,33 @@
 }
 
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)validate {
+    _kronicle.title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] value];
+    _kronicle.desc              = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
+
+    if (_kronicle.title.length < 1 || _kronicle.desc.length < 1 || [_kronicle.steps count] < 1) {
+        [UIView animateWithDuration:.4
+                              delay:.3
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
+                         }
+                         completion:^(BOOL fin){}];
+    } else {
+        [UIView animateWithDuration:.4
+                              delay:.5
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height - (_buttonHeight + 20), 141, _buttonHeight);
+                         }
+                         completion:^(BOOL fin){}];
+    }
 }
 
 - (IBAction)popViewController:(id)sender {
@@ -140,13 +127,15 @@
 }
 
 - (IBAction)previewKronicle:(id)sender {
-    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:self.kronicle andViewingState:KRKronicleViewingStatePreview];
+    NSLog(@"Kronicle : %@", _kronicle);
+    
+    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:_kronicle andViewingState:KRKronicleViewingStatePreview];
     [self.navigationController pushViewController:playbackViewController animated:YES];
 }
 
 - (void)parseKronicleStepsToTable {
      _kronicleSteps = [[NSMutableArray alloc] init];
-     int stepsMinusFinish = [_kronicle.steps count];
+     int stepsMinusFinish = _kronicle.stepCount;
      if(stepsMinusFinish % 2 == 0) {
          for (int i = 0; i < stepsMinusFinish; i++) {
              int next = i + 1;
@@ -171,6 +160,8 @@
     
     _previewButton.enabled =([_kronicle.steps count] > 0) ? YES : NO;
     [_tableView reloadData];
+    
+    [self validate];
 }
 
 #pragma tableview
@@ -273,25 +264,31 @@
 
 #pragma mark AddStepTableViewCell delegate
 - (void)stepDeletionRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(Step *)step {
-    NSLog(@"stepDeletionRequested");
+    [Step deleteStep:step];
+    [_kronicle update];
+    [self parseKronicleStepsToTable];
 }
 
 - (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(Step *)step {
     KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:step andSaveBlock:^(Step *stepEdited) {
+
+        stepEdited.lastDateChanged = [NSDate date];
+        [self parseKronicleStepsToTable];
+        [_kronicle update];
         [self parseKronicleStepsToTable];
     }];
     [self.navigationController pushViewController:createStepViewController animated:YES];
 }
 
 - (void)addStepRequested:(AddStepTableViewCell *)addStepTableViewCell {
-    Step *stepC = [Step newStep];
+    if (_kronicle.title.length < 1 || _kronicle.desc.length < 1) {
+        return;
+    }
+    
+    Step *stepC = [Step newUnfinishedStep];
     KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:stepC andSaveBlock:^(Step *step) {
-        NSMutableArray *steps =([_kronicle.steps count] > 0) ? [_kronicle.steps mutableCopy] : [[NSMutableArray alloc] init];
-        step.indexInKronicle = [steps count];
-        [steps addObject:stepC];
-        _kronicle.steps = [steps copy];
-        _kronicle.stepCount = [steps count];
-        
+        step.parentKronicle = _kronicle;
+        [_kronicle update];
         [self parseKronicleStepsToTable];
     }];
     [self.navigationController pushViewController:createStepViewController animated:YES];

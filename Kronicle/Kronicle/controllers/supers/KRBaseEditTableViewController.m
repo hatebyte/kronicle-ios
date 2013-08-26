@@ -59,6 +59,7 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 
+- (void)validate {}
 
 #pragma uitableview
 
@@ -159,18 +160,22 @@
     _tableIsExpanded = NO;
     [_tableView beginUpdates];
     [_tableView endUpdates];
+    
+    [self validate];
 }
 
 - (void)formFieldCellDone:(KRFormFieldCell *)formFieldCell {
     _tableIsExpanded = NO;
     [_tableView beginUpdates];
     [_tableView endUpdates];
-    dispatch_async(dispatch_get_main_queue(), ^{
-   //     [_tableView setContentOffset:CGPointZero animated:YES];
-    });
+    [self validate];
+
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//   //     [_tableView setContentOffset:CGPointZero animated:YES];
+//    });
 }
 
-- (KRFormFieldCell *)cellForIndexPath:(NSIndexPath *)indexPath {
-    
-}
+//- (KRFormFieldCell *)cellForIndexPath:(NSIndexPath *)indexPath {
+//    
+//}
 @end

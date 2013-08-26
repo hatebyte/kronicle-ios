@@ -29,6 +29,7 @@
 + (void)getLocaleKronicles:(void (^)(NSArray *kronicles))successBlock
                  onFailure:(void (^)(NSDictionary *dict))failBlock {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Kronicle"];
+    request.predicate = [NSPredicate predicateWithFormat:@"isFinishedNumber = YES"];
     NSArray *matches = [[ManagedContextController current].managedObjectContext executeFetchRequest:request error:nil];
     
     if ([matches count] < 1) {
@@ -172,6 +173,14 @@
 
 - (void)setRating:(NSInteger)rating {
     self.ratingNumber = [NSNumber numberWithInteger:rating];
+}
+
+- (BOOL)isFinished {
+    return [self.ratingNumber boolValue];
+}
+
+- (void)setIsFinished:(BOOL)isFinished {
+    self.isFinishedNumber = [NSNumber numberWithBool:isFinished];
 }
 
 

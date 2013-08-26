@@ -18,6 +18,7 @@
 + (UIColor*)orange;
 + (UIColor*)orangeTransparent;
 + (UIColor*)turquoise;
++ (UIColor*)turquoiseDark;
 + (UIColor*)turquoiseTransparent;
 
 @end

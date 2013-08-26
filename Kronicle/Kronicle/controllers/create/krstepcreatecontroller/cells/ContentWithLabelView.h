@@ -15,5 +15,6 @@
 - (id)initWithFrame:(CGRect)frame andTitle:(NSString *)title andImage:(UIImage *)image;
 - (id)initWithFrame:(CGRect)frame andTitle:(NSString *)title andTextValue:(NSString *)textValue;
 - (void)addTarget:(id)target withSelector:(SEL)selector;
+- (void)removeTargets;
 
 @end

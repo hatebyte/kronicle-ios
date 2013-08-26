@@ -18,15 +18,7 @@
 
 + (Kronicle *)readFromJSONDictionary:(NSDictionary *)dict {
     Kronicle *kronicle                      = [Kronicle kronicleShortFromJSONDictionary:dict];
-//    NSMutableArray *steps                   = [[NSMutableArray alloc] init];
-    NSArray *stepsArray                     = [dict objectForKey:@"steps"];
-//    for (NSDictionary *step in stepsArray) {
-//        Step *s                             = [Step readFromJSONDictionary:step];
-//        [steps addObject:s];
-//    }
-//    [kronicle setValue:[NSSet setWithArray:steps] forKey:@"stepsSet"];
-    [kronicle addStepsFromArray:stepsArray];
-    
+    [kronicle addStepsFromArray:[dict objectForKey:@"steps"]];
     return kronicle;
 }
 
@@ -60,6 +52,8 @@
 
     kronicle.stepCountNumber                      = [NSNumber numberWithInt:stepsArray.count];
     kronicle.timesCompletedNumber                 = [NSNumber numberWithInt:0];
+    kronicle.isFinishedNumber                     = [NSNumber numberWithInt:1];
+//    kronicle.creator                              = @"Walter White";
     return kronicle;
 }
 

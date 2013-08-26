@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KRBaseEditTableViewController.h"
 
-@interface KRMyKroniclesViewController : UIViewController
+@interface KRMyKroniclesViewController : KRBaseEditTableViewController
 
 @end

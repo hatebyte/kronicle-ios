@@ -122,16 +122,12 @@
     
     if (k.steps.count > 0) {
         [self navigateToKronicle:k];
-    
     } else {
-    
         [Kronicle populateLocalKronicleWithRemoteSteps:k
                                            withSuccess:^(Kronicle *kronicle) {
                                                [self navigateToKronicle:kronicle];
-
                                            }
                                              onFailure:^(NSDictionary *error) {
-
                                              }];
     }
 

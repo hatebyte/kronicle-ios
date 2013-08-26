@@ -12,12 +12,8 @@
 @interface KRKronicleStartViewController : UIViewController
 
 @property(nonatomic,strong) Kronicle *kronicle;
-@property(nonatomic, weak) IBOutlet UIImageView *kImage;
-@property(nonatomic, strong) UILabel *titleLabel;
-@property(nonatomic, strong) UITextView *description;
 
-- (IBAction)back:(id)sender;
-- (IBAction)gotoToKronicle:(id)sender;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil andKronicle:(Kronicle *)kronicle;
 
 @end

@@ -68,14 +68,14 @@ const char *class_getName(Class cls);
     self.view.backgroundColor                   = [KRColorHelper turquoise];
     float buttonX                               = 10.0f;
 
-    _topLine                                    = [[UILabel alloc] initWithFrame:CGRectMake(buttonX, 50, 300, 40)];
+    _topLine                                    = [[UILabel alloc] initWithFrame:CGRectMake(buttonX+2, 50, 300, 40)];
     _topLine.font                               = [KRFontHelper getFont:KRBrandonLight withSize:46];
     _topLine.textColor                          = [UIColor whiteColor];
     _topLine.backgroundColor                    = [UIColor clearColor];
     _topLine.text                               = NSLocalizedString(@"Welcome to", @"");
     [self.view addSubview:_topLine];
     
-    _bottomLine                                 = [[UILabel alloc] initWithFrame:CGRectMake(buttonX,
+    _bottomLine                                 = [[UILabel alloc] initWithFrame:CGRectMake(_topLine.frame.origin.x,
                                                                                             _topLine.frame.origin.y + _topLine.frame.size.height + 4,
                                                                                             _topLine.frame.size.width,
                                                                                             _topLine.frame.size.height)];
@@ -85,7 +85,7 @@ const char *class_getName(Class cls);
     _bottomLine.text                            = NSLocalizedString(@"Kronicle.", @"");
     [self.view addSubview:_bottomLine];
     
-    _description                                = [[UITextView alloc] initWithFrame:CGRectMake(buttonX-6,
+    _description                                = [[UITextView alloc] initWithFrame:CGRectMake(buttonX-2,
                                                                                               _bottomLine.frame.origin.y + _bottomLine.frame.size.height,
                                                                                               _topLine.frame.size.width,
                                                                                               70)];

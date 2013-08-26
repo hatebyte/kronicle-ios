@@ -45,13 +45,13 @@
 }
 
 
-//- (Category *)getNewCategory{
-//    return [NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
-//}
-//
-//- (Item *)getNewItem{
-//    return [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
-//}
+- (Category *)getNewCategory{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
+}
+
+- (Item *)getNewItem{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
+}
 
 //- (NSArray *)getSaveKronicles {
 //    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext:self.managedObjectContext];

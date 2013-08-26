@@ -20,7 +20,9 @@
 #import "KRStepListContainerView.h"
 #import "MediaView.h"
 #import "KRCircularKronicleGraph.h"
+#import "ManagedContextController.h"
 #import "KRNavigationViewController.h"
+#import "KRHomeViewController.h"
 
 
 #define kScrollViewNormal 320.f
@@ -68,11 +70,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    NSMutableArray *newSteps = [NSMutableArray arrayWithArray:self.kronicle.steps];
-//    [newSteps removeLastObject];
-//    self.kronicle.steps = newSteps;
-    
+
     self.view.backgroundColor = [UIColor whiteColor];
     _bounds = [UIScreen mainScreen].bounds;
     _sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
@@ -142,9 +140,7 @@
         [self.view addSubview:_publishButton];
     }
     
-//    _sview.contentOffset = CGPointMake(0, _sview.contentSize.height - _sview.frame.size.height);
     [self setStep:0];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -158,7 +154,10 @@
 }
 
 - (IBAction)publishKronicle:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    _kronicle.isFinished = YES;
+    [[ManagedContextController current] saveContext];
+    [[KRHomeViewController current] mykronicles];
 }
 
 - (void)dealloc {
@@ -276,6 +275,7 @@
 }
 
 - (void)setStep:(NSInteger)step {
+    NSLog(@"steps : %@", _kronicle.steps);
     [_graphView showDisplayWithReset:YES];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];

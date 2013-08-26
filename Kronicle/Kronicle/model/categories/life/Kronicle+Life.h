@@ -12,6 +12,13 @@
 
 + (Kronicle *)getKronicleWithUuid:(NSString *)uuid;
 + (Kronicle *)newKronicle;
++ (Kronicle *)newUnfinishedKronicle;
 + (void)deleteKronicleWithUUID:(NSString *)uuid;
++ (void)deleteKronicle:(Kronicle *)kronicle;
++ (Kronicle *)getUnfinishedKronicle;
+
+
+- (void)update;
+
 
 @end

@@ -34,7 +34,6 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeChangeNoticificatioReceived:) name:kTimeUnitCompleted object:nil];
         
         _duration = [[ContentWithLabelView alloc] initWithFrame:CGRectMake(kPadding, 0, 60, 80)
                                                        andTitle:@"Duration"
@@ -44,27 +43,37 @@
         _hours = [[ContentWithLabelView alloc] initWithFrame:CGRectMake(_duration.frame.origin.x + _duration.frame.size.width + (kPadding*2), _duration.frame.origin.y, 70, 70)
                                                     andTitle:@"hour"
                                                 andTextValue:@"00"];
-        [_hours addTarget:self withSelector:@selector(hoursTapped:)];
         [self.contentView addSubview:_hours];
         
         _minutes = [[ContentWithLabelView alloc] initWithFrame:CGRectMake(_hours.frame.origin.x + _hours.frame.size.width, _duration.frame.origin.y, 70, 70)
                                                       andTitle:@"min"
                                                   andTextValue:@"00"];
-        [_minutes addTarget:self withSelector:@selector(minutesTapped:)];
         [self.contentView addSubview:_minutes];
         
         _seconds = [[ContentWithLabelView alloc] initWithFrame:CGRectMake(_minutes.frame.origin.x + _minutes.frame.size.width, _duration.frame.origin.y, 70, 70)
                                                       andTitle:@"sec"
                                                   andTextValue:@"00"];
-        [_seconds addTarget:self withSelector:@selector(secondsTapped:)];
         [self.contentView addSubview:_seconds];
         
         self.selectionStyle                                 = UITableViewCellSelectionStyleNone;
         self.contentView.backgroundColor                    = [KRColorHelper turquoise];
+        
+        [self addListeners];
     }
     return self;
 }
 
+- (void)addListeners {
+    [_hours addTarget:self withSelector:@selector(hoursTapped:)];
+    [_minutes addTarget:self withSelector:@selector(minutesTapped:)];
+    [_seconds addTarget:self withSelector:@selector(secondsTapped:)];
+}
+
+- (void)removeListeners {
+    [_hours removeTargets];
+    [_minutes removeTargets];
+    [_seconds removeTargets];
+}
 
 - (NSInteger)value {
     NSLog(@"_totalTime : %d", _totalTime);
@@ -90,6 +99,7 @@
 
 #pragma request view for time creation
 - (void)requestSeconds:(CreateStepTimeUnitType)type andCurrentValue:(NSInteger)currentValue {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeChangeNoticificatioReceived:) name:kTimeUnitCompleted object:nil];
     NSDictionary *aDictionary                                 = [[NSDictionary alloc] initWithObjectsAndKeys:
                                                                  [NSNumber numberWithInteger:type], @"unit",
                                                                  [NSNumber numberWithInteger:currentValue], @"currentValue",
@@ -99,6 +109,7 @@
 
 #pragma received time notification
 -(void)timeChangeNoticificatioReceived:(NSNotification *)anote {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSDictionary *dict                                      = [anote userInfo];
 
     NSInteger timeValue                                     = [[dict objectForKey:@"currentValue"] integerValue];
@@ -119,6 +130,7 @@
 }
 
 - (void)dealloc {
+    [self removeListeners];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

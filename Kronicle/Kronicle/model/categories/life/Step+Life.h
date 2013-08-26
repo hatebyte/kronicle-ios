@@ -11,6 +11,9 @@
 @interface Step (Life)
 
 + (Step *)newStep;
++ (Step *)newUnfinishedStep;
++ (void)deleteStep:(Step *)step;
 + (void)deleteStepWithUUID:(NSString *)uuid;
+- (void)deleteMedia;
 
 @end

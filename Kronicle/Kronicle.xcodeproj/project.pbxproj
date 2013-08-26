@@ -160,6 +160,19 @@
 		D28127C817C99B7A00E66C7F /* top-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D281278817C99B7A00E66C7F /* top-left.png */; };
 		D28127C917C99B7A00E66C7F /* top-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D281278917C99B7A00E66C7F /* top-right.png */; };
 		D28127CA17C99B7A00E66C7F /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D281278A17C99B7A00E66C7F /* x-button.png */; };
+		D28127CE17CA59DD00E66C7F /* KRPublishOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127CD17CA59DD00E66C7F /* KRPublishOverlay.m */; };
+		D28127D217CA5B7000E66C7F /* KronicleBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127D117CA5B7000E66C7F /* KronicleBlockView.m */; };
+		D28127D517CA627F00E66C7F /* profileframe.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127D417CA627F00E66C7F /* profileframe.png */; };
+		D28127D717CA62BE00E66C7F /* profileimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127D617CA62BE00E66C7F /* profileimage.png */; };
+		D28127DB17CA68B700E66C7F /* KronicleBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127DA17CA68B700E66C7F /* KronicleBlockTableViewCell.m */; };
+		D28127DF17CA766E00E66C7F /* MyKroniclesSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127DE17CA766E00E66C7F /* MyKroniclesSectionHeader.m */; };
+		D28127E117CA7E7D00E66C7F /* block-x.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127E017CA7E7D00E66C7F /* block-x.png */; };
+		D28127E717CA8F2100E66C7F /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127E617CA8F2100E66C7F /* Kronicle.m */; };
+		D28127ED17CAB34F00E66C7F /* hamburger_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127E917CAB34F00E66C7F /* hamburger_start.png */; };
+		D28127EE17CAB34F00E66C7F /* magnifying-glass-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127EB17CAB34F00E66C7F /* magnifying-glass-white@2x.png */; };
+		D28127EF17CAB34F00E66C7F /* plus-sign-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127EC17CAB34F00E66C7F /* plus-sign-white@2x.png */; };
+		D28127F217CAB5D000E66C7F /* start_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127F017CAB5D000E66C7F /* start_button.png */; };
+		D28127F317CAB5D000E66C7F /* plus_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127F117CAB5D000E66C7F /* plus_start.png */; };
 		D29D270E178B93340085E943 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D270D178B93330085E943 /* APIRouter.m */; };
 		D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
 		D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
@@ -200,7 +213,6 @@
 		D2D95C5117C6D8C70048ADA3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5017C6D8C70048ADA3 /* User.m */; };
 		D2D95C5417C6D8C70048ADA3 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5317C6D8C70048ADA3 /* Category.m */; };
 		D2D95C6017C6D99B0048ADA3 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5F17C6D99B0048ADA3 /* Item.m */; };
-		D2D95C6317C6DB370048ADA3 /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C6217C6DB370048ADA3 /* Kronicle.m */; };
 		D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7251789ED850085C707 /* NSData+MKBase64.m */; };
 		D2F1E73A1789ED850085C707 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
 		D2F1E73B1789ED850085C707 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7291789ED850085C707 /* NSDictionary+RequestEncoding.m */; };
@@ -410,6 +422,24 @@
 		D281278817C99B7A00E66C7F /* top-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-left.png"; sourceTree = "<group>"; };
 		D281278917C99B7A00E66C7F /* top-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-right.png"; sourceTree = "<group>"; };
 		D281278A17C99B7A00E66C7F /* x-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-button.png"; sourceTree = "<group>"; };
+		D28127CC17CA59DD00E66C7F /* KRPublishOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPublishOverlay.h; sourceTree = "<group>"; };
+		D28127CD17CA59DD00E66C7F /* KRPublishOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPublishOverlay.m; sourceTree = "<group>"; };
+		D28127D017CA5B7000E66C7F /* KronicleBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronicleBlockView.h; sourceTree = "<group>"; };
+		D28127D117CA5B7000E66C7F /* KronicleBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleBlockView.m; sourceTree = "<group>"; };
+		D28127D417CA627F00E66C7F /* profileframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileframe.png; sourceTree = "<group>"; };
+		D28127D617CA62BE00E66C7F /* profileimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileimage.png; sourceTree = "<group>"; };
+		D28127D917CA68B700E66C7F /* KronicleBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronicleBlockTableViewCell.h; sourceTree = "<group>"; };
+		D28127DA17CA68B700E66C7F /* KronicleBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleBlockTableViewCell.m; sourceTree = "<group>"; };
+		D28127DD17CA766E00E66C7F /* MyKroniclesSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyKroniclesSectionHeader.h; sourceTree = "<group>"; };
+		D28127DE17CA766E00E66C7F /* MyKroniclesSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyKroniclesSectionHeader.m; sourceTree = "<group>"; };
+		D28127E017CA7E7D00E66C7F /* block-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block-x.png"; sourceTree = "<group>"; };
+		D28127E517CA8F2100E66C7F /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
+		D28127E617CA8F2100E66C7F /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
+		D28127E917CAB34F00E66C7F /* hamburger_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_start.png; sourceTree = "<group>"; };
+		D28127EB17CAB34F00E66C7F /* magnifying-glass-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "magnifying-glass-white@2x.png"; sourceTree = "<group>"; };
+		D28127EC17CAB34F00E66C7F /* plus-sign-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-sign-white@2x.png"; sourceTree = "<group>"; };
+		D28127F017CAB5D000E66C7F /* start_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_button.png; sourceTree = "<group>"; };
+		D28127F117CAB5D000E66C7F /* plus_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_start.png; sourceTree = "<group>"; };
 		D29D270C178B93330085E943 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIRouter.h; path = kroniclenetwork/APIRouter.h; sourceTree = "<group>"; };
 		D29D270D178B93330085E943 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIRouter.m; path = kroniclenetwork/APIRouter.m; sourceTree = "<group>"; };
 		D2A573DE175A3B4E002AC1B9 /* Kronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -475,8 +505,6 @@
 		D2D95C5317C6D8C70048ADA3 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		D2D95C5E17C6D99B0048ADA3 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		D2D95C5F17C6D99B0048ADA3 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		D2D95C6117C6DB370048ADA3 /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
-		D2D95C6217C6DB370048ADA3 /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
 		D2F1E7241789ED850085C707 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		D2F1E7251789ED850085C707 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
 		D2F1E7261789ED850085C707 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -714,6 +742,7 @@
 		D23EFC8717BF030D00989E5E /* krkroniclecreateviewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				D28127CB17CA59C500E66C7F /* publishoverlay */,
 				D23EFC8817BF030D00989E5E /* cells */,
 				D23EFC8B17BF030D00989E5E /* KRCreateViewController.h */,
 				D23EFC8C17BF030D00989E5E /* KRCreateViewController.m */,
@@ -802,6 +831,9 @@
 		D23EFCC217BFEA3C00989E5E /* mykronicles */ = {
 			isa = PBXGroup;
 			children = (
+				D28127DC17CA765000E66C7F /* sectionheader */,
+				D28127D817CA687B00E66C7F /* cells */,
+				D28127CF17CA5B5000E66C7F /* kronicleblock */,
 				D23EFCC317BFEA8F00989E5E /* KRMyKroniclesViewController.h */,
 				D23EFCC417BFEA8F00989E5E /* KRMyKroniclesViewController.m */,
 				D23EFCC517BFEA8F00989E5E /* KRMyKroniclesViewController.xib */,
@@ -969,6 +1001,9 @@
 		D281275517C99B7A00E66C7F /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D28127E817CAB34F00E66C7F /* start */,
+				D28127EA17CAB34F00E66C7F /* home */,
+				D28127D317CA627F00E66C7F /* mykronicles */,
 				D281275617C99B7A00E66C7F /* back-bttn.png */,
 				D281275717C99B7A00E66C7F /* back-button.png */,
 				D281275817C99B7A00E66C7F /* backward.png */,
@@ -1045,6 +1080,71 @@
 				D281277D17C99B7A00E66C7F /* mykronicles_thumbnail.png */,
 			);
 			path = nav;
+			sourceTree = "<group>";
+		};
+		D28127CB17CA59C500E66C7F /* publishoverlay */ = {
+			isa = PBXGroup;
+			children = (
+				D28127CC17CA59DD00E66C7F /* KRPublishOverlay.h */,
+				D28127CD17CA59DD00E66C7F /* KRPublishOverlay.m */,
+			);
+			path = publishoverlay;
+			sourceTree = "<group>";
+		};
+		D28127CF17CA5B5000E66C7F /* kronicleblock */ = {
+			isa = PBXGroup;
+			children = (
+				D28127D017CA5B7000E66C7F /* KronicleBlockView.h */,
+				D28127D117CA5B7000E66C7F /* KronicleBlockView.m */,
+			);
+			path = kronicleblock;
+			sourceTree = "<group>";
+		};
+		D28127D317CA627F00E66C7F /* mykronicles */ = {
+			isa = PBXGroup;
+			children = (
+				D28127E017CA7E7D00E66C7F /* block-x.png */,
+				D28127D617CA62BE00E66C7F /* profileimage.png */,
+				D28127D417CA627F00E66C7F /* profileframe.png */,
+			);
+			path = mykronicles;
+			sourceTree = "<group>";
+		};
+		D28127D817CA687B00E66C7F /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D28127D917CA68B700E66C7F /* KronicleBlockTableViewCell.h */,
+				D28127DA17CA68B700E66C7F /* KronicleBlockTableViewCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D28127DC17CA765000E66C7F /* sectionheader */ = {
+			isa = PBXGroup;
+			children = (
+				D28127DD17CA766E00E66C7F /* MyKroniclesSectionHeader.h */,
+				D28127DE17CA766E00E66C7F /* MyKroniclesSectionHeader.m */,
+			);
+			path = sectionheader;
+			sourceTree = "<group>";
+		};
+		D28127E817CAB34F00E66C7F /* start */ = {
+			isa = PBXGroup;
+			children = (
+				D28127F017CAB5D000E66C7F /* start_button.png */,
+				D28127F117CAB5D000E66C7F /* plus_start.png */,
+				D28127E917CAB34F00E66C7F /* hamburger_start.png */,
+			);
+			path = start;
+			sourceTree = "<group>";
+		};
+		D28127EA17CAB34F00E66C7F /* home */ = {
+			isa = PBXGroup;
+			children = (
+				D28127EB17CAB34F00E66C7F /* magnifying-glass-white@2x.png */,
+				D28127EC17CAB34F00E66C7F /* plus-sign-white@2x.png */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 		D2A573D5175A3B4E002AC1B9 = {
@@ -1204,8 +1304,8 @@
 		D2B6225C17C63433007C6E06 /* managedobjectsubclass */ = {
 			isa = PBXGroup;
 			children = (
-				D2D95C6117C6DB370048ADA3 /* Kronicle.h */,
-				D2D95C6217C6DB370048ADA3 /* Kronicle.m */,
+				D28127E517CA8F2100E66C7F /* Kronicle.h */,
+				D28127E617CA8F2100E66C7F /* Kronicle.m */,
 				D2D95C4C17C6D8C70048ADA3 /* Step.h */,
 				D2D95C4D17C6D8C70048ADA3 /* Step.m */,
 				D2D95C4F17C6D8C70048ADA3 /* User.h */,
@@ -1497,6 +1597,14 @@
 				D28127C817C99B7A00E66C7F /* top-left.png in Resources */,
 				D28127C917C99B7A00E66C7F /* top-right.png in Resources */,
 				D28127CA17C99B7A00E66C7F /* x-button.png in Resources */,
+				D28127D517CA627F00E66C7F /* profileframe.png in Resources */,
+				D28127D717CA62BE00E66C7F /* profileimage.png in Resources */,
+				D28127E117CA7E7D00E66C7F /* block-x.png in Resources */,
+				D28127ED17CAB34F00E66C7F /* hamburger_start.png in Resources */,
+				D28127EE17CAB34F00E66C7F /* magnifying-glass-white@2x.png in Resources */,
+				D28127EF17CAB34F00E66C7F /* plus-sign-white@2x.png in Resources */,
+				D28127F217CAB5D000E66C7F /* start_button.png in Resources */,
+				D28127F317CAB5D000E66C7F /* plus_start.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1690,9 +1798,13 @@
 				D2D95C5117C6D8C70048ADA3 /* User.m in Sources */,
 				D2D95C5417C6D8C70048ADA3 /* Category.m in Sources */,
 				D2D95C6017C6D99B0048ADA3 /* Item.m in Sources */,
-				D2D95C6317C6DB370048ADA3 /* Kronicle.m in Sources */,
 				D281274217C9722F00E66C7F /* Kronicle+Life.m in Sources */,
 				D281274517C972CE00E66C7F /* Step+Life.m in Sources */,
+				D28127CE17CA59DD00E66C7F /* KRPublishOverlay.m in Sources */,
+				D28127D217CA5B7000E66C7F /* KronicleBlockView.m in Sources */,
+				D28127DB17CA68B700E66C7F /* KronicleBlockTableViewCell.m in Sources */,
+				D28127DF17CA766E00E66C7F /* MyKroniclesSectionHeader.m in Sources */,
+				D28127E717CA8F2100E66C7F /* Kronicle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

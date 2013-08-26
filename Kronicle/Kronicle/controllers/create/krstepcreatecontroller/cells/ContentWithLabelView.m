@@ -68,6 +68,10 @@
     [_contentValueButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)removeTargets {
+    [_contentValueButton addTarget:self action:nil forControlEvents:UIControlEventAllEvents];
+}
+
 - (void)setTextValue:(NSString *)textValue {
     _textValue = textValue;
     [_contentValueButton setTitle:_textValue forState:UIControlStateNormal];

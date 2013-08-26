@@ -50,7 +50,6 @@
     _doneButton                                     = [UIButton buttonWithType:UIButtonTypeCustom];
     _doneButton.backgroundColor                     = [KRColorHelper turquoise];
     _doneButton.titleLabel.font                     = [KRFontHelper getFont:KRBrandonRegular withSize:17];
-    _doneButton.frame                               = CGRectMake(kPadding, _bounds.size.height-(_buttonHeight+20), 70, _buttonHeight);
     [_doneButton setTitle:@"Done" forState:UIControlStateNormal];
     [_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_doneButton addTarget:self action:@selector(save:) forControlEvents:UIControlEventTouchUpInside];
@@ -61,8 +60,7 @@
     _addStepButton.titleLabel.font                  = [KRFontHelper getFont:KRBrandonRegular withSize:17];
     [_addStepButton setTitle:@"Add another step" forState:UIControlStateNormal];
     [_addStepButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _addStepButton.frame = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height-(_buttonHeight+20), 160, _buttonHeight);
-//    [_addStepButton addTarget:self action:@selector(addAnotherStep:) forControlEvents:UIControlEventTouchUpInside];
+    //    [_addStepButton addTarget:self action:@selector(addAnotherStep:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_addStepButton];
 
     _createStepTimeView = [[CreateStepTimeView alloc] initWithFrame:_tableView.frame];
@@ -71,6 +69,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeCreatorRequested:) name:kRequestTimeUnitEdit object:nil];
 
     self.view.backgroundColor = [UIColor whiteColor];
+
+    _doneButton.frame              = CGRectMake(kPadding, _bounds.size.height, 70, _buttonHeight);
+    _addStepButton.frame           = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height, 160, _buttonHeight);
+    [self validate];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -92,36 +94,48 @@
 }
 
 - (IBAction)save:(id)sender {
-    [self updateStep];
-    
-    NSLog(@"_step.time : %d", _step.time);
-    NSLog(@"_step.title.length : %d", _step.title.length);
-    NSLog(@"_step.desc.length : %d", _step.desc.length);
-    if (_step.time < 1 || _step.title.length < 1 || _step.desc.length < 1) {
-        return;
-    }
+    _step.time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
+    _step.title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
+    _step.desc              = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
 
-    
     _saveBlock(_step);
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)validate {
+    NSInteger time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
+    NSString *title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
+    NSString *desc              = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
+
+    if (time < 1 || title.length < 1 || desc.length < 1) {
+        [UIView animateWithDuration:.4
+                              delay:.3
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _doneButton.frame              = CGRectMake(kPadding, _bounds.size.height, 70, _buttonHeight);
+                             _addStepButton.frame           = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height, 160, _buttonHeight);
+                         }
+                         completion:^(BOOL fin){}];
+    } else {
+        [UIView animateWithDuration:.4
+                              delay:.5
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _doneButton.frame              = CGRectMake(kPadding, _bounds.size.height-(_buttonHeight+20), 70, _buttonHeight);
+                             _addStepButton.frame           = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height-(_buttonHeight+20), 160, _buttonHeight);
+                         }
+                         completion:^(BOOL fin){}];
+    }
+}
+
 - (void)addMediaPickerWithType:(UIImagePickerControllerSourceType)type {
-    [self updateStep];
+    [self validate];
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     [imagePicker setSourceType:type];
     imagePicker.delegate = self;
     imagePicker.allowsEditing = YES;
     [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
 }
-
-- (void)updateStep {
-    _step.time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
-    _step.title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
-    _step.desc              = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
-    
-}
-
 
 
 
@@ -165,7 +179,6 @@
 
 }
 
-
 - (void)createStepTimeView:(CreateStepTimeView *)durationCreatorView finishedWithValue:(NSInteger)value {
     NSDictionary *aDictionary                                 = [[NSDictionary alloc] initWithObjectsAndKeys:
                                                                  [NSNumber numberWithInteger:durationCreatorView.unit], @"unit",
@@ -173,6 +186,8 @@
                                                                  nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:kTimeUnitCompleted object:nil userInfo:aDictionary];
     [self animateOutCreator];
+    _step.time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
+    [self validate];
 }
 
 

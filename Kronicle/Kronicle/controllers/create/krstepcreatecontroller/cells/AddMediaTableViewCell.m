@@ -89,7 +89,6 @@
 }
 
 - (void)prepareForUseWithImage:(NSString *)imagePath {
-    NSLog(@"imagePath : %@",imagePath);
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *imageUrl = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", imagePath]];
     _imageView.image = [UIImage imageWithContentsOfFile:imageUrl];

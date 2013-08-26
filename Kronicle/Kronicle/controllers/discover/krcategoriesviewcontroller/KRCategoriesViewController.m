@@ -38,10 +38,6 @@
 //    self.tableView.delegate = self;
     
     
-#if kDEBUG
-    KRListViewController *kronicleListViewController = [[KRListViewController alloc] initWithNibName:@"KRListViewController" bundle:nil];
-    [self.navigationController pushViewController:kronicleListViewController animated:YES];
-#endif
 
 }
 
@@ -64,8 +60,12 @@
 }
 
 - (IBAction)gotoCategory:(id)sender {
+    
+    // create kromcile categories
     KRListViewController *kronicleListViewController = [[KRListViewController alloc] initWithNibName:@"KRListViewController" bundle:nil];
     [self.navigationController pushViewController:kronicleListViewController animated:YES];
+    
+//    [[KRHomeViewController current] discover];
 }
 
 - (IBAction)backHit:(id)sender {

@@ -20,5 +20,6 @@
 
 
 - (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType;
+- (void)validate;
 
 @end

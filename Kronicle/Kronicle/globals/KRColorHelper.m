@@ -30,19 +30,23 @@
 }
 
 + (UIColor*)orange {
-    return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:1.0f]; //f1a325
+    return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:1.0f];  
 }
 
 + (UIColor*)orangeTransparent {
-    return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:.3f]; //f1a325
+    return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:.3f]; 
 }
 
 + (UIColor*)turquoise {
-    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:1.0f]; //40BCB2
+    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:1.0f];
+}
+
++ (UIColor*)turquoiseDark {
+    return [UIColor colorWithRed:31/255.0f green:136/255.0f blue:128/255.0f alpha:1.0f];
 }
 
 + (UIColor*)turquoiseTransparent {
-    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:.30f]; //40BCB2
+    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:.30f];
 }
 
 @end

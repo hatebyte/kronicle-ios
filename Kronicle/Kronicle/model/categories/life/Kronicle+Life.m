@@ -8,18 +8,39 @@
 
 #import "Kronicle+Life.h"
 #import "ManagedContextController.h"
+#import "Kronicle+Helper.h"
+#import "Step+Helper.h"
+#import "Step+Life.h"
 
 @implementation Kronicle (Life)
 
 + (Kronicle *)getKronicleWithUuid:(NSString *)uuid {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Kronicle"];
-    request.predicate = [NSPredicate predicateWithFormat:@"uuid = %@", uuid];
+    request.predicate = [NSPredicate predicateWithFormat:@"uuid = %@ && isFinishedNumber = YES", uuid];
     NSArray *matches = [[ManagedContextController current].managedObjectContext executeFetchRequest:request error:nil];
-    NSLog(@"matches : %@", matches);
     
     if ([matches count] == 0)
         return nil;
     return [matches lastObject];
+}
+
++ (Kronicle *)getUnfinishedKronicle {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Kronicle"];
+    request.predicate = [NSPredicate predicateWithFormat:@"isFinishedNumber = NO"];
+    NSArray *matches = [[ManagedContextController current].managedObjectContext executeFetchRequest:request error:nil];
+    
+    if ([matches count] == 0)
+        return [Kronicle newUnfinishedKronicle];
+    return [matches lastObject];
+}
+
++ (Kronicle *)newUnfinishedKronicle {
+    Kronicle *k = [Kronicle newKronicle];
+    k.isFinished = NO;
+    k.uuid = [Kronicle makeUUID];
+    k.dateCreated = [NSDate date];
+    k.lastDateChanged = [NSDate date];
+    return k;
 }
 
 + (Kronicle *)newKronicle {
@@ -30,4 +51,54 @@
 
 }
 
++ (void)deleteKronicle:(Kronicle *)kronicle {
+    for (Step *s in kronicle.steps) {
+        [s deleteMedia];
+    }
+    
+    if (kronicle.coverUrl.length > 0) {
+        NSError *error = nil;
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[kronicle fullCoverURL]]) {
+            [[NSFileManager defaultManager] removeItemAtPath:[kronicle fullCoverURL] error: &error];
+            if (error != nil) {
+                NSLog(@"Tried to remove kronicle fullCoverURL %@, %@", error, [error userInfo]);
+                abort();
+            }
+        }
+    }
+    
+    [[ManagedContextController current].managedObjectContext deleteObject:kronicle];
+    [[ManagedContextController current] saveContext];
+}
+
+
+
+
+- (void)update {
+    self.stepCount = [self.steps count];
+    for (NSInteger i = 0; i < self.stepCount; i++) {
+        Step *s = [self.steps objectAtIndex:i];
+        s.indexInKronicle = i;
+    }
+    self.lastDateChanged = [NSDate date];
+
+    [[ManagedContextController current] saveContext];
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
