@@ -38,7 +38,6 @@
 		88baa8cb1cb56b7e6f665793 /* KRAPIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57406175A3B77002AC1B9 /* KRAPIStore.m */; };
 		8b0b86cf513301c6e1a49087 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD45175B9BA30003FEF5 /* icon@2x.png */; };
 		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
-		D236FB7717B464E4003DD323 /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB3D17B464E4003DD323 /* KRCategoriesViewController.xib */; };
 		D236FB7A17B464E4003DD323 /* KRKronicleStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */; };
 		D236FB7B17B464E4003DD323 /* KRKronicleStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */; };
 		D236FB7C17B464E4003DD323 /* KRPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */; };
@@ -200,7 +199,6 @@
 		D2B6227417C63487007C6E06 /* Step+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227317C63487007C6E06 /* Step+Helper.m */; };
 		D2B6227717C6349E007C6E06 /* Kronicle+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */; };
 		D2B6228817C64224007C6E06 /* KronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6228717C64224007C6E06 /* KronicleEngine.m */; };
-		D2CF7E3A17B4684400E3D1F0 /* KRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB3C17B464E4003DD323 /* KRCategoriesViewController.m */; };
 		D2CF7E3F17B46AC000E3D1F0 /* KRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E3D17B46AC000E3D1F0 /* KRListViewController.m */; };
 		D2CF7E4017B46AC000E3D1F0 /* KRListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E3E17B46AC000E3D1F0 /* KRListViewController.xib */; };
 		D2CF7E4417B46B9900E3D1F0 /* StepsTableCellViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E4317B46B9900E3D1F0 /* StepsTableCellViewCell.m */; };
@@ -256,9 +254,6 @@
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D236FB0517B4631A003DD323 /* Kronicle-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kronicle-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D236FB3B17B464E4003DD323 /* KRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewController.h; sourceTree = "<group>"; };
-		D236FB3C17B464E4003DD323 /* KRCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesViewController.m; sourceTree = "<group>"; };
-		D236FB3D17B464E4003DD323 /* KRCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCategoriesViewController.xib; sourceTree = "<group>"; };
 		D236FB4317B464E4003DD323 /* KRKronicleStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleStartViewController.h; sourceTree = "<group>"; };
 		D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleStartViewController.m; sourceTree = "<group>"; };
 		D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRKronicleStartViewController.xib; sourceTree = "<group>"; };
@@ -627,9 +622,6 @@
 		D236FB3A17B464E4003DD323 /* krcategoriesviewcontroller */ = {
 			isa = PBXGroup;
 			children = (
-				D236FB3B17B464E4003DD323 /* KRCategoriesViewController.h */,
-				D236FB3C17B464E4003DD323 /* KRCategoriesViewController.m */,
-				D236FB3D17B464E4003DD323 /* KRCategoriesViewController.xib */,
 			);
 			path = krcategoriesviewcontroller;
 			sourceTree = "<group>";
@@ -1523,7 +1515,6 @@
 				D26A617B175B872900B50A39 /* crazy_train_3.mov in Resources */,
 				D26A617C175B872900B50A39 /* crazy_train_2.mov in Resources */,
 				F96ADD46175B9BA30003FEF5 /* icon@2x.png in Resources */,
-				D236FB7717B464E4003DD323 /* KRCategoriesViewController.xib in Resources */,
 				D236FB7B17B464E4003DD323 /* KRKronicleStartViewController.xib in Resources */,
 				D236FB7D17B464E4003DD323 /* KRPlaybackViewController.xib in Resources */,
 				D2CF7E4017B46AC000E3D1F0 /* KRListViewController.xib in Resources */,
@@ -1724,7 +1715,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2CF7E3A17B4684400E3D1F0 /* KRCategoriesViewController.m in Sources */,
 				D2A573EE175A3B4E002AC1B9 /* main.m in Sources */,
 				D2A573F2175A3B4E002AC1B9 /* AppDelegate.m in Sources */,
 				D2A5741E175A3B77002AC1B9 /* KRAPIStore.m in Sources */,
