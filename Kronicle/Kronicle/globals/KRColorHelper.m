@@ -38,15 +38,20 @@
 }
 
 + (UIColor*)turquoise {
-    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:1.0f]; //40BCB2
+}
+
++ (UIColor*)turquoiseLight {
+    return [UIColor colorWithRed:117/255.0f green:204/255.0f blue:197/255.0f alpha:1.0f]; //75CCC5
 }
 
 + (UIColor*)turquoiseDark {
-    return [UIColor colorWithRed:31/255.0f green:136/255.0f blue:128/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:50/255.0f green:131/255.0f blue:124/255.0f alpha:1.0f]; //32837C
 }
 
 + (UIColor*)turquoiseTransparent {
-    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:.30f];
+    return [UIColor colorWithRed:64/255.0f green:188/255.0f blue:178/255.0f alpha:.30f]; //40BCB2
 }
+
 
 @end
