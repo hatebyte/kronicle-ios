@@ -36,7 +36,6 @@
         failBlock(@{@"error":NO_LOCAL_KRONICLES});
         return;
     }
-    
     successBlock(matches);
 }
 
@@ -44,7 +43,6 @@
                  onFailure:(void (^)(NSError *error))failBlock {
     
     [[KronicleEngine current] allKroniclesWithCompletion:^(NSArray *kronicles) {
-
         NSMutableArray *arr = [[NSMutableArray alloc] init];
                 for (NSDictionary *dict in kronicles) {
                     Kronicle *k = [Kronicle kronicleShortFromJSONDictionary:dict];
@@ -128,6 +126,35 @@
                                               }];
 }
 
++ (NSArray *)moduloKronicleList:(NSArray *)kronicles {
+    NSMutableArray *kroniclesModuloed = [[NSMutableArray alloc] init];
+    int stepsMinusFinish = [kronicles count];
+    
+    if(stepsMinusFinish % 2 == 0) {
+        for (int i = 0; i < stepsMinusFinish; i++) {
+            int next = i + 1;
+            NSArray *inArray = [NSArray arrayWithObjects:[kronicles objectAtIndex:i], [kronicles objectAtIndex:next], nil];
+            [kroniclesModuloed addObject:inArray];
+            i = next;
+        }
+        
+    } else {
+        for (int i = 0; i < stepsMinusFinish; i++) {
+            NSArray *inArray;
+            int next = i + 1;
+            if (next < stepsMinusFinish) {
+                inArray = [NSArray arrayWithObjects:[kronicles objectAtIndex:i], [kronicles objectAtIndex:next], nil];
+            } else {
+                inArray = [NSArray arrayWithObjects:[kronicles objectAtIndex:i], nil];
+            }
+            i= next;
+            [kroniclesModuloed addObject:inArray];
+        }
+    }
+    
+    return kroniclesModuloed;
+}
+
 
 
 // conversion helpers
@@ -138,6 +165,10 @@
 
 - (NSArray *)items {
     return [self.itemsSet allObjects];
+}
+
+- (void)setItems:(NSArray *)items {
+    [self setValue:[NSSet setWithArray:items] forKey:@"itemsSet"];
 }
 
 - (NSArray *)steps {
@@ -152,7 +183,7 @@
 }
 
 - (NSInteger)stepCount {
-    return [self.stepCountNumber integerValue];
+    return (self.steps) ? [self.steps count] : 0;
 }
 
 - (void)setStepCount:(NSInteger)stepCount {

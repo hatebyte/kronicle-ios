@@ -27,7 +27,8 @@
 
         int count = [kronicle.steps count];
         DescriptionView *d;
-        for (int i = 0; i < count; i++) {
+        NSInteger i = 0;
+        for (i = 0; i < count; i++) {
             Step *s = [kronicle.steps objectAtIndex:i];
             NSLog(@"s.k : %d", s.indexInKronicle);
             d = [[DescriptionView alloc] initWithFrame:CGRectMake(frame.size.width * i,
@@ -37,6 +38,13 @@
             d.subClockLabel.text = [NSString stringWithFormat:@"Step %d of %d", (i +1), count];
             [self addSubview:d];
         }
+        
+        d = [[DescriptionView alloc] initAsFinishedWithFrame:CGRectMake(d.frame.origin.x + d.frame.size.width,
+                                                                        0,
+                                                                        frame.size.width,
+                                                                        frame.size.height)];
+        [self addSubview:d];
+
     }
     return self;
 }
@@ -48,14 +56,18 @@
     _currentStep = [[self subviews] objectAtIndex:stepIndex];
 }
 
-- (void)updateForLastStep {
-//    NSArray *subViews = [self subviews];
-//    DescriptionView *d;
-//    for (int i = 0; i < subViews.count; i++) {
-//        d  = [[self subviews] objectAtIndex:i];
-//        [d resetClock];
-//    }
+- (void)updateForFinished {
+    NSArray *subViews = [self subviews];
+    NSInteger lastPage = [subViews count]-1;
+    DescriptionView *d;
+    for (int i = 0; i < subViews.count; i++) {
+        d  = [[self subviews] objectAtIndex:i];
+        [d resetClock];
+    }
     [_currentStep resetClock];
+    _currentStep = [[self subviews] objectAtIndex:lastPage];
+    [self scrollToPage:lastPage];
+    [_currentStep updateForFinished];
 }
 
 #pragma delegate

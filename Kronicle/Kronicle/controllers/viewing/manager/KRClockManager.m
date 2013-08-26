@@ -45,8 +45,6 @@ CGFloat const _increment = .05f;
 - (void)setTimeForStep:(NSInteger)stepIndex {
     _stepRatio = 0;
     _globalRatio = 0;
-    NSLog(@"k %d", stepIndex);
-    NSLog(@"k %@", [_kronicle.steps objectAtIndex:stepIndex]);
     _step = [_kronicle.steps objectAtIndex:stepIndex];
     _stepTotal = _step.time;
     _currentTime = _stepTotal;
@@ -108,29 +106,78 @@ CGFloat const _increment = .05f;
 }
 
 + (NSString *)stringTimeForInt:(int)time {
-    int minutes = floor(time / 60);
-    int seconds = floor(time - (minutes*60));
+    int hours       = floor(time / (60 * 60));
+    time            = time - (hours * (60 * 60));
+    int minutes     = floor(time / 60);
+    int seconds     = floor(time - (minutes*60));
+    NSString *sHours;
     NSString *sMinutes;
     NSString *sSeconds;
+    
+    NSString *returnString = @"";
+    if (hours > 0) {
+        if (hours < 10) {
+            sHours = [NSString stringWithFormat:@"0%d", hours];
+        } else {
+            sHours = [NSString stringWithFormat:@"%d", hours];
+        }
+        returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sHours]];
+    }
+
+    if (minutes < 10) {
+        sMinutes = [NSString stringWithFormat:@"0%d", minutes];
+    } else {
+        sMinutes = [NSString stringWithFormat:@"%d", minutes];
+    }
+    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sMinutes]];
+
+    if (seconds < 10) {
+        sSeconds = [NSString stringWithFormat:@"0%d", seconds];
+    } else {
+        sSeconds = [NSString stringWithFormat:@"%d", seconds];
+    }
+    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@", sSeconds]];
+    
+    return returnString;
+}
+
++ (NSString *)clockStringForInt:(int)time {
+    int hours       = floor(time / (60 * 60));
+    time            = time - (hours * (60 * 60));
+    int minutes     = floor(time / 60);
+    int seconds     = floor(time - (minutes*60));
+    NSString *sHours;
+    NSString *sMinutes;
+    NSString *sSeconds;
+    
+    NSString *returnString = @"";
+    if (hours > 0) {
+        if (hours < 10) {
+            sHours = [NSString stringWithFormat:@"0%d", hours];
+        } else {
+            sHours = [NSString stringWithFormat:@"%d", hours];
+        }
+        returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sHours]];
+    }
     
     if (minutes < 10) {
         sMinutes = [NSString stringWithFormat:@"0%d", minutes];
     } else {
         sMinutes = [NSString stringWithFormat:@"%d", minutes];
     }
+    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sMinutes]];
+    
     if (seconds < 10) {
         sSeconds = [NSString stringWithFormat:@"0%d", seconds];
     } else {
         sSeconds = [NSString stringWithFormat:@"%d", seconds];
     }
-    return [NSString stringWithFormat:@"%@:%@", sMinutes, sSeconds];
+    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@", sSeconds]];
+    
+    return returnString;
 }
 
 + (NSDictionary *)getTimeUnits:(NSInteger)secondsTotal {
-//    int minutes = floor(secondsTotal / 60);
-//    int seconds = floor(secondsTotal - (minutes*60));
-//    NSString *sMinutes;
-//    NSString *sSeconds;
     NSInteger seconds;
     NSInteger minutes;
     NSInteger hours;
@@ -140,19 +187,6 @@ CGFloat const _increment = .05f;
     minutes                         = floor(secondsTotal / 60);
     seconds                         = secondsTotal - (minutes * 60);
     
-//    NSLog(@"hours: mins: secs:", );
-    
-//    if (minutes < 10) {
-//        sMinutes = [NSString stringWithFormat:@"0%d", minutes];
-//    } else {
-//        sMinutes = [NSString stringWithFormat:@"%d", minutes];
-//    }
-//    if (seconds < 10) {
-//        sSeconds = [NSString stringWithFormat:@"0%d", seconds];
-//    } else {
-//        sSeconds = [NSString stringWithFormat:@"%d", seconds];
-//    }
-//    return [NSString stringWithFormat:@"%@:%@", sMinutes, sSeconds];
     return [NSDictionary dictionaryWithObjectsAndKeys:
             [NSNumber numberWithInteger:seconds],   @"seconds",
             [NSNumber numberWithInteger:minutes],   @"minutes",

@@ -13,6 +13,6 @@
 
 - (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle;
 - (void)updateForCurrentStep:(int)step andRatio:(CGFloat)ratio andTimeCompleted:(int)totalCompleted;
-- (void)updateForLastStep;
+- (void)updateForFinished;
 
 @end

@@ -76,8 +76,9 @@
                                                object:nil];
 
     _kronicle = [Kronicle getUnfinishedKronicle];
-     _kronicleSteps = [[NSMutableArray alloc] init];
-     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
+    _kronicleSteps = [[NSMutableArray alloc] init];
+    [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
+    NSLog(@"_kronicle : %@", _kronicle.description);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -127,8 +128,6 @@
 }
 
 - (IBAction)previewKronicle:(id)sender {
-    NSLog(@"Kronicle : %@", _kronicle);
-    
     KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:_kronicle andViewingState:KRKronicleViewingStatePreview];
     [self.navigationController pushViewController:playbackViewController animated:YES];
 }
@@ -271,7 +270,6 @@
 
 - (void)stepEditingRequested:(AddStepTableViewCell *)addStepTableViewCell forStep:(Step *)step {
     KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:step andSaveBlock:^(Step *stepEdited) {
-
         stepEdited.lastDateChanged = [NSDate date];
         [self parseKronicleStepsToTable];
         [_kronicle update];
@@ -286,6 +284,7 @@
     }
     
     Step *stepC = [Step newUnfinishedStep];
+    stepC.indexInKronicle = _kronicle.stepCount;
     KRCreateStepViewController *createStepViewController = [[KRCreateStepViewController alloc] initWithStep:stepC andSaveBlock:^(Step *step) {
         step.parentKronicle = _kronicle;
         [_kronicle update];

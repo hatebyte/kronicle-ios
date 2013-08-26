@@ -30,5 +30,7 @@ typedef enum {
 
 - (void)animateNavbarIn;
 - (void)animateNavbarOut;
+- (void)reset;
+- (void)updateForFinished;
 
 @end

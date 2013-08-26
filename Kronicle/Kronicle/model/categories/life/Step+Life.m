@@ -30,7 +30,6 @@
 }
 
 - (void)deleteMedia {
-
     if (self.mediaUrl.length > 0) {
         NSError *error = nil;
         if ([[NSFileManager defaultManager] fileExistsAtPath:[self fullMediaURL]]) {
@@ -41,7 +40,6 @@
             }
         }
     }
-
 }
 
 + (void)deleteStep:(Step *)step {

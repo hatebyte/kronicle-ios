@@ -121,6 +121,14 @@
     [self.delegate controls:self navigationRequested:KRStepNavigationRequestForward];
 }
 
+- (void)reset {
+    _forward.hidden = NO;
+}
+
+- (void)updateForFinished {
+    _forward.hidden = YES;
+}
+
 - (void)animateNavbarIn {
     if (!self.isShowing) {
         self.isShowing = YES;
