@@ -685,8 +685,8 @@
 			isa = PBXGroup;
 			children = (
 				0C6F80E717CAF12200EFC4B3 /* krcategoriescollectionviewcell */,
-				0C6F80DB17CAF0D300EFC4B3 /* KRCategoriesViewController.m */,
 				0C6F80DC17CAF0D300EFC4B3 /* KRCategoriesViewController.h */,
+				0C6F80DB17CAF0D300EFC4B3 /* KRCategoriesViewController.m */,
 				0C6F80DD17CAF0D300EFC4B3 /* KRCategoriesViewController.xib */,
 			);
 			path = krcategoriesviewcontroller;
@@ -940,12 +940,9 @@
 		D23EFDAB17C44E8500989E5E /* uicommon */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				0C6F80E917CAF15600EFC4B3 /* uiview+gclibrary */,
 				0C6F80E817CAF14100EFC4B3 /* krsearchtextfieldview */,
-=======
 				D28127F417CB7DD100E66C7F /* uiviews */,
->>>>>>> Most of finish screen in place.
 				D23EFDAC17C44E8500989E5E /* buttons */,
 				D23EFDAF17C44E8500989E5E /* text */,
 			);

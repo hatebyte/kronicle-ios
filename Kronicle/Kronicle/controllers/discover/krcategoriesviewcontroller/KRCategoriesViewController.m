@@ -154,8 +154,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     return _dataSource.count;
 }
 
--(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     KRCategoriesCollectionViewCell *cell = [_categoriesCollectionView dequeueReusableCellWithReuseIdentifier:KRCollectionCellReuseIdentifier forIndexPath:indexPath];
     cell.cellTitleLabel.text = [_dataSource objectAtIndex:indexPath.row];
     return cell;
