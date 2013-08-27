@@ -22,7 +22,7 @@
 
 
 + (CGFloat)cellHeight {
-    return 200.f;
+    return 190.f;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,6 +31,8 @@
     if (self) {
         self.selectionStyle                     = UITableViewCellSelectionStyleNone;
         self.contentView.backgroundColor        = [KRColorHelper grayLight];
+        
+        self.deleteIsHidden = NO;
     }
     return self;
 }
@@ -54,6 +56,7 @@
         kronicleBlock = [[KronicleBlockView alloc] initWithFrame:frame andKronicle:kronicle];
         kronicleBlock.tag = i;
         kronicleBlock.delegate = self;
+        kronicleBlock.deleteIsHidden = self.deleteIsHidden;
         [_blockArray addObject:kronicleBlock];
         [self.contentView addSubview:kronicleBlock];
     }
@@ -62,7 +65,9 @@
 
 #pragma mark
 - (void)kronicleBlockView:(KronicleBlockView *)kronicleBlockView deleteKronicle:(Kronicle *)kronicle {
-    [self.delegate kronicleDeletionRequested:self forKronicle:kronicle];
+    if ([self.delegate respondsToSelector:@selector(kronicleDeletionRequested:forKronicle:)]) {
+        [self.delegate kronicleDeletionRequested:self forKronicle:kronicle];
+    }
 }
 
 - (void)kronicleBlockView:(KronicleBlockView *)kronicleBlockView requestKronicle:(Kronicle *)kronicle {

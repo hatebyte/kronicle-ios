@@ -11,8 +11,9 @@
 
 @class KronicleBlockTableViewCell;
 @protocol KronicleBlockTableViewCellDelegate <NSObject>
-
+@optional
 - (void)kronicleDeletionRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle;
+
 - (void)kroniclePlaybackRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle;
 
 @end
@@ -20,6 +21,7 @@
 @interface KronicleBlockTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) id <KronicleBlockTableViewCellDelegate> delegate;
+@property (nonatomic, assign) BOOL deleteIsHidden;
 
 + (CGFloat)cellHeight;
 

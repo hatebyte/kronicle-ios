@@ -1,35 +1,31 @@
 //
 //  KRListViewController.m
-//  Kroncile
+//  Kronicle
 //
-//  Created by Scott on 6/1/13.
+//  Created by Scott on 8/17/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
 #import "KRListViewController.h"
-#import "KRPlaybackViewController.h"
-#import "KRAPIStore.h"
-#import "KRKronicle.h"
-#import "StepsTableCellViewCell.h"
 #import "KRColorHelper.h"
-#import "KRKronicleStartViewController.h"
-#import "KronicleEngine.h"
-#import "KRGlobals.h"
-#import "KRNavigationViewController.h"
-#import "KRClockManager.h"
-#import "Step+Helper.h"
+#import "Kronicle+Life.h"
 #import "Kronicle+Helper.h"
+#import "KronicleBlockTableViewCell.h"
+#import "KRKronicleStartViewController.h"
+#import "MyKroniclesSectionHeader.h"
+#import "Kronicle+Helper.h"
+#import "KRNavigationViewController.h"
 
-@interface KRListViewController ()
-
-// if step has no steps get steps;
-
+@interface KRListViewController () <KronicleBlockTableViewCellDelegate> {
+@private
+    NSMutableArray *_kroniclesModuloed;
+    NSArray *_savedKronicles;
+}
 @end
 
 @implementation KRListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -38,117 +34,145 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    self.view.backgroundColor = [KRColorHelper grayLight];
+    _tableView.backgroundColor = [KRColorHelper grayLight];
         
-    [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
-                                self.tableData = kronicles;
-                                [self.tableView reloadData];
-        
-                            }
-                              onFailure:^(NSDictionary *error) {
-                                  if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
-                                      [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
-                                          self.tableData = kronicles;
-                                          [self.tableView reloadData];
-                                          
-                                                              }
-                                                                onFailure:^(NSError *error) {
-                                                                    NSLog(@"Cant get remote kronicle : %@", error);
-                                                                }];
-                                  }
-                              }];
-
-
+    [self loadLocalKronicles];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+    [_tableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning
-{
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)backHit:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)loadLocalKronicles {
+    [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
+        _savedKronicles = kronicles;
+        [self parseKroniclesToTable];
+    }
+                       onFailure:^(NSDictionary *error) {
+                           if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
+                               [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
+                                   _savedKronicles = kronicles;
+                                   [self parseKroniclesToTable];
+                               }
+                                                  onFailure:^(NSError *error) {
+                                                      NSLog(@"Cant get remote kronicle : %@", error);
+                                                  }];
+                           }
+                       }];
 }
 
+- (void)parseKroniclesToTable {
+    _kroniclesModuloed = [[NSMutableArray alloc] init];
+    int stepsMinusFinish = [_savedKronicles count];
+    if (stepsMinusFinish < 1) {
+        [_tableView reloadData];
+        return;
+    }
+    
+    if(stepsMinusFinish % 2 == 0) {
+        for (int i = 0; i < stepsMinusFinish; i++) {
+            int next = i + 1;
+            NSArray *inArray = [NSArray arrayWithObjects:[_savedKronicles objectAtIndex:i], [_savedKronicles objectAtIndex:next], nil];
+            [_kroniclesModuloed addObject:inArray];
+            i = next;
+        }
+        
+    } else {
+        for (int i = 0; i < stepsMinusFinish; i++) {
+            NSArray *inArray;
+            int next = i + 1;
+            if (next < stepsMinusFinish) {
+                inArray = [NSArray arrayWithObjects:[_savedKronicles objectAtIndex:i], [_savedKronicles objectAtIndex:next], nil];
+            } else {
+                inArray = [NSArray arrayWithObjects:[_savedKronicles objectAtIndex:i], nil];
+            }
+            i= next;
+            [_kroniclesModuloed addObject:inArray];
+        }
+    }
+    [_tableView reloadData];
+}
+
+
 #pragma tableview
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return [[MyKroniclesSectionHeader alloc] initWithFrame:CGRectMake(0, 0, 320, [MyKroniclesSectionHeader headerHeight])];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return [MyKroniclesSectionHeader headerHeight];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return KCellHeight;
+    return [KronicleBlockTableViewCell cellHeight];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.tableData count];
+    return [_kroniclesModuloed count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    StepsTableCellViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"StepsTableCellViewCell"];
-    if (cell == nil) {
-        cell = [[StepsTableCellViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StepsTableCellViewCell"];
+    KronicleBlockTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"KronicleCell"];
+    if (!cell) {
+        cell = [[KronicleBlockTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"KronicleCell"];
     }
-    Kronicle *k = (Kronicle*)[self.tableData objectAtIndex:indexPath.row];
-    NSLog(@"k.uuid : %@", k.uuid);
-    cell.titleLabel.text = k.title;
-//    cell.subLabel.text = [k stringTime];
-    NSString *time = [KRClockManager stringTimeForInt:k.totalTime];
-    if ([[time substringToIndex:1] isEqualToString:@"0"]) {
-        time = [time substringFromIndex:1];
-    }
-    cell.subLabel.text = time;
-
-    cell.kImage.image = [UIImage imageNamed:k.coverUrl];
-    
-    cell.titleLabel.textColor = [KRColorHelper grayDark];
-    cell.frameimage.image = [UIImage imageNamed:@"hole"];
+    cell.deleteIsHidden = YES;
+    [cell prepareForReuseWithArray: [_kroniclesModuloed objectAtIndex:indexPath.row] ];
+    cell.delegate = self;
     return cell;
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    StepsTableCellViewCell *c = (StepsTableCellViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-    [c hit];
-    Kronicle *k = [self.tableData objectAtIndex:indexPath.row];
-    
-    if (k.steps.count > 0) {
-        [self navigateToKronicle:k];
+#pragma kronicleblocktableviewcell
+
+- (void)kroniclePlaybackRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle {
+    if (kronicle.steps.count > 0) {
+        [self navigateToKronicle:kronicle];
     } else {
-        [Kronicle populateLocalKronicleWithRemoteSteps:k
-                                           withSuccess:^(Kronicle *kronicle) {
-                                               [self navigateToKronicle:kronicle];
+        [Kronicle populateLocalKronicleWithRemoteSteps:kronicle
+                                           withSuccess:^(Kronicle *k) {
+                                               [self navigateToKronicle:k];
                                            }
                                              onFailure:^(NSDictionary *error) {
                                              }];
     }
-
 }
-//
-//- (void)fetchRemoteKronicle:(NSString *)uuid {
-//    [Kronicle getRemoteKronicleWithUuid:uuid
-//                            withSuccess:^(Kronicle *kronicle) {
-//                                NSLog(@"kronicle made it REMOTE : %@", kronicle.steps);
-//                                [self navigateToKronicle:kronicle];
-//                                
-//                            }
-//                              onFailure:^(NSError *error) {
-//                                  NSLog(@"CAnt get remote kronicle : %@", error);
-//                              }];
-//}
 
 - (void)navigateToKronicle:(Kronicle*)kronicle {
     KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
     [self.navigationController pushViewController:kronicleStartViewController animated:YES];
 }
 
-
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

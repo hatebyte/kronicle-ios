@@ -64,6 +64,7 @@
                                     _currentStep.frame.origin.y,
                                     _currentStep.frame.size.width,
                                     [DescriptionView playbackHeight]);
+    [self scrollToPage:stepIndex];
 }
 
 - (void)updateForFinished {

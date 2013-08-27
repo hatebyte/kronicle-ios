@@ -28,8 +28,8 @@ typedef enum {
 @interface KRKronicleManager : NSObject
 
 @property (nonatomic, weak) id <KRKronicleManagerDelegate> delegate;
-@property (nonatomic, assign) int currentStepIndex;
-@property (nonatomic, assign) int previewStepIndex;
+@property (nonatomic, assign) NSInteger currentStepIndex;
+@property (nonatomic, assign) NSInteger previewStepIndex;
 @property (nonatomic, assign) KronicleManagerDirection requestedDirection;
 
 - (id)initWithKronicle:(Kronicle *)kronicle;

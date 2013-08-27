@@ -11,7 +11,9 @@
 
 @class KronicleBlockView;
 @protocol KronicleBlockViewDelegate <NSObject>
+@optional
 - (void)kronicleBlockView:(KronicleBlockView *)kronicleBlockView deleteKronicle:(Kronicle *)kronicle;
+
 - (void)kronicleBlockView:(KronicleBlockView *)kronicleBlockView requestKronicle:(Kronicle *)kronicle;
 @end
 
@@ -19,6 +21,7 @@
 
 
 @property (nonatomic, weak) id <KronicleBlockViewDelegate> delegate;
+@property (nonatomic, assign) BOOL deleteIsHidden;
 
 + (CGFloat)blockHeight;
 

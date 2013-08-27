@@ -18,7 +18,7 @@
 #import "KRCategoriesCollectionViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface KRCategoriesViewController ()
+@interface KRCategoriesViewController () <KRCategoriesCollectionViewCellDelegate>
 
 @property(strong, nonatomic) KRSearchTextFieldControlView *searchTextFieldControlView;
 @property(strong, nonatomic) UICollectionView *categoriesCollectionView;
@@ -157,7 +157,40 @@ float const kCollectionViewAnimateTime = 0.2f;
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     KRCategoriesCollectionViewCell *cell = [_categoriesCollectionView dequeueReusableCellWithReuseIdentifier:KRCollectionCellReuseIdentifier forIndexPath:indexPath];
     cell.cellTitleLabel.text = [_dataSource objectAtIndex:indexPath.row];
+    cell.delegate = self;
     return cell;
 }
 
+
+#pragma mark - KRCategoriesCollectionViewCellDelegate delegate stuff
+- (void)categorieCellHit:(KRCategoriesCollectionViewCell *)categoriesCollectionViewCell {
+    KRListViewController *krlvc = [[KRListViewController alloc] initWithNibName:@"KRListViewController" bundle:nil];
+    [self.navigationController pushViewController:krlvc animated:YES];
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

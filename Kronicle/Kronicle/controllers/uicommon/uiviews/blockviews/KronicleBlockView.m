@@ -115,6 +115,11 @@
     return self;
 }
 
+- (void)setDeleteIsHidden:(BOOL)deleteIsHidden {
+    _deleteIsHidden = deleteIsHidden;
+    _deleteButton.hidden = deleteIsHidden;
+}
+
 #pragma gesture regocognizers delegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if ([touch.view isKindOfClass:[UIControl class]]) {
@@ -126,7 +131,10 @@
 
 - (IBAction)deleteTapped:(id)sender {
     NSLog(@"deleteButton");
-    [self.delegate kronicleBlockView:self deleteKronicle:_kronicle];
+    
+    if ([self.delegate respondsToSelector:@selector(kronicleBlockView:deleteKronicle:)]) {
+        [self.delegate kronicleBlockView:self deleteKronicle:_kronicle];
+    }
     
 }
 

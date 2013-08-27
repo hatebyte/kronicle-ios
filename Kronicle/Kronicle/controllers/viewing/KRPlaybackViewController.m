@@ -197,6 +197,11 @@
     } else {
         [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
     }
+    if (_kronicleManager.currentStepIndex == _kronicle.stepCount-1) {
+        [_stepNavigation setAsLastStep];
+    } else {
+        [_stepNavigation reset];
+    }
     [self relayoutForPlayback];
 }
 
@@ -216,6 +221,12 @@
     } else {
         [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
     }
+    
+    if (_kronicleManager.previewStepIndex == _kronicle.stepCount-1) {
+        [_stepNavigation setAsLastStep];
+    } else {
+        [_stepNavigation reset];
+    }
     [self relayoutForPlayback];
 }
 
@@ -224,7 +235,6 @@
     [_circularGraphView updateForFinished];
     [_stepNavigation updateForFinished];
     [_mediaView updateForFinishedWithImage:_kronicle.coverUrl andTitle:_kronicle.title];
-    
     [self relayoutForFinished];
 }
 
@@ -246,6 +256,9 @@
             break;
         case KRStepNavigationRequestStartOver:
             [self setStep:0];
+            break;
+        case KRStepNavigationRequestGoBack:
+            [self previewStep:_kronicleManager.previewStepIndex];
             break;
     }
 }
@@ -281,7 +294,6 @@
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
 
-    
 }
 
 - (void)togglePlayPause {

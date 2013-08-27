@@ -252,6 +252,9 @@
     
     [self addSubview:_finishOverlay];
     [self animateInFinishedOverlay];
+    
+    [self removeGestureRecognizer:_cellTapper];
+
 }
 
 - (void)animateInFinishedOverlay {

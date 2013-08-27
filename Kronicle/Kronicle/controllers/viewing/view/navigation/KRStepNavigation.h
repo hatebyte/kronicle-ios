@@ -14,6 +14,7 @@ typedef enum {
     KRStepNavigationRequestResume,
     KRStepNavigationRequestSkip,
     KRStepNavigationRequestStartOver,
+    KRStepNavigationRequestGoBack,
 } KRStepNavigationRequest;
 
 @class KRStepNavigation;
@@ -32,5 +33,6 @@ typedef enum {
 - (void)animateNavbarOut;
 - (void)reset;
 - (void)updateForFinished;
+- (void)setAsLastStep;
 
 @end

@@ -30,11 +30,10 @@
 }
 
 #pragma public methods 
-- (void)setStep:(int)stepIndex {
+- (void)setStep:(NSInteger)stepIndex {
     if (stepIndex >= [_kronicle.steps count] || stepIndex < 0) {
         DDLogError(@"KRONICLE IS COMPLETED");
-        self.currentStepIndex = [_kronicle.steps count]+1;
-        self.previewStepIndex = [_kronicle.steps count]+1;
+        self.currentStepIndex = [_kronicle.steps count];
         [self.delegate kronicleComplete:self];
         return;
     }
@@ -45,9 +44,10 @@
     [self.delegate manager:self updateUIForStep:s];
 }
 
-- (void)setPreviewStep:(int)stepIndex {
+- (void)setPreviewStep:(NSInteger)stepIndex {
     if (stepIndex >= [_kronicle.steps count] || stepIndex < 0) {
         DDLogError(@"CANT PREVIEW THAT STEP");                              
+        self.previewStepIndex = [_kronicle.steps count];
         return;
     }
     _requestedDirection = (self.previewStepIndex < stepIndex);

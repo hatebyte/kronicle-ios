@@ -121,14 +121,28 @@
     [self.delegate controls:self navigationRequested:KRStepNavigationRequestForward];
 }
 
+- (void)goback:(id)sender {
+    [self.delegate controls:self navigationRequested:KRStepNavigationRequestGoBack];
+}
+
 - (void)reset {
     _forward.hidden = NO;
+    [_backward addTarget:self action:nil forControlEvents:UIControlEventAllEvents];
+    [_backward addTarget:self action:@selector(backward:) forControlEvents:UIControlEventTouchUpInside];
+
+}
+
+- (void)setAsLastStep {
+    _forward.hidden = YES;
 }
 
 - (void)updateForFinished {
     self.isShowing = YES;
     [self animateNavbarOut];
     _forward.hidden = YES;
+    
+    [_backward addTarget:self action:nil forControlEvents:UIControlEventAllEvents];
+    [_backward addTarget:self action:@selector(goback:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)animateNavbarIn {
