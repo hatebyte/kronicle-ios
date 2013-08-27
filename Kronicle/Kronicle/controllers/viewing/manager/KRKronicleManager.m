@@ -33,8 +33,8 @@
 - (void)setStep:(int)stepIndex {
     if (stepIndex >= [_kronicle.steps count] || stepIndex < 0) {
         DDLogError(@"KRONICLE IS COMPLETED");
-        self.currentStepIndex = [_kronicle.steps count];
-        self.previewStepIndex = [_kronicle.steps count];
+        self.currentStepIndex = [_kronicle.steps count]+1;
+        self.previewStepIndex = [_kronicle.steps count]+1;
         [self.delegate kronicleComplete:self];
         return;
     }

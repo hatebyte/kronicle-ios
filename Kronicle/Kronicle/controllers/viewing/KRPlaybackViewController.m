@@ -76,6 +76,7 @@
     _sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
     _sview.showsVerticalScrollIndicator = YES;
     _sview.showsHorizontalScrollIndicator = NO;
+    _sview.bounces = NO;
     [self.view addSubview:_sview];
     
     _kronicleManager = [[KRKronicleManager alloc] initWithKronicle:self.kronicle];
@@ -92,11 +93,9 @@
     [_sview addSubview:_graphView];
 
     _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y, 320, 310) andKronicle:self.kronicle];
-    _scrollView.pagingEnabled = YES;
-    _scrollView.bounces = NO;
-    _scrollView.contentSize = CGSizeMake(320 * [self.kronicle.steps count], _scrollView.frame.size.height);
     _scrollView.scrollDelegate = self;
-    [_sview addSubview:_scrollView];
+    _scrollView.contentSize = CGSizeMake(320 * [_kronicle.steps count], [KRScrollView playbackHeight]);
+   [_sview addSubview:_scrollView];
     
     _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y-40, 320, 100)];
     _stepNavigation.delegate = self;
@@ -146,7 +145,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
-
 }
 
 - (IBAction)back:(id)sender {
@@ -154,7 +152,6 @@
 }
 
 - (IBAction)publishKronicle:(id)sender {
-    
     _kronicle.isFinished = YES;
     [[ManagedContextController current] saveContext];
     [[KRHomeViewController current] mykronicles];
@@ -163,7 +160,7 @@
 - (void)dealloc {
     [_mediaView stop];
     _mediaView = nil;
-
+    
 }
 
 #pragma KRClockManager delegate
@@ -200,7 +197,7 @@
     } else {
         [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
     }
-    
+    [self relayoutForPlayback];
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(Step*)step {
@@ -219,16 +216,16 @@
     } else {
         [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
     }
+    [self relayoutForPlayback];
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
     [_graphView updateForFinished];
     [_circularGraphView updateForFinished];
-//    [_stepListContainerView updateForLastStep];
-    [_scrollView updateForFinished];
-    
     [_stepNavigation updateForFinished];
     [_mediaView updateForFinishedWithImage:_kronicle.coverUrl andTitle:_kronicle.title];
+    
+    [self relayoutForFinished];
 }
 
 
@@ -274,20 +271,80 @@
 - (void)previewStep:(NSInteger)step {
     [_stepNavigation reset];
     [_kronicleManager setPreviewStep:step];
+
+    
 }
 
 - (void)setStep:(NSInteger)step {
-    NSLog(@"steps : %@", _kronicle.steps);
     [_stepNavigation reset];
     [_graphView showDisplayWithReset:YES];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
+
+    
 }
 
 - (void)togglePlayPause {
     [_clockManager togglePlayPause];
     [_mediaView togglePlayPause:_clockManager.isPaused];
 }
+
+
+#pragma mark finished expand/contract
+- (void)relayoutForPlayback {
+    if (_stepListContainerView.hidden==NO) {
+        return;
+    }
+    [_mediaView animateOutFinishedOverlay];
+    _stepListContainerView.hidden = NO;
+    _circularGraphView.hidden = NO;
+    [_sview addSubview:_stepNavigation];
+    [_sview addSubview:_stepListContainerView];
+    [_sview addSubview:_circularGraphView];
+    _scrollView.contentSize = CGSizeMake(320 * [_kronicle.steps count], [KRScrollView playbackHeight]);
+    
+    [UIView animateWithDuration:.5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _stepListContainerView.alpha       = 1.f;
+                         _circularGraphView.alpha           = 1.f;
+                         _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
+                                                        _scrollView.frame.origin.y,
+                                                        320,
+                                                        [KRScrollView playbackHeight]);
+                         _sview.contentSize = CGSizeMake(_bounds.size.width, _circularGraphView.frame.origin.y + _circularGraphView.frame.size.height + 70);
+                     }
+                     completion:^(BOOL fin){
+                     }];
+
+}
+
+- (void)relayoutForFinished {
+    _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView finishedHeight]);
+    [_scrollView updateForFinished];
+    _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
+                                   _scrollView.frame.origin.y,
+                                   320,
+                                   [KRScrollView finishedHeight]);
+    [_sview addSubview:_scrollView];
+    [_sview addSubview:_stepNavigation];
+
+    [UIView animateWithDuration:.5
+                          delay:.2f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _stepListContainerView.alpha       = 0.f;
+                         _circularGraphView.alpha           = 0.f;
+                         _sview.contentSize = CGSizeMake(_bounds.size.width, _scrollView.frame.origin.y + _scrollView.frame.size.height);
+
+                     }
+                     completion:^(BOOL fin){
+                         _stepListContainerView.hidden = YES;
+                         _circularGraphView.hidden = YES;
+                     }];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

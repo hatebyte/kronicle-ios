@@ -126,6 +126,8 @@
 }
 
 - (void)updateForFinished {
+    self.isShowing = YES;
+    [self animateNavbarOut];
     _forward.hidden = YES;
 }
 

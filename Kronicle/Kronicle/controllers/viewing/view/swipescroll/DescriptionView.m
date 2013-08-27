@@ -12,6 +12,7 @@
 #import "KronicleBlockTableViewCell.h"
 #import "Kronicle+Helper.h"
 #import "KRKronicleStartViewController.h"
+#import "KRGlobals.h"
 
 
 @interface DescriptionView () <UITableViewDataSource, UITableViewDelegate, KronicleBlockTableViewCellDelegate> {
@@ -24,6 +25,14 @@
 @end
 
 @implementation DescriptionView
+
++ (CGFloat)playbackHeight {
+    return 310.f;
+}
+
++ (CGFloat)finishedHeight {
+    return 530.f;
+}
 
 - (id)initWithFrame:(CGRect)frame andStep:(Step*)step {
     self = [super initWithFrame:frame];
@@ -42,17 +51,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self layout];
-        _clockLabel.text = @"Finished!";
-        _clockLabel.frame = CGRectMake(0, (_description.frame.origin.y - 30) * .5, 320, 30);
+        _clockLabel.text                    = @"Finished!";
+        _clockLabel.frame                   = CGRectMake(0, (_description.frame.origin.y - 30) * .5, 320, 30);
         [_titleLabel removeFromSuperview];
-        _titleLabel = nil;
+        _titleLabel                         = nil;
         [_description removeFromSuperview];
-        _description = nil;
+        _description                        = nil;
         
-        NSInteger tableHeight = 80;
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, tableHeight, 320, self.frame.size.height - tableHeight)];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
+        NSInteger tableHeight               = 80;
+        _tableView                          = [[UITableView alloc] initWithFrame:CGRectMake(0, tableHeight, 320, 450)];
+        _tableView.delegate                 = self;
+        _tableView.dataSource               = self;
+        _tableView.backgroundColor          = [KRColorHelper grayLight];
         [self addSubview:_tableView];
     }
     return self;
@@ -116,7 +126,7 @@
 
 - (void)updateForFinished {
     _clockLabel.text = @"Finished!";
-    
+        
     [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
         _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
         [_tableView reloadData];
@@ -138,13 +148,24 @@
 
 
 #pragma tableview
-//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    return [[MyKroniclesSectionHeader alloc] initWithFrame:CGRectMake(0, 0, 320, [MyKroniclesSectionHeader headerHeight])];
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return [MyKroniclesSectionHeader headerHeight];
-//}
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *suggestionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 55.f)];
+    suggestionView.backgroundColor = [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.6f];
+    
+    UILabel *suggestionsLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPadding, 0, 320-(2*kPadding), 55.f)];
+    suggestionsLabel.text = NSLocalizedString(@"You might also like", @"suggestionsLabel title");
+    suggestionsLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:20];
+    suggestionsLabel.textColor = [KRColorHelper grayDark];
+    suggestionsLabel.textAlignment = NSTextAlignmentLeft;
+    suggestionsLabel.backgroundColor = [UIColor clearColor];
+    [suggestionView addSubview:suggestionsLabel];
+    
+    return suggestionView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 55.f;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [KronicleBlockTableViewCell cellHeight];

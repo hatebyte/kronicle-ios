@@ -17,6 +17,10 @@
 @property(nonatomic, weak) Step *step;
 
 
++ (CGFloat)playbackHeight;
++ (CGFloat)finishedHeight;
+
+
 - (id)initWithFrame:(CGRect)frame andStep:(Step*)step;
 - (id)initAsFinishedWithFrame:(CGRect)frame;
 - (void)updateClock:(NSString *)timeString;

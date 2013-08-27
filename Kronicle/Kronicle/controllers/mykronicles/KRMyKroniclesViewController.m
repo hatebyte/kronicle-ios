@@ -58,15 +58,15 @@
 
 - (void)loadLocalKronicles {
     [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
-        _savedKronicles = kronicles;
-        [self parseKroniclesToTable];
-    }
+                            _savedKronicles = kronicles;
+                            [self parseKroniclesToTable];
+                        }
                        onFailure:^(NSDictionary *error) {
                            if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
                                [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
-                                   _savedKronicles = kronicles;
-                                   [self parseKroniclesToTable];
-                               }
+                                                       _savedKronicles = kronicles;
+                                                       [self parseKroniclesToTable];
+                                                   }
                                                   onFailure:^(NSError *error) {
                                                       NSLog(@"Cant get remote kronicle : %@", error);
                                                   }];

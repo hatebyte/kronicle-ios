@@ -25,10 +25,13 @@ typedef enum {
 
 @property(nonatomic, weak) id <KRScrollViewDelegate> scrollDelegate;
 
++ (CGFloat)playbackHeight;
++ (CGFloat)finishedHeight;
+
 - (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle;
-- (void)scrollToPage:(int)page;
+- (void)scrollToPage:(NSInteger)page;
 - (void)updateCurrentStepClock:(NSString *)timeString;
-- (void)setCurrentStep:(int)stepIndex;
+- (void)setCurrentStep:(NSInteger)stepIndex;
 - (void)updateForFinished;
 
 @end

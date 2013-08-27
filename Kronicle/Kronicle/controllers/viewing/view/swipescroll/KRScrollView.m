@@ -18,19 +18,28 @@
 
 @implementation KRScrollView
 
++ (CGFloat)playbackHeight {
+    return [DescriptionView playbackHeight];
+}
+
++ (CGFloat)finishedHeight {
+    return [DescriptionView finishedHeight];
+}
+
 - (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle {
     if (self = [super initWithFrame:frame]) {
-        self.showsHorizontalScrollIndicator = NO;
-        self.showsVerticalScrollIndicator = NO;
-        self.delegate = self;
-        self.backgroundColor = [UIColor clearColor];
+        self.showsHorizontalScrollIndicator         = NO;
+        self.showsVerticalScrollIndicator           = NO;
+        self.delegate                               = self;
+        self.pagingEnabled                          = YES;
+        self.bounces                                = NO;
+        self.backgroundColor                        = [UIColor clearColor];
 
         int count = [kronicle.steps count];
         DescriptionView *d;
         NSInteger i = 0;
         for (i = 0; i < count; i++) {
             Step *s = [kronicle.steps objectAtIndex:i];
-            NSLog(@"s.k : %d", s.indexInKronicle);
             d = [[DescriptionView alloc] initWithFrame:CGRectMake(frame.size.width * i,
                                                                                    0,
                                                                                    frame.size.width,
@@ -39,35 +48,33 @@
             [self addSubview:d];
         }
         
-        d = [[DescriptionView alloc] initAsFinishedWithFrame:CGRectMake(d.frame.origin.x + d.frame.size.width,
+        d = [[DescriptionView alloc] initAsFinishedWithFrame:CGRectMake(d.frame.size.width + d.frame.origin.x,
                                                                         0,
                                                                         frame.size.width,
                                                                         frame.size.height)];
         [self addSubview:d];
-
+     
     }
     return self;
 }
 
-//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-//    _velocity = velocity.x;
-//}
-- (void)setCurrentStep:(int)stepIndex {
+- (void)setCurrentStep:(NSInteger)stepIndex {
     _currentStep = [[self subviews] objectAtIndex:stepIndex];
+    _currentStep.frame = CGRectMake(_currentStep.frame.origin.x,
+                                    _currentStep.frame.origin.y,
+                                    _currentStep.frame.size.width,
+                                    [DescriptionView playbackHeight]);
 }
 
 - (void)updateForFinished {
-    NSArray *subViews = [self subviews];
-    NSInteger lastPage = [subViews count]-1;
-    DescriptionView *d;
-    for (int i = 0; i < subViews.count; i++) {
-        d  = [[self subviews] objectAtIndex:i];
-        [d resetClock];
-    }
     [_currentStep resetClock];
-    _currentStep = [[self subviews] objectAtIndex:lastPage];
-    [self scrollToPage:lastPage];
-    [_currentStep updateForFinished];
+    DescriptionView *finishedStep = [[self subviews] lastObject];
+    [self scrollToPage:[[self subviews] count]-1];
+    finishedStep.frame = CGRectMake(finishedStep.frame.origin.x,
+                                    finishedStep.frame.origin.y,
+                                    finishedStep.frame.size.width,
+                                    [DescriptionView finishedHeight]);
+    [finishedStep updateForFinished];
 }
 
 #pragma delegate
@@ -84,12 +91,11 @@
         [d resetClock];
     }
     [_currentStep updateClock:timeString];
-    //[d updateForLastStep];
 }
 
 
 #pragma public properties
-- (void)scrollToPage:(int)page {
+- (void)scrollToPage:(NSInteger)page {
     CGPoint offset = CGPointMake(page * self.frame.size.width, 0);
     [self setContentOffset:offset animated:YES];
 }

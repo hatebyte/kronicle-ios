@@ -147,7 +147,8 @@
 - (void)transitionViewToStage:(UIView *)view {
     [UIView beginAnimations:@"animation" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration: 0.7];
+    [UIView setAnimationDuration: 0.7f];
+    [UIView setAnimationDelay: 0.2f];
     [UIView setAnimationTransition:_transition forView:view cache:NO];
     [self addSubview:view];
     [UIView commitAnimations];
@@ -268,8 +269,8 @@
 }
 
 - (void)animateOutFinishedOverlay {
-    [UIView animateWithDuration:.5
-                          delay:.7f
+    [UIView animateWithDuration:.4f
+                          delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          _finishOverlay.alpha = 0.f;
