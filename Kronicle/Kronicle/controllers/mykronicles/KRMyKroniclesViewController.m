@@ -15,11 +15,13 @@
 #import "MyKroniclesSectionHeader.h"
 #import "Kronicle+Helper.h"
 #import "KRNavigationViewController.h"
+#import "KRKroniclesPageNavigationView.h"
 
-@interface KRMyKroniclesViewController () <KronicleBlockTableViewCellDelegate> {
+@interface KRMyKroniclesViewController () <KronicleBlockTableViewCellDelegate, KRKroniclesPageNavigationViewDelegate> {
     @private
-    NSMutableArray *_kroniclesModuloed;
+    NSArray *_kroniclesModuloed;
     NSArray *_savedKronicles;
+    KRKroniclesPageNavigationView *_subHeaderView;
 }
 @end
 
@@ -41,6 +43,21 @@
     
     _cancelButton.hidden                    = YES;
     
+    
+    _subHeaderView                                      = [[KRKroniclesPageNavigationView alloc] initWithFrame:CGRectMake(0,
+                                                                                                                          0,
+                                                                                                                          320,
+                                                                                                                          55)
+                                                                                                 andTitleArray:[NSArray arrayWithObjects:@"Created by me",
+                                                                                                                @"Added",
+                                                                                                                @"History", nil]];
+    _subHeaderView.delegate                             = self;
+    [self.view addSubview:_subHeaderView];
+    
+    NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height;
+    _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top));
+
+    
     [self loadLocalKronicles];
 }
 
@@ -58,15 +75,15 @@
 
 - (void)loadLocalKronicles {
     [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
-                            _savedKronicles = kronicles;
-                            [self parseKroniclesToTable];
-                        }
+        _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
+        [_tableView reloadData];
+    }
                        onFailure:^(NSDictionary *error) {
                            if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
                                [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
-                                                       _savedKronicles = kronicles;
-                                                       [self parseKroniclesToTable];
-                                                   }
+                                   _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
+                                   [_tableView reloadData];
+                               }
                                                   onFailure:^(NSError *error) {
                                                       NSLog(@"Cant get remote kronicle : %@", error);
                                                   }];
@@ -74,46 +91,41 @@
                        }];
 }
 
-- (void)parseKroniclesToTable {
-    _kroniclesModuloed = [[NSMutableArray alloc] init];
-    int stepsMinusFinish = [_savedKronicles count];
-    if (stepsMinusFinish < 1) {
-        [_tableView reloadData];
-        return;
-    }
-    
-    if(stepsMinusFinish % 2 == 0) {
-        for (int i = 0; i < stepsMinusFinish; i++) {
-            int next = i + 1;
-            NSArray *inArray = [NSArray arrayWithObjects:[_savedKronicles objectAtIndex:i], [_savedKronicles objectAtIndex:next], nil];
-            [_kroniclesModuloed addObject:inArray];
-            i = next;
-        }
 
-    } else {
-        for (int i = 0; i < stepsMinusFinish; i++) {
-            NSArray *inArray;
-            int next = i + 1;
-            if (next < stepsMinusFinish) {
-                inArray = [NSArray arrayWithObjects:[_savedKronicles objectAtIndex:i], [_savedKronicles objectAtIndex:next], nil];
-            } else {
-                inArray = [NSArray arrayWithObjects:[_savedKronicles objectAtIndex:i], nil];
-            }
-            i= next;
-            [_kroniclesModuloed addObject:inArray];
-        }
-    }
-    [_tableView reloadData];
+#pragma KRKroniclesPageNavigationView
+- (void)kroniclesPageNavigationView:KRKroniclesPageNavigationView didSelect:(KroniclesPageNavigationItem)item {
+    CGRect originalTableFrame = _tableView.frame;
+    [UIView animateWithDuration:.4
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         CGRect frame = _tableView.frame;
+                         frame.origin.y = _bounds.size.height + 10;
+                         _tableView.frame = frame;
+                     }
+                     completion:^(BOOL fin){
+                         [UIView animateWithDuration:.4
+                                               delay:0.0
+                                             options:UIViewAnimationOptionCurveEaseIn
+                                          animations:^{
+                                              _tableView.frame = originalTableFrame;
+                                          }
+                                          completion:^(BOOL fin){
+                                              _subHeaderView.preventHit = NO;
+                                          }];
+                     }];
 }
-
 
 #pragma tableview
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return [[MyKroniclesSectionHeader alloc] initWithFrame:CGRectMake(0, 0, 320, [MyKroniclesSectionHeader headerHeight])];
+    UIView *viewer = [[UIView alloc] init];
+    viewer.backgroundColor = [UIColor clearColor];
+    viewer.userInteractionEnabled = NO;
+    return viewer;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [MyKroniclesSectionHeader headerHeight];
+    return kPadding;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -139,17 +151,7 @@
 - (void)kronicleDeletionRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle {
     [Kronicle deleteKronicle:kronicle];
     
-    [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
-        _savedKronicles = kronicles;
-        [self parseKroniclesToTable];
-    }
-                       onFailure:^(NSDictionary *error) {
-                           if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
-                               _savedKronicles = nil;
-                               [self parseKroniclesToTable];
-                           }
-                       }];
-
+    [self loadLocalKronicles];
 }
 
 - (void)kroniclePlaybackRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle {

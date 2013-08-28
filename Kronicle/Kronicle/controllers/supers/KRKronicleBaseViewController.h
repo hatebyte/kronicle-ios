@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Kronicle+Helper.h"
 
 @interface KRKronicleBaseViewController : UIViewController
+
+- (void)viewListItems:(Kronicle *)kronicle;
 
 @end

@@ -139,7 +139,7 @@
     _addItemCatcher.backgroundColor             = [UIColor clearColor];
     [_addItemCatcher setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
     [_addItemCatcher setTitle:@"Add Items" forState:UIControlStateNormal];
-    [_addItemCatcher addTarget:self action:@selector(addItems) forControlEvents:UIControlEventTouchUpInside];
+    [_addItemCatcher addTarget:self action:@selector(itemsNeeded) forControlEvents:UIControlEventTouchUpInside];
 
     _hamburgerImageView                         = [[UIImageView alloc] init];
     _hamburgerImageView.image                   = [UIImage imageNamed:@"hamburger_50px"];
@@ -164,7 +164,7 @@
 }
 
 - (void)itemsNeeded {
-    
+    [self viewListItems:_kronicle];
 }
 
 - (void)startKronicle {

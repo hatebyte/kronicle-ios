@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KRKronicleBaseViewController.h"
 #import "KRFormFieldCell.h"
 
-@interface KRBaseEditTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, KRFormFieldCellDelegate> {
+@interface KRBaseEditTableViewController : KRKronicleBaseViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, KRFormFieldCellDelegate> {
     @protected
     CGRect _bounds;
     UITableView *_tableView;
@@ -21,5 +22,6 @@
 
 - (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType;
 - (void)validate;
+- (void)addListItems:(Kronicle *)kronicle;
 
 @end

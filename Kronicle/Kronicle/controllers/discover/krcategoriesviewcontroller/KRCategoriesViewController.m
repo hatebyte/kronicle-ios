@@ -17,8 +17,14 @@
 #import "UIView+GCLibrary.h"
 #import "KRCategoriesCollectionViewCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "KronicleBlockTableViewCell.h"
+#import "Kronicle+Helper.h"
+#import "KRKronicleStartViewController.h"
 
-@interface KRCategoriesViewController () <KRCategoriesCollectionViewCellDelegate>
+@interface KRCategoriesViewController () <KRCategoriesCollectionViewCellDelegate, KronicleBlockTableViewCellDelegate> {
+    @private
+    NSArray *_kroniclesModuloed;
+}
 
 @property(strong, nonatomic) KRSearchTextFieldControlView *searchTextFieldControlView;
 @property(strong, nonatomic) UICollectionView *categoriesCollectionView;
@@ -35,8 +41,7 @@ NSString *const KRCollectionCellReuseIdentifier = @"KRCollectionCellReuseIdentif
 float const kCollectionViewAnimateTime = 0.2f;
 
 #pragma mark - view building
-- (void)buildSearchView
-{
+- (void)buildSearchView {
     float xmargin = 20.0f;
     float ymargin = 25.0f;
     float searchFieldHeight = 90.0f;
@@ -45,8 +50,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     [self.view addSubview:_searchTextFieldControlView];
 }
 
-- (void)buildCollectionView
-{
+- (void)buildCollectionView {
     _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [_flowLayout setItemSize:CGSizeMake(120, 120)];
     [_flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -66,15 +70,13 @@ float const kCollectionViewAnimateTime = 0.2f;
     [self.view addSubview:_categoriesCollectionView];
 }
 
-- (void)buildSearchWhiteBackground
-{
+- (void)buildSearchWhiteBackground {
     _searchResultsBackground = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, self.view.height)];
     _searchResultsBackground.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_searchResultsBackground];
 }
 
-- (void)animateSearchViewIn
-{
+- (void)animateSearchViewIn {
     [_searchResultsBackground setY:_searchTextFieldControlView.height + _searchTextFieldControlView.y + 5.0f];
     [UIView animateWithDuration:kCollectionViewAnimateTime delay:0 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
@@ -82,8 +84,7 @@ float const kCollectionViewAnimateTime = 0.2f;
                      } completion:nil];
 }
 
-- (void)animateSearchViewOut
-{
+- (void)animateSearchViewOut {
     [_searchResultsBackground setY:self.view.height];
     [UIView animateWithDuration:kCollectionViewAnimateTime delay:0 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
@@ -93,8 +94,7 @@ float const kCollectionViewAnimateTime = 0.2f;
 
 #pragma mark - init stuff
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -102,8 +102,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [KRColorHelper turquoise];
     
@@ -118,6 +117,32 @@ float const kCollectionViewAnimateTime = 0.2f;
     [self buildSearchView];
     [self buildSearchWhiteBackground];
     [self buildCollectionView];
+    
+    _tableView.frame = CGRectMake(0,0,_searchResultsBackground.frame.size.width, _searchResultsBackground.frame.size.height);
+    _tableView.backgroundColor        = [KRColorHelper grayLight];
+
+    [_searchResultsBackground addSubview:_tableView];
+    
+    [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
+        _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
+        [_tableView reloadData];
+    }
+                       onFailure:^(NSDictionary *error) {
+                           if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
+                               [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
+                                   
+                                   NSLog(@"kronicles bfeore : %@", kronicles);
+                                   
+                                   _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
+                                   NSLog(@"_kroniclesModuloed  : %@", _kroniclesModuloed);
+                                   [_tableView reloadData];
+                               }
+                                                  onFailure:^(NSError *error) {
+                                                      NSLog(@"Cant get remote kronicle : %@", error);
+                                                  }];
+                           }
+                       }];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -125,32 +150,23 @@ float const kCollectionViewAnimateTime = 0.2f;
     [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
 }
 
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    [[KRHomeViewController current] closeNavigation];
-//
-//}
-//
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - uicollectionview delegate stuff
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+#pragma mark - uicollectionview delegate stuff
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _dataSource.count;
 }
 
@@ -166,6 +182,63 @@ float const kCollectionViewAnimateTime = 0.2f;
 - (void)categorieCellHit:(KRCategoriesCollectionViewCell *)categoriesCollectionViewCell {
     KRListViewController *krlvc = [[KRListViewController alloc] initWithNibName:@"KRListViewController" bundle:nil];
     [self.navigationController pushViewController:krlvc animated:YES];
+}
+
+
+
+
+
+#pragma tableview
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *viewer = [[UIView alloc] init];
+    viewer.backgroundColor = [UIColor clearColor];
+    viewer.userInteractionEnabled = NO;
+    return viewer;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return kPadding;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [KronicleBlockTableViewCell cellHeight];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_kroniclesModuloed count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    KronicleBlockTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"KronicleCell"];
+    if (!cell) {
+        cell = [[KronicleBlockTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"KronicleCell"];
+    }
+    [cell prepareForReuseWithArray: [_kroniclesModuloed objectAtIndex:indexPath.row] ];
+    cell.delegate = self;
+    return cell;
+}
+
+
+
+#pragma kronicleblocktableviewcell
+- (void)kroniclePlaybackRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle {
+    if (kronicle.steps.count > 0) {
+        [self navigateToKronicle:kronicle];
+    } else {
+        [Kronicle populateLocalKronicleWithRemoteSteps:kronicle
+                                           withSuccess:^(Kronicle *k) {
+                                               [self navigateToKronicle:k];
+                                           }
+                                             onFailure:^(NSDictionary *error) {
+                                             }];
+    }
+}
+
+- (void)navigateToKronicle:(Kronicle*)kronicle {
+    [self animateSearchViewOut];
+    
+    KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
+    [self.navigationController pushViewController:kronicleStartViewController animated:YES];
 }
 
 

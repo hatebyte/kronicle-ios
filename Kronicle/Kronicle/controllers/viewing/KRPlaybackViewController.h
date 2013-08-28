@@ -9,13 +9,14 @@
 #import "KRHomeViewController.h"
 #import "Kronicle+Helper.h"
 #import "MediaView.h"
+#import "KRKronicleBaseViewController.h"
 
 typedef enum {
     KRKronicleViewingStateView,
     KRKronicleViewingStatePreview
 } KRKronicleViewingState;
 
-@interface KRPlaybackViewController : UIViewController
+@interface KRPlaybackViewController : KRKronicleBaseViewController
 //<KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate, KRClockDelegate, KRKronicleNavViewDelegate>
 {
 

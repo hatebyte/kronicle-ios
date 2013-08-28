@@ -46,6 +46,9 @@
 		88baa8cb1cb56b7e6f665793 /* KRAPIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57406175A3B77002AC1B9 /* KRAPIStore.m */; };
 		8b0b86cf513301c6e1a49087 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD45175B9BA30003FEF5 /* icon@2x.png */; };
 		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
+		D2333ED217CD788500CE6831 /* backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2333ED117CD788500CE6831 /* backarrow.png */; };
+		D2333EE117CD7E3900CE6831 /* KRKroniclesPageNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2333EE017CD7E3900CE6831 /* KRKroniclesPageNavigationView.m */; };
+		D2333EE317CD7FA200CE6831 /* tinyrturqoisecarrot.png in Resources */ = {isa = PBXBuildFile; fileRef = D2333EE217CD7FA200CE6831 /* tinyrturqoisecarrot.png */; };
 		D236FB7A17B464E4003DD323 /* KRKronicleStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */; };
 		D236FB7B17B464E4003DD323 /* KRKronicleStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */; };
 		D236FB7C17B464E4003DD323 /* KRPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */; };
@@ -276,6 +279,10 @@
 		8cc04305e90128ef892ea4d8 /* calabash.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2333ED117CD788500CE6831 /* backarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backarrow.png; sourceTree = "<group>"; };
+		D2333EDF17CD7E3900CE6831 /* KRKroniclesPageNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKroniclesPageNavigationView.h; sourceTree = "<group>"; };
+		D2333EE017CD7E3900CE6831 /* KRKroniclesPageNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKroniclesPageNavigationView.m; sourceTree = "<group>"; };
+		D2333EE217CD7FA200CE6831 /* tinyrturqoisecarrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyrturqoisecarrot.png; sourceTree = "<group>"; };
 		D236FB0517B4631A003DD323 /* Kronicle-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kronicle-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D236FB4317B464E4003DD323 /* KRKronicleStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleStartViewController.h; sourceTree = "<group>"; };
 		D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleStartViewController.m; sourceTree = "<group>"; };
@@ -642,6 +649,24 @@
 				0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */,
 			);
 			name = home;
+			sourceTree = "<group>";
+		};
+		D2333ED017CD788500CE6831 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				D2333EE217CD7FA200CE6831 /* tinyrturqoisecarrot.png */,
+				D2333ED117CD788500CE6831 /* backarrow.png */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		D2333EDE17CD7E3900CE6831 /* kroniclesnavigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2333EDF17CD7E3900CE6831 /* KRKroniclesPageNavigationView.h */,
+				D2333EE017CD7E3900CE6831 /* KRKroniclesPageNavigationView.m */,
+			);
+			path = kroniclesnavigation;
 			sourceTree = "<group>";
 		};
 		D236FB2817B464E4003DD323 /* controllers */ = {
@@ -1061,6 +1086,7 @@
 		D281275517C99B7A00E66C7F /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2333ED017CD788500CE6831 /* category */,
 				D28127E817CAB34F00E66C7F /* start */,
 				D28127EA17CAB34F00E66C7F /* home */,
 				D28127D317CA627F00E66C7F /* mykronicles */,
@@ -1391,6 +1417,7 @@
 		D2CF7E3B17B46AC000E3D1F0 /* krlistviewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				D2333EDE17CD7E3900CE6831 /* kroniclesnavigation */,
 				D2CF7E4117B46B9900E3D1F0 /* tabelcell */,
 				D2CF7E3C17B46AC000E3D1F0 /* KRListViewController.h */,
 				D2CF7E3D17B46AC000E3D1F0 /* KRListViewController.m */,
@@ -1675,6 +1702,8 @@
 				D28127F217CAB5D000E66C7F /* start_button.png in Resources */,
 				D28127F317CAB5D000E66C7F /* plus_start.png in Resources */,
 				0C6F80DF17CAF0D300EFC4B3 /* KRCategoriesViewController.xib in Resources */,
+				D2333ED217CD788500CE6831 /* backarrow.png in Resources */,
+				D2333EE317CD7FA200CE6831 /* tinyrturqoisecarrot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1881,6 +1910,7 @@
 				0C6F80EC17CAF19000EFC4B3 /* KRDefaultButton.m in Sources */,
 				D28127FA17CB7DD200E66C7F /* KronicleBlockView.m in Sources */,
 				D28127FB17CB7DD200E66C7F /* StepBlockView.m in Sources */,
+				D2333EE117CD7E3900CE6831 /* KRKroniclesPageNavigationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

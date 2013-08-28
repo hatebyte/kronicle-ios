@@ -295,9 +295,7 @@
 
 #pragma mark AddDescriptionTableViewCell delegate
 - (void)addListItemsRequested:(AddDescriptionTableViewCell *)addDescriptionTableViewCell {
-    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithNibName:@"KRItemsViewController" bundle:nil];
-    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-    [self.navigationController presentModalViewController:itemsViewController animated:YES];
+    [self addListItems:_kronicle];
 }
 
 

@@ -13,7 +13,7 @@
 #import "AddStepTableViewCell.h"
 #import "AddMediaTableViewCell.h"
 #import "AddTimeCell.h"
-
+#import "KRItemsViewController.h"
 
 @interface KRBaseEditTableViewController ()
 
@@ -59,7 +59,20 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 
+- (void)popViewControllerAnimated:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)validate {}
+
+#pragma mark listemsViewcontroller delegate
+- (void)addListItems:(Kronicle *)kronicle {
+    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithNibName:@"KRItemsViewController" bundle:nil];
+    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self.navigationController presentModalViewController:itemsViewController animated:YES];
+}
+
+
 
 #pragma uitableview
 

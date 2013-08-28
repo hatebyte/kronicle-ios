@@ -31,7 +31,7 @@
 }
 
 + (CGFloat)finishedHeight {
-    return 530.f;
+    return 80 + (55.f + [KronicleBlockTableViewCell cellHeight]);
 }
 
 - (id)initWithFrame:(CGRect)frame andStep:(Step*)step {
@@ -58,11 +58,15 @@
         [_description removeFromSuperview];
         _description                        = nil;
         
-        NSInteger tableHeight               = 80;
-        _tableView                          = [[UITableView alloc] initWithFrame:CGRectMake(0, tableHeight, 320, 450)];
+        NSInteger tableHeight               = 55.f + [KronicleBlockTableViewCell cellHeight];
+        NSInteger tableY                    = 80;
+        
+        _tableView                          = [[UITableView alloc] initWithFrame:CGRectMake(0, tableY, 320, tableHeight)];
         _tableView.delegate                 = self;
         _tableView.dataSource               = self;
         _tableView.backgroundColor          = [KRColorHelper grayLight];
+        _tableView.bounces                  = NO;
+        _tableView.scrollEnabled            = NO;
         [self addSubview:_tableView];
     }
     return self;
@@ -128,13 +132,13 @@
     _clockLabel.text = @"Finished!";
         
     [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
-        _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
+        _kroniclesModuloed = [NSArray arrayWithObject:[[Kronicle moduloKronicleList:kronicles] objectAtIndex:0]];
         [_tableView reloadData];
     }
                        onFailure:^(NSDictionary *error) {
                            if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
                                [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
-                                   _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
+                                   _kroniclesModuloed = [NSArray arrayWithObject:[[Kronicle moduloKronicleList:kronicles] objectAtIndex:0]];
                                    [_tableView reloadData];
                                }
                                                   onFailure:^(NSError *error) {
@@ -150,7 +154,9 @@
 #pragma tableview
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *suggestionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 55.f)];
-    suggestionView.backgroundColor = [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.6f];
+//    suggestionView.backgroundColor = [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.6f];
+    suggestionView.backgroundColor          = [KRColorHelper grayLight];
+
     
     UILabel *suggestionsLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPadding, 0, 320-(2*kPadding), 55.f)];
     suggestionsLabel.text = NSLocalizedString(@"You might also like", @"suggestionsLabel title");

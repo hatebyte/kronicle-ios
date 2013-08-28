@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Kronicle+Helper.h"
+#import "KRKronicleBaseViewController.h"
 
-@interface KRKronicleStartViewController : UIViewController
+@interface KRKronicleStartViewController : KRKronicleBaseViewController
 
 @property(nonatomic,strong) Kronicle *kronicle;
 

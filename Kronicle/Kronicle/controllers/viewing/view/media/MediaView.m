@@ -122,7 +122,8 @@
     }
     //[self animateOutFinishedOverlay];
 
-    _transition =(type == MediaViewLeft) ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight;
+//    _transition =(type == MediaViewLeft) ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight;
+    _transition = UIViewAnimationTransitionNone;
     self.isVideo = NO;
 
     _mediaPath = mediaPath;
@@ -133,13 +134,32 @@
     } else {
         //_imageView.image = [UIImage imageNamed:mediaPath];
 
+//        [self transitionViewToStage:_imageView];
+
+        __block UIImageView *imageViewCopy  = [[UIImageView alloc] initWithFrame:_imageView.frame];
+        self.backgroundColor                = [UIColor blackColor];
+        [self addSubview:_imageView];
+        [self addSubview:imageViewCopy];
+        [self addSubview:_pauseView];
+        [self addGestureRecognizer:_cellTapper];
+        
+        imageViewCopy.image                 = _imageView.image;
+
         NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSString *imagePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", mediaPath]];
-        NSLog(@"imagePath : %@",imagePath);
         _imageView.image = [UIImage imageWithContentsOfFile:imagePath];
-//        [self addSubview:_imageView];
-        [self transitionViewToStage:_imageView];
-
+        
+         
+        [UIView animateWithDuration:.7f
+                              delay:0.f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             imageViewCopy.alpha = 0;
+                         }
+                         completion:^(BOOL fin){
+                             [imageViewCopy removeFromSuperview];
+                             imageViewCopy = nil;
+                        }];
     }
     
 }
@@ -260,18 +280,21 @@
 - (void)animateInFinishedOverlay {
     _finishOverlay.hidden = NO;
     _finishOverlay.alpha = 0.f;
-    [UIView animateWithDuration:.5
-                          delay:.7f
+    
+    [UIView animateWithDuration:.7
+                          delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          _finishOverlay.alpha = 1.f;
                      }
                      completion:^(BOOL fin){
+                         
                      }];
     
 }
 
 - (void)animateOutFinishedOverlay {
+    [self addSubview:_finishOverlay];
     [UIView animateWithDuration:.4f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut

@@ -23,7 +23,7 @@
 #import "ManagedContextController.h"
 #import "KRNavigationViewController.h"
 #import "KRHomeViewController.h"
-
+#import "KRItemsViewController.h"
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
@@ -76,7 +76,6 @@
     _sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
     _sview.showsVerticalScrollIndicator = YES;
     _sview.showsHorizontalScrollIndicator = NO;
-    _sview.bounces = NO;
     [self.view addSubview:_sview];
     
     _kronicleManager = [[KRKronicleManager alloc] initWithKronicle:self.kronicle];
@@ -120,6 +119,17 @@
         [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
         _backButton.backgroundColor                 = [UIColor clearColor];
         _backButton.frame                           = CGRectMake(0, 0, 40, 40);
+        
+        NSInteger itemsButtonHeight = 42;
+        UIButton *itemsButton       = [UIButton buttonWithType:UIButtonTypeCustom];
+        itemsButton.backgroundColor = [KRColorHelper orange];
+        [itemsButton setTitle:@"Items" forState:UIControlStateNormal];
+        [itemsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        itemsButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
+        itemsButton.frame = CGRectMake(_bounds.size.width - 70, _bounds.size.height-(itemsButtonHeight+20), 70, itemsButtonHeight);
+        [itemsButton addTarget:self action:@selector(viewItemsRequested:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:itemsButton];
+
 
     } else {
         [_backButton setTitle:@"Edit" forState:UIControlStateNormal];
@@ -155,6 +165,10 @@
     _kronicle.isFinished = YES;
     [[ManagedContextController current] saveContext];
     [[KRHomeViewController current] mykronicles];
+}
+
+- (IBAction)viewItemsRequested:(id)sender {
+    [self viewListItems:_kronicle];
 }
 
 - (void)dealloc {
@@ -231,6 +245,10 @@
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
+    if (_viewingState == KRKronicleViewingStatePreview) {
+        return;
+    }
+    
     [_graphView updateForFinished];
     [_circularGraphView updateForFinished];
     [_stepNavigation updateForFinished];

@@ -52,8 +52,8 @@
     <elements>
         <element name="Category" positionX="432" positionY="-72" width="128" height="90"/>
         <element name="Item" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Kronicle" positionX="72" positionY="-172" width="128" height="270"/>
-        <element name="Step" positionX="279" positionY="93" width="128" height="195"/>
+        <element name="Kronicle" positionX="72" positionY="-172" width="128" height="268"/>
+        <element name="Step" positionX="439" positionY="54" width="128" height="195"/>
         <element name="User" positionX="-99" positionY="-172" width="128" height="165"/>
     </elements>
 </model>

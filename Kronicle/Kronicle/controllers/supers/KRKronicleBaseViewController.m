@@ -7,6 +7,7 @@
 //
 
 #import "KRKronicleBaseViewController.h"
+#import "KRItemsViewController.h"
 
 @interface KRKronicleBaseViewController ()
 
@@ -33,6 +34,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark listemsViewcontroller 
+- (void)viewListItems:(Kronicle *)kronicle {
+    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithNibName:@"KRItemsViewController" bundle:nil];
+    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self.navigationController presentModalViewController:itemsViewController animated:YES];
 }
 
 @end

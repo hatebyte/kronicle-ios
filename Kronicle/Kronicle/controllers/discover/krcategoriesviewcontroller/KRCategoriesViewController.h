@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "KRSearchTextFieldView.h"
+#import "KRBaseEditTableViewController.h"
 
-@interface KRCategoriesViewController : UIViewController <KRSearchTextFieldViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+@interface KRCategoriesViewController : KRBaseEditTableViewController <KRSearchTextFieldViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @end
