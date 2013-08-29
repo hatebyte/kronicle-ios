@@ -38,15 +38,19 @@
 
 #pragma mark listemsViewcontroller delegate
 - (void)viewListItems:(Kronicle *)kronicle {
-    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListUse];
-    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-    [self.navigationController presentModalViewController:itemsViewController animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListUse];
+        [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self.navigationController presentModalViewController:itemsViewController animated:YES];
+    });
 }
 
 - (void)createListItems:(Kronicle *)kronicle {
-    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListCreate];
-    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-    [self.navigationController presentModalViewController:itemsViewController animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListCreate];
+        [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self.navigationController presentModalViewController:itemsViewController animated:YES];
+    });
 }
 
 @end

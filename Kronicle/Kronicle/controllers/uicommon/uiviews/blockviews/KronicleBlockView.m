@@ -11,6 +11,7 @@
 #import "KRFontHelper.h"
 #import "KRClockManager.h"
 #import <QuartzCore/QuartzCore.h>
+#import "KRRatingModuleView.h"
 
 @interface KronicleBlockView () <UIGestureRecognizerDelegate> {
     @private
@@ -24,6 +25,7 @@
     UIImageView *_profileImage;
     UIView *_creatorView;
     UILabel *_creatorTitleLabel;
+    KRRatingModuleView *_ratingView;
 }
 
 @end
@@ -58,7 +60,7 @@
         _title                          = [[UITextView alloc] init];
         _title.attributedText           = [[NSAttributedString alloc] initWithString:string attributes:attribute];
         //_title.text                     = descriptionString;
-        _title.font                     = [KRFontHelper getFont:KRBrandonMedium withSize:16];
+        _title.font                     = [KRFontHelper getFont:KRBrandonRegular withSize:16];
         _title.textColor                = [UIColor whiteColor];
         _title.backgroundColor          = [UIColor clearColor];
         _title.editable                 = NO;
@@ -72,6 +74,10 @@
                                                      titleSize.width,
                                                      titleSize.height);
         [self addSubview:_title];
+
+        NSInteger timeWidth = [time sizeWithFont:[KRFontHelper getFont:KRBrandonRegular withSize:16]].width + _title.frame.origin.x + 15;
+        _ratingView = [[KRRatingModuleView alloc] initWithPoint:CGPointMake(timeWidth, (_title.frame.size.height + _title.frame.origin.y)-30 ) andStyle:KRRatingModuleBlock andRating:.7];
+        [self addSubview:_ratingView];
         
         _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editTapped:)];
         _tapper.cancelsTouchesInView = NO;

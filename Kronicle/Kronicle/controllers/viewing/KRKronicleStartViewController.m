@@ -17,6 +17,7 @@
 #import "KRTextButton.h"
 #import <QuartzCore/QuartzCore.h>
 #import "KRClockManager.h"
+#import "KRRatingModuleView.h"
 
 @interface KRKronicleStartViewController () {
     @private
@@ -29,6 +30,7 @@
     UILabel *_titleLabel;
     UILabel *_timeLabel;
     UITextView *_description;
+    KRRatingModuleView *_ratingView;
 }
 
 @end
@@ -66,6 +68,8 @@
     _coverImage.image = [UIImage imageWithContentsOfFile:_kronicle.fullCoverURL];
     _coverImage.alpha = .7;
     [_coverImageContainer addSubview:_coverImage];
+    
+    
 
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPadding, 54, 300, 50)];
     _titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:46];
@@ -97,6 +101,10 @@
     _timeLabel.layer.shadowOpacity      = .7f;
     _timeLabel.layer.shadowRadius       = .7f;
     [self.view addSubview:_timeLabel];
+    
+    NSInteger timeWidth = [time sizeWithFont:[KRFontHelper getFont:KRBrandonLight withSize:32]].width + _timeLabel.frame.origin.x + 15;
+    _ratingView = [[KRRatingModuleView alloc] initWithPoint:CGPointMake(timeWidth, _timeLabel.frame.origin.y ) andStyle:KRRatingModuleStart andRating:.7];
+    [self.view addSubview:_ratingView];
     
     _description = [[UITextView alloc] initWithFrame:CGRectMake(kPadding,
                                                                 _coverImageContainer.frame.size.height + kPadding,
@@ -149,7 +157,6 @@
                                                              15);
     [self.view addSubview:_hamburgerImageView];
     [self.view addSubview:_addItemCatcher];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
