@@ -72,8 +72,6 @@
 		D23EFCA717BF030D00989E5E /* KRCreateStepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EFC9417BF030D00989E5E /* KRCreateStepViewController.xib */; };
 		D23EFCA817BF030D00989E5E /* CreateStepTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC9717BF030D00989E5E /* CreateStepTimeView.m */; };
 		D23EFCA917BF030D00989E5E /* DurationCreatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC9917BF030D00989E5E /* DurationCreatorView.m */; };
-		D23EFCAF17BF06CB00989E5E /* KRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCAD17BF06CB00989E5E /* KRItemsViewController.m */; };
-		D23EFCB017BF06CB00989E5E /* KRItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EFCAE17BF06CB00989E5E /* KRItemsViewController.xib */; };
 		D23EFCB917BFB00400989E5E /* KeyboardNavigationToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCB817BFB00400989E5E /* KeyboardNavigationToolBar.m */; };
 		D23EFCC617BFEA8F00989E5E /* KRMyKroniclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCC417BFEA8F00989E5E /* KRMyKroniclesViewController.m */; };
 		D23EFCC717BFEA8F00989E5E /* KRMyKroniclesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EFCC517BFEA8F00989E5E /* KRMyKroniclesViewController.xib */; };
@@ -222,6 +220,12 @@
 		D2D95C5117C6D8C70048ADA3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5017C6D8C70048ADA3 /* User.m */; };
 		D2D95C5417C6D8C70048ADA3 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5317C6D8C70048ADA3 /* Category.m */; };
 		D2D95C6017C6D99B0048ADA3 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5F17C6D99B0048ADA3 /* Item.m */; };
+		D2ED58E417CEC61200FED4FB /* KRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58E217CEC61200FED4FB /* KRItemsViewController.m */; };
+		D2ED58E517CEC61200FED4FB /* KRItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2ED58E317CEC61200FED4FB /* KRItemsViewController.xib */; };
+		D2ED58E817CEC64600FED4FB /* KRItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58E717CEC64600FED4FB /* KRItemsTableViewCell.m */; };
+		D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */; };
+		D2ED58EE17CECC0700FED4FB /* listitem_acquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D2ED58EC17CECC0700FED4FB /* listitem_acquired.png */; };
+		D2ED58EF17CECC0700FED4FB /* listitem_unacquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D2ED58ED17CECC0700FED4FB /* listitem_unacquired.png */; };
 		D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7251789ED850085C707 /* NSData+MKBase64.m */; };
 		D2F1E73A1789ED850085C707 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
 		D2F1E73B1789ED850085C707 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7291789ED850085C707 /* NSDictionary+RequestEncoding.m */; };
@@ -326,9 +330,6 @@
 		D23EFC9717BF030D00989E5E /* CreateStepTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStepTimeView.m; sourceTree = "<group>"; };
 		D23EFC9817BF030D00989E5E /* DurationCreatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurationCreatorView.h; sourceTree = "<group>"; };
 		D23EFC9917BF030D00989E5E /* DurationCreatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationCreatorView.m; sourceTree = "<group>"; };
-		D23EFCAC17BF06CB00989E5E /* KRItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRItemsViewController.h; sourceTree = "<group>"; };
-		D23EFCAD17BF06CB00989E5E /* KRItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRItemsViewController.m; sourceTree = "<group>"; };
-		D23EFCAE17BF06CB00989E5E /* KRItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRItemsViewController.xib; sourceTree = "<group>"; };
 		D23EFCB717BFB00400989E5E /* KeyboardNavigationToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardNavigationToolBar.h; sourceTree = "<group>"; };
 		D23EFCB817BFB00400989E5E /* KeyboardNavigationToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardNavigationToolBar.m; sourceTree = "<group>"; };
 		D23EFCC317BFEA8F00989E5E /* KRMyKroniclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMyKroniclesViewController.h; sourceTree = "<group>"; };
@@ -530,6 +531,15 @@
 		D2D95C5317C6D8C70048ADA3 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		D2D95C5E17C6D99B0048ADA3 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		D2D95C5F17C6D99B0048ADA3 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		D2ED58E117CEC61200FED4FB /* KRItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRItemsViewController.h; sourceTree = "<group>"; };
+		D2ED58E217CEC61200FED4FB /* KRItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRItemsViewController.m; sourceTree = "<group>"; };
+		D2ED58E317CEC61200FED4FB /* KRItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRItemsViewController.xib; sourceTree = "<group>"; };
+		D2ED58E617CEC64600FED4FB /* KRItemsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRItemsTableViewCell.h; sourceTree = "<group>"; };
+		D2ED58E717CEC64600FED4FB /* KRItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRItemsTableViewCell.m; sourceTree = "<group>"; };
+		D2ED58E917CEC9FF00FED4FB /* Item+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+Helper.h"; sourceTree = "<group>"; };
+		D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+Helper.m"; sourceTree = "<group>"; };
+		D2ED58EC17CECC0700FED4FB /* listitem_acquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_acquired.png; sourceTree = "<group>"; };
+		D2ED58ED17CECC0700FED4FB /* listitem_unacquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_unacquired.png; sourceTree = "<group>"; };
 		D2F1E7241789ED850085C707 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		D2F1E7251789ED850085C707 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
 		D2F1E7261789ED850085C707 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -692,7 +702,7 @@
 				D23EFC8017BF030D00989E5E /* cells */,
 				D23EFC8717BF030D00989E5E /* krkroniclecreateviewcontroller */,
 				D23EFC9017BF030D00989E5E /* krstepcreatecontroller */,
-				D23EFC9A17BF030D00989E5E /* kringredientscontroller */,
+				D2ED58DF17CEC61200FED4FB /* kritemscontroller */,
 			);
 			path = create;
 			sourceTree = "<group>";
@@ -881,24 +891,6 @@
 			path = timecreatorview;
 			sourceTree = "<group>";
 		};
-		D23EFC9A17BF030D00989E5E /* kringredientscontroller */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFC9B17BF030D00989E5E /* cells */,
-				D23EFCAC17BF06CB00989E5E /* KRItemsViewController.h */,
-				D23EFCAD17BF06CB00989E5E /* KRItemsViewController.m */,
-				D23EFCAE17BF06CB00989E5E /* KRItemsViewController.xib */,
-			);
-			path = kringredientscontroller;
-			sourceTree = "<group>";
-		};
-		D23EFC9B17BF030D00989E5E /* cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
 		D23EFCC117BFEA3C00989E5E /* me */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,6 +1017,8 @@
 				D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */,
 				D2B6227217C63487007C6E06 /* Step+Helper.h */,
 				D2B6227317C63487007C6E06 /* Step+Helper.m */,
+				D2ED58E917CEC9FF00FED4FB /* Item+Helper.h */,
+				D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1132,6 +1126,8 @@
 		D281275F17C99B7A00E66C7F /* create */ = {
 			isa = PBXGroup;
 			children = (
+				D2ED58EC17CECC0700FED4FB /* listitem_acquired.png */,
+				D2ED58ED17CECC0700FED4FB /* listitem_unacquired.png */,
 				D281276017C99B7A00E66C7F /* close-x.png */,
 				D281276117C99B7A00E66C7F /* close-x@2x.png */,
 				D281276217C99B7A00E66C7F /* close-x_20px.png */,
@@ -1467,6 +1463,26 @@
 			path = swipeviewnavigation;
 			sourceTree = "<group>";
 		};
+		D2ED58DF17CEC61200FED4FB /* kritemscontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D2ED58E017CEC61200FED4FB /* cells */,
+				D2ED58E117CEC61200FED4FB /* KRItemsViewController.h */,
+				D2ED58E217CEC61200FED4FB /* KRItemsViewController.m */,
+				D2ED58E317CEC61200FED4FB /* KRItemsViewController.xib */,
+			);
+			path = kritemscontroller;
+			sourceTree = "<group>";
+		};
+		D2ED58E017CEC61200FED4FB /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2ED58E617CEC64600FED4FB /* KRItemsTableViewCell.h */,
+				D2ED58E717CEC64600FED4FB /* KRItemsTableViewCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		D2F1E7201789ED850085C707 /* MKNetworkKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1626,7 +1642,6 @@
 				0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */,
 				D23EFCA417BF030D00989E5E /* KRCreateViewController.xib in Resources */,
 				D23EFCA717BF030D00989E5E /* KRCreateStepViewController.xib in Resources */,
-				D23EFCB017BF06CB00989E5E /* KRItemsViewController.xib in Resources */,
 				D23EFCC717BFEA8F00989E5E /* KRMyKroniclesViewController.xib in Resources */,
 				D23EFCCC17BFEA9F00989E5E /* KRMeViewController.xib in Resources */,
 				D281278B17C99B7A00E66C7F /* burger-media-1.png in Resources */,
@@ -1704,6 +1719,9 @@
 				0C6F80DF17CAF0D300EFC4B3 /* KRCategoriesViewController.xib in Resources */,
 				D2333ED217CD788500CE6831 /* backarrow.png in Resources */,
 				D2333EE317CD7FA200CE6831 /* tinyrturqoisecarrot.png in Resources */,
+				D2ED58E517CEC61200FED4FB /* KRItemsViewController.xib in Resources */,
+				D2ED58EE17CECC0700FED4FB /* listitem_acquired.png in Resources */,
+				D2ED58EF17CECC0700FED4FB /* listitem_unacquired.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1866,7 +1884,6 @@
 				D23EFCA617BF030D00989E5E /* KRCreateStepViewController.m in Sources */,
 				D23EFCA817BF030D00989E5E /* CreateStepTimeView.m in Sources */,
 				D23EFCA917BF030D00989E5E /* DurationCreatorView.m in Sources */,
-				D23EFCAF17BF06CB00989E5E /* KRItemsViewController.m in Sources */,
 				D23EFCB917BFB00400989E5E /* KeyboardNavigationToolBar.m in Sources */,
 				D23EFCC617BFEA8F00989E5E /* KRMyKroniclesViewController.m in Sources */,
 				D23EFCCB17BFEA9F00989E5E /* KRMeViewController.m in Sources */,
@@ -1911,6 +1928,9 @@
 				D28127FA17CB7DD200E66C7F /* KronicleBlockView.m in Sources */,
 				D28127FB17CB7DD200E66C7F /* StepBlockView.m in Sources */,
 				D2333EE117CD7E3900CE6831 /* KRKroniclesPageNavigationView.m in Sources */,
+				D2ED58E417CEC61200FED4FB /* KRItemsViewController.m in Sources */,
+				D2ED58E817CEC64600FED4FB /* KRItemsTableViewCell.m in Sources */,
+				D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -295,7 +295,7 @@
 
 #pragma mark AddDescriptionTableViewCell delegate
 - (void)addListItemsRequested:(AddDescriptionTableViewCell *)addDescriptionTableViewCell {
-    [self addListItems:_kronicle];
+    [self createListItems:_kronicle];
 }
 
 

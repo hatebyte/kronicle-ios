@@ -17,6 +17,7 @@
 + (CGFloat)cellHeightForKronicle;
 
 - (void)prepareForUseWithTitle:(NSString *)title andType:(AddTitleLocation)type;
+- (void)prepareForUseAsLabelWithText:(NSString *)title;
 - (NSString *)value;
 
 @end

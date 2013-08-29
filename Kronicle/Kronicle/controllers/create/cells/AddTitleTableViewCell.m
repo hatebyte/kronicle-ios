@@ -43,8 +43,8 @@
         [_inputField setValue:[UIColor blackColor] forKeyPath:@"_placeholderLabel.textColor"];
         [self.contentView addSubview:_inputField];
         
-        KeyboardNavigationToolBar *toolbar = [[KeyboardNavigationToolBar alloc] initWithPreviousAndNext:YES :YES];
-        toolbar.delegate = self;
+        KeyboardNavigationToolBar *toolbar      = [[KeyboardNavigationToolBar alloc] initWithPreviousAndNext:YES :YES];
+        toolbar.delegate                        = self;
         [toolbar setPreviousEnabled:NO];
         [_inputField setInputAccessoryView:toolbar];
 
@@ -63,6 +63,11 @@
     int y                                       =(type == AddTitleKronicle) ? ([AddTitleTableViewCell cellHeightForKronicle] - fieldheight) : ([AddTitleTableViewCell cellHeightForStep] - fieldheight);
     _inputField.frame                           = CGRectMake(kPadding, y, kPaddingWidth, fieldheight);
     _inputField.text                            = title;
+}
+
+- (void)prepareForUseAsLabelWithText:(NSString *)title {
+    [self prepareForUseWithTitle:title andType:AddTitleStep];
+    _inputField.enabled                         = NO;
 }
 
 - (void)setAsFirstResponder {

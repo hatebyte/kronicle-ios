@@ -36,9 +36,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark listemsViewcontroller 
+#pragma mark listemsViewcontroller delegate
 - (void)viewListItems:(Kronicle *)kronicle {
-    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithNibName:@"KRItemsViewController" bundle:nil];
+    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListUse];
+    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self.navigationController presentModalViewController:itemsViewController animated:YES];
+}
+
+- (void)createListItems:(Kronicle *)kronicle {
+    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListCreate];
     [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [self.navigationController presentModalViewController:itemsViewController animated:YES];
 }

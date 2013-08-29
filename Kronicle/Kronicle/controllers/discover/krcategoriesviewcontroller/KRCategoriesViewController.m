@@ -57,7 +57,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     _flowLayout.minimumInteritemSpacing = 0.0f;
     _flowLayout.minimumLineSpacing = 20.0f;
     
-    _categoriesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(_searchTextFieldControlView.x, _searchTextFieldControlView.y + (_searchTextFieldControlView.height / 2) + 10.0f, _searchTextFieldControlView.width, self.view.height - 1.5*_searchTextFieldControlView.height) collectionViewLayout:_flowLayout];
+    _categoriesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(_searchTextFieldControlView.x, _searchTextFieldControlView.y + (_searchTextFieldControlView.height / 2) + 25.0f, _searchTextFieldControlView.width, self.view.height - 1.5*_searchTextFieldControlView.height) collectionViewLayout:_flowLayout];
     _categoriesCollectionView.delegate = self;
     _categoriesCollectionView.dataSource = self;
     [_categoriesCollectionView registerClass:[KRCategoriesCollectionViewCell class] forCellWithReuseIdentifier:KRCollectionCellReuseIdentifier];

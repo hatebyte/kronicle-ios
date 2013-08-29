@@ -28,7 +28,8 @@
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
 
-@interface KRPlaybackViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate, KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepListContainerViewDelegate> {
+@interface KRPlaybackViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate,
+KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepListContainerViewDelegate> {
     @private
     CGRect _bounds;
     UIScrollView *_sview;
@@ -367,7 +368,6 @@
                          _stepListContainerView.alpha       = 0.f;
                          _circularGraphView.alpha           = 0.f;
                          _sview.contentSize = CGSizeMake(_bounds.size.width, _scrollView.frame.origin.y + _scrollView.frame.size.height);
-
                      }
                      completion:^(BOOL fin){
                          _stepListContainerView.hidden = YES;

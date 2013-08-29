@@ -65,12 +65,6 @@
 
 - (void)validate {}
 
-#pragma mark listemsViewcontroller delegate
-- (void)addListItems:(Kronicle *)kronicle {
-    KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithNibName:@"KRItemsViewController" bundle:nil];
-    [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-    [self.navigationController presentModalViewController:itemsViewController animated:YES];
-}
 
 
 
