@@ -17,7 +17,7 @@
 @property(nonatomic, copy) NSArray *steps;
 @property(nonatomic, assign) NSInteger stepCount;
 @property(nonatomic, readonly) NSInteger totalTime;
-@property(nonatomic, assign) NSInteger rating;
+@property(nonatomic, assign) CGFloat rating;
 @property(nonatomic, assign) BOOL isFinished;
 
 + (NSString *)makeUUID;

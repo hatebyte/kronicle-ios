@@ -33,6 +33,10 @@
     return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:1.0f];  
 }
 
++ (UIColor*)orangeDark {
+    return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:1.0f]; //32837C
+}
+
 + (UIColor*)orangeTransparent {
     return [UIColor colorWithRed:241/255.0f green:163/255.0f blue:37/255.0f alpha:.3f]; 
 }
@@ -54,4 +58,44 @@
 }
 
 
+
++ (UIColor*)green {
+    return [UIColor colorWithRed:99/255.0f green:188/255.0f blue:70/255.0f alpha:1.0f]; //32837C
+}
++ (UIColor*)red {
+    return [UIColor colorWithRed:239/255.0f green:73/255.0f blue:73/255.0f alpha:1.0f]; //32837C
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

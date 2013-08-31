@@ -9,16 +9,6 @@
 /* Begin PBXBuildFile section */
 		01a487b97a589cf025c30e9e /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7481789EDBD0085C707 /* ImageIO.framework */; };
 		06c18c4ebbe4b4e0cea28d00 /* crazy_train_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D26A6171175B7A0A00B50A39 /* crazy_train_1.mov */; };
-		0C6F80D417CAF0B700EFC4B3 /* UIView+GCLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F80D317CAF0B700EFC4B3 /* UIView+GCLibrary.m */; };
-		0C6F80D917CAF0C400EFC4B3 /* KRSearchTextFieldControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F80D617CAF0C400EFC4B3 /* KRSearchTextFieldControlView.m */; };
-		0C6F80DA17CAF0C400EFC4B3 /* KRSearchTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F80D817CAF0C400EFC4B3 /* KRSearchTextFieldView.m */; };
-		0C6F80DE17CAF0D300EFC4B3 /* KRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F80DB17CAF0D300EFC4B3 /* KRCategoriesViewController.m */; };
-		0C6F80DF17CAF0D300EFC4B3 /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F80DD17CAF0D300EFC4B3 /* KRCategoriesViewController.xib */; };
-		0C6F80E217CAF0DF00EFC4B3 /* KRCategoriesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F80E117CAF0DF00EFC4B3 /* KRCategoriesCollectionViewCell.m */; };
-		0C6F80E517CAF0ED00EFC4B3 /* KRCategoriesViewControllerCellCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F80E417CAF0ED00EFC4B3 /* KRCategoriesViewControllerCellCircleView.m */; };
-		0C6F80EC17CAF19000EFC4B3 /* KRDefaultButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F80EA17CAF19000EFC4B3 /* KRDefaultButton.m */; };
-		0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */; };
-		0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */; };
 		0CFC052117B8723800A1BB7F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC052017B8723800A1BB7F /* CoreText.framework */; };
 		171c250e0afead6094ca5f29 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6173175B7CA200B50A39 /* AVFoundation.framework */; };
 		1bb6fb10a4b46b0c8bbe6a94 /* MinionPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */; };
@@ -47,48 +37,10 @@
 		8b0b86cf513301c6e1a49087 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD45175B9BA30003FEF5 /* icon@2x.png */; };
 		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
 		D2333ED217CD788500CE6831 /* backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2333ED117CD788500CE6831 /* backarrow.png */; };
-		D2333EE117CD7E3900CE6831 /* KRKroniclesPageNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2333EE017CD7E3900CE6831 /* KRKroniclesPageNavigationView.m */; };
 		D2333EE317CD7FA200CE6831 /* tinyrturqoisecarrot.png in Resources */ = {isa = PBXBuildFile; fileRef = D2333EE217CD7FA200CE6831 /* tinyrturqoisecarrot.png */; };
-		D236FB7A17B464E4003DD323 /* KRKronicleStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */; };
-		D236FB7B17B464E4003DD323 /* KRKronicleStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */; };
-		D236FB7C17B464E4003DD323 /* KRPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */; };
-		D236FB7D17B464E4003DD323 /* KRPlaybackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D236FB4817B464E4003DD323 /* KRPlaybackViewController.xib */; };
-		D236FB8017B464E4003DD323 /* KRClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB4E17B464E4003DD323 /* KRClockManager.m */; };
-		D236FB8117B464E4003DD323 /* KRKronicleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB5017B464E4003DD323 /* KRKronicleManager.m */; };
-		D236FB8417B464E4003DD323 /* KRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB5A17B464E4003DD323 /* KRGraphView.m */; };
-		D236FB8717B464E4003DD323 /* MediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB6117B464E4003DD323 /* MediaView.m */; };
-		D236FB8817B464E4003DD323 /* KRStepNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB6417B464E4003DD323 /* KRStepNavigation.m */; };
-		D236FB8917B464E4003DD323 /* KRStepListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB6717B464E4003DD323 /* KRStepListContainerView.m */; };
-		D236FB8A17B464E4003DD323 /* KRStepListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB6917B464E4003DD323 /* KRStepListView.m */; };
-		D236FB8B17B464E4003DD323 /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB6C17B464E4003DD323 /* DescriptionView.m */; };
-		D236FB8C17B464E4003DD323 /* KRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D236FB6E17B464E4003DD323 /* KRScrollView.m */; };
-		D23EFC9F17BF030D00989E5E /* AddDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC8217BF030D00989E5E /* AddDescriptionTableViewCell.m */; };
-		D23EFCA017BF030D00989E5E /* AddTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC8417BF030D00989E5E /* AddTitleTableViewCell.m */; };
-		D23EFCA117BF030D00989E5E /* KRFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC8617BF030D00989E5E /* KRFormFieldCell.m */; };
-		D23EFCA217BF030D00989E5E /* AddStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC8A17BF030D00989E5E /* AddStepTableViewCell.m */; };
-		D23EFCA317BF030D00989E5E /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC8C17BF030D00989E5E /* KRCreateViewController.m */; };
-		D23EFCA417BF030D00989E5E /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EFC8D17BF030D00989E5E /* KRCreateViewController.xib */; };
-		D23EFCA617BF030D00989E5E /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFC9317BF030D00989E5E /* KRCreateStepViewController.m */; };
-		D23EFCA717BF030D00989E5E /* KRCreateStepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EFC9417BF030D00989E5E /* KRCreateStepViewController.xib */; };
-		D23EFCB917BFB00400989E5E /* KeyboardNavigationToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCB817BFB00400989E5E /* KeyboardNavigationToolBar.m */; };
-		D23EFCC617BFEA8F00989E5E /* KRMyKroniclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCC417BFEA8F00989E5E /* KRMyKroniclesViewController.m */; };
-		D23EFCC717BFEA8F00989E5E /* KRMyKroniclesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EFCC517BFEA8F00989E5E /* KRMyKroniclesViewController.xib */; };
-		D23EFCCB17BFEA9F00989E5E /* KRMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCC917BFEA9F00989E5E /* KRMeViewController.m */; };
-		D23EFCCC17BFEA9F00989E5E /* KRMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EFCCA17BFEA9F00989E5E /* KRMeViewController.xib */; };
-		D23EFCD817C01EB400989E5E /* AddItemsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCD717C01EB300989E5E /* AddItemsCell.m */; };
-		D23EFCDB17C02A2A00989E5E /* AddMediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCDA17C02A2A00989E5E /* AddMediaTableViewCell.m */; };
-		D23EFCDE17C06EC200989E5E /* AddTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCDD17C06EC200989E5E /* AddTimeCell.m */; };
-		D23EFCE117C1074F00989E5E /* ContentWithLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCE017C1074F00989E5E /* ContentWithLabelView.m */; };
-		D23EFCF717C2F78900989E5E /* KRBaseEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFCF617C2F78800989E5E /* KRBaseEditTableViewController.m */; };
 		D23EFDA817C44DF200989E5E /* KRKronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDA017C44DF200989E5E /* KRKronicle.m */; };
 		D23EFDA917C44DF200989E5E /* KRList.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDA217C44DF200989E5E /* KRList.m */; };
 		D23EFDAA17C44DF200989E5E /* KRStep.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDA517C44DF200989E5E /* KRStep.m */; };
-		D23EFDBC17C44E8500989E5E /* KRTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDAE17C44E8500989E5E /* KRTextButton.m */; };
-		D23EFDBD17C44E8500989E5E /* ACMagnifyingGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDB217C44E8500989E5E /* ACMagnifyingGlass.m */; };
-		D23EFDBE17C44E8500989E5E /* BBRichTextPrefixStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDB417C44E8500989E5E /* BBRichTextPrefixStyle.m */; };
-		D23EFDBF17C44E8500989E5E /* BBRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDB617C44E8500989E5E /* BBRichTextView.m */; };
-		D23EFDC017C44E8500989E5E /* NMCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDB917C44E8500989E5E /* NMCustomLabel.m */; };
-		D23EFDC117C44E8500989E5E /* NMCustomLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDBB17C44E8500989E5E /* NMCustomLabelStyle.m */; };
 		D23EFDC517C4563B00989E5E /* ManagedContextController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDC417C4563B00989E5E /* ManagedContextController.m */; };
 		D23EFDC717C45FB700989E5E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23EFDC617C45FB700989E5E /* CoreData.framework */; };
 		D23EFDCD17C4628900989E5E /* KronicleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDCB17C4628900989E5E /* KronicleModel.xcdatamodeld */; };
@@ -165,11 +117,8 @@
 		D28127C817C99B7A00E66C7F /* top-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D281278817C99B7A00E66C7F /* top-left.png */; };
 		D28127C917C99B7A00E66C7F /* top-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D281278917C99B7A00E66C7F /* top-right.png */; };
 		D28127CA17C99B7A00E66C7F /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D281278A17C99B7A00E66C7F /* x-button.png */; };
-		D28127CE17CA59DD00E66C7F /* KRPublishOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127CD17CA59DD00E66C7F /* KRPublishOverlay.m */; };
 		D28127D517CA627F00E66C7F /* profileframe.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127D417CA627F00E66C7F /* profileframe.png */; };
 		D28127D717CA62BE00E66C7F /* profileimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127D617CA62BE00E66C7F /* profileimage.png */; };
-		D28127DB17CA68B700E66C7F /* KronicleBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127DA17CA68B700E66C7F /* KronicleBlockTableViewCell.m */; };
-		D28127DF17CA766E00E66C7F /* MyKroniclesSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127DE17CA766E00E66C7F /* MyKroniclesSectionHeader.m */; };
 		D28127E117CA7E7D00E66C7F /* block-x.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127E017CA7E7D00E66C7F /* block-x.png */; };
 		D28127E717CA8F2100E66C7F /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127E617CA8F2100E66C7F /* Kronicle.m */; };
 		D28127ED17CAB34F00E66C7F /* hamburger_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127E917CAB34F00E66C7F /* hamburger_start.png */; };
@@ -177,8 +126,6 @@
 		D28127EF17CAB34F00E66C7F /* plus-sign-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127EC17CAB34F00E66C7F /* plus-sign-white@2x.png */; };
 		D28127F217CAB5D000E66C7F /* start_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127F017CAB5D000E66C7F /* start_button.png */; };
 		D28127F317CAB5D000E66C7F /* plus_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D28127F117CAB5D000E66C7F /* plus_start.png */; };
-		D28127FA17CB7DD200E66C7F /* KronicleBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127F717CB7DD200E66C7F /* KronicleBlockView.m */; };
-		D28127FB17CB7DD200E66C7F /* StepBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127F917CB7DD200E66C7F /* StepBlockView.m */; };
 		D29D270E178B93340085E943 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D270D178B93330085E943 /* APIRouter.m */; };
 		D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
 		D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
@@ -201,33 +148,100 @@
 		D2A57485175A78AB002AC1B9 /* BrandonGrotesque-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57484175A78A9002AC1B9 /* BrandonGrotesque-Regular.otf */; };
 		D2A57487175A7F75002AC1B9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A57486175A7F73002AC1B9 /* MediaPlayer.framework */; };
 		D2A574AB175AFD91002AC1B9 /* MinionPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */; };
+		D2A7F7BE17D0E75D0039EE5A /* AddDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F73517D0E75D0039EE5A /* AddDescriptionTableViewCell.m */; };
+		D2A7F7BF17D0E75D0039EE5A /* AddTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F73717D0E75D0039EE5A /* AddTitleTableViewCell.m */; };
+		D2A7F7C017D0E75D0039EE5A /* KeyboardNavigationToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F73917D0E75D0039EE5A /* KeyboardNavigationToolBar.m */; };
+		D2A7F7C117D0E75D0039EE5A /* KRFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F73B17D0E75D0039EE5A /* KRFormFieldCell.m */; };
+		D2A7F7C217D0E75D0039EE5A /* AddItemsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F73F17D0E75D0039EE5A /* AddItemsCell.m */; };
+		D2A7F7C317D0E75D0039EE5A /* AddStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74117D0E75D0039EE5A /* AddStepTableViewCell.m */; };
+		D2A7F7C417D0E75D0039EE5A /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74317D0E75D0039EE5A /* KRCreateViewController.m */; };
+		D2A7F7C517D0E75D0039EE5A /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F74417D0E75D0039EE5A /* KRCreateViewController.xib */; };
+		D2A7F7C617D0E75D0039EE5A /* KRPublishOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74717D0E75D0039EE5A /* KRPublishOverlay.m */; };
+		D2A7F7C717D0E75D0039EE5A /* AddMediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74B17D0E75D0039EE5A /* AddMediaTableViewCell.m */; };
+		D2A7F7C817D0E75D0039EE5A /* AddTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74D17D0E75D0039EE5A /* AddTimeCell.m */; };
+		D2A7F7C917D0E75D0039EE5A /* ContentWithLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74F17D0E75D0039EE5A /* ContentWithLabelView.m */; };
+		D2A7F7CA17D0E75D0039EE5A /* KRCreateStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F75117D0E75D0039EE5A /* KRCreateStepViewController.m */; };
+		D2A7F7CB17D0E75D0039EE5A /* KRCreateStepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F75217D0E75D0039EE5A /* KRCreateStepViewController.xib */; };
+		D2A7F7CC17D0E75D0039EE5A /* KRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F75617D0E75D0039EE5A /* KRCategoriesViewController.m */; };
+		D2A7F7CD17D0E75D0039EE5A /* KRCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F75717D0E75D0039EE5A /* KRCategoriesViewController.xib */; };
+		D2A7F7CE17D0E75D0039EE5A /* KRCategoriesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F75A17D0E75D0039EE5A /* KRCategoriesCollectionViewCell.m */; };
+		D2A7F7CF17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F75D17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.m */; };
+		D2A7F7D017D0E75D0039EE5A /* KRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F76017D0E75D0039EE5A /* KRListViewController.m */; };
+		D2A7F7D117D0E75D0039EE5A /* KRListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F76117D0E75D0039EE5A /* KRListViewController.xib */; };
+		D2A7F7D217D0E75D0039EE5A /* KRKroniclesPageNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F76417D0E75D0039EE5A /* KRKroniclesPageNavigationView.m */; };
+		D2A7F7D317D0E75D0039EE5A /* StepsTableCellViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F76717D0E75D0039EE5A /* StepsTableCellViewCell.m */; };
+		D2A7F7D417D0E75D0039EE5A /* KRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F76A17D0E75D0039EE5A /* KRHomeViewController.m */; };
+		D2A7F7D517D0E75D0039EE5A /* KRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F76B17D0E75D0039EE5A /* KRHomeViewController.xib */; };
+		D2A7F7D617D0E75D0039EE5A /* KRItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F76F17D0E75D0039EE5A /* KRItemsTableViewCell.m */; };
+		D2A7F7D717D0E75D0039EE5A /* KRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F77117D0E75D0039EE5A /* KRItemsViewController.m */; };
+		D2A7F7D817D0E75D0039EE5A /* KRItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F77217D0E75D0039EE5A /* KRItemsViewController.xib */; };
+		D2A7F7D917D0E75D0039EE5A /* KRMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F77517D0E75D0039EE5A /* KRMeViewController.m */; };
+		D2A7F7DA17D0E75D0039EE5A /* KRMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F77617D0E75D0039EE5A /* KRMeViewController.xib */; };
+		D2A7F7DB17D0E75D0039EE5A /* KronicleBlockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F77A17D0E75D0039EE5A /* KronicleBlockTableViewCell.m */; };
+		D2A7F7DC17D0E75D0039EE5A /* KRMyKroniclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F77C17D0E75D0039EE5A /* KRMyKroniclesViewController.m */; };
+		D2A7F7DD17D0E75D0039EE5A /* KRMyKroniclesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F77D17D0E75D0039EE5A /* KRMyKroniclesViewController.xib */; };
+		D2A7F7DE17D0E75D0039EE5A /* MyKroniclesSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F78017D0E75D0039EE5A /* MyKroniclesSectionHeader.m */; };
+		D2A7F7DF17D0E75D0039EE5A /* KRNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F78317D0E75D0039EE5A /* KRNavigationViewController.m */; };
+		D2A7F7E017D0E75D0039EE5A /* KRNavigationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F78617D0E75D0039EE5A /* KRNavigationTableViewCell.m */; };
+		D2A7F7E117D0E75D0039EE5A /* KRSwipeViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F78817D0E75D0039EE5A /* KRSwipeViewNavigation.m */; };
+		D2A7F7E217D0E75D0039EE5A /* KRKronicleStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F78B17D0E75D0039EE5A /* KRKronicleStartViewController.m */; };
+		D2A7F7E317D0E75D0039EE5A /* KRKronicleStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F78C17D0E75D0039EE5A /* KRKronicleStartViewController.xib */; };
+		D2A7F7E417D0E75D0039EE5A /* KRPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F78E17D0E75D0039EE5A /* KRPlaybackViewController.m */; };
+		D2A7F7E517D0E75D0039EE5A /* KRPlaybackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F78F17D0E75D0039EE5A /* KRPlaybackViewController.xib */; };
+		D2A7F7E617D0E75D0039EE5A /* KRViewListTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79117D0E75D0039EE5A /* KRViewListTypeViewController.m */; };
+		D2A7F7E717D0E75D0039EE5A /* KRViewListTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F79217D0E75D0039EE5A /* KRViewListTypeViewController.xib */; };
+		D2A7F7E817D0E75D0039EE5A /* KRClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79517D0E75D0039EE5A /* KRClockManager.m */; };
+		D2A7F7E917D0E75D0039EE5A /* KRKronicleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79717D0E75D0039EE5A /* KRKronicleManager.m */; };
+		D2A7F7EA17D0E75D0039EE5A /* KRClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79A17D0E75D0039EE5A /* KRClock.m */; };
+		D2A7F7EB17D0E75D0039EE5A /* KRCircularKronicleGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79E17D0E75D0039EE5A /* KRCircularKronicleGraph.m */; };
+		D2A7F7EC17D0E75D0039EE5A /* KRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7A017D0E75D0039EE5A /* KRGraphView.m */; };
+		D2A7F7EF17D0E75D0039EE5A /* MediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7A717D0E75D0039EE5A /* MediaView.m */; };
+		D2A7F7F017D0E75D0039EE5A /* KRStepNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7AA17D0E75D0039EE5A /* KRStepNavigation.m */; };
+		D2A7F7F117D0E75D0039EE5A /* KRStepListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7AD17D0E75D0039EE5A /* KRStepListContainerView.m */; };
+		D2A7F7F217D0E75D0039EE5A /* KRStepListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7AF17D0E75D0039EE5A /* KRStepListView.m */; };
+		D2A7F7F317D0E75D0039EE5A /* DescriptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7B217D0E75D0039EE5A /* DescriptionView.m */; };
+		D2A7F7F417D0E75D0039EE5A /* KRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7B417D0E75D0039EE5A /* KRScrollView.m */; };
+		D2A7F7F517D0E75D0039EE5A /* KRReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7B717D0E75D0039EE5A /* KRReviewViewController.m */; };
+		D2A7F7F617D0E75D0039EE5A /* KRReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F7B817D0E75D0039EE5A /* KRReviewViewController.xib */; };
+		D2A7F7F717D0E75D0039EE5A /* KRBaseEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7BB17D0E75D0039EE5A /* KRBaseEditTableViewController.m */; };
+		D2A7F7F817D0E75D0039EE5A /* KRKronicleBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7BD17D0E75D0039EE5A /* KRKronicleBaseViewController.m */; };
+		D2A7F82817D0E8FB0039EE5A /* KRDefaultButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7FC17D0E8FB0039EE5A /* KRDefaultButton.m */; };
+		D2A7F82917D0E8FB0039EE5A /* KRTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7FE17D0E8FB0039EE5A /* KRTextButton.m */; };
+		D2A7F82A17D0E8FB0039EE5A /* KRSearchTextFieldControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F80117D0E8FB0039EE5A /* KRSearchTextFieldControlView.m */; };
+		D2A7F82B17D0E8FB0039EE5A /* KRSearchTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F80317D0E8FB0039EE5A /* KRSearchTextFieldView.m */; };
+		D2A7F86117D0E92C0039EE5A /* KronicleBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F84017D0E92C0039EE5A /* KronicleBlockView.m */; };
+		D2A7F86217D0E92C0039EE5A /* StepBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F84217D0E92C0039EE5A /* StepBlockView.m */; };
+		D2A7F86317D0E92C0039EE5A /* KRRatingCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F84617D0E92C0039EE5A /* KRRatingCircleView.m */; };
+		D2A7F86417D0E92C0039EE5A /* KRRatingModuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F84817D0E92C0039EE5A /* KRRatingModuleView.m */; };
+		D2A7F86517D0E92C0039EE5A /* CreateStepTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F84B17D0E92C0039EE5A /* CreateStepTimeView.m */; };
+		D2A7F86617D0E92C0039EE5A /* TouchCircleCreatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F84D17D0E92C0039EE5A /* TouchCircleCreatorView.m */; };
+		D2A7F86717D0E92C0039EE5A /* ACMagnifyingGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F85117D0E92C0039EE5A /* ACMagnifyingGlass.m */; };
+		D2A7F86817D0E92C0039EE5A /* BBRichTextPrefixStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F85317D0E92C0039EE5A /* BBRichTextPrefixStyle.m */; };
+		D2A7F86917D0E92C0039EE5A /* BBRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F85517D0E92C0039EE5A /* BBRichTextView.m */; };
+		D2A7F86A17D0E92C0039EE5A /* NMCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F85817D0E92C0039EE5A /* NMCustomLabel.m */; };
+		D2A7F86B17D0E92C0039EE5A /* NMCustomLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F85A17D0E92C0039EE5A /* NMCustomLabelStyle.m */; };
+		D2A7F86C17D0E92C0039EE5A /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F85D17D0E92C0039EE5A /* UIHelper.m */; };
+		D2A7F86D17D0E92C0039EE5A /* UIView+GCLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F86017D0E92C0039EE5A /* UIView+GCLibrary.m */; };
+		D2A7F87017D0ED880039EE5A /* CreateReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F86F17D0ED880039EE5A /* CreateReviewView.m */; };
+		D2A7F87317D116C10039EE5A /* bottomblarg.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F87217D116C10039EE5A /* bottomblarg.png */; };
+		D2A7F87617D147E80039EE5A /* AntiScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F87517D147E80039EE5A /* AntiScrollVIew.m */; };
+		D2A7F87B17D182CC0039EE5A /* KRDiagramView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F87817D182C60039EE5A /* KRDiagramView.m */; };
+		D2A7F87C17D182CC0039EE5A /* KRKronicleNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F87A17D182CB0039EE5A /* KRKronicleNavView.m */; };
+		D2A7F87E17D1846B0039EE5A /* transx.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F87D17D1846B0039EE5A /* transx.png */; };
+		D2A7F88117D1A6790039EE5A /* KRReviewOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F88017D1A6780039EE5A /* KRReviewOverlay.m */; };
+		D2A7F88517D1AF620039EE5A /* addreviewbuttoncircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F88417D1AF610039EE5A /* addreviewbuttoncircle@2x.png */; };
 		D2B6227017C6346D007C6E06 /* Kronicle+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6226C17C6346D007C6E06 /* Kronicle+JSON.m */; };
 		D2B6227117C6346D007C6E06 /* Step+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6226E17C6346D007C6E06 /* Step+JSON.m */; };
 		D2B6227417C63487007C6E06 /* Step+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227317C63487007C6E06 /* Step+Helper.m */; };
 		D2B6227717C6349E007C6E06 /* Kronicle+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */; };
 		D2B6228817C64224007C6E06 /* KronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6228717C64224007C6E06 /* KronicleEngine.m */; };
-		D2CF7E3F17B46AC000E3D1F0 /* KRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E3D17B46AC000E3D1F0 /* KRListViewController.m */; };
-		D2CF7E4017B46AC000E3D1F0 /* KRListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CF7E3E17B46AC000E3D1F0 /* KRListViewController.xib */; };
-		D2CF7E4417B46B9900E3D1F0 /* StepsTableCellViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E4317B46B9900E3D1F0 /* StepsTableCellViewCell.m */; };
-		D2CF7E4817B4723800E3D1F0 /* KRCircularKronicleGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E4717B4723800E3D1F0 /* KRCircularKronicleGraph.m */; };
-		D2CF7E7317B9A94900E3D1F0 /* KRKronicleBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E7217B9A94900E3D1F0 /* KRKronicleBaseViewController.m */; };
-		D2CF7E7A17B9AE4300E3D1F0 /* KRNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E7917B9AE4300E3D1F0 /* KRNavigationViewController.m */; };
-		D2CF7E8517BAF1A400E3D1F0 /* KRSwipeViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E8417BAF1A400E3D1F0 /* KRSwipeViewNavigation.m */; };
-		D2CF7E8817BAF1E000E3D1F0 /* KRNavigationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF7E8717BAF1E000E3D1F0 /* KRNavigationTableViewCell.m */; };
 		D2D95C4E17C6D8C70048ADA3 /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C4D17C6D8C70048ADA3 /* Step.m */; };
 		D2D95C5117C6D8C70048ADA3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5017C6D8C70048ADA3 /* User.m */; };
 		D2D95C5417C6D8C70048ADA3 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5317C6D8C70048ADA3 /* Category.m */; };
 		D2D95C6017C6D99B0048ADA3 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5F17C6D99B0048ADA3 /* Item.m */; };
-		D2ED58E417CEC61200FED4FB /* KRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58E217CEC61200FED4FB /* KRItemsViewController.m */; };
-		D2ED58E517CEC61200FED4FB /* KRItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2ED58E317CEC61200FED4FB /* KRItemsViewController.xib */; };
-		D2ED58E817CEC64600FED4FB /* KRItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58E717CEC64600FED4FB /* KRItemsTableViewCell.m */; };
 		D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */; };
 		D2ED58EE17CECC0700FED4FB /* listitem_acquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D2ED58EC17CECC0700FED4FB /* listitem_acquired.png */; };
 		D2ED58EF17CECC0700FED4FB /* listitem_unacquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D2ED58ED17CECC0700FED4FB /* listitem_unacquired.png */; };
-		D2ED58F617CF6F5E00FED4FB /* CreateStepTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58F317CF6F5E00FED4FB /* CreateStepTimeView.m */; };
-		D2ED58F717CF6F5E00FED4FB /* DurationCreatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58F517CF6F5E00FED4FB /* DurationCreatorView.m */; };
-		D2ED58FE17CF6FDC00FED4FB /* KRRatingCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58FD17CF6FDC00FED4FB /* KRRatingCircleView.m */; };
-		D2ED590117CF73E500FED4FB /* KRRatingModuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED590017CF73E400FED4FB /* KRRatingModuleView.m */; };
 		D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7251789ED850085C707 /* NSData+MKBase64.m */; };
 		D2F1E73A1789ED850085C707 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
 		D2F1E73B1789ED850085C707 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7291789ED850085C707 /* NSDictionary+RequestEncoding.m */; };
@@ -263,89 +277,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C6F80D217CAF0B700EFC4B3 /* UIView+GCLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+GCLibrary.h"; path = "uiview+gclibrary/UIView+GCLibrary.h"; sourceTree = "<group>"; };
-		0C6F80D317CAF0B700EFC4B3 /* UIView+GCLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+GCLibrary.m"; path = "uiview+gclibrary/UIView+GCLibrary.m"; sourceTree = "<group>"; };
-		0C6F80D517CAF0C400EFC4B3 /* KRSearchTextFieldControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRSearchTextFieldControlView.h; path = krsearchtextfieldview/KRSearchTextFieldControlView.h; sourceTree = "<group>"; };
-		0C6F80D617CAF0C400EFC4B3 /* KRSearchTextFieldControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRSearchTextFieldControlView.m; path = krsearchtextfieldview/KRSearchTextFieldControlView.m; sourceTree = "<group>"; };
-		0C6F80D717CAF0C400EFC4B3 /* KRSearchTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRSearchTextFieldView.h; path = krsearchtextfieldview/KRSearchTextFieldView.h; sourceTree = "<group>"; };
-		0C6F80D817CAF0C400EFC4B3 /* KRSearchTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRSearchTextFieldView.m; path = krsearchtextfieldview/KRSearchTextFieldView.m; sourceTree = "<group>"; };
-		0C6F80DB17CAF0D300EFC4B3 /* KRCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesViewController.m; sourceTree = "<group>"; };
-		0C6F80DC17CAF0D300EFC4B3 /* KRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewController.h; sourceTree = "<group>"; };
-		0C6F80DD17CAF0D300EFC4B3 /* KRCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCategoriesViewController.xib; sourceTree = "<group>"; };
-		0C6F80E017CAF0DF00EFC4B3 /* KRCategoriesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRCategoriesCollectionViewCell.h; path = krcategoriesviewcontrollercell/KRCategoriesCollectionViewCell.h; sourceTree = "<group>"; };
-		0C6F80E117CAF0DF00EFC4B3 /* KRCategoriesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRCategoriesCollectionViewCell.m; path = krcategoriesviewcontrollercell/KRCategoriesCollectionViewCell.m; sourceTree = "<group>"; };
-		0C6F80E317CAF0ED00EFC4B3 /* KRCategoriesViewControllerCellCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRCategoriesViewControllerCellCircleView.h; path = krcategoriesviewcontrollercell/krcategoriesviewcontrollercellcircleview/KRCategoriesViewControllerCellCircleView.h; sourceTree = "<group>"; };
-		0C6F80E417CAF0ED00EFC4B3 /* KRCategoriesViewControllerCellCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRCategoriesViewControllerCellCircleView.m; path = krcategoriesviewcontrollercell/krcategoriesviewcontrollercellcircleview/KRCategoriesViewControllerCellCircleView.m; sourceTree = "<group>"; };
-		0C6F80EA17CAF19000EFC4B3 /* KRDefaultButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRDefaultButton.m; sourceTree = "<group>"; };
-		0C6F80EB17CAF19000EFC4B3 /* KRDefaultButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRDefaultButton.h; sourceTree = "<group>"; };
-		0CFC051B17B86C8500A1BB7F /* KRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRHomeViewController.h; path = home/KRHomeViewController.h; sourceTree = "<group>"; };
-		0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRHomeViewController.m; path = home/KRHomeViewController.m; sourceTree = "<group>"; };
-		0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KRHomeViewController.xib; path = home/KRHomeViewController.xib; sourceTree = "<group>"; };
 		0CFC052017B8723800A1BB7F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		8cc04305e90128ef892ea4d8 /* calabash.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
 		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2333ED117CD788500CE6831 /* backarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backarrow.png; sourceTree = "<group>"; };
-		D2333EDF17CD7E3900CE6831 /* KRKroniclesPageNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKroniclesPageNavigationView.h; sourceTree = "<group>"; };
-		D2333EE017CD7E3900CE6831 /* KRKroniclesPageNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKroniclesPageNavigationView.m; sourceTree = "<group>"; };
 		D2333EE217CD7FA200CE6831 /* tinyrturqoisecarrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyrturqoisecarrot.png; sourceTree = "<group>"; };
 		D236FB0517B4631A003DD323 /* Kronicle-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kronicle-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D236FB4317B464E4003DD323 /* KRKronicleStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleStartViewController.h; sourceTree = "<group>"; };
-		D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleStartViewController.m; sourceTree = "<group>"; };
-		D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRKronicleStartViewController.xib; sourceTree = "<group>"; };
-		D236FB4617B464E4003DD323 /* KRPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPlaybackViewController.h; sourceTree = "<group>"; };
-		D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPlaybackViewController.m; sourceTree = "<group>"; };
-		D236FB4817B464E4003DD323 /* KRPlaybackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRPlaybackViewController.xib; sourceTree = "<group>"; };
-		D236FB4D17B464E4003DD323 /* KRClockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClockManager.h; sourceTree = "<group>"; };
-		D236FB4E17B464E4003DD323 /* KRClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClockManager.m; sourceTree = "<group>"; };
-		D236FB4F17B464E4003DD323 /* KRKronicleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleManager.h; sourceTree = "<group>"; };
-		D236FB5017B464E4003DD323 /* KRKronicleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleManager.m; sourceTree = "<group>"; };
-		D236FB5917B464E4003DD323 /* KRGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRGraphView.h; sourceTree = "<group>"; };
-		D236FB5A17B464E4003DD323 /* KRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRGraphView.m; sourceTree = "<group>"; };
-		D236FB6017B464E4003DD323 /* MediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaView.h; sourceTree = "<group>"; };
-		D236FB6117B464E4003DD323 /* MediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaView.m; sourceTree = "<group>"; };
-		D236FB6317B464E4003DD323 /* KRStepNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepNavigation.h; sourceTree = "<group>"; };
-		D236FB6417B464E4003DD323 /* KRStepNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepNavigation.m; sourceTree = "<group>"; };
-		D236FB6617B464E4003DD323 /* KRStepListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepListContainerView.h; sourceTree = "<group>"; };
-		D236FB6717B464E4003DD323 /* KRStepListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepListContainerView.m; sourceTree = "<group>"; };
-		D236FB6817B464E4003DD323 /* KRStepListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepListView.h; sourceTree = "<group>"; };
-		D236FB6917B464E4003DD323 /* KRStepListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepListView.m; sourceTree = "<group>"; };
-		D236FB6B17B464E4003DD323 /* DescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionView.h; sourceTree = "<group>"; };
-		D236FB6C17B464E4003DD323 /* DescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionView.m; sourceTree = "<group>"; };
-		D236FB6D17B464E4003DD323 /* KRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRScrollView.h; sourceTree = "<group>"; };
-		D236FB6E17B464E4003DD323 /* KRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRScrollView.m; sourceTree = "<group>"; };
-		D23EFC8117BF030D00989E5E /* AddDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDescriptionTableViewCell.h; sourceTree = "<group>"; };
-		D23EFC8217BF030D00989E5E /* AddDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDescriptionTableViewCell.m; sourceTree = "<group>"; };
-		D23EFC8317BF030D00989E5E /* AddTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTitleTableViewCell.h; sourceTree = "<group>"; };
-		D23EFC8417BF030D00989E5E /* AddTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTitleTableViewCell.m; sourceTree = "<group>"; };
-		D23EFC8517BF030D00989E5E /* KRFormFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRFormFieldCell.h; sourceTree = "<group>"; };
-		D23EFC8617BF030D00989E5E /* KRFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRFormFieldCell.m; sourceTree = "<group>"; };
-		D23EFC8917BF030D00989E5E /* AddStepTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStepTableViewCell.h; sourceTree = "<group>"; };
-		D23EFC8A17BF030D00989E5E /* AddStepTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStepTableViewCell.m; sourceTree = "<group>"; };
-		D23EFC8B17BF030D00989E5E /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
-		D23EFC8C17BF030D00989E5E /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
-		D23EFC8D17BF030D00989E5E /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
-		D23EFC9217BF030D00989E5E /* KRCreateStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateStepViewController.h; sourceTree = "<group>"; };
-		D23EFC9317BF030D00989E5E /* KRCreateStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateStepViewController.m; sourceTree = "<group>"; };
-		D23EFC9417BF030D00989E5E /* KRCreateStepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateStepViewController.xib; sourceTree = "<group>"; };
-		D23EFCB717BFB00400989E5E /* KeyboardNavigationToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardNavigationToolBar.h; sourceTree = "<group>"; };
-		D23EFCB817BFB00400989E5E /* KeyboardNavigationToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardNavigationToolBar.m; sourceTree = "<group>"; };
-		D23EFCC317BFEA8F00989E5E /* KRMyKroniclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMyKroniclesViewController.h; sourceTree = "<group>"; };
-		D23EFCC417BFEA8F00989E5E /* KRMyKroniclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMyKroniclesViewController.m; sourceTree = "<group>"; };
-		D23EFCC517BFEA8F00989E5E /* KRMyKroniclesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRMyKroniclesViewController.xib; sourceTree = "<group>"; };
-		D23EFCC817BFEA9F00989E5E /* KRMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMeViewController.h; sourceTree = "<group>"; };
-		D23EFCC917BFEA9F00989E5E /* KRMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMeViewController.m; sourceTree = "<group>"; };
-		D23EFCCA17BFEA9F00989E5E /* KRMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRMeViewController.xib; sourceTree = "<group>"; };
-		D23EFCD617C01EB300989E5E /* AddItemsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemsCell.h; sourceTree = "<group>"; };
-		D23EFCD717C01EB300989E5E /* AddItemsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemsCell.m; sourceTree = "<group>"; };
-		D23EFCD917C02A2A00989E5E /* AddMediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMediaTableViewCell.h; sourceTree = "<group>"; };
-		D23EFCDA17C02A2A00989E5E /* AddMediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMediaTableViewCell.m; sourceTree = "<group>"; };
-		D23EFCDC17C06EC200989E5E /* AddTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTimeCell.h; sourceTree = "<group>"; };
-		D23EFCDD17C06EC200989E5E /* AddTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTimeCell.m; sourceTree = "<group>"; };
-		D23EFCDF17C1074F00989E5E /* ContentWithLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentWithLabelView.h; sourceTree = "<group>"; };
-		D23EFCE017C1074F00989E5E /* ContentWithLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentWithLabelView.m; sourceTree = "<group>"; };
-		D23EFCF517C2F78800989E5E /* KRBaseEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRBaseEditTableViewController.h; sourceTree = "<group>"; };
-		D23EFCF617C2F78800989E5E /* KRBaseEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRBaseEditTableViewController.m; sourceTree = "<group>"; };
 		D23EFD9F17C44DF200989E5E /* KRKronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicle.h; sourceTree = "<group>"; };
 		D23EFDA017C44DF200989E5E /* KRKronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicle.m; sourceTree = "<group>"; };
 		D23EFDA117C44DF200989E5E /* KRList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRList.h; sourceTree = "<group>"; };
@@ -353,18 +291,6 @@
 		D23EFDA317C44DF200989E5E /* KRSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSerializable.h; sourceTree = "<group>"; };
 		D23EFDA417C44DF200989E5E /* KRStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStep.h; sourceTree = "<group>"; };
 		D23EFDA517C44DF200989E5E /* KRStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStep.m; sourceTree = "<group>"; };
-		D23EFDAD17C44E8500989E5E /* KRTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRTextButton.h; sourceTree = "<group>"; };
-		D23EFDAE17C44E8500989E5E /* KRTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRTextButton.m; sourceTree = "<group>"; };
-		D23EFDB117C44E8500989E5E /* ACMagnifyingGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMagnifyingGlass.h; sourceTree = "<group>"; };
-		D23EFDB217C44E8500989E5E /* ACMagnifyingGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACMagnifyingGlass.m; sourceTree = "<group>"; };
-		D23EFDB317C44E8500989E5E /* BBRichTextPrefixStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRichTextPrefixStyle.h; sourceTree = "<group>"; };
-		D23EFDB417C44E8500989E5E /* BBRichTextPrefixStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRichTextPrefixStyle.m; sourceTree = "<group>"; };
-		D23EFDB517C44E8500989E5E /* BBRichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRichTextView.h; sourceTree = "<group>"; };
-		D23EFDB617C44E8500989E5E /* BBRichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRichTextView.m; sourceTree = "<group>"; };
-		D23EFDB817C44E8500989E5E /* NMCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCustomLabel.h; sourceTree = "<group>"; };
-		D23EFDB917C44E8500989E5E /* NMCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCustomLabel.m; sourceTree = "<group>"; };
-		D23EFDBA17C44E8500989E5E /* NMCustomLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCustomLabelStyle.h; sourceTree = "<group>"; };
-		D23EFDBB17C44E8500989E5E /* NMCustomLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCustomLabelStyle.m; sourceTree = "<group>"; };
 		D23EFDC317C4563B00989E5E /* ManagedContextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedContextController.h; sourceTree = "<group>"; };
 		D23EFDC417C4563B00989E5E /* ManagedContextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedContextController.m; sourceTree = "<group>"; };
 		D23EFDC617C45FB700989E5E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -444,14 +370,8 @@
 		D281278817C99B7A00E66C7F /* top-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-left.png"; sourceTree = "<group>"; };
 		D281278917C99B7A00E66C7F /* top-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-right.png"; sourceTree = "<group>"; };
 		D281278A17C99B7A00E66C7F /* x-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-button.png"; sourceTree = "<group>"; };
-		D28127CC17CA59DD00E66C7F /* KRPublishOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPublishOverlay.h; sourceTree = "<group>"; };
-		D28127CD17CA59DD00E66C7F /* KRPublishOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPublishOverlay.m; sourceTree = "<group>"; };
 		D28127D417CA627F00E66C7F /* profileframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileframe.png; sourceTree = "<group>"; };
 		D28127D617CA62BE00E66C7F /* profileimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileimage.png; sourceTree = "<group>"; };
-		D28127D917CA68B700E66C7F /* KronicleBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronicleBlockTableViewCell.h; sourceTree = "<group>"; };
-		D28127DA17CA68B700E66C7F /* KronicleBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleBlockTableViewCell.m; sourceTree = "<group>"; };
-		D28127DD17CA766E00E66C7F /* MyKroniclesSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyKroniclesSectionHeader.h; sourceTree = "<group>"; };
-		D28127DE17CA766E00E66C7F /* MyKroniclesSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyKroniclesSectionHeader.m; sourceTree = "<group>"; };
 		D28127E017CA7E7D00E66C7F /* block-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block-x.png"; sourceTree = "<group>"; };
 		D28127E517CA8F2100E66C7F /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
 		D28127E617CA8F2100E66C7F /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
@@ -460,10 +380,6 @@
 		D28127EC17CAB34F00E66C7F /* plus-sign-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-sign-white@2x.png"; sourceTree = "<group>"; };
 		D28127F017CAB5D000E66C7F /* start_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_button.png; sourceTree = "<group>"; };
 		D28127F117CAB5D000E66C7F /* plus_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_start.png; sourceTree = "<group>"; };
-		D28127F617CB7DD200E66C7F /* KronicleBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronicleBlockView.h; sourceTree = "<group>"; };
-		D28127F717CB7DD200E66C7F /* KronicleBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleBlockView.m; sourceTree = "<group>"; };
-		D28127F817CB7DD200E66C7F /* StepBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepBlockView.h; sourceTree = "<group>"; };
-		D28127F917CB7DD200E66C7F /* StepBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepBlockView.m; sourceTree = "<group>"; };
 		D29D270C178B93330085E943 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIRouter.h; path = kroniclenetwork/APIRouter.h; sourceTree = "<group>"; };
 		D29D270D178B93330085E943 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIRouter.m; path = kroniclenetwork/APIRouter.m; sourceTree = "<group>"; };
 		D2A573DE175A3B4E002AC1B9 /* Kronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -496,6 +412,155 @@
 		D2A57484175A78A9002AC1B9 /* BrandonGrotesque-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonGrotesque-Regular.otf"; sourceTree = "<group>"; };
 		D2A57486175A7F73002AC1B9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D2A574AA175AFD91002AC1B9 /* MinionPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MinionPro-Regular.otf"; sourceTree = "<group>"; };
+		D2A7F73417D0E75D0039EE5A /* AddDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		D2A7F73517D0E75D0039EE5A /* AddDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		D2A7F73617D0E75D0039EE5A /* AddTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTitleTableViewCell.h; sourceTree = "<group>"; };
+		D2A7F73717D0E75D0039EE5A /* AddTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTitleTableViewCell.m; sourceTree = "<group>"; };
+		D2A7F73817D0E75D0039EE5A /* KeyboardNavigationToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardNavigationToolBar.h; sourceTree = "<group>"; };
+		D2A7F73917D0E75D0039EE5A /* KeyboardNavigationToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardNavigationToolBar.m; sourceTree = "<group>"; };
+		D2A7F73A17D0E75D0039EE5A /* KRFormFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRFormFieldCell.h; sourceTree = "<group>"; };
+		D2A7F73B17D0E75D0039EE5A /* KRFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRFormFieldCell.m; sourceTree = "<group>"; };
+		D2A7F73E17D0E75D0039EE5A /* AddItemsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemsCell.h; sourceTree = "<group>"; };
+		D2A7F73F17D0E75D0039EE5A /* AddItemsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemsCell.m; sourceTree = "<group>"; };
+		D2A7F74017D0E75D0039EE5A /* AddStepTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStepTableViewCell.h; sourceTree = "<group>"; };
+		D2A7F74117D0E75D0039EE5A /* AddStepTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStepTableViewCell.m; sourceTree = "<group>"; };
+		D2A7F74217D0E75D0039EE5A /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
+		D2A7F74317D0E75D0039EE5A /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
+		D2A7F74417D0E75D0039EE5A /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
+		D2A7F74617D0E75D0039EE5A /* KRPublishOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPublishOverlay.h; sourceTree = "<group>"; };
+		D2A7F74717D0E75D0039EE5A /* KRPublishOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPublishOverlay.m; sourceTree = "<group>"; };
+		D2A7F74A17D0E75D0039EE5A /* AddMediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMediaTableViewCell.h; sourceTree = "<group>"; };
+		D2A7F74B17D0E75D0039EE5A /* AddMediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMediaTableViewCell.m; sourceTree = "<group>"; };
+		D2A7F74C17D0E75D0039EE5A /* AddTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTimeCell.h; sourceTree = "<group>"; };
+		D2A7F74D17D0E75D0039EE5A /* AddTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTimeCell.m; sourceTree = "<group>"; };
+		D2A7F74E17D0E75D0039EE5A /* ContentWithLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentWithLabelView.h; sourceTree = "<group>"; };
+		D2A7F74F17D0E75D0039EE5A /* ContentWithLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentWithLabelView.m; sourceTree = "<group>"; };
+		D2A7F75017D0E75D0039EE5A /* KRCreateStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateStepViewController.h; sourceTree = "<group>"; };
+		D2A7F75117D0E75D0039EE5A /* KRCreateStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateStepViewController.m; sourceTree = "<group>"; };
+		D2A7F75217D0E75D0039EE5A /* KRCreateStepViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateStepViewController.xib; sourceTree = "<group>"; };
+		D2A7F75517D0E75D0039EE5A /* KRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewController.h; sourceTree = "<group>"; };
+		D2A7F75617D0E75D0039EE5A /* KRCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesViewController.m; sourceTree = "<group>"; };
+		D2A7F75717D0E75D0039EE5A /* KRCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCategoriesViewController.xib; sourceTree = "<group>"; };
+		D2A7F75917D0E75D0039EE5A /* KRCategoriesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesCollectionViewCell.h; sourceTree = "<group>"; };
+		D2A7F75A17D0E75D0039EE5A /* KRCategoriesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesCollectionViewCell.m; sourceTree = "<group>"; };
+		D2A7F75C17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCategoriesViewControllerCellCircleView.h; sourceTree = "<group>"; };
+		D2A7F75D17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCategoriesViewControllerCellCircleView.m; sourceTree = "<group>"; };
+		D2A7F75F17D0E75D0039EE5A /* KRListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRListViewController.h; sourceTree = "<group>"; };
+		D2A7F76017D0E75D0039EE5A /* KRListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRListViewController.m; sourceTree = "<group>"; };
+		D2A7F76117D0E75D0039EE5A /* KRListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRListViewController.xib; sourceTree = "<group>"; };
+		D2A7F76317D0E75D0039EE5A /* KRKroniclesPageNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKroniclesPageNavigationView.h; sourceTree = "<group>"; };
+		D2A7F76417D0E75D0039EE5A /* KRKroniclesPageNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKroniclesPageNavigationView.m; sourceTree = "<group>"; };
+		D2A7F76617D0E75D0039EE5A /* StepsTableCellViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepsTableCellViewCell.h; sourceTree = "<group>"; };
+		D2A7F76717D0E75D0039EE5A /* StepsTableCellViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsTableCellViewCell.m; sourceTree = "<group>"; };
+		D2A7F76917D0E75D0039EE5A /* KRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRHomeViewController.h; sourceTree = "<group>"; };
+		D2A7F76A17D0E75D0039EE5A /* KRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRHomeViewController.m; sourceTree = "<group>"; };
+		D2A7F76B17D0E75D0039EE5A /* KRHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRHomeViewController.xib; sourceTree = "<group>"; };
+		D2A7F76E17D0E75D0039EE5A /* KRItemsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRItemsTableViewCell.h; sourceTree = "<group>"; };
+		D2A7F76F17D0E75D0039EE5A /* KRItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRItemsTableViewCell.m; sourceTree = "<group>"; };
+		D2A7F77017D0E75D0039EE5A /* KRItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRItemsViewController.h; sourceTree = "<group>"; };
+		D2A7F77117D0E75D0039EE5A /* KRItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRItemsViewController.m; sourceTree = "<group>"; };
+		D2A7F77217D0E75D0039EE5A /* KRItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRItemsViewController.xib; sourceTree = "<group>"; };
+		D2A7F77417D0E75D0039EE5A /* KRMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMeViewController.h; sourceTree = "<group>"; };
+		D2A7F77517D0E75D0039EE5A /* KRMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMeViewController.m; sourceTree = "<group>"; };
+		D2A7F77617D0E75D0039EE5A /* KRMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRMeViewController.xib; sourceTree = "<group>"; };
+		D2A7F77917D0E75D0039EE5A /* KronicleBlockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronicleBlockTableViewCell.h; sourceTree = "<group>"; };
+		D2A7F77A17D0E75D0039EE5A /* KronicleBlockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleBlockTableViewCell.m; sourceTree = "<group>"; };
+		D2A7F77B17D0E75D0039EE5A /* KRMyKroniclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMyKroniclesViewController.h; sourceTree = "<group>"; };
+		D2A7F77C17D0E75D0039EE5A /* KRMyKroniclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMyKroniclesViewController.m; sourceTree = "<group>"; };
+		D2A7F77D17D0E75D0039EE5A /* KRMyKroniclesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRMyKroniclesViewController.xib; sourceTree = "<group>"; };
+		D2A7F77F17D0E75D0039EE5A /* MyKroniclesSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyKroniclesSectionHeader.h; sourceTree = "<group>"; };
+		D2A7F78017D0E75D0039EE5A /* MyKroniclesSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyKroniclesSectionHeader.m; sourceTree = "<group>"; };
+		D2A7F78217D0E75D0039EE5A /* KRNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNavigationViewController.h; sourceTree = "<group>"; };
+		D2A7F78317D0E75D0039EE5A /* KRNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNavigationViewController.m; sourceTree = "<group>"; };
+		D2A7F78517D0E75D0039EE5A /* KRNavigationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNavigationTableViewCell.h; sourceTree = "<group>"; };
+		D2A7F78617D0E75D0039EE5A /* KRNavigationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNavigationTableViewCell.m; sourceTree = "<group>"; };
+		D2A7F78717D0E75D0039EE5A /* KRSwipeViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSwipeViewNavigation.h; sourceTree = "<group>"; };
+		D2A7F78817D0E75D0039EE5A /* KRSwipeViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSwipeViewNavigation.m; sourceTree = "<group>"; };
+		D2A7F78A17D0E75D0039EE5A /* KRKronicleStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleStartViewController.h; sourceTree = "<group>"; };
+		D2A7F78B17D0E75D0039EE5A /* KRKronicleStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleStartViewController.m; sourceTree = "<group>"; };
+		D2A7F78C17D0E75D0039EE5A /* KRKronicleStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRKronicleStartViewController.xib; sourceTree = "<group>"; };
+		D2A7F78D17D0E75D0039EE5A /* KRPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPlaybackViewController.h; sourceTree = "<group>"; };
+		D2A7F78E17D0E75D0039EE5A /* KRPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPlaybackViewController.m; sourceTree = "<group>"; };
+		D2A7F78F17D0E75D0039EE5A /* KRPlaybackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRPlaybackViewController.xib; sourceTree = "<group>"; };
+		D2A7F79017D0E75D0039EE5A /* KRViewListTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRViewListTypeViewController.h; sourceTree = "<group>"; };
+		D2A7F79117D0E75D0039EE5A /* KRViewListTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRViewListTypeViewController.m; sourceTree = "<group>"; };
+		D2A7F79217D0E75D0039EE5A /* KRViewListTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRViewListTypeViewController.xib; sourceTree = "<group>"; };
+		D2A7F79417D0E75D0039EE5A /* KRClockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClockManager.h; sourceTree = "<group>"; };
+		D2A7F79517D0E75D0039EE5A /* KRClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClockManager.m; sourceTree = "<group>"; };
+		D2A7F79617D0E75D0039EE5A /* KRKronicleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleManager.h; sourceTree = "<group>"; };
+		D2A7F79717D0E75D0039EE5A /* KRKronicleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleManager.m; sourceTree = "<group>"; };
+		D2A7F79917D0E75D0039EE5A /* KRClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClock.h; sourceTree = "<group>"; };
+		D2A7F79A17D0E75D0039EE5A /* KRClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClock.m; sourceTree = "<group>"; };
+		D2A7F79D17D0E75D0039EE5A /* KRCircularKronicleGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCircularKronicleGraph.h; sourceTree = "<group>"; };
+		D2A7F79E17D0E75D0039EE5A /* KRCircularKronicleGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCircularKronicleGraph.m; sourceTree = "<group>"; };
+		D2A7F79F17D0E75D0039EE5A /* KRGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRGraphView.h; sourceTree = "<group>"; };
+		D2A7F7A017D0E75D0039EE5A /* KRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRGraphView.m; sourceTree = "<group>"; };
+		D2A7F7A617D0E75D0039EE5A /* MediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaView.h; sourceTree = "<group>"; };
+		D2A7F7A717D0E75D0039EE5A /* MediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaView.m; sourceTree = "<group>"; };
+		D2A7F7A917D0E75D0039EE5A /* KRStepNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepNavigation.h; sourceTree = "<group>"; };
+		D2A7F7AA17D0E75D0039EE5A /* KRStepNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepNavigation.m; sourceTree = "<group>"; };
+		D2A7F7AC17D0E75D0039EE5A /* KRStepListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepListContainerView.h; sourceTree = "<group>"; };
+		D2A7F7AD17D0E75D0039EE5A /* KRStepListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepListContainerView.m; sourceTree = "<group>"; };
+		D2A7F7AE17D0E75D0039EE5A /* KRStepListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRStepListView.h; sourceTree = "<group>"; };
+		D2A7F7AF17D0E75D0039EE5A /* KRStepListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRStepListView.m; sourceTree = "<group>"; };
+		D2A7F7B117D0E75D0039EE5A /* DescriptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionView.h; sourceTree = "<group>"; };
+		D2A7F7B217D0E75D0039EE5A /* DescriptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionView.m; sourceTree = "<group>"; };
+		D2A7F7B317D0E75D0039EE5A /* KRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRScrollView.h; sourceTree = "<group>"; };
+		D2A7F7B417D0E75D0039EE5A /* KRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRScrollView.m; sourceTree = "<group>"; };
+		D2A7F7B617D0E75D0039EE5A /* KRReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRReviewViewController.h; sourceTree = "<group>"; };
+		D2A7F7B717D0E75D0039EE5A /* KRReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRReviewViewController.m; sourceTree = "<group>"; };
+		D2A7F7B817D0E75D0039EE5A /* KRReviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRReviewViewController.xib; sourceTree = "<group>"; };
+		D2A7F7BA17D0E75D0039EE5A /* KRBaseEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRBaseEditTableViewController.h; sourceTree = "<group>"; };
+		D2A7F7BB17D0E75D0039EE5A /* KRBaseEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRBaseEditTableViewController.m; sourceTree = "<group>"; };
+		D2A7F7BC17D0E75D0039EE5A /* KRKronicleBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleBaseViewController.h; sourceTree = "<group>"; };
+		D2A7F7BD17D0E75D0039EE5A /* KRKronicleBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleBaseViewController.m; sourceTree = "<group>"; };
+		D2A7F7FB17D0E8FB0039EE5A /* KRDefaultButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRDefaultButton.h; sourceTree = "<group>"; };
+		D2A7F7FC17D0E8FB0039EE5A /* KRDefaultButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRDefaultButton.m; sourceTree = "<group>"; };
+		D2A7F7FD17D0E8FB0039EE5A /* KRTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRTextButton.h; sourceTree = "<group>"; };
+		D2A7F7FE17D0E8FB0039EE5A /* KRTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRTextButton.m; sourceTree = "<group>"; };
+		D2A7F80017D0E8FB0039EE5A /* KRSearchTextFieldControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSearchTextFieldControlView.h; sourceTree = "<group>"; };
+		D2A7F80117D0E8FB0039EE5A /* KRSearchTextFieldControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSearchTextFieldControlView.m; sourceTree = "<group>"; };
+		D2A7F80217D0E8FB0039EE5A /* KRSearchTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSearchTextFieldView.h; sourceTree = "<group>"; };
+		D2A7F80317D0E8FB0039EE5A /* KRSearchTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSearchTextFieldView.m; sourceTree = "<group>"; };
+		D2A7F83F17D0E92C0039EE5A /* KronicleBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronicleBlockView.h; sourceTree = "<group>"; };
+		D2A7F84017D0E92C0039EE5A /* KronicleBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleBlockView.m; sourceTree = "<group>"; };
+		D2A7F84117D0E92C0039EE5A /* StepBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepBlockView.h; sourceTree = "<group>"; };
+		D2A7F84217D0E92C0039EE5A /* StepBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepBlockView.m; sourceTree = "<group>"; };
+		D2A7F84517D0E92C0039EE5A /* KRRatingCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRatingCircleView.h; sourceTree = "<group>"; };
+		D2A7F84617D0E92C0039EE5A /* KRRatingCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRatingCircleView.m; sourceTree = "<group>"; };
+		D2A7F84717D0E92C0039EE5A /* KRRatingModuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRatingModuleView.h; sourceTree = "<group>"; };
+		D2A7F84817D0E92C0039EE5A /* KRRatingModuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRatingModuleView.m; sourceTree = "<group>"; };
+		D2A7F84A17D0E92C0039EE5A /* CreateStepTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStepTimeView.h; sourceTree = "<group>"; };
+		D2A7F84B17D0E92C0039EE5A /* CreateStepTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStepTimeView.m; sourceTree = "<group>"; };
+		D2A7F84C17D0E92C0039EE5A /* TouchCircleCreatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchCircleCreatorView.h; sourceTree = "<group>"; };
+		D2A7F84D17D0E92C0039EE5A /* TouchCircleCreatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchCircleCreatorView.m; sourceTree = "<group>"; };
+		D2A7F85017D0E92C0039EE5A /* ACMagnifyingGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMagnifyingGlass.h; sourceTree = "<group>"; };
+		D2A7F85117D0E92C0039EE5A /* ACMagnifyingGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACMagnifyingGlass.m; sourceTree = "<group>"; };
+		D2A7F85217D0E92C0039EE5A /* BBRichTextPrefixStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRichTextPrefixStyle.h; sourceTree = "<group>"; };
+		D2A7F85317D0E92C0039EE5A /* BBRichTextPrefixStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRichTextPrefixStyle.m; sourceTree = "<group>"; };
+		D2A7F85417D0E92C0039EE5A /* BBRichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRichTextView.h; sourceTree = "<group>"; };
+		D2A7F85517D0E92C0039EE5A /* BBRichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRichTextView.m; sourceTree = "<group>"; };
+		D2A7F85717D0E92C0039EE5A /* NMCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCustomLabel.h; sourceTree = "<group>"; };
+		D2A7F85817D0E92C0039EE5A /* NMCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCustomLabel.m; sourceTree = "<group>"; };
+		D2A7F85917D0E92C0039EE5A /* NMCustomLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCustomLabelStyle.h; sourceTree = "<group>"; };
+		D2A7F85A17D0E92C0039EE5A /* NMCustomLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCustomLabelStyle.m; sourceTree = "<group>"; };
+		D2A7F85C17D0E92C0039EE5A /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
+		D2A7F85D17D0E92C0039EE5A /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
+		D2A7F85F17D0E92C0039EE5A /* UIView+GCLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GCLibrary.h"; sourceTree = "<group>"; };
+		D2A7F86017D0E92C0039EE5A /* UIView+GCLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GCLibrary.m"; sourceTree = "<group>"; };
+		D2A7F86E17D0ED880039EE5A /* CreateReviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateReviewView.h; sourceTree = "<group>"; };
+		D2A7F86F17D0ED880039EE5A /* CreateReviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateReviewView.m; sourceTree = "<group>"; };
+		D2A7F87217D116C10039EE5A /* bottomblarg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomblarg.png; sourceTree = "<group>"; };
+		D2A7F87417D147E80039EE5A /* AntiScrollVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AntiScrollVIew.h; sourceTree = "<group>"; };
+		D2A7F87517D147E80039EE5A /* AntiScrollVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AntiScrollVIew.m; sourceTree = "<group>"; };
+		D2A7F87717D182C50039EE5A /* KRDiagramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRDiagramView.h; sourceTree = "<group>"; };
+		D2A7F87817D182C60039EE5A /* KRDiagramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRDiagramView.m; sourceTree = "<group>"; };
+		D2A7F87917D182C80039EE5A /* KRKronicleNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleNavView.h; sourceTree = "<group>"; };
+		D2A7F87A17D182CB0039EE5A /* KRKronicleNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleNavView.m; sourceTree = "<group>"; };
+		D2A7F87D17D1846B0039EE5A /* transx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transx.png; sourceTree = "<group>"; };
+		D2A7F87F17D1A6780039EE5A /* KRReviewOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRReviewOverlay.h; sourceTree = "<group>"; };
+		D2A7F88017D1A6780039EE5A /* KRReviewOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRReviewOverlay.m; sourceTree = "<group>"; };
+		D2A7F88417D1AF610039EE5A /* addreviewbuttoncircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addreviewbuttoncircle@2x.png"; sourceTree = "<group>"; };
 		D2B6226C17C6346D007C6E06 /* Kronicle+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+JSON.m"; sourceTree = "<group>"; };
 		D2B6226D17C6346D007C6E06 /* Kronicle+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kronicle+JSON.h"; sourceTree = "<group>"; };
 		D2B6226E17C6346D007C6E06 /* Step+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Step+JSON.m"; sourceTree = "<group>"; };
@@ -506,21 +571,6 @@
 		D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+Helper.m"; sourceTree = "<group>"; };
 		D2B6228717C64224007C6E06 /* KronicleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KronicleEngine.m; path = kroniclenetwork/KronicleEngine.m; sourceTree = "<group>"; };
 		D2CEA506178DB03300E651D2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D2CF7E3C17B46AC000E3D1F0 /* KRListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRListViewController.h; sourceTree = "<group>"; };
-		D2CF7E3D17B46AC000E3D1F0 /* KRListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRListViewController.m; sourceTree = "<group>"; };
-		D2CF7E3E17B46AC000E3D1F0 /* KRListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRListViewController.xib; sourceTree = "<group>"; };
-		D2CF7E4217B46B9900E3D1F0 /* StepsTableCellViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepsTableCellViewCell.h; sourceTree = "<group>"; };
-		D2CF7E4317B46B9900E3D1F0 /* StepsTableCellViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsTableCellViewCell.m; sourceTree = "<group>"; };
-		D2CF7E4617B4723800E3D1F0 /* KRCircularKronicleGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCircularKronicleGraph.h; sourceTree = "<group>"; };
-		D2CF7E4717B4723800E3D1F0 /* KRCircularKronicleGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCircularKronicleGraph.m; sourceTree = "<group>"; };
-		D2CF7E7117B9A94900E3D1F0 /* KRKronicleBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleBaseViewController.h; sourceTree = "<group>"; };
-		D2CF7E7217B9A94900E3D1F0 /* KRKronicleBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleBaseViewController.m; sourceTree = "<group>"; };
-		D2CF7E7817B9AE4300E3D1F0 /* KRNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNavigationViewController.h; sourceTree = "<group>"; };
-		D2CF7E7917B9AE4300E3D1F0 /* KRNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNavigationViewController.m; sourceTree = "<group>"; };
-		D2CF7E8317BAF1A400E3D1F0 /* KRSwipeViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSwipeViewNavigation.h; sourceTree = "<group>"; };
-		D2CF7E8417BAF1A400E3D1F0 /* KRSwipeViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSwipeViewNavigation.m; sourceTree = "<group>"; };
-		D2CF7E8617BAF1E000E3D1F0 /* KRNavigationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNavigationTableViewCell.h; sourceTree = "<group>"; };
-		D2CF7E8717BAF1E000E3D1F0 /* KRNavigationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNavigationTableViewCell.m; sourceTree = "<group>"; };
 		D2D95C4C17C6D8C70048ADA3 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		D2D95C4D17C6D8C70048ADA3 /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
 		D2D95C4F17C6D8C70048ADA3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -529,23 +579,10 @@
 		D2D95C5317C6D8C70048ADA3 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		D2D95C5E17C6D99B0048ADA3 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		D2D95C5F17C6D99B0048ADA3 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		D2ED58E117CEC61200FED4FB /* KRItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRItemsViewController.h; sourceTree = "<group>"; };
-		D2ED58E217CEC61200FED4FB /* KRItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRItemsViewController.m; sourceTree = "<group>"; };
-		D2ED58E317CEC61200FED4FB /* KRItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRItemsViewController.xib; sourceTree = "<group>"; };
-		D2ED58E617CEC64600FED4FB /* KRItemsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRItemsTableViewCell.h; sourceTree = "<group>"; };
-		D2ED58E717CEC64600FED4FB /* KRItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRItemsTableViewCell.m; sourceTree = "<group>"; };
 		D2ED58E917CEC9FF00FED4FB /* Item+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+Helper.h"; sourceTree = "<group>"; };
 		D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+Helper.m"; sourceTree = "<group>"; };
 		D2ED58EC17CECC0700FED4FB /* listitem_acquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_acquired.png; sourceTree = "<group>"; };
 		D2ED58ED17CECC0700FED4FB /* listitem_unacquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_unacquired.png; sourceTree = "<group>"; };
-		D2ED58F217CF6F5E00FED4FB /* CreateStepTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStepTimeView.h; sourceTree = "<group>"; };
-		D2ED58F317CF6F5E00FED4FB /* CreateStepTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStepTimeView.m; sourceTree = "<group>"; };
-		D2ED58F417CF6F5E00FED4FB /* DurationCreatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurationCreatorView.h; sourceTree = "<group>"; };
-		D2ED58F517CF6F5E00FED4FB /* DurationCreatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationCreatorView.m; sourceTree = "<group>"; };
-		D2ED58FC17CF6FDC00FED4FB /* KRRatingCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRatingCircleView.h; sourceTree = "<group>"; };
-		D2ED58FD17CF6FDC00FED4FB /* KRRatingCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRatingCircleView.m; sourceTree = "<group>"; };
-		D2ED58FF17CF73E400FED4FB /* KRRatingModuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRatingModuleView.h; sourceTree = "<group>"; };
-		D2ED590017CF73E400FED4FB /* KRRatingModuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRatingModuleView.m; sourceTree = "<group>"; };
 		D2F1E7241789ED850085C707 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		D2F1E7251789ED850085C707 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
 		D2F1E7261789ED850085C707 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -618,55 +655,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C6F80E617CAF10A00EFC4B3 /* krcategoriesviewcontrollercellcircleview */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F80E317CAF0ED00EFC4B3 /* KRCategoriesViewControllerCellCircleView.h */,
-				0C6F80E417CAF0ED00EFC4B3 /* KRCategoriesViewControllerCellCircleView.m */,
-			);
-			name = krcategoriesviewcontrollercellcircleview;
-			sourceTree = "<group>";
-		};
-		0C6F80E717CAF12200EFC4B3 /* krcategoriescollectionviewcell */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F80E617CAF10A00EFC4B3 /* krcategoriesviewcontrollercellcircleview */,
-				0C6F80E017CAF0DF00EFC4B3 /* KRCategoriesCollectionViewCell.h */,
-				0C6F80E117CAF0DF00EFC4B3 /* KRCategoriesCollectionViewCell.m */,
-			);
-			name = krcategoriescollectionviewcell;
-			sourceTree = "<group>";
-		};
-		0C6F80E817CAF14100EFC4B3 /* krsearchtextfieldview */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F80D517CAF0C400EFC4B3 /* KRSearchTextFieldControlView.h */,
-				0C6F80D617CAF0C400EFC4B3 /* KRSearchTextFieldControlView.m */,
-				0C6F80D717CAF0C400EFC4B3 /* KRSearchTextFieldView.h */,
-				0C6F80D817CAF0C400EFC4B3 /* KRSearchTextFieldView.m */,
-			);
-			name = krsearchtextfieldview;
-			sourceTree = "<group>";
-		};
-		0C6F80E917CAF15600EFC4B3 /* uiview+gclibrary */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F80D217CAF0B700EFC4B3 /* UIView+GCLibrary.h */,
-				0C6F80D317CAF0B700EFC4B3 /* UIView+GCLibrary.m */,
-			);
-			name = "uiview+gclibrary";
-			sourceTree = "<group>";
-		};
-		0CFC051A17B86C5200A1BB7F /* home */ = {
-			isa = PBXGroup;
-			children = (
-				0CFC051B17B86C8500A1BB7F /* KRHomeViewController.h */,
-				0CFC051C17B86C8500A1BB7F /* KRHomeViewController.m */,
-				0CFC051D17B86C8500A1BB7F /* KRHomeViewController.xib */,
-			);
-			name = home;
-			sourceTree = "<group>";
-		};
 		D2333ED017CD788500CE6831 /* category */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,244 +662,6 @@
 				D2333ED117CD788500CE6831 /* backarrow.png */,
 			);
 			path = category;
-			sourceTree = "<group>";
-		};
-		D2333EDE17CD7E3900CE6831 /* kroniclesnavigation */ = {
-			isa = PBXGroup;
-			children = (
-				D2333EDF17CD7E3900CE6831 /* KRKroniclesPageNavigationView.h */,
-				D2333EE017CD7E3900CE6831 /* KRKroniclesPageNavigationView.m */,
-			);
-			path = kroniclesnavigation;
-			sourceTree = "<group>";
-		};
-		D236FB2817B464E4003DD323 /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFDAB17C44E8500989E5E /* uicommon */,
-				D23EFCCD17BFF0DD00989E5E /* uicategories */,
-				D2CF7E7017B9A91400E3D1F0 /* supers */,
-				D2CF7E7717B9AE4300E3D1F0 /* navigation */,
-				0CFC051A17B86C5200A1BB7F /* home */,
-				D23EFCC217BFEA3C00989E5E /* mykronicles */,
-				D236FB2917B464E4003DD323 /* create */,
-				D236FB3917B464E4003DD323 /* discover */,
-				D23EFCC117BFEA3C00989E5E /* me */,
-				D236FB4217B464E4003DD323 /* playback */,
-			);
-			path = controllers;
-			sourceTree = "<group>";
-		};
-		D236FB2917B464E4003DD323 /* create */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFC8017BF030D00989E5E /* cells */,
-				D23EFC8717BF030D00989E5E /* krkroniclecreateviewcontroller */,
-				D23EFC9017BF030D00989E5E /* krstepcreatecontroller */,
-				D2ED58DF17CEC61200FED4FB /* kritemscontroller */,
-			);
-			path = create;
-			sourceTree = "<group>";
-		};
-		D236FB3917B464E4003DD323 /* discover */ = {
-			isa = PBXGroup;
-			children = (
-				D2CF7E3B17B46AC000E3D1F0 /* krlistviewcontroller */,
-				D236FB3A17B464E4003DD323 /* krcategoriesviewcontroller */,
-			);
-			path = discover;
-			sourceTree = "<group>";
-		};
-		D236FB3A17B464E4003DD323 /* krcategoriesviewcontroller */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F80E717CAF12200EFC4B3 /* krcategoriescollectionviewcell */,
-				0C6F80DC17CAF0D300EFC4B3 /* KRCategoriesViewController.h */,
-				0C6F80DB17CAF0D300EFC4B3 /* KRCategoriesViewController.m */,
-				0C6F80DD17CAF0D300EFC4B3 /* KRCategoriesViewController.xib */,
-			);
-			path = krcategoriesviewcontroller;
-			sourceTree = "<group>";
-		};
-		D236FB4217B464E4003DD323 /* playback */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB4317B464E4003DD323 /* KRKronicleStartViewController.h */,
-				D236FB4417B464E4003DD323 /* KRKronicleStartViewController.m */,
-				D236FB4517B464E4003DD323 /* KRKronicleStartViewController.xib */,
-				D236FB4617B464E4003DD323 /* KRPlaybackViewController.h */,
-				D236FB4717B464E4003DD323 /* KRPlaybackViewController.m */,
-				D236FB4817B464E4003DD323 /* KRPlaybackViewController.xib */,
-				D236FB4C17B464E4003DD323 /* manager */,
-				D236FB5717B464E4003DD323 /* view */,
-			);
-			name = playback;
-			path = viewing;
-			sourceTree = "<group>";
-		};
-		D236FB4C17B464E4003DD323 /* manager */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB4D17B464E4003DD323 /* KRClockManager.h */,
-				D236FB4E17B464E4003DD323 /* KRClockManager.m */,
-				D236FB4F17B464E4003DD323 /* KRKronicleManager.h */,
-				D236FB5017B464E4003DD323 /* KRKronicleManager.m */,
-			);
-			path = manager;
-			sourceTree = "<group>";
-		};
-		D236FB5717B464E4003DD323 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB5817B464E4003DD323 /* graphs */,
-				D236FB5F17B464E4003DD323 /* media */,
-				D236FB6217B464E4003DD323 /* navigation */,
-				D236FB6517B464E4003DD323 /* steplist */,
-				D236FB6A17B464E4003DD323 /* swipescroll */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		D236FB5817B464E4003DD323 /* graphs */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB5917B464E4003DD323 /* KRGraphView.h */,
-				D236FB5A17B464E4003DD323 /* KRGraphView.m */,
-				D2CF7E4617B4723800E3D1F0 /* KRCircularKronicleGraph.h */,
-				D2CF7E4717B4723800E3D1F0 /* KRCircularKronicleGraph.m */,
-			);
-			path = graphs;
-			sourceTree = "<group>";
-		};
-		D236FB5F17B464E4003DD323 /* media */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB6017B464E4003DD323 /* MediaView.h */,
-				D236FB6117B464E4003DD323 /* MediaView.m */,
-			);
-			path = media;
-			sourceTree = "<group>";
-		};
-		D236FB6217B464E4003DD323 /* navigation */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB6317B464E4003DD323 /* KRStepNavigation.h */,
-				D236FB6417B464E4003DD323 /* KRStepNavigation.m */,
-			);
-			path = navigation;
-			sourceTree = "<group>";
-		};
-		D236FB6517B464E4003DD323 /* steplist */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB6617B464E4003DD323 /* KRStepListContainerView.h */,
-				D236FB6717B464E4003DD323 /* KRStepListContainerView.m */,
-				D236FB6817B464E4003DD323 /* KRStepListView.h */,
-				D236FB6917B464E4003DD323 /* KRStepListView.m */,
-			);
-			path = steplist;
-			sourceTree = "<group>";
-		};
-		D236FB6A17B464E4003DD323 /* swipescroll */ = {
-			isa = PBXGroup;
-			children = (
-				D236FB6D17B464E4003DD323 /* KRScrollView.h */,
-				D236FB6E17B464E4003DD323 /* KRScrollView.m */,
-				D236FB6B17B464E4003DD323 /* DescriptionView.h */,
-				D236FB6C17B464E4003DD323 /* DescriptionView.m */,
-			);
-			path = swipescroll;
-			sourceTree = "<group>";
-		};
-		D23EFC8017BF030D00989E5E /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFC8517BF030D00989E5E /* KRFormFieldCell.h */,
-				D23EFC8617BF030D00989E5E /* KRFormFieldCell.m */,
-				D23EFC8317BF030D00989E5E /* AddTitleTableViewCell.h */,
-				D23EFC8417BF030D00989E5E /* AddTitleTableViewCell.m */,
-				D23EFC8117BF030D00989E5E /* AddDescriptionTableViewCell.h */,
-				D23EFC8217BF030D00989E5E /* AddDescriptionTableViewCell.m */,
-				D23EFCB717BFB00400989E5E /* KeyboardNavigationToolBar.h */,
-				D23EFCB817BFB00400989E5E /* KeyboardNavigationToolBar.m */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
-		D23EFC8717BF030D00989E5E /* krkroniclecreateviewcontroller */ = {
-			isa = PBXGroup;
-			children = (
-				D28127CB17CA59C500E66C7F /* publishoverlay */,
-				D23EFC8817BF030D00989E5E /* cells */,
-				D23EFC8B17BF030D00989E5E /* KRCreateViewController.h */,
-				D23EFC8C17BF030D00989E5E /* KRCreateViewController.m */,
-				D23EFC8D17BF030D00989E5E /* KRCreateViewController.xib */,
-			);
-			path = krkroniclecreateviewcontroller;
-			sourceTree = "<group>";
-		};
-		D23EFC8817BF030D00989E5E /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFCD617C01EB300989E5E /* AddItemsCell.h */,
-				D23EFCD717C01EB300989E5E /* AddItemsCell.m */,
-				D23EFC8917BF030D00989E5E /* AddStepTableViewCell.h */,
-				D23EFC8A17BF030D00989E5E /* AddStepTableViewCell.m */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
-		D23EFC9017BF030D00989E5E /* krstepcreatecontroller */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFC9117BF030D00989E5E /* cells */,
-				D23EFC9217BF030D00989E5E /* KRCreateStepViewController.h */,
-				D23EFC9317BF030D00989E5E /* KRCreateStepViewController.m */,
-				D23EFC9417BF030D00989E5E /* KRCreateStepViewController.xib */,
-			);
-			path = krstepcreatecontroller;
-			sourceTree = "<group>";
-		};
-		D23EFC9117BF030D00989E5E /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFCD917C02A2A00989E5E /* AddMediaTableViewCell.h */,
-				D23EFCDA17C02A2A00989E5E /* AddMediaTableViewCell.m */,
-				D23EFCDC17C06EC200989E5E /* AddTimeCell.h */,
-				D23EFCDD17C06EC200989E5E /* AddTimeCell.m */,
-				D23EFCDF17C1074F00989E5E /* ContentWithLabelView.h */,
-				D23EFCE017C1074F00989E5E /* ContentWithLabelView.m */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
-		D23EFCC117BFEA3C00989E5E /* me */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFCC817BFEA9F00989E5E /* KRMeViewController.h */,
-				D23EFCC917BFEA9F00989E5E /* KRMeViewController.m */,
-				D23EFCCA17BFEA9F00989E5E /* KRMeViewController.xib */,
-			);
-			path = me;
-			sourceTree = "<group>";
-		};
-		D23EFCC217BFEA3C00989E5E /* mykronicles */ = {
-			isa = PBXGroup;
-			children = (
-				D28127DC17CA765000E66C7F /* sectionheader */,
-				D28127D817CA687B00E66C7F /* cells */,
-				D23EFCC317BFEA8F00989E5E /* KRMyKroniclesViewController.h */,
-				D23EFCC417BFEA8F00989E5E /* KRMyKroniclesViewController.m */,
-				D23EFCC517BFEA8F00989E5E /* KRMyKroniclesViewController.xib */,
-			);
-			path = mykronicles;
-			sourceTree = "<group>";
-		};
-		D23EFCCD17BFF0DD00989E5E /* uicategories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = uicategories;
 			sourceTree = "<group>";
 		};
 		D23EFD9E17C44DF200989E5E /* byhand */ = {
@@ -946,62 +696,6 @@
 				D23EFDC417C4563B00989E5E /* ManagedContextController.m */,
 			);
 			path = coredata;
-			sourceTree = "<group>";
-		};
-		D23EFDAB17C44E8500989E5E /* uicommon */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F80E917CAF15600EFC4B3 /* uiview+gclibrary */,
-				0C6F80E817CAF14100EFC4B3 /* krsearchtextfieldview */,
-				D28127F417CB7DD100E66C7F /* uiviews */,
-				D23EFDAC17C44E8500989E5E /* buttons */,
-				D23EFDAF17C44E8500989E5E /* text */,
-			);
-			path = uicommon;
-			sourceTree = "<group>";
-		};
-		D23EFDAC17C44E8500989E5E /* buttons */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F80EA17CAF19000EFC4B3 /* KRDefaultButton.m */,
-				0C6F80EB17CAF19000EFC4B3 /* KRDefaultButton.h */,
-				D23EFDAD17C44E8500989E5E /* KRTextButton.h */,
-				D23EFDAE17C44E8500989E5E /* KRTextButton.m */,
-			);
-			path = buttons;
-			sourceTree = "<group>";
-		};
-		D23EFDAF17C44E8500989E5E /* text */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFDB017C44E8500989E5E /* bbrichtextview */,
-				D23EFDB717C44E8500989E5E /* NMCustomLabel */,
-			);
-			path = text;
-			sourceTree = "<group>";
-		};
-		D23EFDB017C44E8500989E5E /* bbrichtextview */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFDB117C44E8500989E5E /* ACMagnifyingGlass.h */,
-				D23EFDB217C44E8500989E5E /* ACMagnifyingGlass.m */,
-				D23EFDB317C44E8500989E5E /* BBRichTextPrefixStyle.h */,
-				D23EFDB417C44E8500989E5E /* BBRichTextPrefixStyle.m */,
-				D23EFDB517C44E8500989E5E /* BBRichTextView.h */,
-				D23EFDB617C44E8500989E5E /* BBRichTextView.m */,
-			);
-			path = bbrichtextview;
-			sourceTree = "<group>";
-		};
-		D23EFDB717C44E8500989E5E /* NMCustomLabel */ = {
-			isa = PBXGroup;
-			children = (
-				D23EFDB817C44E8500989E5E /* NMCustomLabel.h */,
-				D23EFDB917C44E8500989E5E /* NMCustomLabel.m */,
-				D23EFDBA17C44E8500989E5E /* NMCustomLabelStyle.h */,
-				D23EFDBB17C44E8500989E5E /* NMCustomLabelStyle.m */,
-			);
-			path = NMCustomLabel;
 			sourceTree = "<group>";
 		};
 		D23EFE1417C6330B00989E5E /* Helpers */ = {
@@ -1074,6 +768,7 @@
 		D281275517C99B7A00E66C7F /* app */ = {
 			isa = PBXGroup;
 			children = (
+				D2A7F87117D116C10039EE5A /* reviews */,
 				D2333ED017CD788500CE6831 /* category */,
 				D28127E817CAB34F00E66C7F /* start */,
 				D28127EA17CAB34F00E66C7F /* home */,
@@ -1158,15 +853,6 @@
 			path = nav;
 			sourceTree = "<group>";
 		};
-		D28127CB17CA59C500E66C7F /* publishoverlay */ = {
-			isa = PBXGroup;
-			children = (
-				D28127CC17CA59DD00E66C7F /* KRPublishOverlay.h */,
-				D28127CD17CA59DD00E66C7F /* KRPublishOverlay.m */,
-			);
-			path = publishoverlay;
-			sourceTree = "<group>";
-		};
 		D28127D317CA627F00E66C7F /* mykronicles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1175,24 +861,6 @@
 				D28127D417CA627F00E66C7F /* profileframe.png */,
 			);
 			path = mykronicles;
-			sourceTree = "<group>";
-		};
-		D28127D817CA687B00E66C7F /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				D28127D917CA68B700E66C7F /* KronicleBlockTableViewCell.h */,
-				D28127DA17CA68B700E66C7F /* KronicleBlockTableViewCell.m */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
-		D28127DC17CA765000E66C7F /* sectionheader */ = {
-			isa = PBXGroup;
-			children = (
-				D28127DD17CA766E00E66C7F /* MyKroniclesSectionHeader.h */,
-				D28127DE17CA766E00E66C7F /* MyKroniclesSectionHeader.m */,
-			);
-			path = sectionheader;
 			sourceTree = "<group>";
 		};
 		D28127E817CAB34F00E66C7F /* start */ = {
@@ -1212,26 +880,6 @@
 				D28127EC17CAB34F00E66C7F /* plus-sign-white@2x.png */,
 			);
 			path = home;
-			sourceTree = "<group>";
-		};
-		D28127F417CB7DD100E66C7F /* uiviews */ = {
-			isa = PBXGroup;
-			children = (
-				D2ED58F017CF6F5E00FED4FB /* circleviews */,
-				D28127F517CB7DD200E66C7F /* blockviews */,
-			);
-			path = uiviews;
-			sourceTree = "<group>";
-		};
-		D28127F517CB7DD200E66C7F /* blockviews */ = {
-			isa = PBXGroup;
-			children = (
-				D28127F617CB7DD200E66C7F /* KronicleBlockView.h */,
-				D28127F717CB7DD200E66C7F /* KronicleBlockView.m */,
-				D28127F817CB7DD200E66C7F /* StepBlockView.h */,
-				D28127F917CB7DD200E66C7F /* StepBlockView.m */,
-			);
-			path = blockviews;
 			sourceTree = "<group>";
 		};
 		D2A573D5175A3B4E002AC1B9 = {
@@ -1282,7 +930,8 @@
 				D2A57444175A6782002AC1B9 /* globals */,
 				D2A57404175A3B77002AC1B9 /* network */,
 				D2A57409175A3B77002AC1B9 /* model */,
-				D236FB2817B464E4003DD323 /* controllers */,
+				D2A7F7F917D0E8FB0039EE5A /* views */,
+				D2A7F73117D0E75C0039EE5A /* viewcontrollers */,
 				D2A573F0175A3B4E002AC1B9 /* AppDelegate.h */,
 				D2A573F1175A3B4E002AC1B9 /* AppDelegate.m */,
 				D2A573E8175A3B4E002AC1B9 /* Supporting Files */,
@@ -1388,6 +1037,544 @@
 			path = minion;
 			sourceTree = "<group>";
 		};
+		D2A7F73117D0E75C0039EE5A /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F73217D0E75D0039EE5A /* create */,
+				D2A7F75317D0E75D0039EE5A /* discover */,
+				D2A7F76817D0E75D0039EE5A /* home */,
+				D2A7F76C17D0E75D0039EE5A /* items */,
+				D2A7F77317D0E75D0039EE5A /* me */,
+				D2A7F77717D0E75D0039EE5A /* mykronicles */,
+				D2A7F78117D0E75D0039EE5A /* navigation */,
+				D2A7F78917D0E75D0039EE5A /* playback */,
+				D2A7F7B517D0E75D0039EE5A /* review */,
+				D2A7F7B917D0E75D0039EE5A /* supers */,
+			);
+			path = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		D2A7F73217D0E75D0039EE5A /* create */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F73317D0E75D0039EE5A /* cells */,
+				D2A7F73C17D0E75D0039EE5A /* krkroniclecreateviewcontroller */,
+				D2A7F74817D0E75D0039EE5A /* krstepcreatecontroller */,
+			);
+			path = create;
+			sourceTree = "<group>";
+		};
+		D2A7F73317D0E75D0039EE5A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F73417D0E75D0039EE5A /* AddDescriptionTableViewCell.h */,
+				D2A7F73517D0E75D0039EE5A /* AddDescriptionTableViewCell.m */,
+				D2A7F73617D0E75D0039EE5A /* AddTitleTableViewCell.h */,
+				D2A7F73717D0E75D0039EE5A /* AddTitleTableViewCell.m */,
+				D2A7F73817D0E75D0039EE5A /* KeyboardNavigationToolBar.h */,
+				D2A7F73917D0E75D0039EE5A /* KeyboardNavigationToolBar.m */,
+				D2A7F73A17D0E75D0039EE5A /* KRFormFieldCell.h */,
+				D2A7F73B17D0E75D0039EE5A /* KRFormFieldCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D2A7F73C17D0E75D0039EE5A /* krkroniclecreateviewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F73D17D0E75D0039EE5A /* cells */,
+				D2A7F74217D0E75D0039EE5A /* KRCreateViewController.h */,
+				D2A7F74317D0E75D0039EE5A /* KRCreateViewController.m */,
+				D2A7F74417D0E75D0039EE5A /* KRCreateViewController.xib */,
+				D2A7F74517D0E75D0039EE5A /* publishoverlay */,
+			);
+			path = krkroniclecreateviewcontroller;
+			sourceTree = "<group>";
+		};
+		D2A7F73D17D0E75D0039EE5A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F73E17D0E75D0039EE5A /* AddItemsCell.h */,
+				D2A7F73F17D0E75D0039EE5A /* AddItemsCell.m */,
+				D2A7F74017D0E75D0039EE5A /* AddStepTableViewCell.h */,
+				D2A7F74117D0E75D0039EE5A /* AddStepTableViewCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D2A7F74517D0E75D0039EE5A /* publishoverlay */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F74617D0E75D0039EE5A /* KRPublishOverlay.h */,
+				D2A7F74717D0E75D0039EE5A /* KRPublishOverlay.m */,
+			);
+			path = publishoverlay;
+			sourceTree = "<group>";
+		};
+		D2A7F74817D0E75D0039EE5A /* krstepcreatecontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F74917D0E75D0039EE5A /* cells */,
+				D2A7F75017D0E75D0039EE5A /* KRCreateStepViewController.h */,
+				D2A7F75117D0E75D0039EE5A /* KRCreateStepViewController.m */,
+				D2A7F75217D0E75D0039EE5A /* KRCreateStepViewController.xib */,
+			);
+			path = krstepcreatecontroller;
+			sourceTree = "<group>";
+		};
+		D2A7F74917D0E75D0039EE5A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F74A17D0E75D0039EE5A /* AddMediaTableViewCell.h */,
+				D2A7F74B17D0E75D0039EE5A /* AddMediaTableViewCell.m */,
+				D2A7F74C17D0E75D0039EE5A /* AddTimeCell.h */,
+				D2A7F74D17D0E75D0039EE5A /* AddTimeCell.m */,
+				D2A7F74E17D0E75D0039EE5A /* ContentWithLabelView.h */,
+				D2A7F74F17D0E75D0039EE5A /* ContentWithLabelView.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D2A7F75317D0E75D0039EE5A /* discover */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F75417D0E75D0039EE5A /* krcategoriesviewcontroller */,
+				D2A7F75E17D0E75D0039EE5A /* krlistviewcontroller */,
+			);
+			path = discover;
+			sourceTree = "<group>";
+		};
+		D2A7F75417D0E75D0039EE5A /* krcategoriesviewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F75517D0E75D0039EE5A /* KRCategoriesViewController.h */,
+				D2A7F75617D0E75D0039EE5A /* KRCategoriesViewController.m */,
+				D2A7F75717D0E75D0039EE5A /* KRCategoriesViewController.xib */,
+				D2A7F75817D0E75D0039EE5A /* krcategoriesviewcontrollercell */,
+			);
+			path = krcategoriesviewcontroller;
+			sourceTree = "<group>";
+		};
+		D2A7F75817D0E75D0039EE5A /* krcategoriesviewcontrollercell */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F75917D0E75D0039EE5A /* KRCategoriesCollectionViewCell.h */,
+				D2A7F75A17D0E75D0039EE5A /* KRCategoriesCollectionViewCell.m */,
+				D2A7F75B17D0E75D0039EE5A /* krcategoriesviewcontrollercellcircleview */,
+			);
+			path = krcategoriesviewcontrollercell;
+			sourceTree = "<group>";
+		};
+		D2A7F75B17D0E75D0039EE5A /* krcategoriesviewcontrollercellcircleview */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F75C17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.h */,
+				D2A7F75D17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.m */,
+			);
+			path = krcategoriesviewcontrollercellcircleview;
+			sourceTree = "<group>";
+		};
+		D2A7F75E17D0E75D0039EE5A /* krlistviewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F75F17D0E75D0039EE5A /* KRListViewController.h */,
+				D2A7F76017D0E75D0039EE5A /* KRListViewController.m */,
+				D2A7F76117D0E75D0039EE5A /* KRListViewController.xib */,
+				D2A7F76217D0E75D0039EE5A /* kroniclesnavigation */,
+				D2A7F76517D0E75D0039EE5A /* tabelcell */,
+			);
+			path = krlistviewcontroller;
+			sourceTree = "<group>";
+		};
+		D2A7F76217D0E75D0039EE5A /* kroniclesnavigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F76317D0E75D0039EE5A /* KRKroniclesPageNavigationView.h */,
+				D2A7F76417D0E75D0039EE5A /* KRKroniclesPageNavigationView.m */,
+			);
+			path = kroniclesnavigation;
+			sourceTree = "<group>";
+		};
+		D2A7F76517D0E75D0039EE5A /* tabelcell */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F76617D0E75D0039EE5A /* StepsTableCellViewCell.h */,
+				D2A7F76717D0E75D0039EE5A /* StepsTableCellViewCell.m */,
+			);
+			path = tabelcell;
+			sourceTree = "<group>";
+		};
+		D2A7F76817D0E75D0039EE5A /* home */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F76917D0E75D0039EE5A /* KRHomeViewController.h */,
+				D2A7F76A17D0E75D0039EE5A /* KRHomeViewController.m */,
+				D2A7F76B17D0E75D0039EE5A /* KRHomeViewController.xib */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		D2A7F76C17D0E75D0039EE5A /* items */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F76D17D0E75D0039EE5A /* cells */,
+				D2A7F77017D0E75D0039EE5A /* KRItemsViewController.h */,
+				D2A7F77117D0E75D0039EE5A /* KRItemsViewController.m */,
+				D2A7F77217D0E75D0039EE5A /* KRItemsViewController.xib */,
+			);
+			path = items;
+			sourceTree = "<group>";
+		};
+		D2A7F76D17D0E75D0039EE5A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F76E17D0E75D0039EE5A /* KRItemsTableViewCell.h */,
+				D2A7F76F17D0E75D0039EE5A /* KRItemsTableViewCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D2A7F77317D0E75D0039EE5A /* me */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F77417D0E75D0039EE5A /* KRMeViewController.h */,
+				D2A7F77517D0E75D0039EE5A /* KRMeViewController.m */,
+				D2A7F77617D0E75D0039EE5A /* KRMeViewController.xib */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		D2A7F77717D0E75D0039EE5A /* mykronicles */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F77817D0E75D0039EE5A /* cells */,
+				D2A7F77B17D0E75D0039EE5A /* KRMyKroniclesViewController.h */,
+				D2A7F77C17D0E75D0039EE5A /* KRMyKroniclesViewController.m */,
+				D2A7F77D17D0E75D0039EE5A /* KRMyKroniclesViewController.xib */,
+				D2A7F77E17D0E75D0039EE5A /* sectionheader */,
+			);
+			path = mykronicles;
+			sourceTree = "<group>";
+		};
+		D2A7F77817D0E75D0039EE5A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F77917D0E75D0039EE5A /* KronicleBlockTableViewCell.h */,
+				D2A7F77A17D0E75D0039EE5A /* KronicleBlockTableViewCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D2A7F77E17D0E75D0039EE5A /* sectionheader */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F77F17D0E75D0039EE5A /* MyKroniclesSectionHeader.h */,
+				D2A7F78017D0E75D0039EE5A /* MyKroniclesSectionHeader.m */,
+			);
+			path = sectionheader;
+			sourceTree = "<group>";
+		};
+		D2A7F78117D0E75D0039EE5A /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F78217D0E75D0039EE5A /* KRNavigationViewController.h */,
+				D2A7F78317D0E75D0039EE5A /* KRNavigationViewController.m */,
+				D2A7F78417D0E75D0039EE5A /* swipeviewnavigation */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		D2A7F78417D0E75D0039EE5A /* swipeviewnavigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F78517D0E75D0039EE5A /* KRNavigationTableViewCell.h */,
+				D2A7F78617D0E75D0039EE5A /* KRNavigationTableViewCell.m */,
+				D2A7F78717D0E75D0039EE5A /* KRSwipeViewNavigation.h */,
+				D2A7F78817D0E75D0039EE5A /* KRSwipeViewNavigation.m */,
+			);
+			path = swipeviewnavigation;
+			sourceTree = "<group>";
+		};
+		D2A7F78917D0E75D0039EE5A /* playback */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F79017D0E75D0039EE5A /* KRViewListTypeViewController.h */,
+				D2A7F79117D0E75D0039EE5A /* KRViewListTypeViewController.m */,
+				D2A7F79217D0E75D0039EE5A /* KRViewListTypeViewController.xib */,
+				D2A7F78A17D0E75D0039EE5A /* KRKronicleStartViewController.h */,
+				D2A7F78B17D0E75D0039EE5A /* KRKronicleStartViewController.m */,
+				D2A7F78C17D0E75D0039EE5A /* KRKronicleStartViewController.xib */,
+				D2A7F78D17D0E75D0039EE5A /* KRPlaybackViewController.h */,
+				D2A7F78E17D0E75D0039EE5A /* KRPlaybackViewController.m */,
+				D2A7F78F17D0E75D0039EE5A /* KRPlaybackViewController.xib */,
+				D2A7F79317D0E75D0039EE5A /* manager */,
+				D2A7F79817D0E75D0039EE5A /* model */,
+				D2A7F79B17D0E75D0039EE5A /* view */,
+			);
+			path = playback;
+			sourceTree = "<group>";
+		};
+		D2A7F79317D0E75D0039EE5A /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F79417D0E75D0039EE5A /* KRClockManager.h */,
+				D2A7F79517D0E75D0039EE5A /* KRClockManager.m */,
+				D2A7F79617D0E75D0039EE5A /* KRKronicleManager.h */,
+				D2A7F79717D0E75D0039EE5A /* KRKronicleManager.m */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		D2A7F79817D0E75D0039EE5A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F79917D0E75D0039EE5A /* KRClock.h */,
+				D2A7F79A17D0E75D0039EE5A /* KRClock.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		D2A7F79B17D0E75D0039EE5A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F87717D182C50039EE5A /* KRDiagramView.h */,
+				D2A7F87817D182C60039EE5A /* KRDiagramView.m */,
+				D2A7F87917D182C80039EE5A /* KRKronicleNavView.h */,
+				D2A7F87A17D182CB0039EE5A /* KRKronicleNavView.m */,
+				D2A7F79C17D0E75D0039EE5A /* graphs */,
+				D2A7F7A517D0E75D0039EE5A /* media */,
+				D2A7F7A817D0E75D0039EE5A /* navigation */,
+				D2A7F7AB17D0E75D0039EE5A /* steplist */,
+				D2A7F7B017D0E75D0039EE5A /* swipescroll */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D2A7F79C17D0E75D0039EE5A /* graphs */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F79D17D0E75D0039EE5A /* KRCircularKronicleGraph.h */,
+				D2A7F79E17D0E75D0039EE5A /* KRCircularKronicleGraph.m */,
+				D2A7F79F17D0E75D0039EE5A /* KRGraphView.h */,
+				D2A7F7A017D0E75D0039EE5A /* KRGraphView.m */,
+			);
+			path = graphs;
+			sourceTree = "<group>";
+		};
+		D2A7F7A517D0E75D0039EE5A /* media */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7A617D0E75D0039EE5A /* MediaView.h */,
+				D2A7F7A717D0E75D0039EE5A /* MediaView.m */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
+		D2A7F7A817D0E75D0039EE5A /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7A917D0E75D0039EE5A /* KRStepNavigation.h */,
+				D2A7F7AA17D0E75D0039EE5A /* KRStepNavigation.m */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		D2A7F7AB17D0E75D0039EE5A /* steplist */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7AC17D0E75D0039EE5A /* KRStepListContainerView.h */,
+				D2A7F7AD17D0E75D0039EE5A /* KRStepListContainerView.m */,
+				D2A7F7AE17D0E75D0039EE5A /* KRStepListView.h */,
+				D2A7F7AF17D0E75D0039EE5A /* KRStepListView.m */,
+			);
+			path = steplist;
+			sourceTree = "<group>";
+		};
+		D2A7F7B017D0E75D0039EE5A /* swipescroll */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7B117D0E75D0039EE5A /* DescriptionView.h */,
+				D2A7F7B217D0E75D0039EE5A /* DescriptionView.m */,
+				D2A7F7B317D0E75D0039EE5A /* KRScrollView.h */,
+				D2A7F7B417D0E75D0039EE5A /* KRScrollView.m */,
+			);
+			path = swipescroll;
+			sourceTree = "<group>";
+		};
+		D2A7F7B517D0E75D0039EE5A /* review */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7B617D0E75D0039EE5A /* KRReviewViewController.h */,
+				D2A7F7B717D0E75D0039EE5A /* KRReviewViewController.m */,
+				D2A7F7B817D0E75D0039EE5A /* KRReviewViewController.xib */,
+				D2A7F87F17D1A6780039EE5A /* KRReviewOverlay.h */,
+				D2A7F88017D1A6780039EE5A /* KRReviewOverlay.m */,
+			);
+			path = review;
+			sourceTree = "<group>";
+		};
+		D2A7F7B917D0E75D0039EE5A /* supers */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7BA17D0E75D0039EE5A /* KRBaseEditTableViewController.h */,
+				D2A7F7BB17D0E75D0039EE5A /* KRBaseEditTableViewController.m */,
+				D2A7F7BC17D0E75D0039EE5A /* KRKronicleBaseViewController.h */,
+				D2A7F7BD17D0E75D0039EE5A /* KRKronicleBaseViewController.m */,
+			);
+			path = supers;
+			sourceTree = "<group>";
+		};
+		D2A7F7F917D0E8FB0039EE5A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7FA17D0E8FB0039EE5A /* buttons */,
+				D2A7F7FF17D0E8FB0039EE5A /* krsearchtextfieldview */,
+				D2A7F83D17D0E92C0039EE5A /* ui */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		D2A7F7FA17D0E8FB0039EE5A /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F7FB17D0E8FB0039EE5A /* KRDefaultButton.h */,
+				D2A7F7FC17D0E8FB0039EE5A /* KRDefaultButton.m */,
+				D2A7F7FD17D0E8FB0039EE5A /* KRTextButton.h */,
+				D2A7F7FE17D0E8FB0039EE5A /* KRTextButton.m */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		D2A7F7FF17D0E8FB0039EE5A /* krsearchtextfieldview */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F80017D0E8FB0039EE5A /* KRSearchTextFieldControlView.h */,
+				D2A7F80117D0E8FB0039EE5A /* KRSearchTextFieldControlView.m */,
+				D2A7F80217D0E8FB0039EE5A /* KRSearchTextFieldView.h */,
+				D2A7F80317D0E8FB0039EE5A /* KRSearchTextFieldView.m */,
+			);
+			path = krsearchtextfieldview;
+			sourceTree = "<group>";
+		};
+		D2A7F83D17D0E92C0039EE5A /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F83E17D0E92C0039EE5A /* blockviews */,
+				D2A7F84317D0E92C0039EE5A /* circleviews */,
+				D2A7F84E17D0E92C0039EE5A /* text */,
+				D2A7F85B17D0E92C0039EE5A /* uihelper */,
+				D2A7F85E17D0E92C0039EE5A /* uiview+gclibrary */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		D2A7F83E17D0E92C0039EE5A /* blockviews */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F83F17D0E92C0039EE5A /* KronicleBlockView.h */,
+				D2A7F84017D0E92C0039EE5A /* KronicleBlockView.m */,
+				D2A7F84117D0E92C0039EE5A /* StepBlockView.h */,
+				D2A7F84217D0E92C0039EE5A /* StepBlockView.m */,
+			);
+			path = blockviews;
+			sourceTree = "<group>";
+		};
+		D2A7F84317D0E92C0039EE5A /* circleviews */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F84417D0E92C0039EE5A /* ratingview */,
+				D2A7F84917D0E92C0039EE5A /* timecreatorview */,
+			);
+			path = circleviews;
+			sourceTree = "<group>";
+		};
+		D2A7F84417D0E92C0039EE5A /* ratingview */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F84517D0E92C0039EE5A /* KRRatingCircleView.h */,
+				D2A7F84617D0E92C0039EE5A /* KRRatingCircleView.m */,
+				D2A7F84717D0E92C0039EE5A /* KRRatingModuleView.h */,
+				D2A7F84817D0E92C0039EE5A /* KRRatingModuleView.m */,
+				D2A7F86E17D0ED880039EE5A /* CreateReviewView.h */,
+				D2A7F86F17D0ED880039EE5A /* CreateReviewView.m */,
+			);
+			path = ratingview;
+			sourceTree = "<group>";
+		};
+		D2A7F84917D0E92C0039EE5A /* timecreatorview */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F84A17D0E92C0039EE5A /* CreateStepTimeView.h */,
+				D2A7F84B17D0E92C0039EE5A /* CreateStepTimeView.m */,
+				D2A7F84C17D0E92C0039EE5A /* TouchCircleCreatorView.h */,
+				D2A7F84D17D0E92C0039EE5A /* TouchCircleCreatorView.m */,
+			);
+			path = timecreatorview;
+			sourceTree = "<group>";
+		};
+		D2A7F84E17D0E92C0039EE5A /* text */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F84F17D0E92C0039EE5A /* bbrichtextview */,
+				D2A7F85617D0E92C0039EE5A /* NMCustomLabel */,
+			);
+			path = text;
+			sourceTree = "<group>";
+		};
+		D2A7F84F17D0E92C0039EE5A /* bbrichtextview */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F85017D0E92C0039EE5A /* ACMagnifyingGlass.h */,
+				D2A7F85117D0E92C0039EE5A /* ACMagnifyingGlass.m */,
+				D2A7F85217D0E92C0039EE5A /* BBRichTextPrefixStyle.h */,
+				D2A7F85317D0E92C0039EE5A /* BBRichTextPrefixStyle.m */,
+				D2A7F85417D0E92C0039EE5A /* BBRichTextView.h */,
+				D2A7F85517D0E92C0039EE5A /* BBRichTextView.m */,
+			);
+			path = bbrichtextview;
+			sourceTree = "<group>";
+		};
+		D2A7F85617D0E92C0039EE5A /* NMCustomLabel */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F85717D0E92C0039EE5A /* NMCustomLabel.h */,
+				D2A7F85817D0E92C0039EE5A /* NMCustomLabel.m */,
+				D2A7F85917D0E92C0039EE5A /* NMCustomLabelStyle.h */,
+				D2A7F85A17D0E92C0039EE5A /* NMCustomLabelStyle.m */,
+			);
+			path = NMCustomLabel;
+			sourceTree = "<group>";
+		};
+		D2A7F85B17D0E92C0039EE5A /* uihelper */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F85C17D0E92C0039EE5A /* UIHelper.h */,
+				D2A7F85D17D0E92C0039EE5A /* UIHelper.m */,
+				D2A7F87417D147E80039EE5A /* AntiScrollVIew.h */,
+				D2A7F87517D147E80039EE5A /* AntiScrollVIew.m */,
+			);
+			path = uihelper;
+			sourceTree = "<group>";
+		};
+		D2A7F85E17D0E92C0039EE5A /* uiview+gclibrary */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F85F17D0E92C0039EE5A /* UIView+GCLibrary.h */,
+				D2A7F86017D0E92C0039EE5A /* UIView+GCLibrary.m */,
+			);
+			path = "uiview+gclibrary";
+			sourceTree = "<group>";
+		};
+		D2A7F87117D116C10039EE5A /* reviews */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7F88417D1AF610039EE5A /* addreviewbuttoncircle@2x.png */,
+				D2A7F87D17D1846B0039EE5A /* transx.png */,
+				D2A7F87217D116C10039EE5A /* bottomblarg.png */,
+			);
+			path = reviews;
+			sourceTree = "<group>";
+		};
 		D2B6225C17C63433007C6E06 /* managedobjectsubclass */ = {
 			isa = PBXGroup;
 			children = (
@@ -1403,110 +1590,6 @@
 				D2D95C5F17C6D99B0048ADA3 /* Item.m */,
 			);
 			path = managedobjectsubclass;
-			sourceTree = "<group>";
-		};
-		D2CF7E3B17B46AC000E3D1F0 /* krlistviewcontroller */ = {
-			isa = PBXGroup;
-			children = (
-				D2333EDE17CD7E3900CE6831 /* kroniclesnavigation */,
-				D2CF7E4117B46B9900E3D1F0 /* tabelcell */,
-				D2CF7E3C17B46AC000E3D1F0 /* KRListViewController.h */,
-				D2CF7E3D17B46AC000E3D1F0 /* KRListViewController.m */,
-				D2CF7E3E17B46AC000E3D1F0 /* KRListViewController.xib */,
-			);
-			path = krlistviewcontroller;
-			sourceTree = "<group>";
-		};
-		D2CF7E4117B46B9900E3D1F0 /* tabelcell */ = {
-			isa = PBXGroup;
-			children = (
-				D2CF7E4217B46B9900E3D1F0 /* StepsTableCellViewCell.h */,
-				D2CF7E4317B46B9900E3D1F0 /* StepsTableCellViewCell.m */,
-			);
-			path = tabelcell;
-			sourceTree = "<group>";
-		};
-		D2CF7E7017B9A91400E3D1F0 /* supers */ = {
-			isa = PBXGroup;
-			children = (
-				D2CF7E7117B9A94900E3D1F0 /* KRKronicleBaseViewController.h */,
-				D2CF7E7217B9A94900E3D1F0 /* KRKronicleBaseViewController.m */,
-				D23EFCF517C2F78800989E5E /* KRBaseEditTableViewController.h */,
-				D23EFCF617C2F78800989E5E /* KRBaseEditTableViewController.m */,
-			);
-			path = supers;
-			sourceTree = "<group>";
-		};
-		D2CF7E7717B9AE4300E3D1F0 /* navigation */ = {
-			isa = PBXGroup;
-			children = (
-				D2CF7E7817B9AE4300E3D1F0 /* KRNavigationViewController.h */,
-				D2CF7E7917B9AE4300E3D1F0 /* KRNavigationViewController.m */,
-				D2CF7E8217BAF1A400E3D1F0 /* swipeviewnavigation */,
-			);
-			path = navigation;
-			sourceTree = "<group>";
-		};
-		D2CF7E8217BAF1A400E3D1F0 /* swipeviewnavigation */ = {
-			isa = PBXGroup;
-			children = (
-				D2CF7E8317BAF1A400E3D1F0 /* KRSwipeViewNavigation.h */,
-				D2CF7E8417BAF1A400E3D1F0 /* KRSwipeViewNavigation.m */,
-				D2CF7E8617BAF1E000E3D1F0 /* KRNavigationTableViewCell.h */,
-				D2CF7E8717BAF1E000E3D1F0 /* KRNavigationTableViewCell.m */,
-			);
-			path = swipeviewnavigation;
-			sourceTree = "<group>";
-		};
-		D2ED58DF17CEC61200FED4FB /* kritemscontroller */ = {
-			isa = PBXGroup;
-			children = (
-				D2ED58E017CEC61200FED4FB /* cells */,
-				D2ED58E117CEC61200FED4FB /* KRItemsViewController.h */,
-				D2ED58E217CEC61200FED4FB /* KRItemsViewController.m */,
-				D2ED58E317CEC61200FED4FB /* KRItemsViewController.xib */,
-			);
-			path = kritemscontroller;
-			sourceTree = "<group>";
-		};
-		D2ED58E017CEC61200FED4FB /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				D2ED58E617CEC64600FED4FB /* KRItemsTableViewCell.h */,
-				D2ED58E717CEC64600FED4FB /* KRItemsTableViewCell.m */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
-		D2ED58F017CF6F5E00FED4FB /* circleviews */ = {
-			isa = PBXGroup;
-			children = (
-				D2ED58F817CF6F7E00FED4FB /* ratingview */,
-				D2ED58F117CF6F5E00FED4FB /* timecreatorview */,
-			);
-			path = circleviews;
-			sourceTree = "<group>";
-		};
-		D2ED58F117CF6F5E00FED4FB /* timecreatorview */ = {
-			isa = PBXGroup;
-			children = (
-				D2ED58F217CF6F5E00FED4FB /* CreateStepTimeView.h */,
-				D2ED58F317CF6F5E00FED4FB /* CreateStepTimeView.m */,
-				D2ED58F417CF6F5E00FED4FB /* DurationCreatorView.h */,
-				D2ED58F517CF6F5E00FED4FB /* DurationCreatorView.m */,
-			);
-			path = timecreatorview;
-			sourceTree = "<group>";
-		};
-		D2ED58F817CF6F7E00FED4FB /* ratingview */ = {
-			isa = PBXGroup;
-			children = (
-				D2ED58FC17CF6FDC00FED4FB /* KRRatingCircleView.h */,
-				D2ED58FD17CF6FDC00FED4FB /* KRRatingCircleView.m */,
-				D2ED58FF17CF73E400FED4FB /* KRRatingModuleView.h */,
-				D2ED590017CF73E400FED4FB /* KRRatingModuleView.m */,
-			);
-			path = ratingview;
 			sourceTree = "<group>";
 		};
 		D2F1E7201789ED850085C707 /* MKNetworkKit */ = {
@@ -1662,14 +1745,6 @@
 				D26A617B175B872900B50A39 /* crazy_train_3.mov in Resources */,
 				D26A617C175B872900B50A39 /* crazy_train_2.mov in Resources */,
 				F96ADD46175B9BA30003FEF5 /* icon@2x.png in Resources */,
-				D236FB7B17B464E4003DD323 /* KRKronicleStartViewController.xib in Resources */,
-				D236FB7D17B464E4003DD323 /* KRPlaybackViewController.xib in Resources */,
-				D2CF7E4017B46AC000E3D1F0 /* KRListViewController.xib in Resources */,
-				0CFC051F17B86C8500A1BB7F /* KRHomeViewController.xib in Resources */,
-				D23EFCA417BF030D00989E5E /* KRCreateViewController.xib in Resources */,
-				D23EFCA717BF030D00989E5E /* KRCreateStepViewController.xib in Resources */,
-				D23EFCC717BFEA8F00989E5E /* KRMyKroniclesViewController.xib in Resources */,
-				D23EFCCC17BFEA9F00989E5E /* KRMeViewController.xib in Resources */,
 				D281278B17C99B7A00E66C7F /* burger-media-1.png in Resources */,
 				D281278C17C99B7A00E66C7F /* burger-media-2.png in Resources */,
 				D281278D17C99B7A00E66C7F /* burger-media-3.png in Resources */,
@@ -1742,12 +1817,25 @@
 				D28127EF17CAB34F00E66C7F /* plus-sign-white@2x.png in Resources */,
 				D28127F217CAB5D000E66C7F /* start_button.png in Resources */,
 				D28127F317CAB5D000E66C7F /* plus_start.png in Resources */,
-				0C6F80DF17CAF0D300EFC4B3 /* KRCategoriesViewController.xib in Resources */,
 				D2333ED217CD788500CE6831 /* backarrow.png in Resources */,
 				D2333EE317CD7FA200CE6831 /* tinyrturqoisecarrot.png in Resources */,
-				D2ED58E517CEC61200FED4FB /* KRItemsViewController.xib in Resources */,
 				D2ED58EE17CECC0700FED4FB /* listitem_acquired.png in Resources */,
 				D2ED58EF17CECC0700FED4FB /* listitem_unacquired.png in Resources */,
+				D2A7F7C517D0E75D0039EE5A /* KRCreateViewController.xib in Resources */,
+				D2A7F7CB17D0E75D0039EE5A /* KRCreateStepViewController.xib in Resources */,
+				D2A7F7CD17D0E75D0039EE5A /* KRCategoriesViewController.xib in Resources */,
+				D2A7F7D117D0E75D0039EE5A /* KRListViewController.xib in Resources */,
+				D2A7F7D517D0E75D0039EE5A /* KRHomeViewController.xib in Resources */,
+				D2A7F7D817D0E75D0039EE5A /* KRItemsViewController.xib in Resources */,
+				D2A7F7DA17D0E75D0039EE5A /* KRMeViewController.xib in Resources */,
+				D2A7F7DD17D0E75D0039EE5A /* KRMyKroniclesViewController.xib in Resources */,
+				D2A7F7E317D0E75D0039EE5A /* KRKronicleStartViewController.xib in Resources */,
+				D2A7F7E517D0E75D0039EE5A /* KRPlaybackViewController.xib in Resources */,
+				D2A7F7E717D0E75D0039EE5A /* KRViewListTypeViewController.xib in Resources */,
+				D2A7F7F617D0E75D0039EE5A /* KRReviewViewController.xib in Resources */,
+				D2A7F87317D116C10039EE5A /* bottomblarg.png in Resources */,
+				D2A7F87E17D1846B0039EE5A /* transx.png in Resources */,
+				D2A7F88517D1AF620039EE5A /* addreviewbuttoncircle@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1883,48 +1971,9 @@
 				D2F1E7401789ED850085C707 /* MKNetworkOperation.m in Sources */,
 				D2F1E7411789ED850085C707 /* Reachability.m in Sources */,
 				D29D270E178B93340085E943 /* APIRouter.m in Sources */,
-				D236FB7A17B464E4003DD323 /* KRKronicleStartViewController.m in Sources */,
-				D236FB7C17B464E4003DD323 /* KRPlaybackViewController.m in Sources */,
-				D236FB8017B464E4003DD323 /* KRClockManager.m in Sources */,
-				D236FB8117B464E4003DD323 /* KRKronicleManager.m in Sources */,
-				D236FB8417B464E4003DD323 /* KRGraphView.m in Sources */,
-				D236FB8717B464E4003DD323 /* MediaView.m in Sources */,
-				D236FB8817B464E4003DD323 /* KRStepNavigation.m in Sources */,
-				D236FB8917B464E4003DD323 /* KRStepListContainerView.m in Sources */,
-				D236FB8A17B464E4003DD323 /* KRStepListView.m in Sources */,
-				D236FB8B17B464E4003DD323 /* DescriptionView.m in Sources */,
-				D236FB8C17B464E4003DD323 /* KRScrollView.m in Sources */,
-				D2CF7E3F17B46AC000E3D1F0 /* KRListViewController.m in Sources */,
-				D2CF7E4417B46B9900E3D1F0 /* StepsTableCellViewCell.m in Sources */,
-				D2CF7E4817B4723800E3D1F0 /* KRCircularKronicleGraph.m in Sources */,
-				0CFC051E17B86C8500A1BB7F /* KRHomeViewController.m in Sources */,
-				D2CF7E7317B9A94900E3D1F0 /* KRKronicleBaseViewController.m in Sources */,
-				D2CF7E7A17B9AE4300E3D1F0 /* KRNavigationViewController.m in Sources */,
-				D2CF7E8517BAF1A400E3D1F0 /* KRSwipeViewNavigation.m in Sources */,
-				D2CF7E8817BAF1E000E3D1F0 /* KRNavigationTableViewCell.m in Sources */,
-				D23EFC9F17BF030D00989E5E /* AddDescriptionTableViewCell.m in Sources */,
-				D23EFCA017BF030D00989E5E /* AddTitleTableViewCell.m in Sources */,
-				D23EFCA117BF030D00989E5E /* KRFormFieldCell.m in Sources */,
-				D23EFCA217BF030D00989E5E /* AddStepTableViewCell.m in Sources */,
-				D23EFCA317BF030D00989E5E /* KRCreateViewController.m in Sources */,
-				D23EFCA617BF030D00989E5E /* KRCreateStepViewController.m in Sources */,
-				D23EFCB917BFB00400989E5E /* KeyboardNavigationToolBar.m in Sources */,
-				D23EFCC617BFEA8F00989E5E /* KRMyKroniclesViewController.m in Sources */,
-				D23EFCCB17BFEA9F00989E5E /* KRMeViewController.m in Sources */,
-				D23EFCD817C01EB400989E5E /* AddItemsCell.m in Sources */,
-				D23EFCDB17C02A2A00989E5E /* AddMediaTableViewCell.m in Sources */,
-				D23EFCDE17C06EC200989E5E /* AddTimeCell.m in Sources */,
-				D23EFCE117C1074F00989E5E /* ContentWithLabelView.m in Sources */,
-				D23EFCF717C2F78900989E5E /* KRBaseEditTableViewController.m in Sources */,
 				D23EFDA817C44DF200989E5E /* KRKronicle.m in Sources */,
 				D23EFDA917C44DF200989E5E /* KRList.m in Sources */,
 				D23EFDAA17C44DF200989E5E /* KRStep.m in Sources */,
-				D23EFDBC17C44E8500989E5E /* KRTextButton.m in Sources */,
-				D23EFDBD17C44E8500989E5E /* ACMagnifyingGlass.m in Sources */,
-				D23EFDBE17C44E8500989E5E /* BBRichTextPrefixStyle.m in Sources */,
-				D23EFDBF17C44E8500989E5E /* BBRichTextView.m in Sources */,
-				D23EFDC017C44E8500989E5E /* NMCustomLabel.m in Sources */,
-				D23EFDC117C44E8500989E5E /* NMCustomLabelStyle.m in Sources */,
 				D23EFDC517C4563B00989E5E /* ManagedContextController.m in Sources */,
 				D23EFDCD17C4628900989E5E /* KronicleModel.xcdatamodeld in Sources */,
 				D2B6227017C6346D007C6E06 /* Kronicle+JSON.m in Sources */,
@@ -1938,27 +1987,75 @@
 				D2D95C6017C6D99B0048ADA3 /* Item.m in Sources */,
 				D281274217C9722F00E66C7F /* Kronicle+Life.m in Sources */,
 				D281274517C972CE00E66C7F /* Step+Life.m in Sources */,
-				D28127CE17CA59DD00E66C7F /* KRPublishOverlay.m in Sources */,
-				D28127DB17CA68B700E66C7F /* KronicleBlockTableViewCell.m in Sources */,
-				D28127DF17CA766E00E66C7F /* MyKroniclesSectionHeader.m in Sources */,
 				D28127E717CA8F2100E66C7F /* Kronicle.m in Sources */,
-				0C6F80D417CAF0B700EFC4B3 /* UIView+GCLibrary.m in Sources */,
-				0C6F80D917CAF0C400EFC4B3 /* KRSearchTextFieldControlView.m in Sources */,
-				0C6F80DA17CAF0C400EFC4B3 /* KRSearchTextFieldView.m in Sources */,
-				0C6F80DE17CAF0D300EFC4B3 /* KRCategoriesViewController.m in Sources */,
-				0C6F80E217CAF0DF00EFC4B3 /* KRCategoriesCollectionViewCell.m in Sources */,
-				0C6F80E517CAF0ED00EFC4B3 /* KRCategoriesViewControllerCellCircleView.m in Sources */,
-				0C6F80EC17CAF19000EFC4B3 /* KRDefaultButton.m in Sources */,
-				D28127FA17CB7DD200E66C7F /* KronicleBlockView.m in Sources */,
-				D28127FB17CB7DD200E66C7F /* StepBlockView.m in Sources */,
-				D2333EE117CD7E3900CE6831 /* KRKroniclesPageNavigationView.m in Sources */,
-				D2ED58E417CEC61200FED4FB /* KRItemsViewController.m in Sources */,
-				D2ED58E817CEC64600FED4FB /* KRItemsTableViewCell.m in Sources */,
 				D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */,
-				D2ED58F617CF6F5E00FED4FB /* CreateStepTimeView.m in Sources */,
-				D2ED58F717CF6F5E00FED4FB /* DurationCreatorView.m in Sources */,
-				D2ED58FE17CF6FDC00FED4FB /* KRRatingCircleView.m in Sources */,
-				D2ED590117CF73E500FED4FB /* KRRatingModuleView.m in Sources */,
+				D2A7F7BE17D0E75D0039EE5A /* AddDescriptionTableViewCell.m in Sources */,
+				D2A7F7BF17D0E75D0039EE5A /* AddTitleTableViewCell.m in Sources */,
+				D2A7F7C017D0E75D0039EE5A /* KeyboardNavigationToolBar.m in Sources */,
+				D2A7F7C117D0E75D0039EE5A /* KRFormFieldCell.m in Sources */,
+				D2A7F7C217D0E75D0039EE5A /* AddItemsCell.m in Sources */,
+				D2A7F7C317D0E75D0039EE5A /* AddStepTableViewCell.m in Sources */,
+				D2A7F7C417D0E75D0039EE5A /* KRCreateViewController.m in Sources */,
+				D2A7F7C617D0E75D0039EE5A /* KRPublishOverlay.m in Sources */,
+				D2A7F7C717D0E75D0039EE5A /* AddMediaTableViewCell.m in Sources */,
+				D2A7F7C817D0E75D0039EE5A /* AddTimeCell.m in Sources */,
+				D2A7F7C917D0E75D0039EE5A /* ContentWithLabelView.m in Sources */,
+				D2A7F7CA17D0E75D0039EE5A /* KRCreateStepViewController.m in Sources */,
+				D2A7F7CC17D0E75D0039EE5A /* KRCategoriesViewController.m in Sources */,
+				D2A7F7CE17D0E75D0039EE5A /* KRCategoriesCollectionViewCell.m in Sources */,
+				D2A7F7CF17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.m in Sources */,
+				D2A7F7D017D0E75D0039EE5A /* KRListViewController.m in Sources */,
+				D2A7F7D217D0E75D0039EE5A /* KRKroniclesPageNavigationView.m in Sources */,
+				D2A7F7D317D0E75D0039EE5A /* StepsTableCellViewCell.m in Sources */,
+				D2A7F7D417D0E75D0039EE5A /* KRHomeViewController.m in Sources */,
+				D2A7F7D617D0E75D0039EE5A /* KRItemsTableViewCell.m in Sources */,
+				D2A7F7D717D0E75D0039EE5A /* KRItemsViewController.m in Sources */,
+				D2A7F7D917D0E75D0039EE5A /* KRMeViewController.m in Sources */,
+				D2A7F7DB17D0E75D0039EE5A /* KronicleBlockTableViewCell.m in Sources */,
+				D2A7F7DC17D0E75D0039EE5A /* KRMyKroniclesViewController.m in Sources */,
+				D2A7F7DE17D0E75D0039EE5A /* MyKroniclesSectionHeader.m in Sources */,
+				D2A7F7DF17D0E75D0039EE5A /* KRNavigationViewController.m in Sources */,
+				D2A7F7E017D0E75D0039EE5A /* KRNavigationTableViewCell.m in Sources */,
+				D2A7F7E117D0E75D0039EE5A /* KRSwipeViewNavigation.m in Sources */,
+				D2A7F7E217D0E75D0039EE5A /* KRKronicleStartViewController.m in Sources */,
+				D2A7F7E417D0E75D0039EE5A /* KRPlaybackViewController.m in Sources */,
+				D2A7F7E617D0E75D0039EE5A /* KRViewListTypeViewController.m in Sources */,
+				D2A7F7E817D0E75D0039EE5A /* KRClockManager.m in Sources */,
+				D2A7F7E917D0E75D0039EE5A /* KRKronicleManager.m in Sources */,
+				D2A7F7EA17D0E75D0039EE5A /* KRClock.m in Sources */,
+				D2A7F7EB17D0E75D0039EE5A /* KRCircularKronicleGraph.m in Sources */,
+				D2A7F7EC17D0E75D0039EE5A /* KRGraphView.m in Sources */,
+				D2A7F7EF17D0E75D0039EE5A /* MediaView.m in Sources */,
+				D2A7F7F017D0E75D0039EE5A /* KRStepNavigation.m in Sources */,
+				D2A7F7F117D0E75D0039EE5A /* KRStepListContainerView.m in Sources */,
+				D2A7F7F217D0E75D0039EE5A /* KRStepListView.m in Sources */,
+				D2A7F7F317D0E75D0039EE5A /* DescriptionView.m in Sources */,
+				D2A7F7F417D0E75D0039EE5A /* KRScrollView.m in Sources */,
+				D2A7F7F517D0E75D0039EE5A /* KRReviewViewController.m in Sources */,
+				D2A7F7F717D0E75D0039EE5A /* KRBaseEditTableViewController.m in Sources */,
+				D2A7F7F817D0E75D0039EE5A /* KRKronicleBaseViewController.m in Sources */,
+				D2A7F82817D0E8FB0039EE5A /* KRDefaultButton.m in Sources */,
+				D2A7F82917D0E8FB0039EE5A /* KRTextButton.m in Sources */,
+				D2A7F82A17D0E8FB0039EE5A /* KRSearchTextFieldControlView.m in Sources */,
+				D2A7F82B17D0E8FB0039EE5A /* KRSearchTextFieldView.m in Sources */,
+				D2A7F86117D0E92C0039EE5A /* KronicleBlockView.m in Sources */,
+				D2A7F86217D0E92C0039EE5A /* StepBlockView.m in Sources */,
+				D2A7F86317D0E92C0039EE5A /* KRRatingCircleView.m in Sources */,
+				D2A7F86417D0E92C0039EE5A /* KRRatingModuleView.m in Sources */,
+				D2A7F86517D0E92C0039EE5A /* CreateStepTimeView.m in Sources */,
+				D2A7F86617D0E92C0039EE5A /* TouchCircleCreatorView.m in Sources */,
+				D2A7F86717D0E92C0039EE5A /* ACMagnifyingGlass.m in Sources */,
+				D2A7F86817D0E92C0039EE5A /* BBRichTextPrefixStyle.m in Sources */,
+				D2A7F86917D0E92C0039EE5A /* BBRichTextView.m in Sources */,
+				D2A7F86A17D0E92C0039EE5A /* NMCustomLabel.m in Sources */,
+				D2A7F86B17D0E92C0039EE5A /* NMCustomLabelStyle.m in Sources */,
+				D2A7F86C17D0E92C0039EE5A /* UIHelper.m in Sources */,
+				D2A7F86D17D0E92C0039EE5A /* UIView+GCLibrary.m in Sources */,
+				D2A7F87017D0ED880039EE5A /* CreateReviewView.m in Sources */,
+				D2A7F87617D147E80039EE5A /* AntiScrollVIew.m in Sources */,
+				D2A7F87B17D182CC0039EE5A /* KRDiagramView.m in Sources */,
+				D2A7F87C17D182CC0039EE5A /* KRKronicleNavView.m in Sources */,
+				D2A7F88117D1A6790039EE5A /* KRReviewOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2015,7 +2112,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2031,7 +2128,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "A3A285AD-B07E-43B7-BEA8-03B2F7FBCB58";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
@@ -2049,8 +2146,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2058,8 +2155,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "A3A285AD-B07E-43B7-BEA8-03B2F7FBCB58";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BB1F11C3-2B54-4328-9EB9-CCC060297BE5";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

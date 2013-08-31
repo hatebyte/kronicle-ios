@@ -198,12 +198,12 @@
     return tTime;
 }
 
-- (NSInteger)rating {
+- (CGFloat)rating {
     return [self.ratingNumber floatValue];
 }
 
-- (void)setRating:(NSInteger)rating {
-    self.ratingNumber = [NSNumber numberWithInteger:rating];
+- (void)setRating:(CGFloat)rating {
+    self.ratingNumber = [NSNumber numberWithFloat:rating];
 }
 
 - (BOOL)isFinished {

@@ -25,7 +25,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     NSArray *kropsArray = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"defaultimages"];
     for (NSString *imagepath in kropsArray) {
         NSString *imageSavePath = [documentsDirectory stringByAppendingPathComponent:imagepath];
-
         if ([fileManager fileExistsAtPath:imageSavePath] == NO) {
             NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:imagepath]);
             [imageData writeToFile:imageSavePath atomically:YES];

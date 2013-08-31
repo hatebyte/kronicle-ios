@@ -16,10 +16,12 @@
 + (UIColor*)grayMedium;
 + (UIColor*)grayDark;
 + (UIColor*)orange;
++ (UIColor*)orangeDark;
 + (UIColor*)orangeTransparent;
 + (UIColor*)turquoise;
 + (UIColor*)turquoiseLight;
 + (UIColor*)turquoiseDark;
 + (UIColor*)turquoiseTransparent;
-
++ (UIColor*)green;
++ (UIColor*)red;
 @end
