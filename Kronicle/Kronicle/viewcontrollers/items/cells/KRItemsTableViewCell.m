@@ -20,7 +20,7 @@
 @implementation KRItemsTableViewCell
 
 + (CGFloat)cellHeight {
-    return 36;
+    return 42;
 }
 
 - (id)initWithType:(KRItemsListType)type reuseIdentifier:(NSString *)reuseIdentifier {
@@ -48,8 +48,8 @@
         _itemTitle.enabled                     = (_itemType == KRItemsListUse) ? NO : YES;
         _itemTitle.userInteractionEnabled      = NO;
         _itemTitle.frame                       = CGRectMake((_checkButton.frame.size.width + _checkButton.frame.origin.x) + 4,
-                                                            -4,
-                                                            320 - (_checkButton.frame.size.width + _checkButton.frame.origin.x),
+                                                            0,
+                                                            320 - (_checkButton.frame.size.width + _checkButton.frame.origin.x + 20),
                                                             [KRItemsTableViewCell cellHeight]);
         [self.contentView addSubview:_itemTitle];
         

@@ -64,6 +64,7 @@
     _previewButton.backgroundColor                              = [KRColorHelper orange];
     _previewButton.titleLabel.font                              = [KRFontHelper getFont:KRBrandonRegular withSize:17];
     _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
+//    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
     [_previewButton setTitle:@"Preview" forState:UIControlStateNormal];
     [_previewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_previewButton addTarget:self action:@selector(previewKronicle:) forControlEvents:UIControlEventTouchUpInside];
@@ -75,10 +76,12 @@
                                                  name:@"DurationCreation"
                                                object:nil];
 
-    _kronicle = [Kronicle getUnfinishedKronicle];
+//    _kronicle = [Kronicle getUnfinishedKronicle];
+    _kronicle = [Kronicle getKronicleWithUuid:@"5212239cb0747df172000002"];
     _kronicleSteps = [[NSMutableArray alloc] init];
     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
-    NSLog(@"_kronicle : %@", _kronicle.description);
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

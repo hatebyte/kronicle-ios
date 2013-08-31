@@ -42,7 +42,11 @@
         _clockLabel.text = @"00:00";
         _subClockLabel.text = @"until next step";
         _titleLabel.text = self.step.title;
+        [_titleLabel sizeToFit];
+
         _description.text = self.step.desc;
+        
+        NSLog(@"self.step.title : %@", self.step.title);
     }
     return self;
 }
@@ -52,7 +56,7 @@
     if (self) {
         [self layout];
         _clockLabel.text                    = @"Finished!";
-        _clockLabel.frame                   = CGRectMake(0, (_description.frame.origin.y - 30) * .5, 320, 30);
+        _clockLabel.frame                   = CGRectMake(0, (_description.frame.origin.y - 82) * .5, 320, 30);
         [_titleLabel removeFromSuperview];
         _titleLabel                         = nil;
         [_description removeFromSuperview];
@@ -92,17 +96,15 @@
     _subClockLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_subClockLabel];
     
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(14,
-                                                                _subClockLabel.frame.origin.y + _subClockLabel.frame.size.height + 20,
-                                                                292,
-                                                                50)];
-    _titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:40];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(14,
+                                                            _subClockLabel.frame.origin.y + _subClockLabel.frame.size.height + 20,
+                                                            292,
+                                                            50)];
+    _titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:28];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.backgroundColor = [UIColor clearColor];
-    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    _titleLabel.numberOfLines = 0;
-    [_titleLabel setFont:[KRFontHelper getFont:KRBrandonLight withSize:28]];
-    [_titleLabel sizeToFit];
+//    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//    _titleLabel.numberOfLines = 0;
     [self addSubview:_titleLabel];
     
     int titleHeight = _titleLabel.frame.size.height + _titleLabel.frame.origin.y;

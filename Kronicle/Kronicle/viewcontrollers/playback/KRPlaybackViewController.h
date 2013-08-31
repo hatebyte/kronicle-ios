@@ -16,24 +16,8 @@ typedef enum {
     KRKronicleViewingStatePreview
 } KRKronicleViewingState;
 
-@interface KRPlaybackViewController : KRKronicleBaseViewController
-//<KRSwipeUpScrollViewDelegate, KRDiagramViewDelegate, KRClockDelegate, KRKronicleNavViewDelegate>
-{
+@interface KRPlaybackViewController : KRKronicleBaseViewController {
 
-//    KRSwipeUpScrollView *_scrollView;
-//    KRDiagramView *_circleDiagram; 
-////    UIImageView *_circleDiagramBackup; 
-//    MediaView *_mediaViewA; 
-//    MediaView *_mediaViewB;  
-//    MediaView *_activeMedia;  
-//    IBOutlet UIImageView *_playpauseButton;
-//    UIButton *_listViewButton;
-//    int _currentStep;
-//    KRKronicleNavView *_navView;
-//    KRClock *_clock;
-//    id activePlayer;
-//    UIView *_progressbar;
-//    UIView *_totalbar;
 }
 
 @property (nonatomic, strong) Kronicle *kronicle;

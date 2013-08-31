@@ -30,14 +30,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.backgroundColor = [UIColor blackColor];
+
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         
         _cellTapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
         _cellTapper.cancelsTouchesInView = NO;
         _cellTapper.delegate = self;
-        [self addGestureRecognizer:_cellTapper];
         
         int width = 178;
         int height = 62;
@@ -61,11 +60,11 @@
         UIImageView *pauseArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pauseTriangle"]];
         pauseArrow.frame = CGRectMake((_pauseView.frame.size.width - 40),
                                       (_pauseView.frame.size.height - 22) * .5, 19, 22);
-        _pauseView.hidden = YES;
         _pauseView.alpha = 0;
         [_pauseView addSubview:pauseArrow];
 
         [self addSubview:_pauseView];
+        [self addGestureRecognizer:_cellTapper];
     }
     return self;
 }
@@ -97,7 +96,6 @@
                          _pauseView.alpha = 0;
                      }
                      completion:^(BOOL fin){
-                         _pauseView.hidden = YES;
                      }];
 }
 
@@ -105,7 +103,6 @@
     if (_moviePlayer != nil) {
         [_moviePlayer pause];
     }
-    _pauseView.hidden = NO;
     [UIView animateWithDuration:.4f
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -130,12 +127,9 @@
     [self stop];
     NSRange range = [_mediaPath rangeOfString:@".mov"];
     if (range.location != NSNotFound) {
+
         [self loadVideo];
     } else {
-        //_imageView.image = [UIImage imageNamed:mediaPath];
-
-//        [self transitionViewToStage:_imageView];
-
         __block UIImageView *imageViewCopy  = [[UIImageView alloc] initWithFrame:_imageView.frame];
         self.backgroundColor                = [UIColor blackColor];
         [self addSubview:_imageView];
@@ -164,18 +158,18 @@
     
 }
 
-- (void)transitionViewToStage:(UIView *)view {
-    [UIView beginAnimations:@"animation" context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration: 0.7f];
-    [UIView setAnimationDelay: 0.2f];
-    [UIView setAnimationTransition:_transition forView:view cache:NO];
-    [self addSubview:view];
-    [UIView commitAnimations];
-    
-    [self addSubview:_pauseView];
-    [self addGestureRecognizer:_cellTapper];
-}
+//- (void)transitionViewToStage:(UIView *)view {
+//    [UIView beginAnimations:@"animation" context:nil];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//    [UIView setAnimationDuration: 0.7f];
+//    [UIView setAnimationDelay: 0.2f];
+//    [UIView setAnimationTransition:_transition forView:view cache:NO];
+//    [self addSubview:view];
+//    [UIView commitAnimations];
+//    
+//    [self addSubview:_pauseView];
+//    [self addGestureRecognizer:_cellTapper];
+//}
 
 - (void)loadVideo {
     self.isVideo = YES;
@@ -202,6 +196,10 @@
 
     _moviePlayer.contentURL = url;
     [_moviePlayer play];
+    _moviePlayer.view.userInteractionEnabled = NO;
+    [self addSubview:_moviePlayer.view];
+    [self addSubview:_pauseView];
+    [self addGestureRecognizer:_cellTapper];
 }
 
 -(void) playbackLoadStateChanged:(NSNotification *)note {
@@ -209,8 +207,10 @@
         [_moviePlayer pause];
     } else if (_moviePlayer.loadState & (MPMovieLoadStatePlayable | MPMovieLoadStatePlaythroughOK)) {
         [_moviePlayer play];
-        [self transitionViewToStage:_moviePlayer.view];
+       // [self transitionViewToStage:_moviePlayer.view];
     }
+//    [_moviePlayer.view addSubview:_pauseView];
+//    [_moviePlayer.view addGestureRecognizer:_cellTapper];
 }
 
 - (void)playbackFinished:(NSNotification*)note {

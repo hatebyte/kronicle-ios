@@ -132,10 +132,10 @@ float const kCollectionViewAnimateTime = 0.2f;
                            if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
                                [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
                                    
-                                   NSLog(@"kronicles bfeore : %@", kronicles);
+//                                   NSLog(@"kronicles bfeore : %@", kronicles);
                                    
                                    _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
-                                   NSLog(@"_kroniclesModuloed  : %@", _kroniclesModuloed);
+//                                   NSLog(@"_kroniclesModuloed  : %@", _kroniclesModuloed);
                                    [_tableView reloadData];
                                }
                                                   onFailure:^(NSError *error) {

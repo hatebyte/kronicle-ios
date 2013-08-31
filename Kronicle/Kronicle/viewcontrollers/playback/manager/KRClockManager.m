@@ -7,8 +7,10 @@
 //
 
 #import "KRClockManager.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
-CGFloat const _increment = .05f;
+CGFloat const _increment = 1.f;
 
 @interface KRClockManager () {
     @private
@@ -25,7 +27,7 @@ CGFloat const _increment = .05f;
     
     int _currentTime;
     int _currentStepIndex;
-    
+    dispatch_queue_t _backgroundQueue;
 }
 @end
 
@@ -38,6 +40,8 @@ CGFloat const _increment = .05f;
         for (Step *s in _kronicle.steps) {
             _kronicleTotal += s.time;
         }
+        _backgroundQueue = dispatch_queue_create("KRClockManager.queue", NULL);
+
     }
     return self;
 }
@@ -68,6 +72,12 @@ CGFloat const _increment = .05f;
 }
 
 - (void)dealloc {
+    dispatch_release(_backgroundQueue);
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)stop {
     [_timer invalidate];
     _timer = nil;
 }
@@ -84,6 +94,7 @@ CGFloat const _increment = .05f;
     
     // fires when over
     if ([_seconds isEqualToString:@"0-1"] && [_minutes isEqualToString:@"00"]) {
+        [self playSound];
         [_timer invalidate];
         [self.delegate manager:self stepComplete:(int)_step.indexInKronicle];
         
@@ -194,6 +205,16 @@ CGFloat const _increment = .05f;
             [NSNumber numberWithInteger:secondsTotal],     @"totalTime",
             nil];
 }
+
+- (void)playSound {
+    dispatch_async(_backgroundQueue, ^(void) {
+        SystemSoundID soundID;
+        NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/OrganicAlertNotifications_04.mp3", [[NSBundle mainBundle] resourcePath]]];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
+        AudioServicesPlaySystemSound (soundID);
+    });
+}
+
 
 @end
 

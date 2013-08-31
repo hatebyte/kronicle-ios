@@ -25,6 +25,7 @@
 #import "KRHomeViewController.h"
 #import "KRItemsViewController.h"
 #import "KRReviewViewController.h"
+#import "KRTextButton.h"
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
@@ -36,7 +37,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
     UIScrollView *_sview;
     UIButton *_backButton;
     UIButton *_publishButton;
-    UIButton *_itemsButton;
+    KRTextButton *_itemsButton;
     int _publishButtonHeight;
     KRKronicleManager *_kronicleManager;
     KRClockManager *_clockManager;
@@ -127,15 +128,22 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
         _backButton.backgroundColor                 = [UIColor clearColor];
         _backButton.frame                           = CGRectMake(0, 0, 40, 40);
         
-        NSInteger itemsButtonHeight = 42;
-        _itemsButton       = [UIButton buttonWithType:UIButtonTypeCustom];
-        _itemsButton.backgroundColor = [KRColorHelper orange];
-        [_itemsButton setTitle:@"Items" forState:UIControlStateNormal];
-        [_itemsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _itemsButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
-        _itemsButton.frame = CGRectMake(_bounds.size.width - 70, _bounds.size.height-(itemsButtonHeight+20), 70, itemsButtonHeight);
+        NSInteger itemsBUttonHeight = 42;
+        _itemsButton = [[KRTextButton alloc] initWithFrame:CGRectMake(0,
+                                                                      _sview.contentSize.height-(itemsBUttonHeight),
+                                                                      121,
+                                                                      itemsBUttonHeight)
+                                                   andType:KRTextButtonTypeHomeScreen
+                                                   andIcon:[UIImage imageNamed:@"itemshamburger"]];
+        [_itemsButton setTitle:NSLocalizedString(@"View Items", @"View items this kronicle button") forState:UIControlStateNormal];
+        [_itemsButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [_itemsButton setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
         [_itemsButton addTarget:self action:@selector(viewItemsRequested:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_itemsButton];
+        _itemsButton.titleEdgeInsets                    = UIEdgeInsetsMake(0, 14, 0, 0);
+        _itemsButton.imageEdgeInsets                    = UIEdgeInsetsMake(0, 10, 0, 0);
+        _itemsButton.backgroundColor                    = [UIColor whiteColor];
+        _itemsButton.titleLabel.font                    = [KRFontHelper getFont:KRBrandonRegular withSize:18];
+        [_sview addSubview:_itemsButton];   
 
 
     } else {
@@ -159,6 +167,8 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reviewRequested) name:kKronicleReviewRequested object:nil];
 
     [self setStep:0];
+    
+    //[self publishKronicle:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -167,16 +177,21 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
 }
 
 - (IBAction)back:(id)sender {
+    [_clockManager stop];
+    _clockManager = nil;
+    _kronicleManager = nil;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)publishKronicle:(id)sender {
-    _kronicle.isFinished = YES;
-    [[ManagedContextController current] saveContext];
-    [[KRHomeViewController current] mykronicles];
+- (void)publishKronicle:(id)sender {
+//    _kronicle.isFinished = YES;
+//    [[ManagedContextController current] saveContext];
+//    [[KRHomeViewController current] mykronicles];
+
+    
 }
 
-- (IBAction)viewItemsRequested:(id)sender {
+- (void)viewItemsRequested:(id)sender {
     [self viewListItems:_kronicle];
 }
 

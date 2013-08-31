@@ -54,20 +54,28 @@
 	</array>
 	<key>defaultimages</key>
 	<array>
-		<string>burger-media-1.png</string>
-		<string>burger-media-2.png</string>
-		<string>burger-media-3.png</string>
-		<string>burger-media-4.png</string>
-		<string>burger-media-5.png</string>
-		<string>burger-media-6.png</string>
-		<string>yoga-media-1.png</string>
-		<string>yoga-media-2.png</string>
-		<string>yoga-media-3.png</string>
-		<string>yoga-media-4.png</string>
-		<string>yoga-media-5.png</string>
-		<string>yoga-media-6.png</string>
-		<string>yoga-media-7.png</string>
-		<string>crazytrain-media-1.png</string>
+		<string>brussel-sprouts-vid-part-1.mov</string>
+		<string>brussel-sprouts-vid-part-2.mov</string>
+		<string>brussel-sprouts-vid-part-3.mov</string>
+		<string>brussel-sprouts-vid-part-4.mov</string>
+		<string>brussel-sprouts-vid-part-5.mov</string>
+		<string>brussel-sprouts-vid-part-6.mov</string>
+		<string>brussel-sprouts-vid-part-7.mov</string>
+		<string>brussel-sprouts-vid-part-8.mov</string>
+        <string>brussel-sprouts-cover.png</string>
+		<string>coffee-img-part-1.png</string>
+		<string>coffee-img-part-2.png</string>
+		<string>coffee-img-part-3.png</string>
+		<string>coffee-img-part-4.png</string>
+		<string>coffee-img-part-5.png</string>
+		<string>coffee-img-part-6.png</string>
+		<string>coffee-img-part-7.png</string>
+        <string>coffee-cover.png</string>
+        <string>crazy-train-cover.png</string>
+        <string>crazy-train-vid-part-1.mov</string>
+        <string>crazy-train-vid-part-2.mov</string>
+        <string>crazy-train-vid-part-3.mov</string>
+        
 	</array>
 </dict>
 </plist>

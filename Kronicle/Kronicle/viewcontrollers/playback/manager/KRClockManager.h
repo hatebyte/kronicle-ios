@@ -32,5 +32,6 @@
 - (id)initWithKronicle:(Kronicle *)kronicle;
 - (void)setTimeForStep:(int)step;
 - (void)togglePlayPause;
+- (void)stop;
 
 @end
