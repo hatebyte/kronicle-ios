@@ -353,7 +353,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
                                                         [KRScrollView playbackHeight]);
                          _sview.contentSize = CGSizeMake(_bounds.size.width, _circularGraphView.frame.origin.y + _circularGraphView.frame.size.height + 70);
                          _itemsButton.frame = CGRectMake(_bounds.size.width - 70, _bounds.size.height-(_itemsButton.frame.size.height+20), 70, _itemsButton.frame.size.height);
-
+                         self.view.backgroundColor        = [UIColor whiteColor];
                      }
                      completion:^(BOOL fin){
                      }];
@@ -378,7 +378,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
                          _circularGraphView.alpha           = 0.f;
                          _sview.contentSize = CGSizeMake(_bounds.size.width, _scrollView.frame.origin.y + _scrollView.frame.size.height);
                          _itemsButton.frame = CGRectMake(_bounds.size.width - 70, _bounds.size.height, 70, _itemsButton.frame.size.height);
-
+                         self.view.backgroundColor        = [KRColorHelper grayLight];
                      }
                      completion:^(BOOL fin){
                          _stepListContainerView.hidden = YES;
