@@ -42,6 +42,7 @@
                                    onFailure:(void (^)(NSDictionary *dict))failBlock;
 
 + (NSArray *)moduloKronicleList:(NSArray *)kronicles;
++ (NSDictionary *)reviewSettingsByRating:(CGFloat)rating;
 
 - (NSString *)fullCoverURL;
 

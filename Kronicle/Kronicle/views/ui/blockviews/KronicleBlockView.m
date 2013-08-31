@@ -77,6 +77,7 @@
 
         NSInteger timeWidth = [time sizeWithFont:[KRFontHelper getFont:KRBrandonRegular withSize:16]].width + _title.frame.origin.x + 15;
         _ratingView = [[KRRatingModuleView alloc] initWithPoint:CGPointMake(timeWidth, (_title.frame.size.height + _title.frame.origin.y)-30 ) andStyle:KRRatingModuleBlock andRating:.7];
+        [_ratingView setRating:_kronicle.rating];
         [self addSubview:_ratingView];
         
         _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editTapped:)];

@@ -110,7 +110,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     _dataSource = @[
                     @"Cooking Time",
                     @"Pushups",
-                    @"Category Name",
+                    @"Tough Mudders",
                     @"Mas Lolz",
                     @"Lol catz",
                     @"Dub Stepz"];
@@ -181,7 +181,7 @@ float const kCollectionViewAnimateTime = 0.2f;
 
 #pragma mark - KRCategoriesCollectionViewCellDelegate delegate stuff
 - (void)categorieCellHit:(KRCategoriesCollectionViewCell *)categoriesCollectionViewCell {
-    KRListViewController *krlvc = [[KRListViewController alloc] initWithNibName:@"KRListViewController" bundle:nil];
+    KRListViewController *krlvc = [[KRListViewController alloc] initWithCategoryName:categoriesCollectionViewCell.cellTitleLabel.text];
     [self.navigationController pushViewController:krlvc animated:YES];
 }
 

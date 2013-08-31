@@ -10,6 +10,7 @@
 #import "KRGlobals.h"
 #import "KRRatingCircleView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Kronicle+Helper.h"
 
 @interface KRRatingModuleView () {
     @private
@@ -71,13 +72,23 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void)setRating:(CGFloat)rating {
+    NSDictionary *dict                      = [Kronicle reviewSettingsByRating:rating];
+    _circleView.strokeColor                 = [dict objectForKey:@"color"];
+    [_circleView setRating:rating];
 }
-*/
+
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+

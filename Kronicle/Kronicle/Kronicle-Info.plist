@@ -19,7 +19,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>-.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.hatebyte.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -48,6 +48,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 	<key>defaultimages</key>
 	<array>
 		<string>burger-media-1.png</string>
@@ -55,19 +59,15 @@
 		<string>burger-media-3.png</string>
 		<string>burger-media-4.png</string>
 		<string>burger-media-5.png</string>
-        <string>burger-media-6.png</string>
-        <string>yoga-media-1.png</string>
-        <string>yoga-media-2.png</string>
-        <string>yoga-media-3.png</string>
-        <string>yoga-media-4.png</string>
-        <string>yoga-media-5.png</string>
-        <string>yoga-media-6.png</string>
-        <string>yoga-media-7.png</string>
-        <string>crazytrain-media-1.png</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
+		<string>burger-media-6.png</string>
+		<string>yoga-media-1.png</string>
+		<string>yoga-media-2.png</string>
+		<string>yoga-media-3.png</string>
+		<string>yoga-media-4.png</string>
+		<string>yoga-media-5.png</string>
+		<string>yoga-media-6.png</string>
+		<string>yoga-media-7.png</string>
+		<string>crazytrain-media-1.png</string>
 	</array>
 </dict>
 </plist>

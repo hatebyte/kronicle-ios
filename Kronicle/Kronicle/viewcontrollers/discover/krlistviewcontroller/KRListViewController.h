@@ -11,4 +11,6 @@
 
 @interface KRListViewController : KRBaseEditTableViewController
 
+- (id)initWithCategoryName:(NSString *)categoryName;
+
 @end

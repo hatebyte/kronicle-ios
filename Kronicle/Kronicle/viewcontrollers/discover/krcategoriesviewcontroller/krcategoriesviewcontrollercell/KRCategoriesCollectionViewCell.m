@@ -21,7 +21,7 @@
 
 @implementation KRCategoriesCollectionViewCell
 
-- (id)initWithFrame:(CGRect)frame 
+- (id)initWithFrame:(CGRect)frame  
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -41,8 +41,6 @@
         _cellTitleLabel.numberOfLines = 0;
         _cellTitleLabel.textAlignment = UITextAlignmentCenter;
         _cellTitleLabel.lineHeight = 28;
-//        _cellTitleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeLarge];
-//        _cellTitleLabel.textColor = [UIColor whiteColor];
         _cellTitleLabel.text = @"Category name";
         [_cellTitleLabel setDefaultStyle:[NMCustomLabelStyle styleWithFont:[KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeLarge] color:[UIColor whiteColor]]];
         [self.contentView addSubview:_cellTitleLabel];

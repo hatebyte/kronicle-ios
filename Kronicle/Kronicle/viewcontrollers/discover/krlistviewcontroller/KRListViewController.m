@@ -21,6 +21,7 @@
 @interface KRListViewController () <KronicleBlockTableViewCellDelegate, KRKroniclesPageNavigationViewDelegate> {
     @private
     NSArray *_kroniclesModuloed;
+    NSString *_categoryName;
     UIView *_headerView;
     UILabel *_titleLabel;
     KRKroniclesPageNavigationView *_subHeaderView;
@@ -29,11 +30,10 @@
 
 @implementation KRListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)initWithCategoryName:(NSString *)categoryName {
+    self = [super initWithNibName:@"KRListViewController" bundle:nil];
     if (self) {
-        // Custom initialization
-        
+        _categoryName = categoryName;
     }
     return self;
 }
@@ -54,7 +54,7 @@
     _titleLabel.textColor                               = [UIColor whiteColor];
     _titleLabel.backgroundColor                         = [UIColor clearColor];
     _titleLabel.textAlignment                           = NSTextAlignmentCenter;
-    _titleLabel.text                                    = NSLocalizedString(@"Category name", @"");
+    _titleLabel.text                                    = _categoryName;
     [self.view addSubview:_titleLabel];
     
     [_cancelButton setImage:[UIImage imageNamed:@"backarrow"] forState:UIControlStateNormal];

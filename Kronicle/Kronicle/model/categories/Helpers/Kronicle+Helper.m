@@ -12,6 +12,7 @@
 #import "KronicleEngine.h"
 #import "Step+Helper.h"
 #import "ManagedContextController.h"
+#import "KRGlobals.h"
 
 @implementation Kronicle (Helper)
 
@@ -155,6 +156,27 @@
     return kroniclesModuloed;
 }
 
++ (NSDictionary *)reviewSettingsByRating:(CGFloat)rating {
+    NSDictionary *dict;
+    if (rating > .75) {
+        dict = [NSDictionary dictionaryWithObjectsAndKeys:
+         NSLocalizedString(@"GREAT", @"CreateReviewView bold label text"), @"text",
+             [KRColorHelper turquoise], @"color", nil];
+    } else if (rating > .5) {
+        dict = [NSDictionary dictionaryWithObjectsAndKeys:
+         NSLocalizedString(@"GOOD", @"CreateReviewView GOOD bold label text"), @"text",
+         [KRColorHelper green], @"color", nil];
+    } else if (rating > .25) {
+        dict = [NSDictionary dictionaryWithObjectsAndKeys:
+         NSLocalizedString(@"OK", @"CreateReviewView OK bold label text"), @"text",
+         [KRColorHelper orangeDark], @"color", nil];
+    } else {
+        dict = [NSDictionary dictionaryWithObjectsAndKeys:
+         NSLocalizedString(@"MEH", @"CreateReviewView MEH bold label text"), @"text",
+         [KRColorHelper red], @"color", nil];
+    }
+    return dict;
+}
 
 
 // conversion helpers

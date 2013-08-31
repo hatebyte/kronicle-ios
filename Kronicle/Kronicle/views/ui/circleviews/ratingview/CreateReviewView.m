@@ -10,6 +10,7 @@
 #import "TouchCircleCreatorView.h"
 #import "KRGlobals.h"
 #import "UIHelper.h"
+#import "Kronicle+Helper.h"
 
 @interface CreateReviewView () <TouchCircleCreatorViewDelegate> {
     @private
@@ -32,20 +33,20 @@
     if (self) {
         _enabled                                    = YES;
         
-        _valueDictionarys = [NSArray arrayWithObjects:
-                             [NSDictionary dictionaryWithObjectsAndKeys:
-                              NSLocalizedString(@"GREAT", @"CreateReviewView bold label text"), @"text",
-                              [KRColorHelper turquoise], @"color", nil],
-                             [NSDictionary dictionaryWithObjectsAndKeys:
-                              NSLocalizedString(@"GOOD", @"CreateReviewView GOOD bold label text"), @"text",
-                              [KRColorHelper green], @"color", nil],
-                             [NSDictionary dictionaryWithObjectsAndKeys:
-                              NSLocalizedString(@"OK", @"CreateReviewView OK bold label text"), @"text",
-                              [KRColorHelper orangeDark], @"color", nil],
-                             [NSDictionary dictionaryWithObjectsAndKeys:
-                              NSLocalizedString(@"MEH", @"CreateReviewView MEH bold label text"), @"text",
-                              [KRColorHelper red], @"color", nil],
-                             nil];
+//        _valueDictionarys = [NSArray arrayWithObjects:
+//                             [NSDictionary dictionaryWithObjectsAndKeys:
+//                              NSLocalizedString(@"GREAT", @"CreateReviewView bold label text"), @"text",
+//                              [KRColorHelper turquoise], @"color", nil],
+//                             [NSDictionary dictionaryWithObjectsAndKeys:
+//                              NSLocalizedString(@"GOOD", @"CreateReviewView GOOD bold label text"), @"text",
+//                              [KRColorHelper green], @"color", nil],
+//                             [NSDictionary dictionaryWithObjectsAndKeys:
+//                              NSLocalizedString(@"OK", @"CreateReviewView OK bold label text"), @"text",
+//                              [KRColorHelper orangeDark], @"color", nil],
+//                             [NSDictionary dictionaryWithObjectsAndKeys:
+//                              NSLocalizedString(@"MEH", @"CreateReviewView MEH bold label text"), @"text",
+//                              [KRColorHelper red], @"color", nil],
+//                             nil];
         
         _reviewCircle                               = [[TouchCircleCreatorView alloc] initWithFrame:CGRectMake((self.frame.size.width - [CreateReviewView size]) * .5,
                                                                                                                (frame.size.height - [CreateReviewView size]) * .5,
@@ -112,22 +113,10 @@
 
 - (void)adjustColorToPercent:(CGFloat)percent {
     self.percent = percent;
-    if (self.percent > .75) {
-        [self updateViewWithDictionary:[_valueDictionarys objectAtIndex:0]];
-    } else if (self.percent > .5) {
-        [self updateViewWithDictionary:[_valueDictionarys objectAtIndex:1]];
-    } else if (self.percent > .25) {
-        [self updateViewWithDictionary:[_valueDictionarys objectAtIndex:2]];
-    } else {
-        [self updateViewWithDictionary:[_valueDictionarys objectAtIndex:3]];
-    }
-}
-
-- (void)updateViewWithDictionary:(NSDictionary*)dict {
+    NSDictionary *dict = [Kronicle reviewSettingsByRating:_percent];
     _reviewCircle.strokeColor                   = [dict objectForKey:@"color"];
     _boldLabel.text                             = [dict objectForKey:@"text"];
 }
-
 
 #pragma mark TouchCircleCreatorViewDelegate
 - (void)touchCircleCreatorView:(TouchCircleCreatorView *)touchCircleCreatorView updateWithPercent:(CGFloat)percent {

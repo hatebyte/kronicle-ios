@@ -16,5 +16,7 @@ typedef enum {
 @interface KRRatingModuleView : UIView
 
 - (id)initWithPoint:(CGPoint)point andStyle:(KRRatingModuleStyle)style andRating:(CGFloat)rating;
+- (void)setRating:(CGFloat)rating;
+
 
 @end
