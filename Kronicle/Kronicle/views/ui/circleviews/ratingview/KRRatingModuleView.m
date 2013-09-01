@@ -38,7 +38,7 @@
             break;
         case KRRatingModuleBlock:
         default:
-            frame = CGRectMake(point.x, point.y, 60, 20);
+            frame = CGRectMake(point.x, point.y+1, 60, 22);
             font = [KRFontHelper getFont:KRBrandonRegular withSize:16];
             circleSize = 12;
             circleY = 2;

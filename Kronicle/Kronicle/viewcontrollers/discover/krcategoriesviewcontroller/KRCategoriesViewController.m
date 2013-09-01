@@ -119,7 +119,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     [self buildSearchWhiteBackground];
     [self buildCollectionView];
     
-    _tableView.frame = CGRectMake(0,0,_searchResultsBackground.frame.size.width, _searchResultsBackground.frame.size.height);
+    _tableView.frame = CGRectMake(0,0,_searchResultsBackground.frame.size.width, _searchResultsBackground.frame.size.height-314);
     _tableView.backgroundColor        = [KRColorHelper grayLight];
 
     [_searchResultsBackground addSubview:_tableView];

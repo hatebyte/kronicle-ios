@@ -45,6 +45,12 @@
         [_titleLabel sizeToFit];
 
         _description.text = self.step.desc;
+        int titleHeight = _titleLabel.frame.size.height + _titleLabel.frame.origin.y;
+        _description.frame =  CGRectMake(7,
+                                         titleHeight-5,
+                                         306,
+                                         self.frame.size.height - titleHeight);
+
         
         NSLog(@"self.step.title : %@", self.step.title);
     }
@@ -103,15 +109,11 @@
     _titleLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:28];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.backgroundColor = [UIColor clearColor];
-//    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//    _titleLabel.numberOfLines = 0;
+    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _titleLabel.numberOfLines = 0;
     [self addSubview:_titleLabel];
     
-    int titleHeight = _titleLabel.frame.size.height + _titleLabel.frame.origin.y;
-    _description = [[UITextView alloc] initWithFrame:CGRectMake(7,
-                                                                titleHeight-5,
-                                                                306,
-                                                                self.frame.size.height - titleHeight)];
+    _description = [[UITextView alloc] init];
     _description.font = [KRFontHelper getFont:KRMinionProRegular withSize:16];
     _description.scrollEnabled = NO;
     _description.textColor = [UIColor blackColor];

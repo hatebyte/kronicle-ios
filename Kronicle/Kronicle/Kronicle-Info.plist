@@ -54,7 +54,8 @@
 	</array>
 	<key>defaultimages</key>
 	<array>
-		<string>brussel-sprouts-vid-part-1.mov</string>
+		
+        <string>brussel-sprouts-vid-part-1.mov</string>
 		<string>brussel-sprouts-vid-part-2.mov</string>
 		<string>brussel-sprouts-vid-part-3.mov</string>
 		<string>brussel-sprouts-vid-part-4.mov</string>
@@ -63,7 +64,8 @@
 		<string>brussel-sprouts-vid-part-7.mov</string>
 		<string>brussel-sprouts-vid-part-8.mov</string>
         <string>brussel-sprouts-cover.png</string>
-		<string>coffee-img-part-1.png</string>
+		
+        <string>coffee-img-part-1.png</string>
 		<string>coffee-img-part-2.png</string>
 		<string>coffee-img-part-3.png</string>
 		<string>coffee-img-part-4.png</string>
@@ -71,11 +73,50 @@
 		<string>coffee-img-part-6.png</string>
 		<string>coffee-img-part-7.png</string>
         <string>coffee-cover.png</string>
+       
         <string>crazy-train-cover.png</string>
         <string>crazy-train-vid-part-1.mov</string>
         <string>crazy-train-vid-part-2.mov</string>
         <string>crazy-train-vid-part-3.mov</string>
         
+        <string>steak-cover.png</string>
+        <string>steak-img-part-1.png</string>
+        <string>steak-img-part-13.png</string>
+        <string>steak-vid-part-2.mov</string>
+        <string>steak-vid-part-3.mov</string>
+        <string>steak-vid-part-4.mov</string>
+        <string>steak-vid-part-5.mov</string>
+        <string>steak-vid-part-6.mov</string>
+        <string>steak-vid-part-7.mov</string>
+        <string>steak-vid-part-8.mov</string>
+        <string>steak-vid-part-9.mov</string>
+        <string>steak-vid-part-10.mov</string>
+        <string>steak-vid-part-11.mov</string>
+        <string>steak-vid-part-12.mov</string>
+        <string>steak-vid-part-13.mov</string>
+        
+        <string>cardio-cover.png</string>
+        <string>cardio-vid-part-1.mov</string>
+        <string>cardio-vid-part-2.mov</string>
+        <string>cardio-vid-part-3.mov</string>
+        <string>cardio-vid-part-4.mov</string>
+        <string>cardio-vid-part-5.mov</string>
+        <string>cardio-vid-part-6.mov</string>
+        <string>cardio-vid-part-7.mov</string>
+        <string>cardio-vid-part-8.mov</string>
+        <string>cardio-img-part-9.png</string>
+        
+        <string>yoga-cover.png</string>
+        <string>yoga-vid-step-1.mov</string>
+        <string>yoga-vid-step-2.mov</string>
+        <string>yoga-vid-step-3.mov</string>
+        <string>yoga-vid-step-4.mov</string>
+        <string>yoga-vid-step-5.mov</string>
+        <string>yoga-vid-step-6.mov</string>
+        <string>yoga-vid-step-7.mov</string>
+        
+        
+
 	</array>
 </dict>
 </plist>

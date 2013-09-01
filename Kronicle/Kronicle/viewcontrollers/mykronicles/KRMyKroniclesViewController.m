@@ -16,6 +16,7 @@
 #import "Kronicle+Helper.h"
 #import "KRNavigationViewController.h"
 #import "KRKroniclesPageNavigationView.h"
+#import "KRSwipeViewNavigation.h"
 
 @interface KRMyKroniclesViewController () <KronicleBlockTableViewCellDelegate, KRKroniclesPageNavigationViewDelegate> {
     @private
@@ -55,8 +56,7 @@
     [self.view addSubview:_subHeaderView];
     
     NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height;
-    _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top));
-
+    _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top + [KRSwipeViewNavigation cellHeight]));
     
     [self loadLocalKronicles];
 }

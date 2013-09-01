@@ -128,6 +128,39 @@
 		D244D45E17D2AA2F00FDEEFB /* crazy-train-vid-part-2.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D40617D2AA2F00FDEEFB /* crazy-train-vid-part-2.mov */; };
 		D244D45F17D2AA2F00FDEEFB /* crazy-train-vid-part-3.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D40717D2AA2F00FDEEFB /* crazy-train-vid-part-3.mov */; };
 		D244D46017D2AA2F00FDEEFB /* OrganicAlertNotifications_04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D244D40917D2AA2F00FDEEFB /* OrganicAlertNotifications_04.mp3 */; };
+		D244D48517D2E01D00FDEEFB /* cardio-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D46217D2E01D00FDEEFB /* cardio-cover.png */; };
+		D244D48617D2E01D00FDEEFB /* cardio-img-part-9.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D46317D2E01D00FDEEFB /* cardio-img-part-9.png */; };
+		D244D48717D2E01D00FDEEFB /* cardio-vid-part-1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46417D2E01D00FDEEFB /* cardio-vid-part-1.mov */; };
+		D244D48817D2E01D00FDEEFB /* cardio-vid-part-2.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46517D2E01D00FDEEFB /* cardio-vid-part-2.mov */; };
+		D244D48917D2E01D00FDEEFB /* cardio-vid-part-3.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46617D2E01D00FDEEFB /* cardio-vid-part-3.mov */; };
+		D244D48A17D2E01D00FDEEFB /* cardio-vid-part-4.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46717D2E01D00FDEEFB /* cardio-vid-part-4.mov */; };
+		D244D48B17D2E01D00FDEEFB /* cardio-vid-part-5.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46817D2E01D00FDEEFB /* cardio-vid-part-5.mov */; };
+		D244D48C17D2E01D00FDEEFB /* cardio-vid-part-6.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46917D2E01D00FDEEFB /* cardio-vid-part-6.mov */; };
+		D244D48D17D2E01D00FDEEFB /* cardio-vid-part-7.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46A17D2E01D00FDEEFB /* cardio-vid-part-7.mov */; };
+		D244D48E17D2E01D00FDEEFB /* cardio-vid-part-8.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D46B17D2E01D00FDEEFB /* cardio-vid-part-8.mov */; };
+		D244D48F17D2E01D00FDEEFB /* steak-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D46D17D2E01D00FDEEFB /* steak-cover.png */; };
+		D244D49017D2E01D00FDEEFB /* steak-img-part-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D46E17D2E01D00FDEEFB /* steak-img-part-1.png */; };
+		D244D49117D2E01D00FDEEFB /* steak-img-part-13.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D46F17D2E01D00FDEEFB /* steak-img-part-13.png */; };
+		D244D49217D2E01D00FDEEFB /* steak-vid-part-10.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47017D2E01D00FDEEFB /* steak-vid-part-10.mov */; };
+		D244D49317D2E01D00FDEEFB /* steak-vid-part-11.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47117D2E01D00FDEEFB /* steak-vid-part-11.mov */; };
+		D244D49417D2E01D00FDEEFB /* steak-vid-part-12.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47217D2E01D00FDEEFB /* steak-vid-part-12.mov */; };
+		D244D49517D2E01D00FDEEFB /* steak-vid-part-13.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47317D2E01D00FDEEFB /* steak-vid-part-13.mov */; };
+		D244D49617D2E01D00FDEEFB /* steak-vid-part-2.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47417D2E01D00FDEEFB /* steak-vid-part-2.mov */; };
+		D244D49717D2E01D00FDEEFB /* steak-vid-part-3.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47517D2E01D00FDEEFB /* steak-vid-part-3.mov */; };
+		D244D49817D2E01D00FDEEFB /* steak-vid-part-4.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47617D2E01D00FDEEFB /* steak-vid-part-4.mov */; };
+		D244D49917D2E01D00FDEEFB /* steak-vid-part-5.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47717D2E01D00FDEEFB /* steak-vid-part-5.mov */; };
+		D244D49A17D2E01D00FDEEFB /* steak-vid-part-6.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47817D2E01D00FDEEFB /* steak-vid-part-6.mov */; };
+		D244D49B17D2E01D00FDEEFB /* steak-vid-part-7.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47917D2E01D00FDEEFB /* steak-vid-part-7.mov */; };
+		D244D49C17D2E01D00FDEEFB /* steak-vid-part-8.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47A17D2E01D00FDEEFB /* steak-vid-part-8.mov */; };
+		D244D49D17D2E01D00FDEEFB /* steak-vid-part-9.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47B17D2E01D00FDEEFB /* steak-vid-part-9.mov */; };
+		D244D49E17D2E01D00FDEEFB /* yoga-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D47D17D2E01D00FDEEFB /* yoga-cover.png */; };
+		D244D49F17D2E01D00FDEEFB /* yoga-vid-step-1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47E17D2E01D00FDEEFB /* yoga-vid-step-1.mov */; };
+		D244D4A017D2E01D00FDEEFB /* yoga-vid-step-2.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D47F17D2E01D00FDEEFB /* yoga-vid-step-2.mov */; };
+		D244D4A117D2E01D00FDEEFB /* yoga-vid-step-3.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48017D2E01D00FDEEFB /* yoga-vid-step-3.mov */; };
+		D244D4A217D2E01D00FDEEFB /* yoga-vid-step-4.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48117D2E01D00FDEEFB /* yoga-vid-step-4.mov */; };
+		D244D4A317D2E01D00FDEEFB /* yoga-vid-step-5.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */; };
+		D244D4A417D2E01D00FDEEFB /* yoga-vid-step-6.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */; };
+		D244D4A517D2E01D00FDEEFB /* yoga-vid-step-7.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */; };
 		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
 		D26A6174175B7CA200B50A39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6173175B7CA200B50A39 /* AVFoundation.framework */; };
 		D26A6178175B7E2600B50A39 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6177175B7E2600B50A39 /* AudioToolbox.framework */; };
@@ -382,6 +415,39 @@
 		D244D40617D2AA2F00FDEEFB /* crazy-train-vid-part-2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "crazy-train-vid-part-2.mov"; sourceTree = "<group>"; };
 		D244D40717D2AA2F00FDEEFB /* crazy-train-vid-part-3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "crazy-train-vid-part-3.mov"; sourceTree = "<group>"; };
 		D244D40917D2AA2F00FDEEFB /* OrganicAlertNotifications_04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OrganicAlertNotifications_04.mp3; sourceTree = "<group>"; };
+		D244D46217D2E01D00FDEEFB /* cardio-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardio-cover.png"; sourceTree = "<group>"; };
+		D244D46317D2E01D00FDEEFB /* cardio-img-part-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardio-img-part-9.png"; sourceTree = "<group>"; };
+		D244D46417D2E01D00FDEEFB /* cardio-vid-part-1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-1.mov"; sourceTree = "<group>"; };
+		D244D46517D2E01D00FDEEFB /* cardio-vid-part-2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-2.mov"; sourceTree = "<group>"; };
+		D244D46617D2E01D00FDEEFB /* cardio-vid-part-3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-3.mov"; sourceTree = "<group>"; };
+		D244D46717D2E01D00FDEEFB /* cardio-vid-part-4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-4.mov"; sourceTree = "<group>"; };
+		D244D46817D2E01D00FDEEFB /* cardio-vid-part-5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-5.mov"; sourceTree = "<group>"; };
+		D244D46917D2E01D00FDEEFB /* cardio-vid-part-6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-6.mov"; sourceTree = "<group>"; };
+		D244D46A17D2E01D00FDEEFB /* cardio-vid-part-7.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-7.mov"; sourceTree = "<group>"; };
+		D244D46B17D2E01D00FDEEFB /* cardio-vid-part-8.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "cardio-vid-part-8.mov"; sourceTree = "<group>"; };
+		D244D46D17D2E01D00FDEEFB /* steak-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steak-cover.png"; sourceTree = "<group>"; };
+		D244D46E17D2E01D00FDEEFB /* steak-img-part-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steak-img-part-1.png"; sourceTree = "<group>"; };
+		D244D46F17D2E01D00FDEEFB /* steak-img-part-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steak-img-part-13.png"; sourceTree = "<group>"; };
+		D244D47017D2E01D00FDEEFB /* steak-vid-part-10.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-10.mov"; sourceTree = "<group>"; };
+		D244D47117D2E01D00FDEEFB /* steak-vid-part-11.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-11.mov"; sourceTree = "<group>"; };
+		D244D47217D2E01D00FDEEFB /* steak-vid-part-12.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-12.mov"; sourceTree = "<group>"; };
+		D244D47317D2E01D00FDEEFB /* steak-vid-part-13.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-13.mov"; sourceTree = "<group>"; };
+		D244D47417D2E01D00FDEEFB /* steak-vid-part-2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-2.mov"; sourceTree = "<group>"; };
+		D244D47517D2E01D00FDEEFB /* steak-vid-part-3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-3.mov"; sourceTree = "<group>"; };
+		D244D47617D2E01D00FDEEFB /* steak-vid-part-4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-4.mov"; sourceTree = "<group>"; };
+		D244D47717D2E01D00FDEEFB /* steak-vid-part-5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-5.mov"; sourceTree = "<group>"; };
+		D244D47817D2E01D00FDEEFB /* steak-vid-part-6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-6.mov"; sourceTree = "<group>"; };
+		D244D47917D2E01D00FDEEFB /* steak-vid-part-7.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-7.mov"; sourceTree = "<group>"; };
+		D244D47A17D2E01D00FDEEFB /* steak-vid-part-8.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-8.mov"; sourceTree = "<group>"; };
+		D244D47B17D2E01D00FDEEFB /* steak-vid-part-9.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "steak-vid-part-9.mov"; sourceTree = "<group>"; };
+		D244D47D17D2E01D00FDEEFB /* yoga-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-cover.png"; sourceTree = "<group>"; };
+		D244D47E17D2E01D00FDEEFB /* yoga-vid-step-1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-1.mov"; sourceTree = "<group>"; };
+		D244D47F17D2E01D00FDEEFB /* yoga-vid-step-2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-2.mov"; sourceTree = "<group>"; };
+		D244D48017D2E01D00FDEEFB /* yoga-vid-step-3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-3.mov"; sourceTree = "<group>"; };
+		D244D48117D2E01D00FDEEFB /* yoga-vid-step-4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-4.mov"; sourceTree = "<group>"; };
+		D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-5.mov"; sourceTree = "<group>"; };
+		D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-6.mov"; sourceTree = "<group>"; };
+		D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-7.mov"; sourceTree = "<group>"; };
 		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D26A6173175B7CA200B50A39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D26A6177175B7E2600B50A39 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -862,6 +928,9 @@
 		D244D3EF17D2AA2F00FDEEFB /* kronicles */ = {
 			isa = PBXGroup;
 			children = (
+				D244D46117D2E01D00FDEEFB /* cardio */,
+				D244D46C17D2E01D00FDEEFB /* steak */,
+				D244D47C17D2E01D00FDEEFB /* yoga */,
 				D244D3F017D2AA2F00FDEEFB /* brusselsprouts */,
 				D244D3FA17D2AA2F00FDEEFB /* coffee */,
 				D244D40317D2AA2F00FDEEFB /* crazy-train */,
@@ -917,6 +986,60 @@
 				D244D40917D2AA2F00FDEEFB /* OrganicAlertNotifications_04.mp3 */,
 			);
 			path = sounds;
+			sourceTree = "<group>";
+		};
+		D244D46117D2E01D00FDEEFB /* cardio */ = {
+			isa = PBXGroup;
+			children = (
+				D244D46217D2E01D00FDEEFB /* cardio-cover.png */,
+				D244D46317D2E01D00FDEEFB /* cardio-img-part-9.png */,
+				D244D46417D2E01D00FDEEFB /* cardio-vid-part-1.mov */,
+				D244D46517D2E01D00FDEEFB /* cardio-vid-part-2.mov */,
+				D244D46617D2E01D00FDEEFB /* cardio-vid-part-3.mov */,
+				D244D46717D2E01D00FDEEFB /* cardio-vid-part-4.mov */,
+				D244D46817D2E01D00FDEEFB /* cardio-vid-part-5.mov */,
+				D244D46917D2E01D00FDEEFB /* cardio-vid-part-6.mov */,
+				D244D46A17D2E01D00FDEEFB /* cardio-vid-part-7.mov */,
+				D244D46B17D2E01D00FDEEFB /* cardio-vid-part-8.mov */,
+			);
+			path = cardio;
+			sourceTree = "<group>";
+		};
+		D244D46C17D2E01D00FDEEFB /* steak */ = {
+			isa = PBXGroup;
+			children = (
+				D244D46D17D2E01D00FDEEFB /* steak-cover.png */,
+				D244D46E17D2E01D00FDEEFB /* steak-img-part-1.png */,
+				D244D46F17D2E01D00FDEEFB /* steak-img-part-13.png */,
+				D244D47017D2E01D00FDEEFB /* steak-vid-part-10.mov */,
+				D244D47117D2E01D00FDEEFB /* steak-vid-part-11.mov */,
+				D244D47217D2E01D00FDEEFB /* steak-vid-part-12.mov */,
+				D244D47317D2E01D00FDEEFB /* steak-vid-part-13.mov */,
+				D244D47417D2E01D00FDEEFB /* steak-vid-part-2.mov */,
+				D244D47517D2E01D00FDEEFB /* steak-vid-part-3.mov */,
+				D244D47617D2E01D00FDEEFB /* steak-vid-part-4.mov */,
+				D244D47717D2E01D00FDEEFB /* steak-vid-part-5.mov */,
+				D244D47817D2E01D00FDEEFB /* steak-vid-part-6.mov */,
+				D244D47917D2E01D00FDEEFB /* steak-vid-part-7.mov */,
+				D244D47A17D2E01D00FDEEFB /* steak-vid-part-8.mov */,
+				D244D47B17D2E01D00FDEEFB /* steak-vid-part-9.mov */,
+			);
+			path = steak;
+			sourceTree = "<group>";
+		};
+		D244D47C17D2E01D00FDEEFB /* yoga */ = {
+			isa = PBXGroup;
+			children = (
+				D244D47D17D2E01D00FDEEFB /* yoga-cover.png */,
+				D244D47E17D2E01D00FDEEFB /* yoga-vid-step-1.mov */,
+				D244D47F17D2E01D00FDEEFB /* yoga-vid-step-2.mov */,
+				D244D48017D2E01D00FDEEFB /* yoga-vid-step-3.mov */,
+				D244D48117D2E01D00FDEEFB /* yoga-vid-step-4.mov */,
+				D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */,
+				D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */,
+				D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */,
+			);
+			path = yoga;
 			sourceTree = "<group>";
 		};
 		D281273F17C9721F00E66C7F /* life */ = {
@@ -1863,6 +1986,39 @@
 				D244D45E17D2AA2F00FDEEFB /* crazy-train-vid-part-2.mov in Resources */,
 				D244D45F17D2AA2F00FDEEFB /* crazy-train-vid-part-3.mov in Resources */,
 				D244D46017D2AA2F00FDEEFB /* OrganicAlertNotifications_04.mp3 in Resources */,
+				D244D48517D2E01D00FDEEFB /* cardio-cover.png in Resources */,
+				D244D48617D2E01D00FDEEFB /* cardio-img-part-9.png in Resources */,
+				D244D48717D2E01D00FDEEFB /* cardio-vid-part-1.mov in Resources */,
+				D244D48817D2E01D00FDEEFB /* cardio-vid-part-2.mov in Resources */,
+				D244D48917D2E01D00FDEEFB /* cardio-vid-part-3.mov in Resources */,
+				D244D48A17D2E01D00FDEEFB /* cardio-vid-part-4.mov in Resources */,
+				D244D48B17D2E01D00FDEEFB /* cardio-vid-part-5.mov in Resources */,
+				D244D48C17D2E01D00FDEEFB /* cardio-vid-part-6.mov in Resources */,
+				D244D48D17D2E01D00FDEEFB /* cardio-vid-part-7.mov in Resources */,
+				D244D48E17D2E01D00FDEEFB /* cardio-vid-part-8.mov in Resources */,
+				D244D48F17D2E01D00FDEEFB /* steak-cover.png in Resources */,
+				D244D49017D2E01D00FDEEFB /* steak-img-part-1.png in Resources */,
+				D244D49117D2E01D00FDEEFB /* steak-img-part-13.png in Resources */,
+				D244D49217D2E01D00FDEEFB /* steak-vid-part-10.mov in Resources */,
+				D244D49317D2E01D00FDEEFB /* steak-vid-part-11.mov in Resources */,
+				D244D49417D2E01D00FDEEFB /* steak-vid-part-12.mov in Resources */,
+				D244D49517D2E01D00FDEEFB /* steak-vid-part-13.mov in Resources */,
+				D244D49617D2E01D00FDEEFB /* steak-vid-part-2.mov in Resources */,
+				D244D49717D2E01D00FDEEFB /* steak-vid-part-3.mov in Resources */,
+				D244D49817D2E01D00FDEEFB /* steak-vid-part-4.mov in Resources */,
+				D244D49917D2E01D00FDEEFB /* steak-vid-part-5.mov in Resources */,
+				D244D49A17D2E01D00FDEEFB /* steak-vid-part-6.mov in Resources */,
+				D244D49B17D2E01D00FDEEFB /* steak-vid-part-7.mov in Resources */,
+				D244D49C17D2E01D00FDEEFB /* steak-vid-part-8.mov in Resources */,
+				D244D49D17D2E01D00FDEEFB /* steak-vid-part-9.mov in Resources */,
+				D244D49E17D2E01D00FDEEFB /* yoga-cover.png in Resources */,
+				D244D49F17D2E01D00FDEEFB /* yoga-vid-step-1.mov in Resources */,
+				D244D4A017D2E01D00FDEEFB /* yoga-vid-step-2.mov in Resources */,
+				D244D4A117D2E01D00FDEEFB /* yoga-vid-step-3.mov in Resources */,
+				D244D4A217D2E01D00FDEEFB /* yoga-vid-step-4.mov in Resources */,
+				D244D4A317D2E01D00FDEEFB /* yoga-vid-step-5.mov in Resources */,
+				D244D4A417D2E01D00FDEEFB /* yoga-vid-step-6.mov in Resources */,
+				D244D4A517D2E01D00FDEEFB /* yoga-vid-step-7.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
