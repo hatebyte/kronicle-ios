@@ -76,8 +76,8 @@
                                                  name:@"DurationCreation"
                                                object:nil];
 
-//    _kronicle = [Kronicle getUnfinishedKronicle];
-    _kronicle = [Kronicle getKronicleWithUuid:@"5212239cb0747df172000002"];
+    _kronicle = [Kronicle getUnfinishedKronicle];
+//    _kronicle = [Kronicle getKronicleWithUuid:@"5222b750c9fe43ec31000002"];
     _kronicleSteps = [[NSMutableArray alloc] init];
     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
     
@@ -126,7 +126,7 @@
     }
 }
 
-- (IBAction)popViewController:(id)sender {
+- (void)popViewController:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 

@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Kronicle+Helper.h"
+
+@class KRPublishKronicleOverlay;
+@protocol KRPublishKronicleOverlayDelegate <NSObject>
+
+- (void)publishKronicleOverlayCanceled;
+- (void)publishKronicleOverlayPublish;
+- (void)publishKronicleOverlayPhotoChanged;
+
+@end
 
 @interface KRPublishKronicleOverlay : UIView
+
+@property(nonatomic, weak) id <KRPublishKronicleOverlayDelegate> delegate;
+
+- (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle;
 
 @end

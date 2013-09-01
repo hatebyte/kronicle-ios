@@ -26,12 +26,13 @@
 #import "KRItemsViewController.h"
 #import "KRReviewViewController.h"
 #import "KRTextButton.h"
+#import "KRPublishKronicleOverlay.h"
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
 
 @interface KRPlaybackViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate,
-KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepListContainerViewDelegate> {
+KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListContainerViewDelegate, KRPublishKronicleOverlayDelegate> {
     @private
     CGRect _bounds;
     UIScrollView *_sview;
@@ -48,6 +49,8 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
     MediaView *_mediaView;
     KRCircularKronicleGraph *_circularGraphView;
     KRKronicleViewingState _viewingState;
+    
+    KRPublishKronicleOverlay *_publishOverlay;
 }
 
 @end
@@ -160,15 +163,13 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
         [_publishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _publishButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
         _publishButton.frame = CGRectMake(_bounds.size.width - 82, _bounds.size.height-(_publishButtonHeight+20), 82, _publishButtonHeight);
-        [_publishButton addTarget:self action:@selector(publishKronicle:) forControlEvents:UIControlEventTouchUpInside];
+        [_publishButton addTarget:self action:@selector(showPublishKronicleOverlay) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_publishButton];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reviewRequested) name:kKronicleReviewRequested object:nil];
 
     [self setStep:0];
-    
-    //[self publishKronicle:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -181,14 +182,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
     _clockManager = nil;
     _kronicleManager = nil;
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)publishKronicle:(id)sender {
-//    _kronicle.isFinished = YES;
-//    [[ManagedContextController current] saveContext];
-//    [[KRHomeViewController current] mykronicles];
-
-    
 }
 
 - (void)viewItemsRequested:(id)sender {
@@ -270,6 +263,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
     if (_viewingState == KRKronicleViewingStatePreview) {
+        [self showPublishKronicleOverlay];
         return;
     }
     
@@ -414,4 +408,76 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate,   KRStepList
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma publish 
+- (void)showPublishKronicleOverlay {
+    //    _kronicle.isFinished = YES;
+    //    [[ManagedContextController current] saveContext];
+    //    [[KRHomeViewController current] mykronicles];
+    
+    _publishOverlay = [[KRPublishKronicleOverlay alloc] initWithFrame:self.view.frame andKronicle:_kronicle];
+    _publishOverlay.alpha = 0;
+    _publishOverlay.delegate = self;
+    [self.view addSubview:_publishOverlay];
+    
+    [UIView animateWithDuration:.5
+                          delay:.2f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _publishOverlay.alpha = 1.f;
+                     }
+                     completion:^(BOOL fin){
+                     }];
+}
+
+- (void)removePublishKronicleOverlay {
+    
+    [UIView animateWithDuration:.5
+                          delay:.2f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _publishOverlay.alpha = 0.f;
+                     }
+                     completion:^(BOOL fin){
+                         [_publishOverlay removeFromSuperview];
+                         _publishOverlay = nil;
+
+                     }];
+}
+
+- (void)publishKronicleOverlayCanceled {
+    [self removePublishKronicleOverlay];
+}
+
+- (void)publishKronicleOverlayPublish {
+    _kronicle.isFinished = YES;
+    [[ManagedContextController current] saveContext];
+    [self removePublishKronicleOverlay];
+
+    [[KRHomeViewController current] mykronicles];
+}
+
+- (void)publishKronicleOverlayPhotoChanged {
+
+}
+
+
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

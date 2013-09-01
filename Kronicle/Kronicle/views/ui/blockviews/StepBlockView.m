@@ -79,7 +79,7 @@
 
         self.userInteractionEnabled = YES;
         
-        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.2];
+        self.backgroundColor = [KRColorHelper orange];
     }
     return self;
 }

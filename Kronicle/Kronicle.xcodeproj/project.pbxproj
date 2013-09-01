@@ -161,6 +161,8 @@
 		D244D4A317D2E01D00FDEEFB /* yoga-vid-step-5.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */; };
 		D244D4A417D2E01D00FDEEFB /* yoga-vid-step-6.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */; };
 		D244D4A517D2E01D00FDEEFB /* yoga-vid-step-7.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */; };
+		D262002B17D31F42000A1E77 /* camerabutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D262002917D31F42000A1E77 /* camerabutton.png */; };
+		D262002C17D31F42000A1E77 /* cancelpublish.png in Resources */ = {isa = PBXBuildFile; fileRef = D262002A17D31F42000A1E77 /* cancelpublish.png */; };
 		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
 		D26A6174175B7CA200B50A39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6173175B7CA200B50A39 /* AVFoundation.framework */; };
 		D26A6178175B7E2600B50A39 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6177175B7E2600B50A39 /* AudioToolbox.framework */; };
@@ -197,7 +199,6 @@
 		D2A7F7C317D0E75D0039EE5A /* AddStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74117D0E75D0039EE5A /* AddStepTableViewCell.m */; };
 		D2A7F7C417D0E75D0039EE5A /* KRCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74317D0E75D0039EE5A /* KRCreateViewController.m */; };
 		D2A7F7C517D0E75D0039EE5A /* KRCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F74417D0E75D0039EE5A /* KRCreateViewController.xib */; };
-		D2A7F7C617D0E75D0039EE5A /* KRPublishOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74717D0E75D0039EE5A /* KRPublishOverlay.m */; };
 		D2A7F7C717D0E75D0039EE5A /* AddMediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74B17D0E75D0039EE5A /* AddMediaTableViewCell.m */; };
 		D2A7F7C817D0E75D0039EE5A /* AddTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74D17D0E75D0039EE5A /* AddTimeCell.m */; };
 		D2A7F7C917D0E75D0039EE5A /* ContentWithLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F74F17D0E75D0039EE5A /* ContentWithLabelView.m */; };
@@ -448,6 +449,8 @@
 		D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-5.mov"; sourceTree = "<group>"; };
 		D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-6.mov"; sourceTree = "<group>"; };
 		D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-7.mov"; sourceTree = "<group>"; };
+		D262002917D31F42000A1E77 /* camerabutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camerabutton.png; sourceTree = "<group>"; };
+		D262002A17D31F42000A1E77 /* cancelpublish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelpublish.png; sourceTree = "<group>"; };
 		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D26A6173175B7CA200B50A39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D26A6177175B7E2600B50A39 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -504,8 +507,6 @@
 		D2A7F74217D0E75D0039EE5A /* KRCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCreateViewController.h; sourceTree = "<group>"; };
 		D2A7F74317D0E75D0039EE5A /* KRCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCreateViewController.m; sourceTree = "<group>"; };
 		D2A7F74417D0E75D0039EE5A /* KRCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KRCreateViewController.xib; sourceTree = "<group>"; };
-		D2A7F74617D0E75D0039EE5A /* KRPublishOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPublishOverlay.h; sourceTree = "<group>"; };
-		D2A7F74717D0E75D0039EE5A /* KRPublishOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPublishOverlay.m; sourceTree = "<group>"; };
 		D2A7F74A17D0E75D0039EE5A /* AddMediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMediaTableViewCell.h; sourceTree = "<group>"; };
 		D2A7F74B17D0E75D0039EE5A /* AddMediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMediaTableViewCell.m; sourceTree = "<group>"; };
 		D2A7F74C17D0E75D0039EE5A /* AddTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTimeCell.h; sourceTree = "<group>"; };
@@ -792,6 +793,7 @@
 		D244D3A517D2AA2F00FDEEFB /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D262002817D31F42000A1E77 /* publish */,
 				D244D3A617D2AA2F00FDEEFB /* back-bttn.png */,
 				D244D3A717D2AA2F00FDEEFB /* back-button.png */,
 				D244D3A817D2AA2F00FDEEFB /* backward.png */,
@@ -1042,6 +1044,15 @@
 			path = yoga;
 			sourceTree = "<group>";
 		};
+		D262002817D31F42000A1E77 /* publish */ = {
+			isa = PBXGroup;
+			children = (
+				D262002917D31F42000A1E77 /* camerabutton.png */,
+				D262002A17D31F42000A1E77 /* cancelpublish.png */,
+			);
+			path = publish;
+			sourceTree = "<group>";
+		};
 		D281273F17C9721F00E66C7F /* life */ = {
 			isa = PBXGroup;
 			children = (
@@ -1249,7 +1260,6 @@
 				D2A7F74217D0E75D0039EE5A /* KRCreateViewController.h */,
 				D2A7F74317D0E75D0039EE5A /* KRCreateViewController.m */,
 				D2A7F74417D0E75D0039EE5A /* KRCreateViewController.xib */,
-				D2A7F74517D0E75D0039EE5A /* publishoverlay */,
 			);
 			path = krkroniclecreateviewcontroller;
 			sourceTree = "<group>";
@@ -1263,15 +1273,6 @@
 				D2A7F74117D0E75D0039EE5A /* AddStepTableViewCell.m */,
 			);
 			path = cells;
-			sourceTree = "<group>";
-		};
-		D2A7F74517D0E75D0039EE5A /* publishoverlay */ = {
-			isa = PBXGroup;
-			children = (
-				D2A7F74617D0E75D0039EE5A /* KRPublishOverlay.h */,
-				D2A7F74717D0E75D0039EE5A /* KRPublishOverlay.m */,
-			);
-			path = publishoverlay;
 			sourceTree = "<group>";
 		};
 		D2A7F74817D0E75D0039EE5A /* krstepcreatecontroller */ = {
@@ -2019,6 +2020,8 @@
 				D244D4A317D2E01D00FDEEFB /* yoga-vid-step-5.mov in Resources */,
 				D244D4A417D2E01D00FDEEFB /* yoga-vid-step-6.mov in Resources */,
 				D244D4A517D2E01D00FDEEFB /* yoga-vid-step-7.mov in Resources */,
+				D262002B17D31F42000A1E77 /* camerabutton.png in Resources */,
+				D262002C17D31F42000A1E77 /* cancelpublish.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2175,7 +2178,6 @@
 				D2A7F7C217D0E75D0039EE5A /* AddItemsCell.m in Sources */,
 				D2A7F7C317D0E75D0039EE5A /* AddStepTableViewCell.m in Sources */,
 				D2A7F7C417D0E75D0039EE5A /* KRCreateViewController.m in Sources */,
-				D2A7F7C617D0E75D0039EE5A /* KRPublishOverlay.m in Sources */,
 				D2A7F7C717D0E75D0039EE5A /* AddMediaTableViewCell.m in Sources */,
 				D2A7F7C817D0E75D0039EE5A /* AddTimeCell.m in Sources */,
 				D2A7F7C917D0E75D0039EE5A /* ContentWithLabelView.m in Sources */,
