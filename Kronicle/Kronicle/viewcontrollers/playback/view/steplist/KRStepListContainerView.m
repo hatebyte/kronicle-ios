@@ -29,7 +29,7 @@
 
     self = [super initWithFrame:CGRectMake(frame.origin.x,frame.origin.y, frame.size.width, [KRStepListView cellHeight] * steps.count)];
     if (self) {
-        // Initialization code
+        self.backgroundColor    = [UIColor whiteColor];
         _steps = [[NSMutableArray alloc] init];
         _currentIndex = 0;
 

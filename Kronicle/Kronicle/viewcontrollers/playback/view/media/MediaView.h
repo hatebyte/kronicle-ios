@@ -18,6 +18,8 @@ typedef enum  {
 @class MediaView;
 @protocol MediaViewDelegate <NSObject>
 - (void)mediaViewScreenTapped:(MediaView *)mediaView;
+- (void)mediaViewSwipedLeft;
+- (void)mediaViewSwipedRight;
 @end
 
 @interface MediaView : UIView {

@@ -13,6 +13,7 @@
 #import "Kronicle+Helper.h"
 #import "KRKronicleStartViewController.h"
 #import "KRGlobals.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface DescriptionView () <UITableViewDataSource, UITableViewDelegate, KronicleBlockTableViewCellDelegate> {
@@ -51,8 +52,6 @@
                                          306,
                                          self.frame.size.height - titleHeight);
 
-        
-        NSLog(@"self.step.title : %@", self.step.title);
     }
     return self;
 }
@@ -60,9 +59,10 @@
 - (id)initAsFinishedWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+
         [self layout];
         _clockLabel.text                    = @"Finished!";
-        _clockLabel.frame                   = CGRectMake(0, (_description.frame.origin.y - 82) * .5, 320, 30);
+        _clockLabel.frame                   = CGRectMake(0, 24, 320, 30);
         [_titleLabel removeFromSuperview];
         _titleLabel                         = nil;
         [_description removeFromSuperview];
@@ -84,6 +84,10 @@
 
 - (void)layout {
     self.backgroundColor = [UIColor clearColor];
+    CALayer *whiteBackground                        = [CALayer layer];
+    whiteBackground.frame                           = CGRectMake(0, 80, 320, self.frame.size.height - 80);
+    whiteBackground.backgroundColor                 = [UIColor whiteColor].CGColor;
+    [self.layer addSublayer:whiteBackground];
     
     _clockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 16, 320, 30)];
     _clockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:38];

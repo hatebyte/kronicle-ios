@@ -137,8 +137,7 @@
 }
 
 - (IBAction)deleteTapped:(id)sender {
-    NSLog(@"deleteButton");
-    
+//    NSLog(@"deleteButton");    
     if ([self.delegate respondsToSelector:@selector(kronicleBlockView:deleteKronicle:)]) {
         [self.delegate kronicleBlockView:self deleteKronicle:_kronicle];
     }
@@ -146,7 +145,7 @@
 }
 
 - (IBAction)editTapped:(id)sender {
-    NSLog(@"tapped");
+//    NSLog(@"tapped");
     [self.delegate kronicleBlockView:self requestKronicle:_kronicle];
     
 }

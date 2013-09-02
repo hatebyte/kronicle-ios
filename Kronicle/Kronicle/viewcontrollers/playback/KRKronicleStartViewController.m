@@ -53,9 +53,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"id : %@", _kronicle.coverUrl);
     CGRect bounds = [UIScreen mainScreen].bounds;
-    // Do any additional setup after loading the view from its nib.    
+    
+    
     NSInteger height = 205;
     _coverImageContainer = [[UIView alloc] initWithFrame:CGRectMake(0,0, 320, height)];
     _coverImageContainer.backgroundColor = [UIColor blackColor];
@@ -143,28 +143,6 @@
                                                       41);
     [_startButton addTarget:self action:@selector(startKronicle) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_startButton];
-    
-    
-//    _addItemCatcher                             = [UIButton buttonWithType:UIButtonTypeCustom];
-//    _addItemCatcher.frame                       = CGRectMake(kPadding,
-//                                                             _startButton.frame.origin.y,
-//                                                             _startButton.frame.size.width,
-//                                                             _startButton.frame.size.height);
-//    _addItemCatcher.titleLabel.font             = [KRFontHelper getFont:KRBrandonRegular withSize:16];
-//    _addItemCatcher.backgroundColor             = [UIColor clearColor];
-//    [_addItemCatcher setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
-//    [_addItemCatcher setTitle:@"Items" forState:UIControlStateNormal];
-//    [_addItemCatcher addTarget:self action:@selector(itemsNeeded) forControlEvents:UIControlEventTouchUpInside];
-//
-//    _hamburgerImageView                         = [[UIImageView alloc] init];
-//    _hamburgerImageView.image                   = [UIImage imageNamed:@"hamburger_50px"];
-//    _hamburgerImageView.frame                   = CGRectMake(kPadding,
-//                                                             _startButton.frame.origin.y + 12,
-//                                                             15,
-//                                                             15);
-//    [self.view addSubview:_hamburgerImageView];
-//    [self.view addSubview:_addItemCatcher];
-    
     
     _itemsButton = [[KRTextButton alloc] initWithFrame:CGRectMake(0,
                                                                   _startButton.frame.origin.y,

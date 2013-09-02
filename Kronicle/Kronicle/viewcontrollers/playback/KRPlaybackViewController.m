@@ -27,6 +27,7 @@
 #import "KRReviewViewController.h"
 #import "KRTextButton.h"
 #import "KRPublishKronicleOverlay.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kScrollViewNormal 320.f
 #define kScrollViewUp 180.f
@@ -35,6 +36,8 @@
 KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListContainerViewDelegate, KRPublishKronicleOverlayDelegate> {
     @private
     CGRect _bounds;
+    UILabel *_globalClockLabel;
+    UILabel *_subGlobalClockLabel;
     UIScrollView *_sview;
     UIButton *_backButton;
     UIButton *_publishButton;
@@ -84,9 +87,34 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
     self.view.backgroundColor = [UIColor whiteColor];
     _bounds = [UIScreen mainScreen].bounds;
+    
+    CALayer *blackBackground                        = [CALayer layer];
+    blackBackground.frame                           = CGRectMake(0, 0, 320, _bounds.size.height * .5);
+    blackBackground.backgroundColor                 = [UIColor colorWithRed:.1f green:.1f blue:.1f alpha:0.9f].CGColor;
+    [self.view.layer addSublayer:blackBackground];
+    
+    _globalClockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 30)];
+    _globalClockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:38];
+    _globalClockLabel.textColor = [UIColor whiteColor];
+    _globalClockLabel.backgroundColor = [UIColor clearColor];
+    _globalClockLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_globalClockLabel];
+    
+    _subGlobalClockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                                     _globalClockLabel.frame.origin.y + _globalClockLabel.frame.size.height+4,
+                                                                     320,
+                                                                     17)];
+    _subGlobalClockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:17];
+    _subGlobalClockLabel.textColor = [UIColor whiteColor];
+    _subGlobalClockLabel.backgroundColor = [UIColor clearColor];
+    _subGlobalClockLabel.textAlignment = NSTextAlignmentCenter;
+    _subGlobalClockLabel.text = @"until finished!";
+    [self.view addSubview:_subGlobalClockLabel];
+
     _sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
     _sview.showsVerticalScrollIndicator = YES;
     _sview.showsHorizontalScrollIndicator = NO;
+    _sview.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_sview];
     
     _kronicleManager = [[KRKronicleManager alloc] initWithKronicle:self.kronicle];
@@ -202,6 +230,9 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_graphView showDisplayForRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
     [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
+
+    
+    _globalClockLabel.text = [KRClockManager stringTimeForInt:(_kronicle.totalTime - (globalRatio * _kronicle.totalTime))];
 }
 
 - (void)manager:(KRClockManager *)manager stepComplete:(int)stepIndex {
@@ -245,6 +276,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         [_stepNavigation animateNavbarIn];
         [_graphView showPreview:(_kronicleManager.currentStepIndex > step.indexInKronicle)];
     }
+    
     [_scrollView scrollToPage:step.indexInKronicle];
 
     if (_kronicleManager.requestedDirection == KronicleManagerLeft) {
@@ -302,7 +334,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 #pragma KRScrollView delegate
 - (void)scrollView:(KRScrollView *)scrollView pageToIndex:(NSInteger)stepIndex {
-    [_kronicleManager setPreviewStep:stepIndex];
+    [self previewStep:stepIndex];
 }
 
 #pragma KRStepListView delegate
@@ -315,9 +347,28 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [self togglePlayPause];
 }
 
+- (void)mediaViewSwipedLeft {
+    [self previewStep:_kronicleManager.previewStepIndex + 1];
+}
 
+- (void)mediaViewSwipedRight {
+    [self previewStep:_kronicleManager.previewStepIndex - 1];
+}
+
+- (void)togglePlayPause {
+    [_clockManager togglePlayPause];
+    [_mediaView togglePlayPause:_clockManager.isPaused];
+    
+    if (!_clockManager.isPaused) {
+        [self previewStep:_kronicleManager.currentStepIndex];
+    }
+}
 #pragma private methods
 - (void)previewStep:(NSInteger)step {
+//    if (!_clockManager.isPaused) {
+//        [_clockManager togglePlayPause];
+//        [_mediaView togglePlayPause:_clockManager.isPaused];
+//    }
     [_stepNavigation reset];
     [_kronicleManager setPreviewStep:step];
 
@@ -329,11 +380,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
 
-}
-
-- (void)togglePlayPause {
-    [_clockManager togglePlayPause];
-    [_mediaView togglePlayPause:_clockManager.isPaused];
 }
 
 

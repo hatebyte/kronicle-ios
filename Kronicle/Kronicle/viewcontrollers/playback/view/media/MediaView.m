@@ -16,6 +16,8 @@
     UILabel *_pauseLabel;
     UIView *_pauseView;
     UITapGestureRecognizer *_cellTapper;
+    UISwipeGestureRecognizer *_cellLeftSwipper;
+    UISwipeGestureRecognizer *_cellRightSwipper;
     
     UIView *_finishOverlay;
     UITextView *_titleLabel;
@@ -38,10 +40,16 @@
         _cellTapper.cancelsTouchesInView = NO;
         _cellTapper.delegate = self;
         
-        int width = 178;
+        _cellLeftSwipper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+        [_cellLeftSwipper setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+        
+        _cellRightSwipper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+        [_cellRightSwipper setDirection:(UISwipeGestureRecognizerDirectionRight)];
+
+        int width = 210;
         int height = 62;
         _pauseLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 0, width, height)];
-        _pauseLabel.text = @"Paused";
+        _pauseLabel.text = @"RESUME";
         _pauseLabel.textColor = [UIColor whiteColor];
         _pauseLabel.backgroundColor = [UIColor clearColor];
         _pauseLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:35];
@@ -62,15 +70,35 @@
                                       (_pauseView.frame.size.height - 22) * .5, 19, 22);
         _pauseView.alpha = 0;
         [_pauseView addSubview:pauseArrow];
-
+        
         [self addSubview:_pauseView];
         [self addGestureRecognizer:_cellTapper];
+        [self addGestureRecognizer:_cellRightSwipper];
+        [self addGestureRecognizer:_cellLeftSwipper];
+
     }
     return self;
 }
 
+- (void)readdRecognizers {
+    [self addSubview:_pauseView];
+    [self addGestureRecognizer:_cellTapper];
+    [self addGestureRecognizer:_cellRightSwipper];
+    [self addGestureRecognizer:_cellLeftSwipper];
+}
+
 - (UIImage *)image {
     return _imageView.image;
+}
+
+-(void)swipeDetected:(UISwipeGestureRecognizer *)swipeRecognizer {
+    
+    if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+            [self.delegate mediaViewSwipedLeft];
+    }
+    if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self.delegate mediaViewSwipedRight];
+    }
 }
 
 - (IBAction)tapped:(id)sender {
@@ -96,6 +124,7 @@
                          _pauseView.alpha = 0;
                      }
                      completion:^(BOOL fin){
+                         
                      }];
 }
 
@@ -110,6 +139,7 @@
                          _pauseView.alpha = 1;
                      }
                      completion:^(BOOL fin){
+                         
                      }];
 }
 
@@ -134,8 +164,8 @@
         self.backgroundColor                = [UIColor blackColor];
         [self addSubview:_imageView];
         [self addSubview:imageViewCopy];
-        [self addSubview:_pauseView];
-        [self addGestureRecognizer:_cellTapper];
+        [self readdRecognizers];
+        
         
         imageViewCopy.image                 = _imageView.image;
 
@@ -157,19 +187,6 @@
     }
     
 }
-
-//- (void)transitionViewToStage:(UIView *)view {
-//    [UIView beginAnimations:@"animation" context:nil];
-//    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//    [UIView setAnimationDuration: 0.7f];
-//    [UIView setAnimationDelay: 0.2f];
-//    [UIView setAnimationTransition:_transition forView:view cache:NO];
-//    [self addSubview:view];
-//    [UIView commitAnimations];
-//    
-//    [self addSubview:_pauseView];
-//    [self addGestureRecognizer:_cellTapper];
-//}
 
 - (void)loadVideo {
     self.isVideo = YES;
@@ -198,8 +215,7 @@
     [_moviePlayer play];
     _moviePlayer.view.userInteractionEnabled = NO;
     [self addSubview:_moviePlayer.view];
-    [self addSubview:_pauseView];
-    [self addGestureRecognizer:_cellTapper];
+    [self readdRecognizers];
 }
 
 -(void) playbackLoadStateChanged:(NSNotification *)note {
@@ -290,7 +306,7 @@
     [self addSubview:_finishOverlay];
     [self animateInFinishedOverlay];
     
-    [self removeGestureRecognizer:_cellTapper];
+    [self readdRecognizers];
     
     
 

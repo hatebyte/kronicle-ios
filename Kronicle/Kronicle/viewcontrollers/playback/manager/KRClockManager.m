@@ -13,7 +13,7 @@
 CGFloat const _increment = .05f;
 
 @interface KRClockManager () {
-    @private
+@private
     __weak Kronicle *_kronicle;
     __weak Step *_step;
     NSTimer *_timer;
@@ -31,7 +31,7 @@ CGFloat const _increment = .05f;
 }
 @end
 
-@implementation KRClockManager 
+@implementation KRClockManager
 
 - (id)initWithKronicle:(Kronicle *)kronicle {
     if (self = [super init]) {
@@ -41,7 +41,7 @@ CGFloat const _increment = .05f;
             _kronicleTotal += s.time;
         }
         _backgroundQueue = dispatch_queue_create("KRClockManager.queue", NULL);
-
+        
     }
     return self;
 }
@@ -52,11 +52,11 @@ CGFloat const _increment = .05f;
     _step = [_kronicle.steps objectAtIndex:stepIndex];
     _stepTotal = _step.time;
     _currentTime = _stepTotal;
-
+    
     [_timer invalidate];
     _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-
+    
 }
 
 - (void)togglePlayPause {
@@ -134,14 +134,14 @@ CGFloat const _increment = .05f;
         }
         returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sHours]];
     }
-
+    
     if (minutes < 10) {
         sMinutes = [NSString stringWithFormat:@"0%d", minutes];
     } else {
         sMinutes = [NSString stringWithFormat:@"%d", minutes];
     }
     returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sMinutes]];
-
+    
     if (seconds < 10) {
         sSeconds = [NSString stringWithFormat:@"0%d", seconds];
     } else {
@@ -217,7 +217,6 @@ CGFloat const _increment = .05f;
 
 
 @end
-
 
 
 

@@ -9,6 +9,7 @@
 #import "KRScrollView.h"
 #import "Step+Helper.h"
 #import "DescriptionView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface KRScrollView () <UIScrollViewDelegate> {
     @private
@@ -28,18 +29,18 @@
 
 - (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle {
     if (self = [super initWithFrame:frame]) {
-        self.showsHorizontalScrollIndicator         = NO;
-        self.showsVerticalScrollIndicator           = NO;
-        self.delegate                               = self;
-        self.pagingEnabled                          = YES;
-        self.bounces                                = NO;
-        self.backgroundColor                        = [UIColor clearColor];
+        self.showsHorizontalScrollIndicator             = NO;
+        self.showsVerticalScrollIndicator               = NO;
+        self.delegate                                   = self;
+        self.pagingEnabled                              = YES;
+        self.bounces                                    = NO;
 
         int count = [kronicle.steps count];
         DescriptionView *d;
         NSInteger i = 0;
         for (i = 0; i < count; i++) {
             Step *s = [kronicle.steps objectAtIndex:i];
+            NSLog(@"%@", s);
             d = [[DescriptionView alloc] initWithFrame:CGRectMake(frame.size.width * i,
                                                                                    0,
                                                                                    frame.size.width,
@@ -100,14 +101,5 @@
     CGPoint offset = CGPointMake(page * self.frame.size.width, 0);
     [self setContentOffset:offset animated:YES];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

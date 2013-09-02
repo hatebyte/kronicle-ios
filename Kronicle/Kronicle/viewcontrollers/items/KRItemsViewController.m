@@ -48,7 +48,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)popViewController:(id)sender {
+- (void)popViewController:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
 
