@@ -151,7 +151,7 @@
         _carrot.hidden = NO;
 
         [UIView animateWithDuration:.5
-                              delay:.7f
+                              delay:.1f
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              _carrot.frame          = CGRectMake(145, 40, 20, 10);

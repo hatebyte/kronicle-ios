@@ -105,18 +105,19 @@
     [self.delegate mediaViewScreenTapped:self];
 }
 
-- (void)togglePlayPause:(BOOL)isPaused {
-    if (!isPaused) {
-        [self play];
-    } else {
-        [self pause];
-    }
-}
 
-- (void)play {
-    if (_moviePlayer != nil) {
-        [_moviePlayer play];
-    }
+//- (void)togglePlayPause:(BOOL)isPaused {
+//    if (!isPaused) {
+//        [self play];
+//    } else {
+//        [self pause];
+//    }
+//}
+//
+- (void)hideResume {
+//    if (_moviePlayer != nil) {
+//        [_moviePlayer play];
+//    }
     [UIView animateWithDuration:.4f
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -128,10 +129,10 @@
                      }];
 }
 
-- (void)pause {
-    if (_moviePlayer != nil) {
-        [_moviePlayer pause];
-    }
+- (void)showResume {
+//    if (_moviePlayer != nil) {
+//        [_moviePlayer pause];
+//    }
     [UIView animateWithDuration:.4f
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -143,7 +144,7 @@
                      }];
 }
 
-- (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type {
+- (void)setMediaPath:(NSString*)mediaPath  {
     if ([_mediaPath isEqualToString:mediaPath]) {
         return;
     }
@@ -246,8 +247,9 @@
 }
 
 - (void)updateForFinishedWithImage:(NSString *)coverImageUrl andTitle:(NSString *)title {
-    [self setMediaPath:coverImageUrl andType:MediaViewRight];
-
+    [self setMediaPath:coverImageUrl];
+    [self hideResume];
+    
     NSInteger buttonHeight                                     = 40;
    
     _finishOverlay                          = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];

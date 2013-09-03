@@ -14,13 +14,14 @@
 #import "KRKronicleStartViewController.h"
 #import "KRGlobals.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "KRGraphView.h"
 
 @interface DescriptionView () <UITableViewDataSource, UITableViewDelegate, KronicleBlockTableViewCellDelegate> {
     @private
     UILabel *_clockLabel;
     UITableView *_tableView;
     NSArray *_kroniclesModuloed;
+    KRGraphView *_graphView;
 }
 
 @end
@@ -39,7 +40,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.step = step;
-        [self layout];
+        
+       [self layout];
         _clockLabel.text = @"00:00";
         _subClockLabel.text = @"until next step";
         _titleLabel.text = self.step.title;
@@ -59,7 +61,7 @@
 - (id)initAsFinishedWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-
+        
         [self layout];
         _clockLabel.text                    = @"Finished!";
         _clockLabel.frame                   = CGRectMake(0, 24, 320, 30);
@@ -89,6 +91,9 @@
     whiteBackground.backgroundColor                 = [UIColor whiteColor].CGColor;
     [self.layer addSublayer:whiteBackground];
     
+    _graphView = [[KRGraphView alloc] initWithFrame:CGRectMake(0, 0, 320, 80)];
+    [self addSubview:_graphView];
+
     _clockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 16, 320, 30)];
     _clockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:38];
     _clockLabel.textColor = [UIColor whiteColor];
@@ -128,6 +133,10 @@
 
 - (void)updateClock:(NSString *)timeString {
     _clockLabel.text = timeString;
+}
+
+- (void)updateGraphWithRatio:(CGFloat)ratio {
+    [_graphView showDisplayForRatio:ratio];
 }
 
 - (void)resetClock {

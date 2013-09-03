@@ -127,15 +127,15 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     _mediaView.delegate = self;
     [_sview addSubview:_mediaView];
     
-    _graphView = [[KRGraphView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 80)];
-    [_sview addSubview:_graphView];
+//    _graphView = [[KRGraphView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 80)];
+//    [_sview addSubview:_graphView];
 
-    _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y, 320, 310) andKronicle:self.kronicle];
+    _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 310) andKronicle:self.kronicle];
     _scrollView.scrollDelegate = self;
-    _scrollView.contentSize = CGSizeMake(320 * [_kronicle.steps count], [KRScrollView playbackHeight]);
+    _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView playbackHeight]);
    [_sview addSubview:_scrollView];
     
-    _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, _graphView.frame.origin.y-40, 320, 100)];
+    _stepNavigation = [[KRStepNavigation alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height-40, 320, 100)];
     _stepNavigation.delegate = self;
     [_sview addSubview:_stepNavigation];
     
@@ -197,6 +197,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reviewRequested) name:kKronicleReviewRequested object:nil];
 
+    [self previewStep:0];
     [self setStep:0];
 }
 
@@ -226,12 +227,14 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 - (void)manager:(KRClockManager *)manager updateTimeWithString:(NSString *)timeString
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
-    [_scrollView updateCurrentStepClock:timeString];
-    [_graphView showDisplayForRatio:stepRatio];
+    
+    [_scrollView updateCurrentStepClock:timeString withRatio:stepRatio];
+//    NSLog(@"_scrollView updateCurrentStepClock : %f", stepRatio);
+
+//    [_scrollView updateCurrentStepClock:timeString];
+//    [_graphView showDisplayForRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
     [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
-
-    
     _globalClockLabel.text = [KRClockManager stringTimeForInt:(_kronicle.totalTime - (globalRatio * _kronicle.totalTime))];
 }
 
@@ -242,23 +245,14 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 #pragma KRKronicleManager delegate
 - (void)manager:(KRKronicleManager *)manager updateUIForStep:(Step*)step {
-    NSLog(@"updateUIForStep : %d", _kronicleManager.currentStepIndex);
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
     }
-    if (_clockManager.isPaused) {
-        [self togglePlayPause];
-    }
-    
     [_clockManager setTimeForStep:step.indexInKronicle];
     [_stepListContainerView adjustStepListForCurrentStep:step.indexInKronicle];
     [_scrollView setCurrentStep:step.indexInKronicle];
     
-    if (_kronicleManager.requestedDirection == KronicleManagerLeft) {
-        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewLeft];
-    } else {
-        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
-    }
+    [_mediaView setMediaPath:step.mediaUrl];
     if (_kronicleManager.currentStepIndex == _kronicle.stepCount-1) {
         [_stepNavigation setAsLastStep];
     } else {
@@ -268,22 +262,29 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(Step*)step {
-    NSLog(@"previewUIForStep : %d", _kronicleManager.currentStepIndex);
+    NSLog(@"previewStepIndex : %d", _kronicleManager.previewStepIndex);
+    NSLog(@"currentStepIndex : %d", _kronicleManager.currentStepIndex);
+    NSLog(@"\n");
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
-        [_graphView showDisplayWithReset:NO];
+//        [_clockManager unpause];
+//        [_mediaView hideResume];
+        
+        if (_clockManager.isPausedByUser) {
+            [_clockManager pauseForUser];
+            [_mediaView showResume];
+        } else {
+            [_clockManager unpause];
+            [_mediaView hideResume];
+        }
+
     } else {
         [_stepNavigation animateNavbarIn];
-        [_graphView showPreview:(_kronicleManager.currentStepIndex > step.indexInKronicle)];
+        [_clockManager pauseForPreview];
+        [_mediaView showResume];
     }
-    
     [_scrollView scrollToPage:step.indexInKronicle];
-
-    if (_kronicleManager.requestedDirection == KronicleManagerLeft) {
-        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewLeft];
-    } else {
-        [_mediaView setMediaPath:step.mediaUrl andType:MediaViewRight];
-    }
+    [_mediaView setMediaPath:step.mediaUrl];
     
     if (_kronicleManager.previewStepIndex == _kronicle.stepCount-1) {
         [_stepNavigation setAsLastStep];
@@ -291,6 +292,9 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         [_stepNavigation reset];
     }
     [self relayoutForPlayback];
+    
+    
+//    if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex)
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
@@ -298,8 +302,12 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         [self showPublishKronicleOverlay];
         return;
     }
-    
-    [_graphView updateForFinished];
+    [_clockManager resetForLastStep];
+//    _kronicleManager.currentStepIndex = 0;
+//    _kronicleManager.previewStepIndex = 0;
+//    [_clockManager setTimeForStep:_kronicleManager.currentStepIndex];
+//    [_clockManager pauseForUser];
+
     [_circularGraphView updateForFinished];
     [_stepNavigation updateForFinished];
     [_mediaView updateForFinishedWithImage:_kronicle.coverUrl andTitle:_kronicle.title];
@@ -326,7 +334,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
             [self setStep:0];
             break;
         case KRStepNavigationRequestGoBack:
-            [self previewStep:_kronicleManager.previewStepIndex];
+            [self previewStep:_kronicleManager.currentStepIndex];
             break;
     }
 }
@@ -334,7 +342,11 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 #pragma KRScrollView delegate
 - (void)scrollView:(KRScrollView *)scrollView pageToIndex:(NSInteger)stepIndex {
-    [self previewStep:stepIndex];
+    if (stepIndex == _kronicle.stepCount) {
+        [_kronicleManager setStep:_kronicle.stepCount];
+    } else {
+        [_kronicleManager setPreviewStep:stepIndex];
+    }
 }
 
 #pragma KRStepListView delegate
@@ -344,7 +356,20 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 #pragma MediaView delegate
 - (void)mediaViewScreenTapped:(MediaView *)mediaView {
-    [self togglePlayPause];
+    if (_clockManager.isPausedByPreview) {
+        [_mediaView hideResume];
+        [_clockManager unpause];
+        [self previewStep:_kronicleManager.currentStepIndex];
+    } else {
+        if (_clockManager.isPausedByUser) {
+            [_clockManager unpause];
+            [_mediaView hideResume];
+        } else {
+            [_clockManager pauseForUser];
+            [_mediaView showResume];
+        }
+    }
+        
 }
 
 - (void)mediaViewSwipedLeft {
@@ -355,20 +380,8 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [self previewStep:_kronicleManager.previewStepIndex - 1];
 }
 
-- (void)togglePlayPause {
-    [_clockManager togglePlayPause];
-    [_mediaView togglePlayPause:_clockManager.isPaused];
-    
-    if (!_clockManager.isPaused) {
-        [self previewStep:_kronicleManager.currentStepIndex];
-    }
-}
 #pragma private methods
 - (void)previewStep:(NSInteger)step {
-//    if (!_clockManager.isPaused) {
-//        [_clockManager togglePlayPause];
-//        [_mediaView togglePlayPause:_clockManager.isPaused];
-//    }
     [_stepNavigation reset];
     [_kronicleManager setPreviewStep:step];
 
@@ -376,7 +389,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 - (void)setStep:(NSInteger)step {
     [_stepNavigation reset];
-    [_graphView showDisplayWithReset:YES];
+    //[_graphView showDisplayWithReset:YES];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
 
@@ -394,7 +407,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_sview addSubview:_stepNavigation];
     [_sview addSubview:_stepListContainerView];
     [_sview addSubview:_circularGraphView];
-    _scrollView.contentSize = CGSizeMake(320 * [_kronicle.steps count], [KRScrollView playbackHeight]);
+//    _scrollView.contentSize = CGSizeMake(320 * [_kronicle.steps count], [KRScrollView playbackHeight]);
     
     [UIView animateWithDuration:.5
                           delay:0
@@ -416,7 +429,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 }
 
 - (void)relayoutForFinished {
-    _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView finishedHeight]);
+//    _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView finishedHeight]);
     [_scrollView updateForFinished];
     _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
                                    _scrollView.frame.origin.y,

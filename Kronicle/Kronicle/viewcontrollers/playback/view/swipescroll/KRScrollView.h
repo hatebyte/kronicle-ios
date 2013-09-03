@@ -31,6 +31,7 @@ typedef enum {
 - (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle;
 - (void)scrollToPage:(NSInteger)page;
 - (void)updateCurrentStepClock:(NSString *)timeString;
+- (void)updateCurrentStepClock:(NSString *)timeString withRatio:(CGFloat)ratio;
 - (void)setCurrentStep:(NSInteger)stepIndex;
 - (void)updateForFinished;
 

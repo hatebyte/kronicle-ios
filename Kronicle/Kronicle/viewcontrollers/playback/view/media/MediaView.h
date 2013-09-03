@@ -32,11 +32,11 @@ typedef enum  {
 @property (nonatomic, assign) BOOL isVideo;
 @property (nonatomic, weak) id <MediaViewDelegate> delegate;
 
-- (void)setMediaPath:(NSString*)mediaPath andType:(MediaViewType)type;
-- (void)togglePlayPause:(BOOL)isPaused;
+- (void)setMediaPath:(NSString*)mediaPath;
+//- (void)togglePlayPause:(BOOL)isPaused;
 - (void)stop;
-- (void)pause;
-- (void)play;
+- (void)hideResume;
+- (void)showResume;
 - (UIImage *)image;
 - (void)updateForFinishedWithImage:(NSString *)coverImageUrl andTitle:(NSString *)title;
 - (void)animateInFinishedOverlay;

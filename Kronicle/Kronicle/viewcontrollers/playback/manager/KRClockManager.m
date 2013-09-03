@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-CGFloat const _increment = .05f;
+CGFloat const _increment = 1.f;
 
 @interface KRClockManager () {
 @private
@@ -54,20 +54,48 @@ CGFloat const _increment = .05f;
     _currentTime = _stepTotal;
     
     [_timer invalidate];
+    _timer = nil;
+    [_timer invalidate];
     _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     
 }
+//
+//- (void)togglePlayPause {
+//    if (_isPaused) {
+//    } else {
+//    }
+//}
 
-- (void)togglePlayPause {
-    if (_isPaused) {
-        _isPaused = NO;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
-        [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-    } else {
-        _isPaused = YES;
-        [_timer invalidate];
-        _timer = nil;
+- (void)unpause {
+    [_timer invalidate];
+    _timer = nil;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    _isPausedByUser = NO;
+    _isPausedByPreview = NO;
+}
+- (void)pauseForUser {
+    _isPausedByUser = YES;
+    [self pause];
+}
+
+- (void)pauseForPreview {
+    _isPausedByPreview = YES;
+    [self pause];
+}
+
+- (void)pause {
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)resetForLastStep {
+    [self pause];
+    
+    if (_currentTime <= 0) {
+        Step *s = [_kronicle.steps lastObject];
+        _currentTime = s.time;
     }
 }
 
@@ -96,9 +124,7 @@ CGFloat const _increment = .05f;
     if ([_seconds isEqualToString:@"0-1"] && [_minutes isEqualToString:@"00"]) {
         [self playSound];
         [_timer invalidate];
-        [self.delegate manager:self stepComplete:(int)_step.indexInKronicle];
-        
-        // send sound notification
+        [self.delegate manager:self stepComplete:_step.indexInKronicle];
         return;
     }
     
@@ -116,7 +142,7 @@ CGFloat const _increment = .05f;
     [self.delegate manager:self updateTimeWithString:timeString andStepRatio:_stepRatio andGlobalRatio:_globalRatio];
 }
 
-+ (NSString *)stringTimeForInt:(int)time {
++ (NSString *)stringTimeForInt:(NSInteger)time {
     int hours       = floor(time / (60 * 60));
     time            = time - (hours * (60 * 60));
     int minutes     = floor(time / 60);
@@ -152,7 +178,7 @@ CGFloat const _increment = .05f;
     return returnString;
 }
 
-+ (NSString *)clockStringForInt:(int)time {
++ (NSString *)clockStringForInt:(NSInteger)time {
     int hours       = floor(time / (60 * 60));
     time            = time - (hours * (60 * 60));
     int minutes     = floor(time / 60);

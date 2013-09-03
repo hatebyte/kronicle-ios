@@ -26,5 +26,6 @@
 - (void)updateClock:(NSString *)timeString;
 - (void)resetClock;
 - (void)updateForFinished;
+- (void)updateGraphWithRatio:(CGFloat)ratio;
 
 @end

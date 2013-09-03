@@ -60,16 +60,26 @@
 }
 
 - (void)setCurrentStep:(NSInteger)stepIndex {
-    _currentStep = [[self subviews] objectAtIndex:stepIndex];
+    NSArray *subViews = [self subviews];
+    _currentStep = [subViews objectAtIndex:stepIndex];
     _currentStep.frame = CGRectMake(_currentStep.frame.origin.x,
                                     _currentStep.frame.origin.y,
                                     _currentStep.frame.size.width,
                                     [DescriptionView playbackHeight]);
     [self scrollToPage:stepIndex];
+    DescriptionView *d;
+    for (int i = 0; i < subViews.count; i++) {
+        d  = [[self subviews] objectAtIndex:i];
+        if (i < stepIndex) {
+            [d updateGraphWithRatio:1];
+        } else {
+            [d updateGraphWithRatio:0];
+        }
+    }
 }
 
 - (void)updateForFinished {
-    [_currentStep resetClock];
+//    [_currentStep resetClock];
     DescriptionView *finishedStep = [[self subviews] lastObject];
     [self scrollToPage:[[self subviews] count]-1];
     finishedStep.frame = CGRectMake(finishedStep.frame.origin.x,
@@ -93,6 +103,19 @@
         [d resetClock];
     }
     [_currentStep updateClock:timeString];
+    [_currentStep updateGraphWithRatio:1];
+}
+
+- (void)updateCurrentStepClock:(NSString *)timeString withRatio:(CGFloat)ratio {
+    NSArray *subViews = [self subviews];
+    DescriptionView *d;
+    for (int i = 0; i < subViews.count; i++) {
+        d  = [[self subviews] objectAtIndex:i];
+        [d resetClock];
+    }
+    [_currentStep updateClock:timeString];
+    [_currentStep updateGraphWithRatio:ratio];
+
 }
 
 
