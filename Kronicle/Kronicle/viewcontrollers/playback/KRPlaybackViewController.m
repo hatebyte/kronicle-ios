@@ -127,9 +127,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     _mediaView.delegate = self;
     [_sview addSubview:_mediaView];
     
-//    _graphView = [[KRGraphView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 80)];
-//    [_sview addSubview:_graphView];
-
     _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 310) andKronicle:self.kronicle];
     _scrollView.scrollDelegate = self;
     _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView playbackHeight]);
@@ -229,10 +226,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
  andGlobalRatio:(CGFloat)globalRatio {
     
     [_scrollView updateCurrentStepClock:timeString withRatio:stepRatio];
-//    NSLog(@"_scrollView updateCurrentStepClock : %f", stepRatio);
-
-//    [_scrollView updateCurrentStepClock:timeString];
-//    [_graphView showDisplayForRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
     [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
     _globalClockLabel.text = [KRClockManager stringTimeForInt:(_kronicle.totalTime - (globalRatio * _kronicle.totalTime))];
@@ -259,16 +252,14 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         [_stepNavigation reset];
     }
     [self relayoutForPlayback];
+    [_clockManager unpause];
+    [_mediaView hideResume];
+
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(Step*)step {
-    NSLog(@"previewStepIndex : %d", _kronicleManager.previewStepIndex);
-    NSLog(@"currentStepIndex : %d", _kronicleManager.currentStepIndex);
-    NSLog(@"\n");
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
-//        [_clockManager unpause];
-//        [_mediaView hideResume];
         
         if (_clockManager.isPausedByUser) {
             [_clockManager pauseForUser];
@@ -282,8 +273,10 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         [_stepNavigation animateNavbarIn];
         [_clockManager pauseForPreview];
         [_mediaView showResume];
+
     }
     [_scrollView scrollToPage:step.indexInKronicle];
+   
     [_mediaView setMediaPath:step.mediaUrl];
     
     if (_kronicleManager.previewStepIndex == _kronicle.stepCount-1) {
@@ -293,8 +286,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     }
     [self relayoutForPlayback];
     
-    
-//    if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex)
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
@@ -303,11 +294,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         return;
     }
     [_clockManager resetForLastStep];
-//    _kronicleManager.currentStepIndex = 0;
-//    _kronicleManager.previewStepIndex = 0;
-//    [_clockManager setTimeForStep:_kronicleManager.currentStepIndex];
-//    [_clockManager pauseForUser];
-
     [_circularGraphView updateForFinished];
     [_stepNavigation updateForFinished];
     [_mediaView updateForFinishedWithImage:_kronicle.coverUrl andTitle:_kronicle.title];
@@ -389,12 +375,10 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 - (void)setStep:(NSInteger)step {
     [_stepNavigation reset];
-    //[_graphView showDisplayWithReset:YES];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
 
 }
-
 
 #pragma mark finished expand/contract
 - (void)relayoutForPlayback {
@@ -407,7 +391,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_sview addSubview:_stepNavigation];
     [_sview addSubview:_stepListContainerView];
     [_sview addSubview:_circularGraphView];
-//    _scrollView.contentSize = CGSizeMake(320 * [_kronicle.steps count], [KRScrollView playbackHeight]);
     
     [UIView animateWithDuration:.5
                           delay:0
@@ -429,7 +412,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 }
 
 - (void)relayoutForFinished {
-//    _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView finishedHeight]);
     [_scrollView updateForFinished];
     _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
                                    _scrollView.frame.origin.y,
@@ -470,9 +452,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 #pragma publish 
 - (void)showPublishKronicleOverlay {
-    //    _kronicle.isFinished = YES;
-    //    [[ManagedContextController current] saveContext];
-    //    [[KRHomeViewController current] mykronicles];
     
     _publishOverlay = [[KRPublishKronicleOverlay alloc] initWithFrame:self.view.frame andKronicle:_kronicle];
     _publishOverlay.alpha = 0;
