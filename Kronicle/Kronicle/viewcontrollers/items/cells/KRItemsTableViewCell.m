@@ -71,9 +71,7 @@
 }
 
 - (void)setAcquired:(BOOL)acquired {
-    NSLog(@"_item.hasBeenAcquired : %d", _item.hasBeenAcquired);
     _item.hasBeenAcquired = acquired;
-    NSLog(@"_item.hasBeenAcquired : %d", _item.hasBeenAcquired);
     if (_item.hasBeenAcquired) {
         _itemTitle.textColor                   = [KRColorHelper turquoise];
         [_checkButton setImage:[UIImage imageNamed:@"listitem_acquired"] forState:UIControlStateNormal];

@@ -76,7 +76,6 @@
 }
 
 - (NSInteger)value {
-    NSLog(@"_totalTime : %d", _totalTime);
     NSInteger hours         = [_hours.textValue integerValue] * 60 * 60;
     NSInteger minutes       =  [_minutes.textValue integerValue] * 60;
     NSInteger seconds       =  [_seconds.textValue integerValue];

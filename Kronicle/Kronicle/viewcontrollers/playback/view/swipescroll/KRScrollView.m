@@ -40,7 +40,6 @@
         NSInteger i = 0;
         for (i = 0; i < count; i++) {
             Step *s = [kronicle.steps objectAtIndex:i];
-            NSLog(@"%@", s);
             d = [[DescriptionView alloc] initWithFrame:CGRectMake(frame.size.width * i,
                                                                                    0,
                                                                                    frame.size.width,

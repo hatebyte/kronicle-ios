@@ -109,7 +109,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row > 0 && indexPath.row < ([_items count] + 2)) {
         KRItemsTableViewCell *cell = (KRItemsTableViewCell*)[_tableView cellForRowAtIndexPath:indexPath];
-        NSLog(@"cell.acquired : %d", cell.acquired);
         cell.acquired = !cell.acquired;
     }
 }

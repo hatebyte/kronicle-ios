@@ -256,6 +256,15 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         [_stepNavigation reset];
     }
     [self relayoutForPlayback];
+ 
+    [UIView animateWithDuration:.5
+                          delay:.2
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _sview.contentOffset = CGPointZero;
+                     }
+                     completion:^(BOOL fin){
+                     }];
 
 }
 
@@ -380,7 +389,7 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_stepNavigation reset];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
-
+    
 }
 
 
@@ -402,10 +411,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
                      animations:^{
                          _stepListContainerView.alpha       = 1.f;
                          _circularGraphView.alpha           = 1.f;
-//                         _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
-//                                                        _scrollView.frame.origin.y,
-//                                                        320,
-//                                                        [KRScrollView playbackHeight]);
                          _sview.contentSize = CGSizeMake(_bounds.size.width, _circularGraphView.frame.origin.y + _circularGraphView.frame.size.height + 70);
                          _itemsButton.frame = CGRectMake(_bounds.size.width - 70, _bounds.size.height-(_itemsButton.frame.size.height+20), 70, _itemsButton.frame.size.height);
                          self.view.backgroundColor        = [UIColor whiteColor];

@@ -46,10 +46,10 @@
         _cellRightSwipper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
         [_cellRightSwipper setDirection:(UISwipeGestureRecognizerDirectionRight)];
 
-        int width = 210;
+        int width = 215;
         int height = 62;
         _pauseLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 0, width, height)];
-        _pauseLabel.text = @"RESUME";
+        _pauseLabel.text = @"Resume";
         _pauseLabel.textColor = [UIColor whiteColor];
         _pauseLabel.backgroundColor = [UIColor clearColor];
         _pauseLabel.font = [KRFontHelper getFont:KRBrandonLight withSize:35];

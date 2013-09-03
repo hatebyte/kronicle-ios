@@ -36,8 +36,10 @@
     if ([matches count] < 1) {
         failBlock(@{@"error":NO_LOCAL_KRONICLES});
         return;
+    } else {
+        successBlock(matches);
+        return;
     }
-    successBlock(matches);
 }
 
 + (void)getRemoteKronicles:(void (^)(NSArray *kronicles))successBlock
@@ -179,7 +181,6 @@
 }
 
 
-// conversion helpers
 - (NSString *)fullCoverURL {
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", self.coverUrl]];

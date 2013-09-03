@@ -105,10 +105,8 @@
 
 //#pragma mark create review
 - (void)reviewOverlay:(KRReviewOverlay *)reviewOverlay finishedWithValue:(CGFloat)value {
-//    NSLog(@"value : %f", value);
     _kronicle.rating = value;
     [[ManagedContextController current] saveContext];
-    NSLog(@"_kronicle.rating : %f", _kronicle.rating);
    
     [_reviewCreatorView setReviewWithValue:value];
     [self animateOutReviewer];

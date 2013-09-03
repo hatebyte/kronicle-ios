@@ -138,7 +138,6 @@ CGFloat const _increment = 1.f;
     }
     _globalRatio = ([[NSNumber numberWithInt:totalSecondsPassed] floatValue] / [[NSNumber numberWithInt: _kronicleTotal] floatValue] );
     
-    NSLog(@"%d : %f",totalSecondsPassed, _stepRatio);
     [self.delegate manager:self updateTimeWithString:timeString andStepRatio:_stepRatio andGlobalRatio:_globalRatio];
 }
 

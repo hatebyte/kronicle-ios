@@ -57,7 +57,6 @@
 
 
 - (IBAction)tapped:(id)sender {
-    NSLog(@"tapped");
     [self.delegate categorieCellHit:self];
     
 }

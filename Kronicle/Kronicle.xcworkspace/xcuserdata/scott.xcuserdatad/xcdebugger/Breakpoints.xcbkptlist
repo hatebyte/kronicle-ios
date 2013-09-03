@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kronicle/viewcontrollers/playback/KRPlaybackViewController.m"
-         timestampString = "399918408.434148"
+         timestampString = "399925723.038299"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "334"
-         endingLineNumber = "334"
+         startingLineNumber = "343"
+         endingLineNumber = "343"
          landmarkName = "-scrollView:pageToIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kronicle/viewcontrollers/playback/KRPlaybackViewController.m"
-         timestampString = "399918408.434148"
+         timestampString = "399925723.038299"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "309"
-         endingLineNumber = "309"
+         startingLineNumber = "318"
+         endingLineNumber = "318"
          landmarkName = "-controls:navigationRequested:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kronicle/viewcontrollers/playback/KRPlaybackViewController.m"
-         timestampString = "399918458.921541"
+         timestampString = "399925723.038299"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "293"
-         endingLineNumber = "293"
+         startingLineNumber = "302"
+         endingLineNumber = "302"
          landmarkName = "-kronicleComplete:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -100,13 +100,10 @@
         [_tableView reloadData];
     }
                        onFailure:^(NSDictionary *error) {
+                           NSLog(@"Listview getLocal Failed, retriving remote");
                            if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
                                [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
-                                   
-                                   NSLog(@"kronicles bfeore : %@", kronicles);
-                                   
                                    _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
-                                   NSLog(@"_kroniclesModuloed  : %@", _kroniclesModuloed);
                                    [_tableView reloadData];
                                }
                                                   onFailure:^(NSError *error) {

@@ -127,19 +127,16 @@
 }
 
 - (IBAction)deleteTapped:(id)sender {
-    NSLog(@"deleteButton");
     [self.delegate stepBlockView:self deleteStepIndex:_step.indexInKronicle];
 
 }
 
 - (IBAction)editTapped:(id)sender {
-    NSLog(@"tapped");
     [self.delegate stepBlockView:self requestStepIndex:_step.indexInKronicle];
     
 }
 
 - (IBAction)addStepTapped:(id)sender {
-    NSLog(@"tapped");
     [self.delegate stepBlockViewAddStep:self];
     
 }
