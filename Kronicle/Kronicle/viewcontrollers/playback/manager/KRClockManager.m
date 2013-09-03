@@ -55,7 +55,6 @@ CGFloat const _increment = 1.f;
     
     [_timer invalidate];
     _timer = nil;
-    [_timer invalidate];
     _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     
@@ -139,6 +138,7 @@ CGFloat const _increment = 1.f;
     }
     _globalRatio = ([[NSNumber numberWithInt:totalSecondsPassed] floatValue] / [[NSNumber numberWithInt: _kronicleTotal] floatValue] );
     
+    NSLog(@"%d : %f",totalSecondsPassed, _stepRatio);
     [self.delegate manager:self updateTimeWithString:timeString andStepRatio:_stepRatio andGlobalRatio:_globalRatio];
 }
 

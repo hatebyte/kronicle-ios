@@ -211,12 +211,13 @@
     }
     _moviePlayer.view.frame = CGRectMake(0,0,self.frame.size.width, self.frame.size.height);
     _moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
-
-    _moviePlayer.contentURL = url;
-    [_moviePlayer play];
     _moviePlayer.view.userInteractionEnabled = NO;
     [self addSubview:_moviePlayer.view];
     [self readdRecognizers];
+    
+    
+    _moviePlayer.contentURL = url;
+    [_moviePlayer play];
 }
 
 -(void) playbackLoadStateChanged:(NSNotification *)note {
@@ -224,10 +225,7 @@
         [_moviePlayer pause];
     } else if (_moviePlayer.loadState & (MPMovieLoadStatePlayable | MPMovieLoadStatePlaythroughOK)) {
         [_moviePlayer play];
-       // [self transitionViewToStage:_moviePlayer.view];
     }
-//    [_moviePlayer.view addSubview:_pauseView];
-//    [_moviePlayer.view addGestureRecognizer:_cellTapper];
 }
 
 - (void)playbackFinished:(NSNotification*)note {

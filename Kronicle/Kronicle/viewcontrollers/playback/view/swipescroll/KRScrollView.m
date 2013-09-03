@@ -122,7 +122,17 @@
 #pragma public properties
 - (void)scrollToPage:(NSInteger)page {
     CGPoint offset = CGPointMake(page * self.frame.size.width, 0);
-    [self setContentOffset:offset animated:YES];
+//    [self setContentOffset:offset animated:YES];
+    [UIView animateWithDuration:1.f
+                          delay:0
+                        options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         [self setContentOffset:offset];
+                     }
+                     completion:^(BOOL fin){
+//                         [self scrollViewDidEndDecelerating:self];
+                     }];
+
 }
 
 @end
