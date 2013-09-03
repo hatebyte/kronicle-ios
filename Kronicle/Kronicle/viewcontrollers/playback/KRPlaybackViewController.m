@@ -176,7 +176,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         _itemsButton.titleLabel.font                    = [KRFontHelper getFont:KRBrandonRegular withSize:18];
         [_sview addSubview:_itemsButton];   
 
-
     } else {
         [_backButton setTitle:@"Edit" forState:UIControlStateNormal];
         [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -229,10 +228,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
  andGlobalRatio:(CGFloat)globalRatio {
     
     [_scrollView updateCurrentStepClock:timeString withRatio:stepRatio];
-//    NSLog(@"_scrollView updateCurrentStepClock : %f", stepRatio);
-
-//    [_scrollView updateCurrentStepClock:timeString];
-//    [_graphView showDisplayForRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
     [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
     _globalClockLabel.text = [KRClockManager stringTimeForInt:(_kronicle.totalTime - (globalRatio * _kronicle.totalTime))];
@@ -265,13 +260,8 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(Step*)step {
-//    NSLog(@"previewStepIndex : %d", _kronicleManager.previewStepIndex);
-//    NSLog(@"currentStepIndex : %d", _kronicleManager.currentStepIndex);
-//    NSLog(@"\n");
     if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
         [_stepNavigation animateNavbarOut];
-//        [_clockManager unpause];
-//        [_mediaView hideResume];
         
         if (_clockManager.isPausedByUser) {
             [_clockManager pauseForUser];
@@ -297,7 +287,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [self relayoutForPlayback];
     
     
-//    if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex)
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
@@ -306,13 +295,10 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
         return;
     }
     [_clockManager resetForLastStep];
-//    _kronicleManager.currentStepIndex = 0;
-//    _kronicleManager.previewStepIndex = 0;
-//    [_clockManager setTimeForStep:_kronicleManager.currentStepIndex];
-//    [_clockManager pauseForUser];
-
     [_circularGraphView updateForFinished];
     [_stepNavigation updateForFinished];
+    //[_stepNavigation setAsLastStep];
+
     [_mediaView updateForFinishedWithImage:_kronicle.coverUrl andTitle:_kronicle.title];
     [self relayoutForFinished];
 }
@@ -411,15 +397,15 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_sview addSubview:_circularGraphView];
     
     [UIView animateWithDuration:.5
-                          delay:0
+                          delay:.2
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          _stepListContainerView.alpha       = 1.f;
                          _circularGraphView.alpha           = 1.f;
-                         _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
-                                                        _scrollView.frame.origin.y,
-                                                        320,
-                                                        [KRScrollView playbackHeight]);
+//                         _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
+//                                                        _scrollView.frame.origin.y,
+//                                                        320,
+//                                                        [KRScrollView playbackHeight]);
                          _sview.contentSize = CGSizeMake(_bounds.size.width, _circularGraphView.frame.origin.y + _circularGraphView.frame.size.height + 70);
                          _itemsButton.frame = CGRectMake(_bounds.size.width - 70, _bounds.size.height-(_itemsButton.frame.size.height+20), 70, _itemsButton.frame.size.height);
                          self.view.backgroundColor        = [UIColor whiteColor];
@@ -430,7 +416,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 }
 
 - (void)relayoutForFinished {
-//    _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView finishedHeight]);
     [_scrollView updateForFinished];
     _scrollView.frame = CGRectMake(_scrollView.frame.origin.x,
                                    _scrollView.frame.origin.y,
@@ -465,16 +450,11 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 #pragma publish 
-- (void)showPublishKronicleOverlay {
-    //    _kronicle.isFinished = YES;
-    //    [[ManagedContextController current] saveContext];
-    //    [[KRHomeViewController current] mykronicles];
-    
+- (void)showPublishKronicleOverlay {    
     _publishOverlay = [[KRPublishKronicleOverlay alloc] initWithFrame:self.view.frame andKronicle:_kronicle];
     _publishOverlay.alpha = 0;
     _publishOverlay.delegate = self;

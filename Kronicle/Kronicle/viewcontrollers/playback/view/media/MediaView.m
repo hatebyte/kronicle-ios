@@ -119,7 +119,7 @@
 //        [_moviePlayer play];
 //    }
     [UIView animateWithDuration:.4f
-                          delay:0
+                          delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          _pauseView.alpha = 0;
@@ -133,8 +133,8 @@
 //    if (_moviePlayer != nil) {
 //        [_moviePlayer pause];
 //    }
-    [UIView animateWithDuration:.4f
-                          delay:0
+    [UIView animateWithDuration:.7f
+                          delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          _pauseView.alpha = 1;
@@ -176,7 +176,7 @@
         
          
         [UIView animateWithDuration:.7f
-                              delay:0.f
+                              delay:0.2f
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              imageViewCopy.alpha = 0;
@@ -316,7 +316,7 @@
 - (void)animateInFinishedOverlay {
     _finishOverlay.hidden = NO;
     _finishOverlay.alpha = 0.f;    
-    [UIView animateWithDuration:.7
+    [UIView animateWithDuration:1.f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -329,7 +329,7 @@
 
 - (void)animateOutFinishedOverlay {
     [self addSubview:_finishOverlay];
-    [UIView animateWithDuration:.4f
+    [UIView animateWithDuration:1.f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{

@@ -79,7 +79,6 @@
 }
 
 - (void)updateForFinished {
-//    [_currentStep resetClock];
     DescriptionView *finishedStep = [[self subviews] lastObject];
     [self scrollToPage:[[self subviews] count]-1];
     finishedStep.frame = CGRectMake(finishedStep.frame.origin.x,
@@ -123,7 +122,7 @@
 - (void)scrollToPage:(NSInteger)page {
     CGPoint offset = CGPointMake(page * self.frame.size.width, 0);
 //    [self setContentOffset:offset animated:YES];
-    [UIView animateWithDuration:1.f
+    [UIView animateWithDuration:.7f
                           delay:0
                         options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{

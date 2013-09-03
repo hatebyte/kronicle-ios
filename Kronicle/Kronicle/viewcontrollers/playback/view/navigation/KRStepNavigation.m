@@ -127,7 +127,7 @@
 
 - (void)reset {
     _forward.hidden = NO;
-    [_backward addTarget:self action:nil forControlEvents:UIControlEventAllEvents];
+    [_backward removeTarget:self action:@selector(goback:)  forControlEvents:UIControlEventTouchUpInside];
     [_backward addTarget:self action:@selector(backward:) forControlEvents:UIControlEventTouchUpInside];
 
 }
@@ -141,7 +141,7 @@
     [self animateNavbarOut];
     _forward.hidden = YES;
     
-    [_backward addTarget:self action:nil forControlEvents:UIControlEventAllEvents];
+    [_backward removeTarget:self action:@selector(backward:) forControlEvents:UIControlEventTouchUpInside];
     [_backward addTarget:self action:@selector(goback:) forControlEvents:UIControlEventTouchUpInside];
 }
 
