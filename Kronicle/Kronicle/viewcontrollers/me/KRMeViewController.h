@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KRKronicleBaseViewController.h"
 
-@interface KRMeViewController : UIViewController
+@interface KRMeViewController : KRKronicleBaseViewController
 
 @end
