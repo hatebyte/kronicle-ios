@@ -21,7 +21,7 @@
 @property(nonatomic, weak) id <KRStepListContainerViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame andSteps:(NSArray *)steps;
-- (void)adjustStepListForCurrentStep:(int)steIndex;
+- (void)setCurrentStep:(int)stepIndex;
 - (void)updateCurrentStepWithRatio:(CGFloat)stepRatio;
 - (void)updateForLastStep;
 

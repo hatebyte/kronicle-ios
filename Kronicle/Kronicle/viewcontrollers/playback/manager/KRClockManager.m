@@ -46,7 +46,7 @@ CGFloat const _increment = .1f;
     return self;
 }
 
-- (void)setTimeForStep:(NSInteger)stepIndex {
+- (void)setTimeForCurrentStep:(NSInteger)stepIndex {
     
     _stepRatio = 0;
     _globalRatio = 0;
@@ -58,8 +58,19 @@ CGFloat const _increment = .1f;
     [_timer invalidate];
     _timer = nil;
     if (_step.time == 0) {
-        [self pause];
-        [self.delegate manager:self pauseForInfiniteStep:stepIndex];
+
+        // reset clock to end of step before or 0
+        
+        int totalSecondsPassed = 0;
+        for (int i = 0; i < stepIndex; i++) {
+            Step *s = [_kronicle.steps objectAtIndex:i];
+            totalSecondsPassed += s.time;
+        }
+        _globalRatio = ([[NSNumber numberWithInt:totalSecondsPassed] floatValue] / [[NSNumber numberWithInt: _kronicleTotal] floatValue] );
+        
+        [self pauseForInfiniteWait];
+        [self.delegate manager:self pauseForInfiniteWait:stepIndex withStepRatio:1 andGlobalRatio:_globalRatio];
+        
         return;
     } else {
         _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
@@ -75,14 +86,30 @@ CGFloat const _increment = .1f;
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     _isPausedByUser = NO;
     _isPausedByPreview = NO;
+    _isPausedByInfiniteWait = NO;
+    
+    if ([self.delegate respondsToSelector:@selector(unPaused)]) {
+        [self.delegate unPaused];
+    }
 }
 - (void)pauseForUser {
     _isPausedByUser = YES;
     [self pause];
+    if ([self.delegate respondsToSelector:@selector(pausedByUser)]) {
+        [self.delegate pausedByUser];
+    }
 }
 
 - (void)pauseForPreview {
     _isPausedByPreview = YES;
+    [self pause];
+    if ([self.delegate respondsToSelector:@selector(pausedByPreview)]) {
+        [self.delegate pausedByPreview];
+    }
+}
+
+- (void)pauseForInfiniteWait {
+    self.isPausedByInfiniteWait = YES;
     [self pause];
 }
 

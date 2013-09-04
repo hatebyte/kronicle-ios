@@ -162,21 +162,32 @@
     [self setStep:stepIndex + 1];
 }
 
-- (void)manager:(KRClockManager *)manager pauseForInfiniteStep:(NSInteger)stepIndex {
-    NSLog(@"pauseForInfiniteStep : %d", stepIndex);
+- (void)manager:(KRClockManager *)manager pauseForInfiniteWait:(NSInteger)stepIndex
+  withStepRatio:(CGFloat)stepRatio
+ andGlobalRatio:(CGFloat)globalRatio {
+    
+    [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
+    [_stepNavigation updateForInfiniteWait];
+    [_mediaView hideResume];
+}
+
+- (void)pausedByPreview {
+    [_mediaView showResume];
+}
+
+- (void)pausedByUser {
+    [_mediaView showResume];
+}
+
+- (void)unPaused {
+    [_mediaView hideResume];
 }
 
 #pragma KRKronicleManager delegate
 - (void)manager:(KRKronicleManager *)manager updateUIForStep:(Step*)step {
-    if (_kronicleManager.currentStepIndex == _kronicleManager.previewStepIndex) {
-        [_stepNavigation animateNavbarOut];
-    }
-    [_clockManager setTimeForStep:step.indexInKronicle];
-    [_stepListContainerView adjustStepListForCurrentStep:step.indexInKronicle];
+    [_clockManager setTimeForCurrentStep:step.indexInKronicle];
+    [_stepListContainerView setCurrentStep:step.indexInKronicle];
     [_scrollView setCurrentStep:step.indexInKronicle];
-//    [_clockManager unpause];
-    [_mediaView hideResume];
-
     [_mediaView setMediaPath:step.mediaUrl];
     [self relayoutForPlayback];
  
@@ -196,25 +207,20 @@
         
         if (_clockManager.isPausedByUser) {
             [_clockManager pauseForUser];
-            [_mediaView showResume];
+        } else if (_clockManager.isPausedByInfiniteWait) {
+            
         } else {
             [_clockManager unpause];
-            [_mediaView hideResume];
         }
 
     } else {
         [_stepNavigation animateNavbarIn];
         [_clockManager pauseForPreview];
-        [_mediaView showResume];
     }
+    
     [_scrollView scrollToPage:step.indexInKronicle];
     [_mediaView setMediaPath:step.mediaUrl];
-    
-    if (_kronicleManager.previewStepIndex >= _kronicle.stepCount-1) {
-        [_stepNavigation setAsLastStep];
-    } else {
-        [_stepNavigation reset];
-    }
+    [_stepNavigation setAsLastStep:(_kronicleManager.previewStepIndex >= _kronicle.stepCount-1)];
     [self relayoutForPlayback];
 }
 
@@ -249,6 +255,10 @@
         case KRStepNavigationRequestGoBack:
             [self previewStep:_kronicleManager.currentStepIndex];
             break;
+        case KRStepNavigationResumeAfterInfiniteWait:
+            _clockManager.isPausedByInfiniteWait = NO;
+            [self setStep:_kronicleManager.currentStepIndex + 1];
+            break;
     }
 }
 
@@ -270,19 +280,20 @@
 #pragma MediaView delegate
 - (void)mediaViewScreenTapped:(MediaView *)mediaView {
     if (_clockManager.isPausedByPreview) {
-        [_mediaView hideResume];
-        [_clockManager unpause];
-        [self previewStep:_kronicleManager.currentStepIndex];
+        if (_clockManager.isPausedByInfiniteWait) {
+            [_mediaView hideResume];
+            [self previewStep:_kronicleManager.currentStepIndex];
+        } else {
+            [_clockManager unpause];
+            [self previewStep:_kronicleManager.currentStepIndex];
+        }
     } else {
         if (_clockManager.isPausedByUser) {
             [_clockManager unpause];
-            [_mediaView hideResume];
         } else {
             [_clockManager pauseForUser];
-            [_mediaView showResume];
         }
     }
-        
 }
 
 - (void)mediaViewSwipedLeft {

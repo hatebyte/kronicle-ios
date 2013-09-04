@@ -24,6 +24,7 @@
     UIImageView *_carrot;
     UISwipeGestureRecognizer *_cellLeftSwipper;
     UISwipeGestureRecognizer *_cellRightSwipper;
+    UITapGestureRecognizer *_tapper;
     SEL _backwardSelector;
 }
 
@@ -139,6 +140,10 @@
     [self.delegate controls:self navigationRequested:KRStepNavigationRequestGoBack];
 }
 
+- (void)resumeAfterInfiniteWait:(id)sender {
+    [self.delegate controls:self navigationRequested:KRStepNavigationResumeAfterInfiniteWait];
+}
+
 - (void)reset {
     _forward.hidden = NO;
     [_backward removeTarget:self action:@selector(goback:)  forControlEvents:UIControlEventTouchUpInside];
@@ -146,8 +151,19 @@
     _backwardSelector = @selector(backward:);
 }
 
-- (void)setAsLastStep {
-    _forward.hidden = YES;
+- (void)setAsLastStep:(BOOL)isLastStep {
+    if (isLastStep) {
+        _forward.hidden = YES;
+    } else {
+        [self reset];
+    }
+}
+
+- (void)updateForInfiniteWait {
+    _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToEndInfiniteWait:)];
+    _tapper.cancelsTouchesInView = NO;
+    _tapper.delegate = self;
+    [self addGestureRecognizer:_tapper];
 }
 
 - (void)updateForFinished {
@@ -197,6 +213,21 @@
                              _carrot.hidden = YES;
                          }];
     }
+}
+
+#pragma gesture regocognizers delegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UIControl class]]) {
+        // we touched a button, slider, or other UIControl
+        return NO; // ignore the touch
+    }
+    return YES; // handle the touch
+}
+
+- (void)tapToEndInfiniteWait:(id)sender {
+    [self removeGestureRecognizer:_tapper];
+    _tapper = nil;
+    [self resumeAfterInfiniteWait:nil];
 }
 
 -(void)swipeDetected:(UISwipeGestureRecognizer *)swipeRecognizer {

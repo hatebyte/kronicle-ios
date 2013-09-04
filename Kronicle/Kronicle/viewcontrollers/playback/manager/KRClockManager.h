@@ -17,7 +17,14 @@
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio;
 - (void)manager:(KRClockManager *)manager stepComplete:(NSInteger)stepIndex;
-- (void)manager:(KRClockManager *)manager pauseForInfiniteStep:(NSInteger)stepIndex;
+- (void)manager:(KRClockManager *)manager pauseForInfiniteWait:(NSInteger)stepIndex
+  withStepRatio:(CGFloat)stepRatio
+ andGlobalRatio:(CGFloat)globalRatio;
+
+@optional
+- (void)pausedByUser;
+- (void)pausedByPreview;
+- (void)unPaused;
 
 @end
 
@@ -27,12 +34,13 @@
 @property (nonatomic, weak) id <KRClockManagerDelegate> delegate;
 @property (nonatomic, assign) BOOL isPausedByPreview;
 @property (nonatomic, assign) BOOL isPausedByUser;
+@property (nonatomic, assign) BOOL isPausedByInfiniteWait;
 
 + (NSString *)stringTimeForInt:(NSInteger)time;
 + (NSDictionary *)getTimeUnits:(NSInteger)secondsTotal;
 
 - (id)initWithKronicle:(Kronicle *)kronicle;
-- (void)setTimeForStep:(int)step;
+- (void)setTimeForCurrentStep:(int)step;
 //- (void)togglePlayPause;
 - (void)stop;
 - (void)unpause;

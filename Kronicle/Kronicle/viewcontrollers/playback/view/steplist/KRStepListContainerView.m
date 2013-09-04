@@ -64,8 +64,8 @@
 }
 
 #pragma public methods
-- (void)adjustStepListForCurrentStep:(int)steIndex {
-    _currentIndex = steIndex;
+- (void)setCurrentStep:(int)stepIndex {
+    _currentIndex = stepIndex;
     for (int i = 0; i < _steps.count; i++) {
         KRStepListView *stepListView = [_steps objectAtIndex:i];
         if (i == _currentIndex) {
