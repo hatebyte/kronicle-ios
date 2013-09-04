@@ -8,6 +8,7 @@
 
 #import "KRKronicleBaseViewController.h"
 #import "KRItemsViewController.h"
+#import "KRReviewViewController.h"
 
 @interface KRKronicleBaseViewController ()
 
@@ -58,6 +59,15 @@
         KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListCreate];
         [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
         [self.navigationController presentModalViewController:itemsViewController animated:YES];
+    });
+}
+
+#pragma finishbuttons
+- (void)reviewRequested:(Kronicle *)kronicle {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        KRReviewViewController *kronicleReview = [[KRReviewViewController alloc] initWithKronicle:kronicle];
+        [kronicleReview setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self.navigationController presentModalViewController:kronicleReview animated:YES];
     });
 }
 

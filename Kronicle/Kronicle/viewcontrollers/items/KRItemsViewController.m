@@ -10,10 +10,12 @@
 #import "KRColorHelper.h"
 #import "KRFontHelper.h"
 #import "AddTitleTableViewCell.h"
+#import "KRTextButton.h"
 
 @interface KRItemsViewController () {
     @private
     UIButton *_cancelXButton;
+    KRTextButton *_emailButton;
 }
 
 @end
@@ -40,6 +42,23 @@
     [_cancelXButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cancelXButton];
     
+    NSInteger emailButtonHeight = 42;
+    _emailButton = [[KRTextButton alloc] initWithFrame:CGRectMake(0,
+                                                                  _bounds.size.height-(emailButtonHeight),
+                                                                  121,
+                                                                  emailButtonHeight)
+                                               andType:KRTextButtonTypeHomeScreen
+                                               andIcon:[UIImage imageNamed:@"emailitems"]];
+    [_emailButton setTitle:NSLocalizedString(@"View Items", @"View items this kronicle button") forState:UIControlStateNormal];
+    [_emailButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    [_emailButton setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
+//    [_emailButton addTarget:self action:@selector(viewItemsRequested:) forControlEvents:UIControlEventTouchUpInside];
+    _emailButton.titleEdgeInsets                    = UIEdgeInsetsMake(0, 14, 0, 0);
+    _emailButton.imageEdgeInsets                    = UIEdgeInsetsMake(0, 10, 0, 0);
+    _emailButton.backgroundColor                    = [UIColor whiteColor];
+    _emailButton.titleLabel.font                    = [KRFontHelper getFont:KRBrandonRegular withSize:18];
+    [self.view addSubview:_emailButton];
+
     
 }
 

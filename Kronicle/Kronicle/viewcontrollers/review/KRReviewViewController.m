@@ -43,14 +43,13 @@
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
     _scrollView.showsVerticalScrollIndicator = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
-//    _scrollView.bounces = NO;
     [self.view addSubview:_scrollView];
     
     _cancelXButton                                                  = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelXButton.backgroundColor                                  = [UIColor clearColor];
     _cancelXButton.frame                                            = CGRectMake(320 - 45, 5, 40, 40);
     [_cancelXButton setBackgroundImage:[UIImage imageNamed:@"transx"] forState:UIControlStateNormal];
-    [_cancelXButton addTarget:self action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+    [_cancelXButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:_cancelXButton];
 
     _titleField                                 = [UIHelper titleTextField];
@@ -102,8 +101,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)popViewController:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
-//#pragma mark create review
+#pragma mark create review
 - (void)reviewOverlay:(KRReviewOverlay *)reviewOverlay finishedWithValue:(CGFloat)value {
     _kronicle.rating = value;
     [[ManagedContextController current] saveContext];
@@ -120,7 +122,6 @@
 #pragma review methods
 - (void)animateInReviewer {
     [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
-    
     _reviewOverlay.alpha = 0;
     [self.view addSubview:_reviewOverlay];
     
@@ -151,6 +152,7 @@
                      }
                      completion:^(BOOL fin){
                          [_reviewOverlay removeFromSuperview];
+                         [_reviewOverlay setReviewWithValue:_kronicle.rating];
                      }];
 }
 

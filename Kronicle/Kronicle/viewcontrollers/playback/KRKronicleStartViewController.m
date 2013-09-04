@@ -189,6 +189,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_ratingView setRating:_kronicle.rating];
+    [_ratingView addTapTarget:self withSelector:@selector(reviewRequested)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -197,6 +198,9 @@
     
 }
 
+- (void)reviewRequested {
+    [self reviewRequested:_kronicle];
+}
 
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];

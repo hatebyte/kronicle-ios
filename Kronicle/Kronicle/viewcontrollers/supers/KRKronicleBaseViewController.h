@@ -20,5 +20,6 @@
 
 - (void)viewListItems:(Kronicle *)kronicle;
 - (void)popViewController:(id)sender;
+- (void)reviewRequested:(Kronicle *)kronicle;
 
 @end

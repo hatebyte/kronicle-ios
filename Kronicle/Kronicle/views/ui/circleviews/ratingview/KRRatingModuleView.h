@@ -17,6 +17,6 @@ typedef enum {
 
 - (id)initWithPoint:(CGPoint)point andStyle:(KRRatingModuleStyle)style andRating:(CGFloat)rating;
 - (void)setRating:(CGFloat)rating;
-
+- (void)addTapTarget:(id)target withSelector:(SEL)tapSelector;
 
 @end

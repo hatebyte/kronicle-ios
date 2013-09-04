@@ -60,8 +60,6 @@
 		D244D41C17D2AA2F00FDEEFB /* plusbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3BB17D2AA2F00FDEEFB /* plusbutton.png */; };
 		D244D41D17D2AA2F00FDEEFB /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3BC17D2AA2F00FDEEFB /* video.png */; };
 		D244D41E17D2AA2F00FDEEFB /* hamburger_50px.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3BD17D2AA2F00FDEEFB /* hamburger_50px.png */; };
-		D244D41F17D2AA2F00FDEEFB /* listitem_acquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3BE17D2AA2F00FDEEFB /* listitem_acquired.png */; };
-		D244D42017D2AA2F00FDEEFB /* listitem_unacquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3BF17D2AA2F00FDEEFB /* listitem_unacquired.png */; };
 		D244D42117D2AA2F00FDEEFB /* plus_21px.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3C017D2AA2F00FDEEFB /* plus_21px.png */; };
 		D244D42217D2AA2F00FDEEFB /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3C117D2AA2F00FDEEFB /* forward.png */; };
 		D244D42517D2AA2F00FDEEFB /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3C417D2AA2F00FDEEFB /* hole.png */; };
@@ -80,7 +78,6 @@
 		D244D43D17D2AA2F00FDEEFB /* addreviewbuttoncircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3E017D2AA2F00FDEEFB /* addreviewbuttoncircle@2x.png */; };
 		D244D43E17D2AA2F00FDEEFB /* bottomblarg.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3E117D2AA2F00FDEEFB /* bottomblarg.png */; };
 		D244D43F17D2AA2F00FDEEFB /* transx.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3E217D2AA2F00FDEEFB /* transx.png */; };
-		D244D44017D2AA2F00FDEEFB /* itemshamburger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3E417D2AA2F00FDEEFB /* itemshamburger@2x.png */; };
 		D244D44117D2AA2F00FDEEFB /* plus_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3E517D2AA2F00FDEEFB /* plus_start.png */; };
 		D244D44217D2AA2F00FDEEFB /* start_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3E617D2AA2F00FDEEFB /* start_button.png */; };
 		D244D44A17D2AA2F00FDEEFB /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3EE17D2AA2F00FDEEFB /* x-button.png */; };
@@ -151,6 +148,9 @@
 		D281274217C9722F00E66C7F /* Kronicle+Life.m in Sources */ = {isa = PBXBuildFile; fileRef = D281274117C9722F00E66C7F /* Kronicle+Life.m */; };
 		D281274517C972CE00E66C7F /* Step+Life.m in Sources */ = {isa = PBXBuildFile; fileRef = D281274417C972CE00E66C7F /* Step+Life.m */; };
 		D28127E717CA8F2100E66C7F /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127E617CA8F2100E66C7F /* Kronicle.m */; };
+		D2887B6D17D7E9EA00CD5D5C /* itemshamburger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887B6A17D7E9EA00CD5D5C /* itemshamburger@2x.png */; };
+		D2887B6E17D7E9EA00CD5D5C /* listitem_acquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887B6B17D7E9EA00CD5D5C /* listitem_acquired.png */; };
+		D2887B6F17D7E9EA00CD5D5C /* listitem_unacquired.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887B6C17D7E9EA00CD5D5C /* listitem_unacquired.png */; };
 		D29D270E178B93340085E943 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D270D178B93330085E943 /* APIRouter.m */; };
 		D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
 		D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
@@ -214,7 +214,6 @@
 		D2A7F7E517D0E75D0039EE5A /* KRPlaybackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A7F78F17D0E75D0039EE5A /* KRPlaybackViewController.xib */; };
 		D2A7F7E817D0E75D0039EE5A /* KRClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79517D0E75D0039EE5A /* KRClockManager.m */; };
 		D2A7F7E917D0E75D0039EE5A /* KRKronicleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79717D0E75D0039EE5A /* KRKronicleManager.m */; };
-		D2A7F7EA17D0E75D0039EE5A /* KRClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79A17D0E75D0039EE5A /* KRClock.m */; };
 		D2A7F7EB17D0E75D0039EE5A /* KRCircularKronicleGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F79E17D0E75D0039EE5A /* KRCircularKronicleGraph.m */; };
 		D2A7F7EC17D0E75D0039EE5A /* KRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7A017D0E75D0039EE5A /* KRGraphView.m */; };
 		D2A7F7EF17D0E75D0039EE5A /* MediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F7A717D0E75D0039EE5A /* MediaView.m */; };
@@ -330,8 +329,6 @@
 		D244D3BB17D2AA2F00FDEEFB /* plusbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusbutton.png; sourceTree = "<group>"; };
 		D244D3BC17D2AA2F00FDEEFB /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
 		D244D3BD17D2AA2F00FDEEFB /* hamburger_50px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_50px.png; sourceTree = "<group>"; };
-		D244D3BE17D2AA2F00FDEEFB /* listitem_acquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_acquired.png; sourceTree = "<group>"; };
-		D244D3BF17D2AA2F00FDEEFB /* listitem_unacquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_unacquired.png; sourceTree = "<group>"; };
 		D244D3C017D2AA2F00FDEEFB /* plus_21px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_21px.png; sourceTree = "<group>"; };
 		D244D3C117D2AA2F00FDEEFB /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		D244D3C417D2AA2F00FDEEFB /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
@@ -350,7 +347,6 @@
 		D244D3E017D2AA2F00FDEEFB /* addreviewbuttoncircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addreviewbuttoncircle@2x.png"; sourceTree = "<group>"; };
 		D244D3E117D2AA2F00FDEEFB /* bottomblarg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomblarg.png; sourceTree = "<group>"; };
 		D244D3E217D2AA2F00FDEEFB /* transx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transx.png; sourceTree = "<group>"; };
-		D244D3E417D2AA2F00FDEEFB /* itemshamburger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itemshamburger@2x.png"; sourceTree = "<group>"; };
 		D244D3E517D2AA2F00FDEEFB /* plus_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_start.png; sourceTree = "<group>"; };
 		D244D3E617D2AA2F00FDEEFB /* start_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_button.png; sourceTree = "<group>"; };
 		D244D3EE17D2AA2F00FDEEFB /* x-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-button.png"; sourceTree = "<group>"; };
@@ -425,6 +421,9 @@
 		D281274417C972CE00E66C7F /* Step+Life.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Step+Life.m"; sourceTree = "<group>"; };
 		D28127E517CA8F2100E66C7F /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
 		D28127E617CA8F2100E66C7F /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
+		D2887B6A17D7E9EA00CD5D5C /* itemshamburger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itemshamburger@2x.png"; sourceTree = "<group>"; };
+		D2887B6B17D7E9EA00CD5D5C /* listitem_acquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_acquired.png; sourceTree = "<group>"; };
+		D2887B6C17D7E9EA00CD5D5C /* listitem_unacquired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem_unacquired.png; sourceTree = "<group>"; };
 		D29D270C178B93330085E943 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIRouter.h; path = kroniclenetwork/APIRouter.h; sourceTree = "<group>"; };
 		D29D270D178B93330085E943 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIRouter.m; path = kroniclenetwork/APIRouter.m; sourceTree = "<group>"; };
 		D2A573DE175A3B4E002AC1B9 /* Kronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -529,8 +528,6 @@
 		D2A7F79517D0E75D0039EE5A /* KRClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClockManager.m; sourceTree = "<group>"; };
 		D2A7F79617D0E75D0039EE5A /* KRKronicleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleManager.h; sourceTree = "<group>"; };
 		D2A7F79717D0E75D0039EE5A /* KRKronicleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleManager.m; sourceTree = "<group>"; };
-		D2A7F79917D0E75D0039EE5A /* KRClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRClock.h; sourceTree = "<group>"; };
-		D2A7F79A17D0E75D0039EE5A /* KRClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRClock.m; sourceTree = "<group>"; };
 		D2A7F79D17D0E75D0039EE5A /* KRCircularKronicleGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCircularKronicleGraph.h; sourceTree = "<group>"; };
 		D2A7F79E17D0E75D0039EE5A /* KRCircularKronicleGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCircularKronicleGraph.m; sourceTree = "<group>"; };
 		D2A7F79F17D0E75D0039EE5A /* KRGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRGraphView.h; sourceTree = "<group>"; };
@@ -758,6 +755,7 @@
 		D244D3A517D2AA2F00FDEEFB /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D2887B6917D7E9EA00CD5D5C /* items */,
 				D262007A17D593D2000A1E77 /* me */,
 				D262002817D31F42000A1E77 /* publish */,
 				D244D3A617D2AA2F00FDEEFB /* back-bttn.png */,
@@ -800,8 +798,6 @@
 				D244D3B617D2AA2F00FDEEFB /* close-x_40px.png */,
 				D244D3B717D2AA2F00FDEEFB /* contentbuttons */,
 				D244D3BD17D2AA2F00FDEEFB /* hamburger_50px.png */,
-				D244D3BE17D2AA2F00FDEEFB /* listitem_acquired.png */,
-				D244D3BF17D2AA2F00FDEEFB /* listitem_unacquired.png */,
 				D244D3C017D2AA2F00FDEEFB /* plus_21px.png */,
 			);
 			path = create;
@@ -864,7 +860,6 @@
 		D244D3E317D2AA2F00FDEEFB /* start */ = {
 			isa = PBXGroup;
 			children = (
-				D244D3E417D2AA2F00FDEEFB /* itemshamburger@2x.png */,
 				D244D3E517D2AA2F00FDEEFB /* plus_start.png */,
 				D244D3E617D2AA2F00FDEEFB /* start_button.png */,
 			);
@@ -1016,6 +1011,16 @@
 				D281274417C972CE00E66C7F /* Step+Life.m */,
 			);
 			path = life;
+			sourceTree = "<group>";
+		};
+		D2887B6917D7E9EA00CD5D5C /* items */ = {
+			isa = PBXGroup;
+			children = (
+				D2887B6A17D7E9EA00CD5D5C /* itemshamburger@2x.png */,
+				D2887B6B17D7E9EA00CD5D5C /* listitem_acquired.png */,
+				D2887B6C17D7E9EA00CD5D5C /* listitem_unacquired.png */,
+			);
+			path = items;
 			sourceTree = "<group>";
 		};
 		D2A573D5175A3B4E002AC1B9 = {
@@ -1423,7 +1428,6 @@
 				D2A7F78E17D0E75D0039EE5A /* KRPlaybackViewController.m */,
 				D2A7F78F17D0E75D0039EE5A /* KRPlaybackViewController.xib */,
 				D2A7F79317D0E75D0039EE5A /* manager */,
-				D2A7F79817D0E75D0039EE5A /* model */,
 				D2A7F79B17D0E75D0039EE5A /* view */,
 				D262008117D6CE95000A1E77 /* KRPlaybackPublishViewController.h */,
 				D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */,
@@ -1440,15 +1444,6 @@
 				D2A7F79717D0E75D0039EE5A /* KRKronicleManager.m */,
 			);
 			path = manager;
-			sourceTree = "<group>";
-		};
-		D2A7F79817D0E75D0039EE5A /* model */ = {
-			isa = PBXGroup;
-			children = (
-				D2A7F79917D0E75D0039EE5A /* KRClock.h */,
-				D2A7F79A17D0E75D0039EE5A /* KRClock.m */,
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		D2A7F79B17D0E75D0039EE5A /* view */ = {
@@ -1875,8 +1870,6 @@
 				D244D41C17D2AA2F00FDEEFB /* plusbutton.png in Resources */,
 				D244D41D17D2AA2F00FDEEFB /* video.png in Resources */,
 				D244D41E17D2AA2F00FDEEFB /* hamburger_50px.png in Resources */,
-				D244D41F17D2AA2F00FDEEFB /* listitem_acquired.png in Resources */,
-				D244D42017D2AA2F00FDEEFB /* listitem_unacquired.png in Resources */,
 				D244D42117D2AA2F00FDEEFB /* plus_21px.png in Resources */,
 				D244D42217D2AA2F00FDEEFB /* forward.png in Resources */,
 				D244D42517D2AA2F00FDEEFB /* hole.png in Resources */,
@@ -1895,7 +1888,6 @@
 				D244D43D17D2AA2F00FDEEFB /* addreviewbuttoncircle@2x.png in Resources */,
 				D244D43E17D2AA2F00FDEEFB /* bottomblarg.png in Resources */,
 				D244D43F17D2AA2F00FDEEFB /* transx.png in Resources */,
-				D244D44017D2AA2F00FDEEFB /* itemshamburger@2x.png in Resources */,
 				D244D44117D2AA2F00FDEEFB /* plus_start.png in Resources */,
 				D244D44217D2AA2F00FDEEFB /* start_button.png in Resources */,
 				D244D44A17D2AA2F00FDEEFB /* x-button.png in Resources */,
@@ -1959,6 +1951,9 @@
 				D262007C17D593D2000A1E77 /* profile-view.png in Resources */,
 				D262007E17D6BA4C000A1E77 /* fpo_switches.png in Resources */,
 				D262008017D6C3AC000A1E77 /* fpo_bottom.png in Resources */,
+				D2887B6D17D7E9EA00CD5D5C /* itemshamburger@2x.png in Resources */,
+				D2887B6E17D7E9EA00CD5D5C /* listitem_acquired.png in Resources */,
+				D2887B6F17D7E9EA00CD5D5C /* listitem_unacquired.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2139,7 +2134,6 @@
 				D2A7F7E417D0E75D0039EE5A /* KRPlaybackViewController.m in Sources */,
 				D2A7F7E817D0E75D0039EE5A /* KRClockManager.m in Sources */,
 				D2A7F7E917D0E75D0039EE5A /* KRKronicleManager.m in Sources */,
-				D2A7F7EA17D0E75D0039EE5A /* KRClock.m in Sources */,
 				D2A7F7EB17D0E75D0039EE5A /* KRCircularKronicleGraph.m in Sources */,
 				D2A7F7EC17D0E75D0039EE5A /* KRGraphView.m in Sources */,
 				D2A7F7EF17D0E75D0039EE5A /* MediaView.m in Sources */,

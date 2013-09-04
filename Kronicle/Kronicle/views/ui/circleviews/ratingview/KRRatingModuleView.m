@@ -12,10 +12,15 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Kronicle+Helper.h"
 
-@interface KRRatingModuleView () {
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
+@interface KRRatingModuleView () <UIGestureRecognizerDelegate> {
     @private
     UILabel *_titleLabel;
     KRRatingCircleView *_circleView;
+    UITapGestureRecognizer *_tapper;
+    id _tapTarget;
+    SEL _tapSelector;
 }
 
 @end
@@ -48,7 +53,6 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-                
         _circleView = [[KRRatingCircleView alloc] initWithFrame:CGRectMake(0, 5+ circleY, circleSize, circleSize)];
         _circleView.rating = rating;
         [self addSubview:_circleView];
@@ -60,22 +64,35 @@
         _titleLabel.font = font;
         _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.text = @"great";
         _titleLabel.layer.shadowColor        = [[UIColor blackColor] CGColor];
         _titleLabel.layer.shadowOffset       = CGSizeMake(.7f, .7f);
         _titleLabel.layer.shadowOpacity      = .7f;
         _titleLabel.layer.shadowRadius       = .7f;
         [self addSubview:_titleLabel];
         
-        
+        _tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reviewRequest)];
+        _tapper.cancelsTouchesInView = NO;
+        _tapper.delegate = self;
     }
     return self;
+}
+
+- (void)addTapTarget:(id)target withSelector:(SEL)tapSelector {
+    [self addGestureRecognizer:_tapper];
+    _tapTarget = target;
+    _tapSelector = tapSelector;
 }
 
 - (void)setRating:(CGFloat)rating {
     NSDictionary *dict                      = [Kronicle reviewSettingsByRating:rating];
     _circleView.strokeColor                 = [dict objectForKey:@"color"];
+    _titleLabel.text                        = [[dict objectForKey:@"text"] lowercaseString];
     [_circleView setRating:rating];
+}
+
+- (void)reviewRequest {
+    [self removeGestureRecognizer:_tapper];
+    [_tapTarget performSelector:_tapSelector];
 }
 
 

@@ -16,7 +16,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 #define kdomain @"http://166.78.151.97:4711/"
 #define kDEBUG 0
 
-static NSString *kKronicleReviewRequested               = @"KronicleReviewRequested";
+#define kKronicleReviewRequested @"KronicleReviewRequested"
 
 
 // MATH

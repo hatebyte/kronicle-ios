@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "KRFormFieldCell.h"
 
-static NSString *kTimeUnitCompleted               = @"TimeUnitCompleted";
-static NSString *kRequestTimeUnitEdit             = @"RequestTimeUnitEdit";
+#define kTimeUnitCompleted         @"TimeUnitCompleted"
+#define kRequestTimeUnitEdit       @"RequestTimeUnitEdit"
 
 @interface AddTimeCell : KRFormFieldCell
 
