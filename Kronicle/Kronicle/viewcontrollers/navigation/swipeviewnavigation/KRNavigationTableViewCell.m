@@ -28,10 +28,7 @@
     if (self) {
 
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.contentView.backgroundColor = [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.85];
 
-        
-//        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height)];
         self.textLabel.font         = [KRFontHelper getFont:KRBrandonLight withSize:28];
         self.textLabel.textColor    = [KRColorHelper turquoise];
         
@@ -46,11 +43,27 @@
     return self;
 }
 
-- (void)prepareForUseWithData:(NSDictionary *)data {
+- (void)prepareForUseWithData:(NSDictionary *)data isTableOpen:(BOOL)isTableOpen {
     
     [_bottomStroke removeFromSuperlayer];
     self.textLabel.text = [data objectForKey:@"title"];
     _thumbImage.image = [UIImage imageNamed:[data objectForKey:@"thumbImage"]];
+    UIColor *backgroundColor = [UIColor whiteColor];
+    
+    if (isTableOpen) {
+        backgroundColor                = [UIColor colorWithRed:.9f green:.9f blue:.9f alpha:1.f];
+    }
+    
+    [UIView animateWithDuration:.3
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.contentView.backgroundColor                = backgroundColor;
+                         self.backgroundView.backgroundColor             = backgroundColor;
+                         self.backgroundColor                            = backgroundColor;
+                         
+                     }
+                     completion:^(BOOL fin){ }];
 
 }
 

@@ -142,7 +142,7 @@ CGFloat const _increment = .1f;
     _currentTime -= 1;
     
     // create time string
-    NSString *timeString = [KRClockManager stringTimeForInt:_currentTime];
+    NSString *timeString = [KRClockManager clockTimeString:_currentTime];
     NSArray *splitTimeArr = [timeString  componentsSeparatedByString:@":"];
     
     _minutes = [splitTimeArr objectAtIndex:0];
@@ -170,74 +170,66 @@ CGFloat const _increment = .1f;
     [self.delegate manager:self updateTimeWithString:timeString andStepRatio:_stepRatio andGlobalRatio:_globalRatio];
 }
 
-+ (NSString *)stringTimeForInt:(NSInteger)time {
-    int hours       = floor(time / (60 * 60));
-    time            = time - (hours * (60 * 60));
-    int minutes     = floor(time / 60);
-    int seconds     = floor(time - (minutes*60));
-    NSString *sHours;
-    NSString *sMinutes;
-    NSString *sSeconds;
++ (NSString *)displayTimeString:(NSInteger)time {
+    NSDictionary *timeDict = [self getTimeUnits:time];
+    NSInteger hours        = [[timeDict objectForKey:@"hours"] integerValue];
+    NSInteger minutes      = [[timeDict objectForKey:@"minutes"] integerValue];
+    NSInteger seconds      = [[timeDict objectForKey:@"seconds"] integerValue];
     
+    NSString *unit;
     NSString *returnString = @"";
-    if (hours > 0) {
-        if (hours < 10) {
-            sHours = [NSString stringWithFormat:@"0%d", hours];
+    
+    if (time < 60) {
+        if (time > 0) {
+            unit            = [NSString stringWithFormat:@"%ds", seconds];
+            returnString    = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@", unit]];
         } else {
-            sHours = [NSString stringWithFormat:@"%d", hours];
+            returnString    = @"No time";
         }
-        returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sHours]];
+        return returnString;
     }
     
-    if (minutes < 10) {
-        sMinutes = [NSString stringWithFormat:@"0%d", minutes];
-    } else {
-        sMinutes = [NSString stringWithFormat:@"%d", minutes];
+    if (hours > 0) {
+        unit                = [NSString stringWithFormat:@"%dh", hours];
+        returnString        = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@ ", unit]];
     }
-    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sMinutes]];
     
-    if (seconds < 10) {
-        sSeconds = [NSString stringWithFormat:@"0%d", seconds];
-    } else {
-        sSeconds = [NSString stringWithFormat:@"%d", seconds];
+    if (minutes > 0) {
+        unit                = [NSString stringWithFormat:@"%dm", minutes];
+        returnString        = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@ ", unit]];
     }
-    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@", sSeconds]];
-    
     return returnString;
 }
 
-+ (NSString *)clockStringForInt:(NSInteger)time {
-    int hours       = floor(time / (60 * 60));
-    time            = time - (hours * (60 * 60));
-    int minutes     = floor(time / 60);
-    int seconds     = floor(time - (minutes*60));
-    NSString *sHours;
-    NSString *sMinutes;
-    NSString *sSeconds;
-    
++ (NSString *)clockTimeString:(NSInteger)time {
+    NSDictionary *timeDict = [self getTimeUnits:time];
+    NSInteger hours        = [[timeDict objectForKey:@"hours"] integerValue];
+    NSInteger minutes      = [[timeDict objectForKey:@"minutes"] integerValue];
+    NSInteger seconds      = [[timeDict objectForKey:@"seconds"] integerValue];
+    NSString *unit;    
     NSString *returnString = @"";
     if (hours > 0) {
         if (hours < 10) {
-            sHours = [NSString stringWithFormat:@"0%d", hours];
+            unit = [NSString stringWithFormat:@"0%d", hours];
         } else {
-            sHours = [NSString stringWithFormat:@"%d", hours];
+            unit = [NSString stringWithFormat:@"%d", hours];
         }
-        returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sHours]];
+        returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", unit]];
     }
     
     if (minutes < 10) {
-        sMinutes = [NSString stringWithFormat:@"0%d", minutes];
+        unit = [NSString stringWithFormat:@"0%d", minutes];
     } else {
-        sMinutes = [NSString stringWithFormat:@"%d", minutes];
+        unit = [NSString stringWithFormat:@"%d", minutes];
     }
-    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", sMinutes]];
+    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@:", unit]];
     
     if (seconds < 10) {
-        sSeconds = [NSString stringWithFormat:@"0%d", seconds];
+        unit = [NSString stringWithFormat:@"0%d", seconds];
     } else {
-        sSeconds = [NSString stringWithFormat:@"%d", seconds];
+        unit = [NSString stringWithFormat:@"%d", seconds];
     }
-    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@", sSeconds]];
+    returnString = [returnString stringByAppendingString: [NSString stringWithFormat:@"%@", unit]];
     
     return returnString;
 }
@@ -246,7 +238,6 @@ CGFloat const _increment = .1f;
     NSInteger seconds;
     NSInteger minutes;
     NSInteger hours;
-    
     hours                           = floor(secondsTotal / (60 * 60));
     secondsTotal                    = secondsTotal - (hours * (60 * 60));
     minutes                         = floor(secondsTotal / 60);

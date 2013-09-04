@@ -47,6 +47,7 @@ typedef enum{
 
 + (CGFloat)cellHeight;
 
+- (void)animateOut;
 - (void)setAsFirstResponder;
 - (void)resignAsFirstResponder;
 

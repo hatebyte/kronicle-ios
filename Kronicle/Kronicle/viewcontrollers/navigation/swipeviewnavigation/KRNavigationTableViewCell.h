@@ -11,7 +11,7 @@
 @interface KRNavigationTableViewCell : UITableViewCell
 
 
-- (void)prepareForUseWithData:(NSDictionary *)data;
+- (void)prepareForUseWithData:(NSDictionary *)data isTableOpen:(BOOL)isTableOpen;
 - (void)addStroke;
 
 

@@ -37,11 +37,9 @@
     if (self) {
         _step = step;
         _saveBlock = saveBlock;
-        _tempTitle = _step.title;
-        _tempDesc = _step.desc;
-        
-        NSLog(@"_tempTitle : %@", _tempTitle);
-        NSLog(@"_tempDesc : %@", _tempDesc);
+        _tempTitle =(_step.title.length > 0) ? _step.title : @"Example step Title";
+        _tempDesc =(_step.desc.length > 0) ? _step.desc : @"Example Description. Had this been a real description, you would have learned something by now.";
+
     }
     return self;
 }
@@ -114,7 +112,7 @@
 }
 
 - (void)validate {
-    NSInteger time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
+//    NSInteger time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
     _tempTitle                  = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
     _tempDesc                   = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
 

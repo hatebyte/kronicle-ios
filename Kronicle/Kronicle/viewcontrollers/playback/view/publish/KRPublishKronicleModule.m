@@ -70,7 +70,7 @@
         [self addSubview:_titleLabel];
         
         
-        NSString *time = [KRClockManager stringTimeForInt:_kronicle.totalTime];
+        NSString *time = [KRClockManager displayTimeString:_kronicle.totalTime];
         time =([[time substringToIndex:1] isEqualToString:@"0"]) ? [time substringFromIndex:1] : time;
         
         _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPadding,

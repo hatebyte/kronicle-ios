@@ -36,8 +36,9 @@
 @property (nonatomic, assign) BOOL isPausedByUser;
 @property (nonatomic, assign) BOOL isPausedByInfiniteWait;
 
-+ (NSString *)stringTimeForInt:(NSInteger)time;
++ (NSString *)displayTimeString:(NSInteger)time;
 + (NSDictionary *)getTimeUnits:(NSInteger)secondsTotal;
++ (NSString *)clockTimeString:(NSInteger)time;
 
 - (id)initWithKronicle:(Kronicle *)kronicle;
 - (void)setTimeForCurrentStep:(int)step;

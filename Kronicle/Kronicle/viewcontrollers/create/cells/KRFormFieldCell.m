@@ -17,5 +17,6 @@
 
 #pragma BBCustomToobar delegate methods
 - (void)customToolBar:(KeyboardNavigationToolBar*)toolbar buttonClicked:(KeyboardNavigationToolBarButton)selectedId {}
+- (void)animateOut {}
 
 @end

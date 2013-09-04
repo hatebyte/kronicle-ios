@@ -153,7 +153,7 @@
         case KRFormFieldCellTypeAddTime:
             break;
     }
-    //[(KRFormFieldCell *)[_tableView cellForRowAtIndexPath:indexPath] resignAsFirstResponder];
+    [(KRFormFieldCell *)[_tableView cellForRowAtIndexPath:indexPath] animateOut];
 
 }
 

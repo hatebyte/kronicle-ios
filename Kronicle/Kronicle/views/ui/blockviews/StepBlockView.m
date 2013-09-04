@@ -35,7 +35,7 @@
         NSString *imagePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", _step.mediaUrl]];
 
         self.image                      = [UIImage imageWithContentsOfFile:imagePath];
-        NSString *time = [KRClockManager stringTimeForInt:(int)_step.time];
+        NSString *time = [KRClockManager displayTimeString:_step.time];
         time =([[time substringToIndex:1] isEqualToString:@"0"]) ? [time substringFromIndex:1] : time;
         NSString *descriptionString     = [NSString stringWithFormat:@"%@ \n%@", _step.title, time];
         

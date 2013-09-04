@@ -95,7 +95,7 @@
     [self.view addSubview:_titleLabel];
 
 
-    NSString *time = [KRClockManager stringTimeForInt:_kronicle.totalTime];
+    NSString *time = [KRClockManager displayTimeString:_kronicle.totalTime];
     time =([[time substringToIndex:1] isEqualToString:@"0"]) ? [time substringFromIndex:1] : time;
 
     _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPadding, _titleLabel.frame.size.height + _titleLabel.frame.origin.y, 320 - kPadding, 50)];
@@ -171,7 +171,7 @@
     NSInteger titleHeight                       = _titleLabel.frame.size.height + _titleLabel.frame.origin.y;
     _titleLabel.frame                           = CGRectMake(kPadding-8, ((320 - titleHeight) * .5) - 20, 320 - kPadding, _titleLabel.frame.size.height);
 
-    NSString *time                              = [KRClockManager stringTimeForInt:_kronicle.totalTime];
+    NSString *time                              = [KRClockManager displayTimeString:_kronicle.totalTime];
     time                                        =([[time substringToIndex:1] isEqualToString:@"0"]) ? [time substringFromIndex:1] : time;
     
     _timeLabel.frame                            = CGRectMake(kPadding, _titleLabel.frame.size.height + _titleLabel.frame.origin.y, 320 - kPadding, 50);

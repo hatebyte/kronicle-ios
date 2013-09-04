@@ -74,7 +74,7 @@ CGFloat const _sidesBuffer = .42;
     _step = step;
     _ratio = ratio;
     
-    _clockLabel.text = [KRClockManager stringTimeForInt:(_kronicle.totalTime - totalCompleted)];
+    _clockLabel.text = [KRClockManager clockTimeString:(_kronicle.totalTime - totalCompleted)];
     [self setNeedsDisplay];
 }
 

@@ -32,6 +32,8 @@
     @private
     NSMutableArray *_kronicleSteps;
     UIButton *_previewButton;
+    NSString *_tempTitle;
+    NSString *_tempDescription;
 }
 
 @end
@@ -44,7 +46,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
                 
-
+         
         
     }
     return self;
@@ -80,6 +82,8 @@
     _kronicleSteps = [[NSMutableArray alloc] init];
     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
     
+    _tempTitle =(_kronicle.title.length > 0) ? _kronicle.title : @"Example Kronicle";
+    _tempDescription =(_kronicle.desc.length > 0) ? _kronicle.desc : @"Example Description. Had this been a real description, you would have learned something by now.";
     
 }
 
@@ -87,7 +91,8 @@
     [super viewWillAppear:animated];
     
     [self parseKronicleStepsToTable];
-
+    [_tableView reloadData];
+    [self validate];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -103,10 +108,10 @@
 }
 
 - (void)validate {
-    _kronicle.title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] value];
-    _kronicle.desc              = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
+    _kronicle.title                     = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] value];
+    _kronicle.desc                      = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
 
-    if (_kronicle.title.length < 1 || _kronicle.desc.length < 1 || [_kronicle.steps count] < 1) {
+    if (_tempTitle.length < 1 || _tempDescription.length < 1 || [_kronicle.steps count] < 1) {
         [UIView animateWithDuration:.4
                               delay:.3
                             options:UIViewAnimationOptionCurveEaseInOut
@@ -201,7 +206,7 @@
             if (cell == nil) {
                 cell = [[AddTitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TitleCell"];
             }
-            [cell prepareForUseWithTitle:self.kronicle.title andType:AddTitleKronicle];
+            [cell prepareForUseWithTitle:_tempTitle andType:AddTitleKronicle];
             [(AddTitleTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
@@ -211,7 +216,7 @@
             if (!cell) {
                 cell = [[AddDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DescriptionCell"];
             }
-            [cell prepareForUseWithDescription:_kronicle.desc andType:AddTitleKronicle];
+            [cell prepareForUseWithDescription:_tempDescription andType:AddTitleKronicle];
             [(AddDescriptionTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;

@@ -154,6 +154,7 @@
 - (void)setAsFirstResponder {
     if (_textArea.editable) {}
     [_textArea performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.0];
+
     [self animateIn];
 }
 

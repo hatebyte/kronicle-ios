@@ -151,11 +151,10 @@
 - (void)manager:(KRClockManager *)manager updateTimeWithString:(NSString *)timeString
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
-    
     [_scrollView updateCurrentStepClock:timeString withRatio:stepRatio];
     [_stepListContainerView updateCurrentStepWithRatio:stepRatio];
     [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
-    _globalClockLabel.text = [KRClockManager stringTimeForInt:(_kronicle.totalTime - (globalRatio * _kronicle.totalTime))];
+    _globalClockLabel.text = [KRClockManager clockTimeString:(_kronicle.totalTime - (globalRatio * _kronicle.totalTime))];
 }
 
 - (void)manager:(KRClockManager *)manager stepComplete:(int)stepIndex {
@@ -165,7 +164,6 @@
 - (void)manager:(KRClockManager *)manager pauseForInfiniteWait:(NSInteger)stepIndex
   withStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio {
-    
     [_circularGraphView updateForCurrentStep:_kronicleManager.currentStepIndex andRatio:globalRatio andTimeCompleted:(globalRatio * _kronicle.totalTime)];
     [_stepNavigation updateForInfiniteWait];
     [_mediaView hideResume];

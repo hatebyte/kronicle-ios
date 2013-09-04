@@ -75,7 +75,6 @@
                            [NSValue valueWithPointer:@selector(me)], @"target",
                            nil],
                       nil];
-        //SEL aSel = [[dict objectForKey:@"foo"] pointerValue];
 
         _whiteBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, _hiddenFrame.size.height)];
         _whiteBar.backgroundColor = [UIColor whiteColor];
@@ -86,7 +85,6 @@
         _tableView.scrollEnabled = NO;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-//        _tableView.separatorColor = [KRColorHelper turquoise];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self addSubview:_tableView];
         
@@ -97,13 +95,6 @@
         _hamburgerButton.backgroundColor = [UIColor whiteColor];
         [self addSubview:_hamburgerButton];
         
-//        UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
-//        [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
-//        [self addGestureRecognizer:recognizer];
-//        
-//        recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
-//        [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
-//        [self addGestureRecognizer:recognizer];
     
     }
     return self;
@@ -142,6 +133,7 @@
 - (void)animateIn {
     self.isOpen = YES;
     self.isBelowScreen = NO;
+    [_tableView reloadData];
     [UIView animateWithDuration:.3
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -157,7 +149,7 @@
 - (void)animateOut {
     self.isOpen = NO;
     self.isBelowScreen = NO;
-
+    [_tableView reloadData];
     [UIView animateWithDuration:.3
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -171,7 +163,6 @@
 }
 
 #pragma UISwipeGestureRecognizer
-
 -(void)swipeDetected:(UISwipeGestureRecognizer *)swipeRecognizer {
     if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionUp) {
         [self animateIn];
@@ -187,7 +178,6 @@
 
 
 #pragma tableview
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [KRSwipeViewNavigation cellHeight];
 }
@@ -202,7 +192,7 @@
         cell = [[KRNavigationTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"KRNavigationTableViewCell"];
     }
     NSDictionary *data = [_tableData objectAtIndex:indexPath.row];
-    [cell prepareForUseWithData:data];
+    [cell prepareForUseWithData:data isTableOpen:self.isOpen];
     
     if (indexPath.row < _tableData.count-1) {
         [cell addStroke];

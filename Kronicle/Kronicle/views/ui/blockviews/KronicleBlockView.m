@@ -45,7 +45,7 @@
         _imageView.image                = [UIImage imageWithContentsOfFile:kronicle.fullCoverURL];
         [self addSubview:_imageView];
         
-        NSString *time = [KRClockManager stringTimeForInt:_kronicle.totalTime];
+        NSString *time = [KRClockManager displayTimeString:_kronicle.totalTime];
         time =([[time substringToIndex:1] isEqualToString:@"0"]) ? [time substringFromIndex:1] : time;
         NSString *descriptionString     = [NSString stringWithFormat:@"%@ \n%@", kronicle.title, time];
         

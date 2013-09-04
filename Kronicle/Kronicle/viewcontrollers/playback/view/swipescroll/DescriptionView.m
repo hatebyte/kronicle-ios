@@ -142,7 +142,7 @@
 - (void)resetClock {
     if (_step) {
         if (_step.time > 0) {
-            _clockLabel.text = [KRClockManager stringTimeForInt:_step.time];
+            _clockLabel.text = [KRClockManager clockTimeString:_step.time];
         } else {
             _clockLabel.text = @"Tap when done";
         }

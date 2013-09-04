@@ -65,7 +65,7 @@
         _subLabel.textColor = [UIColor grayColor];
         _subLabel.backgroundColor = [UIColor clearColor];
         _subLabel.textColor = [KRColorHelper turquoise];
-        NSString *time = [KRClockManager stringTimeForInt:_step.time];
+        NSString *time = [KRClockManager clockTimeString:_step.time];
         if ([[time substringToIndex:1] isEqualToString:@"0"]) {
             time = [time substringFromIndex:1];
         }
