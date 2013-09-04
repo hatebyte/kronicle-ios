@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-CGFloat const _increment = 1.f;
+CGFloat const _increment = .1f;
 
 @interface KRClockManager () {
 @private
@@ -47,24 +47,26 @@ CGFloat const _increment = 1.f;
 }
 
 - (void)setTimeForStep:(NSInteger)stepIndex {
+    
     _stepRatio = 0;
     _globalRatio = 0;
     _step = [_kronicle.steps objectAtIndex:stepIndex];
+        
     _stepTotal = _step.time;
     _currentTime = _stepTotal;
     
     [_timer invalidate];
     _timer = nil;
-    _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    if (_step.time == 0) {
+        [self pause];
+        [self.delegate manager:self pauseForInfiniteStep:stepIndex];
+        return;
+    } else {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:_increment target:self selector:@selector(update) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     
+    }    
 }
-//
-//- (void)togglePlayPause {
-//    if (_isPaused) {
-//    } else {
-//    }
-//}
 
 - (void)unpause {
     [_timer invalidate];

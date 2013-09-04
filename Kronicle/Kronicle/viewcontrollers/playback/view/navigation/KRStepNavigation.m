@@ -11,7 +11,9 @@
 #import "KRFontHelper.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface KRStepNavigation () {
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
+@interface KRStepNavigation () <UIGestureRecognizerDelegate> {
     @private
     UIButton *_resume;
     UIButton *_skipThisStep;
@@ -20,6 +22,9 @@
     UIButton *_backward;
     UIView *_clippingView;
     UIImageView *_carrot;
+    UISwipeGestureRecognizer *_cellLeftSwipper;
+    UISwipeGestureRecognizer *_cellRightSwipper;
+    SEL _backwardSelector;
 }
 
 @end
@@ -96,7 +101,16 @@
         _carrot.alpha = 0;
         _carrot.hidden = YES;
         [self addSubview:_carrot];
-
+        
+        _cellLeftSwipper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+        [_cellLeftSwipper setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+        
+        _cellRightSwipper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+        [_cellRightSwipper setDirection:(UISwipeGestureRecognizerDirectionRight)];
+        [self addGestureRecognizer:_cellRightSwipper];
+        [self addGestureRecognizer:_cellLeftSwipper];
+        
+        _backwardSelector = @selector(backward:);
     }
     return self;
 }
@@ -129,7 +143,7 @@
     _forward.hidden = NO;
     [_backward removeTarget:self action:@selector(goback:)  forControlEvents:UIControlEventTouchUpInside];
     [_backward addTarget:self action:@selector(backward:) forControlEvents:UIControlEventTouchUpInside];
-
+    _backwardSelector = @selector(backward:);
 }
 
 - (void)setAsLastStep {
@@ -140,9 +154,10 @@
     self.isShowing = YES;
     [self animateNavbarOut];
     _forward.hidden = YES;
-    
+
     [_backward removeTarget:self action:@selector(backward:) forControlEvents:UIControlEventTouchUpInside];
     [_backward addTarget:self action:@selector(goback:) forControlEvents:UIControlEventTouchUpInside];
+    _backwardSelector = @selector(goback:);
 }
 
 - (void)animateNavbarIn {
@@ -184,13 +199,15 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+-(void)swipeDetected:(UISwipeGestureRecognizer *)swipeRecognizer {
+    
+    if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [self forward:nil];
+    }
+    if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self performSelector:_backwardSelector withObject:nil];
+    }
 }
-*/
+
 
 @end

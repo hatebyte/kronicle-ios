@@ -7,67 +7,14 @@
 //
 
 #import "KRPlaybackViewController.h"
-#import "KRStep.h"
-#import "DescriptionView.h"
-#import "KRColorHelper.h"
-#import "KRFontHelper.h"
-#import "KRGlobals.h"
-#import "KRClockManager.h"
-#import "KRKronicleManager.h"
-#import "KRStepNavigation.h"
-#import "KRScrollView.h"
-#import "KRGraphView.h"
-#import "KRStepListContainerView.h"
-#import "MediaView.h"
-#import "KRCircularKronicleGraph.h"
-#import "ManagedContextController.h"
-#import "KRNavigationViewController.h"
-#import "KRHomeViewController.h"
-#import "KRItemsViewController.h"
-#import "KRReviewViewController.h"
-#import "KRTextButton.h"
-#import "KRPublishKronicleOverlay.h"
-#import <QuartzCore/QuartzCore.h>
 
-#define kScrollViewNormal 320.f
-#define kScrollViewUp 180.f
-
-@interface KRPlaybackViewController () <KRClockManagerDelegate, KRKronicleManagerDelegate,
-KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListContainerViewDelegate, KRPublishKronicleOverlayDelegate> {
-    @private
-    CGRect _bounds;
-    UILabel *_globalClockLabel;
-    UILabel *_subGlobalClockLabel;
-    UIScrollView *_sview;
-    UIButton *_backButton;
-    UIButton *_publishButton;
-    KRTextButton *_itemsButton;
-    int _publishButtonHeight;
-    KRKronicleManager *_kronicleManager;
-    KRClockManager *_clockManager;
-    KRStepNavigation *_stepNavigation;
-    KRScrollView *_scrollView;
-    KRGraphView *_graphView;
-    KRStepListContainerView *_stepListContainerView;
-    MediaView *_mediaView;
-    KRCircularKronicleGraph *_circularGraphView;
-    KRKronicleViewingState _viewingState;
+@interface KRPlaybackViewController () {
     
-    KRPublishKronicleOverlay *_publishOverlay;
 }
 
 @end
 
 @implementation KRPlaybackViewController
-
-- (id)initWithKronicle:(Kronicle *)kronicle andViewingState:(KRKronicleViewingState)viewingState {
-    self = [self initWithKronicle:kronicle];
-    if (self) {
-        _viewingState = viewingState;
-        
-    }
-    return self;
-}
 
 - (id)initWithKronicle:(Kronicle *)kronicle {
     self = [super initWithNibName:@"KRPlaybackViewController" bundle:nil];
@@ -127,9 +74,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     _mediaView.delegate = self;
     [_sview addSubview:_mediaView];
     
-//    _graphView = [[KRGraphView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 80)];
-//    [_sview addSubview:_graphView];
-
     _scrollView = [[KRScrollView alloc] initWithFrame:CGRectMake(0, _mediaView.frame.origin.y + _mediaView.frame.size.height, 320, 310) andKronicle:self.kronicle];
     _scrollView.scrollDelegate = self;
     _scrollView.contentSize = CGSizeMake(320 * ([_kronicle.steps count]+1), [KRScrollView playbackHeight]);
@@ -154,45 +98,26 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_backButton];
 
-    if (_viewingState == KRKronicleViewingStateView) {
-        [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
-        _backButton.backgroundColor                 = [UIColor clearColor];
-        _backButton.frame                           = CGRectMake(0, 0, 40, 40);
-        
-        NSInteger itemsBUttonHeight = 42;
-        _itemsButton = [[KRTextButton alloc] initWithFrame:CGRectMake(0,
-                                                                      _sview.contentSize.height-(itemsBUttonHeight),
-                                                                      121,
-                                                                      itemsBUttonHeight)
-                                                   andType:KRTextButtonTypeHomeScreen
-                                                   andIcon:[UIImage imageNamed:@"itemshamburger"]];
-        [_itemsButton setTitle:NSLocalizedString(@"View Items", @"View items this kronicle button") forState:UIControlStateNormal];
-        [_itemsButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-        [_itemsButton setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
-        [_itemsButton addTarget:self action:@selector(viewItemsRequested:) forControlEvents:UIControlEventTouchUpInside];
-        _itemsButton.titleEdgeInsets                    = UIEdgeInsetsMake(0, 14, 0, 0);
-        _itemsButton.imageEdgeInsets                    = UIEdgeInsetsMake(0, 10, 0, 0);
-        _itemsButton.backgroundColor                    = [UIColor whiteColor];
-        _itemsButton.titleLabel.font                    = [KRFontHelper getFont:KRBrandonRegular withSize:18];
-        [_sview addSubview:_itemsButton];   
-
-    } else {
-        [_backButton setTitle:@"Edit" forState:UIControlStateNormal];
-        [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _backButton.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.3];
-        _backButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
-        _backButton.frame = CGRectMake(5, 5, 40, 26);
-        
-        _publishButtonHeight = 42;
-        _publishButton       = [UIButton buttonWithType:UIButtonTypeCustom];
-        _publishButton.backgroundColor = [KRColorHelper turquoise];
-        [_publishButton setTitle:@"Publish" forState:UIControlStateNormal];
-        [_publishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _publishButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
-        _publishButton.frame = CGRectMake(_bounds.size.width - 82, _bounds.size.height-(_publishButtonHeight+20), 82, _publishButtonHeight);
-        [_publishButton addTarget:self action:@selector(showPublishKronicleOverlay) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_publishButton];
-    }
+    [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
+    _backButton.backgroundColor                 = [UIColor clearColor];
+    _backButton.frame                           = CGRectMake(0, 0, 40, 40);
+    
+    NSInteger itemsBUttonHeight = 42;
+    _itemsButton = [[KRTextButton alloc] initWithFrame:CGRectMake(0,
+                                                                  _sview.contentSize.height-(itemsBUttonHeight),
+                                                                  121,
+                                                                  itemsBUttonHeight)
+                                               andType:KRTextButtonTypeHomeScreen
+                                               andIcon:[UIImage imageNamed:@"itemshamburger"]];
+    [_itemsButton setTitle:NSLocalizedString(@"View Items", @"View items this kronicle button") forState:UIControlStateNormal];
+    [_itemsButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    [_itemsButton setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
+    [_itemsButton addTarget:self action:@selector(viewItemsRequested:) forControlEvents:UIControlEventTouchUpInside];
+    _itemsButton.titleEdgeInsets                    = UIEdgeInsetsMake(0, 14, 0, 0);
+    _itemsButton.imageEdgeInsets                    = UIEdgeInsetsMake(0, 10, 0, 0);
+    _itemsButton.backgroundColor                    = [UIColor whiteColor];
+    _itemsButton.titleLabel.font                    = [KRFontHelper getFont:KRBrandonRegular withSize:18];
+    [_sview addSubview:_itemsButton];   
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reviewRequested) name:kKronicleReviewRequested object:nil];
 
@@ -237,6 +162,9 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [self setStep:stepIndex + 1];
 }
 
+- (void)manager:(KRClockManager *)manager pauseForInfiniteStep:(NSInteger)stepIndex {
+    NSLog(@"pauseForInfiniteStep : %d", stepIndex);
+}
 
 #pragma KRKronicleManager delegate
 - (void)manager:(KRKronicleManager *)manager updateUIForStep:(Step*)step {
@@ -246,15 +174,10 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_clockManager setTimeForStep:step.indexInKronicle];
     [_stepListContainerView adjustStepListForCurrentStep:step.indexInKronicle];
     [_scrollView setCurrentStep:step.indexInKronicle];
-    [_clockManager unpause];
+//    [_clockManager unpause];
     [_mediaView hideResume];
 
     [_mediaView setMediaPath:step.mediaUrl];
-    if (_kronicleManager.currentStepIndex == _kronicle.stepCount-1) {
-        [_stepNavigation setAsLastStep];
-    } else {
-        [_stepNavigation reset];
-    }
     [self relayoutForPlayback];
  
     [UIView animateWithDuration:.5
@@ -265,7 +188,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
                      }
                      completion:^(BOOL fin){
                      }];
-
 }
 
 - (void)manager:(KRKronicleManager *)manager previewUIForStep:(Step*)step {
@@ -288,25 +210,18 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
     [_scrollView scrollToPage:step.indexInKronicle];
     [_mediaView setMediaPath:step.mediaUrl];
     
-    if (_kronicleManager.previewStepIndex == _kronicle.stepCount-1) {
+    if (_kronicleManager.previewStepIndex >= _kronicle.stepCount-1) {
         [_stepNavigation setAsLastStep];
     } else {
         [_stepNavigation reset];
     }
     [self relayoutForPlayback];
-    
-    
 }
 
 - (void)kronicleComplete:(KRKronicleManager *)manager {
-    if (_viewingState == KRKronicleViewingStatePreview) {
-        [self showPublishKronicleOverlay];
-        return;
-    }
     [_clockManager resetForLastStep];
     [_circularGraphView updateForFinished];
     [_stepNavigation updateForFinished];
-    //[_stepNavigation setAsLastStep];
 
     [_mediaView updateForFinishedWithImage:_kronicle.coverUrl andTitle:_kronicle.title];
     [self relayoutForFinished];
@@ -380,16 +295,13 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 #pragma private methods
 - (void)previewStep:(NSInteger)step {
-    [_stepNavigation reset];
     [_kronicleManager setPreviewStep:step];
 
 }
 
 - (void)setStep:(NSInteger)step {
-    [_stepNavigation reset];
     [_kronicleManager setStep:step];
     [_kronicleManager setPreviewStep:step];
-    
 }
 
 
@@ -455,55 +367,6 @@ KRStepNavigationDelegate, KRScrollViewDelegate,  MediaViewDelegate, KRStepListCo
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-
-#pragma publish 
-- (void)showPublishKronicleOverlay {    
-    _publishOverlay = [[KRPublishKronicleOverlay alloc] initWithFrame:self.view.frame andKronicle:_kronicle];
-    _publishOverlay.alpha = 0;
-    _publishOverlay.delegate = self;
-    [self.view addSubview:_publishOverlay];
-    
-    [UIView animateWithDuration:.5
-                          delay:.2f
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _publishOverlay.alpha = 1.f;
-                     }
-                     completion:^(BOOL fin){
-                     }];
-}
-
-- (void)removePublishKronicleOverlay {
-    
-    [UIView animateWithDuration:.5
-                          delay:.2f
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _publishOverlay.alpha = 0.f;
-                     }
-                     completion:^(BOOL fin){
-                         [_publishOverlay removeFromSuperview];
-                         _publishOverlay = nil;
-
-                     }];
-}
-
-- (void)publishKronicleOverlayCanceled {
-    [self removePublishKronicleOverlay];
-}
-
-- (void)publishKronicleOverlayPublish {
-    _kronicle.isFinished = YES;
-    [[ManagedContextController current] saveContext];
-    [self removePublishKronicleOverlay];
-
-    [[KRHomeViewController current] mykronicles];
-}
-
-- (void)publishKronicleOverlayPhotoChanged {
-
 }
 
 

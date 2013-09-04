@@ -108,7 +108,6 @@
         _placeholderLabel.hidden = NO;
     }
     _screenType                             = type;
-//    [self showContracted];
 }
 
 - (void)animateIn {

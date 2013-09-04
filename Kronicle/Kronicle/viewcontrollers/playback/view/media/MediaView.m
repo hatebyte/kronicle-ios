@@ -105,19 +105,7 @@
     [self.delegate mediaViewScreenTapped:self];
 }
 
-
-//- (void)togglePlayPause:(BOOL)isPaused {
-//    if (!isPaused) {
-//        [self play];
-//    } else {
-//        [self pause];
-//    }
-//}
-//
 - (void)hideResume {
-//    if (_moviePlayer != nil) {
-//        [_moviePlayer play];
-//    }
     [UIView animateWithDuration:.4f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -130,9 +118,6 @@
 }
 
 - (void)showResume {
-//    if (_moviePlayer != nil) {
-//        [_moviePlayer pause];
-//    }
     [UIView animateWithDuration:.7f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -148,9 +133,7 @@
     if ([_mediaPath isEqualToString:mediaPath]) {
         return;
     }
-    //[self animateOutFinishedOverlay];
 
-//    _transition =(type == MediaViewLeft) ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight;
     _transition = UIViewAnimationTransitionNone;
     self.isVideo = NO;
 

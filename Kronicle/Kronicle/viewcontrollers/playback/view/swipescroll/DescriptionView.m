@@ -141,7 +141,11 @@
 
 - (void)resetClock {
     if (_step) {
-        _clockLabel.text = [KRClockManager stringTimeForInt:_step.time];
+        if (_step.time > 0) {
+            _clockLabel.text = [KRClockManager stringTimeForInt:_step.time];
+        } else {
+            _clockLabel.text = @"Swipe to continue";
+        }
     }
 }
 

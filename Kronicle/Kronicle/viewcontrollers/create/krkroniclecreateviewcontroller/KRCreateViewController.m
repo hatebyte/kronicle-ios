@@ -19,7 +19,7 @@
 #import "KRSwipeViewNavigation.h"
 #import "KronicleEngine.h"
 #import "KRGlobals.h"
-#import "KRPlaybackViewController.h"
+#import "KRPlaybackPublishViewController.h"
 #import "AddItemsCell.h"
 #import "KRItemsViewController.h"
 #import "ManagedContextController.h"
@@ -63,8 +63,7 @@
     _previewButton                                              = [UIButton buttonWithType:UIButtonTypeCustom];
     _previewButton.backgroundColor                              = [KRColorHelper orange];
     _previewButton.titleLabel.font                              = [KRFontHelper getFont:KRBrandonRegular withSize:17];
-    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
-//    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
+    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height-20, 141, _buttonHeight);
     [_previewButton setTitle:@"Preview" forState:UIControlStateNormal];
     [_previewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_previewButton addTarget:self action:@selector(previewKronicle:) forControlEvents:UIControlEventTouchUpInside];
@@ -131,7 +130,7 @@
 }
 
 - (IBAction)previewKronicle:(id)sender {
-    KRPlaybackViewController *playbackViewController = [[KRPlaybackViewController alloc] initWithKronicle:_kronicle andViewingState:KRKronicleViewingStatePreview];
+    KRPlaybackPublishViewController *playbackViewController = [[KRPlaybackPublishViewController alloc] initWithKronicle:_kronicle];
     [self.navigationController pushViewController:playbackViewController animated:YES];
 }
 

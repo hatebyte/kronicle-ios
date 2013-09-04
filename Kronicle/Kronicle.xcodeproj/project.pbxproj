@@ -142,6 +142,9 @@
 		D262002B17D31F42000A1E77 /* camerabutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D262002917D31F42000A1E77 /* camerabutton.png */; };
 		D262002C17D31F42000A1E77 /* cancelpublish.png in Resources */ = {isa = PBXBuildFile; fileRef = D262002A17D31F42000A1E77 /* cancelpublish.png */; };
 		D262007C17D593D2000A1E77 /* profile-view.png in Resources */ = {isa = PBXBuildFile; fileRef = D262007B17D593D2000A1E77 /* profile-view.png */; };
+		D262007E17D6BA4C000A1E77 /* fpo_switches.png in Resources */ = {isa = PBXBuildFile; fileRef = D262007D17D6BA4C000A1E77 /* fpo_switches.png */; };
+		D262008017D6C3AC000A1E77 /* fpo_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = D262007F17D6C3AC000A1E77 /* fpo_bottom.png */; };
+		D262008317D6CE99000A1E77 /* KRPlaybackPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */; };
 		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
 		D26A6174175B7CA200B50A39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6173175B7CA200B50A39 /* AVFoundation.framework */; };
 		D26A6178175B7E2600B50A39 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6177175B7E2600B50A39 /* AudioToolbox.framework */; };
@@ -409,6 +412,10 @@
 		D262002917D31F42000A1E77 /* camerabutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camerabutton.png; sourceTree = "<group>"; };
 		D262002A17D31F42000A1E77 /* cancelpublish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelpublish.png; sourceTree = "<group>"; };
 		D262007B17D593D2000A1E77 /* profile-view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-view.png"; sourceTree = "<group>"; };
+		D262007D17D6BA4C000A1E77 /* fpo_switches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fpo_switches.png; sourceTree = "<group>"; };
+		D262007F17D6C3AC000A1E77 /* fpo_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fpo_bottom.png; sourceTree = "<group>"; };
+		D262008117D6CE95000A1E77 /* KRPlaybackPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPlaybackPublishViewController.h; sourceTree = "<group>"; };
+		D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPlaybackPublishViewController.m; sourceTree = "<group>"; };
 		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D26A6173175B7CA200B50A39 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D26A6177175B7E2600B50A39 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -984,6 +991,8 @@
 		D262002817D31F42000A1E77 /* publish */ = {
 			isa = PBXGroup;
 			children = (
+				D262007F17D6C3AC000A1E77 /* fpo_bottom.png */,
+				D262007D17D6BA4C000A1E77 /* fpo_switches.png */,
 				D262002917D31F42000A1E77 /* camerabutton.png */,
 				D262002A17D31F42000A1E77 /* cancelpublish.png */,
 			);
@@ -1186,10 +1195,10 @@
 		D2A7F73317D0E75D0039EE5A /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				D2A7F73417D0E75D0039EE5A /* AddDescriptionTableViewCell.h */,
-				D2A7F73517D0E75D0039EE5A /* AddDescriptionTableViewCell.m */,
 				D2A7F73617D0E75D0039EE5A /* AddTitleTableViewCell.h */,
 				D2A7F73717D0E75D0039EE5A /* AddTitleTableViewCell.m */,
+				D2A7F73417D0E75D0039EE5A /* AddDescriptionTableViewCell.h */,
+				D2A7F73517D0E75D0039EE5A /* AddDescriptionTableViewCell.m */,
 				D2A7F73817D0E75D0039EE5A /* KeyboardNavigationToolBar.h */,
 				D2A7F73917D0E75D0039EE5A /* KeyboardNavigationToolBar.m */,
 				D2A7F73A17D0E75D0039EE5A /* KRFormFieldCell.h */,
@@ -1416,6 +1425,8 @@
 				D2A7F79317D0E75D0039EE5A /* manager */,
 				D2A7F79817D0E75D0039EE5A /* model */,
 				D2A7F79B17D0E75D0039EE5A /* view */,
+				D262008117D6CE95000A1E77 /* KRPlaybackPublishViewController.h */,
+				D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */,
 			);
 			path = playback;
 			sourceTree = "<group>";
@@ -1946,6 +1957,8 @@
 				D262002B17D31F42000A1E77 /* camerabutton.png in Resources */,
 				D262002C17D31F42000A1E77 /* cancelpublish.png in Resources */,
 				D262007C17D593D2000A1E77 /* profile-view.png in Resources */,
+				D262007E17D6BA4C000A1E77 /* fpo_switches.png in Resources */,
+				D262008017D6C3AC000A1E77 /* fpo_bottom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2160,6 +2173,7 @@
 				D2A7F88117D1A6790039EE5A /* KRReviewOverlay.m in Sources */,
 				D244D36117D2576C00FDEEFB /* KRPublishKronicleOverlay.m in Sources */,
 				D244D36417D2578C00FDEEFB /* KRPublishKronicleModule.m in Sources */,
+				D262008317D6CE99000A1E77 /* KRPlaybackPublishViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

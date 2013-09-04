@@ -17,6 +17,7 @@
     __weak Kronicle *_kronicle;
     UITextView *_titleLabel;
     UILabel *_timeLabel;
+    UIImageView *_fpoImageView;
 }
 
 @end
@@ -36,9 +37,11 @@
     if (self) {
         _kronicle = kronicle;
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.clipsToBounds          = YES;
+        self.backgroundColor = [UIColor clearColor];
+        NSInteger grayY                     = 165;
 
-        _coverImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.width)];
+        _coverImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, (grayY - frame.size.width) * .5, frame.size.width, frame.size.width)];
         _coverImage.image = [UIImage imageWithContentsOfFile:_kronicle.fullCoverURL];
         _coverImage.backgroundColor   = [UIColor blackColor];
         [self addSubview:_coverImage];
@@ -94,22 +97,30 @@
                                                           _timeLabel.frame.size.width,
                                                           _timeLabel.frame.size.height);
         
+        
+
+
+        
         CALayer *grayLayer                  = [CALayer layer];
         grayLayer.backgroundColor           = [KRColorHelper grayLight].CGColor;
-        grayLayer.frame                     = CGRectMake(0, 165, frame.size.width, 35);
-        [self.layer addSublayer:grayLayer];
+        grayLayer.frame                     = CGRectMake(0, grayY, frame.size.width, 38);
+
+        _fpoImageView                       = [[UIImageView alloc] initWithFrame:CGRectMake(0, grayY, 240, 125)];
+        _fpoImageView.image                 = [UIImage imageNamed:@"fpo_switches"];
+        _fpoImageView.backgroundColor       = [UIColor clearColor];
         
         CALayer *whiteLayer                 = [CALayer layer];
         whiteLayer.backgroundColor          = [UIColor whiteColor].CGColor;
-        whiteLayer.frame                    = CGRectMake(0,
-                                                          grayLayer.frame.size.height + grayLayer.frame.origin.y,
-                                                          frame.size.width,
-                                                          90);
+        whiteLayer.frame                    = _fpoImageView.frame;
+
         [self.layer addSublayer:whiteLayer];
+        [self.layer addSublayer:grayLayer];
+        [self addSubview:_fpoImageView];
         
+
         self.publishButton                      = [UIButton buttonWithType:UIButtonTypeCustom];
         self.publishButton.frame                = CGRectMake(0,
-                                                         whiteLayer.frame.size.height + whiteLayer.frame.origin.y,
+                                                         _fpoImageView.frame.size.height + _fpoImageView.frame.origin.y,
                                                          frame.size.width,
                                                          46);
         self.publishButton.backgroundColor      = [KRColorHelper turquoise];

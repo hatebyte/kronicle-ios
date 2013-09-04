@@ -17,6 +17,7 @@
    andStepRatio:(CGFloat)stepRatio
  andGlobalRatio:(CGFloat)globalRatio;
 - (void)manager:(KRClockManager *)manager stepComplete:(NSInteger)stepIndex;
+- (void)manager:(KRClockManager *)manager pauseForInfiniteStep:(NSInteger)stepIndex;
 
 @end
 

@@ -23,7 +23,9 @@
     CreateStepTimeView *_createStepTimeView;
     __weak Step *_step;
     void (^_saveBlock)(Step *);
-
+    
+    NSString *_tempDesc;
+    NSString *_tempTitle;
 }
 
 @end
@@ -35,7 +37,11 @@
     if (self) {
         _step = step;
         _saveBlock = saveBlock;
+        _tempTitle = _step.title;
+        _tempDesc = _step.desc;
         
+        NSLog(@"_tempTitle : %@", _tempTitle);
+        NSLog(@"_tempDesc : %@", _tempDesc);
     }
     return self;
 }
@@ -67,19 +73,23 @@
     _createStepTimeView.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeCreatorRequested:) name:kRequestTimeUnitEdit object:nil];
-
     
     self.view.backgroundColor = [UIColor whiteColor];
 
     _doneButton.frame              = CGRectMake(kPadding, _bounds.size.height, 70, _buttonHeight);
     _addStepButton.frame           = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height, 160, _buttonHeight);
-    [self validate];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
     [_tableView reloadData];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_tableView reloadData];
+    [self validate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,10 +115,10 @@
 
 - (void)validate {
     NSInteger time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
-    NSString *title             = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
-    NSString *desc              = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
+    _tempTitle                  = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
+    _tempDesc                   = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
 
-    if (time < 1 || title.length < 1 || desc.length < 1) {
+    if (/*time < 1 || */_tempTitle.length < 1 || _tempDesc.length < 1) {
         [UIView animateWithDuration:.4
                               delay:.3
                             options:UIViewAnimationOptionCurveEaseInOut
@@ -127,6 +137,7 @@
                          }
                          completion:^(BOOL fin){}];
     }
+    
 }
 
 - (void)addMediaPickerWithType:(UIImagePickerControllerSourceType)type {
@@ -250,7 +261,7 @@
             if (cell == nil) {
                 cell = [[AddTitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TitleCell"];
             }
-            [cell prepareForUseWithTitle:_step.title andType:AddTitleStep];
+            [cell prepareForUseWithTitle:_tempTitle andType:AddTitleStep];
             [(AddTitleTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
@@ -260,7 +271,7 @@
             if (!cell) {
                 cell = [[AddDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DescriptionCell"];
             }
-            [cell prepareForUseWithDescription:_step.desc andType:AddTitleStep];
+            [cell prepareForUseWithDescription:_tempDesc andType:AddTitleStep];
             [(AddDescriptionTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;

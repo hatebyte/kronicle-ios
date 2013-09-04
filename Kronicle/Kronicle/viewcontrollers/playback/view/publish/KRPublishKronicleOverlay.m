@@ -16,6 +16,7 @@
     @private
     KRPublishKronicleModule *_overlayModule;
     __weak Kronicle *_kronicle;
+    UIImageView *_fpoImagePublish;
 }
 
 @end
@@ -25,7 +26,7 @@
 - (id)initWithFrame:(CGRect)frame andKronicle:(Kronicle *)kronicle {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor                    = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.9f];
+        self.backgroundColor                    = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.8f];
         _kronicle                               = kronicle;
         
         _overlayModule                          = [[KRPublishKronicleModule alloc] initWithFrame:CGRectMake((self.frame.size.width - [KRPublishKronicleModule width]) * .5,
@@ -46,6 +47,13 @@
                                                          320,
                                                          80);
         [self.layer addSublayer:whiteLayer];
+        
+        
+        _fpoImagePublish = [[UIImageView alloc] initWithFrame:whiteLayer.frame];
+        _fpoImagePublish.image = [UIImage imageNamed:@"fpo_bottom"];
+        _fpoImagePublish.backgroundColor   = [UIColor clearColor];
+        [self addSubview:_fpoImagePublish];
+
 
     }
     return self;

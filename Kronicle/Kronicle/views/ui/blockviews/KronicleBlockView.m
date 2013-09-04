@@ -20,11 +20,11 @@
     UIButton *_deleteButton;
     UIImageView *_imageView;
     UITapGestureRecognizer *_tapper;
-    Kronicle *_kronicle;
     UIImageView *_profileFrame;
     UIImageView *_profileImage;
     UIView *_creatorView;
     UILabel *_creatorTitleLabel;
+    Kronicle *_kronicle;
     KRRatingModuleView *_ratingView;
 }
 
@@ -144,6 +144,7 @@
 }
 
 - (IBAction)editTapped:(id)sender {
+    [self removeGestureRecognizer:_tapper];
     [self.delegate kronicleBlockView:self requestKronicle:_kronicle];
     
 }
