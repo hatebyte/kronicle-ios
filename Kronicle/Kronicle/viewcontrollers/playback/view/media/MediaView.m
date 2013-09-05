@@ -46,7 +46,7 @@
         _cellRightSwipper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
         [_cellRightSwipper setDirection:(UISwipeGestureRecognizerDirectionRight)];
 
-        int width = 215;
+        int width = 200;
         int height = 62;
         _pauseLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 0, width, height)];
         _pauseLabel.text = @"Resume";
@@ -231,6 +231,7 @@
     [self setMediaPath:coverImageUrl];
     [self hideResume];
     
+    
     NSInteger buttonHeight                                     = 40;
    
     _finishOverlay                          = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
@@ -327,6 +328,14 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kKronicleReviewRequested object:nil];
 }
 
+#pragma gesture regocognizers delegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UIControl class]]) {
+        // we touched a button, slider, or other UIControl
+        return NO; // ignore the touch
+    }
+    return YES; // handle the touch
+}
 
 @end
 

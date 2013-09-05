@@ -21,7 +21,5 @@
 
 - (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType;
 - (void)validate;
-- (void)viewListItems:(Kronicle *)kronicle;
-- (void)createListItems:(Kronicle *)kronicle;
 
 @end

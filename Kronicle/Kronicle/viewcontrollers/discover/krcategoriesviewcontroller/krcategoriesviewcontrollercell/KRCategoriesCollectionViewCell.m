@@ -32,16 +32,23 @@
         
         //for some reason dividing the circle dimension by two isn't good enough... leaving 2.75
         //coordinates in this whole file are fucked
-        KRCategoriesViewControllerCellCircleView *circleView = [[KRCategoriesViewControllerCellCircleView alloc] initWithFrame:CGRectMake((self.width / 2) - (circleDimension / 2.75), 0, circleDimension, circleDimension)];
-        [self.contentView addSubview:circleView];
+//        KRCategoriesViewControllerCellCircleView *circleView = [[KRCategoriesViewControllerCellCircleView alloc] initWithFrame:CGRectMake((self.width / 2) - (circleDimension / 2.75), 0, circleDimension, circleDimension)];
+//        [self.contentView addSubview:circleView];
         
-        _cellTitleLabel = [[NMCustomLabel alloc] initWithFrame:CGRectMake(10, circleView.height + circleView.y, self.width, self.height)];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.width / 2) - (circleDimension / 2.75),
+                                                                   0,
+                                                                   circleDimension,
+                                                                   circleDimension)];
+        [self.contentView addSubview:_imageView];
+        
+         
+        _cellTitleLabel = [[NMCustomLabel alloc] initWithFrame:CGRectMake(10, _imageView.height + _imageView.y, self.width, self.height)];
         [_cellTitleLabel setY:80];
         _cellTitleLabel.backgroundColor = [UIColor clearColor];
         _cellTitleLabel.numberOfLines = 0;
         _cellTitleLabel.textAlignment = UITextAlignmentCenter;
         _cellTitleLabel.lineHeight = 28;
-        _cellTitleLabel.text = @"Category name";
+//        _cellTitleLabel.text = @"Category name";
         [_cellTitleLabel setDefaultStyle:[NMCustomLabelStyle styleWithFont:[KRFontHelper getFont:KRBrandonLight withSize:KRFontSizeLarge] color:[UIColor whiteColor]]];
         [self.contentView addSubview:_cellTitleLabel];
         

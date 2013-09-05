@@ -59,9 +59,6 @@
 
 
 
-- (void)viewListItems:(Kronicle *)kronicle {}
-- (void)createListItems:(Kronicle *)kronicle{}
-
 #pragma uitableview
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

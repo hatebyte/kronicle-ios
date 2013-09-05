@@ -13,14 +13,16 @@
 
 @interface KronicleEngine : MKNetworkEngine
 
-+ (KronicleEngine *)current;
+@property (nonatomic, strong) NSMutableArray *currentOperations;
 
+
++ (KronicleEngine *)current;
 - (void)allKroniclesWithCompletion:(void (^)(NSArray *))successBlock onFailure:(void (^)(NSError *))failBlock;
 - (void)fetchKronicle:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *))failBlock;
-
 - (void)fetchStepsForKronicleUUID:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *))failBlock;
-
-
 - (void)postKronicle:(KRKronicle *)kronicle withCompletion:(void (^)(KRKronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock;
+
+- (void)cancelCurrentOperations;
+
 
 @end

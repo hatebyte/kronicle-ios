@@ -44,12 +44,12 @@
     
     NSInteger emailButtonHeight = 42;
     _emailButton = [[KRTextButton alloc] initWithFrame:CGRectMake(0,
-                                                                  _bounds.size.height-(emailButtonHeight),
-                                                                  121,
+                                                                  _bounds.size.height - (emailButtonHeight + 20),
+                                                                  160,
                                                                   emailButtonHeight)
                                                andType:KRTextButtonTypeHomeScreen
-                                               andIcon:[UIImage imageNamed:@"emailitems"]];
-    [_emailButton setTitle:NSLocalizedString(@"View Items", @"View items this kronicle button") forState:UIControlStateNormal];
+                                               andIcon:[UIImage imageNamed:@"itemsemail"]];
+    [_emailButton setTitle:NSLocalizedString(@"Email Itemlist", @"View items this kronicle button") forState:UIControlStateNormal];
     [_emailButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [_emailButton setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
 //    [_emailButton addTarget:self action:@selector(viewItemsRequested:) forControlEvents:UIControlEventTouchUpInside];
@@ -64,14 +64,11 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)popViewController:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
-
-
 
 #pragma uitableview
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -80,10 +77,6 @@
     viewer.userInteractionEnabled = NO;
     return viewer;
 }
-
-//- (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType {
-//    return [];
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0;

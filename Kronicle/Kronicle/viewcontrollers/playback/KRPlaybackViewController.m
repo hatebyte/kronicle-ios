@@ -369,9 +369,7 @@
 
 #pragma finishbuttons
 - (void)reviewRequested {
-    KRReviewViewController *kronicleReview = [[KRReviewViewController alloc] initWithKronicle:_kronicle];
-    [self.navigationController pushViewController:kronicleReview animated:YES];
-    
+    [self reviewRequested:_kronicle];
 }
 
 - (void)didReceiveMemoryWarning {

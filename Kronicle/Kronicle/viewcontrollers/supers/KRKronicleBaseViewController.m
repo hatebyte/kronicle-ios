@@ -9,6 +9,7 @@
 #import "KRKronicleBaseViewController.h"
 #import "KRItemsViewController.h"
 #import "KRReviewViewController.h"
+#import "KronicleEngine.h"
 
 @interface KRKronicleBaseViewController ()
 
@@ -29,6 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[KronicleEngine current] cancelCurrentOperations];
 }
 
 - (void)didReceiveMemoryWarning

@@ -58,6 +58,10 @@
     NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height;
     _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top + [KRSwipeViewNavigation cellHeight]));
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadLocalKronicles];
 }
 
@@ -151,7 +155,19 @@
 - (void)kronicleDeletionRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle {
     [Kronicle deleteKronicle:kronicle];
     
-    [self loadLocalKronicles];
+    [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
+        _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
+        [_tableView reloadData];
+    }
+                       onFailure:^(NSDictionary *error) {
+                           NSLog(@"Cant get local kronicles : %@", error);
+                           if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
+                               NSLog(@"Cant get remote kronicles : %@", error);
+                           }
+                           _kroniclesModuloed = [[NSArray alloc] init];
+                           [_tableView reloadData];
+
+                       }];
 }
 
 - (void)kroniclePlaybackRequested:(KronicleBlockTableViewCell *)kronicleBlockTableViewCell forKronicle:(Kronicle *)kronicle {

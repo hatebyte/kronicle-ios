@@ -55,19 +55,22 @@ float const kCollectionViewAnimateTime = 0.2f;
     _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [_flowLayout setItemSize:CGSizeMake(120, 120)];
     [_flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    _flowLayout.minimumInteritemSpacing = 0.0f;
-    _flowLayout.minimumLineSpacing = 20.0f;
+    _flowLayout.minimumInteritemSpacing = 10.0f;
+    _flowLayout.minimumLineSpacing = 10.0f;
     
-    _categoriesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(_searchTextFieldControlView.x, _searchTextFieldControlView.y + (_searchTextFieldControlView.height / 2) + 25.0f, _searchTextFieldControlView.width, self.view.height - 1.5*_searchTextFieldControlView.height) collectionViewLayout:_flowLayout];
+    NSInteger w = _searchTextFieldControlView.width - 15;
+    _categoriesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(((320 -  w) * .5) - 3,
+                                                                                   _searchTextFieldControlView.y + (_searchTextFieldControlView.height / 2) + 25.0f,
+                                                                                   w,
+                                                                                   self.view.height - 1.5*_searchTextFieldControlView.height) collectionViewLayout:_flowLayout];
     _categoriesCollectionView.delegate = self;
     _categoriesCollectionView.dataSource = self;
+    _categoriesCollectionView.bounces = YES;
     [_categoriesCollectionView registerClass:[KRCategoriesCollectionViewCell class] forCellWithReuseIdentifier:KRCollectionCellReuseIdentifier];
     [_categoriesCollectionView setCollectionViewLayout:_flowLayout];
-    _categoriesCollectionView.bounces = YES;
     [_categoriesCollectionView setShowsHorizontalScrollIndicator:NO];
     [_categoriesCollectionView setShowsVerticalScrollIndicator:NO];
     _categoriesCollectionView.backgroundColor = [UIColor clearColor];
-    
     [self.view addSubview:_categoriesCollectionView];
 }
 
@@ -108,12 +111,12 @@ float const kCollectionViewAnimateTime = 0.2f;
     self.view.backgroundColor = [KRColorHelper turquoise];
     
     _dataSource = @[
-                    @"Cooking Time",
-                    @"Pushups",
-                    @"Tough Mudders",
-                    @"Mas Lolz",
-                    @"Lol catz",
-                    @"Dub Stepz"];
+                    @"culinary",
+                    @"exercise",
+                    @"beauty",
+                    @"music",
+                    @"diy",
+                    @"art"];
     
     [self buildSearchView];
     [self buildSearchWhiteBackground];
@@ -123,7 +126,10 @@ float const kCollectionViewAnimateTime = 0.2f;
     _tableView.backgroundColor        = [KRColorHelper grayLight];
 
     [_searchResultsBackground addSubview:_tableView];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [Kronicle getLocaleKronicles:^(NSArray *kronicles) {
         _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
         [_tableView reloadData];
@@ -140,7 +146,6 @@ float const kCollectionViewAnimateTime = 0.2f;
                                                   }];
                            }
                        }];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -148,10 +153,8 @@ float const kCollectionViewAnimateTime = 0.2f;
     [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -171,9 +174,11 @@ float const kCollectionViewAnimateTime = 0.2f;
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     KRCategoriesCollectionViewCell *cell = [_categoriesCollectionView dequeueReusableCellWithReuseIdentifier:KRCollectionCellReuseIdentifier forIndexPath:indexPath];
     cell.cellTitleLabel.text = [_dataSource objectAtIndex:indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:[_dataSource objectAtIndex:indexPath.row]];
     cell.delegate = self;
     return cell;
 }
+
 
 
 #pragma mark - KRCategoriesCollectionViewCellDelegate delegate stuff
@@ -181,8 +186,6 @@ float const kCollectionViewAnimateTime = 0.2f;
     KRListViewController *krlvc = [[KRListViewController alloc] initWithCategoryName:categoriesCollectionViewCell.cellTitleLabel.text];
     [self.navigationController pushViewController:krlvc animated:YES];
 }
-
-
 
 
 

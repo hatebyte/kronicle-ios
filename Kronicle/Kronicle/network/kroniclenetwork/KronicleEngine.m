@@ -14,7 +14,9 @@
 #define kdomain @"http://166.78.151.97:4711/"  
 
 
-@interface KronicleEngine ()
+@interface KronicleEngine () {
+    @private
+}
 @end
 
 @implementation KronicleEngine
@@ -23,6 +25,7 @@
     static KronicleEngine *current = nil;
     if (current == nil) {
         current = [[super allocWithZone:nil] initWithHostName:@"www.google.com"];
+        current.currentOperations = [[NSMutableArray alloc] init];
         [current registerOperationSubclass:[MKNetworkOperation class]];
     }
     return current;
@@ -59,7 +62,7 @@
 - (void)fetchStepsForKronicleUUID:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *))failBlock {
     NSString *requestString = [NSString stringWithFormat:@"%@%@/steps", [APIRouter current].kronicles, uuid];
     MKNetworkOperation *op = [self operationWithURLString:requestString params:nil httpMethod:@"GET"];
-    
+
     [self enqueueOperation:op withResponseJSONSuccessBlock:^(NSDictionary *dict) {
         
         successBlock(dict);
@@ -81,10 +84,14 @@
                onFailure:(void (^)(NSError *))failBlock {
     [op setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
     
+    [[KronicleEngine current].currentOperations addObject:op];
+    
     [self addCompletionBlock:^(MKNetworkOperation *completed) {
+        [[KronicleEngine current].currentOperations removeObject:op];
         NSArray *responseJSON = [completed responseJSON];
         successBlock(responseJSON);
     } andError:^(NSError *error){
+        [[KronicleEngine current].currentOperations removeObject:op];
         failBlock(error);
     } toOperation:op];
     
@@ -99,6 +106,11 @@
 }
 
 
+- (void)cancelCurrentOperations {
+    for (MKNetworkOperation *operation in [KronicleEngine current].currentOperations) {
+        [operation cancel];
+    }
+}
 
 @end
 

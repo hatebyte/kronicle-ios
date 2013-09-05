@@ -18,8 +18,9 @@
 
 }
 
-- (void)viewListItems:(Kronicle *)kronicle;
 - (void)popViewController:(id)sender;
+- (void)viewListItems:(Kronicle *)kronicle;
+- (void)createListItems:(Kronicle *)kronicle;
 - (void)reviewRequested:(Kronicle *)kronicle;
 
 @end

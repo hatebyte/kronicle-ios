@@ -70,15 +70,19 @@
     _subHeaderView                                      = [[KRKroniclesPageNavigationView alloc] initWithFrame:CGRectMake(0,
                                                                                                                           _headerView.frame.origin.y + _headerView.frame.size.height,
                                                                                                                           320,
-                                                                                                                          65)
+                                                                                                                          45)
                                                                                                  andTitleArray:[NSArray arrayWithObjects:@"Rating",
-                                                                                                                                        @"popular",
+                                                                                                                                        @"Popular",
                                                                                                                                         @"Recent", nil]];
     _subHeaderView.delegate                             = self;
     [self.view addSubview:_subHeaderView];
     
     NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height;
     _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top + [KRSwipeViewNavigation cellHeight]));
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadLocalKronicles];
 }
 

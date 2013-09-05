@@ -183,7 +183,6 @@
                                                              _ratingView.frame.origin.y + _ratingView.frame.size.height + (2 * kPadding),
                                                              306,
                                                              150);
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {

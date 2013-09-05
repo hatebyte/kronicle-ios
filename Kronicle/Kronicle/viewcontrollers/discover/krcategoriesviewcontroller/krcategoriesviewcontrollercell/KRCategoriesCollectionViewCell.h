@@ -22,6 +22,7 @@ enum {
 @interface KRCategoriesCollectionViewCell : UICollectionViewCell
 
 @property(strong, nonatomic) NMCustomLabel *cellTitleLabel;
+@property(strong, nonatomic) UIImageView *imageView;
 @property(weak, nonatomic) id <KRCategoriesCollectionViewCellDelegate> delegate;
 
 @end

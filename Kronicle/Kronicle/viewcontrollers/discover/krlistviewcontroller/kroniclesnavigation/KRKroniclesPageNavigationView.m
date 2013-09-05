@@ -54,20 +54,20 @@
         _item3.tag = KroniclesPageNavigationThree;
         
         
-        NSInteger buttonHeight = 55;
+        NSInteger buttonHeight  = frame.size.height * .9;
+        NSInteger buttonY       = frame.size.height - buttonHeight;
         NSInteger buttonWidth = [KRKroniclesPageNavigationView getWidthForString:_item1.titleLabel.text] + (2 * kPadding);
-        _item1.frame = CGRectMake(kPadding, frame.size.height - buttonHeight, buttonWidth, buttonHeight);
+        _item1.frame = CGRectMake(kPadding, buttonY, buttonWidth, buttonHeight);
         
         buttonWidth = [KRKroniclesPageNavigationView getWidthForString:_item2.titleLabel.text] + (2 * kPadding);
-        _item3.frame = CGRectMake(frame.size.width - (buttonWidth + kPadding), frame.size.height - buttonHeight, buttonWidth, buttonHeight);
+        _item3.frame = CGRectMake(frame.size.width - (buttonWidth + kPadding), buttonY, buttonWidth, buttonHeight);
         
         buttonWidth = [KRKroniclesPageNavigationView getWidthForString:_item3.titleLabel.text] + (2 * kPadding);
         NSInteger inbtweenDist = (_item3.frame.origin.x)-(_item1.frame.origin.x + _item1.frame.size.width);
         _item2.frame = CGRectMake(((inbtweenDist - buttonWidth) * .5) + (_item1.frame.origin.x + _item1.frame.size.width),
-                                  frame.size.height - buttonHeight,
+                                  buttonY,
                                   buttonWidth,
                                   buttonHeight);
-        
         [self addSubview:_item1];
         [self addSubview:_item2];
         [self addSubview:_item3];
