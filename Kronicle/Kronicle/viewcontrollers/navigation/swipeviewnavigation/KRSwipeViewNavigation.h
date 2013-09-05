@@ -21,6 +21,7 @@
 
 @property(nonatomic, assign) BOOL isOpen;
 @property(nonatomic, assign) BOOL isBelowScreen;
+@property(nonatomic, strong) UILabel *titleLabel;
 
 @property(nonatomic, weak) id <KRSwipeViewNavigationDelegate> delegate;
 

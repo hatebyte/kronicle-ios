@@ -116,12 +116,12 @@ const char *class_getName(Class cls);
     _findButton.titleEdgeInsets                 = UIEdgeInsetsMake(0, 6, 0, 0);
     [self.view addSubview:_findButton];
     
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+    [(KRNavigationViewController *)self.navigationController setNavigationTitle:@"Home"];
 
 #if kDEBUG
     [self gotoToViewController:@"KRCategoriesViewController"];
@@ -139,6 +139,8 @@ const char *class_getName(Class cls);
 
 - (void)gotoToViewController:(NSString *)viewControllerName {
     [self closeNavigation];
+    
+    
     NSString *currentSelectedCViewController = NSStringFromClass([self.navigationController.visibleViewController class]);
     if ([currentSelectedCViewController isEqualToString:viewControllerName]) {
         return;

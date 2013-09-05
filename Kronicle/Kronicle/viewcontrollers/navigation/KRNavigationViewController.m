@@ -42,14 +42,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     [super pushViewController:viewController animated:animated];
-//    [_swipeNav close];
-//    [self navbarHidden:NO];
 }
-
-//- (void)popToRootViewControllerAnimated:animated {
-//    [super popToRootViewControllerAnimated:animated];
-//    [_swipeNav close];
-//}
 
 - (void)close {
     [_swipeNav close];
@@ -61,6 +54,10 @@
     } else {
         [_swipeNav reposition];
     }
+}
+
+- (void)setNavigationTitle:(NSString *)title {
+    _swipeNav.titleLabel.text = title;
 }
 
 - (void)didReceiveMemoryWarning

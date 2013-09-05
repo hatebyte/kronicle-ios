@@ -13,5 +13,6 @@
 
 - (void)navbarHidden:(BOOL)isHidden;
 - (void)close;
+- (void)setNavigationTitle:(NSString *)title;
 
 @end

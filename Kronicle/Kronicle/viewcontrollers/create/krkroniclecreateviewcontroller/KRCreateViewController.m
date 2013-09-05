@@ -98,6 +98,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
+    [(KRNavigationViewController *)self.navigationController setNavigationTitle:@"Create"];
 }
 
 

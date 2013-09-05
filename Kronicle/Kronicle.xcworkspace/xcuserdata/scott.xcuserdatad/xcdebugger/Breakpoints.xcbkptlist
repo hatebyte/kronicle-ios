@@ -56,19 +56,6 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Kronicle/viewcontrollers/navigation/swipeviewnavigation/KRNavigationTableViewCell.m"
-         timestampString = "400005897.307545"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
-         landmarkName = "-prepareForUseWithData:isTableOpen:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"

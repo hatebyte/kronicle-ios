@@ -151,6 +151,7 @@ float const kCollectionViewAnimateTime = 0.2f;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+    [(KRNavigationViewController *)self.navigationController setNavigationTitle:@"Discover"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -68,6 +68,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+    [(KRNavigationViewController *)self.navigationController setNavigationTitle:@"My Kronicles"];
     [_tableView reloadData];
 }
 

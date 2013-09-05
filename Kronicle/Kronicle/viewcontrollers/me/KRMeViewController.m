@@ -45,6 +45,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = [KRColorHelper turquoise];
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [(KRNavigationViewController *)self.navigationController navbarHidden:NO];
+    [(KRNavigationViewController *)self.navigationController setNavigationTitle:@"Me"];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

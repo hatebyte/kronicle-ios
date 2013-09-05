@@ -24,6 +24,7 @@
     CGRect _exposedFrame;
     CGRect _bounds;
     CALayer *_backgroundLayer;
+    UIButton *_hitButton;
 }
 @end
 
@@ -43,7 +44,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _bounds = [UIScreen mainScreen].bounds;
-        //self.backgroundColor = [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.7];
+        
         
         _hiddenFrame = frame;
         _exposedFrame = CGRectMake(0, _bounds.size.height - [KRSwipeViewNavigation maxHeight], 320, [KRSwipeViewNavigation maxHeight]);
@@ -77,7 +78,7 @@
                       nil];
 
         _whiteBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, _hiddenFrame.size.height)];
-        _whiteBar.backgroundColor = [UIColor whiteColor];
+        _whiteBar.backgroundColor = [UIColor clearColor];
         [self addSubview:_whiteBar];
 
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, _exposedFrame.size.height)];
@@ -93,9 +94,22 @@
         _hamburgerButton.frame = CGRectMake(320 - _hiddenFrame.size.height, 0, _hiddenFrame.size.height, _hiddenFrame.size.height);
         [_hamburgerButton addTarget:self action:@selector(toggleOpenClose) forControlEvents:UIControlEventTouchUpInside];
         _hamburgerButton.backgroundColor = [UIColor whiteColor];
-        [self addSubview:_hamburgerButton];
         
-    
+        _titleLabel                         = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 310, 44)];
+        _titleLabel.font                    = [KRFontHelper getFont:KRBrandonLight withSize:28];
+        _titleLabel.textColor               = [KRColorHelper turquoise];
+        _titleLabel.backgroundColor         = [UIColor clearColor];
+        _titleLabel.userInteractionEnabled  = NO;
+        
+        _hitButton                          = [UIButton buttonWithType:UIButtonTypeCustom];
+        _hitButton.frame                    = CGRectMake(0, 0, 320, 44);
+        [_hitButton addTarget:self action:@selector(toggleOpenClose) forControlEvents:UIControlEventTouchUpInside];
+       [_hitButton setTitleColor:[KRColorHelper turquoise] forState:UIControlStateNormal];
+        _hitButton.titleLabel.font          = [KRFontHelper getFont:KRBrandonLight withSize:28];
+        _hitButton.backgroundColor          = [UIColor whiteColor];
+        [self addSubview:_hitButton];
+        [self addSubview:_titleLabel];
+        [self addSubview:_hamburgerButton];
     }
     return self;
 }
@@ -122,10 +136,9 @@
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         self.frame = CGRectMake(_hiddenFrame.origin.x, _bounds.size.height, _hiddenFrame.size.width, _hiddenFrame.size.height);
-                         _whiteBar.frame = CGRectMake(0, 0, 320, self.frame.size.height);
-                         _hamburgerButton.frame = CGRectMake(320 - self.frame.size.height, 0, self.frame.size.height, self.frame.size.height);
-                         
+                         self.frame                             = CGRectMake(_hiddenFrame.origin.x, _bounds.size.height, _hiddenFrame.size.width, _hiddenFrame.size.height);
+                         _whiteBar.frame                        = CGRectMake(0, 0, 320, self.frame.size.height);
+                         _hamburgerButton.frame                 = CGRectMake(320 - self.frame.size.height, 0, self.frame.size.height, self.frame.size.height);
                      }
                      completion:^(BOOL fin){ }];
 }
@@ -141,7 +154,9 @@
                          self.frame = _exposedFrame;
                          _whiteBar.frame = CGRectMake(0, self.frame.size.height - _hiddenFrame.size.height, 320, _hiddenFrame.size.height);
                          _hamburgerButton.frame = CGRectMake(320 - _hiddenFrame.size.height, self.frame.size.height - _hiddenFrame.size.height, _hiddenFrame.size.height, _hiddenFrame.size.height);
-
+                         _titleLabel.frame                      = CGRectMake(10, self.frame.size.height - 44, 310, 44);
+                         _hitButton.frame                       = CGRectMake(0, self.frame.size.height - 44, 320, 44);
+                         _tableView.frame                       = CGRectMake(0, 0, _tableView.frame.size.width, _tableView.frame.size.height);
                      }
                      completion:^(BOOL fin){ }];
 }
@@ -157,7 +172,9 @@
                          self.frame = _hiddenFrame;
                          _whiteBar.frame = CGRectMake(0, 0, 320, _hiddenFrame.size.height);
                          _hamburgerButton.frame = CGRectMake(320 - _hiddenFrame.size.height, 0, _hiddenFrame.size.height, _hiddenFrame.size.height);
-
+                         _titleLabel.frame                      = CGRectMake(10, 0, 310, 44);
+                         _hitButton.frame                       = CGRectMake(0, 0, 320, 44);
+                         _tableView.frame                       = CGRectMake(0, 44, _tableView.frame.size.width, _tableView.frame.size.height);
                      }
                      completion:^(BOOL fin){ }];
 }
