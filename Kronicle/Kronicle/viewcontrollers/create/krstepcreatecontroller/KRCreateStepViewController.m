@@ -324,7 +324,6 @@
     [self addMediaPickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     [self.navigationController dismissViewControllerAnimated:NO completion:^() {

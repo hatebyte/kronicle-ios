@@ -111,12 +111,12 @@ float const kCollectionViewAnimateTime = 0.2f;
     self.view.backgroundColor = [KRColorHelper turquoise];
     
     _dataSource = @[
-                    @"culinary",
-                    @"exercise",
-                    @"beauty",
-                    @"music",
-                    @"diy",
-                    @"art"];
+                    @"Culinary",
+                    @"Exercise",
+                    @"Beauty",
+                    @"Music",
+                    @"Diy",
+                    @"Art"];
     
     [self buildSearchView];
     [self buildSearchWhiteBackground];
