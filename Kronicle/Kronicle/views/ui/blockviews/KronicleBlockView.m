@@ -113,7 +113,7 @@
         _creatorTitleLabel.font                     = [KRFontHelper getFont:KRBrandonMedium withSize:12];
         _creatorTitleLabel.textColor                = [UIColor blackColor];
         _creatorTitleLabel.backgroundColor          = [UIColor clearColor];
-        _creatorTitleLabel.text                     = @"Walter White";
+        _creatorTitleLabel.text                     = @"Julia Smith";
         [self addSubview:_creatorTitleLabel];
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.2];
         

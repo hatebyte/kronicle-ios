@@ -120,6 +120,7 @@
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _titleLabel.numberOfLines = 0;
+    _titleLabel.userInteractionEnabled = NO;
     [self addSubview:_titleLabel];
     
     _description = [[UITextView alloc] init];
@@ -128,6 +129,7 @@
     _description.textColor = [UIColor blackColor];
     _description.editable = NO;
     _description.backgroundColor = [UIColor clearColor];
+    _description.userInteractionEnabled = NO;
     [self addSubview:_description];
 }
 
