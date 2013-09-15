@@ -79,9 +79,14 @@
 
         
         _runloopConsilieri = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateFrame)];
-        
+        [_runloopConsilieri addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+        _runloopConsilieri.paused = YES;
     }
     return self;
+}
+
+- (void)dealloc {
+    [_runloopConsilieri invalidate];
 }
 
 #pragma public methods
@@ -128,12 +133,12 @@
 }
 
 - (void)removeRunLoop {
-    [_runloopConsilieri removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    _runloopConsilieri.paused = YES;
     _destVal = 0;
     _currentVal = 0;
 }
 - (void)addRunLoop {
-    [_runloopConsilieri addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    _runloopConsilieri.paused = NO;
 }
 
 - (void)animateComplete {

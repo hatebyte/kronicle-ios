@@ -15,18 +15,17 @@ typedef enum {
 } KeyboardNavigationToolBarButton;
 
 @class KeyboardNavigationToolBar;
-@protocol KeyboardNavigationToolBarDelegate
+@protocol KeyboardNavigationToolBarDelegate <UIToolbarDelegate>
 - (void)customToolBar:(KeyboardNavigationToolBar*)toolbar buttonClicked:(KeyboardNavigationToolBarButton)selectedId;
 @end
 
 @interface KeyboardNavigationToolBar : UIToolbar {
     @private
-    id<KeyboardNavigationToolBarDelegate> delegate;
     NSUInteger currentSelectedTextboxIndex;
     UISegmentedControl *_tabNavigation;
 }
 
-@property (nonatomic, strong) id<KeyboardNavigationToolBarDelegate> delegate;
+@property (nonatomic, weak) id<KeyboardNavigationToolBarDelegate> delegate;
 @property (nonatomic) NSUInteger currentSelectedTextboxIndex;
 
 + (CGFloat)height;

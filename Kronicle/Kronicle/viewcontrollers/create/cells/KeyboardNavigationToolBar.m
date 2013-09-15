@@ -72,13 +72,13 @@
 
 /* Previous / Next segmented control changed value */
 - (void)segmentedControlHandler:(id)sender {
-    if (delegate){
+    if (self.delegate){
         switch ([(UISegmentedControl *)sender selectedSegmentIndex]) {
             case 0:
-                [delegate customToolBar:self buttonClicked:KeyboardNavigationToolBarPrevious];
+                [self.delegate customToolBar:self buttonClicked:KeyboardNavigationToolBarPrevious];
                 break;
             case 1:
-                [delegate customToolBar:self buttonClicked:KeyboardNavigationToolBarNext];
+                [self.delegate customToolBar:self buttonClicked:KeyboardNavigationToolBarNext];
                 break;
             default:
                 break;
@@ -87,8 +87,8 @@
 }
 
 - (void)userClickedDone:(id)sender {
-    if (delegate){
-        [delegate customToolBar:self buttonClicked:KeyboardNavigationToolBarDone];
+    if (self.delegate){
+        [self.delegate customToolBar:self buttonClicked:KeyboardNavigationToolBarDone];
     }
 }
 
