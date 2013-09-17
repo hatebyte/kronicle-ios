@@ -28,8 +28,11 @@
 
 - (void)viewDidLoad
 {
+    if (!SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        self.view.bounds = CGRectMake(0, -20, 320, _bounds.size.height);
+    }
+
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
