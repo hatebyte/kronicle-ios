@@ -96,13 +96,15 @@
 		D244D4A317D2E01D00FDEEFB /* yoga-vid-step-5.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */; };
 		D244D4A417D2E01D00FDEEFB /* yoga-vid-step-6.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */; };
 		D244D4A517D2E01D00FDEEFB /* yoga-vid-step-7.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */; };
+		D25EF70C17E88BA80078087C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D25EF70B17E88BA80078087C /* libTestFlight.a */; };
+		D25EF71E17E895A20078087C /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25EF71A17E895A20078087C /* HockeySDK.framework */; };
+		D25EF72017E895A20078087C /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D25EF71D17E895A20078087C /* HockeySDKResources.bundle */; };
 		D262008317D6CE99000A1E77 /* KRPlaybackPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */; };
 		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
 		D26A6174175B7CA200B50A39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6173175B7CA200B50A39 /* AVFoundation.framework */; };
 		D26A6178175B7E2600B50A39 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6177175B7E2600B50A39 /* AudioToolbox.framework */; };
 		D281274217C9722F00E66C7F /* Kronicle+Life.m in Sources */ = {isa = PBXBuildFile; fileRef = D281274117C9722F00E66C7F /* Kronicle+Life.m */; };
 		D281274517C972CE00E66C7F /* Step+Life.m in Sources */ = {isa = PBXBuildFile; fileRef = D281274417C972CE00E66C7F /* Step+Life.m */; };
-		D28127E717CA8F2100E66C7F /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D28127E617CA8F2100E66C7F /* Kronicle.m */; };
 		D2887BAF17D7F13300CD5D5C /* back-bttn.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887B7417D7F13300CD5D5C /* back-bttn.png */; };
 		D2887BB017D7F13300CD5D5C /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887B7517D7F13300CD5D5C /* back-button.png */; };
 		D2887BB117D7F13300CD5D5C /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887B7617D7F13300CD5D5C /* backward.png */; };
@@ -252,15 +254,25 @@
 		D2A7F87017D0ED880039EE5A /* CreateReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F86F17D0ED880039EE5A /* CreateReviewView.m */; };
 		D2A7F87617D147E80039EE5A /* AntiScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F87517D147E80039EE5A /* AntiScrollVIew.m */; };
 		D2A7F88117D1A6790039EE5A /* KRReviewOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F88017D1A6780039EE5A /* KRReviewOverlay.m */; };
+		D2A9AEF817EDFECE0009902E /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AEF717EDFECE0009902E /* Item.m */; };
+		D2A9AEFB17EDFECF0009902E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AEFA17EDFECF0009902E /* User.m */; };
+		D2A9AF0117EDFECF0009902E /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AF0017EDFECF0009902E /* Step.m */; };
+		D2A9AF0417EDFF2A0009902E /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AF0317EDFF2A0009902E /* Kronicle.m */; };
+		D2A9AF0717EDFF2B0009902E /* CategoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AF0617EDFF2B0009902E /* CategoryType.m */; };
 		D2B6227017C6346D007C6E06 /* Kronicle+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6226C17C6346D007C6E06 /* Kronicle+JSON.m */; };
 		D2B6227117C6346D007C6E06 /* Step+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6226E17C6346D007C6E06 /* Step+JSON.m */; };
 		D2B6227417C63487007C6E06 /* Step+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227317C63487007C6E06 /* Step+Helper.m */; };
 		D2B6227717C6349E007C6E06 /* Kronicle+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */; };
 		D2B6228817C64224007C6E06 /* KronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6228717C64224007C6E06 /* KronicleEngine.m */; };
-		D2D95C4E17C6D8C70048ADA3 /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C4D17C6D8C70048ADA3 /* Step.m */; };
-		D2D95C5117C6D8C70048ADA3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5017C6D8C70048ADA3 /* User.m */; };
-		D2D95C5417C6D8C70048ADA3 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5317C6D8C70048ADA3 /* Category.m */; };
-		D2D95C6017C6D99B0048ADA3 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D95C5F17C6D99B0048ADA3 /* Item.m */; };
+		D2DF1FF917ECEDF80034DC10 /* Item+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF1FF817ECEDF80034DC10 /* Item+JSON.m */; };
+		D2DF20A517ECFF190034DC10 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DF201C17ECF9B00034DC10 /* XCTest.framework */; };
+		D2DF20A617ECFF190034DC10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
+		D2DF20A717ECFF190034DC10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
+		D2DF20AD17ECFF190034DC10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DF20AB17ECFF190034DC10 /* InfoPlist.strings */; };
+		D2DF20AF17ECFF1A0034DC10 /* KronicleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20AE17ECFF190034DC10 /* KronicleTests.m */; };
+		D2DF20B817EDE4F30034DC10 /* KronicleEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20B717EDE4F30034DC10 /* KronicleEngineTests.m */; };
+		D2DF20BA17EDE5240034DC10 /* KROperationQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20B917EDE5240034DC10 /* KROperationQueueTests.m */; };
+		D2DF20BE17EDE7A80034DC10 /* KROperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20BD17EDE7A80034DC10 /* KROperationQueue.m */; };
 		D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */; };
 		D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7251789ED850085C707 /* NSData+MKBase64.m */; };
 		D2F1E73A1789ED850085C707 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
@@ -294,6 +306,16 @@
 		fddd868615b4ac326d28622f /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7421789EDA20085C707 /* CFNetwork.framework */; };
 		fec9d4ebb73adee158856d17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7441789EDAE0085C707 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2DF20B117ECFF1A0034DC10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2A573D6175A3B4E002AC1B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2A573DD175A3B4E002AC1B9;
+			remoteInfo = Kronicle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0CFC052017B8723800A1BB7F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -371,6 +393,13 @@
 		D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-5.mov"; sourceTree = "<group>"; };
 		D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-6.mov"; sourceTree = "<group>"; };
 		D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-7.mov"; sourceTree = "<group>"; };
+		D25EF70B17E88BA80078087C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = TestFlightSDK2.0.0/libTestFlight.a; sourceTree = "<group>"; };
+		D25EF70F17E88BE80078087C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = TestFlightSDK2.0.0/TestFlight.h; sourceTree = SOURCE_ROOT; };
+		D25EF71017E88BE80078087C /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "TestFlightSDK2.0.0/TestFlight+AsyncLogging.h"; sourceTree = SOURCE_ROOT; };
+		D25EF71117E88BE80078087C /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "TestFlightSDK2.0.0/TestFlight+ManualSessions.h"; sourceTree = SOURCE_ROOT; };
+		D25EF71A17E895A20078087C /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		D25EF71C17E895A20078087C /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
+		D25EF71D17E895A20078087C /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		D262008117D6CE95000A1E77 /* KRPlaybackPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPlaybackPublishViewController.h; sourceTree = "<group>"; };
 		D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPlaybackPublishViewController.m; sourceTree = "<group>"; };
 		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -380,8 +409,6 @@
 		D281274117C9722F00E66C7F /* Kronicle+Life.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+Life.m"; sourceTree = "<group>"; };
 		D281274317C972CE00E66C7F /* Step+Life.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Step+Life.h"; sourceTree = "<group>"; };
 		D281274417C972CE00E66C7F /* Step+Life.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Step+Life.m"; sourceTree = "<group>"; };
-		D28127E517CA8F2100E66C7F /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
-		D28127E617CA8F2100E66C7F /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
 		D2887B7417D7F13300CD5D5C /* back-bttn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-bttn.png"; sourceTree = "<group>"; };
 		D2887B7517D7F13300CD5D5C /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button.png"; sourceTree = "<group>"; };
 		D2887B7617D7F13300CD5D5C /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
@@ -603,6 +630,16 @@
 		D2A7F87517D147E80039EE5A /* AntiScrollVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AntiScrollVIew.m; sourceTree = "<group>"; };
 		D2A7F87F17D1A6780039EE5A /* KRReviewOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRReviewOverlay.h; sourceTree = "<group>"; };
 		D2A7F88017D1A6780039EE5A /* KRReviewOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRReviewOverlay.m; sourceTree = "<group>"; };
+		D2A9AEF617EDFECE0009902E /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		D2A9AEF717EDFECE0009902E /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		D2A9AEF917EDFECF0009902E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D2A9AEFA17EDFECF0009902E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D2A9AEFF17EDFECF0009902E /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		D2A9AF0017EDFECF0009902E /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
+		D2A9AF0217EDFF2A0009902E /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
+		D2A9AF0317EDFF2A0009902E /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
+		D2A9AF0517EDFF2B0009902E /* CategoryType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryType.h; sourceTree = "<group>"; };
+		D2A9AF0617EDFF2B0009902E /* CategoryType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryType.m; sourceTree = "<group>"; };
 		D2B6226C17C6346D007C6E06 /* Kronicle+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+JSON.m"; sourceTree = "<group>"; };
 		D2B6226D17C6346D007C6E06 /* Kronicle+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kronicle+JSON.h"; sourceTree = "<group>"; };
 		D2B6226E17C6346D007C6E06 /* Step+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Step+JSON.m"; sourceTree = "<group>"; };
@@ -613,14 +650,18 @@
 		D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+Helper.m"; sourceTree = "<group>"; };
 		D2B6228717C64224007C6E06 /* KronicleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KronicleEngine.m; path = kroniclenetwork/KronicleEngine.m; sourceTree = "<group>"; };
 		D2CEA506178DB03300E651D2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D2D95C4C17C6D8C70048ADA3 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
-		D2D95C4D17C6D8C70048ADA3 /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
-		D2D95C4F17C6D8C70048ADA3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		D2D95C5017C6D8C70048ADA3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		D2D95C5217C6D8C70048ADA3 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
-		D2D95C5317C6D8C70048ADA3 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
-		D2D95C5E17C6D99B0048ADA3 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		D2D95C5F17C6D99B0048ADA3 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		D2DF1FF717ECEDF80034DC10 /* Item+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+JSON.h"; sourceTree = "<group>"; };
+		D2DF1FF817ECEDF80034DC10 /* Item+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+JSON.m"; sourceTree = "<group>"; };
+		D2DF201C17ECF9B00034DC10 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D2DF20A417ECFF190034DC10 /* KronicleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KronicleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2DF20AA17ECFF190034DC10 /* KronicleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KronicleTests-Info.plist"; sourceTree = "<group>"; };
+		D2DF20AC17ECFF190034DC10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D2DF20AE17ECFF190034DC10 /* KronicleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KronicleTests.m; sourceTree = "<group>"; };
+		D2DF20B017ECFF1A0034DC10 /* KronicleTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KronicleTests-Prefix.pch"; sourceTree = "<group>"; };
+		D2DF20B717EDE4F30034DC10 /* KronicleEngineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleEngineTests.m; sourceTree = "<group>"; };
+		D2DF20B917EDE5240034DC10 /* KROperationQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KROperationQueueTests.m; sourceTree = "<group>"; };
+		D2DF20BC17EDE7A80034DC10 /* KROperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KROperationQueue.h; path = kroniclenetwork/utils/KROperationQueue.h; sourceTree = "<group>"; };
+		D2DF20BD17EDE7A80034DC10 /* KROperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KROperationQueue.m; path = kroniclenetwork/utils/KROperationQueue.m; sourceTree = "<group>"; };
 		D2ED58E917CEC9FF00FED4FB /* Item+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+Helper.h"; sourceTree = "<group>"; };
 		D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+Helper.m"; sourceTree = "<group>"; };
 		D2F1E7241789ED850085C707 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
@@ -675,9 +716,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25EF70C17E88BA80078087C /* libTestFlight.a in Frameworks */,
 				D23EFDC717C45FB700989E5E /* CoreData.framework in Frameworks */,
 				0CFC052117B8723800A1BB7F /* CoreText.framework in Frameworks */,
 				D2F1E7491789EDBD0085C707 /* ImageIO.framework in Frameworks */,
+				D25EF71E17E895A20078087C /* HockeySDK.framework in Frameworks */,
 				D2F1E7471789EDB60085C707 /* Security.framework in Frameworks */,
 				D2F1E7451789EDAE0085C707 /* SystemConfiguration.framework in Frameworks */,
 				D2F1E7431789EDA20085C707 /* CFNetwork.framework in Frameworks */,
@@ -689,6 +732,16 @@
 				D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */,
 				D2A573E6175A3B4E002AC1B9 /* CoreGraphics.framework in Frameworks */,
 				913CBC8A0E654106847783ED /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DF20A117ECFF190034DC10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DF20A517ECFF190034DC10 /* XCTest.framework in Frameworks */,
+				D2DF20A717ECFF190034DC10 /* UIKit.framework in Frameworks */,
+				D2DF20A617ECFF190034DC10 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +775,7 @@
 		D23EFDA717C44DF200989E5E /* coredata */ = {
 			isa = PBXGroup;
 			children = (
-				D2B6225C17C63433007C6E06 /* managedobjectsubclass */,
+				D2A9AEF217EDFEC40009902E /* managedobjectsubclasses */,
 				D23EFDC317C4563B00989E5E /* ManagedContextController.h */,
 				D23EFDC417C4563B00989E5E /* ManagedContextController.m */,
 			);
@@ -749,6 +802,8 @@
 				D2B6226C17C6346D007C6E06 /* Kronicle+JSON.m */,
 				D2B6226F17C6346D007C6E06 /* Step+JSON.h */,
 				D2B6226E17C6346D007C6E06 /* Step+JSON.m */,
+				D2DF1FF717ECEDF80034DC10 /* Item+JSON.h */,
+				D2DF1FF817ECEDF80034DC10 /* Item+JSON.m */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -879,6 +934,43 @@
 				D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */,
 			);
 			path = yoga;
+			sourceTree = "<group>";
+		};
+		D25EF70D17E88BCE0078087C /* services */ = {
+			isa = PBXGroup;
+			children = (
+				D25EF70E17E88BD40078087C /* testflight */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		D25EF70E17E88BD40078087C /* testflight */ = {
+			isa = PBXGroup;
+			children = (
+				D25EF70F17E88BE80078087C /* TestFlight.h */,
+				D25EF71017E88BE80078087C /* TestFlight+AsyncLogging.h */,
+				D25EF71117E88BE80078087C /* TestFlight+ManualSessions.h */,
+			);
+			name = testflight;
+			sourceTree = "<group>";
+		};
+		D25EF71917E895A20078087C /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				D25EF71A17E895A20078087C /* HockeySDK.framework */,
+				D25EF71B17E895A20078087C /* Resources */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeySDK-iOS-3.0.0/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
+		D25EF71B17E895A20078087C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D25EF71C17E895A20078087C /* HockeySDK.xcconfig */,
+				D25EF71D17E895A20078087C /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D281273F17C9721F00E66C7F /* life */ = {
@@ -1052,11 +1144,12 @@
 		D2A573D5175A3B4E002AC1B9 = {
 			isa = PBXGroup;
 			children = (
-				D2CEA506178DB03300E651D2 /* Podfile */,
 				D2A573E7175A3B4E002AC1B9 /* Kronicle */,
+				D2DF20A817ECFF190034DC10 /* KronicleTests */,
 				D2A573E0175A3B4E002AC1B9 /* Frameworks */,
 				D2A573DF175A3B4E002AC1B9 /* Products */,
 				932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */,
+				D2CEA506178DB03300E651D2 /* Podfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1065,6 +1158,7 @@
 			children = (
 				D2A573DE175A3B4E002AC1B9 /* Kronicle.app */,
 				D236FB0517B4631A003DD323 /* Kronicle-cal.app */,
+				D2DF20A417ECFF190034DC10 /* KronicleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1072,6 +1166,8 @@
 		D2A573E0175A3B4E002AC1B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D25EF71917E895A20078087C /* HockeySDK.embeddedframework */,
+				D25EF70B17E88BA80078087C /* libTestFlight.a */,
 				D23EFDC617C45FB700989E5E /* CoreData.framework */,
 				0CFC052017B8723800A1BB7F /* CoreText.framework */,
 				D2F1E7481789EDBD0085C707 /* ImageIO.framework */,
@@ -1087,6 +1183,7 @@
 				D2A573E5175A3B4E002AC1B9 /* CoreGraphics.framework */,
 				ABEA3024BEBD43208A62B175 /* libPods.a */,
 				8cc04305e90128ef892ea4d8 /* calabash.framework */,
+				D2DF201C17ECF9B00034DC10 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1094,6 +1191,7 @@
 		D2A573E7175A3B4E002AC1B9 /* Kronicle */ = {
 			isa = PBXGroup;
 			children = (
+				D25EF70D17E88BCE0078087C /* services */,
 				D2A57444175A6782002AC1B9 /* globals */,
 				D2A57404175A3B77002AC1B9 /* network */,
 				D2A57409175A3B77002AC1B9 /* model */,
@@ -1700,21 +1798,50 @@
 			path = "uiview+gclibrary";
 			sourceTree = "<group>";
 		};
-		D2B6225C17C63433007C6E06 /* managedobjectsubclass */ = {
+		D2A9AEF217EDFEC40009902E /* managedobjectsubclasses */ = {
 			isa = PBXGroup;
 			children = (
-				D28127E517CA8F2100E66C7F /* Kronicle.h */,
-				D28127E617CA8F2100E66C7F /* Kronicle.m */,
-				D2D95C4C17C6D8C70048ADA3 /* Step.h */,
-				D2D95C4D17C6D8C70048ADA3 /* Step.m */,
-				D2D95C4F17C6D8C70048ADA3 /* User.h */,
-				D2D95C5017C6D8C70048ADA3 /* User.m */,
-				D2D95C5217C6D8C70048ADA3 /* Category.h */,
-				D2D95C5317C6D8C70048ADA3 /* Category.m */,
-				D2D95C5E17C6D99B0048ADA3 /* Item.h */,
-				D2D95C5F17C6D99B0048ADA3 /* Item.m */,
+				D2A9AF0517EDFF2B0009902E /* CategoryType.h */,
+				D2A9AF0617EDFF2B0009902E /* CategoryType.m */,
+				D2A9AF0217EDFF2A0009902E /* Kronicle.h */,
+				D2A9AF0317EDFF2A0009902E /* Kronicle.m */,
+				D2A9AEFF17EDFECF0009902E /* Step.h */,
+				D2A9AF0017EDFECF0009902E /* Step.m */,
+				D2A9AEF917EDFECF0009902E /* User.h */,
+				D2A9AEFA17EDFECF0009902E /* User.m */,
+				D2A9AEF617EDFECE0009902E /* Item.h */,
+				D2A9AEF717EDFECE0009902E /* Item.m */,
 			);
-			path = managedobjectsubclass;
+			path = managedobjectsubclasses;
+			sourceTree = "<group>";
+		};
+		D2DF20A817ECFF190034DC10 /* KronicleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2DF20B617EDE4C50034DC10 /* network */,
+				D2DF20AE17ECFF190034DC10 /* KronicleTests.m */,
+				D2DF20A917ECFF190034DC10 /* Supporting Files */,
+			);
+			path = KronicleTests;
+			sourceTree = "<group>";
+		};
+		D2DF20A917ECFF190034DC10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2DF20AA17ECFF190034DC10 /* KronicleTests-Info.plist */,
+				D2DF20AB17ECFF190034DC10 /* InfoPlist.strings */,
+				D2DF20B017ECFF1A0034DC10 /* KronicleTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2DF20B617EDE4C50034DC10 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				D2DF20B717EDE4F30034DC10 /* KronicleEngineTests.m */,
+				D2DF20B917EDE5240034DC10 /* KROperationQueueTests.m */,
+			);
+			name = network;
 			sourceTree = "<group>";
 		};
 		D2F1E7201789ED850085C707 /* MKNetworkKit */ = {
@@ -1777,6 +1904,8 @@
 				D2B6228717C64224007C6E06 /* KronicleEngine.m */,
 				D29D270C178B93330085E943 /* APIRouter.h */,
 				D29D270D178B93330085E943 /* APIRouter.m */,
+				D2DF20BC17EDE7A80034DC10 /* KROperationQueue.h */,
+				D2DF20BD17EDE7A80034DC10 /* KROperationQueue.m */,
 			);
 			name = kroniclenetwork;
 			sourceTree = "<group>";
@@ -1803,6 +1932,24 @@
 			productReference = D2A573DE175A3B4E002AC1B9 /* Kronicle.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D2DF20A317ECFF190034DC10 /* KronicleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2DF20B317ECFF1A0034DC10 /* Build configuration list for PBXNativeTarget "KronicleTests" */;
+			buildPhases = (
+				D2DF20A017ECFF190034DC10 /* Sources */,
+				D2DF20A117ECFF190034DC10 /* Frameworks */,
+				D2DF20A217ECFF190034DC10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2DF20B217ECFF1A0034DC10 /* PBXTargetDependency */,
+			);
+			name = KronicleTests;
+			productName = KronicleTests;
+			productReference = D2DF20A417ECFF190034DC10 /* KronicleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		f35ec7c9795c785cb4f6935a /* Kronicle-cal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = c7d520bbcb9a03f0ddc6014d /* Build configuration list for PBXNativeTarget "Kronicle-cal" */;
@@ -1828,8 +1975,13 @@
 		D2A573D6175A3B4E002AC1B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = haicontrast;
+				TargetAttributes = {
+					D2DF20A317ECFF190034DC10 = {
+						TestTargetID = D2A573DD175A3B4E002AC1B9;
+					};
+				};
 			};
 			buildConfigurationList = D2A573D9175A3B4E002AC1B9 /* Build configuration list for PBXProject "Kronicle" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1837,6 +1989,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D2A573D5175A3B4E002AC1B9;
 			productRefGroup = D2A573DF175A3B4E002AC1B9 /* Products */;
@@ -1845,6 +1998,7 @@
 			targets = (
 				D2A573DD175A3B4E002AC1B9 /* Kronicle */,
 				f35ec7c9795c785cb4f6935a /* Kronicle-cal */,
+				D2DF20A317ECFF190034DC10 /* KronicleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1948,6 +2102,7 @@
 				D2887BC017D7F13300CD5D5C /* plusbutton.png in Resources */,
 				D2887BC117D7F13300CD5D5C /* video.png in Resources */,
 				D2887BC217D7F13300CD5D5C /* hamburger_50px.png in Resources */,
+				D25EF72017E895A20078087C /* HockeySDKResources.bundle in Resources */,
 				D2887BC317D7F13300CD5D5C /* plus_21px.png in Resources */,
 				D2887BC417D7F13300CD5D5C /* magnifying-glass-white@2x.png in Resources */,
 				D2887BC517D7F13300CD5D5C /* plus-sign-white@2x.png in Resources */,
@@ -1986,6 +2141,14 @@
 				D2887C1217D8374700CD5D5C /* hole.png in Resources */,
 				D2887C1317D8374700CD5D5C /* Music.png in Resources */,
 				D2887C1417D8374700CD5D5C /* tinyrturqoisecarrot.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DF20A217ECFF190034DC10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DF20AD17ECFF190034DC10 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2119,6 +2282,7 @@
 				D29D270E178B93340085E943 /* APIRouter.m in Sources */,
 				D23EFDA817C44DF200989E5E /* KRKronicle.m in Sources */,
 				D23EFDA917C44DF200989E5E /* KRList.m in Sources */,
+				D2DF20BE17EDE7A80034DC10 /* KROperationQueue.m in Sources */,
 				D23EFDAA17C44DF200989E5E /* KRStep.m in Sources */,
 				D23EFDC517C4563B00989E5E /* ManagedContextController.m in Sources */,
 				D23EFDCD17C4628900989E5E /* KronicleModel.xcdatamodeld in Sources */,
@@ -2127,14 +2291,12 @@
 				D2B6227417C63487007C6E06 /* Step+Helper.m in Sources */,
 				D2B6227717C6349E007C6E06 /* Kronicle+Helper.m in Sources */,
 				D2B6228817C64224007C6E06 /* KronicleEngine.m in Sources */,
-				D2D95C4E17C6D8C70048ADA3 /* Step.m in Sources */,
-				D2D95C5117C6D8C70048ADA3 /* User.m in Sources */,
-				D2D95C5417C6D8C70048ADA3 /* Category.m in Sources */,
-				D2D95C6017C6D99B0048ADA3 /* Item.m in Sources */,
+				D2DF1FF917ECEDF80034DC10 /* Item+JSON.m in Sources */,
 				D281274217C9722F00E66C7F /* Kronicle+Life.m in Sources */,
+				D2A9AF0117EDFECF0009902E /* Step.m in Sources */,
 				D281274517C972CE00E66C7F /* Step+Life.m in Sources */,
-				D28127E717CA8F2100E66C7F /* Kronicle.m in Sources */,
 				D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */,
+				D2A9AF0417EDFF2A0009902E /* Kronicle.m in Sources */,
 				D2A7F7BE17D0E75D0039EE5A /* AddDescriptionTableViewCell.m in Sources */,
 				D2A7F7BF17D0E75D0039EE5A /* AddTitleTableViewCell.m in Sources */,
 				D2A7F7C017D0E75D0039EE5A /* KeyboardNavigationToolBar.m in Sources */,
@@ -2148,6 +2310,7 @@
 				D2A7F7CA17D0E75D0039EE5A /* KRCreateStepViewController.m in Sources */,
 				D2A7F7CC17D0E75D0039EE5A /* KRCategoriesViewController.m in Sources */,
 				D2A7F7CE17D0E75D0039EE5A /* KRCategoriesCollectionViewCell.m in Sources */,
+				D2A9AF0717EDFF2B0009902E /* CategoryType.m in Sources */,
 				D2A7F7CF17D0E75D0039EE5A /* KRCategoriesViewControllerCellCircleView.m in Sources */,
 				D2A7F7D017D0E75D0039EE5A /* KRListViewController.m in Sources */,
 				D2A7F7D217D0E75D0039EE5A /* KRKroniclesPageNavigationView.m in Sources */,
@@ -2172,6 +2335,7 @@
 				D2A7F7F017D0E75D0039EE5A /* KRStepNavigation.m in Sources */,
 				D2A7F7F117D0E75D0039EE5A /* KRStepListContainerView.m in Sources */,
 				D2A7F7F217D0E75D0039EE5A /* KRStepListView.m in Sources */,
+				D2A9AEF817EDFECE0009902E /* Item.m in Sources */,
 				D2A7F7F317D0E75D0039EE5A /* DescriptionView.m in Sources */,
 				D2A7F7F417D0E75D0039EE5A /* KRScrollView.m in Sources */,
 				D2A7F7F517D0E75D0039EE5A /* KRReviewViewController.m in Sources */,
@@ -2186,6 +2350,7 @@
 				D2A7F86317D0E92C0039EE5A /* KRRatingCircleView.m in Sources */,
 				D2A7F86417D0E92C0039EE5A /* KRRatingModuleView.m in Sources */,
 				D2A7F86517D0E92C0039EE5A /* CreateStepTimeView.m in Sources */,
+				D2A9AEFB17EDFECF0009902E /* User.m in Sources */,
 				D2A7F86617D0E92C0039EE5A /* TouchCircleCreatorView.m in Sources */,
 				D2A7F86717D0E92C0039EE5A /* ACMagnifyingGlass.m in Sources */,
 				D2A7F86817D0E92C0039EE5A /* BBRichTextPrefixStyle.m in Sources */,
@@ -2203,13 +2368,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2DF20A017ECFF190034DC10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DF20B817EDE4F30034DC10 /* KronicleEngineTests.m in Sources */,
+				D2DF20AF17ECFF1A0034DC10 /* KronicleTests.m in Sources */,
+				D2DF20BA17EDE5240034DC10 /* KROperationQueueTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2DF20B217ECFF1A0034DC10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2A573DD175A3B4E002AC1B9 /* Kronicle */;
+			targetProxy = D2DF20B117ECFF1A0034DC10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D2A573EA175A3B4E002AC1B9 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D2A573EB175A3B4E002AC1B9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D2DF20AB17ECFF190034DC10 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2DF20AC17ECFF190034DC10 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2270,11 +2461,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "A6F025ED-A7FF-4087-8F08-5281EB2EDCFB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A6F025ED-A7FF-4087-8F08-5281EB2EDCFB";
+				PROVISIONING_PROFILE = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -2297,10 +2489,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "A6F025ED-A7FF-4087-8F08-5281EB2EDCFB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A6F025ED-A7FF-4087-8F08-5281EB2EDCFB";
+				PROVISIONING_PROFILE = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2310,15 +2502,35 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
+				BASE_URL = "http://10.0.1.190:5000/kronicles/";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/scott/iOS/kronicle/Kronicle/HockeySDK.embeddedframework,
+					"/Users/scott/iOS/kronicle/Kronicle/HockeySDK-iOS-3.0.0/HockeySDK.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"CONFIGURATION_$(CONFIGURATION)",
+				);
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/scott/Downloads/TestFlightSDK2.0.0,
+					/Users/scott/iOS/kronicle/Kronicle/TestFlightSDK2.0.0,
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2327,16 +2539,95 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
+				BASE_URL = "http://166.78.151.97:4711/kronicles";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/scott/iOS/kronicle/Kronicle/HockeySDK.embeddedframework,
+					"/Users/scott/iOS/kronicle/Kronicle/HockeySDK-iOS-3.0.0/HockeySDK.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"CONFIGURATION_$(CONFIGURATION)",
+				);
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/scott/Downloads/TestFlightSDK2.0.0,
+					/Users/scott/iOS/kronicle/Kronicle/TestFlightSDK2.0.0,
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D2DF20B417ECFF1A0034DC10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Kronicle.app/Kronicle";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KronicleTests/KronicleTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "KronicleTests/KronicleTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D2DF20B517ECFF1A0034DC10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Kronicle.app/Kronicle";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KronicleTests/KronicleTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "KronicleTests/KronicleTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -2384,6 +2675,15 @@
 			buildConfigurations = (
 				D2A57402175A3B4E002AC1B9 /* Debug */,
 				D2A57403175A3B4E002AC1B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2DF20B317ECFF1A0034DC10 /* Build configuration list for PBXNativeTarget "KronicleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2DF20B417ECFF1A0034DC10 /* Debug */,
+				D2DF20B517ECFF1A0034DC10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

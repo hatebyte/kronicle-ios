@@ -82,8 +82,8 @@
     _kronicleSteps = [[NSMutableArray alloc] init];
     [_kronicleSteps addObject:[NSArray arrayWithObjects:@"addStep", nil]];
     
-    _tempTitle =(_kronicle.title.length > 0) ? _kronicle.title : @"Example Kronicle";
-    _tempDescription =(_kronicle.desc.length > 0) ? _kronicle.desc : @"Example Description. Had this been a real description, you would have learned something by now.";
+//    _tempTitle =(_kronicle.title.length > 0) ? _kronicle.title : @"Example Kronicle";
+//    _tempDescription =(_kronicle.desc.length > 0) ? _kronicle.desc : @"Example Description. Had this been a real description, you would have learned something by now.";
     
 }
 
@@ -112,14 +112,15 @@
     _kronicle.title                     = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] value];
     _kronicle.desc                      = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
 
-    if (_tempTitle.length < 1 || _tempDescription.length < 1 || [_kronicle.steps count] < 1) {
+    if (_kronicle.title.length < 1 || _kronicle.desc.length < 1 || [_kronicle.steps count] < 1) {
         [UIView animateWithDuration:.4
                               delay:.3
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
                          }
-                         completion:^(BOOL fin){}];
+                         completion:^(BOOL fin){
+                         }];
     } else {
         [UIView animateWithDuration:.4
                               delay:.5
@@ -127,7 +128,9 @@
                          animations:^{
                              _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height - (_buttonHeight + 20), 141, _buttonHeight);
                          }
-                         completion:^(BOOL fin){}];
+                         completion:^(BOOL fin){
+                             [_kronicle update];
+                         }];
     }
 }
 
@@ -207,7 +210,7 @@
             if (cell == nil) {
                 cell = [[AddTitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TitleCell"];
             }
-            [cell prepareForUseWithTitle:_tempTitle andType:AddTitleKronicle];
+            [cell prepareForUseWithTitle:_kronicle.title andType:AddTitleKronicle];
             [(AddTitleTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
@@ -217,7 +220,7 @@
             if (!cell) {
                 cell = [[AddDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DescriptionCell"];
             }
-            [cell prepareForUseWithDescription:_tempDescription andType:AddTitleKronicle];
+            [cell prepareForUseWithDescription:_kronicle.desc andType:AddTitleKronicle];
             [(AddDescriptionTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;

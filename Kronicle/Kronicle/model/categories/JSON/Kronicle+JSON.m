@@ -10,7 +10,7 @@
 #import "ManagedContextController.h"
 #import "Step+JSON.h"
 #import "Item.h"
-#import "Category.h"
+#import "CategoryType.h"
 #import "Step+Helper.h"
 #import "Kronicle+Life.h"
 
@@ -27,8 +27,8 @@
     kronicle.uuid                           = [dict objectForKey:@"_id"];
     kronicle.title                          = [dict objectForKey:@"title"];
     kronicle.desc                           = [dict objectForKey:@"description"];
-    kronicle.category                       = [[ManagedContextController current] getNewCategory];
-    kronicle.category.name                  = [dict objectForKey:@"category"];
+    kronicle.categoryType                       = [[ManagedContextController current] getNewCategory];
+    kronicle.categoryType.name                  = [dict objectForKey:@"category"];
     kronicle.coverUrl                       = [dict objectForKey:@"imageUrl"];
     
     NSArray *stepsArray                      = [dict objectForKey:@"steps"];
@@ -55,6 +55,23 @@
     kronicle.isFinishedNumber                     = [NSNumber numberWithInt:1];
 //    kronicle.creator                              = @"Walter White";
     return kronicle;
+}
+
++ (NSDictionary *)toDictionary:(Kronicle *)kronicle {
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    for (Item *i in kronicle.items) {
+        [items addObject:i];
+    }
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          kronicle.uuid,            @"_id"
+                          ,kronicle.title,          @"title"
+                          ,kronicle.desc,           @"description"
+                          ,kronicle.coverUrl,       @"imageUrl"
+                          ,items,                   @"items"
+                          ,[NSNumber numberWithInteger:kronicle.totalTime],   @"totalTime"
+                          , nil];
+    return dict;
 }
 
 - (NSArray *)addStepsFromArray:(NSArray *)stepsArray {

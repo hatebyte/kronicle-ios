@@ -13,7 +13,7 @@
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
-#define kdomain @"http://166.78.151.97:4711/"
+#define kBaseUrl @"BaseURL"
 #define kDEBUG 0
 
 #define kKronicleReviewRequested @"KronicleReviewRequested"

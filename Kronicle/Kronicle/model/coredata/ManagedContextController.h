@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "Kronicle.h"
 #import "Step.h"
-#import "Category.h"
+#import "CategoryType.h"
 #import "Item.h"
 
 @interface ManagedContextController : NSObject
@@ -19,7 +19,7 @@
 
 - (void)saveContext;
 
-- (Category *)getNewCategory;
+- (CategoryType *)getNewCategory;
 - (Item *)getNewItem;
 
 

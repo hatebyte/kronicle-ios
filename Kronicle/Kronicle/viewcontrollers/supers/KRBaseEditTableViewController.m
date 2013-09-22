@@ -75,6 +75,18 @@
     viewer.userInteractionEnabled = NO;
     return viewer;
 }
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return 1.f;
+//}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 1.f;
+//}
+//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *viewer = [[UIView alloc] init];
+//    viewer.backgroundColor = [UIColor clearColor];
+//    viewer.userInteractionEnabled = NO;
+//    return viewer;
+//}
 
 - (CGFloat)returnHeightForCellType:(KRFormFieldCellType)cellType {
     return 44.f;
@@ -137,11 +149,14 @@
 
 - (void)formFieldCellDidBecomeFirstResponder:(KRFormFieldCell *)formFieldCell andShouldExpand:(BOOL)shouldExpand {
     _tableIsExpanded = shouldExpand;
-    [_tableView beginUpdates];
-    [_tableView endUpdates];
+//    [_tableView beginUpdates];
+//    [_tableView endUpdates];
+//    [_tableView reloadData];
+    
     [self positionTableViewCellInLieuOfKeyboard:formFieldCell];
     
     NSIndexPath *indexPath = [_tableView indexPathForCell:formFieldCell];
+//    [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]  withRowAnimation:UITableViewRowAnimationAutomatic];
     switch (formFieldCell.type) {
         case KRFormFieldCellTypeAddTitle: {
             indexPath =  [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
@@ -164,21 +179,27 @@
 
 - (void)formFieldCellDidResignFirstResponder:(KRFormFieldCell *)formFieldCell andShouldContract:(BOOL)shouldContract {
     _tableIsExpanded = NO;
-    [_tableView beginUpdates];
-    [_tableView endUpdates];
-    
     [self validate];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [_tableView beginUpdates];
+//        [_tableView endUpdates];
+//    });
+//   [_tableView reloadData];
+//    NSIndexPath *indexPath = [_tableView indexPathForCell:formFieldCell];
+//    [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]  withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)formFieldCellDone:(KRFormFieldCell *)formFieldCell {
     _tableIsExpanded = NO;
-    [_tableView beginUpdates];
-    [_tableView endUpdates];
     [self validate];
 
 //    dispatch_async(dispatch_get_main_queue(), ^{
-//   //     [_tableView setContentOffset:CGPointZero animated:YES];
+//        [_tableView beginUpdates];
+//        [_tableView endUpdates];
 //    });
+//   [_tableView reloadData];
+//    NSIndexPath *indexPath = [_tableView indexPathForCell:formFieldCell];
+//    [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]  withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 //- (KRFormFieldCell *)cellForIndexPath:(NSIndexPath *)indexPath {

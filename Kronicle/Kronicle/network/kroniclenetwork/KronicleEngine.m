@@ -10,8 +10,8 @@
 #import "APIRouter.h"
 #import "ManagedContextController.h"
 #import "Kronicle+JSON.h"
+#import "Step+JSON.h"
 
-#define kdomain @"http://166.78.151.97:4711/"  
 
 
 @interface KronicleEngine () {
@@ -47,7 +47,7 @@
 
 - (void)fetchKronicle:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *error))failBlock  {
     //@{@"mybrabbles":@1}
-    NSString *requestString = [NSString stringWithFormat:@"%@%@", [APIRouter current].kronicles, uuid];
+    NSString *requestString = [[APIRouter current] kronicleById:uuid];
     MKNetworkOperation *op = [self operationWithURLString:requestString params:nil httpMethod:@"GET"];
     
     [self enqueueOperation:op withResponseJSONSuccessBlock:^(NSDictionary *dict) {
@@ -60,30 +60,41 @@
 }
 
 - (void)fetchStepsForKronicleUUID:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *))failBlock {
-    NSString *requestString = [NSString stringWithFormat:@"%@%@/steps", [APIRouter current].kronicles, uuid];
+    NSString *requestString = [[APIRouter current] stepsForKronicleById:uuid];
     MKNetworkOperation *op = [self operationWithURLString:requestString params:nil httpMethod:@"GET"];
 
     [self enqueueOperation:op withResponseJSONSuccessBlock:^(NSDictionary *dict) {
-        
         successBlock(dict);
-        
-        
     } onFailure:failBlock];
 }
 
 
-- (void)postKronicle:(KRKronicle *)kronicle withCompletion:(void (^)(KRKronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock {
-    //NSString *requestString = [APIRouter current].kronicles;
+- (MKNetworkOperation *)uploadKronicle:(Kronicle *)kronicle withCompletion:(void (^)(Kronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock {
+    NSString *requestString = [APIRouter current].kronicles;
     
-    // kronicle turn to JSON;
-    //MKNetworkOperation *op = [self operationWithURLString:requestString params:@{@"kronicle":} httpMethod:@"POST"];
+    MKNetworkOperation *op = [self operationWithURLString:requestString params:[Kronicle toDictionary:kronicle] httpMethod:@"POST"];
+    //    [op addData:brabble.mediaResource.thumbnailImage forKey:@"imageUrl" mimeType:@"image/jpeg" fileName:@"image.jpeg"];
+    
+    [op setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
+    
+    return op;
+    
+}
 
+- (MKNetworkOperation *)uploadStep:(Step *)step withCompletion:(void (^)(Step *step))successBlock onFailure:(void (^)(NSError *))failBlock {
+    NSString *requestString = [[APIRouter current] stepsForKronicleById:step.parentKronicle.uuid];
+    
+    MKNetworkOperation *op = [self operationWithURLString:requestString params:[Step toDictionary:step] httpMethod:@"POST"];
+//    [op addData:brabble.mediaResource.thumbnailImage forKey:@"imageUrl" mimeType:@"image/jpeg" fileName:@"image.jpeg"];
+    
+    [op setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
+    
+    return op;
 }
 
 - (void) enqueueOperation:(MKNetworkOperation *)op withResponseJSONSuccessBlock:(void (^)(id jsonResponse))successBlock
                onFailure:(void (^)(NSError *))failBlock {
     [op setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
-    
     [[KronicleEngine current].currentOperations addObject:op];
     
     [self addCompletionBlock:^(MKNetworkOperation *completed) {

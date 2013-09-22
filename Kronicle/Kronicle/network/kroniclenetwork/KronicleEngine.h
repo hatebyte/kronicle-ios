@@ -7,9 +7,8 @@
 //
 
 #import "MKNetworkEngine.h"
-#import "KRList.h"
-#import "KRKronicle.h"
 #import "Kronicle.h"
+#import "Step.h"
 
 @interface KronicleEngine : MKNetworkEngine
 
@@ -17,10 +16,15 @@
 
 
 + (KronicleEngine *)current;
+
+// GET
 - (void)allKroniclesWithCompletion:(void (^)(NSArray *))successBlock onFailure:(void (^)(NSError *))failBlock;
 - (void)fetchKronicle:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *))failBlock;
 - (void)fetchStepsForKronicleUUID:(NSString *)uuid withCompletion:(void (^)(NSDictionary *dict))successBlock onFailure:(void (^)(NSError *))failBlock;
-- (void)postKronicle:(KRKronicle *)kronicle withCompletion:(void (^)(KRKronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock;
+
+//POST
+- (MKNetworkOperation *)uploadKronicle:(Kronicle *)kronicle withCompletion:(void (^)(Kronicle *kronicle))successBlock onFailure:(void (^)(NSError *))failBlock;
+- (MKNetworkOperation *)uploadStep:(Step *)step withCompletion:(void (^)(Step *step))successBlock onFailure:(void (^)(NSError *))failBlock;
 
 - (void)cancelCurrentOperations;
 

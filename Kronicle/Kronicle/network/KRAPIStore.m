@@ -8,13 +8,7 @@
 
 #import "KRAPIStore.h"
 #import "KRNetworkConnection.h"
-
-//#define kdomain @"http://localhost:4711/"
-//#define kdomain @"http://172.20.10.3:4711/"
-//#define kdomain @"http://10.10.21.110:4711/" //scott
-//#define kdomain @"http://10.10.21.49:4711/"  //colin
-#define kdomain @"http://166.78.151.97:4711/"  //andrew
-
+#import "APIRouter.h"
 @implementation KRAPIStore
 
 + (KRAPIStore *)sharedStore {
@@ -25,7 +19,7 @@
 }
 
 - (void)fetchAllKroniclesWithCompletion:(void (^)(KRList *k, NSError *err))block {
-    NSString *requestString = [NSString stringWithFormat:@"%@kronicles/", kdomain ];
+    NSString *requestString = [APIRouter current].kronicles;
     NSURL *url = [NSURL URLWithString:requestString];
     
     // Set up the connection as normal
@@ -39,7 +33,7 @@
 }
 
 - (void)fetchKronicle:(NSString *)kronicle withCompletion:(void (^)(KRKronicle *kronicle, NSError *err))block {
-    NSString *requestString = [NSString stringWithFormat:@"%@kronicles/%@", kdomain, kronicle];
+    NSString *requestString = [NSString stringWithFormat:@"%@%@", [APIRouter current].kronicles, kronicle];
     NSURL *url = [NSURL URLWithString:requestString];
     
     // Set up the connection as normal

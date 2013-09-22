@@ -14,10 +14,55 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>KronicleTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>D2A573DD175A3B4E002AC1B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF1FFE17ECF9AF0034DC10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF201A17ECF9AF0034DC10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF203317ECFA240034DC10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF204917ECFC420034DC10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF205F17ECFC900034DC10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF207717ECFD850034DC10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF208D17ECFD930034DC10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2DF20A317ECFF190034DC10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,13 +12,29 @@
 #import "KRHomeViewController.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import "KRNavigationViewController.h"
+//#import "TestFlight.h"
+#import <HockeySDK/HockeySDK.h>
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
 
 @implementation AppDelegate
 
+#pragma mark - BITUpdateManagerDelegate
+- (NSString *)customDeviceIdentifierForUpdateManager:(BITUpdateManager *)updateManager {
+#ifndef CONFIGURATION_AppStore
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(uniqueIdentifier)])
+        return [[UIDevice currentDevice] performSelector:@selector(uniqueIdentifier)];
+#endif
+    return nil;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    [TestFlight takeOff:@"6914c078-195b-4f87-9499-dd78e1f1bd08"];
+
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"1ef52d8c56ce7fbdf53f2690850e8acf" delegate:self];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];

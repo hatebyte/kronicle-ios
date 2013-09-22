@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Category" representedClassName="Category" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CategoryType" representedClassName="CategoryType" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="kroniclesSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Kronicle" inverseName="category" inverseEntity="Kronicle" syncable="YES"/>
+        <relationship name="kroniclesSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Kronicle" inverseName="categoryType" inverseEntity="Kronicle" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="acquired" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -22,7 +22,7 @@
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="totalTimeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="uuid" attributeType="String" syncable="YES"/>
-        <relationship name="category" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Category" inverseName="kroniclesSet" inverseEntity="Category" syncable="YES"/>
+        <relationship name="categoryType" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="CategoryType" inverseName="kroniclesSet" inverseEntity="CategoryType" syncable="YES"/>
         <relationship name="creator" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="favorites" inverseEntity="User" syncable="YES"/>
         <relationship name="itemsSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="parentKronicle" inverseEntity="Item" syncable="YES"/>
         <relationship name="stepsSet" optional="YES" toMany="YES" minCount="1" maxCount="25" deletionRule="Cascade" destinationEntity="Step" inverseName="parentKronicle" inverseEntity="Step" syncable="YES"/>
@@ -50,10 +50,10 @@
         <relationship name="kronicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Kronicle" inverseName="creator" inverseEntity="Kronicle" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Category" positionX="432" positionY="-72" width="128" height="90"/>
-        <element name="Item" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Kronicle" positionX="72" positionY="-172" width="128" height="270"/>
-        <element name="Step" positionX="439" positionY="54" width="128" height="195"/>
-        <element name="User" positionX="-99" positionY="-172" width="128" height="165"/>
+        <element name="CategoryType" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Item" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Kronicle" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Step" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

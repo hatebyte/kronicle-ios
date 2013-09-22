@@ -45,8 +45,8 @@
 }
 
 
-- (Category *)getNewCategory{
-    return [NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:self.managedObjectContext];
+- (CategoryType *)getNewCategory{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"CategoryType" inManagedObjectContext:self.managedObjectContext];
 }
 
 - (Item *)getNewItem{

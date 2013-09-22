@@ -9,6 +9,7 @@
 #import "Step+JSON.h"
 #import "ManagedContextController.h"
 #import "Step+Life.h"
+#import "Step+Helper.h"
 
 @implementation Step (JSON)
 
@@ -24,13 +25,16 @@
     return step;
 }
 
-//- (NSData *)writeToJSONData {
-//    NSDictionary *stepDict = [NSMutableDictionary dictionaryWithCapacity:4];
-//    [stepDict setValue:self.title forKey:@"title"];
-//    [stepDict setValue:self.description forKey:@"description"];
-//    [stepDict setValue:[NSNumber numberWithFloat:self.time] forKey:@"time"];
-//    [stepDict setValue:[NSNumber numberWithFloat:self.indexInKronicle] forKey:@"indexInKronicle"];
-//    return [NSJSONSerialization dataWithJSONObject:stepDict options:NSJSONWritingPrettyPrinted error:nil];
-//}
++ (NSDictionary *)toDictionary:(Step *)step {
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          step.uuid,                        @"_id"
+                          ,step.title,                      @"title"
+                          ,step.desc,                       @"description"
+                          ,step.parentKronicle,             @"parentKronicle"
+                          ,[NSNumber numberWithInteger:step.indexInKronicle],        @"indexInKronicleNumber"
+                          ,[NSNumber numberWithInteger:step.time],                  @"timeNumber"
+                          , nil];
+    return dict;
+}
 
 @end

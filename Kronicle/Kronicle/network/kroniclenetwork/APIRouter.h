@@ -11,9 +11,11 @@
 @interface APIRouter : NSObject
 
 @property (nonatomic, copy) NSString *baseURL;
-
 @property (nonatomic, copy) NSString *kronicles;
 
 + (APIRouter*)current;
+
+-(NSString *)kronicleById:(NSString *)uuid;
+-(NSString *)stepsForKronicleById:(NSString *)uuid;
 
 @end

@@ -11,5 +11,6 @@
 @interface Step (JSON)
 
 + (Step *)readFromJSONDictionary:(NSDictionary *)dict;
++ (NSDictionary *)toDictionary:(Step *)step;
 
 @end
