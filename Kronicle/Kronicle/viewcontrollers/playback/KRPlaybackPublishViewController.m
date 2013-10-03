@@ -8,6 +8,7 @@
 
 #import "KRPlaybackPublishViewController.h"
 #import "KRPublishKronicleOverlay.h"
+#import "KRKronicleUploadQueue.h"
 
 @interface KRPlaybackPublishViewController () <KRPublishKronicleOverlayDelegate> {
     KRPublishKronicleOverlay *_publishOverlay;
@@ -95,10 +96,14 @@
 
 - (void)publishKronicleOverlayPublish {
     self.kronicle.isFinished = YES;
-    [[ManagedContextController current] saveContext];
-    [self removePublishKronicleOverlay];
     
-    [[KRHomeViewController current] mykronicles];
+//    KRKronicleUploadQueue *operationQueue = [[KRKronicleUploadQueue alloc] initWithKronicle:self.kronicle];
+//    NSLog(@"op : %@", operationQueue);
+    
+//    [[ManagedContextController current] saveContext];
+//    [self removePublishKronicleOverlay];
+//    
+//    [[KRHomeViewController current] mykronicles];
 }
 
 - (void)publishKronicleOverlayPhotoChanged {

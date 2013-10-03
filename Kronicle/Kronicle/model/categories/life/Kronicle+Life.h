@@ -16,6 +16,7 @@
 + (void)deleteKronicleWithUUID:(NSString *)uuid;
 + (void)deleteKronicle:(Kronicle *)kronicle;
 + (Kronicle *)getUnfinishedKronicle;
++ (void)saveContext;
 
 
 - (void)update;

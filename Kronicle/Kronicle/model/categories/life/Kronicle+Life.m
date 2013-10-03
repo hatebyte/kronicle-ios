@@ -36,10 +36,10 @@
 
 + (Kronicle *)newUnfinishedKronicle {
     Kronicle *k = [Kronicle newKronicle];
-    k.isFinished = NO;
     k.uuid = [Kronicle makeUUID];
     k.dateCreated = [NSDate date];
     k.lastDateChanged = [NSDate date];
+    k.isFinished = NO;
     return k;
 }
 
@@ -47,8 +47,13 @@
     return [NSEntityDescription insertNewObjectForEntityForName:@"Kronicle" inManagedObjectContext:[ManagedContextController current].managedObjectContext];
 }
 
-+ (void)deleteKronicleWithUUID:(NSString *)uuid {
 
++ (void)saveContext {
+    [[ManagedContextController current] saveContext];
+}
+
++ (void)deleteKronicleWithUUID:(NSString *)uuid {
+    
 }
 
 + (void)deleteKronicle:(Kronicle *)kronicle {

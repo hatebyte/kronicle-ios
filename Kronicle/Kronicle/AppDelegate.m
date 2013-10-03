@@ -12,7 +12,6 @@
 #import "KRHomeViewController.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import "KRNavigationViewController.h"
-//#import "TestFlight.h"
 #import <HockeySDK/HockeySDK.h>
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -30,7 +29,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [TestFlight takeOff:@"6914c078-195b-4f87-9499-dd78e1f1bd08"];
 
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"1ef52d8c56ce7fbdf53f2690850e8acf" delegate:self];
     [[BITHockeyManager sharedHockeyManager] startManager];

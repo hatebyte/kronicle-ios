@@ -14,6 +14,7 @@
 @property(nonatomic, assign) NSInteger indexInKronicle;
 @property(nonatomic, assign) NSInteger mediaType;
 @property(nonatomic, assign) NSInteger time;
+@property(nonatomic, assign) BOOL isFinished;
 
 + (NSString *)createCoverImageName;
 - (NSString *)fullMediaURL;

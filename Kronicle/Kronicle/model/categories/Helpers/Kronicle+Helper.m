@@ -17,10 +17,11 @@
 @implementation Kronicle (Helper)
 
 + (NSString *)makeUUID {
-    CFUUIDRef theUUID = CFUUIDCreate(NULL);
-    CFStringRef string = CFUUIDCreateString(NULL, theUUID);
-    CFRelease(theUUID);
-    return (__bridge NSString *)string;
+    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
+    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
+    CFRelease(newUniqueId);
+    
+    return uuidString;
 }
 
 + (NSString *)createCoverImageName {
@@ -48,7 +49,9 @@
     [[KronicleEngine current] allKroniclesWithCompletion:^(NSArray *kronicles) {
         NSMutableArray *arr = [[NSMutableArray alloc] init];
                 for (NSDictionary *dict in kronicles) {
-                    Kronicle *k = [Kronicle kronicleShortFromJSONDictionary:dict];
+                    Kronicle *k = [Kronicle readFromJSONDictionary:dict];
+                    
+                    
                     [[ManagedContextController current] saveContext];
                     [arr addObject:k];
                 }
@@ -113,17 +116,20 @@
     
     [[KronicleEngine current] fetchStepsForKronicleUUID:kronicle.uuid
                                          withCompletion:^(NSDictionary *dict) {
-                                            [kronicle addStepsFromArray:(NSArray *)dict];
+
+                                             [kronicle addStepsFromArray:(NSArray *)dict];
                                             [[ManagedContextController current] saveContext];
                                              
                                              if (kronicle.steps.count > 0) {
                                                  successBlock(kronicle);
                                              } else {
+                                                 NSLog(@"kronicle : %@", kronicle);
                                                  failBlock(@{@"error":@"bad stuff"});
                                              }
 
                                          }
                                               onFailure:^(NSError *error) {
+                                                  NSLog(@"Error : %@", error);
                                                   failBlock(@{@"error":@"bad stuff"});
                                                   
                                               }];
@@ -140,7 +146,6 @@
             [kroniclesModuloed addObject:inArray];
             i = next;
         }
-        
     } else {
         for (int i = 0; i < stepsMinusFinish; i++) {
             NSArray *inArray;
@@ -180,10 +185,13 @@
     return dict;
 }
 
-
 - (NSString *)fullCoverURL {
-    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    return [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", self.coverUrl]];
+    if (self.coverUrl.length > 0) {
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        return [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", self.coverUrl]];
+    } else {
+        return @"";
+    }
 }
 
 - (NSArray *)items {
@@ -230,13 +238,12 @@
 }
 
 - (BOOL)isFinished {
-    return [self.ratingNumber boolValue];
+    return [self.isFinishedNumber boolValue];
 }
 
 - (void)setIsFinished:(BOOL)isFinished {
     self.isFinishedNumber = [NSNumber numberWithBool:isFinished];
 }
-
 
 
 @end

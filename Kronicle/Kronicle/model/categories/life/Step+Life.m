@@ -22,6 +22,7 @@
     s.uuid = [Kronicle makeUUID];
     s.dateCreated = [NSDate date];
     s.lastDateChanged = [NSDate date];
+    s.isFinished = NO;
     return s;
 }
 

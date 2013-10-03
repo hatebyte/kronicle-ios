@@ -21,7 +21,6 @@
 		43952345f6564d4829d9d060 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A573F3175A3B4E002AC1B9 /* Default.png */; };
 		43a869368fa56365205a46ac /* KRFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57446175A678F002AC1B9 /* KRFontHelper.m */; };
 		447370c125dad04d82f09ae2 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
-		49d4487fe056f8b2a8762143 /* KRNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57408175A3B77002AC1B9 /* KRNetworkConnection.m */; };
 		530d0fd49f7cf7d59ab8f07e /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7341789ED850085C707 /* MKNetworkOperation.m */; };
 		5a9ddfb1b5c395f534ec0827 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2A573EA175A3B4E002AC1B9 /* InfoPlist.strings */; };
 		5ba33eb5559223b09e9b6a68 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7311789ED850085C707 /* MKNetworkEngine.m */; };
@@ -30,7 +29,6 @@
 		732fbcdfc5a77b9f009e8f43 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7461789EDB60085C707 /* Security.framework */; };
 		73a07da55f709b271993c23c /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E5175A3B4E002AC1B9 /* CoreGraphics.framework */; };
 		811e6765c7124f354e87a50e /* UIImageView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E72F1789ED850085C707 /* UIImageView+MKNetworkKitAdditions.m */; };
-		88baa8cb1cb56b7e6f665793 /* KRAPIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57406175A3B77002AC1B9 /* KRAPIStore.m */; };
 		8b0b86cf513301c6e1a49087 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD45175B9BA30003FEF5 /* icon@2x.png */; };
 		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
 		D23EFDA817C44DF200989E5E /* KRKronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDA017C44DF200989E5E /* KRKronicle.m */; };
@@ -39,6 +37,9 @@
 		D23EFDC517C4563B00989E5E /* ManagedContextController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDC417C4563B00989E5E /* ManagedContextController.m */; };
 		D23EFDC717C45FB700989E5E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23EFDC617C45FB700989E5E /* CoreData.framework */; };
 		D23EFDCD17C4628900989E5E /* KronicleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDCB17C4628900989E5E /* KronicleModel.xcdatamodeld */; };
+		D241D01C17F9CEDE001BBC8A /* KronicleEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D241D01717F9CEDE001BBC8A /* KronicleEngineTests.m */; };
+		D241D01D17F9CEDE001BBC8A /* KROperationQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D241D01817F9CEDE001BBC8A /* KROperationQueueTests.m */; };
+		D241D01E17F9CEDE001BBC8A /* MockKROperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D241D01B17F9CEDE001BBC8A /* MockKROperationQueue.m */; };
 		D244D36117D2576C00FDEEFB /* KRPublishKronicleOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D244D36017D2576C00FDEEFB /* KRPublishKronicleOverlay.m */; };
 		D244D36417D2578C00FDEEFB /* KRPublishKronicleModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D244D36317D2578C00FDEEFB /* KRPublishKronicleModule.m */; };
 		D244D44B17D2AA2F00FDEEFB /* brussel-sprouts-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D244D3F117D2AA2F00FDEEFB /* brussel-sprouts-cover.png */; };
@@ -96,9 +97,6 @@
 		D244D4A317D2E01D00FDEEFB /* yoga-vid-step-5.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */; };
 		D244D4A417D2E01D00FDEEFB /* yoga-vid-step-6.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */; };
 		D244D4A517D2E01D00FDEEFB /* yoga-vid-step-7.mov in Resources */ = {isa = PBXBuildFile; fileRef = D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */; };
-		D25EF70C17E88BA80078087C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D25EF70B17E88BA80078087C /* libTestFlight.a */; };
-		D25EF71E17E895A20078087C /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25EF71A17E895A20078087C /* HockeySDK.framework */; };
-		D25EF72017E895A20078087C /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D25EF71D17E895A20078087C /* HockeySDKResources.bundle */; };
 		D262008317D6CE99000A1E77 /* KRPlaybackPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */; };
 		D26A614D175B228900B50A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A614C175B228900B50A39 /* QuartzCore.framework */; };
 		D26A6174175B7CA200B50A39 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A6173175B7CA200B50A39 /* AVFoundation.framework */; };
@@ -159,7 +157,6 @@
 		D2887C1217D8374700CD5D5C /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887C0817D8374700CD5D5C /* hole.png */; };
 		D2887C1317D8374700CD5D5C /* Music.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887C0917D8374700CD5D5C /* Music.png */; };
 		D2887C1417D8374700CD5D5C /* tinyrturqoisecarrot.png in Resources */ = {isa = PBXBuildFile; fileRef = D2887C0A17D8374700CD5D5C /* tinyrturqoisecarrot.png */; };
-		D29D270E178B93340085E943 /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D270D178B93330085E943 /* APIRouter.m */; };
 		D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
 		D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
 		D2A573E6175A3B4E002AC1B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E5175A3B4E002AC1B9 /* CoreGraphics.framework */; };
@@ -169,8 +166,6 @@
 		D2A573F4175A3B4E002AC1B9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A573F3175A3B4E002AC1B9 /* Default.png */; };
 		D2A573F6175A3B4E002AC1B9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A573F5175A3B4E002AC1B9 /* Default@2x.png */; };
 		D2A573F8175A3B4E002AC1B9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A573F7175A3B4E002AC1B9 /* Default-568h@2x.png */; };
-		D2A5741E175A3B77002AC1B9 /* KRAPIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57406175A3B77002AC1B9 /* KRAPIStore.m */; };
-		D2A5741F175A3B77002AC1B9 /* KRNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57408175A3B77002AC1B9 /* KRNetworkConnection.m */; };
 		D2A57447175A678F002AC1B9 /* KRFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57446175A678F002AC1B9 /* KRFontHelper.m */; };
 		D2A5744A175A679B002AC1B9 /* KRColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57449175A679B002AC1B9 /* KRColorHelper.m */; };
 		D2A5747D175A760D002AC1B9 /* BrandonGrotesque-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A5747A175A760D002AC1B9 /* BrandonGrotesque-Black.otf */; };
@@ -255,24 +250,27 @@
 		D2A7F87617D147E80039EE5A /* AntiScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F87517D147E80039EE5A /* AntiScrollVIew.m */; };
 		D2A7F88117D1A6790039EE5A /* KRReviewOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7F88017D1A6780039EE5A /* KRReviewOverlay.m */; };
 		D2A9AEF817EDFECE0009902E /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AEF717EDFECE0009902E /* Item.m */; };
-		D2A9AEFB17EDFECF0009902E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AEFA17EDFECF0009902E /* User.m */; };
-		D2A9AF0117EDFECF0009902E /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AF0017EDFECF0009902E /* Step.m */; };
-		D2A9AF0417EDFF2A0009902E /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AF0317EDFF2A0009902E /* Kronicle.m */; };
 		D2A9AF0717EDFF2B0009902E /* CategoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9AF0617EDFF2B0009902E /* CategoryType.m */; };
 		D2B6227017C6346D007C6E06 /* Kronicle+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6226C17C6346D007C6E06 /* Kronicle+JSON.m */; };
 		D2B6227117C6346D007C6E06 /* Step+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6226E17C6346D007C6E06 /* Step+JSON.m */; };
 		D2B6227417C63487007C6E06 /* Step+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227317C63487007C6E06 /* Step+Helper.m */; };
 		D2B6227717C6349E007C6E06 /* Kronicle+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */; };
-		D2B6228817C64224007C6E06 /* KronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B6228717C64224007C6E06 /* KronicleEngine.m */; };
+		D2B9E12A17FA25AE00723C4E /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B9E12817FA25AE00723C4E /* HockeySDK.framework */; };
+		D2B9E12F17FA26F200723C4E /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2B9E12E17FA26F200723C4E /* HockeySDKResources.bundle */; };
+		D2B9E13517FB0CB200723C4E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9E13417FB0CB200723C4E /* User.m */; };
+		D2B9E13817FB0DFD00723C4E /* FakeKronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9E13717FB0DFD00723C4E /* FakeKronicleEngine.m */; };
+		D2B9E13B17FB1DD800723C4E /* Kronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9E13A17FB1DD800723C4E /* Kronicle.m */; };
+		D2B9E14717FC6B7E00723C4E /* KronicleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9E14117FC6B7E00723C4E /* KronicleEngine.m */; };
+		D2B9E14817FC6B7E00723C4E /* KRKronicleUploadQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9E14417FC6B7E00723C4E /* KRKronicleUploadQueue.m */; };
+		D2B9E14917FC6B7E00723C4E /* KRUploadEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9E14617FC6B7E00723C4E /* KRUploadEngine.m */; };
+		D2B9E14D17FC6BB500723C4E /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9E14C17FC6BB500723C4E /* APIRouter.m */; };
+		D2D4356E17F9E9A600E1B6BA /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D4356D17F9E9A600E1B6BA /* Step.m */; };
 		D2DF1FF917ECEDF80034DC10 /* Item+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF1FF817ECEDF80034DC10 /* Item+JSON.m */; };
 		D2DF20A517ECFF190034DC10 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DF201C17ECF9B00034DC10 /* XCTest.framework */; };
 		D2DF20A617ECFF190034DC10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E3175A3B4E002AC1B9 /* Foundation.framework */; };
 		D2DF20A717ECFF190034DC10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A573E1175A3B4E002AC1B9 /* UIKit.framework */; };
 		D2DF20AD17ECFF190034DC10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2DF20AB17ECFF190034DC10 /* InfoPlist.strings */; };
 		D2DF20AF17ECFF1A0034DC10 /* KronicleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20AE17ECFF190034DC10 /* KronicleTests.m */; };
-		D2DF20B817EDE4F30034DC10 /* KronicleEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20B717EDE4F30034DC10 /* KronicleEngineTests.m */; };
-		D2DF20BA17EDE5240034DC10 /* KROperationQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20B917EDE5240034DC10 /* KROperationQueueTests.m */; };
-		D2DF20BE17EDE7A80034DC10 /* KROperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DF20BD17EDE7A80034DC10 /* KROperationQueue.m */; };
 		D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */; };
 		D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7251789ED850085C707 /* NSData+MKBase64.m */; };
 		D2F1E73A1789ED850085C707 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7271789ED850085C707 /* NSDate+RFC1123.m */; };
@@ -302,7 +300,6 @@
 		ecb132672ef70a0e74afb52c /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
 		f71be03cde1821216082f118 /* BrandonGrotesque-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57482175A7851002AC1B9 /* BrandonGrotesque-Bold.otf */; };
 		fbac2a15f339e562f8ace017 /* BrandonGrotesque-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57480175A76A6002AC1B9 /* BrandonGrotesque-Thin.otf */; };
-		fc15f772b34bb681919386fd /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D270D178B93330085E943 /* APIRouter.m */; };
 		fddd868615b4ac326d28622f /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7421789EDA20085C707 /* CFNetwork.framework */; };
 		fec9d4ebb73adee158856d17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F1E7441789EDAE0085C707 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
@@ -334,6 +331,10 @@
 		D23EFDC417C4563B00989E5E /* ManagedContextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedContextController.m; sourceTree = "<group>"; };
 		D23EFDC617C45FB700989E5E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D23EFDCC17C4628900989E5E /* KronicleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KronicleModel.xcdatamodel; sourceTree = "<group>"; };
+		D241D01717F9CEDE001BBC8A /* KronicleEngineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleEngineTests.m; sourceTree = "<group>"; };
+		D241D01817F9CEDE001BBC8A /* KROperationQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KROperationQueueTests.m; sourceTree = "<group>"; };
+		D241D01A17F9CEDE001BBC8A /* MockKROperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockKROperationQueue.h; sourceTree = "<group>"; };
+		D241D01B17F9CEDE001BBC8A /* MockKROperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockKROperationQueue.m; sourceTree = "<group>"; };
 		D244D35F17D2576C00FDEEFB /* KRPublishKronicleOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPublishKronicleOverlay.h; sourceTree = "<group>"; };
 		D244D36017D2576C00FDEEFB /* KRPublishKronicleOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPublishKronicleOverlay.m; sourceTree = "<group>"; };
 		D244D36217D2578C00FDEEFB /* KRPublishKronicleModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPublishKronicleModule.h; sourceTree = "<group>"; };
@@ -393,13 +394,6 @@
 		D244D48217D2E01D00FDEEFB /* yoga-vid-step-5.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-5.mov"; sourceTree = "<group>"; };
 		D244D48317D2E01D00FDEEFB /* yoga-vid-step-6.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-6.mov"; sourceTree = "<group>"; };
 		D244D48417D2E01D00FDEEFB /* yoga-vid-step-7.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "yoga-vid-step-7.mov"; sourceTree = "<group>"; };
-		D25EF70B17E88BA80078087C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = TestFlightSDK2.0.0/libTestFlight.a; sourceTree = "<group>"; };
-		D25EF70F17E88BE80078087C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = TestFlightSDK2.0.0/TestFlight.h; sourceTree = SOURCE_ROOT; };
-		D25EF71017E88BE80078087C /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "TestFlightSDK2.0.0/TestFlight+AsyncLogging.h"; sourceTree = SOURCE_ROOT; };
-		D25EF71117E88BE80078087C /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "TestFlightSDK2.0.0/TestFlight+ManualSessions.h"; sourceTree = SOURCE_ROOT; };
-		D25EF71A17E895A20078087C /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
-		D25EF71C17E895A20078087C /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
-		D25EF71D17E895A20078087C /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		D262008117D6CE95000A1E77 /* KRPlaybackPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPlaybackPublishViewController.h; sourceTree = "<group>"; };
 		D262008217D6CE97000A1E77 /* KRPlaybackPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPlaybackPublishViewController.m; sourceTree = "<group>"; };
 		D26A614C175B228900B50A39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -463,8 +457,6 @@
 		D2887C0817D8374700CD5D5C /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
 		D2887C0917D8374700CD5D5C /* Music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Music.png; sourceTree = "<group>"; };
 		D2887C0A17D8374700CD5D5C /* tinyrturqoisecarrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyrturqoisecarrot.png; sourceTree = "<group>"; };
-		D29D270C178B93330085E943 /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIRouter.h; path = kroniclenetwork/APIRouter.h; sourceTree = "<group>"; };
-		D29D270D178B93330085E943 /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIRouter.m; path = kroniclenetwork/APIRouter.m; sourceTree = "<group>"; };
 		D2A573DE175A3B4E002AC1B9 /* Kronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A573E1175A3B4E002AC1B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2A573E3175A3B4E002AC1B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -478,10 +470,6 @@
 		D2A573F3175A3B4E002AC1B9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D2A573F5175A3B4E002AC1B9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D2A573F7175A3B4E002AC1B9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D2A57405175A3B77002AC1B9 /* KRAPIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRAPIStore.h; sourceTree = "<group>"; };
-		D2A57406175A3B77002AC1B9 /* KRAPIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRAPIStore.m; sourceTree = "<group>"; };
-		D2A57407175A3B77002AC1B9 /* KRNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNetworkConnection.h; sourceTree = "<group>"; };
-		D2A57408175A3B77002AC1B9 /* KRNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNetworkConnection.m; sourceTree = "<group>"; };
 		D2A57445175A678F002AC1B9 /* KRFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRFontHelper.h; sourceTree = "<group>"; };
 		D2A57446175A678F002AC1B9 /* KRFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRFontHelper.m; sourceTree = "<group>"; };
 		D2A57448175A679B002AC1B9 /* KRColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRColorHelper.h; sourceTree = "<group>"; };
@@ -632,12 +620,6 @@
 		D2A7F88017D1A6780039EE5A /* KRReviewOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRReviewOverlay.m; sourceTree = "<group>"; };
 		D2A9AEF617EDFECE0009902E /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		D2A9AEF717EDFECE0009902E /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		D2A9AEF917EDFECF0009902E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		D2A9AEFA17EDFECF0009902E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		D2A9AEFF17EDFECF0009902E /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
-		D2A9AF0017EDFECF0009902E /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
-		D2A9AF0217EDFF2A0009902E /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
-		D2A9AF0317EDFF2A0009902E /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
 		D2A9AF0517EDFF2B0009902E /* CategoryType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryType.h; sourceTree = "<group>"; };
 		D2A9AF0617EDFF2B0009902E /* CategoryType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryType.m; sourceTree = "<group>"; };
 		D2B6226C17C6346D007C6E06 /* Kronicle+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+JSON.m"; sourceTree = "<group>"; };
@@ -648,8 +630,25 @@
 		D2B6227317C63487007C6E06 /* Step+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Step+Helper.m"; sourceTree = "<group>"; };
 		D2B6227517C6349E007C6E06 /* Kronicle+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kronicle+Helper.h"; sourceTree = "<group>"; };
 		D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+Helper.m"; sourceTree = "<group>"; };
-		D2B6228717C64224007C6E06 /* KronicleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KronicleEngine.m; path = kroniclenetwork/KronicleEngine.m; sourceTree = "<group>"; };
+		D2B9E12817FA25AE00723C4E /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = HockeySDK.embeddedframework/HockeySDK.framework; sourceTree = "<group>"; };
+		D2B9E12E17FA26F200723C4E /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HockeySDKResources.bundle; path = HockeySDK.embeddedframework/HockeySDK.framework/Versions/A/Resources/HockeySDKResources.bundle; sourceTree = "<group>"; };
+		D2B9E13317FB0CB200723C4E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D2B9E13417FB0CB200723C4E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D2B9E13617FB0DFD00723C4E /* FakeKronicleEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeKronicleEngine.h; sourceTree = "<group>"; };
+		D2B9E13717FB0DFD00723C4E /* FakeKronicleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeKronicleEngine.m; sourceTree = "<group>"; };
+		D2B9E13917FB1DD800723C4E /* Kronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kronicle.h; sourceTree = "<group>"; };
+		D2B9E13A17FB1DD800723C4E /* Kronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kronicle.m; sourceTree = "<group>"; };
+		D2B9E14017FC6B7E00723C4E /* KronicleEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronicleEngine.h; sourceTree = "<group>"; };
+		D2B9E14117FC6B7E00723C4E /* KronicleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleEngine.m; sourceTree = "<group>"; };
+		D2B9E14317FC6B7E00723C4E /* KRKronicleUploadQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicleUploadQueue.h; sourceTree = "<group>"; };
+		D2B9E14417FC6B7E00723C4E /* KRKronicleUploadQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicleUploadQueue.m; sourceTree = "<group>"; };
+		D2B9E14517FC6B7E00723C4E /* KRUploadEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRUploadEngine.h; sourceTree = "<group>"; };
+		D2B9E14617FC6B7E00723C4E /* KRUploadEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRUploadEngine.m; sourceTree = "<group>"; };
+		D2B9E14B17FC6BB500723C4E /* APIRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRouter.h; sourceTree = "<group>"; };
+		D2B9E14C17FC6BB500723C4E /* APIRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRouter.m; sourceTree = "<group>"; };
 		D2CEA506178DB03300E651D2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D2D4356C17F9E9A600E1B6BA /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		D2D4356D17F9E9A600E1B6BA /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
 		D2DF1FF717ECEDF80034DC10 /* Item+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+JSON.h"; sourceTree = "<group>"; };
 		D2DF1FF817ECEDF80034DC10 /* Item+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+JSON.m"; sourceTree = "<group>"; };
 		D2DF201C17ECF9B00034DC10 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -658,10 +657,6 @@
 		D2DF20AC17ECFF190034DC10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2DF20AE17ECFF190034DC10 /* KronicleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KronicleTests.m; sourceTree = "<group>"; };
 		D2DF20B017ECFF1A0034DC10 /* KronicleTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KronicleTests-Prefix.pch"; sourceTree = "<group>"; };
-		D2DF20B717EDE4F30034DC10 /* KronicleEngineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronicleEngineTests.m; sourceTree = "<group>"; };
-		D2DF20B917EDE5240034DC10 /* KROperationQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KROperationQueueTests.m; sourceTree = "<group>"; };
-		D2DF20BC17EDE7A80034DC10 /* KROperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KROperationQueue.h; path = kroniclenetwork/utils/KROperationQueue.h; sourceTree = "<group>"; };
-		D2DF20BD17EDE7A80034DC10 /* KROperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KROperationQueue.m; path = kroniclenetwork/utils/KROperationQueue.m; sourceTree = "<group>"; };
 		D2ED58E917CEC9FF00FED4FB /* Item+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+Helper.h"; sourceTree = "<group>"; };
 		D2ED58EA17CEC9FF00FED4FB /* Item+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+Helper.m"; sourceTree = "<group>"; };
 		D2F1E7241789ED850085C707 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
@@ -687,7 +682,6 @@
 		D2F1E7441789EDAE0085C707 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D2F1E7461789EDB60085C707 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D2F1E7481789EDBD0085C707 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		D2F1E74C178A0B620085C707 /* KronicleEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KronicleEngine.h; path = kroniclenetwork/KronicleEngine.h; sourceTree = "<group>"; };
 		F96ADD45175B9BA30003FEF5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -716,11 +710,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25EF70C17E88BA80078087C /* libTestFlight.a in Frameworks */,
+				D2B9E12A17FA25AE00723C4E /* HockeySDK.framework in Frameworks */,
 				D23EFDC717C45FB700989E5E /* CoreData.framework in Frameworks */,
 				0CFC052117B8723800A1BB7F /* CoreText.framework in Frameworks */,
 				D2F1E7491789EDBD0085C707 /* ImageIO.framework in Frameworks */,
-				D25EF71E17E895A20078087C /* HockeySDK.framework in Frameworks */,
 				D2F1E7471789EDB60085C707 /* Security.framework in Frameworks */,
 				D2F1E7451789EDAE0085C707 /* SystemConfiguration.framework in Frameworks */,
 				D2F1E7431789EDA20085C707 /* CFNetwork.framework in Frameworks */,
@@ -806,6 +799,27 @@
 				D2DF1FF817ECEDF80034DC10 /* Item+JSON.m */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		D241D01617F9CEDE001BBC8A /* network */ = {
+			isa = PBXGroup;
+			children = (
+				D241D01917F9CEDE001BBC8A /* mocks */,
+				D241D01717F9CEDE001BBC8A /* KronicleEngineTests.m */,
+				D241D01817F9CEDE001BBC8A /* KROperationQueueTests.m */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		D241D01917F9CEDE001BBC8A /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D241D01A17F9CEDE001BBC8A /* MockKROperationQueue.h */,
+				D241D01B17F9CEDE001BBC8A /* MockKROperationQueue.m */,
+				D2B9E13617FB0DFD00723C4E /* FakeKronicleEngine.h */,
+				D2B9E13717FB0DFD00723C4E /* FakeKronicleEngine.m */,
+			);
+			path = mocks;
 			sourceTree = "<group>";
 		};
 		D244D35E17D2574700FDEEFB /* publish */ = {
@@ -939,38 +953,8 @@
 		D25EF70D17E88BCE0078087C /* services */ = {
 			isa = PBXGroup;
 			children = (
-				D25EF70E17E88BD40078087C /* testflight */,
 			);
 			name = services;
-			sourceTree = "<group>";
-		};
-		D25EF70E17E88BD40078087C /* testflight */ = {
-			isa = PBXGroup;
-			children = (
-				D25EF70F17E88BE80078087C /* TestFlight.h */,
-				D25EF71017E88BE80078087C /* TestFlight+AsyncLogging.h */,
-				D25EF71117E88BE80078087C /* TestFlight+ManualSessions.h */,
-			);
-			name = testflight;
-			sourceTree = "<group>";
-		};
-		D25EF71917E895A20078087C /* HockeySDK.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				D25EF71A17E895A20078087C /* HockeySDK.framework */,
-				D25EF71B17E895A20078087C /* Resources */,
-			);
-			name = HockeySDK.embeddedframework;
-			path = "HockeySDK-iOS-3.0.0/HockeySDK.embeddedframework";
-			sourceTree = "<group>";
-		};
-		D25EF71B17E895A20078087C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D25EF71C17E895A20078087C /* HockeySDK.xcconfig */,
-				D25EF71D17E895A20078087C /* HockeySDKResources.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		D281273F17C9721F00E66C7F /* life */ = {
@@ -1166,8 +1150,8 @@
 		D2A573E0175A3B4E002AC1B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D25EF71917E895A20078087C /* HockeySDK.embeddedframework */,
-				D25EF70B17E88BA80078087C /* libTestFlight.a */,
+				D2B9E12E17FA26F200723C4E /* HockeySDKResources.bundle */,
+				D2B9E12817FA25AE00723C4E /* HockeySDK.framework */,
 				D23EFDC617C45FB700989E5E /* CoreData.framework */,
 				0CFC052017B8723800A1BB7F /* CoreText.framework */,
 				D2F1E7481789EDBD0085C707 /* ImageIO.framework */,
@@ -1225,7 +1209,6 @@
 			isa = PBXGroup;
 			children = (
 				D2F1E74B178A0B360085C707 /* kroniclenetwork */,
-				D2F1E74A178A0B250085C707 /* orignetwork */,
 				D2F1E7201789ED850085C707 /* MKNetworkKit */,
 			);
 			path = network;
@@ -1801,24 +1784,56 @@
 		D2A9AEF217EDFEC40009902E /* managedobjectsubclasses */ = {
 			isa = PBXGroup;
 			children = (
+				D2B9E13917FB1DD800723C4E /* Kronicle.h */,
+				D2B9E13A17FB1DD800723C4E /* Kronicle.m */,
+				D2B9E13317FB0CB200723C4E /* User.h */,
+				D2B9E13417FB0CB200723C4E /* User.m */,
+				D2D4356C17F9E9A600E1B6BA /* Step.h */,
+				D2D4356D17F9E9A600E1B6BA /* Step.m */,
 				D2A9AF0517EDFF2B0009902E /* CategoryType.h */,
 				D2A9AF0617EDFF2B0009902E /* CategoryType.m */,
-				D2A9AF0217EDFF2A0009902E /* Kronicle.h */,
-				D2A9AF0317EDFF2A0009902E /* Kronicle.m */,
-				D2A9AEFF17EDFECF0009902E /* Step.h */,
-				D2A9AF0017EDFECF0009902E /* Step.m */,
-				D2A9AEF917EDFECF0009902E /* User.h */,
-				D2A9AEFA17EDFECF0009902E /* User.m */,
 				D2A9AEF617EDFECE0009902E /* Item.h */,
 				D2A9AEF717EDFECE0009902E /* Item.m */,
 			);
 			path = managedobjectsubclasses;
 			sourceTree = "<group>";
 		};
+		D2B9E13F17FC6B7E00723C4E /* get */ = {
+			isa = PBXGroup;
+			children = (
+				D2B9E14017FC6B7E00723C4E /* KronicleEngine.h */,
+				D2B9E14117FC6B7E00723C4E /* KronicleEngine.m */,
+			);
+			name = get;
+			path = kroniclenetwork/get;
+			sourceTree = "<group>";
+		};
+		D2B9E14217FC6B7E00723C4E /* post */ = {
+			isa = PBXGroup;
+			children = (
+				D2B9E14317FC6B7E00723C4E /* KRKronicleUploadQueue.h */,
+				D2B9E14417FC6B7E00723C4E /* KRKronicleUploadQueue.m */,
+				D2B9E14517FC6B7E00723C4E /* KRUploadEngine.h */,
+				D2B9E14617FC6B7E00723C4E /* KRUploadEngine.m */,
+			);
+			name = post;
+			path = kroniclenetwork/post;
+			sourceTree = "<group>";
+		};
+		D2B9E14A17FC6BB500723C4E /* routes */ = {
+			isa = PBXGroup;
+			children = (
+				D2B9E14B17FC6BB500723C4E /* APIRouter.h */,
+				D2B9E14C17FC6BB500723C4E /* APIRouter.m */,
+			);
+			name = routes;
+			path = kroniclenetwork/routes;
+			sourceTree = "<group>";
+		};
 		D2DF20A817ECFF190034DC10 /* KronicleTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2DF20B617EDE4C50034DC10 /* network */,
+				D241D01617F9CEDE001BBC8A /* network */,
 				D2DF20AE17ECFF190034DC10 /* KronicleTests.m */,
 				D2DF20A917ECFF190034DC10 /* Supporting Files */,
 			);
@@ -1833,15 +1848,6 @@
 				D2DF20B017ECFF1A0034DC10 /* KronicleTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D2DF20B617EDE4C50034DC10 /* network */ = {
-			isa = PBXGroup;
-			children = (
-				D2DF20B717EDE4F30034DC10 /* KronicleEngineTests.m */,
-				D2DF20B917EDE5240034DC10 /* KROperationQueueTests.m */,
-			);
-			name = network;
 			sourceTree = "<group>";
 		};
 		D2F1E7201789ED850085C707 /* MKNetworkKit */ = {
@@ -1886,26 +1892,12 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
-		D2F1E74A178A0B250085C707 /* orignetwork */ = {
-			isa = PBXGroup;
-			children = (
-				D2A57405175A3B77002AC1B9 /* KRAPIStore.h */,
-				D2A57406175A3B77002AC1B9 /* KRAPIStore.m */,
-				D2A57407175A3B77002AC1B9 /* KRNetworkConnection.h */,
-				D2A57408175A3B77002AC1B9 /* KRNetworkConnection.m */,
-			);
-			name = orignetwork;
-			sourceTree = "<group>";
-		};
 		D2F1E74B178A0B360085C707 /* kroniclenetwork */ = {
 			isa = PBXGroup;
 			children = (
-				D2F1E74C178A0B620085C707 /* KronicleEngine.h */,
-				D2B6228717C64224007C6E06 /* KronicleEngine.m */,
-				D29D270C178B93330085E943 /* APIRouter.h */,
-				D29D270D178B93330085E943 /* APIRouter.m */,
-				D2DF20BC17EDE7A80034DC10 /* KROperationQueue.h */,
-				D2DF20BD17EDE7A80034DC10 /* KROperationQueue.m */,
+				D2B9E14A17FC6BB500723C4E /* routes */,
+				D2B9E13F17FC6B7E00723C4E /* get */,
+				D2B9E14217FC6B7E00723C4E /* post */,
 			);
 			name = kroniclenetwork;
 			sourceTree = "<group>";
@@ -2008,6 +2000,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B9E12F17FA26F200723C4E /* HockeySDKResources.bundle in Resources */,
 				D2A573EC175A3B4E002AC1B9 /* InfoPlist.strings in Resources */,
 				D2A573F4175A3B4E002AC1B9 /* Default.png in Resources */,
 				D2A573F6175A3B4E002AC1B9 /* Default@2x.png in Resources */,
@@ -2102,7 +2095,6 @@
 				D2887BC017D7F13300CD5D5C /* plusbutton.png in Resources */,
 				D2887BC117D7F13300CD5D5C /* video.png in Resources */,
 				D2887BC217D7F13300CD5D5C /* hamburger_50px.png in Resources */,
-				D25EF72017E895A20078087C /* HockeySDKResources.bundle in Resources */,
 				D2887BC317D7F13300CD5D5C /* plus_21px.png in Resources */,
 				D2887BC417D7F13300CD5D5C /* magnifying-glass-white@2x.png in Resources */,
 				D2887BC517D7F13300CD5D5C /* plus-sign-white@2x.png in Resources */,
@@ -2243,8 +2235,6 @@
 			files = (
 				e92e0e9df142296c413080d3 /* main.m in Sources */,
 				1d62f9a895531cbb036d7eea /* AppDelegate.m in Sources */,
-				88baa8cb1cb56b7e6f665793 /* KRAPIStore.m in Sources */,
-				49d4487fe056f8b2a8762143 /* KRNetworkConnection.m in Sources */,
 				43a869368fa56365205a46ac /* KRFontHelper.m in Sources */,
 				c4b1f1f293ac4df546620f91 /* KRColorHelper.m in Sources */,
 				c2f1acbaf14cf487f54f531e /* NSData+MKBase64.m in Sources */,
@@ -2256,7 +2246,6 @@
 				5ba33eb5559223b09e9b6a68 /* MKNetworkEngine.m in Sources */,
 				530d0fd49f7cf7d59ab8f07e /* MKNetworkOperation.m in Sources */,
 				d7893293056a9adce3321f37 /* Reachability.m in Sources */,
-				fc15f772b34bb681919386fd /* APIRouter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2266,8 +2255,6 @@
 			files = (
 				D2A573EE175A3B4E002AC1B9 /* main.m in Sources */,
 				D2A573F2175A3B4E002AC1B9 /* AppDelegate.m in Sources */,
-				D2A5741E175A3B77002AC1B9 /* KRAPIStore.m in Sources */,
-				D2A5741F175A3B77002AC1B9 /* KRNetworkConnection.m in Sources */,
 				D2A57447175A678F002AC1B9 /* KRFontHelper.m in Sources */,
 				D2A5744A175A679B002AC1B9 /* KRColorHelper.m in Sources */,
 				D2F1E7391789ED850085C707 /* NSData+MKBase64.m in Sources */,
@@ -2276,13 +2263,14 @@
 				D2F1E73C1789ED850085C707 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				D2F1E73D1789ED850085C707 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				D2F1E73E1789ED850085C707 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
+				D2B9E14817FC6B7E00723C4E /* KRKronicleUploadQueue.m in Sources */,
 				D2F1E73F1789ED850085C707 /* MKNetworkEngine.m in Sources */,
 				D2F1E7401789ED850085C707 /* MKNetworkOperation.m in Sources */,
 				D2F1E7411789ED850085C707 /* Reachability.m in Sources */,
-				D29D270E178B93340085E943 /* APIRouter.m in Sources */,
 				D23EFDA817C44DF200989E5E /* KRKronicle.m in Sources */,
+				D2B9E14D17FC6BB500723C4E /* APIRouter.m in Sources */,
 				D23EFDA917C44DF200989E5E /* KRList.m in Sources */,
-				D2DF20BE17EDE7A80034DC10 /* KROperationQueue.m in Sources */,
+				D2D4356E17F9E9A600E1B6BA /* Step.m in Sources */,
 				D23EFDAA17C44DF200989E5E /* KRStep.m in Sources */,
 				D23EFDC517C4563B00989E5E /* ManagedContextController.m in Sources */,
 				D23EFDCD17C4628900989E5E /* KronicleModel.xcdatamodeld in Sources */,
@@ -2290,22 +2278,21 @@
 				D2B6227117C6346D007C6E06 /* Step+JSON.m in Sources */,
 				D2B6227417C63487007C6E06 /* Step+Helper.m in Sources */,
 				D2B6227717C6349E007C6E06 /* Kronicle+Helper.m in Sources */,
-				D2B6228817C64224007C6E06 /* KronicleEngine.m in Sources */,
 				D2DF1FF917ECEDF80034DC10 /* Item+JSON.m in Sources */,
 				D281274217C9722F00E66C7F /* Kronicle+Life.m in Sources */,
-				D2A9AF0117EDFECF0009902E /* Step.m in Sources */,
 				D281274517C972CE00E66C7F /* Step+Life.m in Sources */,
 				D2ED58EB17CEC9FF00FED4FB /* Item+Helper.m in Sources */,
-				D2A9AF0417EDFF2A0009902E /* Kronicle.m in Sources */,
 				D2A7F7BE17D0E75D0039EE5A /* AddDescriptionTableViewCell.m in Sources */,
 				D2A7F7BF17D0E75D0039EE5A /* AddTitleTableViewCell.m in Sources */,
 				D2A7F7C017D0E75D0039EE5A /* KeyboardNavigationToolBar.m in Sources */,
 				D2A7F7C117D0E75D0039EE5A /* KRFormFieldCell.m in Sources */,
 				D2A7F7C217D0E75D0039EE5A /* AddItemsCell.m in Sources */,
 				D2A7F7C317D0E75D0039EE5A /* AddStepTableViewCell.m in Sources */,
+				D2B9E13517FB0CB200723C4E /* User.m in Sources */,
 				D2A7F7C417D0E75D0039EE5A /* KRCreateViewController.m in Sources */,
 				D2A7F7C717D0E75D0039EE5A /* AddMediaTableViewCell.m in Sources */,
 				D2A7F7C817D0E75D0039EE5A /* AddTimeCell.m in Sources */,
+				D2B9E13B17FB1DD800723C4E /* Kronicle.m in Sources */,
 				D2A7F7C917D0E75D0039EE5A /* ContentWithLabelView.m in Sources */,
 				D2A7F7CA17D0E75D0039EE5A /* KRCreateStepViewController.m in Sources */,
 				D2A7F7CC17D0E75D0039EE5A /* KRCategoriesViewController.m in Sources */,
@@ -2326,6 +2313,7 @@
 				D2A7F7E017D0E75D0039EE5A /* KRNavigationTableViewCell.m in Sources */,
 				D2A7F7E117D0E75D0039EE5A /* KRSwipeViewNavigation.m in Sources */,
 				D2A7F7E217D0E75D0039EE5A /* KRKronicleStartViewController.m in Sources */,
+				D2B9E14717FC6B7E00723C4E /* KronicleEngine.m in Sources */,
 				D2A7F7E417D0E75D0039EE5A /* KRPlaybackViewController.m in Sources */,
 				D2A7F7E817D0E75D0039EE5A /* KRClockManager.m in Sources */,
 				D2A7F7E917D0E75D0039EE5A /* KRKronicleManager.m in Sources */,
@@ -2339,6 +2327,7 @@
 				D2A7F7F317D0E75D0039EE5A /* DescriptionView.m in Sources */,
 				D2A7F7F417D0E75D0039EE5A /* KRScrollView.m in Sources */,
 				D2A7F7F517D0E75D0039EE5A /* KRReviewViewController.m in Sources */,
+				D2B9E14917FC6B7E00723C4E /* KRUploadEngine.m in Sources */,
 				D2A7F7F717D0E75D0039EE5A /* KRBaseEditTableViewController.m in Sources */,
 				D2A7F7F817D0E75D0039EE5A /* KRKronicleBaseViewController.m in Sources */,
 				D2A7F82817D0E8FB0039EE5A /* KRDefaultButton.m in Sources */,
@@ -2350,7 +2339,6 @@
 				D2A7F86317D0E92C0039EE5A /* KRRatingCircleView.m in Sources */,
 				D2A7F86417D0E92C0039EE5A /* KRRatingModuleView.m in Sources */,
 				D2A7F86517D0E92C0039EE5A /* CreateStepTimeView.m in Sources */,
-				D2A9AEFB17EDFECF0009902E /* User.m in Sources */,
 				D2A7F86617D0E92C0039EE5A /* TouchCircleCreatorView.m in Sources */,
 				D2A7F86717D0E92C0039EE5A /* ACMagnifyingGlass.m in Sources */,
 				D2A7F86817D0E92C0039EE5A /* BBRichTextPrefixStyle.m in Sources */,
@@ -2372,9 +2360,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2DF20B817EDE4F30034DC10 /* KronicleEngineTests.m in Sources */,
+				D241D01C17F9CEDE001BBC8A /* KronicleEngineTests.m in Sources */,
 				D2DF20AF17ECFF1A0034DC10 /* KronicleTests.m in Sources */,
-				D2DF20BA17EDE5240034DC10 /* KROperationQueueTests.m in Sources */,
+				D241D01E17F9CEDE001BBC8A /* MockKROperationQueue.m in Sources */,
+				D241D01D17F9CEDE001BBC8A /* KROperationQueueTests.m in Sources */,
+				D2B9E13817FB0DFD00723C4E /* FakeKronicleEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2463,8 +2453,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
+				PROVISIONING_PROFILE = "6ABDBB5D-4488-48FB-96E8-0A91B6412EA5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6ABDBB5D-4488-48FB-96E8-0A91B6412EA5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2491,8 +2481,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
+				PROVISIONING_PROFILE = "D886D34D-BBF1-45A0-9ED0-B2FF368A5754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D886D34D-BBF1-45A0-9ED0-B2FF368A5754";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2508,7 +2498,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/scott/iOS/kronicle/Kronicle/HockeySDK.embeddedframework,
-					"/Users/scott/iOS/kronicle/Kronicle/HockeySDK-iOS-3.0.0/HockeySDK.embeddedframework",
+					"/Users/scott/Downloads/HockeySDK-iOS-3.0.0\\ (1)/HockeySDK.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
@@ -2519,18 +2509,14 @@
 				);
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/scott/Downloads/TestFlightSDK2.0.0,
-					/Users/scott/iOS/kronicle/Kronicle/TestFlightSDK2.0.0,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F147C5B-0B0C-4F6F-822E-9ED5462B44B3";
+				PROVISIONING_PROFILE = "6ABDBB5D-4488-48FB-96E8-0A91B6412EA5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6ABDBB5D-4488-48FB-96E8-0A91B6412EA5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2539,13 +2525,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
-				BASE_URL = "http://166.78.151.97:4711/kronicles";
+				BASE_URL = "http://166.78.151.97:4711/kronicles/";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/scott/iOS/kronicle/Kronicle/HockeySDK.embeddedframework,
-					"/Users/scott/iOS/kronicle/Kronicle/HockeySDK-iOS-3.0.0/HockeySDK.embeddedframework",
+					"/Users/scott/Downloads/HockeySDK-iOS-3.0.0\\ (1)/HockeySDK.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
@@ -2556,18 +2542,14 @@
 				);
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/scott/Downloads/TestFlightSDK2.0.0,
-					/Users/scott/iOS/kronicle/Kronicle/TestFlightSDK2.0.0,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8F1EB0C3-DD32-4411-A3D4-153E0D2D0D6C";
+				PROVISIONING_PROFILE = "D886D34D-BBF1-45A0-9ED0-B2FF368A5754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D886D34D-BBF1-45A0-9ED0-B2FF368A5754";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

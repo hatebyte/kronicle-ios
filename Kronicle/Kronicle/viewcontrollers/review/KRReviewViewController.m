@@ -40,20 +40,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height)];
     _scrollView.showsVerticalScrollIndicator = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:_scrollView];
     
     _cancelXButton                                                  = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelXButton.backgroundColor                                  = [UIColor clearColor];
-    _cancelXButton.frame                                            = CGRectMake(320 - 45, 5, 40, 40);
+    _cancelXButton.frame                                            = CGRectMake(320 - 45, 20, 40, 40);
     [_cancelXButton setBackgroundImage:[UIImage imageNamed:@"transx"] forState:UIControlStateNormal];
     [_cancelXButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:_cancelXButton];
 
     _titleField                                 = [UIHelper titleTextField];
-    _titleField.frame                           = CGRectMake(kPadding, 0, kPaddingWidth, 90);
+    _titleField.frame                           = CGRectMake(kPadding, 20, kPaddingWidth, 90);
     _titleField.enabled                         = NO;
     _titleField.placeholder                     = NSLocalizedString(@"Reviews", @"Title of review view controller");
     [_scrollView addSubview:_titleField];
@@ -63,7 +63,7 @@
     [_reviewOverlay setReviewWithValue:_kronicle.rating];
     
     _reviewCreatorView                          = [[CreateReviewView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - [CreateReviewView size]) * .5,
-                                                                                                     _titleField.frame.origin.y + _titleField.frame.size.height - 20,
+                                                                                                     _titleField.frame.origin.y + _titleField.frame.size.height - 30,
                                                                                                      [CreateReviewView size],
                                                                                                      [CreateReviewView size]) andType:CreateReviewViewShow];
     _reviewCreatorView.enabled                  = NO;

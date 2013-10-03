@@ -2,7 +2,7 @@
 //  User.h
 //  Kronicle
 //
-//  Created by hatebyte on 9/21/13.
+//  Created by hatebyte on 10/1/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
@@ -19,20 +19,20 @@
 @property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSData * profilePic;
 @property (nonatomic, retain) NSString * userName;
-@property (nonatomic, retain) NSSet *favorites;
-@property (nonatomic, retain) NSSet *kronicles;
+@property (nonatomic, retain) NSSet *favoritesSet;
+@property (nonatomic, retain) NSSet *kroniclesSet;
 @end
 
 @interface User (CoreDataGeneratedAccessors)
 
-- (void)addFavoritesObject:(Kronicle *)value;
-- (void)removeFavoritesObject:(Kronicle *)value;
-- (void)addFavorites:(NSSet *)values;
-- (void)removeFavorites:(NSSet *)values;
+- (void)addFavoritesSetObject:(Kronicle *)value;
+- (void)removeFavoritesSetObject:(Kronicle *)value;
+- (void)addFavoritesSet:(NSSet *)values;
+- (void)removeFavoritesSet:(NSSet *)values;
 
-- (void)addKroniclesObject:(Kronicle *)value;
-- (void)removeKroniclesObject:(Kronicle *)value;
-- (void)addKronicles:(NSSet *)values;
-- (void)removeKronicles:(NSSet *)values;
+- (void)addKroniclesSetObject:(Kronicle *)value;
+- (void)removeKroniclesSetObject:(Kronicle *)value;
+- (void)addKroniclesSet:(NSSet *)values;
+- (void)removeKroniclesSet:(NSSet *)values;
 
 @end

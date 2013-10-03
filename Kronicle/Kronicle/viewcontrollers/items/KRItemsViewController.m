@@ -37,7 +37,7 @@
 
     _cancelXButton                                                  = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelXButton.backgroundColor                                  = [KRColorHelper turquoise];
-    _cancelXButton.frame                                            = CGRectMake(320 - 40, 0, 40, 40);
+    _cancelXButton.frame                                            = CGRectMake(320 - 40, 20, 40, 40);
     [_cancelXButton setBackgroundImage:[UIImage imageNamed:@"close-x_40px"] forState:UIControlStateNormal];
     [_cancelXButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cancelXButton];

@@ -127,28 +127,28 @@ static NSCharacterSet *alphaNumericCharacterSet;
 	}
 	[self setNeedsDisplay];
 }
--(UITextAlignment)textAlignment{
+-(NSTextAlignment)textAlignment{
 	switch (ctTextAlignment) {
 		case kCTLeftTextAlignment:
-			return UITextAlignmentLeft;
+			return NSTextAlignmentLeft;
 		case kCTRightTextAlignment:
-			return UITextAlignmentRight;
+			return NSTextAlignmentRight;
 		case kCTCenterTextAlignment:
-			return UITextAlignmentCenter;
+			return NSTextAlignmentCenter;
         default:
-            return UITextAlignmentLeft;
+            return NSTextAlignmentLeft;
 	}
-	return UITextAlignmentLeft;
+	return NSTextAlignmentLeft;
 }
--(void)setTextAlignment:(UITextAlignment)textAlignment{
+-(void)setTextAlignment:(NSTextAlignment)textAlignment{
 	switch (textAlignment) {
-		case UITextAlignmentLeft:
+		case NSTextAlignmentLeft:
 			ctTextAlignment = kCTLeftTextAlignment;
 			break;
-		case UITextAlignmentCenter:
+		case NSTextAlignmentCenter:
 			ctTextAlignment = kCTCenterTextAlignment;
 			break;
-		case UITextAlignmentRight:
+		case NSTextAlignmentRight:
 			ctTextAlignment = kCTRightTextAlignment;
 			break;
 		default:

@@ -65,12 +65,14 @@
 
 - (void)publishKronicle {
     NSData *imageData = UIImagePNGRepresentation(_overlayModule.coverImage.image);
-    NSString *byteName = [Kronicle createCoverImageName];
-    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *imagePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", byteName]];
-    [imageData writeToFile:imagePath atomically:YES];
-    _kronicle.coverUrl = byteName;
-
+    if (imageData) {
+        NSString *byteName = [Kronicle createCoverImageName];
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *imagePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", byteName]];
+        [imageData writeToFile:imagePath atomically:YES];
+        _kronicle.coverUrl = byteName;
+    }
+    
     [self.delegate publishKronicleOverlayPublish];
 }
 

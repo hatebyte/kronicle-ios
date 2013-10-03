@@ -99,7 +99,7 @@ const float kFreshLoadAnimationDuration = 0.35f;
                                           }];
   } else {
     
-    DLog(@"No default engine found and imageCacheEngine parameter is null")
+      DLog(@"No default engine found and imageCacheEngine parameter is null");
   }
   
   return self.imageFetchOperation;

@@ -2,7 +2,7 @@
 //  Kronicle.h
 //  Kronicle
 //
-//  Created by hatebyte on 9/21/13.
+//  Created by hatebyte on 10/1/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
@@ -28,6 +28,7 @@
 @property (nonatomic, retain) User *creator;
 @property (nonatomic, retain) NSSet *itemsSet;
 @property (nonatomic, retain) NSSet *stepsSet;
+@property (nonatomic, retain) NSSet *fanOf;
 @end
 
 @interface Kronicle (CoreDataGeneratedAccessors)
@@ -41,5 +42,10 @@
 - (void)removeStepsSetObject:(Step *)value;
 - (void)addStepsSet:(NSSet *)values;
 - (void)removeStepsSet:(NSSet *)values;
+
+- (void)addFanOfObject:(User *)value;
+- (void)removeFanOfObject:(User *)value;
+- (void)addFanOf:(NSSet *)values;
+- (void)removeFanOf:(NSSet *)values;
 
 @end

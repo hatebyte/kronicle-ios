@@ -14,16 +14,17 @@
         <attribute name="coverUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="desc" attributeType="String" minValueString="1" syncable="YES"/>
-        <attribute name="isFinishedNumber" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isFinishedNumber" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="lastDateChanged" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="ratingNumber" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="stepCountNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="timesCompletedNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="totalTimeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="uuid" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="categoryType" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="CategoryType" inverseName="kroniclesSet" inverseEntity="CategoryType" syncable="YES"/>
-        <relationship name="creator" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="favorites" inverseEntity="User" syncable="YES"/>
+        <relationship name="creator" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="kroniclesSet" inverseEntity="User" syncable="YES"/>
+        <relationship name="fanOf" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="favoritesSet" inverseEntity="User" syncable="YES"/>
         <relationship name="itemsSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="parentKronicle" inverseEntity="Item" syncable="YES"/>
         <relationship name="stepsSet" optional="YES" toMany="YES" minCount="1" maxCount="25" deletionRule="Cascade" destinationEntity="Step" inverseName="parentKronicle" inverseEntity="Step" syncable="YES"/>
     </entity>
@@ -31,6 +32,7 @@
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="indexInKronicleNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isFinishedNumber" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="lastDateChanged" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="mediaTypeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="mediaUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -46,8 +48,8 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profilePic" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="favorites" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Kronicle" inverseName="creator" inverseEntity="Kronicle" syncable="YES"/>
-        <relationship name="kronicles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Kronicle" inverseName="creator" inverseEntity="Kronicle" syncable="YES"/>
+        <relationship name="favoritesSet" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Kronicle" inverseName="fanOf" inverseEntity="Kronicle" syncable="YES"/>
+        <relationship name="kroniclesSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Kronicle" inverseName="creator" inverseEntity="Kronicle" syncable="YES"/>
     </entity>
     <elements>
         <element name="CategoryType" positionX="0" positionY="0" width="0" height="0"/>

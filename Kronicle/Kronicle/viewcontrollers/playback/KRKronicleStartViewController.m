@@ -56,7 +56,7 @@
     CGRect bounds = [UIScreen mainScreen].bounds;
     
     
-    NSInteger height = 205;
+    NSInteger height = 225;
     _coverImageContainer = [[UIView alloc] initWithFrame:CGRectMake(0,0, 320, height)];
     _coverImageContainer.backgroundColor = [UIColor blackColor];
     _coverImageContainer.clipsToBounds = YES;
@@ -131,14 +131,13 @@
 
     [_backButton setBackgroundImage:[UIImage imageNamed:@"backward"] forState:UIControlStateNormal];
     _backButton.backgroundColor                 = [UIColor clearColor];
-    _backButton.frame                           = CGRectMake(0, 0, 40, 40);
+    _backButton.frame                           = CGRectMake(0, 10, 40, 40);
     [self.view addSubview:_backButton];
-    
     
     _startButton                         = [UIButton buttonWithType:UIButtonTypeCustom];
     [_startButton setImage:[UIImage imageNamed:@"start_button"] forState:UIControlStateNormal];
     _startButton.frame                   = CGRectMake(bounds.size.width - (kPadding + 121),
-                                                      bounds.size.height - (60 + kPadding),
+                                                      bounds.size.height - (40 + kPadding),
                                                       121,
                                                       41);
     [_startButton addTarget:self action:@selector(startKronicle) forControlEvents:UIControlEventTouchUpInside];

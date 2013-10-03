@@ -44,7 +44,7 @@ float const kCollectionViewAnimateTime = 0.2f;
 #pragma mark - view building
 - (void)buildSearchView {
     float xmargin = 20.0f;
-    float ymargin = 25.0f;
+    float ymargin = 45.0f;
     float searchFieldHeight = 90.0f;
     _searchTextFieldControlView = [[KRSearchTextFieldControlView alloc] initWithFrame:CGRectMake(xmargin, ymargin, self.view.frame.size.width - (2 * xmargin), searchFieldHeight)];
     _searchTextFieldControlView.delegate = self;

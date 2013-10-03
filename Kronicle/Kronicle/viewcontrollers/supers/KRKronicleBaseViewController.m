@@ -28,9 +28,9 @@
 
 - (void)viewDidLoad
 {
-    if (!SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-        self.view.bounds = CGRectMake(0, -20, 320, _bounds.size.height);
-    }
+//    if (!SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+//        self.view.bounds = CGRectMake(0, -20, 320, _bounds.size.height);
+//    }
 
     [super viewDidLoad];
 }

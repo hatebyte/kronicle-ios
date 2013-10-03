@@ -2,7 +2,7 @@
 //  Kronicle.m
 //  Kronicle
 //
-//  Created by hatebyte on 9/21/13.
+//  Created by hatebyte on 10/1/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
@@ -30,5 +30,6 @@
 @dynamic creator;
 @dynamic itemsSet;
 @dynamic stepsSet;
+@dynamic fanOf;
 
 @end

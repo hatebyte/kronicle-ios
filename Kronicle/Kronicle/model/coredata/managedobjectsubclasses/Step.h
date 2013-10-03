@@ -2,7 +2,7 @@
 //  Step.h
 //  Kronicle
 //
-//  Created by hatebyte on 9/21/13.
+//  Created by hatebyte on 9/30/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSNumber * timeNumber;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * uuid;
+@property (nonatomic, retain) NSNumber * isFinishedNumber;
 @property (nonatomic, retain) Kronicle *parentKronicle;
 
 @end

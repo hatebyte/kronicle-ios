@@ -2,7 +2,7 @@
 //  Step.m
 //  Kronicle
 //
-//  Created by hatebyte on 9/21/13.
+//  Created by hatebyte on 9/30/13.
 //  Copyright (c) 2013 haicontrast. All rights reserved.
 //
 
@@ -21,6 +21,7 @@
 @dynamic timeNumber;
 @dynamic title;
 @dynamic uuid;
+@dynamic isFinishedNumber;
 @dynamic parentKronicle;
 
 @end

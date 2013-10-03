@@ -39,14 +39,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [KRColorHelper grayLight];
+    self.view.backgroundColor = [KRColorHelper turquoiseDark];
     _tableView.backgroundColor = [KRColorHelper grayLight];
     
     _cancelButton.hidden                    = YES;
     
     
     _subHeaderView                                      = [[KRKroniclesPageNavigationView alloc] initWithFrame:CGRectMake(0,
-                                                                                                                          0,
+                                                                                                                          20,
                                                                                                                           320,
                                                                                                                           55)
                                                                                                  andTitleArray:[NSArray arrayWithObjects:@"Created by me",
@@ -55,7 +55,7 @@
     _subHeaderView.delegate                             = self;
     [self.view addSubview:_subHeaderView];
     
-    NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height;
+    NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height - 20;
     _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top + [KRSwipeViewNavigation cellHeight]));
     
 }

@@ -12,7 +12,6 @@
 
 
 + (Kronicle *)readFromJSONDictionary:(NSDictionary *)dict;
-+ (Kronicle *)kronicleShortFromJSONDictionary:(NSDictionary *)dict;
 + (NSDictionary *)toDictionary:(Kronicle *)kronicle;
 - (NSArray *)addStepsFromArray:(NSArray *)stepsArray;
 

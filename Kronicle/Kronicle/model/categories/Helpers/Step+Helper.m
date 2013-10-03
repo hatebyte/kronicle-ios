@@ -38,9 +38,24 @@
     self.timeNumber = [NSNumber numberWithInteger:time];
 }
 
-- (NSString *)fullMediaURL {
-    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    return [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", self.mediaUrl]];
+- (BOOL)isFinished {
+    return [self.isFinishedNumber boolValue];
 }
+
+- (void)setIsFinished:(BOOL)isFinished {
+    self.isFinishedNumber = [NSNumber numberWithBool:isFinished];
+}
+
+
+
+- (NSString *)fullMediaURL {
+    if (self.mediaUrl.length > 0) {
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        return [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", self.mediaUrl]];
+    } else {
+        return @"";
+    }
+}
+
 
 @end

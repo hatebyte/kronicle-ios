@@ -65,7 +65,7 @@
     _previewButton                                              = [UIButton buttonWithType:UIButtonTypeCustom];
     _previewButton.backgroundColor                              = [KRColorHelper orange];
     _previewButton.titleLabel.font                              = [KRFontHelper getFont:KRBrandonRegular withSize:17];
-    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height-20, 141, _buttonHeight);
+    _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height, 141, _buttonHeight);
     [_previewButton setTitle:@"Preview" forState:UIControlStateNormal];
     [_previewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_previewButton addTarget:self action:@selector(previewKronicle:) forControlEvents:UIControlEventTouchUpInside];
@@ -126,7 +126,7 @@
                               delay:.5
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
-                             _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height - (_buttonHeight + 20), 141, _buttonHeight);
+                             _previewButton.frame                                        = CGRectMake(_bounds.size.width - (141 + kPadding), _bounds.size.height - (_buttonHeight), 141, _buttonHeight);
                          }
                          completion:^(BOOL fin){
                              [_kronicle update];

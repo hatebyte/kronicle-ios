@@ -35,7 +35,7 @@
     
     _buttonHeight                                               = 35;
     
-    _tableView                                                  = [[UITableView alloc] initWithFrame:CGRectMake(0,0, _bounds.size.width, _bounds.size.height-20 )];
+    _tableView                                                  = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20 )];
     _tableView.dataSource                                       = self;
     _tableView.delegate                                         = self;
     _tableView.separatorStyle                                   = UITableViewCellSeparatorStyleNone;
@@ -43,7 +43,7 @@
     [self.view addSubview:_tableView];
     
     _cancelButton                                               = [UIButton buttonWithType:UIButtonTypeCustom];
-    _cancelButton.frame                                         = CGRectMake(0, 0, 40, 40);
+    _cancelButton.frame                                         = CGRectMake(0, 20, 40, 40);
     [_cancelButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cancelButton];
 }

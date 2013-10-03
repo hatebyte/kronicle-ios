@@ -13,7 +13,6 @@
 #import "KRNavigationViewController.h"
 
 #import "KRCreateViewController.h"
-#import "KRAPIStore.h"
 
 #import "KRTextButton.h"
 #import "BBRichTextView.h"
@@ -68,7 +67,7 @@ const char *class_getName(Class cls);
     self.view.backgroundColor                   = [KRColorHelper turquoise];
     float buttonX                               = 10.0f;
 
-    _topLine                                    = [[UILabel alloc] initWithFrame:CGRectMake(buttonX+2, 50, 300, 40)];
+    _topLine                                    = [[UILabel alloc] initWithFrame:CGRectMake(buttonX+2, 70, 300, 40)];
     _topLine.font                               = [KRFontHelper getFont:KRBrandonLight withSize:46];
     _topLine.textColor                          = [UIColor whiteColor];
     _topLine.backgroundColor                    = [UIColor clearColor];

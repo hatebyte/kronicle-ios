@@ -37,8 +37,8 @@
     if (self) {
         _step = step;
         _saveBlock = saveBlock;
-        _tempTitle =(_step.title.length > 0) ? _step.title : @"Example step Title";
-        _tempDesc =(_step.desc.length > 0) ? _step.desc : @"Example Description. Had this been a real description, you would have learned something by now.";
+//        _tempTitle =(_step.title.length > 0) ? _step.title : @"Example step Title";
+//        _tempDesc =(_step.desc.length > 0) ? _step.desc : @"Example Description. Had this been a real description, you would have learned something by now.";
 
     }
     return self;
@@ -113,10 +113,10 @@
 
 - (void)validate {
 //    NSInteger time              = [(AddTimeCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] value];
-    _tempTitle                  = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
-    _tempDesc                   = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
+    _step.title                  = [(AddTitleTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] value];
+    _step.desc                   = [(AddDescriptionTableViewCell*)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] value];
 
-    if (/*time < 1 || */_tempTitle.length < 1 || _tempDesc.length < 1) {
+    if (/*time < 1 || */_step.title.length < 1 || _step.desc.length < 1) {
         [UIView animateWithDuration:.4
                               delay:.3
                             options:UIViewAnimationOptionCurveEaseInOut
@@ -130,8 +130,8 @@
                               delay:.5
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
-                             _doneButton.frame              = CGRectMake(kPadding, _bounds.size.height-(_buttonHeight+20), 70, _buttonHeight);
-                             _addStepButton.frame           = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height-(_buttonHeight+20), 160, _buttonHeight);
+                             _doneButton.frame              = CGRectMake(kPadding, _bounds.size.height-(_buttonHeight), 70, _buttonHeight);
+                             _addStepButton.frame           = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height-(_buttonHeight), 160, _buttonHeight);
                          }
                          completion:^(BOOL fin){}];
     }
@@ -259,7 +259,7 @@
             if (cell == nil) {
                 cell = [[AddTitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TitleCell"];
             }
-            [cell prepareForUseWithTitle:_tempTitle andType:AddTitleStep];
+            [cell prepareForUseWithTitle:_step.title andType:AddTitleStep];
             [(AddTitleTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;
@@ -269,7 +269,7 @@
             if (!cell) {
                 cell = [[AddDescriptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DescriptionCell"];
             }
-            [cell prepareForUseWithDescription:_tempDesc andType:AddTitleStep];
+            [cell prepareForUseWithDescription:_step.desc andType:AddTitleStep];
             [(AddDescriptionTableViewCell *)cell setDelegate:self];
             return cell;
         }   break;

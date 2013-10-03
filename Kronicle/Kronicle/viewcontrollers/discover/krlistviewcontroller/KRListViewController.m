@@ -40,11 +40,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor                           = [KRColorHelper grayLight];
+    self.view.backgroundColor                           = [KRColorHelper turquoise];
     _tableView.backgroundColor                          = [KRColorHelper grayLight];
     
     
-    _headerView                                         = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 70)];
+    _headerView                                         = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 70)];
     _headerView.backgroundColor                         = [KRColorHelper turquoise];
     [self.view addSubview:_headerView];
     
@@ -60,7 +60,7 @@
     [_cancelButton setImage:[UIImage imageNamed:@"backarrow"] forState:UIControlStateNormal];
     _cancelButton.backgroundColor                       = [UIColor clearColor];
     _cancelButton.frame                                 = CGRectMake(_cancelButton.frame.origin.x,
-                                                                     (_headerView.frame.size.height - _cancelButton.frame.size.height) * .5,
+                                                                     _titleLabel.frame.origin.y +( (_titleLabel.frame.size.height - _cancelButton.frame.size.height) * .5),
                                                                      _cancelButton.frame.size.width,
                                                                      _cancelButton.frame.size.height);
     [_cancelButton removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
@@ -77,7 +77,7 @@
     _subHeaderView.delegate                             = self;
     [self.view addSubview:_subHeaderView];
     
-    NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height;
+    NSInteger top                                       = (_subHeaderView.frame.origin.y + _subHeaderView.frame.size.height) - 20;
     _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top + [KRSwipeViewNavigation cellHeight]));
 }
 
@@ -104,14 +104,12 @@
         [_tableView reloadData];
     }
                        onFailure:^(NSDictionary *error) {
-                           NSLog(@"Listview getLocal Failed, retriving remote");
                            if ([[error objectForKey:@"error"] isEqualToString:NO_LOCAL_KRONICLES]) {
                                [Kronicle getRemoteKronicles:^(NSArray *kronicles) {
                                    _kroniclesModuloed = [Kronicle moduloKronicleList:kronicles];
                                    [_tableView reloadData];
                                }
                                                   onFailure:^(NSError *error) {
-                                                      NSLog(@"Cant get remote kronicle : %@", error);
                                                   }];
                            }
                        }];
@@ -186,11 +184,12 @@
                                                [self navigateToKronicle:k];
                                            }
                                              onFailure:^(NSDictionary *error) {
+                                                 
                                              }];
     }
 }
 
-- (void)navigateToKronicle:(Kronicle*)kronicle {
+- (void)navigateToKronicle:(Kronicle *)kronicle {
     KRKronicleStartViewController *kronicleStartViewController = [[KRKronicleStartViewController alloc] initWithNibName:@"KRKronicleStartViewController" andKronicle:kronicle];
     [self.navigationController pushViewController:kronicleStartViewController animated:YES];
 }
