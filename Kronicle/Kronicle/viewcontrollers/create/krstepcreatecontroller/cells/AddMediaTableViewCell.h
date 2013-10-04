@@ -26,6 +26,8 @@ typedef enum {
 
 @property (nonatomic, weak) id <AddMediaTableViewCellDelegate> delegate;
 
++ (UIColor *)cellColor;
+
 - (void)prepareForUseWithImage:(NSString *)imagePath;
 - (NSString *)value;
 

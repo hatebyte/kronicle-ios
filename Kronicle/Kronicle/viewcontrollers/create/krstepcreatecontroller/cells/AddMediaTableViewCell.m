@@ -30,6 +30,10 @@
     return 285.f;
 }
 
++ (UIColor *)cellColor {
+    return [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:.1f];
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

@@ -40,7 +40,7 @@
     blackBackground.backgroundColor                 = [UIColor colorWithRed:.1f green:.1f blue:.1f alpha:0.9f].CGColor;
     [self.view.layer addSublayer:blackBackground];
     
-    _globalClockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 30)];
+    _globalClockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 320, 30)];
     _globalClockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:38];
     _globalClockLabel.textColor = [UIColor whiteColor];
     _globalClockLabel.backgroundColor = [UIColor clearColor];

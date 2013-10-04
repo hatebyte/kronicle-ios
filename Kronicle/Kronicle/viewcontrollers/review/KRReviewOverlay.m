@@ -34,7 +34,7 @@
         self.backgroundColor                        = [UIColor blackColor];
         
         _titleField                                 = [UIHelper titleTextField];
-        _titleField.frame                           = CGRectMake(kPadding, 0, kPaddingWidth, 90);
+        _titleField.frame                           = CGRectMake(kPadding, 20, kPaddingWidth, 90);
         _titleField.enabled                         = NO;
         _titleField.placeholder                     = NSLocalizedString(@"My Review", @"Title of review view controller");
         [_titleField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -101,7 +101,7 @@
         [_saveButton setTitle:@"Post Review" forState:UIControlStateNormal];
         [_saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _saveButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
-        _saveButton.frame = CGRectMake(kPadding, self.frame.size.height-(saveButtonHeight+20+kPadding), 82, saveButtonHeight);
+        _saveButton.frame = CGRectMake(kPadding, self.frame.size.height-(saveButtonHeight+kPadding), 82, saveButtonHeight);
         [_saveButton addTarget:self action:@selector(savePressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_saveButton];
     }

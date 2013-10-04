@@ -90,7 +90,9 @@
                                                              320-(kPadding * 2),
                                                              h);
 
-        self.contentView.backgroundColor        = [UIColor clearColor];
+        self.contentView.backgroundColor        = [UIColor whiteColor];
+        self.backgroundView.backgroundColor     = [UIColor whiteColor];
+        self.backgroundColor                    = [UIColor whiteColor];
         self.clipsToBounds                      = YES;
     }
     return self;
@@ -103,11 +105,11 @@
 - (void)prepareForUseWithDescription:(NSString *)description andType:(AddTitleLocation)type {
     if (description.length >= 1) {
         _placeholderLabel.hidden = YES;
-        _textArea.text = description;
+        _textArea.text                          = description;
     } else {
         _placeholderLabel.hidden = NO;
     }
-    _screenType                             = type;
+    _screenType                                 = type;
 }
 
 - (void)animateIn {

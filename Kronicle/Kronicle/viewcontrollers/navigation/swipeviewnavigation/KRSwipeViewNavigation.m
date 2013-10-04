@@ -12,6 +12,7 @@
 #import "KRFontHelper.h"
 #import "KRNavigationTableViewCell.h"
 #import "KRHomeViewController.h"
+#import "KRGlobals.h"
 
 @interface KRSwipeViewNavigation () <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
     @private
@@ -43,11 +44,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         _bounds = [UIScreen mainScreen].bounds;
         
-        
         _hiddenFrame = frame;
-        _exposedFrame = CGRectMake(0, _bounds.size.height - [KRSwipeViewNavigation maxHeight], 320, [KRSwipeViewNavigation maxHeight]);
+        _exposedFrame = CGRectMake(0, (frame.origin.y + frame.size.height) - [KRSwipeViewNavigation maxHeight], 320, [KRSwipeViewNavigation maxHeight]);
         
         _tableData = [NSArray arrayWithObjects:
                           [NSDictionary dictionaryWithObjectsAndKeys:

@@ -21,21 +21,23 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _bounds                                                     = [UIScreen mainScreen].bounds;
+
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-//    if (!SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-//        self.view.bounds = CGRectMake(0, -20, 320, _bounds.size.height);
-//    }
-
+- (void)viewDidLoad {
     [super viewDidLoad];
+	_bounds = [UIScreen mainScreen].bounds;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
     [[KronicleEngine current] cancelCurrentOperations];
 }
 
@@ -57,16 +59,18 @@
 - (void)viewListItems:(Kronicle *)kronicle {
     dispatch_async(dispatch_get_main_queue(), ^{
         KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListUse];
-        [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-        [self.navigationController presentModalViewController:itemsViewController animated:YES];
+        //[itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        //[self.navigationController presentModalViewController:itemsViewController animated:YES];
+        [self.navigationController pushViewController:itemsViewController animated:YES];
     });
 }
 
 - (void)createListItems:(Kronicle *)kronicle {
     dispatch_async(dispatch_get_main_queue(), ^{
         KRItemsViewController *itemsViewController = [[KRItemsViewController alloc] initWithItems:kronicle.items andState:KRItemsListCreate];
-        [itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-        [self.navigationController presentModalViewController:itemsViewController animated:YES];
+        //[itemsViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        //[self.navigationController presentModalViewController:itemsViewController animated:YES];
+        [self.navigationController pushViewController:itemsViewController animated:YES];
     });
 }
 
@@ -74,9 +78,11 @@
 - (void)reviewRequested:(Kronicle *)kronicle {
     dispatch_async(dispatch_get_main_queue(), ^{
         KRReviewViewController *kronicleReview = [[KRReviewViewController alloc] initWithKronicle:kronicle];
-        [kronicleReview setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-        [self.navigationController presentModalViewController:kronicleReview animated:YES];
+        //[kronicleReview setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        //[self.navigationController presentModalViewController:kronicleReview animated:YES];
+        [self.navigationController pushViewController:kronicleReview animated:YES];
     });
 }
+
 
 @end

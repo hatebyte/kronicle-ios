@@ -13,8 +13,9 @@
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import "KRNavigationViewController.h"
 #import <HockeySDK/HockeySDK.h>
+#import "KRGlobals.h"
 
-static const int ddLogLevel = LOG_LEVEL_INFO;
+//static const int ddLogLevel = LOG_LEVEL_INFO;
 
 
 @implementation AppDelegate
@@ -29,7 +30,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+   
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"1ef52d8c56ce7fbdf53f2690850e8acf" delegate:self];
     [[BITHockeyManager sharedHockeyManager] startManager];
 
@@ -47,10 +48,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // Override point for customization after application launch.
-//    KRHomeViewController *viewController = [[KRHomeViewController alloc] initWithNibName:@"KRHomeViewController" bundle:nil];
     KRHomeViewController *viewController = [KRHomeViewController current];
-    
     KRNavigationViewController *navigationController = [[KRNavigationViewController alloc] initWithRootViewController:viewController];
     navigationController.navigationBarHidden = YES;
     self.window.rootViewController = navigationController;

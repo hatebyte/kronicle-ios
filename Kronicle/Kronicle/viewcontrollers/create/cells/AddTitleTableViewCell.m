@@ -51,7 +51,9 @@
         [toolbar setPreviousEnabled:NO];
         [_inputField setInputAccessoryView:toolbar];
 
-        self.contentView.backgroundColor        = [UIColor clearColor];
+        self.contentView.backgroundColor        = [UIColor whiteColor];
+        self.backgroundView.backgroundColor     = [UIColor whiteColor];
+        self.backgroundColor                    = [UIColor whiteColor];
         self.clipsToBounds                      = YES;
     }
     return self;

@@ -46,6 +46,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor                       = [UIColor blackColor];
+    _tableView.backgroundColor                      = [AddMediaTableViewCell cellColor];
 
     [_cancelButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
     _cancelButton.backgroundColor                   = [UIColor clearColor];
@@ -64,19 +66,17 @@
     _addStepButton.titleLabel.font                  = [KRFontHelper getFont:KRBrandonRegular withSize:17];
     [_addStepButton setTitle:@"Add another step" forState:UIControlStateNormal];
     [_addStepButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //    [_addStepButton addTarget:self action:@selector(addAnotherStep:) forControlEvents:UIControlEventTouchUpInside];
+    // [_addStepButton addTarget:self action:@selector(addAnotherStep:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_addStepButton];
 
     _createStepTimeView = [[CreateStepTimeView alloc] initWithFrame:_tableView.frame];
     _createStepTimeView.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeCreatorRequested:) name:kRequestTimeUnitEdit object:nil];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
 
     _doneButton.frame              = CGRectMake(kPadding, _bounds.size.height, 70, _buttonHeight);
     _addStepButton.frame           = CGRectMake(_bounds.size.width - (160 + kPadding), _bounds.size.height, 160, _buttonHeight);
-
+    _tableView.frame               = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (void)viewDidAppear:(BOOL)animated {

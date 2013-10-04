@@ -39,25 +39,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [KRColorHelper turquoiseDark];
-    _tableView.backgroundColor = [KRColorHelper grayLight];
-    
-    _cancelButton.hidden                    = YES;
-    
+    self.view.backgroundColor                           = [KRColorHelper grayLight];
+    _tableView.backgroundColor                          = [KRColorHelper grayLight];
+    _cancelButton.hidden                                = YES;
     
     _subHeaderView                                      = [[KRKroniclesPageNavigationView alloc] initWithFrame:CGRectMake(0,
-                                                                                                                          20,
+                                                                                                                          0,
                                                                                                                           320,
                                                                                                                           55)
                                                                                                  andTitleArray:[NSArray arrayWithObjects:@"Created by me",
                                                                                                                 @"Added",
                                                                                                                 @"History", nil]];
     _subHeaderView.delegate                             = self;
+    
+    NSInteger top                                       = _subHeaderView.frame.size.height;
+//    _tableView.frame = CGRectMake(0, top, 320, self.view.frame.size.height - ([KRSwipeViewNavigation cellHeight] + top));
+
+    _tableView.frame = CGRectMake(0, top, 320, self.view.frame.size.height - ([KRSwipeViewNavigation cellHeight] + top));
+    [self.view addSubview:_tableView];
     [self.view addSubview:_subHeaderView];
-    
-    NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height - 20;
-    _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top + [KRSwipeViewNavigation cellHeight]));
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -132,6 +132,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return kPadding;
 }
+
+//- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+//    UIView *viewer = [[UIView alloc] init];
+//    viewer.backgroundColor = [UIColor clearColor];
+//    viewer.userInteractionEnabled = NO;
+//    return viewer;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return [KRSwipeViewNavigation cellHeight]+kPadding;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [KronicleBlockTableViewCell cellHeight];

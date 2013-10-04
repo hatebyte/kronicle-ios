@@ -35,7 +35,7 @@
     
     _buttonHeight                                               = 35;
     
-    _tableView                                                  = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20 )];
+    _tableView                                                  = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-20 )];
     _tableView.dataSource                                       = self;
     _tableView.delegate                                         = self;
     _tableView.separatorStyle                                   = UITableViewCellSeparatorStyleNone;

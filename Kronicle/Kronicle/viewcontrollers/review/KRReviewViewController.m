@@ -39,21 +39,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height)];
-    _scrollView.showsVerticalScrollIndicator = YES;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    [self.view addSubview:_scrollView];
     
+    self.view.backgroundColor = [UIColor blackColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, _bounds.size.width, _bounds.size.height)];
+    _scrollView.showsVerticalScrollIndicator                        = YES;
+    _scrollView.showsHorizontalScrollIndicator                      = NO;
+    _scrollView.backgroundColor                                     = [UIColor whiteColor];
+    [self.view addSubview:_scrollView];
+
     _cancelXButton                                                  = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelXButton.backgroundColor                                  = [UIColor clearColor];
-    _cancelXButton.frame                                            = CGRectMake(320 - 45, 20, 40, 40);
+    _cancelXButton.frame                                            = CGRectMake(320 - 45, 0, 40, 40);
     [_cancelXButton setBackgroundImage:[UIImage imageNamed:@"transx"] forState:UIControlStateNormal];
     [_cancelXButton addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:_cancelXButton];
 
     _titleField                                 = [UIHelper titleTextField];
-    _titleField.frame                           = CGRectMake(kPadding, 20, kPaddingWidth, 90);
+    _titleField.frame                           = CGRectMake(kPadding, 0, kPaddingWidth, 90);
     _titleField.enabled                         = NO;
     _titleField.placeholder                     = NSLocalizedString(@"Reviews", @"Title of review view controller");
     [_scrollView addSubview:_titleField];
@@ -63,7 +67,7 @@
     [_reviewOverlay setReviewWithValue:_kronicle.rating];
     
     _reviewCreatorView                          = [[CreateReviewView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - [CreateReviewView size]) * .5,
-                                                                                                     _titleField.frame.origin.y + _titleField.frame.size.height - 30,
+                                                                                                     _titleField.frame.origin.y + _titleField.frame.size.height - 20,
                                                                                                      [CreateReviewView size],
                                                                                                      [CreateReviewView size]) andType:CreateReviewViewShow];
     _reviewCreatorView.enabled                  = NO;
@@ -75,7 +79,7 @@
     imageView.frame = CGRectMake(0, _reviewCreatorView.frame.origin.y + _reviewCreatorView.frame.size.height, 320, 708);
     [_scrollView addSubview:imageView];
     
-    _addReviewButton = [[KRTextButton alloc] initWithFrame:CGRectMake(kPadding, imageView.frame.origin.y + 140, 200, 42)
+    _addReviewButton = [[KRTextButton alloc] initWithFrame:CGRectMake(kPadding, imageView.frame.origin.y + 120, 200, 42)
                                               andType:KRTextButtonTypeHomeScreen
                                               andIcon:[UIImage imageNamed:@"addreviewbuttoncircle"]];
     [_addReviewButton setTitle:NSLocalizedString(@"Review this kronicle", @"Review this kronicle button") forState:UIControlStateNormal];
@@ -89,12 +93,13 @@
     
     _scrollView.contentSize = CGSizeMake(320, imageView.frame.origin.y + imageView.frame.size.height);
     _scrollView.canCancelContentTouches = NO;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [(KRNavigationViewController *)self.navigationController navbarHidden:YES];
-}
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -102,7 +107,8 @@
 }
 
 - (void)popViewController:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark create review
@@ -155,8 +161,6 @@
                          [_reviewOverlay setReviewWithValue:_kronicle.rating];
                      }];
 }
-
-
 
 @end
 

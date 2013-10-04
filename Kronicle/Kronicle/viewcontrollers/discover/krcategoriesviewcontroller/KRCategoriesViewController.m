@@ -44,7 +44,7 @@ float const kCollectionViewAnimateTime = 0.2f;
 #pragma mark - view building
 - (void)buildSearchView {
     float xmargin = 20.0f;
-    float ymargin = 45.0f;
+    float ymargin = 40.f;
     float searchFieldHeight = 90.0f;
     _searchTextFieldControlView = [[KRSearchTextFieldControlView alloc] initWithFrame:CGRectMake(xmargin, ymargin, self.view.frame.size.width - (2 * xmargin), searchFieldHeight)];
     _searchTextFieldControlView.delegate = self;
@@ -62,7 +62,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     _categoriesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(((320 -  w) * .5) - 3,
                                                                                    _searchTextFieldControlView.y + (_searchTextFieldControlView.height / 2) + 25.0f,
                                                                                    w,
-                                                                                   self.view.height - 1.5*_searchTextFieldControlView.height) collectionViewLayout:_flowLayout];
+                                                                                   self.view.height - 1.5 * _searchTextFieldControlView.height) collectionViewLayout:_flowLayout];
     _categoriesCollectionView.delegate = self;
     _categoriesCollectionView.dataSource = self;
     _categoriesCollectionView.bounces = YES;
@@ -122,7 +122,7 @@ float const kCollectionViewAnimateTime = 0.2f;
     [self buildSearchWhiteBackground];
     [self buildCollectionView];
     
-    _tableView.frame = CGRectMake(0,0,_searchResultsBackground.frame.size.width, _searchResultsBackground.frame.size.height-314);
+    _tableView.frame = CGRectMake(0, 0, _searchResultsBackground.frame.size.width, _searchResultsBackground.frame.size.height-294);
     _tableView.backgroundColor        = [KRColorHelper grayLight];
 
     [_searchResultsBackground addSubview:_tableView];

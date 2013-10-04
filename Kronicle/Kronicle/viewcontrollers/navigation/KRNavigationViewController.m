@@ -8,6 +8,7 @@
 
 #import "KRNavigationViewController.h"
 #import "KRSwipeViewNavigation.h"
+#import "KRGlobals.h"
 
 @interface KRNavigationViewController () {
     @private
@@ -18,8 +19,7 @@
 
 @implementation KRNavigationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -27,17 +27,23 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	
-    // Do any additional setup after loading the view.
-    
+    CGRect bounds = [UIScreen mainScreen].bounds;
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        UIView *firstView = [[self.view subviews] objectAtIndex:0];
+        firstView.frame  = CGRectMake(firstView.frame.origin.x, firstView.frame.origin.y-20, firstView.frame.size.width, firstView.frame.size.height+20);
+    }
+
     _swipeNav = [[KRSwipeViewNavigation alloc] initWithFrame:CGRectMake(0,
-                                                                        self.view.frame.size.height - [KRSwipeViewNavigation cellHeight],
+                                                                        bounds.size.height - [KRSwipeViewNavigation cellHeight],
                                                                         320,
                                                                         [KRSwipeViewNavigation cellHeight])];
     [self.view addSubview:_swipeNav];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

@@ -77,8 +77,11 @@
     _subHeaderView.delegate                             = self;
     [self.view addSubview:_subHeaderView];
     
-    NSInteger top                                       = (_subHeaderView.frame.origin.y + _subHeaderView.frame.size.height) - 20;
-    _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - (top + [KRSwipeViewNavigation cellHeight]));
+    NSInteger top                                       = _subHeaderView.frame.origin.y + _subHeaderView.frame.size.height;
+    _tableView.frame = CGRectMake(0, top, 320, _bounds.size.height - ([KRSwipeViewNavigation cellHeight] + top));
+    [self.view addSubview:_tableView];
+    [self.view addSubview:_subHeaderView];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

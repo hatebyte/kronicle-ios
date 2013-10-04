@@ -53,11 +53,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CGRect bounds = [UIScreen mainScreen].bounds;
-    
     
     NSInteger height = 225;
-    _coverImageContainer = [[UIView alloc] initWithFrame:CGRectMake(0,0, 320, height)];
+    _coverImageContainer = [[UIView alloc] initWithFrame:CGRectMake(0,20, 320, height)];
     _coverImageContainer.backgroundColor = [UIColor blackColor];
     _coverImageContainer.clipsToBounds = YES;
     [self.view addSubview:_coverImageContainer];
@@ -65,7 +63,6 @@
     _coverImage.image = [UIImage imageWithContentsOfFile:_kronicle.fullCoverURL];
     _coverImage.alpha = .7;
     [_coverImageContainer addSubview:_coverImage];
-    
     
     NSMutableParagraphStyle *paragraphStyle         = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineHeightMultiple               = 42.f;
@@ -113,10 +110,11 @@
     _ratingView = [[KRRatingModuleView alloc] initWithPoint:CGPointMake(timeWidth, _timeLabel.frame.origin.y + 4) andStyle:KRRatingModuleStart andRating:.7];
     [self.view addSubview:_ratingView];
     
+    CGFloat y  = _coverImageContainer.frame.size.height + kPadding;
     _description = [[UITextView alloc] initWithFrame:CGRectMake(kPadding,
-                                                                _coverImageContainer.frame.size.height + kPadding,
+                                                                y,
                                                                 306,
-                                                                200)];
+                                                                _bounds.size.height - y)];
     _description.font = [KRFontHelper getFont:KRMinionProRegular withSize:16];
     _description.text = self.kronicle.desc;
     _description.scrollEnabled = NO;
@@ -131,13 +129,14 @@
 
     [_backButton setBackgroundImage:[UIImage imageNamed:@"backward"] forState:UIControlStateNormal];
     _backButton.backgroundColor                 = [UIColor clearColor];
-    _backButton.frame                           = CGRectMake(0, 10, 40, 40);
+    _backButton.frame                           = CGRectMake(0, 20, 40, 40);
     [self.view addSubview:_backButton];
+    
     
     _startButton                         = [UIButton buttonWithType:UIButtonTypeCustom];
     [_startButton setImage:[UIImage imageNamed:@"start_button"] forState:UIControlStateNormal];
-    _startButton.frame                   = CGRectMake(bounds.size.width - (kPadding + 121),
-                                                      bounds.size.height - (40 + kPadding),
+    _startButton.frame                   = CGRectMake(_bounds.size.width - (kPadding + 121),
+                                                      _bounds.size.height - (41 + kPadding),
                                                       121,
                                                       41);
     [_startButton addTarget:self action:@selector(startKronicle) forControlEvents:UIControlEventTouchUpInside];
@@ -178,10 +177,11 @@
     NSInteger timeWidth                         = [time sizeWithFont:[KRFontHelper getFont:KRBrandonLight withSize:32]].width + _timeLabel.frame.origin.x + 15;
     _ratingView.frame                           = CGRectMake(timeWidth, _timeLabel.frame.origin.y + 4, _ratingView.frame.size.width, _ratingView.frame.size.height);
 
+    CGFloat y                                   = _ratingView.frame.origin.y + _ratingView.frame.size.height + (2 * kPadding);
     _description.frame                          = CGRectMake(kPadding - 6,
-                                                             _ratingView.frame.origin.y + _ratingView.frame.size.height + (2 * kPadding),
+                                                             y,
                                                              306,
-                                                             150);
+                                                             _bounds.size.height - y);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
