@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ManagedContextController.h"
-
+#import "Kronicle+JSON.h"
 #import "KRHomeViewController.h"
 #import "KRNavigationViewController.h"
 
@@ -16,6 +16,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UIApplication
+      sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -53,7 +56,7 @@
     
     [[ManagedContextController current] saveContext];
 
-    
+    [self preload];
     return YES;
 }
 
@@ -82,6 +85,92 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)preload {
+   
+    if (![[ManagedContextController current] hasPreloaded]) {
+        NSDictionary *brusselSprouts = @{
+                            @"_id" : @"brussel_sprouts"
+                            ,@"title" : @"Easy Brussels Sprouts"
+                            ,@"description" : @"Despite their bad rap, Brussels sprouts are   incredibly tasty and a great source of vitamins. Here is how I make mine at least twice a week"
+                            ,@"category" : @"food"
+                            ,@"imageUrl" : @"brussel-sprouts-cover.png"
+                            ,@"steps" : @[
+                                  @{
+                                      @"_id" : @"brussel_sprouts_0"
+                                      ,@"title" : @"1.Prep Brussels Sprouts "
+                                      ,@"description" : @"Wash in water. Cut off the rough end then half them."
+                                      ,@"category" : @"food"
+                                      ,@"imageUrl" : @"brussel-sprouts-vid-part-1.mov"
+                                      ,@"time" : @120
+                                      ,@"indexInKronicle" : @0
+                                      }
+                                  ,@{
+                                      @"_id" : @"brussel_sprouts_1"
+                                      ,@"title" : @"2.Prep your garlic"
+                                      ,@"description" : @"Peel the garlic by hitting the palm of your hand on a flat side of a chefs knife. Then chop up the garlic. Don't dice them to small or they will burn."
+                                      ,@"category" : @"food"
+                                      ,@"imageUrl" : @"brussel-sprouts-vid-part-2.mov"
+                                      ,@"time" : @120
+                                      ,@"indexInKronicle" : @1
+                                      }
+                                  ,@{
+                                      @"_id" : @"brussel_sprouts_2"
+                                      ,@"title" : @"3.Heat Your Pan"
+                                      ,@"description" : @"Turn the burner to medium heat. "
+                                      ,@"category" : @"food"
+                                      ,@"imageUrl" : @"brussel-sprouts-vid-part-3.mov"
+                                      ,@"time" : @120
+                                      ,@"indexInKronicle" : @2
+                                      }
+                                  ,@{
+                                      @"_id" : @"brussel_sprouts_3"
+                                      ,@"title" : @"4.Add Half The Butter"
+                                      ,@"description" : @"Add 1 tablespoon of butter."
+                                      ,@"category" : @"food"
+                                      ,@"imageUrl" : @"brussel-sprouts-vid-part-4.mov"
+                                      ,@"time" : @30
+                                      ,@"indexInKronicle" : @3
+                                      }
+                                  ,@{
+                                      @"_id" : @"brussel_sprouts_4"
+                                      ,@"title" : @"5.Add The Brussels Sprouts"
+                                      ,@"description" : @"Put them face down on the pan and push them around periodically so they don't stick."
+                                      ,@"category" : @"food"
+                                      ,@"imageUrl" : @"brussel-sprouts-vid-part-5.mov"
+                                      ,@"time" : @400
+                                      ,@"indexInKronicle" : @4
+                                      }
+                                  ,@{
+                                      @"_id" : @"brussel_sprouts_5"
+                                      ,@"title" : @"6. Butter and Spice"
+                                      ,@"description" : @"Now add the rest of the butter and the garlic. You can add salt and pepper if you want."
+                                      ,@"category" : @"food"
+                                      ,@"imageUrl" : @"brussel-sprouts-vid-part-6.mov"
+                                      ,@"time" : @60
+                                      ,@"indexInKronicle" : @5
+                                      }
+                                  
+                                  
+                                    ]
+                            ,@"items" : @[
+                                    @"1/2 pound brussels sprouts"
+                                    ,@"2 big garlic cloves"
+                                    ,@"2 tablespoons salted butter"
+                                    ,@"1 tablespoon olive oil"
+                                    ,@"Salt"
+                                    ,@"Pepper"
+                                    ,@"Hot pepper flakes if you want spice"
+                                    ]
+                            };
+        
+       
+        [Kronicle readFromJSONDictionary:brusselSprouts];
+        [[ManagedContextController current] saveContext];
+        
+    }
+
 }
 
 @end

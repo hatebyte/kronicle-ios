@@ -18,7 +18,7 @@
 + (ManagedContextController *)current;
 
 - (void)saveContext;
-
+- (BOOL)hasPreloaded;
 - (Category *)getNewCategory;
 - (Item *)getNewItem;
 

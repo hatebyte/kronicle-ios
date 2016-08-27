@@ -22,7 +22,11 @@
     return kronicle;
 }
 
+
+
 + (Kronicle *)kronicleShortFromJSONDictionary:(NSDictionary *)dict {
+
+ 
     Kronicle *kronicle                      = [Kronicle newKronicle];
     kronicle.uuid                           = [dict objectForKey:@"_id"];
     kronicle.title                          = [dict objectForKey:@"title"];

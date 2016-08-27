@@ -599,7 +599,6 @@
 		D2B6227517C6349E007C6E06 /* Kronicle+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kronicle+Helper.h"; sourceTree = "<group>"; };
 		D2B6227617C6349E007C6E06 /* Kronicle+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Kronicle+Helper.m"; sourceTree = "<group>"; };
 		D2B6228717C64224007C6E06 /* KronicleEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KronicleEngine.m; path = kroniclenetwork/KronicleEngine.m; sourceTree = "<group>"; };
-		D2CEA506178DB03300E651D2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D2D95C4C17C6D8C70048ADA3 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		D2D95C4D17C6D8C70048ADA3 /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
 		D2D95C4F17C6D8C70048ADA3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -1015,7 +1014,6 @@
 		D2A573D5175A3B4E002AC1B9 = {
 			isa = PBXGroup;
 			children = (
-				D2CEA506178DB03300E651D2 /* Podfile */,
 				D2A573E7175A3B4E002AC1B9 /* Kronicle */,
 				D2A573E0175A3B4E002AC1B9 /* Frameworks */,
 				D2A573DF175A3B4E002AC1B9 /* Products */,

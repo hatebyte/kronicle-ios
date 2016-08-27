@@ -33,6 +33,12 @@
     return self;
 }
 
+- (BOOL)hasPreloaded {
+    NSFetchRequest *f = [[NSFetchRequest alloc] initWithEntityName:@"Kronicle"];
+    NSInteger count = [_managedObjectContext countForFetchRequest:f error:nil];
+    return  count > 0;
+}
+
 - (void)saveContext {
     NSError *error;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;

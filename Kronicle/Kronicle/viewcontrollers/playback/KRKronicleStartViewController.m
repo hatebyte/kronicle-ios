@@ -131,7 +131,7 @@
 
     [_backButton setBackgroundImage:[UIImage imageNamed:@"backward"] forState:UIControlStateNormal];
     _backButton.backgroundColor                 = [UIColor clearColor];
-    _backButton.frame                           = CGRectMake(0, 0, 40, 40);
+    _backButton.frame                           = CGRectMake(0, 10, 40, 40);
     [self.view addSubview:_backButton];
     
     
