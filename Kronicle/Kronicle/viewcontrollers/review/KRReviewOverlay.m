@@ -89,7 +89,7 @@
 
 
         _cancelXButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _cancelXButton.frame = CGRectMake(self.frame.size.width - 35, 0, 35, 35);
+        _cancelXButton.frame = CGRectMake(self.frame.size.width - 35, 15, 35, 35);
         _cancelXButton.backgroundColor = [UIColor clearColor];
         [_cancelXButton setImage:[UIImage imageNamed:@"cancel_x"] forState:UIControlStateNormal];
         [_cancelXButton addTarget:self action:@selector(exitPressed:) forControlEvents:UIControlEventTouchUpInside];

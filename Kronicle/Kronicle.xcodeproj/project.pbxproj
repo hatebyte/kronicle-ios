@@ -32,7 +32,6 @@
 		811e6765c7124f354e87a50e /* UIImageView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E72F1789ED850085C707 /* UIImageView+MKNetworkKitAdditions.m */; };
 		88baa8cb1cb56b7e6f665793 /* KRAPIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A57406175A3B77002AC1B9 /* KRAPIStore.m */; };
 		8b0b86cf513301c6e1a49087 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96ADD45175B9BA30003FEF5 /* icon@2x.png */; };
-		913CBC8A0E654106847783ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
 		D23EFDA817C44DF200989E5E /* KRKronicle.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDA017C44DF200989E5E /* KRKronicle.m */; };
 		D23EFDA917C44DF200989E5E /* KRList.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDA217C44DF200989E5E /* KRList.m */; };
 		D23EFDAA17C44DF200989E5E /* KRStep.m in Sources */ = {isa = PBXBuildFile; fileRef = D23EFDA517C44DF200989E5E /* KRStep.m */; };
@@ -282,7 +281,6 @@
 		d7893293056a9adce3321f37 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7371789ED850085C707 /* Reachability.m */; };
 		e92e0e9df142296c413080d3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A573ED175A3B4E002AC1B9 /* main.m */; };
 		e9a0c2bf7fccf27a3d21b4c3 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1E7291789ED850085C707 /* NSDictionary+RequestEncoding.m */; };
-		ecb132672ef70a0e74afb52c /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA3024BEBD43208A62B175 /* libPods.a */; };
 		f71be03cde1821216082f118 /* BrandonGrotesque-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57482175A7851002AC1B9 /* BrandonGrotesque-Bold.otf */; };
 		fbac2a15f339e562f8ace017 /* BrandonGrotesque-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A57480175A76A6002AC1B9 /* BrandonGrotesque-Thin.otf */; };
 		fc15f772b34bb681919386fd /* APIRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D270D178B93330085E943 /* APIRouter.m */; };
@@ -293,8 +291,6 @@
 /* Begin PBXFileReference section */
 		0CFC052017B8723800A1BB7F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		8cc04305e90128ef892ea4d8 /* calabash.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; path = calabash.framework; sourceTree = "<group>"; };
-		932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		ABEA3024BEBD43208A62B175 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D236FB0517B4631A003DD323 /* Kronicle-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kronicle-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23EFD9F17C44DF200989E5E /* KRKronicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRKronicle.h; sourceTree = "<group>"; };
 		D23EFDA017C44DF200989E5E /* KRKronicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRKronicle.m; sourceTree = "<group>"; };
@@ -657,7 +653,6 @@
 				c15994c39ae6faf73e6e07ae /* UIKit.framework in Frameworks */,
 				1d66f05499b94dfce7b9ff18 /* Foundation.framework in Frameworks */,
 				73a07da55f709b271993c23c /* CoreGraphics.framework in Frameworks */,
-				ecb132672ef70a0e74afb52c /* libPods.a in Frameworks */,
 				27eaeb4a4628e817d9639f38 /* calabash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,7 +674,6 @@
 				D2A573E2175A3B4E002AC1B9 /* UIKit.framework in Frameworks */,
 				D2A573E4175A3B4E002AC1B9 /* Foundation.framework in Frameworks */,
 				D2A573E6175A3B4E002AC1B9 /* CoreGraphics.framework in Frameworks */,
-				913CBC8A0E654106847783ED /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,7 +1019,6 @@
 				D2A573E7175A3B4E002AC1B9 /* Kronicle */,
 				D2A573E0175A3B4E002AC1B9 /* Frameworks */,
 				D2A573DF175A3B4E002AC1B9 /* Products */,
-				932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1054,7 +1047,6 @@
 				D2A573E1175A3B4E002AC1B9 /* UIKit.framework */,
 				D2A573E3175A3B4E002AC1B9 /* Foundation.framework */,
 				D2A573E5175A3B4E002AC1B9 /* CoreGraphics.framework */,
-				ABEA3024BEBD43208A62B175 /* libPods.a */,
 				8cc04305e90128ef892ea4d8 /* calabash.framework */,
 			);
 			name = Frameworks;
@@ -1767,11 +1759,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2A57401175A3B4E002AC1B9 /* Build configuration list for PBXNativeTarget "Kronicle" */;
 			buildPhases = (
-				FE098D28999940B3949526D4 /* Check Pods Manifest.lock */,
 				D2A573DA175A3B4E002AC1B9 /* Sources */,
 				D2A573DB175A3B4E002AC1B9 /* Frameworks */,
 				D2A573DC175A3B4E002AC1B9 /* Resources */,
-				42BCEB0E99C8425783C4FBEA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1786,11 +1776,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = c7d520bbcb9a03f0ddc6014d /* Build configuration list for PBXNativeTarget "Kronicle-cal" */;
 			buildPhases = (
-				0585fe142b08fe813f978944 /* Check Pods Manifest.lock */,
 				6733ab5e41f0dd7ed3a92a18 /* Sources */,
 				1e6a220d73675cee50876073 /* Frameworks */,
 				eabc4564a16a2bddd6644e29 /* Resources */,
-				76e021518d56f7cbe2259c35 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1809,6 +1797,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = haicontrast;
+				TargetAttributes = {
+					D2A573DD175A3B4E002AC1B9 = {
+						DevelopmentTeam = WB938QV94P;
+					};
+				};
 			};
 			buildConfigurationList = D2A573D9175A3B4E002AC1B9 /* Build configuration list for PBXProject "Kronicle" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1983,69 +1976,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0585fe142b08fe813f978944 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		42BCEB0E99C8425783C4FBEA /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		76e021518d56f7cbe2259c35 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE098D28999940B3949526D4 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		6733ab5e41f0dd7ed3a92a18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -2193,7 +2123,6 @@
 /* Begin XCBuildConfiguration section */
 		7a2a23f3777ae700b87c7963 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2282,41 +2211,38 @@
 		};
 		D2A57402175A3B4E002AC1B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "76BAF7B3-AED8-48BB-8192-F8916B99DE75";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "76BAF7B3-AED8-48BB-8192-F8916B99DE75";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		D2A57403175A3B4E002AC1B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrew Askedall (2NC54NZRGD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kronicle/Kronicle-Prefix.pch";
 				INFOPLIST_FILE = "Kronicle/Kronicle-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "76BAF7B3-AED8-48BB-8192-F8916B99DE75";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "76BAF7B3-AED8-48BB-8192-F8916B99DE75";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		fc14d4af3632426e17ba8d76 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932B9C311B884F658DF467A8 /* Pods/Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

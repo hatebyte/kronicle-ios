@@ -34,7 +34,7 @@
     [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _backButton.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.3];
     _backButton.titleLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:14];
-    _backButton.frame = CGRectMake(5, 5, 40, 26);
+    _backButton.frame = CGRectMake(5, 25, 40, 26);
     
     _publishButtonHeight = 42;
     _publishButton       = [UIButton buttonWithType:UIButtonTypeCustom];

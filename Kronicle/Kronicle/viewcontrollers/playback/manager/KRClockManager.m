@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-CGFloat const _increment = .1f;
+CGFloat const _increment = 1.0f;
 
 @interface KRClockManager () {
 @private
@@ -128,7 +128,7 @@ CGFloat const _increment = .1f;
 }
 
 - (void)dealloc {
-    dispatch_release(_backgroundQueue);
+//    dispatch_release(_backgroundQueue);
     [_timer invalidate];
     _timer = nil;
 }

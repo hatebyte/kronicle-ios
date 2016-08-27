@@ -40,7 +40,7 @@
     blackBackground.backgroundColor                 = [UIColor colorWithRed:.1f green:.1f blue:.1f alpha:0.9f].CGColor;
     [self.view.layer addSublayer:blackBackground];
     
-    _globalClockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 30)];
+    _globalClockLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 320, 30)];
     _globalClockLabel.font = [KRFontHelper getFont:KRBrandonRegular withSize:38];
     _globalClockLabel.textColor = [UIColor whiteColor];
     _globalClockLabel.backgroundColor = [UIColor clearColor];
@@ -58,7 +58,7 @@
     _subGlobalClockLabel.text = @"until finished!";
     [self.view addSubview:_subGlobalClockLabel];
 
-    _sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height-20)];
+    _sview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _bounds.size.width, _bounds.size.height)];
     _sview.showsVerticalScrollIndicator = YES;
     _sview.showsHorizontalScrollIndicator = NO;
     _sview.backgroundColor = [UIColor clearColor];
@@ -100,7 +100,7 @@
 
     [_backButton setBackgroundImage:[UIImage imageNamed:@"x-button"] forState:UIControlStateNormal];
     _backButton.backgroundColor                 = [UIColor clearColor];
-    _backButton.frame                           = CGRectMake(0, 0, 40, 40);
+    _backButton.frame                           = CGRectMake(0, 20, 40, 40);
     
     NSInteger itemsBUttonHeight = 42;
     _itemsButton = [[KRTextButton alloc] initWithFrame:CGRectMake(0,

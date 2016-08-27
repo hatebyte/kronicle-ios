@@ -99,14 +99,14 @@ CGFloat const unitHeight = 20.f;
         [self addSubview:_durationCreator];
         
         _cancelXBUtton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _cancelXBUtton.frame = CGRectMake(0, 0, 35, 35);
+        _cancelXBUtton.frame = CGRectMake(0, 20, 35, 35);
         _cancelXBUtton.backgroundColor = [UIColor clearColor];
         [_cancelXBUtton setImage:[UIImage imageNamed:@"cancel_x"] forState:UIControlStateNormal];
         [_cancelXBUtton addTarget:self action:@selector(exitPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_cancelXBUtton];
 
         _okButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _okButton.frame = CGRectMake(self.frame.size.width - 60, 0, 60, 42);
+        _okButton.frame = CGRectMake(self.frame.size.width - 60, 20, 60, 42);
         _okButton.backgroundColor = [KRColorHelper orange];
         _okButton.titleLabel.font = [KRFontHelper getFont:KRBrandonBold withSize:20];
         _okButton.titleLabel.textColor = [UIColor whiteColor];

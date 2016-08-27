@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CocoaLumberjack/DDTTYLogger.h>
 #import "KRFontHelper.h"
 #import "KRColorHelper.h"
-
-static const int ddLogLevel = LOG_LEVEL_INFO;
 
 #define kdomain @"http://166.78.151.97:4711/"
 #define kDEBUG 0

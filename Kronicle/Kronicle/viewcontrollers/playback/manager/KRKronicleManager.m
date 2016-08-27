@@ -32,7 +32,7 @@
 #pragma public methods 
 - (void)setStep:(NSInteger)stepIndex {
     if (stepIndex >= [_kronicle.steps count] || stepIndex < 0) {
-        DDLogError(@"KRONICLE IS COMPLETED");
+        NSLog(@"KRONICLE IS COMPLETED");
         [self.delegate kronicleComplete:self];
         return;
     }
@@ -45,7 +45,7 @@
 
 - (void)setPreviewStep:(NSInteger)stepIndex {
     if (stepIndex >= [_kronicle.steps count] || stepIndex < 0) {
-        DDLogError(@"CANT PREVIEW THAT STEP");                              
+        NSLog(@"CANT PREVIEW THAT STEP");                              
         return;
     }
     _requestedDirection = (self.previewStepIndex < stepIndex);

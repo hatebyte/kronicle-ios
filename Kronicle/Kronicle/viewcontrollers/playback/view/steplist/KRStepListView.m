@@ -128,7 +128,7 @@
 }
 
 - (void)removeRunLoop {
-    [_runloopConsilieri removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    [_runloopConsilieri invalidate];
     _destVal = 0;
     _currentVal = 0;
 }

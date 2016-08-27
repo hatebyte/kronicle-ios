@@ -22,6 +22,7 @@
     UITableView *_tableView;
     NSArray *_kroniclesModuloed;
     KRGraphView *_graphView;
+    UITextView *_description;
 }
 
 @end

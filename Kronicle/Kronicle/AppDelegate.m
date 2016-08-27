@@ -10,10 +10,7 @@
 #import "ManagedContextController.h"
 
 #import "KRHomeViewController.h"
-#import <CocoaLumberjack/DDTTYLogger.h>
 #import "KRNavigationViewController.h"
-
-static const int ddLogLevel = LOG_LEVEL_INFO;
 
 
 @implementation AppDelegate
