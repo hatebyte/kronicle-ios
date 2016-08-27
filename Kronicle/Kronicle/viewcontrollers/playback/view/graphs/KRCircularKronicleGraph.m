@@ -13,9 +13,9 @@
 #import "KRColorHelper.h"
 #import "KRClockManager.h"
 
-CGFloat const _largeStroke = 45.f;
-CGFloat const _smallStroke = 26.f;
-CGFloat const _sidesBuffer = .42;
+const static CGFloat  _largeStroke = 45.f;
+const static CGFloat  _smallStroke = 26.f;
+const static CGFloat  _sidesBuffer = .42;
 
 
 @interface KRCircularKronicleGraph () {

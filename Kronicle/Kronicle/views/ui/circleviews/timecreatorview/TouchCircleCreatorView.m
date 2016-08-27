@@ -12,7 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define kStroke     30.0f
-CGFloat const _sidesBuffer = .42;
+const static CGFloat  _sidesBuffer = .42;
 
 @interface TouchCircleCreatorView () {
 }
